@@ -68,12 +68,28 @@ class CoreContractTests(unittest.TestCase):
             delivery_mode="blunt",
             public_move="stance",
             disposition="continue",
-            grounded_refs=("O.current",),
+            grounded_refs=("O.current", "S.goal"),
         )
         intent = PublicPerformanceIntent.from_policy("a", policy, frame)
         self.assertEqual(intent.target, "b")
-        self.assertEqual(intent.evidence_anchors["O.current"], "门仍关闭")
-        self.assertNotIn("不说我很怕被留下", intent.evidence_anchors)
+        self.assertEqual(intent.public_evidence["O.current"], "门仍关闭")
+        self.assertIn("S.goal", intent.authorization_refs)
+        self.assertNotIn("S.goal", intent.public_evidence)
+        self.assertNotIn("不说我很怕被留下", intent.to_dict().values())
+
+    def test_private_state_cannot_authorize_spoken_claim(self) -> None:
+        frame = self._frame()
+        policy = PerformancePolicy(
+            attention=("S.goal",), interpretation="想留下", current_intent="说明",
+            chosen_strategy="直接说", action_request=ActionIntent("speak", "b", {}, (), ("O.current",)),
+            disclose=(SpeechAtom("fact", "我必须留在这里。", ("S.goal",)),),
+            withhold=(), expected_response="对方回答", response_hook="等待回答",
+            surface_action_intent="说明", accepted_cost="", relationship_transition="keep",
+            interaction_move="disclose", delivery_mode="blunt", public_move="information",
+            disposition="continue", grounded_refs=("O.current", "S.goal"),
+        )
+        with self.assertRaisesRegex(ValueError, "private state and relationship"):
+            PublicPerformanceIntent.from_policy("a", policy, frame)
 
     def test_action_rejects_ungrounded_claim(self) -> None:
         frame = self._frame()

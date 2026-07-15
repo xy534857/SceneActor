@@ -210,17 +210,27 @@ class PerformancePolicy:
         _require_refs(self.grounded_refs, evidence, "policy")
         for atom in self.disclose:
             _require_refs(atom.evidence_refs, evidence, "speech atom")
-            private_behavior_refs = (
-                "S.identity.values",
-                "S.identity.preferences",
-                "S.identity.voice",
+            allowed_private_identity = (
+                "S.identity.role",
+                "S.identity.background",
+                "S.identity.competencies",
             )
-            if any(
-                reference == prefix or reference.startswith(prefix + ".")
-                for reference in atom.evidence_refs
-                for prefix in private_behavior_refs
-            ):
-                raise ValueError("values, preferences, and voice may shape policy but cannot authorize speech content")
+            forbidden = tuple(
+                reference for reference in atom.evidence_refs
+                if not (
+                    reference.startswith("O.")
+                    or reference.startswith("H.")
+                    or any(
+                        reference == prefix or reference.startswith(prefix + ".")
+                        for prefix in allowed_private_identity
+                    )
+                )
+            )
+            if forbidden:
+                raise ValueError(
+                    "private state and relationship evidence may shape policy but cannot authorize spoken claims: "
+                    + ", ".join(forbidden)
+                )
         if self.action_request.action_kind == "speak" and not self.disclose:
             raise ValueError("speak action requires at least one speech atom")
         if self.interaction_move not in INTERACTION_MOVES:
@@ -250,7 +260,9 @@ class PublicPerformanceIntent:
     visible_cost_signal: str
     response_hook: str
     disposition: str
-    evidence_anchors: Mapping[str, Any]
+    actor_constraints: Mapping[str, Any]
+    public_evidence: Mapping[str, Any]
+    authorization_refs: tuple[str, ...]
 
     @classmethod
     def from_policy(
@@ -261,10 +273,18 @@ class PublicPerformanceIntent:
     ) -> "PublicPerformanceIntent":
         policy.validate(frame)
         evidence = frame.evidence()
+        actor_constraints = {
+            key: value for key, value in frame.identity_evidence.items()
+            if key in {"age", "role", "competencies"}
+        }
         refs = set(policy.action_request.grounded_refs)
         refs.update(policy.grounded_refs)
         refs.update(ref for atom in policy.disclose for ref in atom.evidence_refs)
-        anchors = {reference: evidence[reference] for reference in sorted(refs)}
+        public_evidence = {
+            reference: evidence[reference]
+            for reference in sorted(refs)
+            if reference.startswith("O.") or reference.startswith("H.")
+        }
         return cls(
             actor_id=actor_id,
             target=policy.action_request.target,
@@ -275,7 +295,9 @@ class PublicPerformanceIntent:
             visible_cost_signal=policy.accepted_cost,
             response_hook=policy.response_hook,
             disposition=policy.disposition,
-            evidence_anchors=anchors,
+            actor_constraints=actor_constraints,
+            public_evidence=public_evidence,
+            authorization_refs=tuple(sorted(refs)),
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -289,7 +311,9 @@ class PublicPerformanceIntent:
             "visible_cost_signal": self.visible_cost_signal,
             "response_hook": self.response_hook,
             "disposition": self.disposition,
-            "evidence_anchors": dict(self.evidence_anchors),
+            "actor_constraints": dict(self.actor_constraints),
+            "public_evidence": dict(self.public_evidence),
+            "authorization_refs": list(self.authorization_refs),
         }
 
     @classmethod
@@ -323,7 +347,9 @@ class PublicPerformanceIntent:
             visible_cost_signal=str(data.get("visible_cost_signal", "")),
             response_hook=str(data.get("response_hook", "")),
             disposition=str(data.get("disposition", "")),
-            evidence_anchors=dict(data.get("evidence_anchors", {})),
+            actor_constraints=dict(data.get("actor_constraints", {})),
+            public_evidence=dict(data.get("public_evidence", {})),
+            authorization_refs=tuple(str(item) for item in data.get("authorization_refs", [])),
         )
 @dataclass(frozen=True)
 class WorldMutation:
@@ -456,6 +482,9 @@ class PerformanceDraft:
             raise ValueError("performance contains an unauthorized action")
         if tuple(self.observable_outcome) != tuple(outcome.observable_facts):
             raise ValueError("performance must preserve the host observable outcome")
+        authorized_speech = "".join(atom.text.strip() for atom in intent.speech_atoms if atom.text.strip())
+        if self.speech != authorized_speech:
+            raise ValueError("performance changed the authorized speech atoms")
         if self.speech and not self.delivery.has_audible_direction():
             raise ValueError("spoken performance requires at least one audible delivery direction")
 

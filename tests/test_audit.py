@@ -20,7 +20,7 @@ class AuditTests(unittest.TestCase):
     def inputs(self):
         return {
             "prior_public": [{"actor": "A", "speech": "门还关着。"}],
-            "batch": [{"actor": "B", "speech": "那要等到什么时候？"}],
+            "batch": [{"actor": "B", "speech": "那要等到什么时候？", "performance": {"speech": "那要等到什么时候？", "addressee": "internal-b", "response_hook": "internal-plan"}}],
             "public_scene": {"setting": "门口"},
             "authority": {"known_facts": ["门关闭"], "forbidden": ["后台原因"]},
             "character_cards": [{"anonymous_actor": "actor-1", "age": "十一岁"}],
@@ -67,6 +67,9 @@ class AuditTests(unittest.TestCase):
         self.assertNotIn("authority", packets["reader_orientation"])
         self.assertNotIn("character_cards", packets["reader_orientation"])
         self.assertIn("authority", packets["authority"])
+        self.assertNotIn("addressee", packets["reader_orientation"]["batch"][0]["performance"])
+        self.assertNotIn("response_hook", packets["reader_orientation"]["batch"][0]["performance"])
+        self.assertIn("addressee", packets["authority"]["batch"][0]["performance"])
         self.assertEqual({packet["manifest_id"] for packet in packets.values()}, {manifest.manifest_id})
 
     def test_one_hard_failure_forces_red_regardless_of_other_scores(self) -> None:

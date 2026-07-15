@@ -10,6 +10,7 @@ from pathlib import Path
 
 from sceneactor.audit import CausalPersonaConstraintCard, IndependentAuditBoard, JsonSpecialistAuditPort, ReviewContextManifest
 from sceneactor.benchmark import BehaviorBenchmark
+from sceneactor.evaluation import assert_reviewable_evaluations
 from sceneactor.model import FallbackModel, OmpCliCompletion
 
 
@@ -19,11 +20,16 @@ parser.add_argument("--output", required=True)
 args = parser.parse_args()
 
 evaluation = json.loads(Path(args.evaluation).read_text(encoding="utf-8"))
+assert_reviewable_evaluations(evaluation.get("performances", []))
 prior_public: list[dict] = []
 batch = [
     {
         "case_id": item["case_id"],
         "category": item["category"],
+        "public_actor": {
+            key: value for key, value in item["character_card"].items()
+            if key in {"anonymous_actor", "role", "age"}
+        },
         "public_observation": item["public_observation"],
         "performance": item["performance"],
     }
@@ -51,7 +57,7 @@ authority = {
             "case_id": item["case_id"],
             "public_observation": item["public_observation"],
             "appraisal_grounded_refs": item.get("appraisal", {}).get("grounded_refs", []),
-            "public_intent_evidence": item.get("public_intent", {}).get("evidence_anchors", {}),
+            "public_intent_authorization_refs": item.get("public_intent", {}).get("authorization_refs", []),
         }
         for item in evaluation.get("performances", [])
     ]

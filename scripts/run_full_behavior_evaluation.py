@@ -10,7 +10,7 @@ from pathlib import Path
 
 from sceneactor.benchmark import BehaviorBenchmark, BehaviorCase, load_counterfactual_pairs
 from sceneactor.cognition import JsonCognitionPort
-from sceneactor.evaluation import FullBehaviorEvaluator
+from sceneactor.evaluation import FullBehaviorEvaluator, assert_reviewable_evaluations
 from sceneactor.model import FallbackModel, OmpCliCompletion
 from sceneactor.performance import JsonPerformancePort
 from sceneactor.review import BlindReviewer, JsonBlindReviewPort, JsonCounterfactualReviewPort
@@ -22,7 +22,10 @@ parser.add_argument("--counterfactual", default="benchmarks/counterfactual_v1.js
 parser.add_argument("--output", default="/tmp/sceneactor-full-evaluation.json")
 parser.add_argument("--resume", action="store_true")
 parser.add_argument("--stage", choices=("all", "performances", "counterfactual"), default="all")
+parser.add_argument("--case-attempts", type=int, default=2)
 args = parser.parse_args()
+if args.case_attempts < 1:
+    parser.error("--case-attempts must be positive")
 
 path = Path(args.output)
 benchmark = BehaviorBenchmark.load(args.benchmark)
@@ -62,12 +65,25 @@ def save() -> None:
 
 
 if args.stage in {"all", "performances"}:
+    payload["performances"] = [
+        item for item in payload["performances"]
+        if not item.get("protocol_error") and item.get("performance")
+    ]
     completed_cases = {item["case_id"] for item in payload["performances"]}
     for index, case in enumerate(benchmark.cases):
         if case.id in completed_cases:
             continue
-        payload["performances"].append(asdict(evaluator.evaluate_case(case, f"actor-{index + 1}")))
+        result = None
+        for _ in range(args.case_attempts):
+            result = asdict(evaluator.evaluate_case(case, f"actor-{index + 1}"))
+            if not result["protocol_error"]:
+                break
+        assert result is not None
+        payload["performances"].append(result)
         save()
+        if result["protocol_error"]:
+            raise RuntimeError(f"case {case.id} failed after {args.case_attempts} attempts: {result['protocol_error']}")
+    assert_reviewable_evaluations(payload["performances"])
 
 if args.stage in {"all", "counterfactual"}:
     completed_swaps = {

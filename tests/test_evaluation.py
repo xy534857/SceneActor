@@ -5,7 +5,7 @@ import unittest
 
 from sceneactor.benchmark import BehaviorBenchmark
 from sceneactor.cognition import JsonCognitionPort
-from sceneactor.evaluation import FullBehaviorEvaluator
+from sceneactor.evaluation import EvaluationBatchError, FullBehaviorEvaluator, assert_reviewable_evaluations
 from sceneactor.performance import JsonPerformancePort
 from sceneactor.review import BlindReviewer, JsonCounterfactualReviewPort
 from tests.test_benchmark import benchmark_completion
@@ -15,12 +15,18 @@ def performance_completion(messages, purpose):
     assert purpose == "realization"
     payload = json.loads(messages[-1]["content"])
     intent = payload["intent"]
+    assert "target" not in intent
+    assert "evidence" not in intent
+    assert "actor_constraints" in intent
+    assert set(payload["public_evidence"]) <= {"O.current"}
+    assert "S.current_task" not in messages[-1]["content"]
+    assert "R.child.summary" not in messages[-1]["content"]
     speech = " ".join(item["text"] for item in intent["speech_atoms"])
     return json.dumps(
         {
             "action": "把手里的纸放回桌边",
             "speech": speech,
-            "addressee": intent["target"],
+            "addressee": "ignored-by-runtime-binding",
             "attention_target": "眼前的人",
             "gaze": "看向对方",
             "blocking": "保持原位",
@@ -72,6 +78,12 @@ class EvaluationTests(unittest.TestCase):
         )
         self.assertEqual(len(same["actors"]), 2)
         self.assertTrue(same["counterfactual_review"]["pass"])
+
+    def test_generation_failure_cannot_enter_review_wave(self):
+        with self.assertRaisesRegex(EvaluationBatchError, "task_failure"):
+            assert_reviewable_evaluations((
+                {"case_id": "task_failure", "performance": {}, "protocol_error": "performance: invalid"},
+            ))
 
 
 if __name__ == "__main__":

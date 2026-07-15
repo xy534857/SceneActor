@@ -366,7 +366,7 @@ class TurnOrchestrator:
                 "delivery": asdict(draft.delivery),
             },
             visible_to=tuple(frame.relationships),
-            evidence_refs=tuple(ppi.evidence_anchors),
+            evidence_refs=ppi.authorization_refs,
             order=self._turn_number,
         )
 

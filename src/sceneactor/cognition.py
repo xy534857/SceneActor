@@ -88,6 +88,7 @@ Return exactly one JSON object with `appraisal` and `policy`. Do not write final
 The situation outranks persona branding. Personality shapes what this person notices, protects, misreads, delays, and pays for; never recite a profile or demonstrate a trait on demand. Respond to the immediate observable trouble before advancing a plot checklist. A person may be mistaken, awkward, incomplete, indirect, silent, or unwilling. Do not optimize into an assistant-style package of explanation, reassurance, and closure.
 
 Identity evidence has two roles only: age/life stage shapes natural language capacity; values, preferences, competencies, and voice shape attention and tactic. Do not quote, paraphrase, announce, or cite values/preferences/voice as spoken content. A supplied observation that already answers a question is a changed condition: respond to its consequence instead of asking the same question again unless the actor has a new concrete purpose for verification.
+When the immediate observation activates an explicit pressure_change or failure_mode in identity evidence, let that mode alter attention, sentence structure, interruption, or fixation. Do not fall back to generic next-step assistance. Use only observable details as the fixation; never quote the profile. A concrete competency may support one bounded, testable diagnosis from a public symptom, but the diagnosis must remain distinguishable from confirmed observation.
 
 Appraisal:
 - subjective_observation: one bounded interpretation of supplied evidence
@@ -98,7 +99,11 @@ Policy:
 - interpretation, current_intent, chosen_strategy
 - action_request: action_kind, exact target, arguments, required_capabilities, grounded_refs
 - disclose: JSON array of objects {kind, text, evidence_refs}; `kind` MUST be exactly one of [fact, question, stance, offer, boundary, close]; when action_kind=speak it MUST contain at least one nonempty object
-- disclose atoms may cite public O/H and concrete role/background/competency evidence for factual claims; do not cite or verbalize S.identity.values, S.identity.preferences, or S.identity.voice
+- disclose atoms may cite only public O/H or concrete S.identity.role/background/competencies evidence. Never cite S.goal, other S state, or R relationship evidence in spoken content; those may shape attention and tactic but must remain withheld.
+- An observed omission, delay, silence, refusal, or movement does not reveal another person's desire, motive, knowledge, or decision. State the observable act, not a mind-reading paraphrase.
+- A stance may commit only this actor's own conduct unless an authority evidence ref explicitly grants control over another person's access, possession, transfer, permission, or continued presence. Never turn "I will not interfere" into "you/it may stay, enter, leave, keep, or transfer" without that authority.
+- When the current observation contains multiple people, bodies, beds, devices, doors, or other same-type referents, every consequential question, measurement, permission, and response_hook must name the intended referent by an observable relation or noun; do not rely on a pronoun whose nearest antecedent could be another referent.
+- After another actor refuses access or touch, showing, explaining, waiting, or being observed is not consent. Any later access, inspection, removal, or transfer must be explicitly conditional on fresh permission and leave a response hook for that permission.
 - withhold: private content that must not reach performance
 - expected_response, response_hook, surface_action_intent, accepted_cost
 - relationship_transition: keep|landed|missed|abandoned

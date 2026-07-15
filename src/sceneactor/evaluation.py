@@ -25,6 +25,22 @@ class EvaluatedPerformance:
     protocol_error: str = ""
 
 
+class EvaluationBatchError(RuntimeError):
+    """A generation batch contains protocol failures and cannot be reviewed."""
+
+
+def assert_reviewable_evaluations(items: Sequence[Mapping[str, Any]]) -> None:
+    failures = []
+    for item in items:
+        case_id = str(item.get("case_id", "unknown"))
+        error = str(item.get("protocol_error", "")).strip()
+        performance = item.get("performance")
+        if error or not isinstance(performance, Mapping) or not performance:
+            failures.append(f"{case_id}: {error or 'missing performance'}")
+    if failures:
+        raise EvaluationBatchError("review batch contains generation failures: " + "; ".join(failures))
+
+
 class FullBehaviorEvaluator:
     def __init__(
         self,
@@ -40,9 +56,22 @@ class FullBehaviorEvaluator:
 
     def evaluate_case(self, case: BehaviorCase, anonymous_id: str) -> EvaluatedPerformance:
         frame = case.frame()
+        character_card = _anonymous_card(case.persona, anonymous_id)
         try:
             appraisal, policy = self.cognition.decide(frame)
             intent = PublicPerformanceIntent.from_policy(frame.actor_id, policy, frame)
+        except Exception as exc:
+            return EvaluatedPerformance(
+                case_id=case.id, category=case.category, character_card=character_card,
+                public_observation=dict(case.observation), appraisal={}, public_intent={},
+                performance={}, review={}, protocol_error=f"cognition: {exc}",
+            )
+        appraisal_data = {
+            "subjective_observation": appraisal.subjective_observation,
+            "emotion_changes": [asdict(item) for item in appraisal.changes],
+            "grounded_refs": list(appraisal.grounded_refs),
+        }
+        try:
             outcome = ResolvedOutcome(
                 status="succeeded",
                 action_kind=intent.authorized_action.action_kind,
@@ -52,15 +81,10 @@ class FullBehaviorEvaluator:
             draft.validate(intent, outcome)
         except Exception as exc:
             return EvaluatedPerformance(
-                case_id=case.id,
-                category=case.category,
-                character_card=_anonymous_card(case.persona, anonymous_id),
-                public_observation=dict(case.observation),
-                appraisal={},
-                public_intent={},
-                performance={},
-                review={},
-                protocol_error=str(exc),
+                case_id=case.id, category=case.category, character_card=character_card,
+                public_observation=dict(case.observation), appraisal=appraisal_data,
+                public_intent=intent.to_dict(), performance={}, review={},
+                protocol_error=f"performance: {exc}",
             )
         performance = _performance_dict(draft)
         public_scene = {

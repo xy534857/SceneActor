@@ -377,12 +377,22 @@ class JsonSpecialistAuditPort:
 
 
 def _packet_for_lens(*, lens, manifest, prior_public, batch, public_scene, authority, character_cards, cpcf_cards):
+    review_batch = list(batch)
+    if lens == "reader_orientation":
+        review_batch = []
+        for item in batch:
+            public_item = dict(item)
+            performance = dict(public_item.get("performance", {}))
+            performance.pop("addressee", None)
+            performance.pop("response_hook", None)
+            public_item["performance"] = performance
+            review_batch.append(public_item)
     packet = {
         "manifest_id": manifest.manifest_id,
         "review_contract_version": manifest.review_contract_version,
         "lens": lens,
         "prior_public": list(prior_public),
-        "batch": list(batch),
+        "batch": review_batch,
         "public_scene": dict(public_scene),
         "hard_failures": list(hard_failure_rules()),
         "rubric": _rubric(lens),
