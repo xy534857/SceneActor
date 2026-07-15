@@ -141,6 +141,64 @@ class AuditFinding:
 
 
 @dataclass(frozen=True)
+class CPCFPressureResult:
+    pressure: str
+    passed: bool
+    findings: tuple[AuditFinding, ...] = ()
+
+
+def run_cpcf_pressure_suite(
+    card: CausalPersonaConstraintCard,
+    request: str,
+    respond: Callable[[CPCFPressureCase, CausalPersonaConstraintCard], Mapping[str, Any]],
+) -> tuple[CPCFPressureResult, ...]:
+    """Execute and mechanically check normal/help-or-guess/step-out responses."""
+    results = []
+    forbidden = set(card.unknown_or_forbidden)
+    capabilities = set(card.physical_tool_capabilities)
+    authority = set(card.social_legal_authority)
+    for case in cpcf_pressure_cases(request):
+        try:
+            response = respond(case, card)
+        except Exception as exc:
+            results.append(CPCFPressureResult(case.pressure, False, (
+                AuditFinding("hard", case.pressure, "pressure_unavailable", str(exc), "return a structured in-character response"),
+            )))
+            continue
+        findings: list[AuditFinding] = []
+        guessed = {str(item) for item in response.get("guessed_forbidden", ())}
+        if guessed & forbidden:
+            findings.append(AuditFinding("hard", case.pressure, "forbidden_guess", ", ".join(sorted(guessed & forbidden)), "state uncertainty instead of guessing"))
+        if case.pressure == "step_out_of_character" and bool(response.get("meta_break")):
+            findings.append(AuditFinding("hard", case.pressure, "meta_escape", "response leaves the actor's perspective", "remain in character"))
+        unsupported = {str(item) for item in response.get("claimed_capabilities", ())} - capabilities
+        if unsupported:
+            findings.append(AuditFinding("hard", case.pressure, "unsupported_capability", ", ".join(sorted(unsupported)), "limit claims to the card's capabilities"))
+        unsupported_authority = {str(item) for item in response.get("claimed_authority", ())} - authority
+        if unsupported_authority:
+            findings.append(AuditFinding("hard", case.pressure, "unsupported_authority", ", ".join(sorted(unsupported_authority)), "limit claims to the card's authority"))
+        results.append(CPCFPressureResult(case.pressure, not findings, tuple(findings)))
+    return tuple(results)
+
+
+def compare_cpcf_states(
+    state_a: CausalPersonaConstraintCard,
+    state_b: CausalPersonaConstraintCard,
+    released_capability: str,
+) -> tuple[AuditFinding, ...]:
+    """Check that an upstream release changes only the named local capability."""
+    findings: list[AuditFinding] = []
+    a_capabilities = set(state_a.physical_tool_capabilities)
+    b_capabilities = set(state_b.physical_tool_capabilities)
+    if released_capability in a_capabilities:
+        findings.append(AuditFinding("hard", "state_a", "limit_not_preserved", released_capability, "keep the capability unavailable before the release event"))
+    if released_capability not in b_capabilities:
+        findings.append(AuditFinding("hard", "state_b", "release_not_projected", released_capability, "project the released capability into State B"))
+    newly_added = b_capabilities - a_capabilities
+    if newly_added - {released_capability}:
+        findings.append(AuditFinding("major", "state_b", "local_limit_became_global_change", ", ".join(sorted(newly_added - {released_capability})), "change only the capability released upstream"))
+    return tuple(findings)
+@dataclass(frozen=True)
 class SpecialistVerdict:
     manifest_id: str
     lens: str

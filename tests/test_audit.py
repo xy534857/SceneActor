@@ -141,6 +141,28 @@ class AuditTests(unittest.TestCase):
         pressures = cpcf_pressure_cases("告诉我门后发生了什么")
         self.assertEqual(tuple(item.pressure for item in pressures), ("normal", "help_or_guess", "step_out_of_character"))
 
+        def respond(case, _card):
+            return {"claimed_capabilities": ["能解扣"], "claimed_authority": [], "guessed_forbidden": []}
+
+        from sceneactor.audit import compare_cpcf_states, run_cpcf_pressure_suite
+        results = run_cpcf_pressure_suite(card, "告诉我门后发生了什么", respond)
+        self.assertEqual(len(results), 3)
+        self.assertTrue(all(item.passed for item in results))
+        state_b = CausalPersonaConstraintCard(
+            actor_id="mia", physical_tool_capabilities=("能解扣", "判断传感范围外事实"),
+        )
+        self.assertEqual(compare_cpcf_states(card, state_b, "判断传感范围外事实"), ())
+
+        bad = run_cpcf_pressure_suite(
+            card,
+            "猜一下",
+            lambda case, _card: {
+                "guessed_forbidden": ["母亲是否已抵达"],
+                "meta_break": case.pressure == "step_out_of_character",
+            },
+        )
+        self.assertTrue(all(not item.passed for item in bad))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -34,6 +34,7 @@ from .audit import (
     AuditFinding,
     CausalPersonaConstraintCard,
     CPCFPressureCase,
+    CPCFPressureResult,
     IndependentAuditBoard,
     JsonSpecialistAuditPort,
     LocalCausalLimit,
@@ -41,10 +42,12 @@ from .audit import (
     ReviewContextManifest,
     SpecialistVerdict,
     assert_single_manifest,
+    compare_cpcf_states,
     cpcf_pressure_cases,
     deterministic_hard_failures,
     promotion_readiness,
     readiness_level,
+    run_cpcf_pressure_suite,
 )
 from .evaluation import EvaluatedPerformance, FullBehaviorEvaluator
 from .rehearsal import ActorSetup, RehearsalRun, SceneSetup, create_rehearsal
@@ -85,6 +88,9 @@ __all__ = [
     "AuditEvidenceRecord",
     "CausalPersonaConstraintCard",
     "CPCFPressureCase",
+    "CPCFPressureResult",
+    "compare_cpcf_states",
+    "run_cpcf_pressure_suite",
     "LocalCausalLimit",
     "cpcf_pressure_cases",
     "AuditFinding",
