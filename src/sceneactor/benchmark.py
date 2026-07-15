@@ -50,7 +50,7 @@ class BehaviorCase:
             decision_contract=DecisionContract(allowed_actions=self.actions),
             identity_evidence={
                 key: value for key, value in self.persona.items()
-                if key in {"role", "background", "values", "preferences", "competencies", "voice"} and value
+                if key in {"age", "role", "background", "values", "preferences", "competencies", "voice"} and value
             },
         )
 
@@ -111,21 +111,35 @@ class BehaviorBenchmark:
         return tuple(records)
 
 
+def load_counterfactual_pairs(path: str | Path) -> tuple[Mapping[str, Any], ...]:
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not data.get("frozen"):
+        raise ValueError("counterfactual benchmark must be explicitly frozen")
+    return tuple(dict(item) for item in data.get("pairs", []))
+
+
 def same_stimulus_frames(
     *,
     stimulus: Mapping[str, Any],
     personas: Sequence[Mapping[str, Any]],
     target: str,
+    private_state: Mapping[str, Any] | None = None,
+    relationships: Mapping[str, Mapping[str, Any]] | None = None,
 ) -> tuple[DecisionFrame, ...]:
     """Build counterfactual frames whose only changing input is identity."""
     frames: list[DecisionFrame] = []
+    shared_state = dict(private_state or {"goal": "respond to the immediate situation"})
+    shared_relationships = {
+        key: dict(value)
+        for key, value in (relationships or {target: {"summary": "current counterpart", "disclosure": "guarded"}}).items()
+    }
     for index, persona in enumerate(personas):
         actor_id = str(persona.get("id", f"actor-{index}"))
         frames.append(
             DecisionFrame(
                 scene_id="benchmark:same-stimulus", turn_id=f"same:{index}", actor_id=actor_id,
-                private_state={"goal": "respond to the immediate situation"},
-                relationships={target: {"summary": "current counterpart", "disclosure": "guarded"}},
+                private_state=shared_state,
+                relationships=shared_relationships,
                 emotions={},
                 observation=ObservationView(
                     facts=dict(stimulus), available_targets=(target,), capabilities=("speak", "wait"),
@@ -134,7 +148,7 @@ def same_stimulus_frames(
                 decision_contract=DecisionContract(allowed_actions=("speak", "wait")),
                 identity_evidence={
                     key: value for key, value in persona.items()
-                    if key in {"role", "background", "values", "preferences", "competencies", "voice"} and value
+                    if key in {"age", "role", "background", "values", "preferences", "competencies", "voice"} and value
                 },
             )
         )

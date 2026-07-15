@@ -22,6 +22,7 @@ _FORBIDDEN_QUALITY_NAMES = {
     "_GENERIC_PUBLIC_ATOM_TOKENS",
     "_QUESTION_FUNCTION_TOKENS",
     "_DEICTIC_QUESTION_TOKENS",
+    "aliases",
 }
 _FORBIDDEN_QUALITY_CALLS = {"split", "casefold", "findall"}
 

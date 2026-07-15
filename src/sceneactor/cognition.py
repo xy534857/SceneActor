@@ -87,6 +87,8 @@ Return exactly one JSON object with `appraisal` and `policy`. Do not write final
 
 The situation outranks persona branding. Personality shapes what this person notices, protects, misreads, delays, and pays for; never recite a profile or demonstrate a trait on demand. Respond to the immediate observable trouble before advancing a plot checklist. A person may be mistaken, awkward, incomplete, indirect, silent, or unwilling. Do not optimize into an assistant-style package of explanation, reassurance, and closure.
 
+Identity evidence has two roles only: age/life stage shapes natural language capacity; values, preferences, competencies, and voice shape attention and tactic. Do not quote, paraphrase, announce, or cite values/preferences/voice as spoken content. A supplied observation that already answers a question is a changed condition: respond to its consequence instead of asking the same question again unless the actor has a new concrete purpose for verification.
+
 Appraisal:
 - subjective_observation: one bounded interpretation of supplied evidence
 - grounded_refs: exact supplied reference IDs
@@ -95,8 +97,10 @@ Policy:
 - attention: exact supplied reference IDs actually noticed
 - interpretation, current_intent, chosen_strategy
 - action_request: action_kind, exact target, arguments, required_capabilities, grounded_refs
+- disclose: JSON array of objects {kind, text, evidence_refs}; `kind` MUST be exactly one of [fact, question, stance, offer, boundary, close]; when action_kind=speak it MUST contain at least one nonempty object
+- disclose atoms may cite public O/H and concrete role/background/competency evidence for factual claims; do not cite or verbalize S.identity.values, S.identity.preferences, or S.identity.voice
 - withhold: private content that must not reach performance
-- disclose: JSON array of objects {kind, text, evidence_refs}; `kind` MUST be exactly one of [fact, question, stance, offer, boundary, close]; when action_kind=speak it MUST contain at least one nonempty object; fact atoms require exact evidence_refs
+- expected_response, response_hook, surface_action_intent, accepted_cost
 - relationship_transition: keep|landed|missed|abandoned
 - interaction_move: acknowledge|answer|ask|offer|assist|observe|disclose|decline|pause|exit
 - delivery_mode: restrained|warm|playful|formal|practical|probing|evasive|tender|blunt|self_conscious
@@ -124,8 +128,8 @@ def _parse_cognition(raw: str) -> tuple[Appraisal, PerformancePolicy]:
         subjective_observation=_required_text(appraisal_data, "subjective_observation"),
         changes=tuple(
             EmotionChange(
-                emotion=_emotion_name(_required_text(item, "emotion")),
-                direction=_emotion_direction(_required_text(item, "direction")),
+                emotion=_required_text(item, "emotion"),
+                direction=_required_text(item, "direction"),
                 impact=_required_text(item, "impact"),
             )
             for item in changes_data
@@ -152,7 +156,7 @@ def _parse_cognition(raw: str) -> tuple[Appraisal, PerformancePolicy]:
         action_request=action,
         disclose=tuple(
             SpeechAtom(
-                kind=_speech_kind(_required_text(item, "kind")),
+                kind=_required_text(item, "kind"),
                 text=_required_text(item, "text"),
                 evidence_refs=_text_tuple(item, "evidence_refs"),
             )
@@ -194,18 +198,6 @@ def _mapping(value: Any, name: str) -> Mapping[str, Any]:
     return value
 
 
-def _emotion_name(value: str) -> str:
-    return value.strip()
-
-
-def _emotion_direction(value: str) -> str:
-    return value.strip()
-
-
-def _speech_kind(value: str) -> str:
-    return value.strip()
-
-
 def _required_text(data: Mapping[str, Any], key: str) -> str:
     value = data.get(key)
     if not isinstance(value, str) or not value.strip():
@@ -218,6 +210,8 @@ def _optional_text(data: Mapping[str, Any], key: str) -> str:
     if not isinstance(value, str):
         raise ValueError(f"{key} must be text")
     return value.strip()
+
+
 def _text_tuple(data: Mapping[str, Any], key: str) -> tuple[str, ...]:
     value = data.get(key, [])
     if isinstance(value, str):

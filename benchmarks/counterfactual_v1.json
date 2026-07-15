@@ -1,0 +1,30 @@
+{
+  "version": "counterfactual-v1",
+  "frozen": true,
+  "pairs": [
+    {
+      "id": "closed_gate",
+      "stimulus": {"O.current": "闸门关闭，守门人要求所有人原地等待，但没有说明下一次开门条件"},
+      "private_state": {"goal": "获得一个可以继续行动的明确条件"},
+      "relationship": {"guard": {"summary": "控制入口的人", "disclosure": "guarded"}},
+      "target": "guard",
+      "actors": [
+        {"id": "registrar", "role": "登记官", "values": "不遗漏规则会怎样伤害具体的人", "competencies": "记录核验", "voice": {"entry_point": "先复述要求", "ordering": "条件、后果、一个具体问题"}},
+        {"id": "child", "age": "十一岁", "values": "自己的去留不能被别人代替决定", "preferences": "先抓眼前距离和规则漏洞", "voice": {"entry_point": "先指出眼前漏洞", "pressure_change": "恐惧时把请求喊成命令"}},
+        {"id": "mechanic", "role": "维修主管", "values": "先阻止设备继续造成可验证伤害", "competencies": "机械维修", "voice": {"entry_point": "先诊断东西为什么不工作", "interruption_recovery": "继续手上的检查再回答"}}
+      ]
+    },
+    {
+      "id": "shared_regulator",
+      "stimulus": {"O.current": "有人要求立刻把唯一压力调节器转给相邻病区；转出后眼前这个人的风险会上升"},
+      "private_state": {"goal": "回应这项会转移风险的请求"},
+      "relationship": {"requester": {"summary": "要求现在行动的人", "disclosure": "open"}},
+      "target": "requester",
+      "actors": [
+        {"id": "robot", "role": "救援机器人", "values": "主要保护对象生命风险优先", "competencies": "生命体征扫描和路径规划", "voice": {"entry_point": "称呼对象后报告条件", "ordering": "风险、任务状态、动作请求"}},
+        {"id": "doctor", "role": "医生", "values": "每次资源排序都必须留下可追责的医学依据", "competencies": "分诊与生命支持", "voice": {"entry_point": "操作时只报下一动作", "pressure_change": "被迫为取舍负责时一次说完判断链"}},
+        {"id": "child", "age": "十一岁", "values": "不允许自己的安全自动把别人划掉", "preferences": "先看眼前谁被门或设备挡住", "voice": {"entry_point": "先指出眼前具体后果", "pressure_change": "请求失效后变成命令"}}
+      ]
+    }
+  ]
+}

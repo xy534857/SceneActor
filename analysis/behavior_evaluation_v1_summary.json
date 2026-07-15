@@ -1,0 +1,61 @@
+{
+  "evaluation": "behavior-v1-full-performance",
+  "date": "2026-07-15",
+  "models": {
+    "generation_primary": "owtr/gpt-5.6-sol",
+    "generation_fallback": "owtr/gpt-5.6-luna",
+    "review_primary": "owtr/gpt-5.6-sol",
+    "thinking": "high"
+  },
+  "performance_results": {
+    "cases": 6,
+    "protocol_valid": 6,
+    "four_lens_pass": 6,
+    "audible_delivery_present": 6,
+    "scores": {
+      "quiet_cooperation": 5,
+      "direct_refusal": 5,
+      "misunderstanding": 5,
+      "task_failure": 4,
+      "pressure_break": 5,
+      "nonhuman_actor": 5
+    }
+  },
+  "counterfactual_results": {
+    "localized_role_swaps": 4,
+    "valid_and_passed": 3,
+    "protocol_errors": 1,
+    "same_stimulus_actors": 3,
+    "same_stimulus_valid": 2,
+    "same_stimulus_review_completed": false,
+    "note": "Protocol failures remain recorded as failures; no local semantic alias or fallback label mapping was added."
+  },
+  "evidence_driven_changes": [
+    {
+      "finding": "Several otherwise valid performances had speech but no audible delivery direction.",
+      "change": "Require at least one externally audible pace, volume, breath, articulation, pause, or vocal-target direction when speech is present.",
+      "result": "6/6 revised performances included audible delivery and passed blind review."
+    },
+    {
+      "finding": "An eleven-year-old actor used adult procedural language and a high-pressure actor repeated a question already answered.",
+      "change": "Expose age/life-stage as a shaping input and instruct cognition to respond to an answered cue's consequence rather than restating the same question.",
+      "result": "Direct-refusal and pressure-break cases both scored 5 after revision."
+    },
+    {
+      "finding": "A nonhuman actor recited its value statement as dialogue.",
+      "change": "Treat values, preferences, and voice as private behavioral basis; prohibit them from authorizing speech atoms.",
+      "result": "The revised nonhuman dialogue omitted the value-card wording and scored 5."
+    },
+    {
+      "finding": "A mechanic identity failed a gate role-swap because the original counterfactual did not make mechanical attention locally relevant.",
+      "change": "Replace arbitrary swaps with frozen, locally relevant counterfactual situations.",
+      "result": "3 valid localized swaps passed; one additional swap failed structurally and remains recorded."
+    }
+  ],
+  "remaining_risks": [
+    "One localized role-swap performance failed the audible-delivery protocol after retries.",
+    "One actor in the revised same-stimulus run failed the addressee protocol, so the group review was not run.",
+    "Task-failure performance retained a minor hand-position continuity issue noted by blind reviewers.",
+    "The current generation and judge calls use the same model family; future promotion evidence should add model-family-balanced judges and human calibration."
+  ]
+}

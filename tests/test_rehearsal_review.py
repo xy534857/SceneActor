@@ -60,6 +60,13 @@ class RehearsalReviewTests(unittest.TestCase):
             findings = scan_semantic_hardcode((path,))
         self.assertEqual(findings[0].code, "semantic_word_table")
 
+    def test_governance_linter_rejects_local_semantic_alias_tables(self) -> None:
+        with tempfile.TemporaryDirectory() as root:
+            path = Path(root) / "bad_alias.py"
+            path.write_text("aliases = {'concern': 'fear'}\n", encoding="utf-8")
+            findings = scan_semantic_hardcode((path,))
+        self.assertEqual(findings[0].code, "semantic_word_table")
+
 
 if __name__ == "__main__":
     unittest.main()

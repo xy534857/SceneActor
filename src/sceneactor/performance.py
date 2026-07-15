@@ -24,8 +24,9 @@ class PerformanceModelError(RuntimeError):
 class JsonPerformancePort:
     """Inject a JSON completion function; keep provider/model selection outside."""
 
-    def __init__(self, complete: Callable[[list[dict[str, str]], str], str]) -> None:
+    def __init__(self, complete: Callable[[list[dict[str, str]], str], str], *, max_attempts: int = 3) -> None:
         self.complete = complete
+        self.max_attempts = max_attempts
 
     def realize(
         self,
@@ -57,51 +58,55 @@ class JsonPerformancePort:
             },
             "recent_surface": list(recent_history[-3:]),
         }
-        messages = [
-            {
-                "role": "system",
-                "content": (
-                    "You are the observable performance stage of a stateful NPC. "
-                    "Return JSON only with action, speech, addressee, attention_target, "
-                    "gaze, blocking, posture_change, delivery, physical_residue, "
-                    "observable_outcome, response_hook. Use only supplied facts and "
-                    "authorized actions. Do not explain psychology or add facts."
-                ),
-            },
-            {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
-        ]
-        raw = self.complete(messages, "realization")
-        try:
-            data = _extract_object(raw)
-            delivery = data.get("delivery", {})
-            if not isinstance(delivery, Mapping):
-                delivery = {}
-            draft = PerformanceDraft(
-                actor_id=intent.actor_id,
-                action=_text(data, "action"),
-                speech=_text(data, "speech"),
-                addressee=_text(data, "addressee") or intent.target,
-                attention_target=_text(data, "attention_target"),
-                gaze=_text(data, "gaze"),
-                blocking=_text(data, "blocking"),
-                posture_change=_text(data, "posture_change"),
-                delivery=Delivery(
-                    pace=_text(delivery, "pace"),
-                    volume=_text(delivery, "volume"),
-                    breath=_text(delivery, "breath"),
-                    articulation=_text(delivery, "articulation"),
-                    pause=_text(delivery, "pause"),
-                    vocal_target=_text(delivery, "vocal_target"),
-                ),
-                physical_residue=_text(data, "physical_residue"),
-                observable_outcome=tuple(_texts(data.get("observable_outcome"))),
-                response_hook=_text(data, "response_hook") or intent.response_hook,
-            )
-            if not draft.action and not draft.speech:
-                raise PerformanceModelError("performance must contain action or speech")
-            return draft
-        except (KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
-            raise PerformanceModelError("invalid performance JSON") from exc
+        feedback = ""
+        for _ in range(self.max_attempts):
+            messages = [
+                {
+                    "role": "system",
+                    "content": (
+                        "You are the observable performance stage of one stateful NPC. Return exactly one JSON object "
+                        "with action, speech, addressee, attention_target, gaze, blocking, posture_change, delivery, "
+                        "physical_residue, observable_outcome, response_hook. Use only supplied facts and authorized actions. "
+                        "Continue the person's existing physical task instead of attaching a symbolic gesture to every line. "
+                        "Speech is locally sufficient for the person in front of them, not a complete explanation of the scene. "
+                        "Allow interruption, self-correction, mis-timing, or an unfinished sentence when authorized content supports it. "
+                        "If speech is nonempty, delivery must contain at least one externally audible direction among pace, volume, breath, articulation, pause, vocal_target, chosen to embody the authorized delivery mode without naming emotion. "
+                        "Describe visible body and voice changes, never psychology labels. Preserve observable_outcome and response_hook exactly."
+                    ),
+                },
+                {"role": "user", "content": json.dumps({**payload, "validation_feedback": feedback}, ensure_ascii=False)},
+            ]
+            raw = self.complete(messages, "realization")
+            try:
+                data = _extract_object(raw)
+                delivery = data.get("delivery", {})
+                if not isinstance(delivery, Mapping):
+                    delivery = {}
+                draft = PerformanceDraft(
+                    actor_id=intent.actor_id,
+                    action=_text(data, "action"),
+                    speech=_text(data, "speech"),
+                    addressee=_text(data, "addressee") or intent.target,
+                    attention_target=_text(data, "attention_target"),
+                    gaze=_text(data, "gaze"),
+                    blocking=_text(data, "blocking"),
+                    posture_change=_text(data, "posture_change"),
+                    delivery=Delivery(
+                        pace=_text(delivery, "pace"), volume=_text(delivery, "volume"),
+                        breath=_text(delivery, "breath"), articulation=_text(delivery, "articulation"),
+                        pause=_text(delivery, "pause"), vocal_target=_text(delivery, "vocal_target"),
+                    ),
+                    physical_residue=_text(data, "physical_residue"),
+                    observable_outcome=tuple(_texts(data.get("observable_outcome"))),
+                    response_hook=_text(data, "response_hook") or intent.response_hook,
+                )
+                if not draft.action and not draft.speech:
+                    raise PerformanceModelError("performance must contain action or speech")
+                draft.validate(intent, outcome)
+                return draft
+            except (KeyError, TypeError, ValueError, json.JSONDecodeError, PerformanceModelError) as exc:
+                feedback = f"Protocol validation failed: {exc}. Correct the JSON without changing intent, outcome, or scene facts."
+        raise PerformanceModelError(feedback or "invalid performance JSON")
 
 
 def _extract_object(raw: str) -> dict[str, Any]:

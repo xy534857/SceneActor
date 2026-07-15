@@ -29,8 +29,16 @@ from .model import FallbackModel, ModelAttempt, OmpCliCompletion, OpenAICompatib
 from .cognition import CognitionModelError, JsonCognitionPort
 from .performance import JsonPerformancePort, PerformanceModelError
 from .governance import GovernanceFinding, scan_semantic_hardcode
+from .evaluation import EvaluatedPerformance, FullBehaviorEvaluator
 from .rehearsal import ActorSetup, RehearsalRun, SceneSetup, create_rehearsal
-from .review import BlindReviewer, BlindReview, StructuralIssue, StructuralValidator
+from .review import (
+    BlindReviewer,
+    BlindReview,
+    JsonBlindReviewPort,
+    JsonCounterfactualReviewPort,
+    StructuralIssue,
+    StructuralValidator,
+)
 
 __all__ = [
     "ActionCommand",
@@ -62,12 +70,16 @@ __all__ = [
     "BlindReviewer",
     "BlindReview",
     "CognitionPort",
+    "JsonBlindReviewPort",
+    "JsonCounterfactualReviewPort",
     "CognitionModelError",
     "JsonCognitionPort",
     "FallbackModel",
     "GovernanceFinding",
     "OmpCliCompletion",
     "OpenAICompatibleCompletion",
+    "EvaluatedPerformance",
+    "FullBehaviorEvaluator",
     "InMemorySceneHost",
     "JsonPerformancePort",
     "ModelAttempt",

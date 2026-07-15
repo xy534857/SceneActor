@@ -210,6 +210,17 @@ class PerformancePolicy:
         _require_refs(self.grounded_refs, evidence, "policy")
         for atom in self.disclose:
             _require_refs(atom.evidence_refs, evidence, "speech atom")
+            private_behavior_refs = (
+                "S.identity.values",
+                "S.identity.preferences",
+                "S.identity.voice",
+            )
+            if any(
+                reference == prefix or reference.startswith(prefix + ".")
+                for reference in atom.evidence_refs
+                for prefix in private_behavior_refs
+            ):
+                raise ValueError("values, preferences, and voice may shape policy but cannot authorize speech content")
         if self.action_request.action_kind == "speak" and not self.disclose:
             raise ValueError("speak action requires at least one speech atom")
         if self.interaction_move not in INTERACTION_MOVES:
@@ -415,6 +426,9 @@ class Delivery:
     pause: str = ""
     vocal_target: str = ""
 
+    def has_audible_direction(self) -> bool:
+        return any((self.pace, self.volume, self.breath, self.articulation, self.pause, self.vocal_target))
+
 
 @dataclass(frozen=True)
 class PerformanceDraft:
@@ -442,6 +456,8 @@ class PerformanceDraft:
             raise ValueError("performance contains an unauthorized action")
         if tuple(self.observable_outcome) != tuple(outcome.observable_facts):
             raise ValueError("performance must preserve the host observable outcome")
+        if self.speech and not self.delivery.has_audible_direction():
+            raise ValueError("spoken performance requires at least one audible delivery direction")
 
 
 @dataclass(frozen=True)
