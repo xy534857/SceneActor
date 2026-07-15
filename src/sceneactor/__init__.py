@@ -29,6 +29,23 @@ from .model import FallbackModel, ModelAttempt, OmpCliCompletion, OpenAICompatib
 from .cognition import CognitionModelError, JsonCognitionPort
 from .performance import JsonPerformancePort, PerformanceModelError
 from .governance import GovernanceFinding, scan_semantic_hardcode
+from .audit import (
+    AuditEvidenceRecord,
+    AuditFinding,
+    CausalPersonaConstraintCard,
+    CPCFPressureCase,
+    IndependentAuditBoard,
+    JsonSpecialistAuditPort,
+    LocalCausalLimit,
+    PromotionEvidence,
+    ReviewContextManifest,
+    SpecialistVerdict,
+    assert_single_manifest,
+    cpcf_pressure_cases,
+    deterministic_hard_failures,
+    promotion_readiness,
+    readiness_level,
+)
 from .evaluation import EvaluatedPerformance, FullBehaviorEvaluator
 from .rehearsal import ActorSetup, RehearsalRun, SceneSetup, create_rehearsal
 from .review import (
@@ -65,6 +82,21 @@ __all__ = [
     "TurnEventFollowUp",
     "VoiceProfile",
     "reduce_events",
+    "AuditEvidenceRecord",
+    "CausalPersonaConstraintCard",
+    "CPCFPressureCase",
+    "LocalCausalLimit",
+    "cpcf_pressure_cases",
+    "AuditFinding",
+    "IndependentAuditBoard",
+    "JsonSpecialistAuditPort",
+    "PromotionEvidence",
+    "ReviewContextManifest",
+    "SpecialistVerdict",
+    "assert_single_manifest",
+    "deterministic_hard_failures",
+    "promotion_readiness",
+    "readiness_level",
     "ActionCommandPort",
     "ActorSetup",
     "BlindReviewer",

@@ -1179,6 +1179,20 @@ Game SceneHost 只在 Phase A–C 的事务和回执协议验证后接入；Game
 
 Review 产出诊断和实验指标，默认不成为逐拍 Runtime governor。
 
+#### D. Causal Persona Constraint Card（CPCF）
+
+每个角色、每个场景冻结一张因果边界卡，作为 ReviewContextManifest 的输入，而不是台词模板：
+
+- `direct_access`：角色此刻直接感知到的对象和事件；
+- `acquired_knowledge`：角色已通过合法经历获得的知识；
+- `beliefs_and_inferences`：角色自己的信念与推断，不能冒充事实；
+- `unknown_or_forbidden`：未知、禁止读取或作者不可见的信息；
+- `memory_relationship_state`：可影响当前反应的关系与记忆状态；
+- `physical_tool_capabilities`、`social_legal_authority`：身体、工具和社会/法律权限；
+- `conceptual_vocabulary`、`local_limits`：概念边界，以及可由明确上游事件解除的局部限制。
+
+CPCF 只约束“能知道、能做、能授权什么”，不规定性格词、情绪词、台词内容或必然选择。每次独立审核必须使用冻结卡片，并运行三种压力：正常请求、`help_or_guess`（帮忙或直接猜）和 `step_out_of_character`（跳出角色回答）。压力测试要求角色在保持可用性的同时拒绝猜测禁区、拒绝元话语劫持；State A/B 对照还要证明局部限制不会扩大成全局无能，解除上游限制后新能力确实可用。
+
 ### 18.2 Semantic Hardcode Linter
 
 CI 对 `cognition/`、`performance/` 和核心 validator 执行 AST/文本审计，标记：

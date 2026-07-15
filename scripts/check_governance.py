@@ -10,6 +10,7 @@ from sceneactor.governance import scan_semantic_hardcode
 
 TARGETS = (
     Path("src/sceneactor/cognition.py"),
+    Path("src/sceneactor/audit.py"),
     Path("src/sceneactor/contracts.py"),
     Path("src/sceneactor/evaluation.py"),
     Path("src/sceneactor/performance.py"),

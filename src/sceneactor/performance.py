@@ -70,6 +70,8 @@ class JsonPerformancePort:
                         "Continue the person's existing physical task instead of attaching a symbolic gesture to every line. "
                         "Speech is locally sufficient for the person in front of them, not a complete explanation of the scene. "
                         "Allow interruption, self-correction, mis-timing, or an unfinished sentence when authorized content supports it. "
+                        "Action, blocking, posture_change, and physical_residue must describe one physically compatible simultaneous end state. "
+                        "When several limbs differ, identify left/right or one/the other; never say both arms are down while a hand or finger remains at an object. "
                         "If speech is nonempty, delivery must contain at least one externally audible direction among pace, volume, breath, articulation, pause, vocal_target, chosen to embody the authorized delivery mode without naming emotion. "
                         "Describe visible body and voice changes, never psychology labels. Preserve observable_outcome and response_hook exactly."
                     ),
