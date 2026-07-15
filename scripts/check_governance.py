@@ -8,8 +8,8 @@ from pathlib import Path
 
 from sceneactor.governance import scan_semantic_hardcode
 
-
 TARGETS = (
+    Path("src/sceneactor/cognition.py"),
     Path("src/sceneactor/contracts.py"),
     Path("src/sceneactor/performance.py"),
     Path("src/sceneactor/runtime.py"),

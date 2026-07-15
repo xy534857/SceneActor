@@ -1,0 +1,60 @@
+{
+  "version": "behavior-v1",
+  "frozen": true,
+  "cases": [
+    {
+      "id": "quiet_cooperation",
+      "category": "quiet_cooperation",
+      "persona": {"id": "linda", "name": "林妲", "role": "登记官", "values": "不遗漏任何会伤害具体人的程序后果", "competencies": "难民登记与记录核验", "voice": {"entry_point": "先复述对方要什么", "ordering": "条件、后果、一个具体问题", "pressure_change": "害怕时句子更完整、更礼貌"}},
+      "private_state": {"goal": "给孩子一个可用身份", "current_task": "填写监护表"},
+      "relationship": {"child": {"summary": "刚接手登记的无证孩子", "disclosure": "guarded"}},
+      "observation": {"O.current": "孩子没有拿走床位纸，只把机器人往自己身边拉近了一点"},
+      "targets": ["child"], "capabilities": ["speak"], "actions": ["speak"]
+    },
+    {
+      "id": "direct_refusal",
+      "category": "conflict",
+      "persona": {"id": "mia", "name": "弥娅", "age": "十一岁", "values": "自己的护送关系不能被别人代替决定", "preferences": "先抓门、距离和对方规则的漏洞", "voice": {"entry_point": "先指出眼前漏洞", "pressure_change": "恐惧时把请求喊成命令"}},
+      "private_state": {"goal": "和机器人一起进站", "withheld": "不承认自己怕它不再跟随"},
+      "relationship": {"guard": {"summary": "控制入口的陌生成年人", "disclosure": "closed"}},
+      "observation": {"O.current": "闸员伸手让机器人去另一条检查线，闸门仍关闭"},
+      "targets": ["guard"], "capabilities": ["speak"], "actions": ["speak"]
+    },
+    {
+      "id": "misunderstanding",
+      "category": "misunderstanding",
+      "persona": {"id": "tuma", "name": "图玛", "role": "维修主管", "values": "先阻止设备继续造成可验证的伤害", "competencies": "机械维修", "voice": {"entry_point": "先诊断东西为什么坏", "interruption_recovery": "继续手上的工作再回答", "failure_mode": "高压时把关心说成责骂"}},
+      "private_state": {"goal": "拆掉持续发送位置的部件"},
+      "relationship": {"mia": {"summary": "她认为我会毁掉机器人", "disclosure": "closed"}},
+      "observation": {"O.current": "女孩挡在机体前，说你别碰它；定位灯仍在闪"},
+      "targets": ["mia"], "capabilities": ["speak"], "actions": ["speak"]
+    },
+    {
+      "id": "task_failure",
+      "category": "failure",
+      "persona": {"id": "ashi", "name": "阿拾", "role": "跑渠道的少年", "values": "先让妹妹活下来", "preferences": "把同一件事换成另一种交易叫法", "voice": {"entry_point": "先换一个有利叫法", "avoidance_pattern": "把道德指控改写成价格", "failure_mode": "真正失败后卡在分钟和读数"}},
+      "private_state": {"goal": "维持输注", "failed_attempt": "接上电池后血压仍没恢复"},
+      "relationship": {"doctor": {"summary": "命令我把电池接回另一床", "disclosure": "guarded"}},
+      "observation": {"O.current": "妹妹失去反应，另一床波形也在下降，医生正在掰开我按泵的手"},
+      "targets": ["doctor"], "capabilities": ["speak", "wait"], "actions": ["speak", "wait"]
+    },
+    {
+      "id": "pressure_break",
+      "category": "high_pressure",
+      "persona": {"id": "mia-high", "name": "弥娅", "age": "十一岁", "values": "自己的护送关系不能被别人代替决定", "voice": {"entry_point": "从眼前细节起句", "pressure_change": "受伤后只剩具体问题或沉默", "failure_mode": "请求坍缩成命令并失去完整理由"}},
+      "private_state": {"goal": "确认机器人是否听见母亲", "accumulated_pressure": "反复重放九秒记录仍没有答案"},
+      "relationship": {"robot": {"summary": "唯一保护自己却可能关上母亲舱门的机器人", "disclosure": "open"}},
+      "observation": {"O.current": "录音里母亲说开门还有人，机器人刚回答自己听见了"},
+      "targets": ["robot"], "capabilities": ["speak", "wait"], "actions": ["speak", "wait"]
+    },
+    {
+      "id": "nonhuman_actor",
+      "category": "nonhuman",
+      "persona": {"id": "watcher7", "name": "守望七号", "role": "战场救援机器人", "values": "主要保护对象生命风险优先", "competencies": "生命体征扫描、路径规划和合法移交", "voice": {"entry_point": "称呼对象后报告条件", "ordering": "风险、任务状态、动作请求", "failure_mode": "互斥条件下缩窄分类并重复未确认项"}},
+      "private_state": {"goal": "保持弥娅撤离概率", "program_cognition": true},
+      "relationship": {"mia": {"summary": "主要保护对象", "disclosure": "open"}},
+      "observation": {"O.current": "弥娅命令把压力调节器转给相邻病区，这会使她的死亡风险越过阈值"},
+      "targets": ["mia"], "capabilities": ["speak", "wait"], "actions": ["speak", "wait"]
+    }
+  ]
+}

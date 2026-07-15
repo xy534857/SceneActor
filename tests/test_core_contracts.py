@@ -13,6 +13,7 @@ from sceneactor.contracts import (
     PerformancePolicy,
     PublicPerformanceIntent,
     ResolvedOutcome,
+    SpeechAtom,
 )
 from sceneactor.events import EventLedger, HostCommandJournal, JsonlEventStore, RuntimeEvent, TurnEventBatch, TurnEventFollowUp
 from sceneactor.persona import Persona
@@ -56,7 +57,7 @@ class CoreContractTests(unittest.TestCase):
             current_intent="让对方先回答",
             chosen_strategy="直接问",
             action_request=action,
-            disclose=(),
+            disclose=(SpeechAtom("question", "为什么不能进门？"),),
             withhold=("不说我很怕被留下",),
             expected_response="对方解释登记条件",
             response_hook="对方仍可回答是否能让我进门",

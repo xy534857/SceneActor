@@ -161,6 +161,11 @@ class ActionIntent:
         for key, choices in contract.argument_choices.get(self.action_kind, {}).items():
             if self.arguments.get(key) not in choices:
                 raise ValueError(f"invalid action argument: {key}")
+        allowed_arguments = set(contract.required_arguments.get(self.action_kind, ()))
+        allowed_arguments.update(contract.argument_choices.get(self.action_kind, {}))
+        unknown_arguments = set(self.arguments) - allowed_arguments
+        if unknown_arguments:
+            raise ValueError(f"unsupported action arguments: {sorted(unknown_arguments)}")
         _require_refs(self.grounded_refs, frame.evidence(), "action")
 
 
@@ -205,6 +210,8 @@ class PerformancePolicy:
         _require_refs(self.grounded_refs, evidence, "policy")
         for atom in self.disclose:
             _require_refs(atom.evidence_refs, evidence, "speech atom")
+        if self.action_request.action_kind == "speak" and not self.disclose:
+            raise ValueError("speak action requires at least one speech atom")
         if self.interaction_move not in INTERACTION_MOVES:
             raise ValueError(f"invalid interaction move: {self.interaction_move}")
         if self.delivery_mode not in DELIVERY_MODES:

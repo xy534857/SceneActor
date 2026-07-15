@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import json
 import os
+import subprocess
 from typing import Any, Callable, Protocol
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -82,3 +83,50 @@ class OpenAICompatibleCompletion:
         if not isinstance(content, str) or not content.strip():
             raise RuntimeError("model gateway returned empty content")
         return content
+
+
+class OmpCliCompletion:
+    """Invoke the configured OMP provider/model registry in noninteractive mode."""
+
+    def __init__(self, executable: str = "omp", thinking: str = "high", timeout: float = 180.0) -> None:
+        self.executable = executable
+        self.thinking = thinking
+        self.timeout = timeout
+
+    def __call__(self, messages: list[dict[str, str]], purpose: str, model: str) -> str:
+        del purpose
+        system = "\n\n".join(item["content"] for item in messages if item.get("role") == "system")
+        conversation = "\n\n".join(
+            f"{item.get('role', 'user').upper()}: {item.get('content', '')}"
+            for item in messages if item.get("role") != "system"
+        )
+        command = [
+            self.executable,
+            "-p",
+            "--no-tools",
+            "--no-session",
+            "--no-title",
+            "--model",
+            model,
+            "--thinking",
+            self.thinking,
+        ]
+        if system:
+            command.extend(("--system-prompt", system))
+        command.append(conversation)
+        try:
+            completed = subprocess.run(
+                command,
+                capture_output=True,
+                text=True,
+                timeout=self.timeout,
+                check=False,
+            )
+        except (OSError, subprocess.TimeoutExpired) as exc:
+            raise RuntimeError(f"OMP model invocation failed: {exc}") from exc
+        if completed.returncode != 0:
+            detail = completed.stderr.strip() or completed.stdout.strip()
+            raise RuntimeError(f"OMP model invocation failed ({completed.returncode}): {detail[:500]}")
+        if not completed.stdout.strip():
+            raise RuntimeError("OMP model invocation returned empty content")
+        return completed.stdout.strip()

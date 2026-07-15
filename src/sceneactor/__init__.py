@@ -25,7 +25,8 @@ from .persona import Persona, VoiceProfile
 from .reducers import RuntimeState, SceneState, reduce_events
 from .hosts import InMemorySceneHost
 from .runtime import ActionCommandPort, CognitionPort, PerformancePort, TurnOrchestrator, TurnResult
-from .model import FallbackModel, ModelAttempt, configured_fallback
+from .model import FallbackModel, ModelAttempt, OmpCliCompletion, OpenAICompatibleCompletion, configured_fallback
+from .cognition import CognitionModelError, JsonCognitionPort
 from .performance import JsonPerformancePort, PerformanceModelError
 from .governance import GovernanceFinding, scan_semantic_hardcode
 from .rehearsal import ActorSetup, RehearsalRun, SceneSetup, create_rehearsal
@@ -61,8 +62,12 @@ __all__ = [
     "BlindReviewer",
     "BlindReview",
     "CognitionPort",
+    "CognitionModelError",
+    "JsonCognitionPort",
     "FallbackModel",
     "GovernanceFinding",
+    "OmpCliCompletion",
+    "OpenAICompatibleCompletion",
     "InMemorySceneHost",
     "JsonPerformancePort",
     "ModelAttempt",

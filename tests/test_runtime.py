@@ -14,6 +14,7 @@ from sceneactor.contracts import (
     PerformancePolicy,
     ResolvedOutcome,
     WorldMutation,
+    SpeechAtom,
 )
 from sceneactor.hosts import InMemorySceneHost
 from sceneactor.runtime import TurnOrchestrator
@@ -51,7 +52,7 @@ class FakeCognition:
             current_intent="让对方回答",
             chosen_strategy="直接问",
             action_request=ActionIntent("speak", "guard", {}, (), ("O.current",)),
-            disclose=(),
+            disclose=(SpeechAtom("question", "你先告诉我，为什么不能进去？"),),
             withhold=("不说自己其实很急",),
             expected_response="对方给出理由",
             response_hook="对方仍可回答为什么不让我进",
