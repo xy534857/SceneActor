@@ -26,6 +26,9 @@ from .hosts import InMemorySceneHost
 from .runtime import ActionCommandPort, CognitionPort, PerformancePort, TurnOrchestrator, TurnResult
 from .model import FallbackModel, ModelAttempt, configured_fallback
 from .performance import JsonPerformancePort, PerformanceModelError
+from .governance import GovernanceFinding, scan_semantic_hardcode
+from .rehearsal import ActorSetup, RehearsalRun, SceneSetup, create_rehearsal
+from .review import BlindReviewer, BlindReview, StructuralIssue, StructuralValidator
 
 __all__ = [
     "ActionCommand",
@@ -52,14 +55,24 @@ __all__ = [
     "VoiceProfile",
     "reduce_events",
     "ActionCommandPort",
+    "ActorSetup",
+    "BlindReviewer",
+    "BlindReview",
     "CognitionPort",
     "FallbackModel",
+    "GovernanceFinding",
     "InMemorySceneHost",
     "JsonPerformancePort",
     "ModelAttempt",
     "PerformanceModelError",
     "PerformancePort",
+    "RehearsalRun",
+    "SceneSetup",
+    "StructuralIssue",
+    "StructuralValidator",
     "TurnOrchestrator",
     "TurnResult",
     "configured_fallback",
+    "create_rehearsal",
+    "scan_semantic_hardcode",
 ]
