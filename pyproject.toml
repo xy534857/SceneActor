@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sceneactor"
+version = "0.1.0"
+description = "Host-independent AI NPC cognition and performance runtime"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "SceneActor" }]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
