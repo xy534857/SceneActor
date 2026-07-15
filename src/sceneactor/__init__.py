@@ -22,6 +22,10 @@ from .contracts import (
 from .events import EventLedger, JsonlEventStore, RuntimeEvent, TurnEventBatch, TurnEventFollowUp
 from .persona import Persona, VoiceProfile
 from .reducers import RuntimeState, SceneState, reduce_events
+from .hosts import InMemorySceneHost
+from .runtime import ActionCommandPort, CognitionPort, PerformancePort, TurnOrchestrator, TurnResult
+from .model import FallbackModel, ModelAttempt, configured_fallback
+from .performance import JsonPerformancePort, PerformanceModelError
 
 __all__ = [
     "ActionCommand",
@@ -47,4 +51,15 @@ __all__ = [
     "TurnEventFollowUp",
     "VoiceProfile",
     "reduce_events",
+    "ActionCommandPort",
+    "CognitionPort",
+    "FallbackModel",
+    "InMemorySceneHost",
+    "JsonPerformancePort",
+    "ModelAttempt",
+    "PerformanceModelError",
+    "PerformancePort",
+    "TurnOrchestrator",
+    "TurnResult",
+    "configured_fallback",
 ]
