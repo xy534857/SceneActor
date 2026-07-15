@@ -14,6 +14,7 @@ _IMPACT_STEP = {"minor": 0.08, "moderate": 0.2, "major": 0.4}
 class RuntimeState:
     actor_id: str
     emotions: dict[str, float] = field(default_factory=dict)
+    last_appraisal: dict[str, Any] = field(default_factory=dict)
     relationships: dict[str, dict[str, Any]] = field(default_factory=dict)
     goals: dict[str, dict[str, Any]] = field(default_factory=dict)
     commitments: dict[str, dict[str, Any]] = field(default_factory=dict)
@@ -74,6 +75,9 @@ def reduce_events(
 
 def _reduce_actor(state: RuntimeState, event: RuntimeEvent) -> bool:
     payload = event.payload
+    if event.kind == "npc.appraisal_committed":
+        state.last_appraisal = dict(payload)
+        return True
     if event.kind == "npc.emotion_changed":
         emotion = str(payload["emotion"])
         impact = str(payload["impact"])

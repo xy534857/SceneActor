@@ -8,6 +8,7 @@ from uuid import uuid4
 
 from .contracts import DecisionContract, DecisionFrame
 from .hosts import InMemorySceneHost
+from .events import EventLedger
 from .persona import Persona
 from .reducers import RuntimeState
 from .runtime import CognitionPort, PerformancePort, TurnOrchestrator, TurnResult
@@ -53,6 +54,7 @@ class RehearsalRun:
     host: InMemorySceneHost
     cognition: Mapping[str, CognitionPort]
     performance: PerformancePort
+    ledger: EventLedger = field(default_factory=EventLedger)
     turns: list[TurnResult] = field(default_factory=list)
     active_actor_index: int = 0
     actor_revisions: dict[str, int] = field(default_factory=dict)
@@ -108,6 +110,8 @@ class RehearsalRun:
             host=self.host,
             cognition=self.cognition[actor.persona.id],
             performance=self.performance,
+            ledger=self.ledger,
+            initial_order=len(self.turns),
         )
         result = orchestrator.run_turn(
             frame=frame,

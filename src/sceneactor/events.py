@@ -96,6 +96,7 @@ class TurnEventBatch:
     lifecycle: str
     performance_status: str
     completion_reason: str
+    public_performance_intent: Mapping[str, Any]
     events: tuple[RuntimeEvent, ...]
     immutable_content_hash: str
 
@@ -113,6 +114,7 @@ class TurnEventBatch:
         lifecycle: str,
         performance_status: str,
         events: Iterable[RuntimeEvent],
+        public_performance_intent: Mapping[str, Any] | None = None,
         completion_reason: str = "",
     ) -> "TurnEventBatch":
         items = tuple(events)
@@ -130,6 +132,7 @@ class TurnEventBatch:
             "host_receipt": dict(host_receipt),
             "lifecycle": lifecycle,
             "performance_status": performance_status,
+            "public_performance_intent": dict(public_performance_intent or {}),
             "completion_reason": completion_reason,
             "events": [item.to_dict() for item in items],
         }
@@ -153,6 +156,7 @@ class TurnEventBatch:
             host_receipt=dict(data.get("host_receipt", {})),
             lifecycle=str(data["lifecycle"]),
             performance_status=str(data["performance_status"]),
+            public_performance_intent=dict(data.get("public_performance_intent", {})),
             completion_reason=str(data.get("completion_reason", "")),
             events=tuple(RuntimeEvent.from_dict(item) for item in data.get("events", [])),
             immutable_content_hash=str(data["immutable_content_hash"]),
@@ -171,7 +175,9 @@ class TurnEventFollowUp:
     branch_id: str
     idempotency_key: str
     expected_batch_status: str
+    lifecycle_status: str
     performance_status: str
+    host_receipt: Mapping[str, Any]
     events: tuple[RuntimeEvent, ...]
     immutable_content_hash: str
 
@@ -183,20 +189,26 @@ class TurnEventFollowUp:
         parent_batch_id: str,
         branch_id: str,
         expected_batch_status: str,
+        lifecycle_status: str,
         performance_status: str,
         events: Iterable[RuntimeEvent],
+        host_receipt: Mapping[str, Any] | None = None,
     ) -> "TurnEventFollowUp":
         items = tuple(events)
-        if expected_batch_status != "performance_pending":
-            raise ValueError("performance follow-up requires a pending parent")
-        if performance_status not in {"complete", "failed"}:
-            raise ValueError("follow-up performance status must be terminal")
+        if expected_batch_status not in {"host_pending", "performance_pending"}:
+            raise ValueError("follow-up requires a recoverable parent state")
+        if lifecycle_status not in {"performance_pending", "committed", "failed"}:
+            raise ValueError("invalid follow-up lifecycle state")
+        if performance_status not in {"pending", "complete", "failed"}:
+            raise ValueError("invalid follow-up performance status")
         body = {
             "follow_up_id": follow_up_id,
             "parent_batch_id": parent_batch_id,
             "branch_id": branch_id,
             "expected_batch_status": expected_batch_status,
+            "lifecycle_status": lifecycle_status,
             "performance_status": performance_status,
+            "host_receipt": dict(host_receipt or {}),
             "events": [event.to_dict() for event in items],
         }
         return cls(
@@ -214,7 +226,9 @@ class TurnEventFollowUp:
             branch_id=str(data["branch_id"]),
             idempotency_key=str(data["idempotency_key"]),
             expected_batch_status=str(data["expected_batch_status"]),
+            lifecycle_status=str(data["lifecycle_status"]),
             performance_status=str(data["performance_status"]),
+            host_receipt=dict(data.get("host_receipt", {})),
             events=tuple(RuntimeEvent.from_dict(item) for item in data.get("events", [])),
             immutable_content_hash=str(data["immutable_content_hash"]),
         )
@@ -263,7 +277,7 @@ class EventLedger:
             parent = self._batches.get((follow_up.branch_id, follow_up.parent_batch_id))
             if parent is None:
                 raise ValueError("follow-up parent batch does not exist")
-            if parent.lifecycle != follow_up.expected_batch_status:
+            if self.batch_status(follow_up.branch_id, follow_up.parent_batch_id) != follow_up.expected_batch_status:
                 raise ValueError("follow-up parent is not in expected state")
             self._follow_ups[key] = follow_up
             self._events.extend(follow_up.events)
@@ -279,12 +293,12 @@ class EventLedger:
         batch = self._batches.get((branch_id, batch_id))
         if batch is None:
             raise ValueError("unknown batch")
-        completed = any(
-            item.parent_batch_id == batch_id and item.performance_status == "complete"
+        follow_ups = [
+            item
             for (candidate_branch, _), item in self._follow_ups.items()
-            if candidate_branch == branch_id
-        )
-        return "committed" if completed else batch.lifecycle
+            if candidate_branch == branch_id and item.parent_batch_id == batch_id
+        ]
+        return follow_ups[-1].lifecycle_status if follow_ups else batch.lifecycle
 
 
 class JsonlEventStore:

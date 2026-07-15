@@ -18,6 +18,7 @@ from .contracts import (
     PerformancePolicy,
     PublicPerformanceIntent,
     ResolvedOutcome,
+    WorldMutation,
 )
 from .events import EventLedger, JsonlEventStore, RuntimeEvent, TurnEventBatch, TurnEventFollowUp
 from .persona import Persona, VoiceProfile
@@ -47,6 +48,7 @@ __all__ = [
     "Persona",
     "PublicPerformanceIntent",
     "ResolvedOutcome",
+    "WorldMutation",
     "RuntimeEvent",
     "RuntimeState",
     "SceneState",

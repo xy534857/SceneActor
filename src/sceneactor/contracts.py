@@ -260,6 +260,65 @@ class PublicPerformanceIntent:
             evidence_anchors=anchors,
         )
 
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "actor_id": self.actor_id,
+            "target": self.target,
+            "interaction_move": self.interaction_move,
+            "authorized_action": asdict(self.authorized_action),
+            "speech_atoms": [asdict(atom) for atom in self.speech_atoms],
+            "delivery_mode": self.delivery_mode,
+            "visible_cost_signal": self.visible_cost_signal,
+            "response_hook": self.response_hook,
+            "disposition": self.disposition,
+            "evidence_anchors": dict(self.evidence_anchors),
+        }
+
+    @classmethod
+    def from_dict(cls, data: Mapping[str, Any]) -> "PublicPerformanceIntent":
+        action = data.get("authorized_action", {})
+        if not isinstance(action, Mapping):
+            raise ValueError("authorized_action must be an object")
+        atoms = data.get("speech_atoms", [])
+        if not isinstance(atoms, list):
+            raise ValueError("speech_atoms must be an array")
+        return cls(
+            actor_id=str(data.get("actor_id", "")),
+            target=str(data.get("target", "")),
+            interaction_move=str(data.get("interaction_move", "")),
+            authorized_action=ActionIntent(
+                action_kind=str(action.get("action_kind", "")),
+                target=str(action.get("target", "")),
+                arguments=dict(action.get("arguments", {})),
+                required_capabilities=tuple(str(item) for item in action.get("required_capabilities", [])),
+                grounded_refs=tuple(str(item) for item in action.get("grounded_refs", [])),
+            ),
+            speech_atoms=tuple(
+                SpeechAtom(
+                    kind=str(item.get("kind", "")),
+                    text=str(item.get("text", "")),
+                    evidence_refs=tuple(str(ref) for ref in item.get("evidence_refs", [])),
+                )
+                for item in atoms if isinstance(item, Mapping)
+            ),
+            delivery_mode=str(data.get("delivery_mode", "")),
+            visible_cost_signal=str(data.get("visible_cost_signal", "")),
+            response_hook=str(data.get("response_hook", "")),
+            disposition=str(data.get("disposition", "")),
+            evidence_anchors=dict(data.get("evidence_anchors", {})),
+        )
+@dataclass(frozen=True)
+class WorldMutation:
+    location: str = ""
+    ownership: Mapping[str, str] = field(default_factory=dict)
+    access: Mapping[str, str] = field(default_factory=dict)
+    injuries: Mapping[str, str] = field(default_factory=dict)
+    participation: Mapping[str, str] = field(default_factory=dict)
+    task_evidence: tuple[str, ...] = ()
+    equipment: Mapping[str, Mapping[str, Any]] = field(default_factory=dict)
+
+
+
 
 @dataclass(frozen=True)
 class ActionCommand:
@@ -316,6 +375,7 @@ class ResolvedOutcome:
     error: str = ""
     costs: tuple[str, ...] = ()
     evidence_refs: tuple[str, ...] = ()
+    mutation: WorldMutation = field(default_factory=WorldMutation)
 
     def __post_init__(self) -> None:
         if self.status not in {"succeeded", "failed", "partial", "deferred"}:

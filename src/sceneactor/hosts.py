@@ -18,6 +18,7 @@ class InMemorySceneHost:
     revision: int = 0
     outcomes: dict[str, ResolvedOutcome] = field(default_factory=dict)
     received: list[str] = field(default_factory=list)
+    receipts: dict[str, HostReceipt] = field(default_factory=dict)
 
     def observe(self, actor_id: str) -> ObservationView:
         del actor_id
@@ -33,14 +34,23 @@ class InMemorySceneHost:
         if command.command_id in self.received:
             return self.query(command.command_id)
         if command.expected_scene_revision != self.revision:
-            return HostReceipt(
+            outcome = ResolvedOutcome(
+                status="failed",
+                action_kind=command.action_kind,
+                observable_facts=("动作未执行：场景状态已经变化",),
+                error="scene revision conflict",
+            )
+            receipt = HostReceipt(
                 command_id=command.command_id,
                 status="failed",
                 host_operation_id=f"op:{command.command_id}",
                 scene_revision_before=self.revision,
                 scene_revision_after=self.revision,
-                error="scene revision conflict",
+                outcome=outcome,
+                error=outcome.error,
             )
+            self.receipts[command.command_id] = receipt
+            return receipt
         self.received.append(command.command_id)
         outcome = self.outcomes.get(command.action_kind)
         if outcome is None:
@@ -52,7 +62,7 @@ class InMemorySceneHost:
             )
         before = self.revision
         self.revision += 1
-        return HostReceipt(
+        receipt = HostReceipt(
             command_id=command.command_id,
             status="completed",
             host_operation_id=f"op:{command.command_id}",
@@ -60,28 +70,20 @@ class InMemorySceneHost:
             scene_revision_after=self.revision,
             outcome=outcome,
         )
+        self.receipts[command.command_id] = receipt
+        return receipt
 
     def query(self, command_id: str) -> HostReceipt:
-        if command_id not in self.received:
-            return HostReceipt(
-                command_id=command_id,
-                status="failed",
-                host_operation_id=f"op:{command_id}",
-                scene_revision_before=self.revision,
-                scene_revision_after=self.revision,
-                error="unknown command",
-            )
+        receipt = self.receipts.get(command_id)
+        if receipt is not None:
+            return receipt
         return HostReceipt(
             command_id=command_id,
-            status="completed",
+            status="failed",
             host_operation_id=f"op:{command_id}",
-            scene_revision_before=max(0, self.revision - 1),
+            scene_revision_before=self.revision,
             scene_revision_after=self.revision,
-            outcome=ResolvedOutcome(
-                status="succeeded",
-                action_kind="unknown",
-                observable_facts=("command already completed",),
-            ),
+            error="unknown command",
         )
 
     def cancel(self, command_id: str) -> HostReceipt:

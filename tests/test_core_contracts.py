@@ -120,8 +120,8 @@ class CoreContractTests(unittest.TestCase):
         )
         follow = TurnEventFollowUp.create(
             follow_up_id="f1", parent_batch_id="b1", branch_id="branch",
-            expected_batch_status="performance_pending", performance_status="complete",
-            events=(follow_event,),
+            expected_batch_status="performance_pending", lifecycle_status="committed",
+            performance_status="complete", events=(follow_event,), host_receipt={},
         )
         ledger = EventLedger()
         ledger.append_batch(batch)

@@ -6,12 +6,13 @@ OpenAI-compatible port can share this transaction without changing authority.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from typing import Protocol
 from uuid import uuid4
 
 from .contracts import (
     ActionCommand,
+    Appraisal,
     DecisionFrame,
     HostReceipt,
     PerformanceDraft,
@@ -24,7 +25,7 @@ from .reducers import RuntimeState, SceneState, reduce_events
 
 
 class CognitionPort(Protocol):
-    def decide(self, frame: DecisionFrame) -> tuple[object, PerformancePolicy]: ...
+    def decide(self, frame: DecisionFrame) -> tuple[Appraisal, PerformancePolicy]: ...
 
 
 class PerformancePort(Protocol):
@@ -62,6 +63,7 @@ class TurnOrchestrator:
         cognition: CognitionPort,
         performance: PerformancePort,
         ledger: EventLedger | None = None,
+        initial_order: int = 0,
         journal: HostCommandJournal | None = None,
     ) -> None:
         self.branch_id = branch_id
@@ -70,7 +72,7 @@ class TurnOrchestrator:
         self.performance = performance
         self.ledger = ledger or EventLedger()
         self.journal = journal
-        self._turn_number = 0
+        self._turn_number = initial_order
 
     def run_turn(
         self,
@@ -81,7 +83,7 @@ class TurnOrchestrator:
         scene_id: str,
     ) -> TurnResult:
         appraisal, policy = self.cognition.decide(frame)
-        del appraisal  # appraisal is committed as a separate event below
+        appraisal.validate(frame)
         ppi = PublicPerformanceIntent.from_policy(frame.actor_id, policy, frame)
         command = ActionCommand.from_intent(
             command_id=f"command:{self.branch_id}:{frame.turn_id}:{uuid4().hex[:12]}",
@@ -91,74 +93,47 @@ class TurnOrchestrator:
             expected_scene_revision=scene_revision,
             intent=ppi.authorized_action,
         )
-        if self.journal:
-            self.journal.record(
-                command_id=command.command_id,
-                idempotency_key=command.idempotency_key,
-                branch_id=command.branch_id,
-                turn_id=command.turn_id,
-                actor_id=command.actor_id,
-                immutable_command_hash=command.immutable_command_hash,
-                expected_scene_revision=command.expected_scene_revision,
-                status="prepared",
-            )
+        self._record_command(command, "prepared")
         receipt = self.host.submit(command)
-        if self.journal:
-            self.journal.record(
-                command_id=command.command_id,
-                idempotency_key=command.idempotency_key,
-                branch_id=command.branch_id,
-                turn_id=command.turn_id,
-                actor_id=command.actor_id,
-                immutable_command_hash=command.immutable_command_hash,
-                expected_scene_revision=command.expected_scene_revision,
-                status=receipt.status,
-                host_receipt=_receipt_dict(receipt),
-            )
+        self._record_command(command, receipt.status, receipt)
+        batch_id = f"batch:{self.branch_id}:{frame.turn_id}"
+        appraisal_events = self._appraisal_events(appraisal, frame, batch_id, command.command_id, scene_id)
         if receipt.status == "pending":
-            batch = self._pending_batch(frame, command, receipt, actor_revisions, scene_revision, scene_id)
+            batch = self._pending_batch(
+                frame, command, receipt, actor_revisions, scene_revision, scene_id,
+                appraisal_events, ppi,
+            )
             self.ledger.append_batch(batch)
-            actors, scene = reduce_events(self.ledger.events(self.branch_id), actor_ids=actor_revisions, scene_id=scene_id)
+            actors, scene = self._reduce(actor_revisions, scene_id)
             return TurnResult(batch, receipt, None, actors, scene)
         if receipt.outcome is None:
             raise RuntimeError("terminal Host receipt must contain an outcome")
         outcome = receipt.outcome
+        host_event = self._host_event(frame, batch_id, command.command_id, outcome, scene_id)
         recent = tuple(dict(item) for item in frame.recent_history[-3:])
-        draft = self.performance.realize(ppi, outcome, recent)
-        draft.validate(ppi, outcome)
-        event = RuntimeEvent.create(
-            batch_id=f"batch:{self.branch_id}:{frame.turn_id}",
-            branch_id=self.branch_id,
-            turn_id=frame.turn_id,
-            command_id=command.command_id,
-            kind="performance.committed",
-            actor_id=frame.actor_id,
-            scene_id=scene_id,
-            payload={
-                "action": draft.action,
-                "speech": draft.speech,
-                "observable_outcome": list(draft.observable_outcome),
-                "response_hook": draft.response_hook,
-            },
-            visible_to=tuple(frame.relationships),
-            evidence_refs=tuple(ppi.evidence_anchors),
-            order=self._turn_number,
-        )
-        host_event = RuntimeEvent.create(
-            batch_id=event.batch_id,
-            branch_id=self.branch_id,
-            turn_id=frame.turn_id,
-            command_id=command.command_id,
-            kind="world.action_resolved",
-            actor_id=frame.actor_id,
-            scene_id=scene_id,
-            payload={"outcome": _outcome_dict(outcome)},
-            visible_to=tuple(frame.relationships),
-            evidence_refs=outcome.evidence_refs,
-            order=self._turn_number,
-        )
+        try:
+            draft = self.performance.realize(ppi, outcome, recent)
+            draft.validate(ppi, outcome)
+        except (RuntimeError, ValueError):
+            batch = TurnEventBatch.create(
+                batch_id=batch_id,
+                branch_id=self.branch_id,
+                turn_id=frame.turn_id,
+                command_id=command.command_id,
+                expected_actor_revisions=actor_revisions,
+                expected_scene_revision=scene_revision,
+                host_receipt=_receipt_dict(receipt),
+                lifecycle="performance_pending",
+                performance_status="pending",
+                events=(*appraisal_events, host_event),
+                public_performance_intent=ppi.to_dict(),
+            )
+            self.ledger.append_batch(batch)
+            actors, scene = self._reduce(actor_revisions, scene_id)
+            return TurnResult(batch, receipt, None, actors, scene)
+        performance_event = self._performance_event(frame, batch_id, command.command_id, draft, ppi, scene_id)
         batch = TurnEventBatch.create(
-            batch_id=event.batch_id,
+            batch_id=batch_id,
             branch_id=self.branch_id,
             turn_id=frame.turn_id,
             command_id=command.command_id,
@@ -167,12 +142,70 @@ class TurnOrchestrator:
             host_receipt=_receipt_dict(receipt),
             lifecycle="committed",
             performance_status="complete",
-            events=(host_event, event),
+            events=(*appraisal_events, host_event, performance_event),
+            public_performance_intent=ppi.to_dict(),
         )
         self.ledger.append_batch(batch)
         self._turn_number += 1
-        actors, scene = reduce_events(self.ledger.events(self.branch_id), actor_ids=actor_revisions, scene_id=scene_id)
+        actors, scene = self._reduce(actor_revisions, scene_id)
         return TurnResult(batch, receipt, draft, actors, scene)
+    def resume_pending_host(
+        self,
+        *,
+        frame: DecisionFrame,
+        batch: TurnEventBatch,
+        scene_id: str,
+    ) -> TurnResult:
+        """Query one persisted command and continue without resubmitting it."""
+        if self.ledger.batch_status(batch.branch_id, batch.batch_id) != "host_pending":
+            raise ValueError("batch is not waiting for Host completion")
+        receipt = self.host.query(batch.command_id)
+        if receipt.status == "pending":
+            actors, scene = self._reduce(batch.expected_actor_revisions, scene_id)
+            return TurnResult(batch, receipt, None, actors, scene)
+        if receipt.outcome is None:
+            raise RuntimeError("terminal Host receipt must contain an outcome")
+        if not batch.public_performance_intent:
+            raise ValueError("pending batch has no persisted public performance intent")
+        ppi = PublicPerformanceIntent.from_dict(batch.public_performance_intent)
+        outcome = receipt.outcome
+        host_event = self._host_event(frame, batch.batch_id, batch.command_id, outcome, scene_id)
+        try:
+            draft = self.performance.realize(
+                ppi, outcome, tuple(dict(item) for item in frame.recent_history[-3:])
+            )
+            draft.validate(ppi, outcome)
+        except (RuntimeError, ValueError):
+            follow_up = TurnEventFollowUp.create(
+                follow_up_id=f"follow:{batch.batch_id}:host",
+                parent_batch_id=batch.batch_id,
+                branch_id=batch.branch_id,
+                expected_batch_status="host_pending",
+                lifecycle_status="performance_pending",
+                performance_status="pending",
+                events=(host_event,),
+                host_receipt=_receipt_dict(receipt),
+            )
+            self.ledger.append_follow_up(follow_up)
+            actors, scene = self._reduce(batch.expected_actor_revisions, scene_id)
+            return TurnResult(batch, receipt, None, actors, scene)
+        performance_event = self._performance_event(
+            frame, batch.batch_id, batch.command_id, draft, ppi, scene_id
+        )
+        follow_up = TurnEventFollowUp.create(
+            follow_up_id=f"follow:{batch.batch_id}:host",
+            parent_batch_id=batch.batch_id,
+            branch_id=batch.branch_id,
+            expected_batch_status="host_pending",
+            lifecycle_status="committed",
+            performance_status="complete",
+            events=(host_event, performance_event),
+            host_receipt=_receipt_dict(receipt),
+        )
+        self.ledger.append_follow_up(follow_up)
+        actors, scene = self._reduce(batch.expected_actor_revisions, scene_id)
+        return TurnResult(batch, receipt, draft, actors, scene)
+
 
     def complete_pending_performance(
         self,
@@ -182,34 +215,31 @@ class TurnOrchestrator:
         outcome: ResolvedOutcome,
         scene_id: str,
     ) -> TurnResult:
-        """Retry Y only after X was durably committed; never resubmit the action."""
-        if batch.lifecycle != "performance_pending":
+        """Retry only Y from the persisted public intent; never call Cognition again."""
+        if self.ledger.batch_status(batch.branch_id, batch.batch_id) != "performance_pending":
             raise ValueError("batch is not waiting for performance")
-        ppi = self.cognition_public_intent(frame)
-        draft = self.performance.realize(ppi, outcome, tuple(dict(item) for item in frame.recent_history[-3:]))
+        if not batch.public_performance_intent:
+            raise ValueError("pending batch has no persisted public performance intent")
+        ppi = PublicPerformanceIntent.from_dict(batch.public_performance_intent)
+        draft = self.performance.realize(
+            ppi, outcome, tuple(dict(item) for item in frame.recent_history[-3:])
+        )
         draft.validate(ppi, outcome)
-        event = RuntimeEvent.create(
-            batch_id=batch.batch_id,
-            branch_id=batch.branch_id,
-            turn_id=batch.turn_id,
-            command_id=batch.command_id,
-            kind="performance.committed",
-            actor_id=frame.actor_id,
-            scene_id=scene_id,
-            payload={"action": draft.action, "speech": draft.speech, "observable_outcome": list(draft.observable_outcome)},
-            visible_to=tuple(frame.relationships),
-            order=self._turn_number,
+        event = self._performance_event(
+            frame, batch.batch_id, batch.command_id, draft, ppi, scene_id
         )
         follow_up = TurnEventFollowUp.create(
-            follow_up_id=f"follow:{batch.batch_id}:{uuid4().hex[:8]}",
+            follow_up_id=f"follow:{batch.batch_id}:performance",
             parent_batch_id=batch.batch_id,
             branch_id=batch.branch_id,
             expected_batch_status="performance_pending",
+            lifecycle_status="committed",
             performance_status="complete",
             events=(event,),
+            host_receipt=batch.host_receipt,
         )
         self.ledger.append_follow_up(follow_up)
-        actors, scene = reduce_events(self.ledger.events(self.branch_id), actor_ids=(frame.actor_id,), scene_id=scene_id)
+        actors, scene = self._reduce(batch.expected_actor_revisions, scene_id)
         receipt = HostReceipt(
             command_id=batch.command_id,
             status="completed",
@@ -220,11 +250,11 @@ class TurnOrchestrator:
         )
         return TurnResult(batch, receipt, draft, actors, scene)
 
-    def cognition_public_intent(self, frame: DecisionFrame) -> PublicPerformanceIntent:
-        _, policy = self.cognition.decide(frame)
-        return PublicPerformanceIntent.from_policy(frame.actor_id, policy, frame)
 
-    def _pending_batch(self, frame, command, receipt, actor_revisions, scene_revision, scene_id):
+    def _pending_batch(
+        self, frame, command, receipt, actor_revisions, scene_revision, scene_id,
+        appraisal_events, ppi,
+    ):
         event = RuntimeEvent.create(
             batch_id=f"batch:{self.branch_id}:{frame.turn_id}",
             branch_id=self.branch_id,
@@ -247,7 +277,102 @@ class TurnOrchestrator:
             host_receipt=_receipt_dict(receipt),
             lifecycle="host_pending",
             performance_status="pending",
-            events=(event,),
+            events=(*appraisal_events, event),
+            public_performance_intent=ppi.to_dict(),
+        )
+
+    def _record_command(self, command, status, receipt=None) -> None:
+        if not self.journal:
+            return
+        self.journal.record(
+            command_id=command.command_id,
+            idempotency_key=command.idempotency_key,
+            branch_id=command.branch_id,
+            turn_id=command.turn_id,
+            actor_id=command.actor_id,
+            immutable_command_hash=command.immutable_command_hash,
+            expected_scene_revision=command.expected_scene_revision,
+            status=status,
+            host_receipt=_receipt_dict(receipt) if receipt else {},
+        )
+
+    def _appraisal_events(self, appraisal, frame, batch_id, command_id, scene_id):
+        base = RuntimeEvent.create(
+            batch_id=batch_id,
+            branch_id=self.branch_id,
+            turn_id=frame.turn_id,
+            command_id=command_id,
+            kind="npc.appraisal_committed",
+            actor_id=frame.actor_id,
+            scene_id=scene_id,
+            payload={
+                "subjective_observation": appraisal.subjective_observation,
+                "grounded_refs": list(appraisal.grounded_refs),
+            },
+            evidence_refs=appraisal.grounded_refs,
+            order=self._turn_number,
+        )
+        changes = tuple(
+            RuntimeEvent.create(
+                batch_id=batch_id,
+                branch_id=self.branch_id,
+                turn_id=frame.turn_id,
+                command_id=command_id,
+                kind="npc.emotion_changed",
+                actor_id=frame.actor_id,
+                scene_id=scene_id,
+                payload=asdict(change),
+                evidence_refs=appraisal.grounded_refs,
+                order=self._turn_number,
+            )
+            for change in appraisal.changes
+        )
+        return (base, *changes)
+
+    def _host_event(self, frame, batch_id, command_id, outcome, scene_id):
+        return RuntimeEvent.create(
+            batch_id=batch_id,
+            branch_id=self.branch_id,
+            turn_id=frame.turn_id,
+            command_id=command_id,
+            kind="world.action_resolved",
+            actor_id=frame.actor_id,
+            scene_id=scene_id,
+            payload={"outcome": _outcome_dict(outcome), "mutation": asdict(outcome.mutation)},
+            visible_to=tuple(frame.relationships),
+            evidence_refs=outcome.evidence_refs,
+            order=self._turn_number,
+        )
+
+    def _performance_event(self, frame, batch_id, command_id, draft, ppi, scene_id):
+        return RuntimeEvent.create(
+            batch_id=batch_id,
+            branch_id=self.branch_id,
+            turn_id=frame.turn_id,
+            command_id=command_id,
+            kind="performance.committed",
+            actor_id=frame.actor_id,
+            scene_id=scene_id,
+            payload={
+                "action": draft.action,
+                "speech": draft.speech,
+                "observable_outcome": list(draft.observable_outcome),
+                "response_hook": draft.response_hook,
+                "attention_target": draft.attention_target,
+                "gaze": draft.gaze,
+                "blocking": draft.blocking,
+                "posture_change": draft.posture_change,
+                "physical_residue": draft.physical_residue,
+                "delivery": asdict(draft.delivery),
+            },
+            visible_to=tuple(frame.relationships),
+            evidence_refs=tuple(ppi.evidence_anchors),
+            order=self._turn_number,
+        )
+
+    def _reduce(self, actor_revisions, scene_id):
+        return reduce_events(
+            self.ledger.events(self.branch_id), actor_ids=actor_revisions, scene_id=scene_id
         )
 
 
@@ -274,4 +399,5 @@ def _outcome_dict(outcome: ResolvedOutcome) -> dict:
         "error": outcome.error,
         "costs": list(outcome.costs),
         "evidence_refs": list(outcome.evidence_refs),
+        "mutation": asdict(outcome.mutation),
     }
