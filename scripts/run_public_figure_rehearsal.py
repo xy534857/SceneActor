@@ -96,6 +96,7 @@ for attempt in range(1, args.attempts + 1):
         performance=JsonPerformancePort(generation_model),
     )
     turns = []
+    transcript = []
     failed = False
     moderator_beats = (
         "主持人看向另一位角色，抬手示意刚才发言的人停下：时间到，现在必须由另一位回应，回避原问题将被当众点破。",
@@ -114,11 +115,13 @@ for attempt in range(1, args.attempts + 1):
             failed = True
             break
         turns.append(asdict(result.draft))
+        transcript.append(asdict(result.draft))
         beat_index = len(turns) - 1
-        if beat_index < len(moderator_beats):
+        if beat_index < len(moderator_beats) and len(turns) < args.turns:
             host.facts["O.current"] = (
                 f"上一位刚说完：{result.draft.speech[:120]}…{moderator_beats[beat_index]}"
             )
+            transcript.append({"actor_id": "moderator", "action": moderator_beats[beat_index], "speech": ""})
         print(json.dumps({"attempt": attempt, "turn_done": len(turns)}, ensure_ascii=False), flush=True)
     if failed:
         continue
@@ -133,7 +136,7 @@ for attempt in range(1, args.attempts + 1):
         ],
     }
     print(json.dumps({"attempt": attempt, "stage": "review"}, ensure_ascii=False), flush=True)
-    review = BlindReviewer(JsonBlindReviewPort(review_model)).review(public_scene, turns)
+    review = BlindReviewer(JsonBlindReviewPort(review_model)).review(public_scene, transcript)
     last_dialogue_review = next(
         (item for item in review.get("reviews", []) if item.get("lens") == "dialogue"),
         None,
@@ -153,7 +156,7 @@ for attempt in range(1, args.attempts + 1):
         "attempt": attempt,
         "minimum_dialogue_score": args.min_dialogue_score,
         "scene": public_scene,
-        "turns": turns,
+        "turns": transcript,
         "blind_review": review,
         "models": {
             "generation_primary": generation_model.primary,

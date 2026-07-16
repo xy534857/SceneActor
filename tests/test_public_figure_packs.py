@@ -43,9 +43,12 @@ class PublicFigurePackTests(unittest.TestCase):
             set(demo["source_packs"]),
             {"donald-trump-debate-2020-2024-v1", "joe-biden-debate-2020-2024-v1"},
         )
-        self.assertEqual(len(demo["turns"]), 4)
-        self.assertEqual(demo["independent_review"]["adjacency_and_listening"], 5)
-        self.assertTrue(all(turn["speech"] for turn in demo["turns"]))
+        actor_turns = [turn for turn in demo["turns"] if turn.get("actor_id") != "moderator"]
+        self.assertEqual(len(actor_turns), 4)
+        self.assertGreaterEqual(demo["blind_review"]["score"], 3)
+        dialogue = next(item for item in demo["blind_review"]["reviews"] if item["lens"] == "dialogue")
+        self.assertGreaterEqual(dialogue["score"], demo["minimum_dialogue_score"])
+        self.assertTrue(all(turn["speech"] for turn in actor_turns))
 
 
 if __name__ == "__main__":
