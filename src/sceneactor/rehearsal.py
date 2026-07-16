@@ -100,9 +100,14 @@ class RehearsalRun:
                 required_arguments={"interact": ("affordance_ref",)},
             ),
             identity_evidence={
+                "age": actor.persona.age,
+                "role": actor.persona.role,
+                "background": actor.persona.background,
                 "values": actor.persona.values,
                 "preferences": actor.persona.preferences,
                 "competencies": actor.persona.competencies,
+                "cognition_lens": actor.persona.cognition_lens,
+                "voice": actor.persona.voice.to_dict(),
             },
         )
         orchestrator = TurnOrchestrator(
@@ -141,8 +146,11 @@ class RehearsalRun:
                 continue
             history.append(
                 {
-                    "role": "npc" if result.batch.events and result.batch.events[-1].actor_id == actor_id else "other",
-                    "content": result.draft.speech if result.draft.actor_id == actor_id else result.draft.action,
+                    "role": "npc" if result.draft.actor_id == actor_id else "other",
+                    "actor_id": result.draft.actor_id,
+                    "speech": result.draft.speech,
+                    "action": result.draft.action,
+                    "content": result.draft.speech or result.draft.action,
                 }
             )
         return tuple(history[-8:])

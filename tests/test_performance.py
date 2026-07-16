@@ -43,13 +43,15 @@ class PerformanceRepairTests(unittest.TestCase):
             self.assertEqual(payload["speech"], "我听见了。")
             return json.dumps({"volume": "近距离可听清"}, ensure_ascii=False)
 
-        draft = JsonPerformancePort(complete).realize(self.intent(), ResolvedOutcome("succeeded", "speak"), ())
+        outcome = ResolvedOutcome("succeeded", "speak", ("host-visible fact",))
+        draft = JsonPerformancePort(complete).realize(self.intent(), outcome, ())
         self.assertEqual(calls, ["realization", "delivery_repair"])
         self.assertEqual(draft.action, "抬头")
         self.assertEqual(draft.speech, "我听见了。")
         self.assertEqual(draft.delivery.volume, "近距离可听清")
+        self.assertEqual(draft.observable_outcome, ("host-visible fact",))
         with self.assertRaisesRegex(ValueError, "authorized speech"):
-            replace(draft, speech="擅自改写").validate(self.intent(), ResolvedOutcome("succeeded", "speak"))
+            replace(draft, speech="擅自改写").validate(self.intent(), outcome)
 
     def test_exhausted_repairs_raise_instead_of_returning_empty_performance(self) -> None:
         invalid = json.dumps({"speech": "我听见了。", "delivery": {}, "response_hook": "等待对方继续。"}, ensure_ascii=False)

@@ -7,7 +7,7 @@ from pathlib import Path
 from sceneactor.contracts import ActionIntent, Appraisal, DecisionContract, DecisionFrame, EmotionChange, PerformancePolicy
 from sceneactor.governance import scan_semantic_hardcode
 from sceneactor.hosts import InMemorySceneHost
-from sceneactor.persona import Persona
+from sceneactor.persona import Persona, VoiceProfile
 from sceneactor.rehearsal import ActorSetup, SceneSetup, create_rehearsal
 from sceneactor.runtime import CognitionPort
 from tests.test_runtime import FakeCognition, FakePerformance
@@ -30,19 +30,30 @@ class AlternateCognition:
         )
 
 
+
+class CapturingCognition:
+    def __init__(self):
+        self.frames = []
+
+    def decide(self, frame: DecisionFrame):
+        self.frames.append(frame)
+        return FakeCognition().decide(frame)
+
 class RehearsalReviewTests(unittest.TestCase):
     def test_two_actor_rehearsal_alternates_and_caps(self) -> None:
         personas = (
-            Persona("a", "甲", values="不愿被安排"),
-            Persona("b", "乙", values="先把手续做完"),
+            Persona("a", "甲", role="辩手", values="不愿被安排", voice=VoiceProfile(entry_point="先抓对方上一句")),
+            Persona("b", "乙", role="辩手", values="先把手续做完", voice=VoiceProfile(entry_point="先纠正具体事实")),
         )
+        cognition_a = CapturingCognition()
+        cognition_b = CapturingCognition()
         scene = SceneSetup("s", "门口", "雨里有人等着", ("door",), max_turns=2)
         host = InMemorySceneHost("s", facts={"O.current": "门仍关闭"}, targets=("guard",))
         run = create_rehearsal(
             scene,
             (ActorSetup(personas[0], "进入"), ActorSetup(personas[1], "完成登记")),
             host=host,
-            cognition={"a": AlternateCognition("a"), "b": AlternateCognition("b")},
+            cognition={"a": cognition_a, "b": cognition_b},
             performance=FakePerformance(),
         )
         first = run.advance()
@@ -50,6 +61,11 @@ class RehearsalReviewTests(unittest.TestCase):
         self.assertEqual(first.draft.actor_id, "a")
         self.assertEqual(second.draft.actor_id, "b")
         self.assertTrue(run.complete)
+        self.assertEqual(cognition_a.frames[0].identity_evidence["voice"]["entry_point"], "先抓对方上一句")
+        heard = cognition_b.frames[0].recent_history[0]
+        self.assertEqual(heard["speech"], first.draft.speech)
+        self.assertEqual(heard["action"], first.draft.action)
+        self.assertEqual(heard["actor_id"], "a")
         with self.assertRaisesRegex(RuntimeError, "complete"):
             run.advance()
 

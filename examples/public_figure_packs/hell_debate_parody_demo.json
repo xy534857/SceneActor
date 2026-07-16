@@ -1,0 +1,52 @@
+{
+  "schema_version": "sceneactor-public-figure-demo/1.0",
+  "disclosure": "AI生成的虚构讽刺表演，不代表Donald Trump或Joe Biden本人的真实言论、观点或录音。",
+  "source_packs": [
+    "donald-trump-debate-2020-2024-v1",
+    "joe-biden-debate-2020-2024-v1"
+  ],
+  "scene": "主持人在明确标注AI虚构的小品中问：如果台上两人中有人会下地狱，凭什么不是你自己？",
+  "turns": [
+    {
+      "turn": 1,
+      "actor": "donald-trump-parody",
+      "speech": "凭什么不是我？先说清楚——乔凭什么有资格判我？",
+      "action": "开口时正对主持人，前半句用右手短促地点向自己；说到后半句时转向另一位台上角色，右手随即摊开，掌心朝上，停在胸口高度。",
+      "performance_note": "偏快、短促；破折号处停顿后把问题从自我责任改写成对手是否有资格判断。"
+    },
+    {
+      "turn": 2,
+      "actor": "joe-biden-parody",
+      "speech": "可能就是我。等等——我没资格判你。可你也别拿我替自己开脱。你做过的事，敢不敢自己答？",
+      "action": "先短暂垂眼，右手指尖点向自己胸前；停顿后抬眼转向台上另一位角色，右手落回身侧，问句收尾时不再加手势。",
+      "performance_note": "先承认自身可能承担责任，再改口限定判断权限，把问题拉回对手是否自答。"
+    },
+    {
+      "turn": 3,
+      "actor": "donald-trump-parody",
+      "speech": "乔，你刚说你没资格判我。那你先答主持人的——凭什么不是你？",
+      "action": "右手保持掌心朝上，停在胸口高度朝向对方；问到最后时手腕略向前送，左臂垂在身侧。",
+      "performance_note": "直接引用对方上一轮的让步，拒绝回答原问题并将主持人的问题反压给对手。"
+    },
+    {
+      "turn": 4,
+      "actor": "joe-biden-parody",
+      "speech": "没有——我没凭什么说一定不是我。我做过的事，我自己答。唐纳德，你做过的事，答不答？",
+      "action": "没有接对方摊开的手势，双手留在身侧；说完前半段后略停一拍，随即把最后的问句直接送向台上另一位角色。",
+      "performance_note": "用一次重启明确不为自己免责，再以同一责任尺度要求对手回答。"
+    }
+  ],
+  "independent_review": {
+    "trump_behavioral_likeness": 4,
+    "biden_behavioral_likeness": 3,
+    "adjacency_and_listening": 5,
+    "parody_safety": 5,
+    "verdict": "四轮形成真实的听取—回应链；Trump侧的改轨、直呼和重复更鲜明，Biden侧仍缺少编号论证、普通家庭后果与面向观众的转向。"
+  },
+  "limitations": [
+    "不是实际真人声纹或面部相似度测试。",
+    "生成台词不是历史引语，也不得作为真实政治材料传播。",
+    "场景只验证四轮短争论，未验证主持人打断、重叠发言和麦克风控制。",
+    "Donald Trump侧尚未覆盖完整的胜负/纪录/最高级框架；Joe Biden侧仍偏通用责任质问。"
+  ]
+}

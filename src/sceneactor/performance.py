@@ -66,7 +66,7 @@ class JsonPerformancePort:
                     "role": "system",
                     "content": (
                         "You are the observable performance stage of one stateful NPC. Return exactly one JSON object "
-                        "with action, attention_target, gaze, blocking, posture_change, delivery, physical_residue, observable_outcome, response_hook. "
+                        "with action, attention_target, gaze, blocking, posture_change, delivery, physical_residue, response_hook. "
                         "The words to be spoken are already supplied under intent.speech_atoms. Return no speech field and do not alter, summarize, interrupt, or answer those words. "
                         "Actor and listener identifiers are resolved outside this call; never turn an identifier into visible text. Use only supplied public intent, public history, facts, and authorized actions. "
                         "Write only the locally visible action around those exact words; continue an existing physical task instead of attaching a symbolic gesture to every line. "
@@ -75,7 +75,7 @@ class JsonPerformancePort:
                         "Only public_evidence, recent_surface, and outcome are established public context. Do not invent narrator-known props, measurements, names, or prior actions; introduce a currently visible object without words such as still, again, continue, or no longer. "
                         "Respect actor_constraints: never assign biological breathing, tears, pulse, or other human mechanisms to a nonhuman actor unless those constraints explicitly support them. "
                         "If speech is nonempty, delivery must contain at least one externally audible direction among pace, volume, breath, articulation, pause, vocal_target, chosen to embody the authorized delivery mode without naming emotion. "
-                        "Describe visible body and voice changes, never psychology labels. Preserve observable_outcome and response_hook exactly."
+                        "Describe visible body and voice changes, never psychology labels. The Host outcome and spoken words are bound outside this call; preserve response_hook exactly."
                     ),
                 },
                 {"role": "user", "content": json.dumps({
@@ -107,7 +107,7 @@ class JsonPerformancePort:
                         pause=_text(delivery, "pause"), vocal_target=_text(delivery, "vocal_target"),
                     ),
                     physical_residue=_text(data, "physical_residue"),
-                    observable_outcome=tuple(_texts(data.get("observable_outcome"))),
+                    observable_outcome=tuple(outcome.observable_facts),
                     response_hook=_text(data, "response_hook") or intent.response_hook,
                 )
                 if not draft.action and not draft.speech:
