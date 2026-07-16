@@ -86,6 +86,8 @@ class JsonPerformancePort:
                         "Only public_evidence, recent_surface, and outcome are established public context. Do not invent narrator-known props, measurements, names, or prior actions; introduce a currently visible object without words such as still, again, continue, or no longer. "
                         "Respect actor_constraints: never assign biological breathing, tears, pulse, or other human mechanisms to a nonhuman actor unless those constraints explicitly support them. "
                         "If speech is nonempty, delivery must contain at least one externally audible direction among pace, volume, breath, articulation, pause, vocal_target, chosen to embody the authorized delivery mode without naming emotion. "
+                        "physical_residue records only what remains physically visible after the turn ends (a held posture, a moved object, a mark); never motives, meanings, predictions, audience memory, or narrative significance. "
+                        "Keep every limb reference consistent across action, blocking, posture_change, and physical_residue: a hand introduced as left stays left. "
                         "Describe visible body and voice changes, never psychology labels. The Host outcome and spoken words are bound outside this call; preserve response_hook exactly."
                     ),
                 },

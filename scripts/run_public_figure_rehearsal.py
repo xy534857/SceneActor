@@ -97,17 +97,19 @@ for attempt in range(1, args.attempts + 1):
     )
     turns = []
     failed = False
+    print(json.dumps({"attempt": attempt, "stage": "rehearse"}, ensure_ascii=False), flush=True)
     for _ in range(args.turns):
         try:
             result = run.advance()
         except (CognitionModelError, PerformanceModelError) as exc:
-            print(json.dumps({"attempt": attempt, "protocol_failure": str(exc)[:300]}, ensure_ascii=False))
+            print(json.dumps({"attempt": attempt, "protocol_failure": str(exc)[:300]}, ensure_ascii=False), flush=True)
             failed = True
             break
         if result.draft is None:
             failed = True
             break
         turns.append(asdict(result.draft))
+        print(json.dumps({"attempt": attempt, "turn_done": len(turns)}, ensure_ascii=False), flush=True)
     if failed:
         continue
     public_scene = {
@@ -120,11 +122,13 @@ for attempt in range(1, args.attempts + 1):
             {"anonymous_actor": "actor-2", "role": second.role, "voice": second.voice.to_dict()},
         ],
     }
+    print(json.dumps({"attempt": attempt, "stage": "review"}, ensure_ascii=False), flush=True)
     review = BlindReviewer(JsonBlindReviewPort(review_model)).review(public_scene, turns)
     last_dialogue_review = next(
         (item for item in review.get("reviews", []) if item.get("lens") == "dialogue"),
         None,
     )
+    print(json.dumps({"attempt": attempt, "dialogue_review": last_dialogue_review, "overall_pass": review.get("pass"), "overall_score": review.get("score")}, ensure_ascii=False), flush=True)
     if (
         not dialogue_review_passed(review)
         or not last_dialogue_review
