@@ -41,6 +41,17 @@ def assert_reviewable_evaluations(items: Sequence[Mapping[str, Any]]) -> None:
         raise EvaluationBatchError("review batch contains generation failures: " + "; ".join(failures))
 
 
+def dialogue_review_passed(review: Mapping[str, Any]) -> bool:
+    reviews = review.get("reviews", [])
+    if not isinstance(reviews, list):
+        return False
+    for item in reviews:
+        if not isinstance(item, Mapping) or item.get("lens") != "dialogue":
+            continue
+        return bool(item.get("available")) and bool(item.get("passed")) and float(item.get("score", 0)) >= 3
+    return False
+
+
 class FullBehaviorEvaluator:
     def __init__(
         self,

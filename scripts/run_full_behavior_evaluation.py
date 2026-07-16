@@ -10,7 +10,7 @@ from pathlib import Path
 
 from sceneactor.benchmark import BehaviorBenchmark, BehaviorCase, load_counterfactual_pairs
 from sceneactor.cognition import JsonCognitionPort
-from sceneactor.evaluation import FullBehaviorEvaluator, assert_reviewable_evaluations
+from sceneactor.evaluation import FullBehaviorEvaluator, assert_reviewable_evaluations, dialogue_review_passed
 from sceneactor.model import FallbackModel, OmpCliCompletion
 from sceneactor.performance import JsonPerformancePort
 from sceneactor.review import BlindReviewer, JsonBlindReviewPort, JsonCounterfactualReviewPort
@@ -67,7 +67,9 @@ def save() -> None:
 if args.stage in {"all", "performances"}:
     payload["performances"] = [
         item for item in payload["performances"]
-        if not item.get("protocol_error") and item.get("performance")
+        if not item.get("protocol_error")
+        and item.get("performance")
+        and dialogue_review_passed(item.get("review", {}))
     ]
     completed_cases = {item["case_id"] for item in payload["performances"]}
     for index, case in enumerate(benchmark.cases):
@@ -76,13 +78,15 @@ if args.stage in {"all", "performances"}:
         result = None
         for _ in range(args.case_attempts):
             result = asdict(evaluator.evaluate_case(case, f"actor-{index + 1}"))
-            if not result["protocol_error"]:
+            if not result["protocol_error"] and dialogue_review_passed(result.get("review", {})):
                 break
         assert result is not None
         payload["performances"].append(result)
         save()
         if result["protocol_error"]:
             raise RuntimeError(f"case {case.id} failed after {args.case_attempts} attempts: {result['protocol_error']}")
+        if not dialogue_review_passed(result.get("review", {})):
+            raise RuntimeError(f"case {case.id} failed dialogue review after {args.case_attempts} attempts")
     assert_reviewable_evaluations(payload["performances"])
 
 if args.stage in {"all", "counterfactual"}:

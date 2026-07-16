@@ -8,6 +8,7 @@ from sceneactor.audit import (
     IndependentAuditBoard,
     PromotionEvidence,
     ReviewContextManifest,
+    SPECIALIST_LENSES,
     SpecialistVerdict,
     assert_single_manifest,
     deterministic_hard_failures,
@@ -71,12 +72,13 @@ class AuditTests(unittest.TestCase):
         self.assertNotIn("response_hook", packets["reader_orientation"]["batch"][0]["performance"])
         self.assertIn("addressee", packets["authority"]["batch"][0]["performance"])
         self.assertEqual({packet["manifest_id"] for packet in packets.values()}, {manifest.manifest_id})
+        self.assertIn("dialogue_naturalness", packets)
 
     def test_one_hard_failure_forces_red_regardless_of_other_scores(self) -> None:
         hard = AuditFinding("hard", "beat:1", "knowledge leak", "private fact spoken", "remove leak")
         verdicts = tuple(
             SpecialistVerdict("m", lens, True, lens != "authority", 5.0, (hard,) if lens == "authority" else (), "")
-            for lens in ("authority", "language_action", "character_voice", "embodiment", "scene_function", "reader_orientation", "causal_persona")
+            for lens in SPECIALIST_LENSES
         )
         self.assertEqual(readiness_level(verdicts, (hard,)), "red")
 
@@ -114,10 +116,7 @@ class AuditTests(unittest.TestCase):
                 manifest,
                 tuple(
                     SpecialistVerdict(manifest.manifest_id, lens, True, True, 4.5, (), "pass")
-                    for lens in (
-                        "authority", "language_action", "character_voice", "embodiment",
-                        "scene_function", "reader_orientation", "causal_persona",
-                    )
+                    for lens in SPECIALIST_LENSES
                 ),
                 "green_candidate", True, (), (),
             )

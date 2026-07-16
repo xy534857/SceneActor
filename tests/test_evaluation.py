@@ -5,7 +5,7 @@ import unittest
 
 from sceneactor.benchmark import BehaviorBenchmark
 from sceneactor.cognition import JsonCognitionPort
-from sceneactor.evaluation import EvaluationBatchError, FullBehaviorEvaluator, assert_reviewable_evaluations
+from sceneactor.evaluation import EvaluationBatchError, FullBehaviorEvaluator, assert_reviewable_evaluations, dialogue_review_passed
 from sceneactor.performance import JsonPerformancePort
 from sceneactor.review import BlindReviewer, JsonCounterfactualReviewPort
 from tests.test_benchmark import benchmark_completion
@@ -59,13 +59,23 @@ class EvaluationTests(unittest.TestCase):
             counterfactual_reviewer=CounterfactualStub(),
         )
 
-    def test_full_case_contains_performance_and_four_reviews(self):
+    def test_full_case_contains_performance_and_five_reviews(self):
         case = BehaviorBenchmark.load("benchmarks/behavior_v1.json").cases[0]
         result = self.evaluator().evaluate_case(case, "actor-1")
         self.assertFalse(result.protocol_error)
         self.assertTrue(result.performance["speech"])
-        self.assertEqual(len(result.review["reviews"]), 4)
+        self.assertEqual(len(result.review["reviews"]), 5)
         self.assertTrue(result.review["pass"])
+        self.assertTrue(dialogue_review_passed(result.review))
+
+    def test_dialogue_review_is_a_required_case_gate(self):
+        review = {
+            "reviews": [
+                {"lens": "dialogue", "available": True, "passed": False, "score": 2},
+                {"lens": "reader", "available": True, "passed": True, "score": 5},
+            ]
+        }
+        self.assertFalse(dialogue_review_passed(review))
 
     def test_role_swap_and_same_stimulus_are_blind_packets(self):
         cases = BehaviorBenchmark.load("benchmarks/behavior_v1.json").cases

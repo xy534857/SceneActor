@@ -44,7 +44,7 @@ class BlindReview:
 class BlindReviewer:
     """Semantic review is injected and sees only clean public transcript."""
 
-    LENSES = ("reader", "character", "dramaturgy", "performance")
+    LENSES = ("reader", "dialogue", "character", "dramaturgy", "performance")
 
     def __init__(self, complete: Callable[[str, Mapping[str, Any]], Mapping[str, Any]]) -> None:
         self.complete = complete
@@ -92,6 +92,11 @@ class JsonBlindReviewPort:
     def __call__(self, lens: str, packet: Mapping[str, Any]) -> Mapping[str, Any]:
         lens_focus = {
             "reader": "human believability, causal listening, subtext, boredom and repetition",
+            "dialogue": (
+                "natural spoken Chinese and immediate speech action: reject planning-layer classification, field-order reports, balanced complete explanations, "
+                "generic competent-assistant voice, permission overreach, and human lines transferable unchanged to a protocol-bound machine; "
+                "apply shared-context subtraction, read-aloud, de-completion, and human/robot-swap tests without phrase matching"
+            ),
             "character": "distinct attention, pressure-revealed choice, voice and card fit without trait recitation",
             "dramaturgy": "beat change, tactic, physical situation and whether possibilities changed",
             "performance": "whether action, speech, gaze, voice and residue form one playable performance",

@@ -10,8 +10,8 @@ from typing import Any, Callable, Mapping, Sequence
 from uuid import uuid4
 
 SPECIALIST_LENSES = (
-    "authority", "language_action", "character_voice", "embodiment",
-    "scene_function", "reader_orientation", "causal_persona",
+    "authority", "language_action", "dialogue_naturalness", "character_voice",
+    "embodiment", "scene_function", "reader_orientation", "causal_persona",
 )
 SEVERITIES = ("hard", "major", "minor")
 
@@ -24,13 +24,13 @@ class ReviewContextManifest:
     authority_hash: str
     character_cards_hash: str
     cpcf_cards_hash: str = ""
-    review_contract_version: str = "sceneactor-review-v1"
+    review_contract_version: str = "sceneactor-review-v2"
 
     @classmethod
     def freeze(
         cls, *, prior_public: Any, batch: Any, authority: Any,
         character_cards: Any, cpcf_cards: Any = (),
-        review_contract_version: str = "sceneactor-review-v1",
+        review_contract_version: str = "sceneactor-review-v2",
     ) -> "ReviewContextManifest":
         body = {
             "prior_public_hash": _hash(prior_public),
@@ -347,6 +347,9 @@ def hard_failure_rules() -> tuple[str, ...]:
         "a body part or actor cannot physically perform the stated action",
         "one actor's performance claims another actor's private mind",
         "human dialogue collapses into form fields, process labels, or planning prose",
+        "human dialogue leaks the planning layer by classifying the situation or packaging a polished complete condition-and-consequence explanation",
+        "human operational dialogue follows form-field order or can transfer unchanged to a protocol-bound machine",
+        "observable performance contains generator, runtime, contract, binding, or prompt implementation language instead of scene-world action",
         "different actors share the same syntax, tactic, and pressure failure mode",
         "an action, promise, command, transfer, or access claim exceeds authority",
         "revision duplicates observable content or drops an existing causal beat",
@@ -410,6 +413,13 @@ def _rubric(lens: str) -> tuple[str, ...]:
     return {
         "authority": ("facts, knowledge, ownership, time and Host authority remain stable", "no private or author information leaks"),
         "language_action": ("each utterance answers or resists the exact prior beat", "speech performs one local social move"),
+        "dialogue_naturalness": (
+            "for every human utterance identify the exact trigger, immediate social move, concrete shared referents, and next consequence the speaker is trying to cause",
+            "reject planning-layer classification, balanced semantic packages, generic competent-clerk voice, abstract placeholders, and verbal resolution that behavior could defer",
+            "read aloud for natural Chinese stance, aspect, deixis, repair, hesitation, partial answers, and locally sufficient incompleteness; do not require any one particle or sentence length",
+            "for operational dialogue check witnessed event order, shared-context subtraction, concrete actors and verbs, the one abnormal fact needed now, and an immediate request that leaves the recipient a reason to answer",
+            "apply role-swap, human/robot-swap, and de-completion tests by mechanism rather than phrase matching; structured protocol syntax may pass only for a nonhuman voice contract",
+        ),
         "character_voice": ("attention, causal unit, refusal pattern and pressure breakdown are distinct", "role swap does not fit unchanged"),
         "embodiment": ("body, gaze, tone, speech and aftershock arise from one stimulus", "actions are physically playable"),
         "scene_function": ("beat changes pressure, information, obligation, access, relation or next action", "quiet/failed action may pass"),

@@ -67,9 +67,9 @@ class JsonPerformancePort:
                     "content": (
                         "You are the observable performance stage of one stateful NPC. Return exactly one JSON object "
                         "with action, attention_target, gaze, blocking, posture_change, delivery, physical_residue, observable_outcome, response_hook. "
-                        "Speech is frozen in intent.speech_atoms and is bound by the runtime; do not output, rewrite, summarize, interrupt, or answer it. "
-                        "The runtime also binds actor and addressee. Use only supplied public intent, public history, facts, and authorized actions. "
-                        "Stage the fixed speech as one locally situated action; continue an existing physical task instead of attaching a symbolic gesture to every line. "
+                        "The words to be spoken are already supplied under intent.speech_atoms. Return no speech field and do not alter, summarize, interrupt, or answer those words. "
+                        "Actor and listener identifiers are resolved outside this call; never turn an identifier into visible text. Use only supplied public intent, public history, facts, and authorized actions. "
+                        "Write only the locally visible action around those exact words; continue an existing physical task instead of attaching a symbolic gesture to every line. "
                         "Action, blocking, posture_change, and physical_residue must describe one physically compatible simultaneous end state. "
                         "When several limbs differ, identify left/right or one/the other; never say both arms are down while a hand or finger remains at an object. "
                         "Only public_evidence, recent_surface, and outcome are established public context. Do not invent narrator-known props, measurements, names, or prior actions; introduce a currently visible object without words such as still, again, continue, or no longer. "
