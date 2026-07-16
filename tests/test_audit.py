@@ -50,6 +50,19 @@ class AuditTests(unittest.TestCase):
         board = IndependentAuditBoard(lambda lens, packet: {"pass": True, "score": 5, "findings": []})
         with self.assertRaisesRegex(ValueError, "changed after"):
             board.review(manifest=manifest, cpcf_cards=[{**card, "direct_access": ["窗"]}], **data)
+
+    def test_template_binding_change_invalidates_manifest(self) -> None:
+        data = self.inputs()
+        binding = {"template_id": "t", "version": "1", "contract_hash": "a" * 64, "resolution_hash": "b" * 64}
+        manifest = ReviewContextManifest.freeze(
+            prior_public=data["prior_public"], batch=data["batch"],
+            authority=data["authority"], character_cards=data["character_cards"],
+            template_bindings=[binding],
+        )
+        board = IndependentAuditBoard(lambda lens, packet: {"pass": True, "score": 5, "findings": []})
+        changed = {**binding, "resolution_hash": "c" * 64}
+        with self.assertRaisesRegex(ValueError, "changed after"):
+            board.review(manifest=manifest, template_bindings=[changed], **data)
     def test_reviewers_are_rubric_narrow_and_reader_has_no_hidden_authority(self) -> None:
         data = self.inputs()
         manifest = ReviewContextManifest.freeze(

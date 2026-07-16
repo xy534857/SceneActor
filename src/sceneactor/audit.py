@@ -24,12 +24,13 @@ class ReviewContextManifest:
     authority_hash: str
     character_cards_hash: str
     cpcf_cards_hash: str = ""
+    template_bindings_hash: str = ""
     review_contract_version: str = "sceneactor-review-v2"
 
     @classmethod
     def freeze(
         cls, *, prior_public: Any, batch: Any, authority: Any,
-        character_cards: Any, cpcf_cards: Any = (),
+        character_cards: Any, cpcf_cards: Any = (), template_bindings: Any = (),
         review_contract_version: str = "sceneactor-review-v2",
     ) -> "ReviewContextManifest":
         body = {
@@ -38,6 +39,7 @@ class ReviewContextManifest:
             "authority_hash": _hash(authority),
             "character_cards_hash": _hash(character_cards),
             "cpcf_cards_hash": _hash(cpcf_cards),
+            "template_bindings_hash": _hash(template_bindings),
             "review_contract_version": review_contract_version,
         }
         return cls(manifest_id=f"manifest:{_hash(body)[:24]}", **body)
@@ -245,14 +247,16 @@ class IndependentAuditBoard:
         prior_public: Sequence[Mapping[str, Any]], batch: Sequence[Mapping[str, Any]],
         public_scene: Mapping[str, Any], authority: Mapping[str, Any],
         character_cards: Sequence[Mapping[str, Any]], cpcf_cards: Sequence[Mapping[str, Any]] = (),
+        template_bindings: Sequence[Mapping[str, Any]] = (),
     ) -> AuditEvidenceRecord:
-        self._verify_manifest(manifest, prior_public, batch, authority, character_cards, cpcf_cards)
+        self._verify_manifest(manifest, prior_public, batch, authority, character_cards, cpcf_cards, template_bindings)
 
         def run_lens(lens: str) -> SpecialistVerdict:
             packet = _packet_for_lens(
                 lens=lens, manifest=manifest, prior_public=prior_public, batch=batch,
                 public_scene=public_scene, authority=authority,
                 character_cards=character_cards, cpcf_cards=cpcf_cards,
+                template_bindings=template_bindings,
             )
             try:
                 data = self.complete(lens, packet)
@@ -288,10 +292,11 @@ class IndependentAuditBoard:
         )
 
     @staticmethod
-    def _verify_manifest(manifest, prior_public, batch, authority, character_cards, cpcf_cards) -> None:
+    def _verify_manifest(manifest, prior_public, batch, authority, character_cards, cpcf_cards, template_bindings) -> None:
         expected = ReviewContextManifest.freeze(
             prior_public=prior_public, batch=batch, authority=authority,
             character_cards=character_cards, cpcf_cards=cpcf_cards,
+            template_bindings=template_bindings,
             review_contract_version=manifest.review_contract_version,
         )
         if expected != manifest:
@@ -379,7 +384,7 @@ class JsonSpecialistAuditPort:
         return _extract_json_object(raw)
 
 
-def _packet_for_lens(*, lens, manifest, prior_public, batch, public_scene, authority, character_cards, cpcf_cards):
+def _packet_for_lens(*, lens, manifest, prior_public, batch, public_scene, authority, character_cards, cpcf_cards, template_bindings):
     review_batch = list(batch)
     if lens == "reader_orientation":
         review_batch = []
@@ -399,6 +404,7 @@ def _packet_for_lens(*, lens, manifest, prior_public, batch, public_scene, autho
         "public_scene": dict(public_scene),
         "hard_failures": list(hard_failure_rules()),
         "rubric": _rubric(lens),
+        "template_bindings": list(template_bindings),
     }
     if lens in {"authority", "causal_persona"}:
         packet["authority"] = dict(authority)

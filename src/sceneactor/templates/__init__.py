@@ -1,0 +1,63 @@
+"""Approved template interaction protocol for SceneActor consumers."""
+
+from .contracts import (
+    PROTOCOL_VERSION,
+    AssetRef,
+    FixedAnchors,
+    ProtocolFault,
+    RelationshipRole,
+    RightsGrant,
+    SlotDefinition,
+    TemplatePerformanceContract,
+    TemplateResolveRequest,
+    TemplateResolveResponse,
+    TemporalAnchor,
+    resolution_hash,
+    validate_selected_slots,
+)
+from .projection import (
+    ActorTemplateProjection,
+    AdapterTemplateProjection,
+    HostTemplateProjection,
+    ReviewTemplateProjection,
+    TemplateBinding,
+    TemplateProjections,
+    project_template,
+)
+from .provider import (
+    InMemoryTemplateProvider,
+    ResolvedTemplate,
+    TemplateProtocolError,
+    TemplateReplayRecord,
+    TemplateProvider,
+    resolve_template,
+)
+
+__all__ = [
+    "PROTOCOL_VERSION",
+    "ActorTemplateProjection",
+    "AdapterTemplateProjection",
+    "AssetRef",
+    "FixedAnchors",
+    "HostTemplateProjection",
+    "InMemoryTemplateProvider",
+    "ProtocolFault",
+    "RelationshipRole",
+    "ResolvedTemplate",
+    "ReviewTemplateProjection",
+    "RightsGrant",
+    "SlotDefinition",
+    "TemplateBinding",
+    "TemplatePerformanceContract",
+    "TemplateProjections",
+    "TemplateProtocolError",
+    "TemplateProvider",
+    "TemplateResolveRequest",
+    "TemplateResolveResponse",
+    "TemporalAnchor",
+    "TemplateReplayRecord",
+    "project_template",
+    "resolution_hash",
+    "resolve_template",
+    "validate_selected_slots",
+]

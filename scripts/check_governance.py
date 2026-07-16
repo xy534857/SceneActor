@@ -17,6 +17,9 @@ TARGETS = (
     Path("src/sceneactor/runtime.py"),
     Path("src/sceneactor/rehearsal.py"),
     Path("src/sceneactor/review.py"),
+    Path("src/sceneactor/templates/contracts.py"),
+    Path("src/sceneactor/templates/provider.py"),
+    Path("src/sceneactor/templates/projection.py"),
 )
 
 findings = scan_semantic_hardcode(TARGETS)

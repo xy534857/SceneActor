@@ -155,6 +155,7 @@ Y 只接收 U 的公开安全投影、稳定 Voice、已解析 X 和有限可见
 ```text
 sceneactor/
 ├── contracts/      跨层可序列化协议
+├── templates/      外部批准模板协议、Provider、完整性校验与分层投影
 ├── persona/        稳定、Host 无关的人物身份与表达依据
 ├── cognition/      主观评价、策略 U、情绪、关系、目标与记忆
 ├── scene/          Host 无关的场景状态、观察与行动合同
@@ -175,6 +176,7 @@ sceneactor/
 ```text
 contracts ─────────────────────────► all modules
 persona ───────────────────────────► cognition
+templates ─────────────────────────► authoring / hosts / review / adapters
 scene contracts ──────────────────► hosts
 persona + cognition + host view ──► orchestration
 orchestration ────────────────────► performance
@@ -192,6 +194,8 @@ game host / adapters ─────────────► external engine
 - Presentation Adapter 只消费已提交 Beat，不产生 X；
 - `seedance` 不修改人格、目标、情绪或关系；
 - 游戏引擎专属动画节点不能成为人物动机或 Cognition 输入。
+- `templates` 不包含平台采集、趋势排序、聚类、媒体存储、权利裁定或发布系统；
+- Actor 只能接收模板的 public projection，不能读取母公式、情绪回报、payoff、趋势和权利字段。
 
 ---
 
@@ -956,6 +960,27 @@ Seedance 生产可提供三个子页面：
 - **素材确认**：缺失素材、断链、连续性和导出阻断。
 
 AI 对人设、场景或素材的修改均为待确认 patch。只有用户接受后改变草稿；只有显式发布后进入人物库或场景库。
+
+### 13.1 外部模板交互协议
+
+热梗追踪、模板资产、权利审核和运营后台属于独立 Template Studio。SceneActor 只通过 `sceneactor-template/1.0` 消费明确版本、已批准、内容哈希锁定的 `TemplatePerformanceContract`，标准见 `TEMPLATE_INTERACTION_PROTOCOL.md`。
+
+```text
+Template Studio
+    resolve(exact template_id + version + selected slots + usage)
+        │
+        ▼
+TemplateResolveResponse
+        │ request / version / hash / rights / slots 校验
+        ▼
+ResolvedTemplate
+        ├── HostProjection       公开世界规则与公开槽位
+        ├── ActorProjection      仅人物可知的公开规则与槽位
+        ├── ReviewProjection     母公式、情绪回报、payoff 与漂移边界
+        └── AdapterProjection    视觉／音频／动作资产与时间锚
+```
+
+Runtime 禁止请求 `latest` 后直接生成；每个运行记录模板版本、合同哈希与 resolution hash，以支持审核、重放和下架后的历史复现。趋势热度、平台指标、版权工作流、原始素材和作者为什么选择该模板不得进入 NPC DecisionFrame。
 
 ---
 
