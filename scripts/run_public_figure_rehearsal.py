@@ -77,14 +77,22 @@ for attempt in range(1, args.attempts + 1):
                 first,
                 "让观众认为对手没有资格判定自己的道德归宿",
                 "长期政治对手；在虚构小品中争夺舞台定义权",
-                {"portrayal_mode": "explicit_fictional_parody", "fact_cutoff": first_pack["fact_cutoff"]},
+                {
+                    "portrayal_mode": "explicit_fictional_parody",
+                    "fact_cutoff": first_pack["fact_cutoff"],
+                    "condition_tonight": "状态松散：越到后面越容易丢失原问题、扩大排名比较，收不回来时只能靠重复核心判断硬压，这个失控本身就是今晚的看点。",
+                },
                 "open",
             ),
             ActorSetup(
                 second,
                 "让观众把问题理解为个人责任而不是声望比赛",
                 "长期政治对手；在虚构小品中争夺责任框架",
-                {"portrayal_mode": "explicit_fictional_parody", "fact_cutoff": second_pack["fact_cutoff"]},
+                {
+                    "portrayal_mode": "explicit_fictional_parody",
+                    "fact_cutoff": second_pack["fact_cutoff"],
+                    "condition_tonight": "状态吃力：临场组织语言明显费劲，编号会数错后当场改口，长句中途重启，词要现想；说漂亮整句的能力今晚不在线，靠笨拙的诚恳撑住。",
+                },
                 "open",
             ),
         ),
@@ -99,9 +107,9 @@ for attempt in range(1, args.attempts + 1):
     transcript = []
     failed = False
     moderator_beats = (
-        {"action": "看向另一位角色，抬手示意刚才发言的人停下", "speech": "时间到。现在换另一位回应——再绕开我的问题，我就当众点破。"},
-        {"action": "打断双方，敲了敲台面", "speech": "都别绕。回到我最初的问题——凭什么不是你自己？只剩最后两轮。"},
-        {"action": "压低话筒声", "speech": "最后一轮。观众在等一个正面回答，说完这轮就收场。"},
+        {"action": "看向另一位角色，抬手示意刚才发言的人停下", "speech": "时间到。现在换另一位回应——你刚才绕开了我的问题，我记下了，观众也看见了。"},
+        {"action": "打断双方，敲了敲台面", "speech": "你们两位都在绕。回到我最初的问题——凭什么不是你自己？只剩最后两轮。"},
+        {"action": "压低话筒声，指向即将发言的一方", "speech": "最后一轮，三十秒。到点我直接切话筒收场，谁也别想留一句盖棺定论。"},
     )
     print(json.dumps({"attempt": attempt, "stage": "rehearse"}, ensure_ascii=False), flush=True)
     for _ in range(args.turns):
