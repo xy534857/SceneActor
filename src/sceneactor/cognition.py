@@ -49,6 +49,7 @@ class JsonCognitionPort:
             except (KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
                 feedback = (
                     f"Protocol validation failed: {exc}. Return a corrected JSON object without changing scene facts. "
+                    "Use only the exact key names in response_contract, and pick every enumerated value from its *_choices list in response_contract. "
                     "For action_request.arguments include only keys explicitly listed by decision_contract.required_arguments or argument_choices. "
                     "If action_kind is speak, move every intended utterance into policy.disclose as one or more nonempty objects "
                     "with exactly kind, text, evidence_refs; never put speech in action arguments."
@@ -82,8 +83,63 @@ class JsonCognitionPort:
                 },
             },
         }
+        payload["response_contract"] = {
+            "top_level_keys": ["appraisal", "policy"],
+            "appraisal_keys": ["subjective_observation", "emotion_changes", "grounded_refs"],
+            "emotion_change_keys": ["emotion", "direction", "impact"],
+            "emotion_choices": ["anger", "fear", "shame", "contempt", "sadness", "guilt", "joy", "relief", "hope", "defiance"],
+            "direction_choices": ["rise", "fall"],
+            "impact_choices": ["minor", "moderate", "major"],
+            "speech_atom_keys": ["kind", "text", "evidence_refs"],
+            "speech_atom_kind_choices": ["fact", "question", "stance", "offer", "boundary", "close"],
+            "action_request_shape": "object with keys action_kind, target, arguments, required_capabilities, grounded_refs; never a bare string",
+            "action_request_keys": ["action_kind", "target", "arguments", "required_capabilities", "grounded_refs"],
+            "disclose_shape": "array of speech atom objects, one object per utterance chunk; never a summary string",
+            "withhold_shape": "array of strings",
+            "emotion_changes_shape": "array of emotion change objects; [] when unchanged",
+            "relationship_transition_choices": ["keep", "landed", "missed", "abandoned"],
+            "interaction_move_choices": ["acknowledge", "answer", "ask", "offer", "assist", "observe", "disclose", "decline", "pause", "exit"],
+            "delivery_mode_choices": ["restrained", "warm", "playful", "formal", "practical", "probing", "evasive", "tender", "blunt", "self_conscious"],
+            "public_move_choices": ["action", "information", "stance", "relationship", "clean_close"],
+            "disposition_choices": ["continue", "close", "withdraw"],
+            "policy_keys": [
+                "attention", "interpretation", "current_intent", "chosen_strategy",
+                "action_request", "disclose", "withhold", "expected_response",
+                "response_hook", "surface_action_intent", "accepted_cost",
+                "relationship_transition", "interaction_move", "delivery_mode",
+                "public_move", "disposition", "grounded_refs",
+            ],
+        }
         system = """You are the private cognition stage of one stateful NPC.
 Return exactly one JSON object with `appraisal` and `policy`. Do not write final prose, narration, or another person's mind.
+
+Response shape (exact top-level and nested key names; no other top-level keys):
+{
+  "appraisal": {
+    "subjective_observation": "...",
+    "emotion_changes": [{"emotion": "...", "direction": "...", "impact": "..."}],
+    "grounded_refs": ["..."]
+  },
+  "policy": {
+    "attention": ["..."],
+    "interpretation": "...",
+    "current_intent": "...",
+    "chosen_strategy": "...",
+    "action_request": {"action_kind": "...", "target": "...", "arguments": {}, "required_capabilities": ["..."], "grounded_refs": ["..."]},
+    "disclose": [{"kind": "...", "text": "...", "evidence_refs": ["..."]}],
+    "withhold": ["..."],
+    "expected_response": "...",
+    "response_hook": "...",
+    "surface_action_intent": "...",
+    "accepted_cost": "...",
+    "relationship_transition": "...",
+    "interaction_move": "...",
+    "delivery_mode": "...",
+    "public_move": "...",
+    "disposition": "...",
+    "grounded_refs": ["..."]
+  }
+}
 
 The situation outranks persona branding. Personality shapes what this person notices, protects, misreads, delays, and pays for; never recite a profile or demonstrate a trait on demand. Respond to the immediate observable trouble before advancing a plot checklist. A person may be mistaken, awkward, incomplete, indirect, silent, or unwilling. Do not optimize into an assistant-style package of explanation, reassurance, and closure.
 
@@ -98,6 +154,8 @@ Speech action and natural Chinese:
 - A protocol-shaped `object + state + conclusion` delivery belongs only to a nonhuman actor whose role and voice contract support it. Human dialogue must become wrong under a human/robot swap, not merely acquire warmer delivery.
 - Before returning a human utterance, run a de-completion test: remove its explanatory tail. If the immediate social move still works, omit that tail and let the recipient ask. Do not deliver the abnormal fact, mechanism, consequence, intervention scope, exclusions, and consent gate in one polished turn.
 - The speech atom `kind`, interaction_move, and sentence grammar must agree. A question must actually ask; an actor without decision authority may press, plead, challenge, or request, but must not disguise an imperative as a question or speak as though the requested access has already been granted.
+- When `S.identity.voice.output_language` is supplied, every speech atom must be idiomatic in that target language. Source-language evidence supplies turn behavior, not source syntax: recreate the tactic, restart, repetition, and pressure shift instead of translating clause order or verb frames.
+- Apply `S.identity.voice.localization_rule`, then read the utterance aloud in the target language. Repair calques, mirrored subject pairs, nominalized abstractions, and verbs whose required object or referent is not recoverable from the current shared scene. A grammatical fragment may remain only when interruption or pressure visibly causes it.
 
 Appraisal:
 - subjective_observation: one bounded interpretation of supplied evidence

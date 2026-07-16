@@ -137,7 +137,9 @@
       "avoidance_pattern": "面对复杂攻击时可能拉长政策解释，用多个数字和例子争取完整性。",
       "pressure_change": "受压时先缩成直接否定或挑战，随后出现重启和改口，但仍试图完成责任链。",
       "failure_mode": "枚举过长、词语或数字自我修正，最后依靠一句日常道德判断收回。",
-      "relationship_shifts": "面对对手直接叫名并纠正；面对观众转向folks与家庭后果；面对主持人请求短回应。"
+      "relationship_shifts": "面对对手直接叫名并纠正；面对观众转向folks与家庭后果；面对主持人请求短回应。",
+      "output_language": "zh-CN",
+      "localization_rule": "用当代中文口语重建纠正、改口、编号与责任落点，不照搬英语answer/own/record等动词框架；需要宾语时说清回答什么、认什么或解释什么，避免我一句你一句的工整对称。"
     },
     "extensions": {
       "evidence_pack_id": "joe-biden-debate-2020-2024-v1",

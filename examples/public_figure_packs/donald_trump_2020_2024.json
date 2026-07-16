@@ -133,7 +133,9 @@
       "avoidance_pattern": "把不利问题改写成媒体偏见、对手失败、纪录比较或公众是否相信。",
       "pressure_change": "受压时缩短句子、增加绝对判断和重复，直接称呼对手。",
       "failure_mode": "不断扩大最好/最坏排名与对手失败，逐渐丢失原问题。",
-      "relationship_shifts": "面对主持人争发言权；面对对手直接称呼并要求对方解释。"
+      "relationship_shifts": "面对主持人争发言权；面对对手直接称呼并要求对方解释。",
+      "output_language": "zh-CN",
+      "localization_rule": "用当代中文口语重建抢题、改轨、重复和绝对比较，不逐词翻译英语句法；问句必须有自然的动词搭配和可恢复宾语，重复要像现场夺话而不是对称排比。"
     },
     "extensions": {
       "evidence_pack_id": "donald-trump-debate-2020-2024-v1",

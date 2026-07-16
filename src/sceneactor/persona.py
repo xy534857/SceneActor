@@ -18,6 +18,8 @@ class VoiceProfile:
     pressure_change: str = ""
     failure_mode: str = ""
     relationship_shifts: str = ""
+    output_language: str = ""
+    localization_rule: str = ""
 
     @classmethod
     def from_dict(cls, data: Mapping[str, Any] | None) -> "VoiceProfile":

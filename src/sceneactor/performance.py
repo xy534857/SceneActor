@@ -57,6 +57,14 @@ class JsonPerformancePort:
                 "error": outcome.error,
             },
             "recent_surface": list(recent_history[-3:]),
+            "response_contract": {
+                "top_level_keys": [
+                    "action", "attention_target", "gaze", "blocking",
+                    "posture_change", "delivery", "physical_residue", "response_hook",
+                ],
+                "delivery_keys": ["pace", "volume", "breath", "articulation", "pause", "vocal_target"],
+                "shape": "return exactly one JSON object with only top_level_keys; never echo the input payload; never return prose, headings, or a speech field",
+            },
         }
         feedback = ""
         previous_invalid_output = ""
@@ -65,8 +73,11 @@ class JsonPerformancePort:
                 {
                     "role": "system",
                     "content": (
-                        "You are the observable performance stage of one stateful NPC. Return exactly one JSON object "
-                        "with action, attention_target, gaze, blocking, posture_change, delivery, physical_residue, response_hook. "
+                        "You are the observable performance stage of one stateful NPC. Return exactly one JSON object shaped as "
+                        '{"action": "...", "attention_target": "...", "gaze": "...", "blocking": "...", "posture_change": "...", '
+                        '"delivery": {"pace": "...", "volume": "...", "breath": "...", "articulation": "...", "pause": "...", "vocal_target": "..."}, '
+                        '"physical_residue": "...", "response_hook": "..."}. '
+                        "Output that JSON object only: no prose, no markdown headings, no echo of the input payload, no wrapper object. "
                         "The words to be spoken are already supplied under intent.speech_atoms. Return no speech field and do not alter, summarize, interrupt, or answer those words. "
                         "Actor and listener identifiers are resolved outside this call; never turn an identifier into visible text. Use only supplied public intent, public history, facts, and authorized actions. "
                         "Write only the locally visible action around those exact words; continue an existing physical task instead of attaching a symbolic gesture to every line. "
@@ -89,6 +100,8 @@ class JsonPerformancePort:
             draft: PerformanceDraft | None = None
             try:
                 data = _extract_object(raw)
+                if not any(key in data for key in ("action", "attention_target", "gaze", "blocking", "posture_change", "delivery", "physical_residue")):
+                    raise ValueError("output echoed the input payload instead of a performance object")
                 delivery = data.get("delivery", {})
                 if not isinstance(delivery, Mapping):
                     delivery = {}
