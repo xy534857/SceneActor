@@ -109,7 +109,7 @@ class JsonPerformancePort:
                     delivery = {}
                 draft = PerformanceDraft(
                     actor_id=intent.actor_id,
-                    action=_text(data, "action"),
+                    action=_action_text(data, intent),
                     speech=_authorized_speech(intent),
                     addressee=intent.target,
                     attention_target=_text(data, "attention_target"),
@@ -182,6 +182,20 @@ class JsonPerformancePort:
 
 def _authorized_speech(intent: PublicPerformanceIntent) -> str:
     return "".join(atom.text.strip() for atom in intent.speech_atoms if atom.text.strip())
+
+def _action_text(data: Mapping[str, Any], intent: PublicPerformanceIntent) -> str:
+    """Strip speech leakage: reject action values that restate the authorized words."""
+    action = _text(data, "action")
+    if not action:
+        return ""
+    for atom in intent.speech_atoms:
+        text = atom.text.strip()
+        if text and text in action:
+            raise ValueError(
+                "action must describe visible movement only; it restated authorized speech verbatim"
+            )
+    return action
+
 
 def _extract_object(raw: str) -> dict[str, Any]:
     decoder = json.JSONDecoder()

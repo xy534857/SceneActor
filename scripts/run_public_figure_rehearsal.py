@@ -97,6 +97,11 @@ for attempt in range(1, args.attempts + 1):
     )
     turns = []
     failed = False
+    moderator_beats = (
+        "主持人看向另一位角色，抬手示意刚才发言的人停下：时间到，现在必须由另一位回应，回避原问题将被当众点破。",
+        "主持人打断双方，敲了敲台面：都别绕，回到我最初的问题——凭什么不是你自己？只剩最后两轮。",
+        "主持人压低话筒声：这是最后一轮，观众在等一个正面回答，说完这轮就收场。",
+    )
     print(json.dumps({"attempt": attempt, "stage": "rehearse"}, ensure_ascii=False), flush=True)
     for _ in range(args.turns):
         try:
@@ -109,6 +114,11 @@ for attempt in range(1, args.attempts + 1):
             failed = True
             break
         turns.append(asdict(result.draft))
+        beat_index = len(turns) - 1
+        if beat_index < len(moderator_beats):
+            host.facts["O.current"] = (
+                f"上一位刚说完：{result.draft.speech[:120]}…{moderator_beats[beat_index]}"
+            )
         print(json.dumps({"attempt": attempt, "turn_done": len(turns)}, ensure_ascii=False), flush=True)
     if failed:
         continue
