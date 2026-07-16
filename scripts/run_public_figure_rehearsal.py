@@ -109,7 +109,7 @@ for attempt in range(1, args.attempts + 1):
     moderator_beats = (
         {"action": "看向另一位角色，抬手示意刚才发言的人停下", "speech": "时间到。现在换另一位回应——你刚才绕开了我的问题，我记下了，观众也看见了。"},
         {"action": "打断双方，敲了敲台面", "speech": "你们两位都在绕。回到我最初的问题——凭什么不是你自己？只剩最后两轮。"},
-        {"action": "压低话筒声，指向即将发言的一方", "speech": "最后一轮，三十秒。到点我直接切话筒收场，谁也别想留一句盖棺定论。"},
+        {"action": "压低话筒声，指向即将发言的一方", "speech": "最后一轮，说重点。你说完我就收场，收场词是我的——谁也别想留一句盖棺定论。"},
     )
     print(json.dumps({"attempt": attempt, "stage": "rehearse"}, ensure_ascii=False), flush=True)
     for _ in range(args.turns):
@@ -132,6 +132,12 @@ for attempt in range(1, args.attempts + 1):
             )
             transcript.append({"actor_id": "moderator", "action": beat["action"], "speech": beat["speech"]})
         print(json.dumps({"attempt": attempt, "turn_done": len(turns)}, ensure_ascii=False), flush=True)
+    if not failed and len(turns) == args.turns:
+        transcript.append({
+            "actor_id": "moderator",
+            "action": "抬手在空中划了一道停止线，示意控台收话筒，走到两张讲台正中间面向观众",
+            "speech": "好了，到这儿。观众朋友们，两位的回答你们都听见了，够不够正面、算不算认账，你们自己判——谁该下地狱我不知道，但今晚谁都别想在我这儿封神。晚安。",
+        })
     if failed:
         continue
     public_scene = {
