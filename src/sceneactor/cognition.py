@@ -95,6 +95,8 @@ class JsonCognitionPort:
             "action_request_shape": "object with keys action_kind, target, arguments, required_capabilities, grounded_refs; never a bare string",
             "action_request_keys": ["action_kind", "target", "arguments", "required_capabilities", "grounded_refs"],
             "disclose_shape": "array of speech atom objects, one object per utterance chunk; never a summary string",
+            "speech_atom_evidence_allowed_prefixes": ["O.", "H.", "S.identity.role", "S.identity.background", "S.identity.competencies"],
+            "speech_atom_evidence_rule": "every speech atom evidence_refs entry must start with one of speech_atom_evidence_allowed_prefixes; cite S.identity.voice.*, S.goal, other S.*, R.*, or L.* only in policy fields, never inside disclose",
             "withhold_shape": "array of strings",
             "emotion_changes_shape": "array of emotion change objects; [] when unchanged",
             "relationship_transition_choices": ["keep", "landed", "missed", "abandoned"],

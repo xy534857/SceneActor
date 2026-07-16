@@ -11,8 +11,8 @@ from pathlib import Path
 from sceneactor.evaluation import dialogue_review_passed
 from sceneactor.hosts import InMemorySceneHost
 from sceneactor.model import FallbackModel, OmpCliCompletion
-from sceneactor.cognition import JsonCognitionPort
-from sceneactor.performance import JsonPerformancePort
+from sceneactor.cognition import CognitionModelError, JsonCognitionPort
+from sceneactor.performance import JsonPerformancePort, PerformanceModelError
 from sceneactor.persona import Persona
 from sceneactor.rehearsal import ActorSetup, SceneSetup, create_rehearsal
 from sceneactor.review import BlindReviewer, JsonBlindReviewPort
@@ -98,7 +98,12 @@ for attempt in range(1, args.attempts + 1):
     turns = []
     failed = False
     for _ in range(args.turns):
-        result = run.advance()
+        try:
+            result = run.advance()
+        except (CognitionModelError, PerformanceModelError) as exc:
+            print(json.dumps({"attempt": attempt, "protocol_failure": str(exc)[:300]}, ensure_ascii=False))
+            failed = True
+            break
         if result.draft is None:
             failed = True
             break

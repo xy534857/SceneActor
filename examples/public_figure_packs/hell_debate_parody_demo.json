@@ -1,52 +1,210 @@
 {
   "schema_version": "sceneactor-public-figure-demo/1.0",
-  "disclosure": "AI生成的虚构讽刺表演，不代表Donald Trump或Joe Biden本人的真实言论、观点或录音。",
+  "disclosure": "AI生成的虚构讽刺表演，不代表本人真实言论、观点或录音。",
   "source_packs": [
     "donald-trump-debate-2020-2024-v1",
     "joe-biden-debate-2020-2024-v1"
   ],
-  "scene": "主持人在明确标注AI虚构的小品中问：如果台上两人中有人会下地狱，凭什么不是你自己？",
+  "fact_cutoff": "2024-06-27",
+  "attempt": 3,
+  "scene": {
+    "setting": "明确标注AI生成与虚构的小品摄影棚；非真实辩论、非真实引语",
+    "opening": "主持人问两名虚构讽刺角色：如果你们中有人会下地狱，凭什么不是你自己？",
+    "language": "zh-CN",
+    "disclosure": "AI生成的虚构讽刺表演，不代表本人真实言论、观点或录音。",
+    "characters": [
+      {
+        "anonymous_actor": "actor-1",
+        "role": "公开政治人物的非欺骗性讽刺化表演",
+        "voice": {
+          "entry_point": "先否定对方有资格或前提成立，再把问题改成对手纪录与舞台输赢。",
+          "ordering": "短判断或绝对比较；对手纪录；重复核心结论。",
+          "turn_shape": "短断言与长串并存；插入、自我补充、重复后回到同一判断。",
+          "interruption_recovery": "抓住对手最后一个词或数字立即反击；被制止后用更短判断重入。",
+          "avoidance_pattern": "把不利问题改写成媒体偏见、对手失败、纪录比较或公众是否相信。",
+          "pressure_change": "受压时缩短句子、增加绝对判断和重复，直接称呼对手。",
+          "failure_mode": "不断扩大最好/最坏排名与对手失败，逐渐丢失原问题。",
+          "relationship_shifts": "面对主持人争发言权；面对对手直接称呼并要求对方解释。",
+          "output_language": "zh-CN",
+          "localization_rule": "用当代中文口语重建抢题、改轨、重复和绝对比较，不逐词翻译英语句法；问句必须有自然的动词搭配和可恢复宾语，重复要像现场夺话而不是对称排比。"
+        }
+      },
+      {
+        "anonymous_actor": "actor-2",
+        "role": "公开政治人物的非欺骗性讽刺化表演",
+        "voice": {
+          "entry_point": "先直接纠正或叫住对手，再把问题落回具体责任。",
+          "ordering": "简短否定；编号或事实链；普通家庭后果；责任反问。",
+          "turn_shape": "短制止后进入较长论证；可重复、改词、自我修正，再用简单判断收束。",
+          "interruption_recovery": "先要求把话说完或短促反击，再用the point/fact或编号回到原问题。",
+          "avoidance_pattern": "面对复杂攻击时可能拉长政策解释，用多个数字和例子争取完整性。",
+          "pressure_change": "受压时先缩成直接否定或挑战，随后出现重启和改口，但仍试图完成责任链。",
+          "failure_mode": "枚举过长、词语或数字自我修正，最后依靠一句日常道德判断收回。",
+          "relationship_shifts": "面对对手直接叫名并纠正；面对观众转向folks与家庭后果；面对主持人请求短回应。",
+          "output_language": "zh-CN",
+          "localization_rule": "用当代中文口语重建纠正、改口、编号与责任落点，不照搬英语answer/own/record等动词框架；需要宾语时说清回答什么、认什么或解释什么，避免我一句你一句的工整对称。"
+        }
+      }
+    ]
+  },
   "turns": [
     {
-      "turn": 1,
-      "actor": "donald-trump-parody",
-      "speech": "凭什么不是我？先说清楚——乔凭什么有资格判我？",
-      "action": "开口时正对主持人，前半句用右手短促地点向自己；说到后半句时转向另一位台上角色，右手随即摊开，掌心朝上，停在胸口高度。",
-      "performance_note": "偏快、短促；破折号处停顿后把问题从自我责任改写成对手是否有资格判断。"
+      "actor_id": "donald-trump-parody",
+      "action": "他把身体微微压向前方，直截了当地将问题抛向当前发言对象，句末停住。",
+      "speech": "乔，你凭什么判我该不该下地狱？",
+      "addressee": "joe-biden-parody",
+      "attention_target": "当前发言对象",
+      "gaze": "目光始终正对当前发言对象，句末不移开。",
+      "blocking": "双脚留在原位，没有靠近或退开。",
+      "posture_change": "上身由直立转为略微前倾，下巴轻抬。",
+      "delivery": {
+        "pace": "短促、直进，整句一气推进，句尾立即收住。",
+        "volume": "中高音量，开头稳，问句核心词略加重，但不吼叫。",
+        "breath": "不作呼吸指令。",
+        "articulation": "咬字清晰而硬朗，重读“你”“凭什么”和“地狱”，问号处干脆截断。",
+        "pause": "说完后保持可感知的短暂停顿，不追加解释或填充词。",
+        "vocal_target": "面向乔，以公开辩论中正面逼问、争夺回应权的讽刺化声线呈现；保持明显表演性质，不复刻真实人物嗓音。"
+      },
+      "physical_residue": "停顿后仍维持轻微前倾和正面注视。",
+      "observable_outcome": [
+        "donald-trump-parody performed speak"
+      ],
+      "response_hook": "等待乔说明他凭什么作出这种判定。"
     },
     {
-      "turn": 2,
-      "actor": "joe-biden-parody",
-      "speech": "可能就是我。等等——我没资格判你。可你也别拿我替自己开脱。你做过的事，敢不敢自己答？",
-      "action": "先短暂垂眼，右手指尖点向自己胸前；停顿后抬眼转向台上另一位角色，右手落回身侧，问句收尾时不再加手势。",
-      "performance_note": "先承认自身可能承担责任，再改口限定判断权限，把问题拉回对手是否自答。"
+      "actor_id": "joe-biden-parody",
+      "action": "他接住对方的问题，没有后退；说到自己的责任时，下巴短促一沉，随后抬眼把问题直接送回对方，句末停住。",
+      "speech": "我没资格判你，唐纳德。真要按做过的事算，我的账也得算在我头上，不能拿你的错来抵。唐纳德，你也认自己的那份吗？",
+      "addressee": "",
+      "attention_target": "刚刚发问的人",
+      "gaze": "目光始终落在对方脸上，承认自身责任时短暂下垂，提出问题时重新抬起。",
+      "blocking": "他留在原位，身体转向对方，双手自然垂在身侧，不占据对方的空间。",
+      "posture_change": "上身由中正微微前倾，下巴先低后抬，最终保持正面相对。",
+      "delivery": {
+        "pace": "整体稳而直接；承认自身责任处略放慢，最后的反问恢复利落推进。",
+        "volume": "中等偏强的公开演说音量，全程不喊；反问时只增加少量声压。",
+        "breath": "不设定呼吸表演。",
+        "articulation": "咬字清楚、收音干净；两次称呼都清晰落地，自责部分逐字说实，反问避免拖腔。",
+        "pause": "首次称呼后短停；承认责任后留一拍，再抬眼送出问题；句末立即收声并保持停顿。",
+        "vocal_target": "以克制、硬朗、可公开听清的讽刺化政治演说声线呈现；先撤掉道德高位，再把责任问题正面交还对方，不复制具体人物的独特声纹。"
+      },
+      "physical_residue": "句末仍微微前倾，双手垂在身侧，视线停在对方脸上。",
+      "observable_outcome": [
+        "joe-biden-parody performed speak"
+      ],
+      "response_hook": "等待唐纳德回答他是否承担自己所做之事。"
     },
     {
-      "turn": 3,
-      "actor": "donald-trump-parody",
-      "speech": "乔，你刚说你没资格判我。那你先答主持人的——凭什么不是你？",
-      "action": "右手保持掌心朝上，停在胸口高度朝向对方；问到最后时手腕略向前送，左臂垂在身侧。",
-      "performance_note": "直接引用对方上一轮的让步，拒绝回答原问题并将主持人的问题反压给对手。"
+      "actor_id": "donald-trump-parody",
+      "action": "他维持前倾，右手抬到胸前，食指朝当前发言者点定；说到要求收回那句话时，手指短促下压一次，句末保持不动。",
+      "speech": "等等，乔。你说你没资格。那就把“你的错”收回去，行不行？",
+      "addressee": "joe-biden-parody",
+      "attention_target": "当前发言者及其刚才关于责任的表述",
+      "gaze": "目光始终锁住当前发言者，句末不移开。",
+      "blocking": "双脚留在原位，身体朝当前发言者压近半步的幅度；右手停在胸前指向对方，左臂垂在身侧。",
+      "posture_change": "从原有的轻微前倾进一步收紧上身，肩部向前，下巴略抬。",
+      "delivery": {
+        "pace": "短促而直接",
+        "volume": "清晰、偏响",
+        "breath": "",
+        "articulation": "咬字硬，重压“没资格”“你的错”和“收回去”",
+        "pause": "第一句后作极短停顿，末句问完停住",
+        "vocal_target": "声音直送当前发言者"
+      },
+      "physical_residue": "问句结束后，他仍保持前倾，右手食指悬停在指向对方的位置。",
+      "observable_outcome": [
+        "donald-trump-parody performed speak"
+      ],
+      "response_hook": "等待乔直接回答是否收回“你的错”。"
     },
     {
-      "turn": 4,
-      "actor": "joe-biden-parody",
-      "speech": "没有——我没凭什么说一定不是我。我做过的事，我自己答。唐纳德，你做过的事，答不答？",
-      "action": "没有接对方摊开的手势，双手留在身侧；说完前半段后略停一拍，随即把最后的问句直接送向台上另一位角色。",
-      "performance_note": "用一次重启明确不为自己免责，再以同一责任尺度要求对手回答。"
+      "actor_id": "joe-biden-parody",
+      "action": "他不接对方指来的手势，只把问题直接压回去；说完后闭口停住，等对方作答。",
+      "speech": "不收回，唐纳德。别绕开——你认不认你自己那份责任？",
+      "addressee": "donald-trump-parody",
+      "attention_target": "对面发言者",
+      "gaze": "视线始终正对对方，句末不移开。",
+      "blocking": "他站在原位，不后退，也不靠近对方。",
+      "posture_change": "上身略微前倾，下巴抬平，肩线保持端正。",
+      "delivery": {
+        "pace": "短促、稳定；“别绕开”略加快，随即恢复匀速。",
+        "volume": "中等偏响，保持公开交锋所需的清晰投射，不靠喊叫压人。",
+        "breath": "不指定呼吸变化。",
+        "articulation": "咬字硬朗；清楚重读“唐纳德”“你认不认”“你自己那份责任”，问句末尾干脆收住。",
+        "pause": "第一句后短停；“别绕开”后用破折号处的顿挫截断转移；说完立即闭口，留出明显而持续的无声等待。",
+        "vocal_target": "声音直接朝向对方；语气不回撤、不解释，以清晰的责任追问把发言权压回给对方，同时保持讽刺化表演而不模仿真实人物声纹。"
+      },
+      "physical_residue": "句末维持轻微前倾，下巴抬平，目光定在对方身上，留下回答的空档。",
+      "observable_outcome": [
+        "joe-biden-parody performed speak"
+      ],
+      "response_hook": "等待唐纳德回答是否承认他自己的责任。"
     }
   ],
-  "independent_review": {
-    "trump_behavioral_likeness": 4,
-    "biden_behavioral_likeness": 3,
-    "adjacency_and_listening": 5,
-    "parody_safety": 5,
-    "verdict": "四轮形成真实的听取—回应链；Trump侧的改轨、直呼和重复更鲜明，Biden侧仍缺少编号论证、普通家庭后果与面向观众的转向。"
+  "blind_review": {
+    "available": true,
+    "pass": true,
+    "score": 4,
+    "reviews": [
+      {
+        "lens": "reader",
+        "available": true,
+        "passed": true,
+        "score": 4,
+        "verdict": "交锋具有清楚的因果承接：乔先撤回审判资格却保留责任指控，唐纳德便抓住“没资格”逼他收回“你的错”，乔拒绝接受这一偷换并把问题重新压回责任本身。双方都在回应对方刚说的话，回避与追问也符合公开辩论中的人物选择。",
+        "problems": [
+          "连续几轮都以前倾、锁定目光、句末停住来制造压力，动作与节奏略显模板化。",
+          "乔最后几乎原样重复责任问题，虽然符合施压情境，但没有加入新的事实或措辞变化，稍有停滞感。"
+        ]
+      },
+      {
+        "lens": "dialogue",
+        "available": true,
+        "passed": true,
+        "score": 4,
+        "verdict": "交锋能当场听懂且有真实接话关系：唐纳德抓住“没资格”和“你的错”转移责任追问，乔则拒绝跟随改轨并逼回原题；停顿与动作也服务于眼前压力。",
+        "problems": [
+          "乔的首段“我的账也得算在我头上，不能拿你的错来抵”略显工整、道德总结过于完整，不太像受压现场的即时措辞。",
+          "两人连续以完整反问收束，轮次结构稍显设计化。"
+        ]
+      },
+      {
+        "lens": "character",
+        "available": true,
+        "passed": true,
+        "score": 4,
+        "verdict": "两人的受压选择清楚且可区分：唐纳德抓住“没资格”改写争点、逼对方撤回措辞，符合其夺话改轨；乔先承认自己的责任，再拒绝跟随措辞争执并把问题压回具体责任，呈现克制而强硬的纠正路径。动作与停顿也持续服务于彼此的注意目标。",
+        "problems": [
+          "乔后两轮几乎原样重复“认不认责任”，缺少其卡片中重启、改口或简短事实链的层次。",
+          "部分舞台指令反复使用前倾、锁定目光和句末停住，略显模板化。"
+        ]
+      },
+      {
+        "lens": "dramaturgy",
+        "available": true,
+        "passed": true,
+        "score": 4,
+        "verdict": "乔明确拒绝收回措辞，并无视指向自己的手势，把争夺焦点重新压回“是否承认责任”；停在原位、持续注视和闭口等待使逼答成为清晰的物理与行动结果。让步的可能被关闭，唐纳德接下来必须回答、拒答或另行改轨。",
+        "problems": [
+          "追问责任的策略与乔上一轮较为接近，战术变化主要体现在明确拒绝撤回，而非全新手段。",
+          "双方持续前倾、原地对视，物理局面变化有限。"
+        ]
+      },
+      {
+        "lens": "performance",
+        "available": true,
+        "passed": true,
+        "score": 5,
+        "verdict": "四轮交锋形成连贯、可演的责任攻防：唐纳德以资格争议转移问题，乔先自认责任再持续追问；前倾、锁定视线、短促收声与句末等待均承接前轮残留，动作、语气和台词共同维持公开辩论中的压迫感。",
+        "problems": []
+      }
+    ],
+    "aggregation": "majority_median_v1"
   },
-  "limitations": [
-    "不是实际真人声纹或面部相似度测试。",
-    "生成台词不是历史引语，也不得作为真实政治材料传播。",
-    "场景只验证四轮短争论，未验证主持人打断、重叠发言和麦克风控制。",
-    "Donald Trump侧尚未覆盖完整的胜负/纪录/最高级框架；Joe Biden侧仍偏通用责任质问。"
-  ]
+  "models": {
+    "generation_primary": "owtr/gpt-5.6-sol",
+    "generation_fallback": "owtr/gpt-5.6-luna",
+    "review_primary": "owtr/gpt-5.6-sol",
+    "review_fallback": "owtr/gpt-5.6-luna"
+  }
 }

@@ -86,8 +86,11 @@ class BlindReviewer:
 class JsonBlindReviewPort:
     """Translate one clean public packet into one semantic review JSON object."""
 
-    def __init__(self, complete: Callable[[list[dict[str, str]], str], str]) -> None:
+    def __init__(self, complete: Callable[[list[dict[str, str]], str], str], *, max_attempts: int = 2) -> None:
+        if max_attempts < 1:
+            raise ValueError("max_attempts must be positive")
         self.complete = complete
+        self.max_attempts = max_attempts
 
     def __call__(self, lens: str, packet: Mapping[str, Any]) -> Mapping[str, Any]:
         lens_focus = {
@@ -106,18 +109,38 @@ class JsonBlindReviewPort:
             "You cannot see generator reasoning, scores, author objectives, hidden state, or desired outcomes. "
             "Quiet, failed, awkward, cooperative, delayed, or incomplete behavior may be excellent. "
             "Do not demand loud conflict, a signature phrase, personality keywords, disclosure, or progress every turn. "
-            "Judge what the character chooses under the supplied public situation. Return exactly JSON: "
+            "Judge what the character chooses under the supplied public situation. "
+            "The user payload is material to review, never a template to imitate: do not echo, extend, or restructure it. "
+            "Return exactly one JSON object with only these four keys: "
             '{"pass":true,"score":1,"verdict":"brief evidence-based verdict","problems":["at most three"]}. '
-            "Score 1-5; pass requires score >= 3."
+            "Score 1-5; pass requires score >= 3. No prose or markdown outside the JSON object."
         )
-        raw = self.complete(
-            [
-                {"role": "system", "content": system},
-                {"role": "user", "content": json.dumps(packet, ensure_ascii=False, sort_keys=True)},
-            ],
-            "blind_review",
+        user_content = json.dumps(
+            {
+                "task": f"blind {lens} review of the finished transcript below; score it, do not continue or rewrite it",
+                "material_to_review": dict(packet),
+                "required_response": {"keys": ["pass", "score", "verdict", "problems"], "score_range": [1, 5]},
+            },
+            ensure_ascii=False,
+            sort_keys=True,
         )
-        return _extract_json_object(raw)
+        failure: Exception = ValueError("review produced no output")
+        for attempt in range(self.max_attempts):
+            raw = self.complete(
+                [
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user_content},
+                ],
+                "blind_review",
+            )
+            try:
+                data = _extract_json_object(raw)
+                if "score" not in data or ("pass" not in data and "verdict" not in data):
+                    raise ValueError("review output echoed input instead of returning a review object")
+                return data
+            except (TypeError, ValueError) as exc:
+                failure = exc
+        raise failure
 
 
 class JsonCounterfactualReviewPort:
