@@ -93,15 +93,16 @@ class BlindReviewer:
         }
 
 
-def _first_sentence(text: str, limit: int = 120) -> str:
+def _first_sentence(text: str, limit: int = 160) -> str:
+    """Trim a stage note to whole sentences; never leave a dangling clause."""
     text = text.strip()
     if len(text) <= limit:
         return text
-    for stop in ("。", "；", "，"):
+    for stop in ("。", "；"):
         cut = text.rfind(stop, 0, limit)
         if cut > 20:
             return text[: cut + 1]
-    return text[:limit]
+    return text
 
 
 class JsonBlindReviewPort:
