@@ -98,7 +98,7 @@ def _first_sentence(text: str, limit: int = 160) -> str:
     text = text.strip()
     if len(text) <= limit:
         return text
-    for stop in ("。", "；"):
+    for stop in ("。",):
         cut = text.rfind(stop, 0, limit)
         if cut > 20:
             return text[: cut + 1]
