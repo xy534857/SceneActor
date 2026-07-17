@@ -65,8 +65,12 @@
       "turn_order": ["laoren-jia", "waixingren-yi", "laoren-jia", "waixingren-jia", "laoren-jia"],
       "beats": [
         {"after_turn": 1, "fact": "电话里是机器客服的标准语音：'您的话费余额不足，请及时充值……'"},
-        {"after_turn": 3, "fact": "屋里又静了。两个外星人还站在原地，记录板上标准二那一栏的钩还空着。"}
+        {"after_turn": 3, "fact": "屋里又静了。风从门缝进来一阵，桌上手机的屏幕暗了下去。"}
       ],
+      "actor_hints": {
+        "waixingren-yi": "你只有一次开口机会，最多两句：只记来电性质这一件事，不判定、不打钩——判定是甲的活。",
+        "waixingren-jia": "这一回合只做一件事。钩落不落由你决定，但你只能在这个回合处理钩这一件事。"
+      },
       "exit_condition": "老人说出那句话，故事停住",
       "core_emotion": "期待太久到有点麻木。这句拒绝不是因为这里好，只是因为他还在等",
       "closing_hint": "老人最后一个回合应落在'我还是习惯住在这里'这句话的意思上——用他自己的字说，平静，没有表情"
