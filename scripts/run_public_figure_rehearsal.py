@@ -35,6 +35,8 @@ parser.add_argument(
 )
 parser.add_argument("--moderator-beats", default="", help="JSON file: list of {action, speech} beats")
 parser.add_argument("--moderator-close", default="", help="closing line spoken by the moderator")
+parser.add_argument("--first-goal", default="让观众认为对手没有资格判定自己的道德归宿")
+parser.add_argument("--second-goal", default="让观众把问题理解为个人责任而不是声望比赛")
 parser.add_argument("--min-dialogue-score", type=int, default=5)
 parser.add_argument("--model", default="owtr-anthropic/claude-fable-5")
 parser.add_argument("--fallback-model", default="owtr/gpt-5.6-sol")
@@ -84,7 +86,7 @@ for attempt in range(1, args.attempts + 1):
         (
             ActorSetup(
                 first,
-                "让观众认为对手没有资格判定自己的道德归宿",
+                args.first_goal,
                 "长期政治对手；在虚构小品中争夺舞台定义权",
                 {
                     "portrayal_mode": "explicit_fictional_parody",
@@ -95,7 +97,7 @@ for attempt in range(1, args.attempts + 1):
             ),
             ActorSetup(
                 second,
-                "让观众把问题理解为个人责任而不是声望比赛",
+                args.second_goal,
                 "长期政治对手；在虚构小品中争夺责任框架",
                 {
                     "portrayal_mode": "explicit_fictional_parody",
