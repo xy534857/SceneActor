@@ -15,8 +15,8 @@
       "opening_fact": "清晨，太阳刚出。外星人甲乙无预兆地站在老人家门外，还没敲门。门从里面开了——老人每天这个时辰开门，跟来不来人没关系。老人站在门口，沉默地打量两个来访者，没有惊讶。",
       "turn_order": ["waixingren-jia", "laoren-jia", "waixingren-jia", "laoren-jia", "waixingren-yi", "laoren-jia"],
       "beats": [
-        {"after_turn": 2, "fact": "老人看完了，不说话，转身往院里走，门留着，没关。院里鸡在刨土。"},
-        {"after_turn": 4, "fact": "老人拿起墙根的扫帚开始扫院子，这是他每天早上的事，跟有没有客人没关系。"}
+        {"after_turn": 2, "fact": "院里的鸡在刨土，风把一层薄土吹过门槛。老人在院里，手上有活。"},
+        {"after_turn": 4, "fact": "太阳升高了一点，光线从门口斜进院子。村路上还是没有一个人。"}
       ],
       "exit_condition": "老人进屋或继续做事，外星人跟进院内",
       "core_emotion": "荒诞中的钝痛——波澜不惊不是平静，是等到麻木"
@@ -29,8 +29,8 @@
       "turn_order": ["waixingren-jia", "waixingren-yi", "laoren-jia", "waixingren-jia", "waixingren-yi", "laoren-jia", "waixingren-jia", "waixingren-yi"],
       "beats": [
         {"after_turn": 2, "fact": "乙走到院门口往村里望了一眼——整条路上没有一个人影。"},
-        {"after_turn": 5, "fact": "乙在堂屋桌上发现那部手机：充着电，摆在最显眼的地方。屏幕上最后一条消息的时间戳是十四个月前。"},
-        {"after_turn": 7, "fact": "院子里安静下来，只有风声。乙站着不动，在记录环境背景噪声。"}
+        {"after_turn": 5, "fact": "堂屋桌上那部手机充着电，摆在最显眼的地方。屏幕上最后一条消息的时间戳是十四个月前。"},
+        {"after_turn": 7, "fact": "院子里安静下来，只有风声。"}
       ],
       "exit_condition": "核实条目走完，乙存档",
       "core_emotion": "精确的残忍——每一条适配说明都在无意识地宣判：你活得已经和一颗荒废星球一样了"
@@ -42,8 +42,8 @@
       "opening_fact": "屋内。老人已经坐下，给两个来访者一人倒了一碗水——不是热情，是规矩。外星人甲拿出福利清单，准备逐条宣读。",
       "turn_order": ["waixingren-jia", "laoren-jia", "waixingren-jia", "laoren-jia", "waixingren-yi", "laoren-jia"],
       "beats": [
-        {"after_turn": 3, "fact": "老人坐着听，脸上带一点笑。那个笑温和，有一点悲。他没有打断，没有点头，也没有摇头。"},
-        {"after_turn": 5, "fact": "屋里静了下来。甲念完了整张清单，在等回应。老人还是那个笑。"}
+        {"after_turn": 3, "fact": "屋里只有甲念清单的声音。清单快念完了。"},
+        {"after_turn": 5, "fact": "屋里静了下来。清单念完了，没有人接话。"}
       ],
       "exit_condition": "清单念完，老人无明确回应，甲归类'回应状态待定'",
       "core_emotion": "老人听懂了清单给不了他想要的，但他不说破，只是笑"
@@ -55,8 +55,8 @@
       "opening_fact": "屋内，沉默悬着。突然，桌上那部充着电的手机响了。老人起身去接，很自然，像条件反射。",
       "turn_order": ["laoren-jia", "waixingren-yi", "laoren-jia", "waixingren-jia", "laoren-jia"],
       "beats": [
-        {"after_turn": 1, "fact": "电话里是机器客服的标准语音：'您的话费余额不足，请及时充值……'这种电话老人接过很多次。"},
-        {"after_turn": 3, "fact": "老人挂掉电话，把手机放回原处，插好充电线，回过头面对两个外星人。"}
+        {"after_turn": 1, "fact": "电话里是机器客服的标准语音：'您的话费余额不足，请及时充值……'"},
+        {"after_turn": 3, "fact": "屋里又静了。两个外星人还站在原地，记录板上标准二那一栏的钩还空着。"}
       ],
       "exit_condition": "老人说出那句话，故事停住",
       "core_emotion": "期待太久到有点麻木。这句拒绝不是因为这里好，只是因为他还在等",
