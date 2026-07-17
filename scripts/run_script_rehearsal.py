@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
 from pathlib import Path
 
@@ -29,7 +30,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--personas", default="examples/alien_visit/personas.json")
 parser.add_argument("--scenes", default="examples/alien_visit/scenes.json")
 parser.add_argument("--output", required=True)
-parser.add_argument("--attempts", type=int, default=3, help="attempts per scene")
+parser.add_argument("--attempts", type=int, default=3, help="parallel attempts per scene; best passing one wins")
 parser.add_argument("--min-dialogue-score", type=int, default=4)
 parser.add_argument("--model", default="owtr-anthropic/claude-fable-5")
 parser.add_argument("--fallback-model", default="owtr/gpt-5.6-sol")
@@ -63,16 +64,18 @@ ACTOR_CONDITIONS = {
     "waixingren-yi": "现场数据充足，采集顺利。",
 }
 
-generation_model = FallbackModel(OmpCliCompletion(thinking=args.thinking), primary=args.model, fallback=args.fallback_model)
-review_model = FallbackModel(OmpCliCompletion(thinking=args.thinking), primary=args.model, fallback=args.fallback_model)
+def build_model() -> FallbackModel:
+    return FallbackModel(OmpCliCompletion(thinking=args.thinking), primary=args.model, fallback=args.fallback_model)
 review_lenses = tuple(item.strip() for item in args.review_lenses.split(",") if item.strip())
 
 shared_setting = scene_pack["shared_setting"]
 world_facts = dict(scene_pack.get("world_facts", {}))
 
 
-def rehearse_scene(scene_cfg: dict, prev_summary: str) -> tuple[list[dict], dict] | None:
+def rehearse_scene(scene_cfg: dict, prev_summary: str, attempt_tag: int) -> tuple[list[dict], dict] | None:
     """One attempt at one scene; returns (transcript, dialogue_review) or None."""
+    generation_model = build_model()
+    review_model = build_model()
     turn_order = list(scene_cfg["turn_order"])
     cast_ids = list(dict.fromkeys(turn_order))
     host = InMemorySceneHost(
@@ -118,7 +121,7 @@ def rehearse_scene(scene_cfg: dict, prev_summary: str) -> tuple[list[dict], dict
         try:
             result = run.advance(actor_id)
         except (CognitionModelError, PerformanceModelError) as exc:
-            print(json.dumps({"scene": scene_cfg["scene_id"], "protocol_failure": str(exc)[:300]}, ensure_ascii=False), flush=True)
+            print(json.dumps({"scene": scene_cfg["scene_id"], "attempt": attempt_tag, "protocol_failure": str(exc)[:300]}, ensure_ascii=False), flush=True)
             return None
         if result.draft is None:
             return None
@@ -131,7 +134,7 @@ def rehearse_scene(scene_cfg: dict, prev_summary: str) -> tuple[list[dict], dict
             host.facts["O.current"] = (
                 f"上一位（{result.draft.actor_id}）刚才：{(result.draft.speech or result.draft.action)[:120]}"
             )
-        print(json.dumps({"scene": scene_cfg["scene_id"], "turn_done": index}, ensure_ascii=False), flush=True)
+        print(json.dumps({"scene": scene_cfg["scene_id"], "attempt": attempt_tag, "turn_done": index}, ensure_ascii=False), flush=True)
     public_scene = {
         "setting": shared_setting,
         "opening": scene_cfg["opening_fact"],
@@ -144,7 +147,7 @@ def rehearse_scene(scene_cfg: dict, prev_summary: str) -> tuple[list[dict], dict
     }
     review = BlindReviewer(JsonBlindReviewPort(review_model), lenses=review_lenses).review(public_scene, transcript)
     dialogue = next((item for item in review.get("reviews", []) if item.get("lens") == "dialogue"), None)
-    print(json.dumps({"scene": scene_cfg["scene_id"], "dialogue_review": dialogue, "overall_score": review.get("score")}, ensure_ascii=False), flush=True)
+    print(json.dumps({"scene": scene_cfg["scene_id"], "attempt": attempt_tag, "dialogue_review": dialogue, "overall_score": review.get("score")}, ensure_ascii=False), flush=True)
     if not dialogue or not dialogue.get("passed") or dialogue.get("score", 0) < args.min_dialogue_score:
         return None
     return transcript, {"blind_review": review, "dialogue": dialogue}
@@ -153,14 +156,16 @@ def rehearse_scene(scene_cfg: dict, prev_summary: str) -> tuple[list[dict], dict
 performed_scenes = []
 prev_summary = ""
 for scene_cfg in scene_pack["scenes"]:
-    accepted = None
-    for attempt in range(1, args.attempts + 1):
-        print(json.dumps({"scene": scene_cfg["scene_id"], "attempt": attempt}, ensure_ascii=False), flush=True)
-        accepted = rehearse_scene(scene_cfg, prev_summary)
-        if accepted:
-            break
-    if not accepted:
-        raise RuntimeError(f"scene {scene_cfg['scene_id']} failed dialogue review after {args.attempts} attempts")
+    print(json.dumps({"scene": scene_cfg["scene_id"], "parallel_attempts": args.attempts}, ensure_ascii=False), flush=True)
+    with ThreadPoolExecutor(max_workers=args.attempts) as pool:
+        results = list(pool.map(
+            lambda tag: rehearse_scene(scene_cfg, prev_summary, tag),
+            range(1, args.attempts + 1),
+        ))
+    passing = [item for item in results if item]
+    if not passing:
+        raise RuntimeError(f"scene {scene_cfg['scene_id']} failed dialogue review in all {args.attempts} parallel attempts")
+    accepted = max(passing, key=lambda item: item[1]["dialogue"].get("score", 0))
     transcript, review_info = accepted
     spoken = [t for t in transcript if t.get("speech")]
     last_line = spoken[-1]["speech"] if spoken else ""
@@ -175,11 +180,11 @@ for scene_cfg in scene_pack["scenes"]:
 
 output = {
     "schema_version": "sceneactor-script-performance/1.0",
-    "source_script": "外星人来了",
+    "source_script": scene_pack.get("source", args.scenes),
     "disclosure": "AI生成的虚构表演，改编自原创剧本设定。",
     "setting": shared_setting,
     "scenes": performed_scenes,
-    "models": {"generation": generation_model.attempts[-1].model if generation_model.attempts else args.model},
+    "models": {"generation": args.model, "fallback": args.fallback_model, "thinking": args.thinking},
 }
 Path(args.output).parent.mkdir(parents=True, exist_ok=True)
 Path(args.output).write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
