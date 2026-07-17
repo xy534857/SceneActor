@@ -83,6 +83,19 @@ class JsonCognitionPort:
                 },
             },
         }
+        own_recent_lengths = [
+            len(str(item.get("speech", "")))
+            for item in frame.recent_history
+            if item.get("actor_id") == frame.actor_id and str(item.get("speech", "")).strip()
+        ]
+        payload["turn_economy_state"] = {
+            "your_recent_turn_lengths_chars": own_recent_lengths[-3:],
+            "rule": (
+                "if your previous turn was long, strongly prefer a short single-beat turn now "
+                "(a bare denial, a flat contradiction, a mocked echo of the opponent's last word); "
+                "two long turns in a row from the same speaker need an explicit spiraling tactic in policy.chosen_strategy"
+            ),
+        }
         payload["response_contract"] = {
             "top_level_keys": ["appraisal", "policy"],
             "appraisal_keys": ["subjective_observation", "emotion_changes", "grounded_refs"],

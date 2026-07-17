@@ -156,6 +156,13 @@ for attempt in range(1, args.attempts + 1):
         })
     if failed:
         continue
+    actor_speech_lengths = [len(t["speech"]) for t in turns if t.get("speech")]
+    if actor_speech_lengths and min(actor_speech_lengths) > 80:
+        print(json.dumps({
+            "attempt": attempt,
+            "turn_economy_failure": f"all {len(actor_speech_lengths)} actor turns exceed 80 chars (min {min(actor_speech_lengths)}); a live quarrel needs short beats",
+        }, ensure_ascii=False), flush=True)
+        continue
     public_scene = {
         "setting": scene.setting,
         "opening": scene.opening,
