@@ -24,16 +24,20 @@
     {
       "scene_id": "alien-visit-verify",
       "title": "核实",
-      "max_turns": 8,
+      "max_turns": 12,
       "opening_fact": "院内。外星人甲宣布开始核实孤独标准，乙准备记录。老人没有停下来配合，继续扫院子、喂鸡，做早晨该做的事。",
-      "turn_order": ["waixingren-jia", "waixingren-yi", "laoren-jia", "waixingren-jia", "waixingren-yi", "laoren-jia", "waixingren-jia", "waixingren-yi"],
+      "turn_order": ["waixingren-jia", "laoren-jia", "waixingren-yi", "waixingren-jia", "laoren-jia", "waixingren-yi", "waixingren-jia", "laoren-jia", "waixingren-yi", "waixingren-jia", "laoren-jia", "waixingren-yi"],
       "beats": [
-        {"after_turn": 2, "fact": "乙走到院门口往村里望了一眼——整条路上没有一个人影。"},
-        {"after_turn": 5, "fact": "堂屋桌上那部手机充着电，摆在最显眼的地方。屏幕上最后一条消息的时间戳是十四个月前。"},
-        {"after_turn": 7, "fact": "院子里安静下来，只有风声。"}
+        {"after_turn": 3, "fact": "乙走到院门口往村里望了一眼——整条路上没有一个人影。"},
+        {"after_turn": 6, "fact": "堂屋桌上那部手机充着电，摆在最显眼的地方。屏幕上最后一条消息的时间戳是十四个月前。"},
+        {"after_turn": 10, "fact": "院子里安静下来，只有风声。"}
       ],
-      "exit_condition": "核实条目走完，乙存档",
-      "core_emotion": "精确的残忍——每一条适配说明都在无意识地宣判：你活得已经和一颗荒废星球一样了"
+      "exit_condition": "三条标准核实走完，乙存档",
+      "core_emotion": "精确的残忍——每一条适配说明都在无意识地宣判：你活得已经和一颗荒废星球一样了",
+      "actor_hints": {
+        "waixingren-jia": "你有整场戏的回合慢慢走完三条标准，不用赶。一个回合只做一件事：要么念一条，要么归类上一条，要么请求确认。节奏越慢，越像机器。",
+        "waixingren-yi": "你每次开口最多两句，一条记录念完就低头。宁可这回合只打一个钩不说话。"
+      }
     },
     {
       "scene_id": "alien-visit-persuade",
@@ -47,7 +51,11 @@
       ],
       "exit_condition": "清单念完，老人无明确回应，甲归类'回应状态待定'",
       "core_emotion": "老人听懂了清单给不了他想要的，但他不说破，只是笑——那个笑温和，有一点悲，是他全场最重的表达",
-      "actor_hints": {"laoren-jia": "这场戏你坐着不动，手上没有活。你最重的回应是那个笑：听着清单，脸上带一点温和又有一点悲的笑，不点头不摇头不打断。笑不解释。"}
+      "actor_hints": {
+        "laoren-jia": "这场戏你坐着不动，手上没有活。你最重的回应是那个笑：听着清单，脸上带一点温和又有一点悲的笑，不点头不摇头不打断。笑不解释。",
+        "waixingren-jia": "福利只有两条，你有三个回合，别赶：一个回合念一条就够。",
+        "waixingren-yi": "你每次开口最多两句，念完低头。"
+      }
     },
     {
       "scene_id": "alien-visit-phone",
