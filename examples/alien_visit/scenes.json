@@ -39,14 +39,15 @@
       "scene_id": "alien-visit-persuade",
       "title": "说服",
       "max_turns": 6,
-      "opening_fact": "屋内。老人已经坐下，给两个来访者一人倒了一碗水——不是热情，是规矩。外星人甲拿出福利清单，准备逐条宣读。",
+      "opening_fact": "屋内。老人已经在炕沿坐下，面前的矮桌上摆着他刚倒的两碗水——不是热情，是规矩。两个外星人站在桌对面，甲手里拿着福利清单，还没开始念。所有人都在屋里，这场戏不出屋。",
       "turn_order": ["waixingren-jia", "laoren-jia", "waixingren-jia", "laoren-jia", "waixingren-yi", "laoren-jia"],
       "beats": [
-        {"after_turn": 3, "fact": "屋里只有甲念清单的声音。清单快念完了。"},
-        {"after_turn": 5, "fact": "屋里静了下来。清单念完了，没有人接话。"}
+        {"after_turn": 3, "fact": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。"},
+        {"after_turn": 5, "fact": "沉默还悬着。福利清单摊在甲手里，确认栏空着。"}
       ],
       "exit_condition": "清单念完，老人无明确回应，甲归类'回应状态待定'",
-      "core_emotion": "老人听懂了清单给不了他想要的，但他不说破，只是笑"
+      "core_emotion": "老人听懂了清单给不了他想要的，但他不说破，只是笑——那个笑温和，有一点悲，是他全场最重的表达",
+      "actor_hints": {"laoren-jia": "这场戏你坐着不动，手上没有活。你最重的回应是那个笑：听着清单，脸上带一点温和又有一点悲的笑，不点头不摇头不打断。笑不解释。"}
     },
     {
       "scene_id": "alien-visit-phone",

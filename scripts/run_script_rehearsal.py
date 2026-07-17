@@ -103,6 +103,7 @@ def rehearse_scene(scene_cfg: dict, prev_summary: str, attempt_tag: int) -> tupl
                 "condition_tonight": ACTOR_CONDITIONS[actor_id],
                 "scene_emotion": scene_cfg["core_emotion"],
                 **({"closing_hint": scene_cfg["closing_hint"]} if scene_cfg.get("closing_hint") and actor_id == "laoren-jia" else {}),
+                **({"scene_hint": scene_cfg["actor_hints"][actor_id]} if actor_id in scene_cfg.get("actor_hints", {}) else {}),
             },
             "guarded" if actor_id == "laoren-jia" else "open",
         )
