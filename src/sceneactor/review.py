@@ -50,12 +50,22 @@ class BlindReviewer:
         self.complete = complete
 
     def review(self, public_scene: Mapping[str, Any], transcript: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+        def packet_for(lens: str) -> dict[str, Any]:
+            if lens in ("dialogue", "reader"):
+                script = [
+                    {
+                        "actor_id": item.get("actor_id", ""),
+                        "speech": item.get("speech", ""),
+                        "stage_note": str(item.get("action", ""))[:80] if item.get("action") not in ("", "speak") else "",
+                    }
+                    for item in transcript
+                ]
+                return {"public_scene": dict(public_scene), "clean_transcript": script}
+            return {"public_scene": dict(public_scene), "clean_transcript": list(transcript)}
+
         def review_one(lens: str) -> BlindReview:
             try:
-                data = self.complete(
-                    lens,
-                    {"public_scene": dict(public_scene), "clean_transcript": list(transcript)},
-                )
+                data = self.complete(lens, packet_for(lens))
                 score = int(data.get("score", 0))
                 return BlindReview(
                     lens=lens,
