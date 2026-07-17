@@ -56,7 +56,7 @@ class BlindReviewer:
                     {
                         "actor_id": item.get("actor_id", ""),
                         "speech": item.get("speech", ""),
-                        "stage_note": str(item.get("action", ""))[:80] if item.get("action") not in ("", "speak") else "",
+                        "stage_note": _first_sentence(str(item.get("action", ""))) if item.get("action") not in ("", "speak") else "",
                     }
                     for item in transcript
                 ]
@@ -91,6 +91,17 @@ class BlindReviewer:
             "reviews": [item.__dict__ for item in reviews],
             "aggregation": "majority_median_v1",
         }
+
+
+def _first_sentence(text: str, limit: int = 120) -> str:
+    text = text.strip()
+    if len(text) <= limit:
+        return text
+    for stop in ("。", "；", "，"):
+        cut = text.rfind(stop, 0, limit)
+        if cut > 20:
+            return text[: cut + 1]
+    return text[:limit]
 
 
 class JsonBlindReviewPort:
