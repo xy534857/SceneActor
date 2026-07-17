@@ -33,6 +33,8 @@ parser.add_argument("--attempts", type=int, default=3, help="attempts per scene"
 parser.add_argument("--min-dialogue-score", type=int, default=4)
 parser.add_argument("--model", default="owtr-anthropic/claude-fable-5")
 parser.add_argument("--fallback-model", default="owtr/gpt-5.6-sol")
+parser.add_argument("--thinking", default="low", help="omp thinking level for all calls")
+parser.add_argument("--review-lenses", default="dialogue", help="comma-separated blind review lenses")
 args = parser.parse_args()
 if args.attempts < 1 or not 3 <= args.min_dialogue_score <= 5:
     parser.error("attempts must be positive and min dialogue score between three and five")
@@ -61,8 +63,9 @@ ACTOR_CONDITIONS = {
     "waixingren-yi": "现场数据充足，采集顺利。",
 }
 
-generation_model = FallbackModel(OmpCliCompletion(), primary=args.model, fallback=args.fallback_model)
-review_model = FallbackModel(OmpCliCompletion(), primary=args.model, fallback=args.fallback_model)
+generation_model = FallbackModel(OmpCliCompletion(thinking=args.thinking), primary=args.model, fallback=args.fallback_model)
+review_model = FallbackModel(OmpCliCompletion(thinking=args.thinking), primary=args.model, fallback=args.fallback_model)
+review_lenses = tuple(item.strip() for item in args.review_lenses.split(",") if item.strip())
 
 shared_setting = scene_pack["shared_setting"]
 world_facts = dict(scene_pack.get("world_facts", {}))
@@ -139,7 +142,7 @@ def rehearse_scene(scene_cfg: dict, prev_summary: str) -> tuple[list[dict], dict
             for actor_id in cast_ids
         ],
     }
-    review = BlindReviewer(JsonBlindReviewPort(review_model)).review(public_scene, transcript)
+    review = BlindReviewer(JsonBlindReviewPort(review_model), lenses=review_lenses).review(public_scene, transcript)
     dialogue = next((item for item in review.get("reviews", []) if item.get("lens") == "dialogue"), None)
     print(json.dumps({"scene": scene_cfg["scene_id"], "dialogue_review": dialogue, "overall_score": review.get("score")}, ensure_ascii=False), flush=True)
     if not dialogue or not dialogue.get("passed") or dialogue.get("score", 0) < args.min_dialogue_score:

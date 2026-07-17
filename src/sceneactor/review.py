@@ -46,8 +46,17 @@ class BlindReviewer:
 
     LENSES = ("reader", "dialogue", "character", "dramaturgy", "performance")
 
-    def __init__(self, complete: Callable[[str, Mapping[str, Any]], Mapping[str, Any]]) -> None:
+    def __init__(
+        self,
+        complete: Callable[[str, Mapping[str, Any]], Mapping[str, Any]],
+        *,
+        lenses: tuple[str, ...] | None = None,
+    ) -> None:
         self.complete = complete
+        self.lenses = tuple(lenses) if lenses else self.LENSES
+        unknown = set(self.lenses) - set(self.LENSES)
+        if unknown:
+            raise ValueError(f"unknown review lenses: {sorted(unknown)}")
 
     def review(self, public_scene: Mapping[str, Any], transcript: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
         def packet_for(lens: str) -> dict[str, Any]:
@@ -78,8 +87,8 @@ class BlindReviewer:
             except (RuntimeError, TypeError, ValueError, KeyError):
                 return BlindReview(lens, False, False, 0, "review unavailable")
 
-        with ThreadPoolExecutor(max_workers=len(self.LENSES)) as pool:
-            reviews = list(pool.map(review_one, self.LENSES))
+        with ThreadPoolExecutor(max_workers=len(self.lenses)) as pool:
+            reviews = list(pool.map(review_one, self.lenses))
         available = [item for item in reviews if item.available]
         scores = sorted(item.score for item in available)
         median = scores[len(scores) // 2] if scores else 0
