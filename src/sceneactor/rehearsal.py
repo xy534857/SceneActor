@@ -50,7 +50,7 @@ class ActorSetup:
 class RehearsalRun:
     run_id: str
     scene: SceneSetup
-    actors: tuple[ActorSetup, ActorSetup]
+    actors: tuple[ActorSetup, ...]
     host: InMemorySceneHost
     cognition: Mapping[str, CognitionPort]
     performance: PerformancePort
@@ -61,8 +61,11 @@ class RehearsalRun:
     complete_reason: str = ""
 
     def __post_init__(self) -> None:
-        if self.actors[0].persona.id == self.actors[1].persona.id:
-            raise ValueError("rehearsal requires two different actors")
+        if len(self.actors) < 2:
+            raise ValueError("rehearsal requires at least two actors")
+        ids = [actor.persona.id for actor in self.actors]
+        if len(set(ids)) != len(ids):
+            raise ValueError("rehearsal actors must be distinct")
         self.actor_revisions = {
             actor.persona.id: 0 for actor in self.actors
         }
@@ -71,11 +74,17 @@ class RehearsalRun:
     def complete(self) -> bool:
         return bool(self.complete_reason) or len(self.turns) >= self.scene.max_turns
 
-    def advance(self) -> TurnResult:
+    def advance(self, actor_id: str | None = None) -> TurnResult:
         if self.complete:
             raise RuntimeError("rehearsal is complete")
-        actor = self.actors[self.active_actor_index]
-        other = self.actors[1 - self.active_actor_index]
+        if actor_id is None:
+            actor = self.actors[self.active_actor_index]
+        else:
+            matches = [item for item in self.actors if item.persona.id == actor_id]
+            if not matches:
+                raise ValueError(f"unknown rehearsal actor: {actor_id}")
+            actor = matches[0]
+        others = [item for item in self.actors if item.persona.id != actor.persona.id]
         actor_state = self._actor_state(actor.persona.id)
         observation = self.host.observe(actor.persona.id)
         frame = DecisionFrame(
@@ -87,10 +96,13 @@ class RehearsalRun:
                 "relationship": actor.relationship,
                 "disclosure": actor.disclosure,
                 **dict(actor.private_state),
-                "counterpart": other.persona.name,
+                "counterpart": "、".join(item.persona.name for item in others),
                 "scene_setting": self.scene.setting,
             },
-            relationships={other.persona.id: {"summary": other.relationship or actor.relationship, "disclosure": actor.disclosure}},
+            relationships={
+                item.persona.id: {"summary": item.relationship or actor.relationship, "disclosure": actor.disclosure}
+                for item in others
+            },
             emotions=dict(actor_state.emotions),
             observation=observation,
             recent_history=self._history_for(actor.persona.id),
@@ -126,7 +138,7 @@ class RehearsalRun:
         )
         self.turns.append(result)
         self.actor_revisions[actor.persona.id] = result.actors[actor.persona.id].revision
-        self.active_actor_index = 1 - self.active_actor_index
+        self.active_actor_index = (self.actors.index(actor) + 1) % len(self.actors)
         if len(self.turns) >= self.scene.max_turns:
             self.complete_reason = "safety_cap"
         return result
@@ -158,7 +170,7 @@ class RehearsalRun:
 
 def create_rehearsal(
     scene: SceneSetup,
-    actors: tuple[ActorSetup, ActorSetup],
+    actors: tuple[ActorSetup, ...],
     *,
     host: InMemorySceneHost,
     cognition: Mapping[str, CognitionPort],

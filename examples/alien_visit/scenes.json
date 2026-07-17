@@ -1,0 +1,66 @@
+{
+  "schema_version": "sceneactor-script-scenes/1.0",
+  "source": "改编自剧本《外星人来了》场景卡",
+  "shared_setting": "中国西北无名小村，黄土高原，清晨。村里剩不到十个老人。老人甲的土坯房墙皮脱落，院里有棵老树和几只鸡。安静到只有风。",
+  "world_facts": {
+    "W.checklist": "孤独星球居住标准：一、长期无人陪伴独自生活；二、与外界通讯极少甚至中断；三、所处环境荒僻人烟稀少。三条全符合即达标可带走。",
+    "W.benefits": "孤独星球居住福利：一、一日三餐供应；二、每日例行健康检查与医治。",
+    "W.phone": "堂屋桌上有一部老手机，充着电，摆在最显眼的地方。"
+  },
+  "scenes": [
+    {
+      "scene_id": "alien-visit-knock",
+      "title": "敲门",
+      "max_turns": 6,
+      "opening_fact": "清晨，太阳刚出。外星人甲乙无预兆地站在老人家门外，还没敲门。门从里面开了——老人每天这个时辰开门，跟来不来人没关系。老人站在门口，沉默地打量两个来访者，没有惊讶。",
+      "turn_order": ["waixingren-jia", "laoren-jia", "waixingren-jia", "laoren-jia", "waixingren-yi", "laoren-jia"],
+      "beats": [
+        {"after_turn": 2, "fact": "老人看完了，不说话，转身往院里走，门留着，没关。院里鸡在刨土。"},
+        {"after_turn": 4, "fact": "老人拿起墙根的扫帚开始扫院子，这是他每天早上的事，跟有没有客人没关系。"}
+      ],
+      "exit_condition": "老人进屋或继续做事，外星人跟进院内",
+      "core_emotion": "荒诞中的钝痛——波澜不惊不是平静，是等到麻木"
+    },
+    {
+      "scene_id": "alien-visit-verify",
+      "title": "核实",
+      "max_turns": 8,
+      "opening_fact": "院内。外星人甲宣布开始核实孤独标准，乙准备记录。老人没有停下来配合，继续扫院子、喂鸡，做早晨该做的事。",
+      "turn_order": ["waixingren-jia", "waixingren-yi", "laoren-jia", "waixingren-jia", "waixingren-yi", "laoren-jia", "waixingren-jia", "waixingren-yi"],
+      "beats": [
+        {"after_turn": 2, "fact": "乙走到院门口往村里望了一眼——整条路上没有一个人影。"},
+        {"after_turn": 5, "fact": "乙在堂屋桌上发现那部手机：充着电，摆在最显眼的地方。屏幕上最后一条消息的时间戳是十四个月前。"},
+        {"after_turn": 7, "fact": "院子里安静下来，只有风声。乙站着不动，在记录环境背景噪声。"}
+      ],
+      "exit_condition": "核实条目走完，乙存档",
+      "core_emotion": "精确的残忍——每一条适配说明都在无意识地宣判：你活得已经和一颗荒废星球一样了"
+    },
+    {
+      "scene_id": "alien-visit-persuade",
+      "title": "说服",
+      "max_turns": 6,
+      "opening_fact": "屋内。老人已经坐下，给两个来访者一人倒了一碗水——不是热情，是规矩。外星人甲拿出福利清单，准备逐条宣读。",
+      "turn_order": ["waixingren-jia", "laoren-jia", "waixingren-jia", "laoren-jia", "waixingren-yi", "laoren-jia"],
+      "beats": [
+        {"after_turn": 3, "fact": "老人坐着听，脸上带一点笑。那个笑温和，有一点悲。他没有打断，没有点头，也没有摇头。"},
+        {"after_turn": 5, "fact": "屋里静了下来。甲念完了整张清单，在等回应。老人还是那个笑。"}
+      ],
+      "exit_condition": "清单念完，老人无明确回应，甲归类'回应状态待定'",
+      "core_emotion": "老人听懂了清单给不了他想要的，但他不说破，只是笑"
+    },
+    {
+      "scene_id": "alien-visit-phone",
+      "title": "电话",
+      "max_turns": 5,
+      "opening_fact": "屋内，沉默悬着。突然，桌上那部充着电的手机响了。老人起身去接，很自然，像条件反射。",
+      "turn_order": ["laoren-jia", "waixingren-yi", "laoren-jia", "waixingren-jia", "laoren-jia"],
+      "beats": [
+        {"after_turn": 1, "fact": "电话里是机器客服的标准语音：'您的话费余额不足，请及时充值……'这种电话老人接过很多次。"},
+        {"after_turn": 3, "fact": "老人挂掉电话，把手机放回原处，插好充电线，回过头面对两个外星人。"}
+      ],
+      "exit_condition": "老人说出那句话，故事停住",
+      "core_emotion": "期待太久到有点麻木。这句拒绝不是因为这里好，只是因为他还在等",
+      "closing_hint": "老人最后一个回合应落在'我还是习惯住在这里'这句话的意思上——用他自己的字说，平静，没有表情"
+    }
+  ]
+}
