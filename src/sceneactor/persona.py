@@ -18,6 +18,8 @@ class VoiceProfile:
     pressure_change: str = ""
     failure_mode: str = ""
     relationship_shifts: str = ""
+    signature_texture: str = ""
+    turn_economy: str = ""
     output_language: str = ""
     localization_rule: str = ""
 

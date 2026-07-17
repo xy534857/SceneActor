@@ -98,7 +98,9 @@ class JsonBlindReviewPort:
             "dialogue": (
                 "natural spoken Chinese and immediate speech action: reject planning-layer classification, field-order reports, balanced complete explanations, "
                 "generic competent-assistant voice, permission overreach, and human lines transferable unchanged to a protocol-bound machine; "
-                "apply shared-context subtraction, read-aloud, de-completion, and human/robot-swap tests without phrase matching"
+                "apply shared-context subtraction, read-aloud, de-completion, and human/robot-swap tests without phrase matching; "
+                "additionally judge turn economy — a live quarrel needs short single-beat turns (a bare denial, a mocked echo) mixed with long ones, and fights about concrete objects, not restated theses; "
+                "uniform turn length, every turn opening with rebuttal and closing with a verdict, or abstraction replacing specifics caps the score at 3"
             ),
             "character": "distinct attention, pressure-revealed choice, voice and card fit without trait recitation",
             "dramaturgy": "beat change, tactic, physical situation and whether possibilities changed",

@@ -24,6 +24,15 @@ parser.add_argument("--second-pack", default="examples/public_figure_packs/joe_b
 parser.add_argument("--output", required=True)
 parser.add_argument("--attempts", type=int, default=3)
 parser.add_argument("--turns", type=int, default=4)
+parser.add_argument("--scene-id", default="satire-hell-debate")
+parser.add_argument(
+    "--opening",
+    default="主持人问两名虚构讽刺角色：如果你们中有人会下地狱，凭什么不是你自己？",
+)
+parser.add_argument(
+    "--opening-fact",
+    default="主持人已经明确说明这是AI生成的虚构讽刺小品，并问：如果你们两个人中有人会下地狱，凭什么不是你自己？现在轮到台上角色回应。",
+)
 parser.add_argument("--min-dialogue-score", type=int, default=5)
 parser.add_argument("--model", default="owtr-anthropic/claude-fable-5")
 parser.add_argument("--fallback-model", default="owtr/gpt-5.6-sol")
@@ -56,17 +65,15 @@ last_dialogue_review: dict | None = None
 
 for attempt in range(1, args.attempts + 1):
     scene = SceneSetup(
-        "satire-hell-debate",
+        args.scene_id,
         "明确标注AI生成与虚构的小品摄影棚；非真实辩论、非真实引语",
-        "主持人问两名虚构讽刺角色：如果你们中有人会下地狱，凭什么不是你自己？",
+        args.opening,
         ("lectern-left", "lectern-right", "moderator", "audience"),
         max_turns=args.turns,
     )
     host = InMemorySceneHost(
         scene.scene_id,
-        facts={
-            "O.current": "主持人已经明确说明这是AI生成的虚构讽刺小品，并问：如果你们两个人中有人会下地狱，凭什么不是你自己？现在轮到台上角色回应。"
-        },
+        facts={"O.current": args.opening_fact},
         targets=(first.id, second.id, "moderator"),
         capabilities=("speak", "wait"),
     )
