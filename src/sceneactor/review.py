@@ -153,6 +153,8 @@ class JsonBlindReviewPort:
         "flaws_cost_something": "Where a voice contract prescribes a failure mode (restarts, miscounts, losing the thread), its traces COST the speaker something — a beat lost, an opening handed over — rather than resolving into a polished rhetorical device or self-aware joke. A behavior the contract frames as SIGNATURE TEXTURE (e.g. numbers inflating as boast) is voice fidelity, not an uncosted flaw; judge only traces the contract itself frames as failure.",
         "pressure_changes_speech": "Speech observably changes under pressure per the voice contract (shorter, repeated, derailed, hand stops) at least once; characters who sound identical in calm and under fire fail this item.",
         "no_authorial_verdict": "No speaker receives an unanswered closing verdict, moral of the story, or audience address that reads as the author's point; the scene does not crown a winner in its final beat unless a neutral third party owns the close.",
+        "persona_fidelity": "When the packet supplies character_cards (want/need/lie/flaw/arc), every speaker's choices remain inside their card: a character whose flaw is never voicing need does not deliver declarations or defiance; a character whose want is pinned to an object cannot ignore that object when it activates; suppressed longing may LEAK (a hurried hand, a held gaze, a half-beat stop) but never convert into articulate self-possession. A performance that makes the character more clear-eyed, assertive, or resolved than the card allows fails this item even if the resulting drama is better.",
+        "wound_stays_open": "The character's stated unresolved wound or wait stays unresolved and active: the scene may show hope rising and falling, but no speaker walks away cured, vindicated, or done waiting unless the script's arc says so.",
         # ---- production (craft hygiene) ----
         "no_planning_leak": "No line exposes planning-layer vocabulary (state codes spoken by humans, field-order reports from non-machine roles, response-hook talk) that belongs to the pipeline, not the play.",
         "silence_has_content": "Where a speaker stays silent or near-silent, the silence carries a visible choice (an action, an avoidance, a stopped gesture) rather than an empty placeholder note.",
@@ -164,7 +166,7 @@ class JsonBlindReviewPort:
         "language_surface": ("idiomatic_speech", "no_written_aphorism", "no_mirror_symmetry", "no_enumeration_reflex", "colloquial_particles"),
         "turn_mechanics": ("turn_length_variety", "no_template_turns", "one_job_per_turn", "no_explanatory_tail", "leaves_hooks_open"),
         "interaction": ("listens_and_reacts", "answers_strongest_point", "no_restating_visible", "concrete_objects", "escalation_moves"),
-        "character": ("distinct_voices", "tic_budget", "flaws_cost_something", "pressure_changes_speech", "no_authorial_verdict"),
+        "character": ("distinct_voices", "tic_budget", "flaws_cost_something", "pressure_changes_speech", "no_authorial_verdict", "persona_fidelity", "wound_stays_open"),
         "production": ("no_planning_leak", "silence_has_content", "consistent_stage_facts", "core_emotion_delivered"),
     }
 
@@ -175,6 +177,7 @@ class JsonBlindReviewPort:
         "listens_and_reacts",
         "distinct_voices",
         "silence_has_content",
+        "persona_fidelity",
     )
 
     def __call__(self, lens: str, packet: Mapping[str, Any]) -> Mapping[str, Any]:

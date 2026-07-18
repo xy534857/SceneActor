@@ -154,6 +154,15 @@ def rehearse_scene(scene_cfg: dict, prev_summary: str, attempt_tag: int) -> tupl
                 f"上一位（{result.draft.actor_id}）刚才：{(result.draft.speech or result.draft.action)[:120]}"
             )
         print(json.dumps({"scene": scene_cfg["scene_id"], "attempt": attempt_tag, "turn_done": index}, ensure_ascii=False), flush=True)
+    character_cards = {
+        actor_id: {
+            "role": personas[actor_id].role,
+            "values": personas[actor_id].values,
+            "cognition_lens": personas[actor_id].cognition_lens,
+            "goal": ACTOR_GOALS[actor_id],
+        }
+        for actor_id in cast_ids
+    }
     public_scene = {
         "setting": shared_setting,
         "opening": scene_cfg["opening_fact"],
@@ -163,6 +172,7 @@ def rehearse_scene(scene_cfg: dict, prev_summary: str, attempt_tag: int) -> tupl
             {"anonymous_actor": actor_id, "role": personas[actor_id].role, "voice": personas[actor_id].voice.to_dict()}
             for actor_id in cast_ids
         ],
+        "character_cards": character_cards,
     }
     review = BlindReviewer(JsonBlindReviewPort(review_model), lenses=review_lenses).review(public_scene, transcript)
     dialogue = next((item for item in review.get("reviews", []) if item.get("lens") == "dialogue"), None)
