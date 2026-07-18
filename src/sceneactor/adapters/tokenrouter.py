@@ -275,21 +275,36 @@ class TokenRouterVideoClient:
         timeout_seconds: float = 900.0,
         on_status: Callable[[str, Mapping[str, Any]], None] | None = None,
     ) -> tuple[str, dict[str, Any]]:
-        """Poll until FINISH; return (video_url, raw_response)."""
+        """Poll until the inner AigcVideoTask finishes; return (output_url, raw_response).
+
+        The outer ``Response.Status`` reports FINISH even when the generation
+        itself FAILED, and ``Response.Input`` echoes back the caller's reference
+        URLs — so completion, errors, and the output URL are all read strictly
+        from ``Response.AigcVideoTask`` (never scanned from the whole response,
+        which previously returned the uploaded reference video as the "result").
+        """
         started = time.monotonic()
         while True:
             body = self.describe_task(task_id)
             response = body.get("Response", {}) if isinstance(body, dict) else {}
-            status = str(response.get("Status", ""))
+            node = response.get("AigcVideoTask") or {}
+            status = str(node.get("Status", response.get("Status", "")))
             if on_status is not None:
                 on_status(status, response)
             if status.upper() == "FINISH":
-                url = _search_video_url(response)
+                err_code = int(node.get("ErrCode") or 0)
+                if err_code:
+                    raise TokenRouterError(
+                        _friendly_task_error(task_id, err_code, str(node.get("Message", "")))
+                    )
+                url = _output_video_url(node)
                 if not url:
-                    raise TokenRouterError(f"task {task_id} finished without a video URL")
+                    raise TokenRouterError(f"task {task_id} finished without an output video URL")
                 return url, body
             if "FAIL" in status.upper() or "ERROR" in status.upper():
-                raise TokenRouterError(f"task {task_id} ended with status {status}")
+                raise TokenRouterError(
+                    _friendly_task_error(task_id, int(node.get("ErrCode") or 0), str(node.get("Message", status)))
+                )
             if time.monotonic() - started > timeout_seconds:
                 raise TokenRouterError(f"task {task_id} timed out after {timeout_seconds:.0f}s (status={status})")
             time.sleep(self.config.poll_interval_seconds)
@@ -338,6 +353,53 @@ class TokenRouterVideoClient:
             detail = exc.read().decode("utf-8", errors="replace")[:500]
             raise TokenRouterError(f"reference upload failed (HTTP {exc.code}): {detail}") from exc
         return url
+
+    def register_material(
+        self,
+        image_url: str,
+        *,
+        name: str = "sceneactor-material",
+        group: str = "sceneactor",
+        real_person: bool = False,
+        timeout_seconds: float = 300.0,
+    ) -> str:
+        """Register an image as an AIGC material; return its ``asset://`` URL.
+
+        Registered materials carry identity far more reliably than raw image
+        URLs when combined with other references (e.g. a dance video for motion
+        transfer). Requirement: image aspect ratio must be within 0.4-2.5, or
+        Tencent rejects the asset.
+        """
+        body = self._request(
+            "CreateAigcMaterial",
+            {
+                "FileInfo": {"Type": "Url", "Url": image_url},
+                "AssetType": "Image",
+                "IsRealPerson": "True" if real_person else "False",
+                "GroupId": group,
+                "GroupName": group,
+                "AssetName": name,
+            },
+        )
+        task_id = str(body.get("Response", {}).get("TaskId", ""))
+        if not task_id:
+            raise TokenRouterError(f"material create response missing TaskId: {json.dumps(body)[:400]}")
+        started = time.monotonic()
+        while True:
+            response = self.describe_task(task_id).get("Response", {})
+            node = response.get("CreateAigcMaterialTask") or {}
+            status = str(node.get("Status", response.get("Status", "")))
+            if status.upper() == "FINISH":
+                err_code = int(node.get("ErrCode") or 0)
+                asset_id = str((node.get("Output") or {}).get("AssetId", "") or "")
+                if err_code or not asset_id:
+                    raise TokenRouterError(
+                        f"material registration failed (ErrCode={err_code}): {node.get('Message', '')}"
+                    )
+                return f"asset://{asset_id}"
+            if time.monotonic() - started > timeout_seconds:
+                raise TokenRouterError(f"material task {task_id} timed out (status={status})")
+            time.sleep(self.config.poll_interval_seconds)
 
     def generate(
         self,
@@ -405,23 +467,31 @@ def _url_extension(url: str) -> str:
     return ".mp4"
 
 
-def _search_video_url(value: Any) -> str:
-    """Best-effort recursive scan for a video URL (mirrors the vendor client)."""
-    if isinstance(value, Mapping):
-        for item in value.values():
-            found = _search_video_url(item)
-            if found:
-                return found
-    elif isinstance(value, (list, tuple)):
-        for item in value:
-            found = _search_video_url(item)
-            if found:
-                return found
-    elif isinstance(value, str) and value.startswith("http"):
-        base = value.split("?")[0].lower()
-        if base.endswith(_VIDEO_EXTENSIONS):
-            return value
+def _output_video_url(task_node: Mapping[str, Any]) -> str:
+    """Output URL strictly from AigcVideoTask.Output.FileInfos.
+
+    NEVER scan the whole response: Input.FileInfos echoes back the caller's
+    reference URLs, which a naive URL scan mistakes for the generated video.
+    """
+    output = task_node.get("Output") or {}
+    for info in output.get("FileInfos") or []:
+        if not isinstance(info, Mapping):
+            continue
+        url = str(info.get("FileUrl", "") or info.get("Url", "")).strip()
+        if url.startswith("http"):
+            return url
     return ""
+
+
+def _friendly_task_error(task_id: str, err_code: int, message: str) -> str:
+    if "OutputAudioSensitiveContentDetected" in message:
+        return (
+            f"task {task_id} failed: generated audio was rejected by the content "
+            "filter (OutputAudioSensitiveContentDetected). This is frequently a "
+            "false positive — retry with OutputConfig.AudioGeneration=Disabled "
+            f"(generate(audio=False)). Raw: {message}"
+        )
+    return f"task {task_id} failed (ErrCode={err_code}): {message}"
 
 
 def _friendly_error(status: int, body: str) -> str:

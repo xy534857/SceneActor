@@ -13,7 +13,6 @@ from sceneactor.adapters.tokenrouter import (
     TokenRouterError,
     TokenRouterProviderConfig,
     TokenRouterVideoClient,
-    _search_video_url,
 )
 
 VENDOR_ROOT = Path(__file__).resolve().parents[1] / "vendor" / "GodotAvatarVideoGen"
@@ -97,6 +96,11 @@ class _FakeResponse(io.BytesIO):
 
 
 class TestLifecycle:
+    """Response fixtures mirror REAL DescribeTaskDetail bodies observed live:
+    the outer Response.Status is FINISH even for failed generations, Input
+    echoes back caller reference URLs, and the output lives ONLY at
+    Response.AigcVideoTask.Output.FileInfos[].FileUrl."""
+
     def _client_with_responses(self, config: TokenRouterProviderConfig, bodies: list[dict]) -> TokenRouterVideoClient:
         queue = [json.dumps(b).encode() for b in bodies]
 
@@ -105,18 +109,64 @@ class TestLifecycle:
 
         return TokenRouterVideoClient(config, token="owtr_test", opener=fake_opener)
 
-    def test_create_and_poll_to_finish(self, config: TokenRouterProviderConfig) -> None:
+    @staticmethod
+    def _finish_body(*, err_code: int = 0, message: str = "", output_url: str = "") -> dict:
+        output_infos = [{"StorageMode": "Temporary", "FileUrl": output_url}] if output_url else []
+        return {
+            "Response": {
+                "Status": "FINISH",  # outer status lies: FINISH even on failure
+                "AigcVideoTask": {
+                    "TaskId": "t-x",
+                    "Status": "FINISH",
+                    "ErrCode": err_code,
+                    "Message": message,
+                    "Progress": 100,
+                    "Input": {
+                        "FileInfos": [
+                            # echo of the caller's reference video — must NOT be
+                            # mistaken for the generated output
+                            {"Type": "Url", "Category": "Video", "Url": "https://bucket/reference_dance.mp4"}
+                        ]
+                    },
+                    "Output": {"FileInfos": output_infos},
+                },
+            }
+        }
+
+    def test_output_taken_from_output_not_input_echo(self, config: TokenRouterProviderConfig) -> None:
         client = self._client_with_responses(
             config,
             [
                 {"Response": {"TaskId": "t-1"}},
-                {"Response": {"Status": "FINISH", "Output": {"VideoUrl": "https://cdn/x.mp4"}}},
+                self._finish_body(output_url="https://vod/generated.mp4"),
             ],
         )
         task_id = client.create_task(client.build_create_payload("a cat", model="Kling"))
         assert task_id == "t-1"
         url, _raw = client.wait_for_video(task_id, timeout_seconds=5)
-        assert url == "https://cdn/x.mp4"
+        assert url == "https://vod/generated.mp4"
+        assert "reference_dance" not in url
+
+    def test_inner_failure_raises_despite_outer_finish(self, config: TokenRouterProviderConfig) -> None:
+        client = self._client_with_responses(
+            config,
+            [self._finish_body(err_code=70000, message="task failed: some internal error")],
+        )
+        with pytest.raises(TokenRouterError, match="ErrCode=70000"):
+            client.wait_for_video("t-2", timeout_seconds=5)
+
+    def test_audio_filter_failure_gets_actionable_hint(self, config: TokenRouterProviderConfig) -> None:
+        client = self._client_with_responses(
+            config,
+            [self._finish_body(err_code=70000, message="code:OutputAudioSensitiveContentDetected, message:...")],
+        )
+        with pytest.raises(TokenRouterError, match="AudioGeneration=Disabled"):
+            client.wait_for_video("t-3", timeout_seconds=5)
+
+    def test_finish_without_output_url_raises(self, config: TokenRouterProviderConfig) -> None:
+        client = self._client_with_responses(config, [self._finish_body()])
+        with pytest.raises(TokenRouterError, match="without an output video URL"):
+            client.wait_for_video("t-4", timeout_seconds=5)
 
     def test_gateway_error_surfaces(self, config: TokenRouterProviderConfig) -> None:
         client = self._client_with_responses(
@@ -126,23 +176,41 @@ class TestLifecycle:
         with pytest.raises(TokenRouterError, match="AuthFailure"):
             client.create_task(client.build_create_payload("a cat", model="Kling"))
 
-    def test_task_failure_status(self, config: TokenRouterProviderConfig) -> None:
+    def test_material_registration_returns_asset_url(self, config: TokenRouterProviderConfig) -> None:
         client = self._client_with_responses(
             config,
             [
-                {"Response": {"TaskId": "t-2"}},
-                {"Response": {"Status": "FAIL"}},
+                {"Response": {"TaskId": "m-1"}},
+                {
+                    "Response": {
+                        "Status": "FINISH",
+                        "CreateAigcMaterialTask": {
+                            "Status": "FINISH",
+                            "ErrCode": 0,
+                            "Output": {"AssetId": "asset-20260719-abc"},
+                        },
+                    }
+                },
             ],
         )
-        task_id = client.create_task(client.build_create_payload("a cat", model="Kling"))
-        with pytest.raises(TokenRouterError, match="status FAIL"):
-            client.wait_for_video(task_id, timeout_seconds=5)
+        assert client.register_material("https://bucket/face.png") == "asset://asset-20260719-abc"
 
-
-class TestVideoUrlScan:
-    def test_finds_nested_url_and_ignores_non_video(self) -> None:
-        payload = {
-            "a": ["https://cdn/page.html", {"b": {"c": "https://cdn/clip.mp4?sig=1"}}],
-        }
-        assert _search_video_url(payload) == "https://cdn/clip.mp4?sig=1"
-        assert _search_video_url({"x": "no url"}) == ""
+    def test_material_aspect_ratio_failure(self, config: TokenRouterProviderConfig) -> None:
+        client = self._client_with_responses(
+            config,
+            [
+                {"Response": {"TaskId": "m-2"}},
+                {
+                    "Response": {
+                        "Status": "FINISH",
+                        "CreateAigcMaterialTask": {
+                            "Status": "FINISH",
+                            "ErrCode": 70000,
+                            "Message": "Create asset failed: Aspect ratio must be between 0.4 and 2.5.",
+                        },
+                    }
+                },
+            ],
+        )
+        with pytest.raises(TokenRouterError, match="Aspect ratio"):
+            client.register_material("https://bucket/turnaround.png")
