@@ -150,7 +150,7 @@ class JsonBlindReviewPort:
         # ---- character (AI-flavor tier 4: who is talking) ----
         "distinct_voices": "Speakers are distinguishable with names hidden: swapping two adjacent turns between speakers would be noticeable. Shared tics or converging registers fail this item.",
         "tic_budget": "No recognizable signature tic appears twice in one turn, and no tic is machine-gunned across consecutive turns of the same speaker.",
-        "flaws_cost_something": "Where a voice contract prescribes a failure mode (restarts, miscounts, losing the thread), its traces COST the speaker something — a beat lost, an opening handed over — rather than resolving into a polished rhetorical device or self-aware joke.",
+        "flaws_cost_something": "Where a voice contract prescribes a failure mode (restarts, miscounts, losing the thread), its traces COST the speaker something — a beat lost, an opening handed over — rather than resolving into a polished rhetorical device or self-aware joke. A behavior the contract frames as SIGNATURE TEXTURE (e.g. numbers inflating as boast) is voice fidelity, not an uncosted flaw; judge only traces the contract itself frames as failure.",
         "pressure_changes_speech": "Speech observably changes under pressure per the voice contract (shorter, repeated, derailed, hand stops) at least once; characters who sound identical in calm and under fire fail this item.",
         "no_authorial_verdict": "No speaker receives an unanswered closing verdict, moral of the story, or audience address that reads as the author's point; the scene does not crown a winner in its final beat unless a neutral third party owns the close.",
         # ---- production (craft hygiene) ----
@@ -167,6 +167,15 @@ class JsonBlindReviewPort:
         "character": ("distinct_voices", "tic_budget", "flaws_cost_something", "pressure_changes_speech", "no_authorial_verdict"),
         "production": ("no_planning_leak", "silence_has_content", "consistent_stage_facts", "core_emotion_delivered"),
     }
+
+    CRITICAL_ITEMS = (
+        "no_written_aphorism",
+        "no_mirror_symmetry",
+        "no_template_turns",
+        "listens_and_reacts",
+        "distinct_voices",
+        "silence_has_content",
+    )
 
     def __call__(self, lens: str, packet: Mapping[str, Any]) -> Mapping[str, Any]:
         if lens == "dialogue":
@@ -233,8 +242,11 @@ class JsonBlindReviewPort:
                     for tier, keys in self.CHECKLIST_TIERS.items()
                 }
                 worst = [str(k) for k in data.get("worst_failures", []) if k in normalized][:3]
-                gate = passed_bits >= total - 5 and all(
-                    t["passed"] >= t["total"] - 2 for t in tier_bits.values()
+                critical_failed = [k for k in self.CRITICAL_ITEMS if not normalized[k]["pass"]]
+                gate = (
+                    passed_bits >= total - 5
+                    and all(t["passed"] >= t["total"] - 2 for t in tier_bits.values())
+                    and not critical_failed
                 )
                 return {
                     "kind": "binary_checklist",
@@ -242,6 +254,7 @@ class JsonBlindReviewPort:
                     "bits_passed": passed_bits,
                     "bits_total": total,
                     "tiers": tier_bits,
+                    "critical_failed": critical_failed,
                     # Compatibility scalar: map bit ratio onto the legacy 1-5 scale.
                     "score": 1 + round(4 * passed_bits / total),
                     "pass": gate,

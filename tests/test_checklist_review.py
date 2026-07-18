@@ -32,12 +32,19 @@ class ChecklistReviewTests(unittest.TestCase):
         self.assertTrue(result["pass"])
 
     def test_failures_reduce_bits_and_carry_evidence(self) -> None:
-        port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=("no_template_turns", "listens_and_reacts")))
+        port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=("one_job_per_turn", "escalation_moves")))
         result = port("dialogue", {"clean_transcript": []})
         total = result["bits_total"]
         self.assertEqual(result["bits_passed"], total - 2)
-        self.assertIn("no_template_turns: ev-no_template_turns", result["problems"])
-        self.assertTrue(result["pass"])  # 2 misses in different tiers: within tolerance
+        self.assertIn("one_job_per_turn: ev-one_job_per_turn", result["problems"])
+        self.assertTrue(result["pass"])  # 2 non-critical misses in different tiers
+
+    def test_critical_item_is_veto(self) -> None:
+        port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=("no_written_aphorism",)))
+        result = port("dialogue", {"clean_transcript": []})
+        self.assertEqual(result["bits_passed"], result["bits_total"] - 1)
+        self.assertFalse(result["pass"])
+        self.assertEqual(result["critical_failed"], ["no_written_aphorism"])
 
     def test_tier_concentration_fails_the_gate(self) -> None:
         # Three misses all inside language_surface breach the per-tier cap (tier total 5, floor 3).
