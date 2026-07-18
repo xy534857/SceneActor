@@ -130,3 +130,49 @@ class OmpCliCompletion:
         if not completed.stdout.strip():
             raise RuntimeError("OMP model invocation returned empty content")
         return completed.stdout.strip()
+
+
+class GatewayCompletion:
+    """Call an OpenAI-compatible chat completions gateway directly over HTTP."""
+
+    def __init__(
+        self,
+        base_url: str = "",
+        api_key: str = "",
+        *,
+        timeout: float = 300.0,
+        max_tokens: int = 8192,
+    ) -> None:
+        self.base_url = (base_url or os.environ.get("SCENEACTOR_GATEWAY_URL", "")).rstrip("/")
+        self.api_key = api_key or os.environ.get("SCENEACTOR_GATEWAY_KEY", "")
+        if not self.base_url or not self.api_key:
+            raise ValueError("gateway base_url and api_key are required")
+        self.timeout = timeout
+        self.max_tokens = max_tokens
+
+    def __call__(self, messages: list[dict[str, str]], purpose: str, model: str) -> str:
+        del purpose
+        payload = json.dumps(
+            {"model": model, "messages": messages, "max_tokens": self.max_tokens}
+        ).encode("utf-8")
+        request = Request(
+            f"{self.base_url}/chat/completions",
+            data=payload,
+            headers={
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json",
+            },
+        )
+        try:
+            with urlopen(request, timeout=self.timeout) as response:
+                data = json.loads(response.read())
+        except HTTPError as exc:
+            detail = exc.read().decode("utf-8", "replace")[:500] if exc.fp else str(exc)
+            raise RuntimeError(f"gateway completion failed ({exc.code}): {detail}") from exc
+        except (URLError, TimeoutError, OSError) as exc:
+            raise RuntimeError(f"gateway completion failed: {exc}") from exc
+        choices = data.get("choices") or []
+        content = (choices[0].get("message") or {}).get("content") if choices else None
+        if not content or not str(content).strip():
+            raise RuntimeError("gateway completion returned empty content")
+        return str(content).strip()
