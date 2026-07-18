@@ -156,7 +156,7 @@ class GatewayCompletion:
             {"model": model, "messages": messages, "max_tokens": self.max_tokens}
         ).encode("utf-8")
         failure: Exception = RuntimeError("gateway completion produced no output")
-        for _ in range(2):
+        for _ in range(4):
             request = Request(
                 f"{self.base_url}/chat/completions",
                 data=payload,
