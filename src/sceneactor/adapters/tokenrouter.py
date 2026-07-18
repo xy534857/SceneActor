@@ -22,7 +22,9 @@ env var, or the vendored repo's ``credentials/credential.json``.
 
 from __future__ import annotations
 
+import hashlib
 import json
+import mimetypes
 import os
 import time
 import urllib.error
@@ -298,6 +300,44 @@ class TokenRouterVideoClient:
         with self._opener(req, timeout=max(self.config.request_timeout_seconds, 300)) as response:
             dest.write_bytes(response.read())
         return dest
+
+    def upload_reference(self, path: Path) -> str:
+        """Upload a local file to the OCI PAR bucket; return its public URL.
+
+        Mirrors the vendor client: local reference media must be publicly
+        fetchable before Tencent can consume it via FileInfos, so we PUT to
+        ``{oci_par_base_url}{object}`` and reuse the same URL as the public
+        reference. Content-addressed naming makes repeat uploads idempotent.
+        """
+        par_base = self.config.oci_par_base_url.strip()
+        if not par_base:
+            raise TokenRouterError(
+                "oci_par_base_url is not configured in the vendored "
+                "tencent_kling_config.json; local reference uploads are disabled"
+            )
+        if not par_base.endswith("/"):
+            par_base += "/"
+        source = Path(path).expanduser()
+        if not source.is_file():
+            raise TokenRouterError(f"reference file not found: {source}")
+        data = source.read_bytes()
+        digest = hashlib.sha256(data).hexdigest()
+        suffix = source.suffix.lower() or ".bin"
+        url = f"{par_base}sceneactor/{digest}{suffix}"
+        content_type = mimetypes.guess_type(source.name)[0] or "application/octet-stream"
+        req = urllib.request.Request(
+            url,
+            data=data,
+            headers={"Content-Type": content_type},
+            method="PUT",
+        )
+        try:
+            with self._opener(req, timeout=max(self.config.request_timeout_seconds, 300)):
+                pass
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")[:500]
+            raise TokenRouterError(f"reference upload failed (HTTP {exc.code}): {detail}") from exc
+        return url
 
     def generate(
         self,

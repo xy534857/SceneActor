@@ -1,5 +1,13 @@
 from .game import GameActionCommand, GameEnginePort, GamePresentationAdapter, GamePresentationCommand, GameSceneHost
 from .seedance import ProviderCapabilities, ReferenceBinding, SeedanceCompiler, ShotSpec
+from .meme_library import (
+    MemeAnchor,
+    MemeAsset,
+    MemeLibrary,
+    MemeLibraryError,
+    MemePackageInfo,
+    MemeReferencePack,
+)
 from .tokenrouter import (
     ReferenceMedia,
     TokenRouterError,
@@ -14,6 +22,12 @@ __all__ = [
     "GamePresentationAdapter",
     "GamePresentationCommand",
     "GameSceneHost",
+    "MemeAnchor",
+    "MemeAsset",
+    "MemeLibrary",
+    "MemeLibraryError",
+    "MemePackageInfo",
+    "MemeReferencePack",
     "ProviderCapabilities",
     "ReferenceBinding",
     "ReferenceMedia",
