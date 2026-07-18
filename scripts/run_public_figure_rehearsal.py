@@ -162,8 +162,7 @@ for attempt in range(1, args.attempts + 1):
         print(json.dumps({"attempt": attempt, "turn_done": len(turns)}, ensure_ascii=False), flush=True)
     if not failed and len(turns) == args.turns:
         closing = args.moderator_close or (
-            "好了，到这儿。观众朋友们，两位的回答你们都听见了，够不够正面、算不算认账，你们自己判——"
-            "谁该下地狱我不知道，但今晚谁都别想在我这儿封神。晚安。"
+            "到点了，两位。话筒还给导播——广告回来是天气预报。晚安。"
         )
         transcript.append({
             "actor_id": "moderator",
