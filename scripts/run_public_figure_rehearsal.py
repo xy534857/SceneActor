@@ -10,7 +10,7 @@ from pathlib import Path
 
 from sceneactor.evaluation import dialogue_review_passed
 from sceneactor.hosts import InMemorySceneHost
-from sceneactor.model import FallbackModel, OmpCliCompletion
+from sceneactor.model import FallbackModel, GatewayCompletion, OmpCliCompletion
 from sceneactor.cognition import CognitionModelError, JsonCognitionPort
 from sceneactor.performance import JsonPerformancePort, PerformanceModelError
 from sceneactor.persona import Persona
@@ -40,6 +40,10 @@ parser.add_argument("--second-goal", default="让观众把问题理解为个人�
 parser.add_argument("--min-dialogue-score", type=int, default=5)
 parser.add_argument("--model", default="owtr-anthropic/claude-fable-5")
 parser.add_argument("--fallback-model", default="owtr/gpt-5.6-sol")
+parser.add_argument("--review-model", default="", help="review model; defaults to --model")
+parser.add_argument("--review-fallback-model", default="", help="review fallback; defaults to --fallback-model")
+parser.add_argument("--gateway-url", default="", help="direct gateway base url; bypasses omp CLI when set")
+parser.add_argument("--gateway-key", default="", help="gateway api key")
 args = parser.parse_args()
 if args.attempts < 1 or args.turns < 2 or not 3 <= args.min_dialogue_score <= 5:
     parser.error("attempts must be positive, turns at least two, and min dialogue score between three and five")
@@ -62,8 +66,18 @@ first_name = first.name.split("（")[0].strip()
 second_name = second.name.split("（")[0].strip()
 disclosure = f"AI生成的虚构讽刺表演，不代表{first_name}或{second_name}本人的真实言论、观点或录音。"
 
-generation_model = FallbackModel(OmpCliCompletion(), primary=args.model, fallback=args.fallback_model)
-review_model = FallbackModel(OmpCliCompletion(), primary=args.model, fallback=args.fallback_model)
+def _completion():
+    if args.gateway_url:
+        return GatewayCompletion(args.gateway_url, args.gateway_key)
+    return OmpCliCompletion()
+
+
+generation_model = FallbackModel(_completion(), primary=args.model, fallback=args.fallback_model)
+review_model = FallbackModel(
+    _completion(),
+    primary=args.review_model or args.model,
+    fallback=args.review_fallback_model or args.fallback_model,
+)
 accepted: dict | None = None
 last_dialogue_review: dict | None = None
 
