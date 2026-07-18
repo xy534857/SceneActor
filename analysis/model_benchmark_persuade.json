@@ -1,0 +1,1854 @@
+{
+  "schema_version": "sceneactor-model-benchmark/1.0",
+  "scene_id": "alien-visit-persuade",
+  "judge_model": "claude-fable-5",
+  "attempts_per_model": 2,
+  "results": [
+    {
+      "model": "gpt-5.6-sol",
+      "attempt": 1,
+      "turns_completed": 3,
+      "protocol_failure": "runtime: gateway completion failed: timed out",
+      "wall_seconds": 435.7,
+      "generation_calls": 7,
+      "generation_seconds": 435.7,
+      "dialogue_score": 0,
+      "dialogue_passed": false,
+      "verdict": "",
+      "problems": [],
+      "speech_lengths": [
+        18,
+        9
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "将福利清单举在身前，视线扫过第一项后按条目宣读；读完便停住，不翻动清单，也不推进下一项。",
+          "speech": "下面宣读福利条目。一、一日三餐供应。",
+          "addressee": "laoren-jia",
+          "attention_target": "坐在炕沿的老人及其对第一项福利的即时反应。",
+          "gaze": "宣读时落在清单第一项，结束后抬向老人。",
+          "blocking": "站在矮桌对面，与老人隔桌相对，未靠近桌上的两碗水。",
+          "posture_change": "上身保持端正，宣读结束时略微收住下颌，维持原位等待。",
+          "delivery": {
+            "pace": "匀速，按标题与序号分段。",
+            "volume": "清楚可闻，音量稳定。",
+            "breath": "不作生理呼吸表现。",
+            "articulation": "字音清晰，序号与条目边界分明。",
+            "pause": "标题后短停，第一项结束后保持停顿。",
+            "vocal_target": "声音直接送向桌对面的老人。"
+          },
+          "physical_residue": "福利清单仍举在身前，未翻到第二项；身体停在矮桌对面。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待老人对一日三餐供应这一条的反应。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "不出声，只把嘴角轻轻提起，停在原处等着。",
+          "speech": "",
+          "addressee": "waixingren-jia",
+          "attention_target": "对方手中的福利清单",
+          "gaze": "视线先落在清单上，随后抬到对方面上，不避开。",
+          "blocking": "留在原位，与对方隔着清单相对，不向前也不后退。",
+          "posture_change": "下巴微抬，身体保持稳住。",
+          "delivery": {
+            "pace": "无发声",
+            "volume": "无声",
+            "breath": "不作强调",
+            "articulation": "无言语动作",
+            "pause": "将停顿完整留给对方",
+            "vocal_target": "无"
+          },
+          "physical_residue": "嘴角留着一点浅笑，目光停在对方面上。",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "外星人甲如何理解沉默和笑，并决定是否继续清单。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "将福利清单保持在身前，视线落在第一项上完成宣读，随后停住，不翻动清单。",
+          "speech": "一、一日三餐供应。",
+          "addressee": "laoren-jia",
+          "attention_target": "福利清单的第一项及面前的回应者",
+          "gaze": "宣读时落在第一项，句末抬向面前的回应者。",
+          "blocking": "停在原处，双手托住身前的福利清单。",
+          "posture_change": "句末维持直立姿态，双手位置不变。",
+          "delivery": {
+            "pace": "匀速，按编号与条目分节。",
+            "volume": "清晰可闻。",
+            "breath": "",
+            "articulation": "字音分明，采用正式宣读口吻。",
+            "pause": "编号后短暂停顿，句末停住。",
+            "vocal_target": "朝向面前的回应者。"
+          },
+          "physical_residue": "福利清单仍由双手托在身前，未翻至下一项。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待老人对“一日三餐供应”这一项作出可归类回应。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        }
+      ]
+    },
+    {
+      "model": "gpt-5.6-sol",
+      "attempt": 2,
+      "turns_completed": 6,
+      "protocol_failure": "",
+      "wall_seconds": 371.4,
+      "generation_calls": 14,
+      "generation_seconds": 371.4,
+      "dialogue_score": 3,
+      "dialogue_passed": true,
+      "verdict": "Voice discipline is intact — 甲 reads one item per turn and waits, 乙 speaks once in pure record-register ('口头应答次数：零'), and the old man's silence-as-full-turn is legitimate and unforced. But the execution is thin and mechanical: the quiet is achieved by copy-pasting near-identical stage notes rather than by concrete lived behavior, so the silence reads as omission, not choice.",
+      "problems": [
+        "老人两个回合的舞台提示几乎逐字重复（'没有接话，下巴略收'），他的沉默本应由具体动作承载——倒水、看门外、瞟那部充电的手机——现场却只有一个收下巴，物件全部退到旁白里，沉默变得空而不是重。",
+        "甲的舞台提示同样逐字复用（'左手将福利清单稳稳持在身前……停住'），且含'不向下推进'这类意图层描述而非可见动作，暴露模板化写法。",
+        "全场只推进两个条目即悬停，无任何物件层面的交互或状态变化（水凉了只在场景旁白），八拍里没有一次角色对具体东西的处置，静场缺乏内部张力来源。"
+      ],
+      "speech_lengths": [
+        18,
+        19,
+        17
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "左手将福利清单稳稳持在身前，按清单宣读首项后停住，不向下推进。",
+          "speech": "下面宣读福利条目。一、一日三餐供应。",
+          "addressee": "laoren-jia",
+          "attention_target": "老人对首项福利的具体回应。",
+          "gaze": "视线先落在福利清单首项，宣读完毕后抬向老人。",
+          "blocking": "站在矮桌对面原位，左手持清单，右臂自然垂在身侧。",
+          "posture_change": "上身保持端正，宣读结束时下颌微抬，转入静候姿态。",
+          "delivery": {
+            "pace": "匀速，条目序号与内容之间分隔清楚。",
+            "volume": "音量清晰稳定，足以覆盖屋内。",
+            "breath": "不表现生物性呼吸动作。",
+            "articulation": "逐字清楚，采用正式宣读口吻。",
+            "pause": "在首项结束后明确停顿，不接续第二项。",
+            "vocal_target": "声音朝向矮桌对面的老人。"
+          },
+          "physical_residue": "福利清单仍由左手持在身前，右臂垂在身侧，身体停留在矮桌对面的端正站姿。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待老人对“一日三餐供应”的具体回应。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "没有接话，只把下巴略微收住，等着对方往下念。",
+          "speech": "",
+          "addressee": "waixingren-jia",
+          "attention_target": "对方身前的福利清单",
+          "gaze": "目光落在福利清单上，片刻后抬到对方面上。",
+          "blocking": "原地不动，双手自然垂在身侧。",
+          "posture_change": "上身略微后收，下巴压低少许。",
+          "delivery": {
+            "pace": "无言",
+            "volume": "无声",
+            "breath": "平稳",
+            "articulation": "无",
+            "pause": "保持一段不催促的停顿",
+            "vocal_target": "无"
+          },
+          "physical_residue": "停顿结束时仍略收着下巴，双手垂在身侧。",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "外星人甲仍可继续念福利清单，或追问老人是否听明白。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "左手将福利清单稳稳持在身前，视线沿条目移至第二项，宣读完毕后停住。",
+          "speech": "继续宣读。二、每日例行健康检查与医治。",
+          "addressee": "laoren-jia",
+          "attention_target": "福利清单上的第二项条目",
+          "gaze": "宣读时落在清单第二项，句末抬向对面等待。",
+          "blocking": "原地面向对面，左手持清单于身前，右臂自然垂在身侧。",
+          "posture_change": "上身保持端正，仅在句末略微抬头。",
+          "delivery": {
+            "pace": "匀速，按条目分句推进",
+            "volume": "清晰可闻",
+            "breath": "不作生物性呼吸表现",
+            "articulation": "逐字清楚，序号与条目内容界限分明",
+            "pause": "第二项宣读完后停顿",
+            "vocal_target": "朝向对面"
+          },
+          "physical_residue": "福利清单仍由左手持在身前；上身端正，头部微抬，右臂垂于身侧。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待老人对第二项福利出现口头回应或新的可见动作。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "没有接话，下巴略收，停在原处。",
+          "speech": "",
+          "addressee": "waixingren-jia",
+          "attention_target": "对方及其手中的福利清单",
+          "gaze": "目光从福利清单移到对方面上，停住不动。",
+          "blocking": "身体留在原位，双手未作动作。",
+          "posture_change": "上身略向后收，下巴仍微微收着。",
+          "delivery": {
+            "pace": "无言",
+            "volume": "无声",
+            "breath": "平稳",
+            "articulation": "无",
+            "pause": "持续停顿，不作表态",
+            "vocal_target": "无"
+          },
+          "physical_residue": "上身略向后收，下巴微收，双手保持不动。",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "老人没有表态，外星人甲仍需决定接下来怎么说。"
+        },
+        {
+          "actor_id": "waixingren-yi",
+          "action": "面向听者站定，以简短、逐项记录式的口吻完成陈述，句末停住。",
+          "speech": "福利条目宣读后，口头应答次数：零。",
+          "addressee": "laoren-jia",
+          "attention_target": "听者对计数结果的即时回应。",
+          "gaze": "视线落在听者脸部，陈述结束后保持观察。",
+          "blocking": "停在当前站位，不向听者靠近，也不转向其他人。",
+          "posture_change": "上身略微挺直，头部保持正向，结束后维持站姿。",
+          "delivery": {
+            "pace": "匀速，数字部分稍缓。",
+            "volume": "清晰可闻，音量稳定。",
+            "breath": "不呈现生物性呼吸动作。",
+            "articulation": "逐字清楚，计数结论咬字分明。",
+            "pause": "在“零”后作明确停顿。",
+            "vocal_target": "正对面前的听者。"
+          },
+          "physical_residue": "陈述结束后维持挺直站姿，视线停留在听者脸部。",
+          "observable_outcome": [
+            "waixingren-yi performed speak"
+          ],
+          "response_hook": "等待老人对“口头应答次数：零”作出回应，或等待外星人甲继续下一步。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "沉默还悬着。福利清单摊在甲手里，确认栏空着。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "视线从陈述者移到清单上空着的确认栏，没有出声，也没有伸手。",
+          "speech": "",
+          "addressee": "laoren-jia",
+          "attention_target": "甲手中福利清单的空白确认栏",
+          "gaze": "在空白确认栏上停住，片刻后仍未移开。",
+          "blocking": "留在原处，与两名来访者保持现有距离，双手未接触清单。",
+          "posture_change": "下巴略收的姿势没有改变，只将头朝清单偏过少许。",
+          "delivery": {
+            "pace": "无言",
+            "volume": "无声",
+            "breath": "平缓",
+            "articulation": "无口头应答",
+            "pause": "沉默持续至动作结束",
+            "vocal_target": "无"
+          },
+          "physical_residue": "头略偏向清单，下巴仍收着，双手空着。",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "甲手里的确认栏仍然空着，两个来访者仍可直接索要老人的明确答复。"
+        }
+      ]
+    },
+    {
+      "model": "z-ai/glm-5.2",
+      "attempt": 1,
+      "turns_completed": 0,
+      "protocol_failure": "no draft produced",
+      "wall_seconds": 144.2,
+      "generation_calls": 2,
+      "generation_seconds": 144.2,
+      "dialogue_score": 0,
+      "dialogue_passed": false,
+      "verdict": "",
+      "problems": [],
+      "speech_lengths": [],
+      "transcript": []
+    },
+    {
+      "model": "z-ai/glm-5.2",
+      "attempt": 2,
+      "turns_completed": 0,
+      "protocol_failure": "runtime: gateway completion returned empty content",
+      "wall_seconds": 114.6,
+      "generation_calls": 1,
+      "generation_seconds": 114.6,
+      "dialogue_score": 0,
+      "dialogue_passed": false,
+      "verdict": "",
+      "problems": [],
+      "speech_lengths": [],
+      "transcript": []
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "attempt": 1,
+      "turns_completed": 3,
+      "protocol_failure": "Protocol validation failed: missing action arguments: ['affordance_ref']. Return a corrected JSON object without changing scene facts. Use only the exact key names in response_contract, and pick every enumerated value from its *_choices list in response_contract. For action_request.arguments include",
+      "wall_seconds": 84.8,
+      "generation_calls": 9,
+      "generation_seconds": 84.8,
+      "dialogue_score": 0,
+      "dialogue_passed": false,
+      "verdict": "",
+      "problems": [],
+      "speech_lengths": [
+        32,
+        3,
+        12
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "从身侧抬起一块淡蓝色微光的半透明悬浮面板，右手食指指尖在第一栏条目上轻点激活",
+          "speech": "现开始核实。条目一：对象长期无人陪伴，独自生活。请确认是否属实。",
+          "addressee": "laoren-jia",
+          "attention_target": "对面的人类对象",
+          "gaze": "从面板上的光标移开，平视前方的人类对象",
+          "blocking": "保持双脚平稳站立，双臂平举以维持半透明面板在胸前位置",
+          "posture_change": "背脊挺直，头部微微向前微倾，展现出公事公办的克制姿态",
+          "delivery": {
+            "pace": "平缓且无波澜",
+            "volume": "适中而清晰",
+            "breath": "无气流起伏的均匀电子发声",
+            "articulation": "字音字节清晰笃实，略带金属共鸣",
+            "pause": "在第一句结束后短暂停顿一秒，随后宣读条目一",
+            "vocal_target": "眼前被核实的对象"
+          },
+          "physical_residue": "左手平托着亮起微光的半透明面板，右手食指悬停在第一行条目边缘，身形保持绝对静止，等待对方反馈",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待对象回答，以进行状态记录或程序重试。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手捏着旱烟杆，慢慢朝院子里低矮的小木凳指了指",
+          "speech": "坐嘛。",
+          "addressee": "waixingren-jia",
+          "attention_target": "waixingren-jia",
+          "gaze": "waixingren-jia手中的悬浮面板",
+          "blocking": "立于低矮的屋檐下，身子微微前倾，肩膀松垮地下沉",
+          "posture_change": "重心移到左脚，空着的左手顺势塞进洗得发白的蓝色棉袄口袋里",
+          "delivery": {
+            "pace": "slow",
+            "volume": "muffled",
+            "breath": "weak",
+            "articulation": "slurred",
+            "pause": "long",
+            "vocal_target": "waixingren-jia"
+          },
+          "physical_residue": "右手依然保持斜向下指着小木凳的姿势，旱烟杆斜斜地指着地面",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "等对方念完下一个条目或对我的招待做出反应。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "右手食指在半透明悬浮面板上横向一划，将第一栏条目锁定为深蓝色高亮，随后将面板向斜下方稍作倾斜",
+          "speech": "判定：条目一，情况属实。",
+          "addressee": "laoren-jia",
+          "attention_target": "laoren-jia",
+          "gaze": "在面板完成锁定后，视线从蓝色微光移向对面的老人",
+          "blocking": "保持在原地站立，没有移步向低矮的木凳",
+          "posture_change": "双肩维持平稳，仅头部微抬，右手保持在胸前操作面板的姿态",
+          "delivery": {
+            "pace": "稳重且无情绪起伏",
+            "volume": "清晰可闻",
+            "breath": "无",
+            "articulation": "字字分明，带有轻微的电声质感",
+            "pause": "在判定词与后续结论之间有半秒的精确停顿",
+            "vocal_target": "laoren-jia"
+          },
+          "physical_residue": "淡蓝色微光的悬浮面板悬停在身前，其上第一栏条目持续亮着表示确认的深蓝色锁定光效，右手悬于面板右侧",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待对方反应以确定是否需要重试或直接读取条目二。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        }
+      ]
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "attempt": 2,
+      "turns_completed": 6,
+      "protocol_failure": "",
+      "wall_seconds": 135.7,
+      "generation_calls": 16,
+      "generation_seconds": 135.7,
+      "dialogue_score": 4,
+      "dialogue_passed": true,
+      "verdict": "语音区分度高且克制：外星人甲的中文公文腔（'现予核实'式条目句）与乙的字段记录体（'最近一次有效呼入：三百一十二天前'）都过朗读测试且符合各自机器化设定，非误用；老人以'哦。'、纯动作和沉默构成完整回合，字数极省，符合西北老农的口吻与回避模式。回合长短参差，冲突落在具体物件（旧手机、两碗水）而非命题复述。甲把'哦。'直接归类为属实，正是设定的误分类失效模式在场上兑现；核心情绪（那个不解释的笑）只在末尾以嘴角一道皱出现，未说破，处理得体。",
+      "problems": [
+        "末尾舞台指示'knowing crease'略有替读者翻译含义之嫌，逼近解释老人从不解释的笑",
+        "舞台指示措辞重复堆砌（'slender, long finger'两次、'slim, pale finger'），描写自我复制",
+        "全场仅推进到第一条核实即止，福利清单本体未展开，戏量偏薄，核心张力靠一个手机数据点独撑"
+      ],
+      "speech_lengths": [
+        35,
+        2,
+        22,
+        31,
+        2
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "raises a metallic wrist terminal to project a glowing blue holographic checklist, pointing a slender, long finger toward the first line of the projected text",
+          "speech": "现在开始核实。孤独居住标准第一条：长期无人陪伴独自生活。情况是否属实？",
+          "addressee": "laoren-jia",
+          "attention_target": "the listener",
+          "gaze": "focused and unblinking, directed at the listener's eyes",
+          "blocking": "standing three paces away from the listener, maintaining a rigid and symmetrical posture",
+          "posture_change": "shoulders squared, head tilted slightly to align with the holographic projection",
+          "delivery": {
+            "pace": "measured, perfectly timed intervals",
+            "volume": "resonant and steady",
+            "breath": "none",
+            "articulation": "crisp, mechanical precision on every syllable",
+            "pause": "a precise two-second interval before presenting the question",
+            "vocal_target": "the listener"
+          },
+          "physical_residue": "a semi-transparent blue holographic checklist displaying 'Item 1: Solitary Living' floats in the air; the left wrist remains elevated to sustain the projection",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "请对象对第一条标准是否属实进行反馈。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "nodding slightly once without looking up from the wooden stool, hands resting heavily on the thighs",
+          "speech": "哦。",
+          "addressee": "waixingren-jia",
+          "attention_target": "waixingren-jia",
+          "gaze": "downward toward the dirt floor near the caller's feet",
+          "blocking": "remaining seated on a low wooden stool near the doorway",
+          "posture_change": "shoulders slightly slumped, head tilted forward",
+          "delivery": {
+            "pace": "slow",
+            "volume": "muffled",
+            "breath": "shallow",
+            "articulation": "flat",
+            "pause": "long",
+            "vocal_target": "waixingren-jia"
+          },
+          "physical_residue": "the left hand remains flat on the left knee, while the right hand loosely grips the edge of the dark blue cotton trousers",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "等待对方对这声冷淡的‘哦’做出反应，或者继续念那份名单。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "taps the side of the metallic wrist terminal with a slender, long finger, changing the highlighted blue hologram text from a question mark to a solid checkmark",
+          "speech": "第一条：长期无人陪伴。情况属实，已予以归类。",
+          "addressee": "laoren-jia",
+          "attention_target": "laoren-jia",
+          "gaze": "downward toward the glowing holographic checklist hovering above the wrist",
+          "blocking": "standing in place before the wooden stool",
+          "posture_change": "holding the left arm level to keep the projected hologram stable, with the right hand poised near the screen",
+          "delivery": {
+            "pace": "measured and deliberate",
+            "volume": "clear and projected",
+            "breath": "absent",
+            "articulation": "crisp and clipped",
+            "pause": "brief after the colon",
+            "vocal_target": "laoren-jia"
+          },
+          "physical_residue": "a glowing blue holographic checklist remains projected from the left wrist terminal, displaying one checked entry",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待对象对归类结果的反应。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "maintaining a completely static pose on the low wooden stool, letting the hands remain heavy and motionless on the thick fabric of the trousers",
+          "speech": "",
+          "addressee": "waixingren-jia",
+          "attention_target": "waixingren-jia",
+          "gaze": "downward toward the dirt floor slightly in front of the other's feet",
+          "blocking": "sitting on the stool",
+          "posture_change": "shoulders slightly rounded, torso leaned forward over the thighs, hands resting flat just above the knees",
+          "delivery": {
+            "pace": "unhurried",
+            "volume": "silent",
+            "breath": "slow",
+            "articulation": "unspoken",
+            "pause": "long",
+            "vocal_target": "waixingren-jia"
+          },
+          "physical_residue": "sitting motionless on the wooden stool with both hands resting flat on the thighs, gaze fixed on the floor",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "等对方宣读下一条标准或提出下一个问题。"
+        },
+        {
+          "actor_id": "waixingren-yi",
+          "action": "pointing a slim, pale finger toward the old mobile phone on the table",
+          "speech": "目标通讯终端：老式移动设备。最近一次有效呼入：三百一十二天前。",
+          "addressee": "laoren-jia",
+          "attention_target": "O.W.phone",
+          "gaze": "O.W.phone",
+          "blocking": "standing half a step behind the partner, leaning slightly forward to align with the table",
+          "posture_change": "shoulders squared, head tilted slightly downward toward the dusty screen of the phone",
+          "delivery": {
+            "pace": "measured",
+            "volume": "subdued",
+            "breath": "none",
+            "articulation": "precise",
+            "pause": "long",
+            "vocal_target": "waixingren-jia"
+          },
+          "physical_residue": "the left index finger remains extended, hovering an inch above the old phone's screen",
+          "observable_outcome": [
+            "waixingren-yi performed speak"
+          ],
+          "response_hook": "等待搭档甲在手腕终端上勾选第二项，或等待老人的物理状态发生变化。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "沉默还悬着。福利清单摊在甲手里，确认栏空着。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "slowly turns the head toward the old mobile phone resting on the table, lets the gaze linger on its dark screen, and then turns back toward the pointing finger with the corners of the mouth dryly tucked into a faint, knowing crease",
+          "speech": "……",
+          "addressee": "waixingren-yi",
+          "attention_target": "O.W.phone",
+          "gaze": "waixingren-yi",
+          "blocking": "seated on the low wooden stool",
+          "posture_change": "the neck rotates slowly to the side and back, while the shoulders remain completely settled and unmoving",
+          "delivery": {
+            "pace": "slow",
+            "volume": "silent",
+            "breath": "a single, quiet exhale through the nose",
+            "articulation": "unvoiced",
+            "pause": "prolonged",
+            "vocal_target": "waixingren-yi"
+          },
+          "physical_residue": "the faint crease around the eyes remains held, and both weathered hands rest heavily on the thick fabric of the knees",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "laoren-jia-smile-response"
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4.8",
+      "attempt": 1,
+      "turns_completed": 6,
+      "protocol_failure": "",
+      "wall_seconds": 148.6,
+      "generation_calls": 13,
+      "generation_seconds": 148.6,
+      "dialogue_score": 4,
+      "dialogue_passed": true,
+      "verdict": "老人的语言全部通过朗读测试且极省（'水凉了''它充着电呢'），以具体物件（凉水碗、充电手机）代替表态，纯动作与沉默构成完整回合；甲的公文腔是中文公文而非翻译腔，术语克制；乙的记录体'未记录'精准而冷；'它充着电呢'不解释地兑现了核心情绪——他在等一通不会来的电话。回合长短参差，无逢回合必反驳、必收判词的机械节奏。",
+      "problems": [
+        "甲第二回合在念条目并请求确认之外又追加了'多久没接过了'的追问，轻微堆叠了两个流程节点，稍偏离其一回合一节点的机器纪律",
+        "全场仅八拍即止，老人最重的表达（那个笑）只出现在早期舞台提示里，收束处未再落到人物动作上，情绪重量部分由场景提示而非人物行为承担",
+        "乙悬笔未落、确认栏空着这一关键状态两次靠scene旁白说明而非通过人物回合呈现"
+      ],
+      "speech_lengths": [
+        33,
+        4,
+        42,
+        4,
+        28,
+        6
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "抬起持清单的一只手，将其举至胸前齐平，另一只手拇指压在纸页上缘固定住第一条",
+          "speech": "现在开始核实。第一条：您一个人住在这儿，长年没人陪着——是这样吧？",
+          "addressee": "laoren-jia",
+          "attention_target": "炕沿坐着的老人",
+          "gaze": "从清单纸面上方越过，落在老人脸上",
+          "blocking": "立于矮桌对面，与桌上两碗水隔桌相望，双脚并拢",
+          "posture_change": "上身微向前倾，持单的一手抬到胸前齐平",
+          "delivery": {
+            "pace": "逐字均匀",
+            "volume": "平稳偏低",
+            "breath": "",
+            "articulation": "每个字咬清、句末不上扬",
+            "pause": "念完第一句后停顿一拍再起问句",
+            "vocal_target": "对准老人"
+          },
+          "physical_residue": "清单被举在胸前，拇指仍压在第一条上缘",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等老人对第一条标准的应答。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "嘴角带一点笑意，视线从对方脸上移开，慢慢落到桌上那部充着电的老手机上",
+          "speech": "……嗯。",
+          "addressee": "waixingren-jia",
+          "attention_target": "桌上充着电的老手机",
+          "gaze": "从对方移向桌面手机",
+          "blocking": "坐姿不动，面向对方半侧，头略偏向桌子那一边",
+          "posture_change": "下巴微收，头转向桌面方向",
+          "delivery": {
+            "pace": "拖得很慢",
+            "volume": "很轻",
+            "breath": "",
+            "articulation": "含在喉咙里，尾音落下去",
+            "pause": "开口前顿了一下",
+            "vocal_target": "不落向对方，含糊地对着桌面"
+          },
+          "physical_residue": "两手搭在膝上，头偏向桌子一侧，嘴角那点笑意留着",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "笑着不点头不摇头，眼睛落到桌上那部充着电的手机上。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "持清单的一只手仍举在胸前齐平，另一只手的拇指从第一条上缘滑下，压定在第二条一行，随后食指从纸面抬起，斜指向堂屋桌上那部充着电的老手机",
+          "speech": "第二条：跟外头，平常也很少来往，电话也基本不响——是这样吧？桌上那部，多久没接过了？",
+          "addressee": "laoren-jia",
+          "attention_target": "桌上那部充着电的老手机",
+          "gaze": "先落在清单第二条一行，读到问句时抬眼顺着食指方向投向桌上的手机",
+          "blocking": "正对坐处半步之外站定，持单一手举于胸前，另一手食指越过纸缘斜指向桌",
+          "posture_change": "上半身随抬起的食指微向手机一侧偏转，下颌略压",
+          "delivery": {
+            "pace": "逐字匀速，读到问句一句略放缓",
+            "volume": "平稳中等",
+            "breath": "",
+            "articulation": "字字咬清，条目编号与问句尾音收紧",
+            "pause": "第二条读毕与问句之间留一次短停顿",
+            "vocal_target": "投向坐处并顺势偏向桌上手机方向"
+          },
+          "physical_residue": "一手持清单举于胸前齐平，另一手食指悬指桌上手机方向未收回",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等对象就手机使用情况作出回应。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "端起面前那碗水，手指贴着碗壁停了一下，把碗又搁回桌面原处",
+          "speech": "水凉了。",
+          "addressee": "waixingren-jia",
+          "attention_target": "桌上那碗水",
+          "gaze": "低下，落在碗口淡去的水面上，不抬向对方也不看那部手机",
+          "blocking": "坐在桌旁不动，一只手扶着碗沿，另一只手搭在自己膝上",
+          "posture_change": "上身微微前倾送碗落桌，肩头随之松下",
+          "delivery": {
+            "pace": "慢",
+            "volume": "低",
+            "breath": "话前先出一口气",
+            "articulation": "含混、尾音吞掉",
+            "pause": "两字之间留一个短停",
+            "vocal_target": "朝碗、不朝人"
+          },
+          "physical_residue": "碗回到桌面原处，扶碗的那只手指仍搭在碗沿，另一只手停在膝上",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "凉了的水搁在桌上，等他接不接这一句。"
+        },
+        {
+          "actor_id": "waixingren-yi",
+          "action": "右手指腹在清单第二条一行下方轻点两下，随即将笔尖悬停于该行末端的空格处，未落笔；左手将清单托平于胸前齐平位置",
+          "speech": "对外通讯频率：趋近于零。桌上终端，最后一次接通：未记录。",
+          "addressee": "laoren-jia",
+          "attention_target": "桌上那部充电的老手机",
+          "gaze": "从清单纸面抬起，斜落到桌上老手机",
+          "blocking": "站定原位，上身微向桌面偏侧，右手持笔悬于清单第二条末端空格，左手托纸",
+          "posture_change": "下颌略收，肩线放平，右手腕停在半空不动",
+          "delivery": {
+            "pace": "均匀，两句之间留一处停顿",
+            "volume": "偏低而平",
+            "breath": "无附加",
+            "articulation": "每字咬清，末字收紧",
+            "pause": "在两条事实之间停一拍",
+            "vocal_target": "投向桌上老手机方向"
+          },
+          "physical_residue": "清单第二条末端空格处仍空着，右手笔尖悬停未落，左手托纸齐胸",
+          "observable_outcome": [
+            "waixingren-yi performed speak"
+          ],
+          "response_hook": "桌上终端，最后一次接通：未记录。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "沉默还悬着。福利清单摊在甲手里，确认栏空着。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "抬起右手朝桌上那部老手机的方向偏了偏下巴，随即把手落回膝头",
+          "speech": "它充着电呢。",
+          "addressee": "waixingren-jia",
+          "attention_target": "桌上那部充着电的老手机",
+          "gaze": "先扫向手机，再落回面前碗沿",
+          "blocking": "坐在堂屋桌旁，身子微侧向桌面一角",
+          "posture_change": "右手从抬起转为搭在右膝，上身略前倾又坐正",
+          "delivery": {
+            "pace": "慢",
+            "volume": "低",
+            "breath": "话尾一口气收得短",
+            "articulation": "字咬得平",
+            "pause": "四字连着说完，末尾停住",
+            "vocal_target": "朝手机方向送出"
+          },
+          "physical_residue": "右手平搭在右膝上，下巴朝手机偏过后收回",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "那部充着电的手机还摆在桌上最显眼处，等着响。"
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4.8",
+      "attempt": 2,
+      "turns_completed": 6,
+      "protocol_failure": "",
+      "wall_seconds": 144.8,
+      "generation_calls": 14,
+      "generation_seconds": 144.8,
+      "dialogue_score": 4,
+      "dialogue_passed": true,
+      "verdict": "台词与动作贴合三方声纹：甲一回合只推进一个节点且编号工整，乙以'对象口头应答：两条，零次'把等电话写成死亡证明式记录，老人以纯动作回合应对——拇指停在皱纹上那半拍是全场最准的被戳中信号。回合形态有长短交错（宣读、纯动作、场景静默），冲突落在充电的通讯终端、两碗水等具体物件上，无规划层归类、无均衡解释腔、无可移植给机器的通用句。",
+      "problems": [
+        "场景核心情绪标注为老人'温和有一点悲的笑'，成稿在笑出现之前即止，最重的一拍缺席，只留目光落向门外的替代性收束",
+        "甲两次宣读回合结构完全同构（展平清单—食指下移—'记下了吗'），符合其重试声纹但连用两次已显机械，第三条若继续将失去张力",
+        "老人全场零台词虽被其声纹许可，但对话确已被沉默拖至停摆——这恰是其角色标注的failure_mode，成稿未提供任何一次哪怕半句的自言自语来锚定其内心"
+      ],
+      "speech_lengths": [
+        30,
+        27,
+        35
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "抬起持清单的一只手将其展平至齐胸高度，另一只手的食指移到清单首行下方，随宣读停在该行末端",
+          "speech": "现在开始宣读。第一条：一日三餐，按时供应。这一条,记下了吗?",
+          "addressee": "laoren-jia",
+          "attention_target": "炕沿坐着的老人",
+          "gaze": "从清单纸面抬起，落到老人脸上",
+          "blocking": "站在矮桌对面，与坐着的老人隔桌相对，身体略前倾",
+          "posture_change": "上身从直立微微前倾，持单的手臂由自然下垂抬至胸前定住",
+          "delivery": {
+            "pace": "逐字均匀，条目编号处稍加顿开",
+            "volume": "平稳中等",
+            "breath": "无",
+            "articulation": "字字清晰，句读分明",
+            "pause": "在“记下了吗”前留一处短停",
+            "vocal_target": "投向桌对面的老人"
+          },
+          "physical_residue": "展平的清单停在胸前，右手食指压在首行末端下方",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等老人对第一条福利给出确认或反应。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "把双手仍搭在膝上，右手拇指慢慢碾过左手手背的一道皱纹",
+          "speech": "",
+          "addressee": "waixingren-jia",
+          "attention_target": "对方那只压在清单首行末端的食指",
+          "gaze": "顺着对方的食指落到那行字尾，不上抬",
+          "blocking": "坐着不动，上身微朝对方倾出一指宽",
+          "posture_change": "下颌略收，眼皮半合",
+          "delivery": {
+            "pace": "",
+            "volume": "",
+            "breath": "",
+            "articulation": "",
+            "pause": "",
+            "vocal_target": ""
+          },
+          "physical_residue": "双手叠在膝上，右手拇指停在左手手背那道皱纹上",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "把单子往下念的那只手指。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "持清单的左手保持展平齐胸，右手食指从首行末端下滑至第二行下方并停住",
+          "speech": "第二条：每日例行健康检查，有病即医。这一条，记下了吗?",
+          "addressee": "laoren-jia",
+          "attention_target": "laoren-jia",
+          "gaze": "视线自清单第二行抬起，落向对面对象的面部",
+          "blocking": "与对象隔一段距离正面相对，上身不动",
+          "posture_change": "右手食指由首行移至第二行，左手持清单高度不变",
+          "delivery": {
+            "pace": "逐字均匀",
+            "volume": "平稳适中",
+            "breath": "",
+            "articulation": "字句清晰分明",
+            "pause": "读完条目后停顿一拍再发问",
+            "vocal_target": "投向对面对象"
+          },
+          "physical_residue": "左手将清单展平持于齐胸，右手食指压在清单第二行下方末端",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "这一条，记下了吗?"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "双手仍搭在膝上，右手拇指停在左手手背那道皱纹上不再移动",
+          "speech": "",
+          "addressee": "waixingren-jia",
+          "attention_target": "对方停在第二行下方的那根食指",
+          "gaze": "眼皮微垂，目光落在清单末端与对方手指之间",
+          "blocking": "坐姿不变，上身没有前倾，与桌子隔着两碗水的距离",
+          "posture_change": "肩膀几不可察地下沉了一点，下颌保持原来的角度",
+          "delivery": {
+            "pace": "",
+            "volume": "",
+            "breath": "",
+            "articulation": "",
+            "pause": "",
+            "vocal_target": ""
+          },
+          "physical_residue": "右手拇指压在左手手背皱纹上，指腹处皮肤被按出一小片浅白",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "那个笑挂在脸上，等他们念完或再问。"
+        },
+        {
+          "actor_id": "waixingren-yi",
+          "action": "右手食指从桌上通讯终端移开，落到清单纸面对应行末，指腹按下打钩",
+          "speech": "堂屋桌上通讯终端一部，充电，无来电记录采集。对象口头应答：两条，零次。",
+          "addressee": "waixingren-jia",
+          "attention_target": "清单第二行采集栏",
+          "gaze": "垂视清单行末，不抬向对面",
+          "blocking": "站在堂屋桌一侧，左手持清单展平齐胸，右手指尖压在纸面第二行",
+          "posture_change": "上身微俯向清单，肩线保持水平",
+          "delivery": {
+            "pace": "匀速逐字",
+            "volume": "低平",
+            "breath": "无起伏",
+            "articulation": "字字咬清如逐项核对",
+            "pause": "每读完一栏停一顿",
+            "vocal_target": "朝向清单纸面而非对面"
+          },
+          "physical_residue": "清单第二行末留下一道指腹压出的钩形折痕，左手仍展平持纸齐胸，右手食指停在该行下方",
+          "observable_outcome": [
+            "waixingren-yi performed speak"
+          ],
+          "response_hook": "等甲的下一条宣读或指认，再从中断字段继续记录。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "沉默还悬着。福利清单摊在甲手里，确认栏空着。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "双手仍搭在膝上不动，右手拇指停在左手手背那道皱纹上，目光越过来人落向门外",
+          "speech": "",
+          "addressee": "waixingren-jia",
+          "attention_target": "门外的院子",
+          "gaze": "越过持清单的人，投向堂屋门口外的空处",
+          "blocking": "坐姿不变，身体不朝向来人，重心稳压在凳上",
+          "posture_change": "肩背略沉，下颌未抬，脸上那点笑纹未松未收",
+          "delivery": {
+            "pace": "无",
+            "volume": "无",
+            "breath": "无",
+            "articulation": "无",
+            "pause": "长久静止，不接话",
+            "vocal_target": "无"
+          },
+          "physical_residue": "右手拇指压在左手手背皱纹上，指腹未移，脸上笑纹保持原状",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "沉默悬着，笑没收回，等他们再开口。"
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4.6",
+      "attempt": 1,
+      "turns_completed": 6,
+      "protocol_failure": "",
+      "wall_seconds": 175.9,
+      "generation_calls": 14,
+      "generation_seconds": 175.9,
+      "dialogue_score": 4,
+      "dialogue_passed": true,
+      "verdict": "老人的回合经济极佳——'你看嘛'三字与两个纯动作回合都是完整回合，无解释无表态，通过人声测试；外星人条目腔与记录腔的机器感是角色本身而非通病，'有效同住人数：零'一句精确到残忍恰是设计中的冷；沉默、水汽变淡、瞟充电手机等具体物件承载情绪，无处宣讲主题。扣分点：甲首回合同时报流程、念条目、请求确认，节点略密；片段止于核实第一条，老人最重的'笑'未出现，情绪弧只搭了地基；老人动作侧记偏了两度这类精度带作者视角痕迹。",
+      "problems": [
+        "甲的开场回合叠了报流程、念条目、求确认三个节点，与其一回合一节点的说话方式略有出入",
+        "切片过短，核心情绪（老人那个温和带悲的笑）尚未落地，只有瞟手机的铺垫",
+        "老人动作描写如'头微微偏了两度'精度过高，是作者视角而非可观察舞台指示"
+      ],
+      "speech_lengths": [
+        43,
+        4,
+        14,
+        27
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "左手将福利清单举至胸前高度，右手三根细长手指竖起，食指弯曲点向清单第一行，身体微微前倾朝矮桌对面的老人。",
+          "speech": "现在开始核实。孤独星球居住标准，第一条：长期无人陪伴，独自生活。请确认，情况是否属实。",
+          "addressee": "laoren-jia",
+          "attention_target": "老人",
+          "gaze": "直视老人面部，等待回应",
+          "blocking": "站在矮桌对面，与同伴乙并排，面朝炕沿上坐着的老人，双脚间距略宽于肩。",
+          "posture_change": "从先前直立姿态转为上身前倾约十五度，重心移至前脚掌，右手从身侧抬起指向清单。",
+          "delivery": {
+            "pace": "匀速偏慢，每个短句之间留有刻意间隔",
+            "volume": "中等偏高，确保对方听清",
+            "breath": "",
+            "articulation": "字句清晰，咬字略带机械感，声调平整少起伏",
+            "pause": "'现在开始核实'之后停顿一拍；'第一条'之前停顿半拍；'请确认'之前停顿一拍",
+            "vocal_target": "老人"
+          },
+          "physical_residue": "左手持清单于胸前，右手食指停留在清单第一行文字处，上身保持前倾姿态。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等对象对第一条标准给出任何可归类的回应。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手从膝盖上抬起，掌心朝外朝对方摆了一下，像赶苍蝇一样随意，随即落回大腿上。",
+          "speech": "你看嘛。",
+          "addressee": "waixingren-jia",
+          "attention_target": "waixingren-jia举着的那张清单",
+          "gaze": "眼皮半耷，目光从清单上滑过，没有正对对方的眼睛",
+          "blocking": "身体靠在椅背上，双腿微分，右脚鞋底蹭着地面泥灰",
+          "posture_change": "上半身没有前倾，下巴微微扬了一点，嘴角往一侧牵了牵",
+          "delivery": {
+            "pace": "慢，三个字之间拖着",
+            "volume": "不高不低，像跟隔壁说话",
+            "breath": "说完轻轻从鼻子里出了口气",
+            "articulation": "西北口音，'看'字带鼻韵拖音",
+            "pause": "开口前停了两秒，像觉得问题多余",
+            "vocal_target": "朝对方方向但不刻意投送"
+          },
+          "physical_residue": "右手落回右大腿上，手指松散搭着裤面；下巴仍微扬；后背贴椅背",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "回应模糊，外星人需要决定是否追问还是自行判定。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "右手食指从清单第一行划过，指尖停在行末，随即食指干脆地向下一弯，像在空气中打了一个勾，然后三根细长手指收拢，仅中指伸出，点向第二行开头。",
+          "speech": "第一条，情况属实，归类完毕。",
+          "addressee": "laoren-jia",
+          "attention_target": "laoren-jia",
+          "gaze": "视线从清单抬起，短暂落在老人脸上，随即回到清单第二行。",
+          "blocking": "身体仍微微前倾于矮桌一侧，左手将清单稳稳举在胸前，右手悬于清单表面。",
+          "posture_change": "前倾幅度未变，右肩因手指动作微微收紧后放松。",
+          "delivery": {
+            "pace": "匀速偏快，句尾干脆收住",
+            "volume": "中等，略高于日常对话",
+            "breath": "",
+            "articulation": "每个字咬得清晰，'归类完毕'四字字字分开",
+            "pause": "'情况属实'与'归类完毕'之间一拍停顿",
+            "vocal_target": "laoren-jia"
+          },
+          "physical_residue": "左手持清单于胸前，右手中指指尖悬停在清单第二行起始位置，食指与无名指收于掌心。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "归类已宣布，下一回合将开始第二条核实。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手拇指在大腿面上缓缓蹭了一下裤缝，其余四指松搭着不动，身体没有任何前倾或回应的迹象。",
+          "speech": "",
+          "addressee": "laoren-jia",
+          "attention_target": "桌面上那碗已经不冒热气的水",
+          "gaze": "眼皮半垂，视线落在自己面前那碗水的水面上，没有抬向对方",
+          "blocking": "坐在矮桌这一侧的木椅上，背靠椅背，双腿微分，右手搭在右大腿上，左手仍搁在左膝。与对方之间隔着矮桌和两碗凉水。",
+          "posture_change": "无明显变化，仅右手拇指完成一次短促的摩擦后恢复静止",
+          "delivery": {
+            "pace": "",
+            "volume": "",
+            "breath": "鼻息平稳，不加重也不刻意放轻",
+            "articulation": "",
+            "pause": "",
+            "vocal_target": ""
+          },
+          "physical_residue": "右手拇指指腹贴在裤缝布料上，指尖微微发白；整个人靠在椅背里，肩线没有紧绷也没有松垮，面部纹路平静不动。",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "老人的沉默迫使对方决定是继续念还是追问。"
+        },
+        {
+          "actor_id": "waixingren-yi",
+          "action": "左手持平板状记录装置，右手中指在其表面轻点一下，屏面上一行字段亮起确认光条，随即右手三指并拢悬于下一行字段上方待命。",
+          "speech": "第一条存档：对象独居状态，确认属实。有效同住人数：零。",
+          "addressee": "waixingren-jia",
+          "attention_target": "手中记录装置屏面",
+          "gaze": "视线低垂落在记录装置第一行存档条目上，确认光条亮起后视线平移至第二行起始位置",
+          "blocking": "站立于laoren-jia侧前方约一步距离，身体微微侧向记录装置，右肩略低于左肩",
+          "posture_change": "脊背从笔直微向前收拢约两寸，头部下倾对准记录面板",
+          "delivery": {
+            "pace": "匀速，每个字等距输出",
+            "volume": "中低，公事陈述音量",
+            "breath": "无",
+            "articulation": "每个数字与术语咬字清晰，尾音干净截断",
+            "pause": "冒号后顿半拍，句号后顿一拍",
+            "vocal_target": "记录装置方向，声波附带向laoren-jia一侧散出"
+          },
+          "physical_residue": "左手平端记录装置，屏面第一行显示确认光条；右手三指并拢悬停于第二行字段起始处，指尖距屏面约一指宽",
+          "observable_outcome": [
+            "waixingren-yi performed speak"
+          ],
+          "response_hook": "甲开始第二条时我准备记录下一字段。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "沉默还悬着。福利清单摊在甲手里，确认栏空着。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手从大腿面上收回，五指松散地搁在膝盖上，头微微偏了两度朝堂屋桌子方向，眼皮低垂着扫过那部正在充电的老手机，嘴唇没有张开的迹象。",
+          "speech": "",
+          "addressee": "laoren-jia",
+          "attention_target": "堂屋桌上充电的老手机",
+          "gaze": "眼皮半垂，目光从对方手中清单缓缓滑向桌面手机位置，停在手机屏幕的暗面上",
+          "blocking": "坐姿未变，身体仍靠在椅背上，右手搁膝，左手搭在另一侧扶手上，脸侧向桌子方向约十五度",
+          "posture_change": "头部从正对来访者转偏向桌面手机方向，右手从大腿挪至膝盖",
+          "delivery": {
+            "pace": "",
+            "volume": "",
+            "breath": "鼻息平缓，无可辨认的呼吸变化",
+            "articulation": "",
+            "pause": "",
+            "vocal_target": ""
+          },
+          "physical_residue": "右手五指松散搁在右膝上方，头偏向桌面手机方向未收回，目光落点留在手机暗屏处",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "目光落在手机上这个动作，给对方一个可以追问或忽略的信号。"
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4.6",
+      "attempt": 2,
+      "turns_completed": 6,
+      "protocol_failure": "",
+      "wall_seconds": 185.5,
+      "generation_calls": 14,
+      "generation_seconds": 185.5,
+      "dialogue_score": 4,
+      "dialogue_passed": true,
+      "verdict": "台词声纹分层清晰且经得起朗读检验：老人'就我。'两字成回合、纯动作沉默成回合，节奏长短交错；外星人的表格腔是角色设定内的声纹而非通用助手腔，一回合一个流程节点的推进纪律执行到位；乙的记录体'有效同住人数：零'冷准。全片段无解释性补全、无越权、无进度强推，静场处理有分量。",
+      "problems": [
+        "舞台指示过度显微（'笔尖悬在纸面上方约一厘米''两腮肌肉没有张力'），接近旁白控镜而非可演动作，且个别描述滑向对不可见内在状态的断言",
+        "片段止于第二条目前的悬置，八拍内老人一方全为沉默与两字，尚未出现任何反向压力或代价性动作，戏剧张力靠静场单一手段维持",
+        "scene回合的'福利清单摊在甲手里，确认栏空着'带轻微叙事者评点腔，与纯环境描写不完全一致"
+      ],
+      "speech_lengths": [
+        54,
+        3,
+        15,
+        14
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "将手中清单举至胸前，左手食指点在第一行条目上，身体微微前倾向对面炕沿上的老人宣读。",
+          "speech": "现在开始核实。孤独星球居住标准，条目一：长期无人陪伴，独自生活。请对象确认，目前居住单元内是否仅有本人居住。",
+          "addressee": "laoren-jia",
+          "attention_target": "老人",
+          "gaze": "视线从清单第一行移向老人面部，停留等待回应。",
+          "blocking": "站在矮桌对面，双脚并拢，面朝老人方向，清单纸面朝向自己，左手食指抵在纸上第一条。",
+          "posture_change": "从先前松散站立转为躯干略前倾、肩膀收紧的公事姿态，下巴微抬。",
+          "delivery": {
+            "pace": "匀速偏慢，每个短句之间留出等量间隔",
+            "volume": "中等偏高，确保在屋内清晰可闻",
+            "breath": "句首轻吸一口，整段一气呵成",
+            "articulation": "字字分明，尾音略微上扬以标示提问",
+            "pause": "'条目一'后停顿一拍；宣读完定义后停顿两拍再发问",
+            "vocal_target": "正对老人方向投送"
+          },
+          "physical_residue": "左手食指仍按在清单纸面第一行，右手托住清单底部，躯干保持前倾，目光落在老人脸上。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待对象口头确认或可归类的反应，再进行状态归类。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手拇指和食指捏着搪瓷缸子边沿，缸子搁在炕桌上没端起来，只是转了一下。嘴唇几乎没怎么动地把两个字吐出来。",
+          "speech": "就我。",
+          "addressee": "waixingren-jia",
+          "attention_target": "waixingren-jia",
+          "gaze": "眼皮半垂，视线落在对方举着的清单下沿，没有抬头去看对方的脸。",
+          "blocking": "盘腿坐在炕上靠里侧，身体没有朝对方倾过去，脊背微弓，右手仍搭在缸沿上。",
+          "posture_change": "无明显变化，仅下颌略收了一下，像是把话咽回去半截才放出来的。",
+          "delivery": {
+            "pace": "极短促，两个字之间几乎没有间隔",
+            "volume": "比正常说话低半档，气声偏重",
+            "breath": "话前无可闻吸气，话后鼻腔轻轻出一口气",
+            "articulation": "嘴形小，唇齿动作极省",
+            "pause": "说完后至少两秒不再开口",
+            "vocal_target": "waixingren-jia"
+          },
+          "physical_residue": "右手拇指仍扣在搪瓷缸子边沿上，缸子在炕桌上转过了约十五度角，缸底划出一道短弧。",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "老人的两个字够不够让甲勾上条目一，还是要追问细节。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "左手食指从清单第一行条目滑到行末空白处，停住，右手从随身佩带的记录器上拔出一根细长的触笔，在条目一后方的方格内划下一道短横标记。标记完成后触笔笔尖悬在纸面上方约一厘米处，没有收回。",
+          "speech": "条目一，情况属实，归类：符合。",
+          "addressee": "laoren-jia",
+          "attention_target": "laoren-jia",
+          "gaze": "视线从清单条目一的标记格移开，水平投向炕沿上的老人面部，停留约两秒后下移至清单第二行。",
+          "blocking": "站在炕桌对面，身体仍微微前倾，双臂维持举清单的姿势，左手托住清单底部，右手持触笔悬于清单上方。",
+          "posture_change": "上身前倾角度略微回收一寸，重心从前脚掌移回脚心，肩线放平。",
+          "delivery": {
+            "pace": "匀速偏慢，每个字之间留有等距间隔",
+            "volume": "中低，刚好覆盖炕桌距离",
+            "breath": "句前一次短促吸气，宣读完后闭口无声",
+            "articulation": "字字咬合清晰，齿音干净，尾字'合'收得短促",
+            "pause": "句末停顿三秒以上，不续接下一条",
+            "vocal_target": "laoren-jia"
+          },
+          "physical_residue": "清单条目一末端方格内多了一道水平短横标记；右手触笔笔尖悬停在条目二起始位置上方；左手食指压在条目一与条目二之间的分隔线上。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "归类宣读完毕，留出停顿，给乙记录时间，也给老人一个可插话的间隙。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手手指从搪瓷缸子边沿松开，手掌平放在炕桌面上，目光从对方手中的清单慢慢移开，落到堂屋桌上那部正在充电的老手机上，停了两三秒。嘴闭着，下巴微微收了一点，没有任何要开口的意思。",
+          "speech": "",
+          "addressee": "laoren-jia",
+          "attention_target": "堂屋桌上充电的手机",
+          "gaze": "眼皮半垂，视线越过对方肩头落在桌面手机的位置，瞳孔没有移动",
+          "blocking": "身体仍坐在炕沿上，上半身略往后靠了一寸，与对方保持原来的距离，没有倾向对方也没有退缩",
+          "posture_change": "右手从缸沿收回平放桌面，肩膀微微下沉，脊背比刚才松了一点",
+          "delivery": {
+            "pace": "",
+            "volume": "",
+            "breath": "鼻息平稳，间隔均匀",
+            "articulation": "",
+            "pause": "长于五秒的沉默",
+            "vocal_target": ""
+          },
+          "physical_residue": "右手掌心朝下平贴炕桌面，搪瓷缸子在手边原处未动；视线方向朝堂屋桌上手机停留",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "老人眼神落在桌上那部充电的手机上停了一下，没说话，等着对方继续。"
+        },
+        {
+          "actor_id": "waixingren-yi",
+          "action": "左手食指从清单第一行滑落至第二行条目起始处，指尖按住印刷字体停住；右手触笔笔尖在刚才标记完的条目一方格上方悬停片刻后向下移动，落到条目二对应的空白方格旁，保持静止不落笔。头部微微偏转，目光经过老人的侧脸，短暂掠过堂屋桌上那部充着电的老手机，随即收回视线回到清单纸面。",
+          "speech": "居住单元内有效同住人数：零。",
+          "addressee": "waixingren-jia",
+          "attention_target": "清单第二行条目",
+          "gaze": "从老手机方向收回，落在左手食指按住的清单第二行文字上",
+          "blocking": "站在炕桌短边一侧，身体正面朝向坐在炕上的老人，清单平端在老人视线可及的高度，左手食指指向第二行，右手触笔悬于对应方格旁",
+          "posture_change": "上半身略微前倾约两厘米，重心从双脚均匀分布转向左脚，头部从偏转状态回正",
+          "delivery": {
+            "pace": "匀速，每个字之间间隔均等",
+            "volume": "中等偏低，与室内面积匹配的标准通报音量",
+            "breath": "无可闻呼吸声",
+            "articulation": "每个汉字咬字完整收尾干净，数字'零'的韵母拉长半拍",
+            "pause": "句末'零'字之后保持静默约两秒",
+            "vocal_target": "炕上坐着的老人面部方向"
+          },
+          "physical_residue": "左手食指按在清单第二行条目首字上方，右手触笔悬在条目二方格右侧约半厘米处未落笔，清单纸面条目一方格内有一道短横标记，身体前倾姿态维持",
+          "observable_outcome": [
+            "waixingren-yi performed speak"
+          ],
+          "response_hook": "手机充电状态与通讯频率的关系尚未被甲提问——甲若问条目二，我手边已有物证备注可供调取。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "沉默还悬着。福利清单摊在甲手里，确认栏空着。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手手掌仍平放在炕桌面上，五指松散，没有移动。左手搁在膝盖上方，拇指指腹缓慢地蹭了一下食指第二节关节的老茧，幅度极小，随即停住。嘴唇闭合，两腮肌肉没有任何准备说话的张力。呼吸浅而匀，胸腔起伏几乎看不出来。",
+          "speech": "",
+          "addressee": "laoren-jia",
+          "attention_target": "炕桌面上自己右手手背附近的一小块桌面",
+          "gaze": "眼皮微垂，目光落在炕桌靠近自己一侧的桌面纹路上，既没有看对方的清单，也没有再看手机，瞳孔没有聚焦在任何一个具体目标上。",
+          "blocking": "身体重心略偏右后方，靠着炕墙，脊背上半段贴着墙面，头部没有朝对方偏转，整个人呈一种坐定了不打算挪动的松弛姿态。与对方之间隔着炕桌的宽度。",
+          "posture_change": "无明显变化；下巴维持上一刻微收的角度，肩线没有升降。",
+          "delivery": {
+            "pace": "",
+            "volume": "",
+            "breath": "鼻息平缓，间隔均匀，无可闻气声",
+            "articulation": "",
+            "pause": "完整的无语段，时长由对方下一句话终止",
+            "vocal_target": ""
+          },
+          "physical_residue": "右手掌平贴炕桌面，左手搁膝上拇指与食指第二节接触面留有一次微蹭后的静止姿态，脊背上段贴墙，面部肌肉松弛无表情张力。",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "老人的沉默和不动迫使对方主动推进到下一条目或开口打破僵局。"
+        }
+      ]
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "attempt": 1,
+      "turns_completed": 6,
+      "protocol_failure": "",
+      "wall_seconds": 52.4,
+      "generation_calls": 16,
+      "generation_seconds": 52.4,
+      "dialogue_score": 4,
+      "dialogue_passed": true,
+      "verdict": "Quiet stalemate executed well: alien A's verbatim re-read after classifying the water offer as '程序外互动', alien B's single field-record line, and the old man's action-only turns (pouring water, three-character offer '喝水吗？') all hold voice and turn economy; concrete objects (两碗水、凉水壶、感应板) carry the scene and the ending lands on the unexplained laugh without stating the thesis.",
+      "problems": [
+        "Final beat puts the literal word '笑。' in the speech field while the stage note only describes posture — the scene's heaviest expression fails the read-aloud test and is delivered as text, not enacted",
+        "One turn uses '...' as speech where a pure stage-note turn would suffice; silence should live in action, not in a spoken placeholder",
+        "Alien B's stage note '维持与桌面平行的重心' drifts toward planning-layer body description rather than observable stage action"
+      ],
+      "speech_lengths": [
+        26,
+        4,
+        39,
+        3,
+        24,
+        2
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "将左侧金属感应板平移至阅读视线内，右手指尖悬停在第一行条目前方。",
+          "speech": "现予核实：第一条，长期无人陪伴独自生活。情况属实吗？",
+          "addressee": "laoren-jia",
+          "attention_target": "感应板上的第一条清单内容",
+          "gaze": "聚焦于金属板表面",
+          "blocking": "保持站立，身体微向右侧倾斜以维持平衡。",
+          "posture_change": "头部微垂，重心略微后移至左脚跟。",
+          "delivery": {
+            "pace": "均匀缓慢",
+            "volume": "中等音量",
+            "breath": "平稳，无起伏",
+            "articulation": "清晰准确",
+            "pause": "句首后停顿两秒",
+            "vocal_target": "听者"
+          },
+          "physical_residue": "右手指尖点在金属板第一行末端，左手托住板底边缘。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "确认情况是否属实。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手指尖从裤缝挪开，缓慢伸向桌角的凉水壶。",
+          "speech": "喝水吗？",
+          "addressee": "waixingren-jia",
+          "attention_target": "凉水壶",
+          "gaze": "避开对方视线，投向桌面木纹。",
+          "blocking": "保持坐在长条板凳上的姿势，脊背微微佝偻。",
+          "posture_change": "右肩下沉，右臂肘部微屈带动前臂横向移动。",
+          "delivery": {
+            "pace": "缓慢",
+            "volume": "低沉",
+            "breath": "平稳且深长",
+            "articulation": "模糊且含混",
+            "pause": "句前长顿",
+            "vocal_target": "对方"
+          },
+          "physical_residue": "右手五指抓握在凉水壶的把手上。",
+          "observable_outcome": [
+            "laoren-jia performed interact"
+          ],
+          "response_hook": "端起桌上的凉水壶。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "维持左手平举金属感应板的姿势，右手指尖保持在清单第一行条目前方不动，目光穿过感应板上方直视对方。",
+          "speech": "此为程序外互动，不予处理。现予核实：第一条，长期无人陪伴独自生活。情况属实吗？",
+          "addressee": "laoren-jia",
+          "attention_target": "laoren-jia",
+          "gaze": "锁定对方双眼，无视水壶移动",
+          "blocking": "立于原处，上身微前倾以施加压力",
+          "posture_change": "背部挺直，双脚重心向内扣合",
+          "delivery": {
+            "pace": "均匀匀速",
+            "volume": "中等音量",
+            "breath": "无，机械发音",
+            "articulation": "清晰刻板",
+            "pause": "句末长停顿",
+            "vocal_target": "对方"
+          },
+          "physical_residue": "左手依然托举着金属感应板，右手指尖保持悬停状态",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "属实或不属实？"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "将凉水壶提至碗边，缓慢倾斜壶嘴注入碗中。",
+          "speech": "...",
+          "addressee": "laoren-jia",
+          "attention_target": "眼前的水碗",
+          "gaze": "下垂聚焦于碗中水纹",
+          "blocking": "右手握住壶柄，左手扶在碗沿边缘，双肘撑在粗糙的木桌面上。",
+          "posture_change": "背部略微佝偻，重心下沉，维持坐姿的稳定性。",
+          "delivery": {
+            "pace": "缓慢",
+            "volume": "极低",
+            "breath": "长且平稳",
+            "articulation": "模糊而迟缓",
+            "pause": "极长",
+            "vocal_target": "虚空"
+          },
+          "physical_residue": "右手指尖残留着凉水壶表面的湿冷水汽，水碗水位微微升高。",
+          "observable_outcome": [
+            "laoren-jia performed interact"
+          ],
+          "response_hook": "桌上的水还没喝完，我就这样看着他。"
+        },
+        {
+          "actor_id": "waixingren-yi",
+          "action": "右食指指尖在金属感应板的“待确认”标记处轻轻敲击两次，左手手臂保持水平伸展，维持与桌面平行的重心。",
+          "speech": "第一条：长期无人陪伴独自生活。记录状态：待确认。",
+          "addressee": "laoren-jia",
+          "attention_target": "老人",
+          "gaze": "直视老人眼部，不随其倒水的动作偏移。",
+          "blocking": "立于桌前一米处，身体重心轻微后撤，避开碗口溅出的水花。",
+          "posture_change": "背脊保持笔直，双肩下沉，右脚尖微调方向朝向目标。",
+          "delivery": {
+            "pace": "均匀平稳",
+            "volume": "标准音量",
+            "breath": "无呼吸感",
+            "articulation": "字符清晰，去情绪化",
+            "pause": "在核实项后停顿半秒",
+            "vocal_target": "老人"
+          },
+          "physical_residue": "右食指指尖残留的感应板金属光泽，左手依然悬空固定金属板。",
+          "observable_outcome": [
+            "waixingren-yi performed speak"
+          ],
+          "response_hook": "属实吗？"
+        },
+        {
+          "actor_id": "scene",
+          "action": "沉默还悬着。福利清单摊在甲手里，确认栏空着。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右肘撑在桌缘，右手悬空悬停在碗沿上方，双肩微微下沉。",
+          "speech": "笑。",
+          "addressee": "laoren-jia",
+          "attention_target": "waixingren-yi",
+          "gaze": "半阖眼睑，视线落在碗中晃动的波纹上。",
+          "blocking": "保持坐姿，左手依然虚扶在凉水壶柄上。",
+          "posture_change": "背部略微后靠椅背，重心后移。",
+          "delivery": {
+            "pace": "缓慢",
+            "volume": "极低",
+            "breath": "平稳且深长",
+            "articulation": "模糊",
+            "pause": "无",
+            "vocal_target": "对桌对面的虚空处"
+          },
+          "physical_residue": "右手指尖微微蜷曲，左手仍紧握着壶柄。",
+          "observable_outcome": [
+            "laoren-jia performed wait"
+          ],
+          "response_hook": "对方再次询问。"
+        }
+      ]
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "attempt": 2,
+      "turns_completed": 6,
+      "protocol_failure": "",
+      "wall_seconds": 37.8,
+      "generation_calls": 12,
+      "generation_seconds": 37.8,
+      "dialogue_score": 4,
+      "dialogue_passed": true,
+      "verdict": "老人的回合几乎全靠动作与三五字短句承载（倒水、'水要凉了'、'该充够了'配拔充电线），沉默和纯动作被当作完整回合，避答不解释，符合口语与减法原则；甲严格一回合一个流程节点，乙全场只开口一次且为字段记录体，术语预算未超；'该充够了'一句以物件（充电的手机）而非陈述说破等待，是最好的落点。缺点是场面偏短，核心情绪（那个笑）只在首回合出现后未再回响，甲的错误归类声纹（把笑记为待定状态）未见发挥。",
+      "problems": [
+        "篇幅过短，核心意象'温和带悲的笑'出现一次后无回声，甲的'情感信号误归类'失效模式全程未触发",
+        "开场设定老人坐炕沿，舞台指示写'从木椅起身'，小处连续性不符",
+        "乙唯一一次开口是替老人的话作答式确认，略有代答之嫌，虽在记录腔范围内但削弱了'仅记录不回应'的极端性"
+      ],
+      "speech_lengths": [
+        28,
+        28,
+        33,
+        12,
+        14,
+        5
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "点击悬浮的全息清单界面进行标记",
+          "speech": "现在开始核实，条目一：您目前是否长期无人陪伴，独自生活？",
+          "addressee": "laoren-jia",
+          "attention_target": "对象面部",
+          "gaze": "聚焦于对象双眼，维持平视水平",
+          "blocking": "保持站立姿态，双手置于腰侧浮动的操作面板上",
+          "posture_change": "右手指尖从面板表面轻微抬起以触发感应",
+          "delivery": {
+            "pace": "均匀缓慢",
+            "volume": "适中平稳",
+            "breath": "平稳呼吸气流",
+            "articulation": "咬字精准严谨",
+            "pause": "句首短暂停顿",
+            "vocal_target": "对象听觉感知区域"
+          },
+          "physical_residue": "右手指尖悬停于全息面板上方",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待对象对居住状态做出回应。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "缓缓从木椅起身，左手撑住桌面，右手顺势取过桌边的搪瓷杯，向灶台边的暖瓶走去。",
+          "speech": "（脸上带着一点温和又有一点悲的笑，不说话，起身去倒水。）",
+          "addressee": "laoren-jia",
+          "attention_target": "暖瓶",
+          "gaze": "向下半垂，避开全息界面，视线落在暖瓶的塑料塞上。",
+          "blocking": "从桌边移动至灶台侧方，身体微躬。",
+          "posture_change": "由坐姿改为站姿，重心由臀部移至双腿，右膝略微发颤。",
+          "delivery": {
+            "pace": "缓慢",
+            "volume": "极低",
+            "breath": "浅促",
+            "articulation": "模糊",
+            "pause": "长停顿",
+            "vocal_target": "空气"
+          },
+          "physical_residue": "右手指尖握住搪瓷杯把手，左手掌心留有一枚暖瓶塞的微温印记。",
+          "observable_outcome": [
+            "laoren-jia performed interact"
+          ],
+          "response_hook": "对方观察到我的动作后，应当继续他们的流程。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "右食指在悬浮的半透明数据清单界面上进行横向划动，切换至第二条目。",
+          "speech": "核实流程继续，条目二：您平时是否与外界通讯极少，甚至处于中断状态？",
+          "addressee": "laoren-jia",
+          "attention_target": "悬浮界面",
+          "gaze": "直视前方悬浮界面的蓝光条目，不随老人的移动而转动头部。",
+          "blocking": "保持站立姿势，双脚平齐，身体重心置于躯干中轴。",
+          "posture_change": "右臂抬起至胸前，右食指保持悬空操作的动作，左手下垂。",
+          "delivery": {
+            "pace": "均匀平稳",
+            "volume": "中等音量",
+            "breath": "无额外呼吸频率波动",
+            "articulation": "清晰，字句间无重音偏移",
+            "pause": "条目念读后留有标准的等待间隔",
+            "vocal_target": "面前的受访对象"
+          },
+          "physical_residue": "右食指指尖残留微弱的电磁蓝光触碰痕迹，悬浮界面显示第二条目处于高亮选择状态。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待对象对通讯状态条目做出确认。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "将搪瓷杯放在灶台边缘，右手缓缓收回并在围裙上轻蹭了两下，身体微微后仰。",
+          "speech": "没啥断不断的。水要凉了。",
+          "addressee": "laoren-jia",
+          "attention_target": "灶台上的搪瓷杯",
+          "gaze": "向下平视搪瓷杯口，眼神不与对方接触",
+          "blocking": "背对堂屋桌子，身体重心移至左脚",
+          "posture_change": "由行进状态转为半侧身倚靠在灶台边缘",
+          "delivery": {
+            "pace": "缓慢沉滞",
+            "volume": "低沉平缓",
+            "breath": "平稳深长",
+            "articulation": "方言音调沉重，字句短促",
+            "pause": "句间有明显的转头停顿",
+            "vocal_target": "空气中"
+          },
+          "physical_residue": "右手在围裙上留下一道微弱的灰尘痕迹，左手扶在灶台边缘",
+          "observable_outcome": [
+            "laoren-jia performed interact"
+          ],
+          "response_hook": "看对方是否会盯着那碗水或者那部手机。"
+        },
+        {
+          "actor_id": "waixingren-yi",
+          "action": "右食指轻点悬浮数据界面的确认按钮，随后垂直指向桌上接线端口的指示灯。",
+          "speech": "通讯终端处于充电状态：正常。",
+          "addressee": "laoren-jia",
+          "attention_target": "通讯终端的充电指示灯",
+          "gaze": "静止投射于指示灯光斑",
+          "blocking": "立于桌前两步距离，重心稳固于双足",
+          "posture_change": "双肩维持水平，仅右手食指完成点击后垂落至体侧",
+          "delivery": {
+            "pace": "匀速平直",
+            "volume": "中等音量",
+            "breath": "无明显起伏",
+            "articulation": "字符清晰，去情感色彩",
+            "pause": "句间无停顿",
+            "vocal_target": "指向终端方向的空气震动"
+          },
+          "physical_residue": "右食指指尖残留浅淡的电子界面微光，桌面端口保持接电状态",
+          "observable_outcome": [
+            "waixingren-yi performed speak"
+          ],
+          "response_hook": "记录仪等待下一字段反馈。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "沉默还悬着。福利清单摊在甲手里，确认栏空着。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "弯下腰，右手动作缓慢地从墙角插座处将手机充电线拔掉，随后将手机连带数据线整齐地挪到桌角一侧。",
+          "speech": "该充够了。",
+          "addressee": "laoren-jia",
+          "attention_target": "桌上的旧手机",
+          "gaze": "向下凝视着插头与插座的连接处",
+          "blocking": "背对着访客，身体重心偏移至左腿",
+          "posture_change": "从直立姿势缓慢弯腰至半蹲状态，右手向下探去",
+          "delivery": {
+            "pace": "沉稳缓慢",
+            "volume": "低沉且平稳",
+            "breath": "平稳且深长",
+            "articulation": "方言音韵浓重且清晰",
+            "pause": "句末留有明显的停顿",
+            "vocal_target": "访客方向"
+          },
+          "physical_residue": "右手中指和食指夹着充电器插头，放在堂屋桌的角落边缘。",
+          "observable_outcome": [
+            "laoren-jia performed interact"
+          ],
+          "response_hook": "看他们什么时候走。"
+        }
+      ]
+    },
+    {
+      "model": "claude-sonnet-4.6",
+      "attempt": 1,
+      "turns_completed": 2,
+      "protocol_failure": "no draft produced",
+      "wall_seconds": 89.9,
+      "generation_calls": 9,
+      "generation_seconds": 89.9,
+      "dialogue_score": 0,
+      "dialogue_passed": false,
+      "verdict": "",
+      "problems": [],
+      "speech_lengths": [
+        32,
+        2
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "右手持清单，左手食指指向清单第一行文字，抬头看向老人",
+          "speech": "现予核实居住标准。标准第一条：长期无人陪伴，独自生活。情况属实？",
+          "addressee": "laoren-jia",
+          "attention_target": "老人面部",
+          "gaze": "平视，落在老人眼睛与额头之间",
+          "blocking": "站在矮桌对面，双脚平行，右手将清单略微前倾使正面朝老人方向",
+          "posture_change": "上身微前倾约五度，左手食指压在清单第一条处，右手五指收拢托住清单背面",
+          "delivery": {
+            "pace": "匀速，每一词组之间等长停顿",
+            "volume": "中等，充填屋内空间而不压过炕沿的距离",
+            "breath": "句前单次吸气，句中不换气",
+            "articulation": "每字咬清，不连读，标准普通话",
+            "pause": "宣读句与问句之间停顿两拍",
+            "vocal_target": "直送老人方向，不偏移"
+          },
+          "physical_residue": "清单正面朝向老人一侧，左手食指仍压在第一条文字上，右手托住清单背面，上身保持前倾姿态",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "对象对第一条的确认或回应，决定是否归类后推进第二条。"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手拇指沿裤缝轻擦一下，头微低，目光落在地面一侧",
+          "speech": "嗯。",
+          "addressee": "waixingren-jia",
+          "attention_target": "地面左前方",
+          "gaze": "斜向下，不看对方",
+          "blocking": "重心留在左脚，右脚脚尖轻点地，身体未转向对方",
+          "posture_change": "下巴稍收，肩略沉，整体姿态比回应前更闭合",
+          "delivery": {
+            "pace": "极短，一个音节即止",
+            "volume": "低，仅够对方听见",
+            "breath": "音前无明显吸气，音尾气声自然散去",
+            "articulation": "鼻腔共鸣带出，唇齿动作极小",
+            "pause": "发音后沉默延续，不补充",
+            "vocal_target": "向地面方向，非正对对方"
+          },
+          "physical_residue": "右手拇指停在裤缝处，头仍低，目光未回到对方身上",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "对方念下一条清单，或追问是否确认。"
+        }
+      ]
+    },
+    {
+      "model": "claude-sonnet-4.6",
+      "attempt": 2,
+      "turns_completed": 6,
+      "protocol_failure": "",
+      "wall_seconds": 139.8,
+      "generation_calls": 12,
+      "generation_seconds": 139.8,
+      "dialogue_score": 3,
+      "dialogue_passed": true,
+      "verdict": "Turn economy and voice discipline are strong: 老人's bare '嗯。' plus a finger-point at the phone are complete single-beat turns, 甲 reads exactly one checklist node per turn in convincing Chinese officialese, 乙 speaks only in field-value record lines, and the fight is over concrete objects (手机、清单、两碗水) rather than theses. But the climactic beat is botched formally: the smile is delivered as narration inside the speech field and lifts the character sheet's own description verbatim, so the scene's heaviest moment fails the read-aloud test and leaks spec language.",
+      "problems": [
+        "Final laoren-jia turn puts stage-direction prose ('笑了一下。温和，有一点悲。') in the speech field — unspeakable as dialogue and a near-verbatim copy of the voice spec's signature description, spec text leaking into performance.",
+        "甲's two checklist turns are structurally identical (条目编号+内容+'情况属实？'), which is on-voice but leaves his failure_mode (misclassifying the smile, e.g. '面部肌肉活动，含义待定') unplayed at the one moment it was designed for.",
+        "The transcript ends abruptly at eight turns with the confirmation column empty; acceptable as incompleteness, but the scene gets no beat where the checklist's inadequacy is dramatized beyond the described smile."
+      ],
+      "speech_lengths": [
+        30,
+        2,
+        26,
+        2,
+        25,
+        13
+      ],
+      "transcript": [
+        {
+          "actor_id": "waixingren-jia",
+          "action": "右手持清单平举至胸前，目光落在纸面第一行，左手自然垂于体侧。",
+          "speech": "现予核实。居住标准第一条：长期无人陪伴，独自生活。情况属实？",
+          "addressee": "laoren-jia",
+          "attention_target": "清单第一条文字",
+          "gaze": "视线从清单移向老人面部，停在眉间偏上位置",
+          "blocking": "站在矮桌对面，重心居中，两脚平行，身体微前倾约五度，右手持单抬起，左臂不动。",
+          "posture_change": "上身从直立转为轻度前倾，右臂抬高，左臂维持下垂，头部转向老人方向。",
+          "delivery": {
+            "pace": "匀速，每字间距相等，无加速",
+            "volume": "中等，足以在屋内清晰传达，不压低也不放大",
+            "breath": "句前无明显换气，句尾平收",
+            "articulation": "每个核心词——长期、无人陪伴、独自生活——分开落字，其余部分连读",
+            "pause": "问号处停顿约两秒，等待回应",
+            "vocal_target": "直指老人所在方向，不环顾"
+          },
+          "physical_residue": "右手持清单停在胸前高度，纸面朝向老人一侧，左手垂于体侧，上身保持前倾姿态。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "等待老人对条目一的确认或回应，以决定归类后是否直接推进条目二"
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "右手拇指在膝头轻压一下，头微微低一点，嘴角不动。",
+          "speech": "嗯。",
+          "addressee": "waixingren-jia",
+          "attention_target": "对方手中的纸单",
+          "gaze": "目光从对方脸移到清单纸面，停在那里不动。",
+          "blocking": "坐在椅上，身体重心不变，右手落回膝头，左手搭在椅扶手上。",
+          "posture_change": "上身微微前倾约一指宽，右手拇指收回贴着膝盖，余指松开平放。",
+          "delivery": {
+            "pace": "极短，一个音节，不拖长。",
+            "volume": "低于正常说话声，刚好够对方听见。",
+            "breath": "",
+            "articulation": "收得很紧，口型几乎不张开。",
+            "pause": "音节落下后立刻沉默，不续上任何字。",
+            "vocal_target": "声音落在屋子中间的空气里，不朝对方推过去。"
+          },
+          "physical_residue": "右手拇指压过的膝头布面留有一道浅皱，右手五指平放于膝，左手仍搭在扶手上，上身保持前倾。",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "清单念到第二条时老人有没有别的反应。"
+        },
+        {
+          "actor_id": "waixingren-jia",
+          "action": "右手持清单向下移至第二行，左手垂于体侧不动，目光从纸面抬起落向老人方向。",
+          "speech": "居住标准第二条：与外界通讯极少，甚至中断。情况属实？",
+          "addressee": "laoren-jia",
+          "attention_target": "老人面部，余光扫向桌上手机。",
+          "gaze": "平视，落点在老人面部中央，短暂下移至桌面手机后收回。",
+          "blocking": "站姿原位不动，右手持清单维持胸前平举高度，纸面第二行朝向老人一侧。",
+          "posture_change": "头部从低视纸面转为抬平，下颌微收，右手拇指指节停在清单第二行边缘，左手垂直不变。",
+          "delivery": {
+            "pace": "匀速，每字间距一致，无拖长。",
+            "volume": "室内平常说话音量，不压低也不抬高。",
+            "breath": "",
+            "articulation": "字尾收音清晰，'中断'二字略顿开，各自独立落点。",
+            "pause": "句末问号处停顿约两秒，不填充。",
+            "vocal_target": "声音朝向老人坐姿的高度水平送出。"
+          },
+          "physical_residue": "右手拇指指节停在清单纸面第二行左侧边缘，清单平举角度与第一条核实时保持一致。",
+          "observable_outcome": [
+            "waixingren-jia performed speak"
+          ],
+          "response_hook": "对象对第二条的回应——若有任何指向桌上手机的动作或言语，需在下一节点处理。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "屋里很静，只有窗外偶尔一阵风。桌上两碗水的热气慢慢淡了。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "左手食指朝桌上那部手机方向轻点一下，随即收回搭在膝上，头未抬。",
+          "speech": "嗯。",
+          "addressee": "waixingren-jia",
+          "attention_target": "桌上手机",
+          "gaze": "目光从对方脸上滑向桌面手机，停一息，再落回自己膝头。",
+          "blocking": "坐姿不动，上身微前倾角度维持，左手食指点完后落回右膝上方，两手均在膝上。",
+          "posture_change": "头低度不变，左手从膝侧移至右膝上方与右手并拢。",
+          "delivery": {
+            "pace": "极短，一字即止",
+            "volume": "低，仅够对面听清",
+            "breath": "",
+            "articulation": "收口，不拖尾音",
+            "pause": "字后无停顿，声音落下即闭口",
+            "vocal_target": "朝对方清单方向，不抬头"
+          },
+          "physical_residue": "左手食指收回后两手并搭在膝上；桌上手机位置未动，仍插着电。",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "第三条念完后，老人的反应。"
+        },
+        {
+          "actor_id": "waixingren-yi",
+          "action": "右手持清单在第二行末尾画一个勾，随即将笔尖移至第二行右侧空白处悬停，目光从纸面转向桌上手机片刻，然后回落纸面，于备注栏写下数字符号占位。",
+          "speech": "第二条，属实。来源：桌面手机。最后通讯时间：待测。",
+          "addressee": "waixingren-jia",
+          "attention_target": "清单第二行及桌上手机",
+          "gaze": "从手机扫回清单纸面，落在备注栏手写符号上",
+          "blocking": "右手持清单与笔，左手垂于体侧，脚步无移动，躯干微前倾对着清单。",
+          "posture_change": "躯干由直立微向前倾，头随视线低向纸面，左手维持垂于体侧。",
+          "delivery": {
+            "pace": "匀速，字与字间距相等",
+            "volume": "低平",
+            "breath": "无起伏",
+            "articulation": "每个词收尾清晰，无拖音",
+            "pause": "句号处停顿约一拍，冒号后半拍",
+            "vocal_target": "向纸面方向，不抬头投送"
+          },
+          "physical_residue": "清单第二行末端留有一个勾形标记，备注栏留有一个手写占位符号，笔尖停在该符号旁。",
+          "observable_outcome": [
+            "waixingren-yi performed speak"
+          ],
+          "response_hook": "第三条字段尚未核实，存档未完。"
+        },
+        {
+          "actor_id": "scene",
+          "action": "沉默还悬着。福利清单摊在甲手里，确认栏空着。",
+          "speech": ""
+        },
+        {
+          "actor_id": "laoren-jia",
+          "action": "嘴角向上浮起一条浅弧，随即平复，双手搭在膝上未动。",
+          "speech": "笑了一下。温和，有一点悲。",
+          "addressee": "waixingren-jia",
+          "attention_target": "桌面手机与清单之间的空处",
+          "gaze": "目光落在桌面某一点，焦距散开，未看任何人。",
+          "blocking": "坐姿原位不变，重心稳在椅座，双脚平踏地面。",
+          "posture_change": "肩膀微微下沉，左手与右手各自搭在左右膝上，十指放松。",
+          "delivery": {
+            "pace": "极慢，字与字之间有气息间隔",
+            "volume": "极低，接近说给自己听",
+            "breath": "呼气在字前先行漏出一小段",
+            "articulation": "唇齿开合极小，末字收音不完整",
+            "pause": "笑的动作结束后沉默持续约两拍再开口",
+            "vocal_target": "朝桌面方向，不抬头"
+          },
+          "physical_residue": "嘴角弧度已落平，双手各压在左右膝上，手背可见。",
+          "observable_outcome": [
+            "laoren-jia performed speak"
+          ],
+          "response_hook": "外星人甲念第三条"
+        }
+      ]
+    }
+  ]
+}

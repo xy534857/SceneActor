@@ -141,7 +141,7 @@ class GatewayCompletion:
         api_key: str = "",
         *,
         timeout: float = 300.0,
-        max_tokens: int = 8192,
+        max_tokens: int = 32768,
     ) -> None:
         self.base_url = (base_url or os.environ.get("SCENEACTOR_GATEWAY_URL", "")).rstrip("/")
         self.api_key = api_key or os.environ.get("SCENEACTOR_GATEWAY_KEY", "")
