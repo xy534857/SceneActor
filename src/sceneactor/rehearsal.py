@@ -120,6 +120,11 @@ class RehearsalRun:
                 "competencies": actor.persona.competencies,
                 "cognition_lens": actor.persona.cognition_lens,
                 "voice": actor.persona.voice.to_dict(),
+                **(
+                    {"performance_reference": actor.persona.extensions["performance_reference"]}
+                    if isinstance(actor.persona.extensions, dict) and actor.persona.extensions.get("performance_reference")
+                    else {}
+                ),
             },
         )
         orchestrator = TurnOrchestrator(

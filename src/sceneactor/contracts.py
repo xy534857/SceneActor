@@ -275,7 +275,7 @@ class PublicPerformanceIntent:
         evidence = frame.evidence()
         actor_constraints = {
             key: value for key, value in frame.identity_evidence.items()
-            if key in {"age", "role", "competencies"}
+            if key in {"age", "role", "competencies", "performance_reference"}
         }
         refs = set(policy.action_request.grounded_refs)
         refs.update(policy.grounded_refs)

@@ -148,7 +148,10 @@ class JsonBlindReviewPort:
         "local_sufficiency": (
             "Dialogue is locally sufficient, never globally complete: no line re-narrates what both parties already see, "
             "no one reads out rules-plus-consequences in one breath, and every omission is licensed by presence, shared "
-            "history, or avoidance — not by the author having read the scene card."
+            "history, or avoidance — not by the author having read the scene card. Receipt lines ('收到', '好的，我记下了') "
+            "are judged BY THE CARD, not globally: a clerk, a dutiful student, or a protocol role may acknowledge; a "
+            "character whose voice contract says information only surfaces transformed (converted, challenged, seized on) "
+            "fails this item when it hands back a bare receipt."
         ),
         "real_listening": (
             "Each turn responds first to the trouble the previous second actually caused — a specific word, number, or "
