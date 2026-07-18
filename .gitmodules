@@ -1,0 +1,3 @@
+[submodule "vendor/GodotAvatarVideoGen"]
+	path = vendor/GodotAvatarVideoGen
+	url = git@github.com:omgwowai/GodotAvatarVideoGen.git
