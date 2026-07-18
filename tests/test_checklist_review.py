@@ -19,52 +19,31 @@ class FakeChecklistModel:
             key: {"pass": 0 if key in self.fail_keys else 1, "evidence": f"ev-{key}"}
             for key in JsonBlindReviewPort.DIALOGUE_CHECKLIST
         }
-        return json.dumps({"items": items, "worst_failures": list(self.fail_keys)[:3]})
+        return json.dumps({"items": items})
 
 
 class ChecklistReviewTests(unittest.TestCase):
-    def test_all_pass_maps_to_top_score(self) -> None:
+    def test_all_pass_is_the_only_way_through(self) -> None:
         port = JsonBlindReviewPort(FakeChecklistModel())
         result = port("dialogue", {"clean_transcript": []})
         self.assertEqual(result["kind"], "binary_checklist")
         self.assertEqual(result["bits_passed"], result["bits_total"])
         self.assertEqual(result["score"], 5)
         self.assertTrue(result["pass"])
+        self.assertEqual(result["failed"], [])
 
-    def test_failures_reduce_bits_and_carry_evidence(self) -> None:
-        port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=("one_job_per_turn", "escalation_moves")))
-        result = port("dialogue", {"clean_transcript": []})
-        total = result["bits_total"]
-        self.assertEqual(result["bits_passed"], total - 2)
-        self.assertIn("one_job_per_turn: ev-one_job_per_turn", result["problems"])
-        self.assertTrue(result["pass"])  # 2 non-critical misses in different tiers
-
-    def test_critical_item_is_veto(self) -> None:
-        port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=("no_written_aphorism",)))
-        result = port("dialogue", {"clean_transcript": []})
-        self.assertEqual(result["bits_passed"], result["bits_total"] - 1)
-        self.assertFalse(result["pass"])
-        self.assertEqual(result["critical_failed"], ["no_written_aphorism"])
-
-    def test_tier_concentration_fails_the_gate(self) -> None:
-        # Three misses all inside language_surface breach the per-tier cap (tier total 5, floor 3).
-        fails = ("idiomatic_speech", "no_written_aphorism", "no_mirror_symmetry")
-        port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=fails))
-        result = port("dialogue", {"clean_transcript": []})
-        self.assertFalse(result["pass"])
-        self.assertEqual(result["tiers"]["language_surface"]["passed"], 2)
-
-    def test_six_scattered_failures_fail_the_total_gate(self) -> None:
-        fails = ("idiomatic_speech", "no_template_turns", "listens_and_reacts",
-                 "distinct_voices", "no_planning_leak", "no_mirror_symmetry")
-        port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=fails))
-        result = port("dialogue", {"clean_transcript": []})
-        self.assertFalse(result["pass"])
+    def test_any_single_failure_fails_the_gate(self) -> None:
+        for key in JsonBlindReviewPort.DIALOGUE_CHECKLIST:
+            port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=(key,)))
+            result = port("dialogue", {"clean_transcript": []})
+            self.assertFalse(result["pass"], f"{key} should be fatal")
+            self.assertEqual(result["failed"], [key])
+            self.assertIn(f"{key}: ev-{key}", result["problems"])
 
     def test_missing_item_is_rejected_not_defaulted(self) -> None:
         class BrokenModel:
             def __call__(self, messages, purpose):
-                return json.dumps({"items": {"idiomatic_speech": {"pass": 1, "evidence": "x"}}})
+                return json.dumps({"items": {"read_aloud": {"pass": 1, "evidence": "x"}}})
 
         port = JsonBlindReviewPort(BrokenModel(), max_attempts=1)
         with self.assertRaises(ValueError):
@@ -72,13 +51,13 @@ class ChecklistReviewTests(unittest.TestCase):
 
     def test_reviewer_aggregation_exposes_checklist(self) -> None:
         reviewer = BlindReviewer(
-            JsonBlindReviewPort(FakeChecklistModel(fail_keys=("tic_budget",))),
+            JsonBlindReviewPort(FakeChecklistModel(fail_keys=("persona_fidelity",))),
             lenses=("dialogue",),
         )
         outcome = reviewer.review({"setting": "x"}, [])
         entry = outcome["reviews"][0]
         self.assertIsNotNone(entry["checklist"])
-        self.assertEqual(entry["checklist"]["bits_passed"], entry["checklist"]["bits_total"] - 1)
+        self.assertFalse(entry["passed"])
 
 
 if __name__ == "__main__":

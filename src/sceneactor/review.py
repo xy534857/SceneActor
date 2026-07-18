@@ -85,7 +85,7 @@ class BlindReviewer:
                     verdict=str(data.get("verdict", "")),
                     problems=tuple(str(item) for item in data.get("problems", [])[:3]),
                     checklist=(
-                        {"items": data["items"], "bits_passed": data.get("bits_passed"), "bits_total": data.get("bits_total")}
+                        {"items": data["items"], "bits_passed": data.get("bits_passed"), "bits_total": data.get("bits_total"), "failed": data.get("failed", [])}
                         if data.get("kind") == "binary_checklist" else None
                     ),
                 )
@@ -128,57 +128,70 @@ class JsonBlindReviewPort:
         self.complete = complete
         self.max_attempts = max_attempts
 
+    # 统一评价体系：十道生死题，每题 0/1 并引原文定案，全过才放行。
+    # 无层级、无否决子集、无总分阈值——任何一题不过，人物就不是活的。
+    # 判据融合本项目与《无主之名》表达控制文档的审稿规则（负面句式清单只
+    # 存在于审计侧，绝不进入生成 prompt）。
     DIALOGUE_CHECKLIST = {
-        # ---- language surface (AI-flavor tier 1: how sentences are built) ----
-        "idiomatic_speech": "Every human line is idiomatic spoken Chinese a person could say aloud under this pressure: no calques, no essay connectives (但是/因此/然而 as clause glue), no dangling objects, no un-Chinese verb frames. One violating line fails the item.",
-        "no_written_aphorism": "No speaker delivers a polished written maxim, balanced antithesis, or closing epigram as live speech. A machine-register actor's contract language does not count.",
-        "no_mirror_symmetry": "No 我一句你一句 mirrored sentence frames: speakers do not answer a structure with the same structure (X的是你/X的是我, 你数你的/我数我的), and no snap-back formula is echoed more than once.",
-        "no_enumeration_reflex": "Human speakers do not organize live speech into numbered lists or first/second/third scaffolds unless the voice contract prescribes it — and then at most once per scene.",
-        "colloquial_particles": "Lines carry the small change of real Mandarin speech where pressure warrants it — 语气词, elision, incomplete predicates — instead of every sentence arriving fully inflated and grammatically complete.",
-        # ---- turn mechanics (AI-flavor tier 2: how turns behave) ----
-        "turn_length_variety": "Turn lengths follow the beats instead of one uniform shape: no speaker delivers all turns at the same length and structure. A deliberately laconic character whose voice contract prescribes near-silence satisfies this item through varied ACTIONS around the short lines.",
-        "no_template_turns": "No speaker repeats the same internal turn structure (same opener + same development + same closer) in two or more turns.",
-        "one_job_per_turn": "No single turn stacks rebuttal + case-making + verdict (or classify + read + confirm for procedural roles). Each turn does one job and leaves the rest unsaid.",
-        "no_explanatory_tail": "Turns stop when the social move lands: no line continues into an explanatory tail (mechanism, consequence, scope, consent) that the recipient never asked for. De-completion test: cutting the tail should break nothing.",
-        "leaves_hooks_open": "Speakers leave unequal knowledge and unanswered pressure on the table; nobody wraps each exchange into a closed, fully-resolved package before yielding the floor.",
-        # ---- interaction (AI-flavor tier 3: whether anyone is listening) ----
-        "listens_and_reacts": "At least one turn demonstrably picks up a specific word, number, or object from the opponent's PREVIOUS turn and acts on it (steal, mock, deny, exploit). Parallel monologues fail this item.",
-        "answers_strongest_point": "Nobody consistently skips the opponent's strongest last point for a prepared line; at least once the hardest incoming hit is engaged rather than sidestepped.",
-        "no_restating_visible": "No line re-narrates what both parties can already see (repeating the shared scene back, reporting the opponent's action to the opponent). Shared-context subtraction holds.",
-        "concrete_objects": "The argument lands on concrete nameable objects or specifics from this scene, not restated abstract theses; a reader could name what each exchange is about.",
-        "escalation_moves": "Across the scene the exchange changes tactic, angle, or referent at least once; re-performing the previous structure louder is not escalation.",
-        # ---- character (AI-flavor tier 4: who is talking) ----
-        "distinct_voices": "Speakers are distinguishable with names hidden: swapping two adjacent turns between speakers would be noticeable. Shared tics or converging registers fail this item.",
-        "tic_budget": "No recognizable signature tic appears twice in one turn, and no tic is machine-gunned across consecutive turns of the same speaker.",
-        "flaws_cost_something": "Where a voice contract prescribes a failure mode (restarts, miscounts, losing the thread), its traces COST the speaker something — a beat lost, an opening handed over — rather than resolving into a polished rhetorical device or self-aware joke. A behavior the contract frames as SIGNATURE TEXTURE (e.g. numbers inflating as boast) is voice fidelity, not an uncosted flaw; judge only traces the contract itself frames as failure.",
-        "pressure_changes_speech": "Speech observably changes under pressure per the voice contract (shorter, repeated, derailed, hand stops) at least once; characters who sound identical in calm and under fire fail this item.",
-        "no_authorial_verdict": "No speaker receives an unanswered closing verdict, moral of the story, or audience address that reads as the author's point; the scene does not crown a winner in its final beat unless a neutral third party owns the close.",
-        "persona_fidelity": "When the packet supplies character_cards (want/need/lie/flaw/arc), every speaker's choices remain inside their card: a character whose flaw is never voicing need does not deliver declarations or defiance; a character whose want is pinned to an object cannot ignore that object when it activates; suppressed longing may LEAK (a hurried hand, a held gaze, a half-beat stop) but never convert into articulate self-possession. A performance that makes the character more clear-eyed, assertive, or resolved than the card allows fails this item even if the resulting drama is better.",
-        "wound_stays_open": "The character's stated unresolved wound or wait stays unresolved and active: the scene may show hope rising and falling, but no speaker walks away cured, vindicated, or done waiting unless the script's arc says so.",
-        # ---- production (craft hygiene) ----
-        "no_planning_leak": "No line exposes planning-layer vocabulary (state codes spoken by humans, field-order reports from non-machine roles, response-hook talk) that belongs to the pipeline, not the play.",
-        "silence_has_content": "Where a speaker stays silent or near-silent, the silence carries a visible choice (an action, an avoidance, a stopped gesture) rather than an empty placeholder note.",
-        "consistent_stage_facts": "No stage/prop/timeline contradiction inside the transcript (an object in two states, an action happening twice, a referenced event that never occurred).",
-        "core_emotion_delivered": "The scene's stated core emotion is realized in at least one specific moment of the transcript, not merely implied by the setup.",
+        "read_aloud": (
+            "Cover all stage notes and read ONLY the spoken lines aloud, in order. Every human line must be something "
+            "a live person says TO the person in front of them, under this pressure, in this moment. Any of the following "
+            "spoken by a human fails the item on sight: a polished maxim or epigram; a negate-then-flip antithesis "
+            "(不是X，是Y / 我不管X，我只管Y / X的是你，X的是我); semicolon-style parallel conclusions; a fair summary of both "
+            "positions; a subject-dropped process label (人先核/状态未确认). One line is enough to fail. Quote it."
+        ),
+        "machine_swap": (
+            "Hand each human speaker's lines verbatim to a protocol-bound machine. If any human's dialogue could be "
+            "delivered by the machine without seeming wrong, that human voice fails. Machine-register characters are "
+            "exempt and judged only against their own contract."
+        ),
+        "local_sufficiency": (
+            "Dialogue is locally sufficient, never globally complete: no line re-narrates what both parties already see, "
+            "no one reads out rules-plus-consequences in one breath, and every omission is licensed by presence, shared "
+            "history, or avoidance — not by the author having read the scene card."
+        ),
+        "real_listening": (
+            "Each turn responds first to the trouble the previous second actually caused — a specific word, number, or "
+            "object from the other speaker — before anything else. Interruption, restart, mishearing, and refusal to "
+            "engage all count as responses; parallel monologues and prepared lines that skip the opponent's strongest "
+            "point do not."
+        ),
+        "allowed_inefficiency": (
+            "The characters are permitted to be ineffective, and at least once they are: someone answers beside the "
+            "point, misses what mattered, says half a sentence, repeats a primitive word under pressure, or says a "
+            "useless thing. A transcript where every speaker always delivers the optimal proof of their persona reads "
+            "as the author performing the character sheet — that is THE disease, and it fails this item."
+        ),
+        "one_move_per_turn": (
+            "One mouth-opening does one thing (ask / refuse / deflect / demand / concede). No turn explains + reassures "
+            "+ arranges + advances in the same breath; no turn stacks rebuttal + case + verdict. Cutting a turn's "
+            "explanatory tail must break nothing."
+        ),
+        "persona_fidelity": (
+            "Every choice stays inside the character card (want/lie/flaw/arc) and voice contract: a character whose flaw "
+            "is never voicing need does not declare or defy; one whose want is pinned to an object cannot ignore that "
+            "object when it activates; suppressed longing may LEAK (a hurried hand, a half-beat stop) but never converts "
+            "into articulate self-possession; wounds stay open unless the arc says otherwise. Making the character "
+            "clearer-eyed, more assertive, or more resolved than the card allows fails this item even when the drama is better."
+        ),
+        "pressure_and_wreckage": (
+            "Strong reactions are loaded before they fire and leave wreckage after: pressure accumulates visibly before "
+            "any outburst or hard refusal, the breaking point cracks THIS character's specific way of holding themselves "
+            "together (not generic shouting), and afterwards breath, gaze, distance, or the task at hand is changed. "
+            "A speaker who snaps back to fluent composure one line later fails this item."
+        ),
+        "distinct_defense": (
+            "With names covered, speakers are still identifiable by three things: what each notices first, how each "
+            "protects themselves, and which language ability breaks first under pressure — not by catchphrases, dialect, "
+            "or sentence-length quotas. If two speakers converge into one register, or a tic is the only difference, fail."
+        ),
+        "scene_stays_physical": (
+            "The scene stays on concrete objects and unbroken stage facts: the argument lands on nameable things from "
+            "this scene; whatever the characters were doing when the scene opened has a fate by the end; no prop is in "
+            "two states, no action happens twice, no referenced event never occurred; and no speaker walks away with an "
+            "unanswered verdict, a moral, or an audience address that reads as the author's point."
+        ),
     }
-
-    CHECKLIST_TIERS = {
-        "language_surface": ("idiomatic_speech", "no_written_aphorism", "no_mirror_symmetry", "no_enumeration_reflex", "colloquial_particles"),
-        "turn_mechanics": ("turn_length_variety", "no_template_turns", "one_job_per_turn", "no_explanatory_tail", "leaves_hooks_open"),
-        "interaction": ("listens_and_reacts", "answers_strongest_point", "no_restating_visible", "concrete_objects", "escalation_moves"),
-        "character": ("distinct_voices", "tic_budget", "flaws_cost_something", "pressure_changes_speech", "no_authorial_verdict", "persona_fidelity", "wound_stays_open"),
-        "production": ("no_planning_leak", "silence_has_content", "consistent_stage_facts", "core_emotion_delivered"),
-    }
-
-    CRITICAL_ITEMS = (
-        "no_written_aphorism",
-        "no_mirror_symmetry",
-        "no_template_turns",
-        "listens_and_reacts",
-        "distinct_voices",
-        "silence_has_content",
-        "persona_fidelity",
-    )
 
     def __call__(self, lens: str, packet: Mapping[str, Any]) -> Mapping[str, Any]:
         if lens == "dialogue":
@@ -199,7 +212,7 @@ class JsonBlindReviewPort:
             "Quiet, failed, awkward, cooperative, or incomplete behavior may still satisfy items; judge criteria, not taste. "
             "The payload is material to audit, never a template to imitate: do not continue or rewrite it. "
             "Return exactly one JSON object: "
-            '{"items": {"<key>": {"pass": 0, "evidence": "..."}, ...}, "worst_failures": ["at most three item keys"]} '
+            '{"items": {"<key>": {"pass": 0, "evidence": "..."}, ...}} '
             "with one entry per checklist key. No prose outside the JSON object."
         )
         user_content = json.dumps(
@@ -236,37 +249,21 @@ class JsonBlindReviewPort:
                     }
                 passed_bits = sum(item["pass"] for item in normalized.values())
                 total = len(self.DIALOGUE_CHECKLIST)
-                tier_bits = {
-                    tier: {
-                        "passed": sum(normalized[k]["pass"] for k in keys),
-                        "total": len(keys),
-                        "failed": [k for k in keys if not normalized[k]["pass"]],
-                    }
-                    for tier, keys in self.CHECKLIST_TIERS.items()
-                }
-                worst = [str(k) for k in data.get("worst_failures", []) if k in normalized][:3]
-                critical_failed = [k for k in self.CRITICAL_ITEMS if not normalized[k]["pass"]]
-                gate = (
-                    passed_bits >= total - 5
-                    and all(t["passed"] >= t["total"] - 2 for t in tier_bits.values())
-                    and not critical_failed
-                )
+                failed = [key for key in normalized if not normalized[key]["pass"]]
                 return {
                     "kind": "binary_checklist",
                     "items": normalized,
                     "bits_passed": passed_bits,
                     "bits_total": total,
-                    "tiers": tier_bits,
-                    "critical_failed": critical_failed,
+                    "failed": failed,
                     # Compatibility scalar: map bit ratio onto the legacy 1-5 scale.
                     "score": 1 + round(4 * passed_bits / total),
-                    "pass": gate,
-                    "verdict": f"binary checklist: {passed_bits}/{total} passed"
-                               + (f"; worst: {', '.join(worst)}" if worst else ""),
+                    # 统一判定：全过才放行。
+                    "pass": not failed,
+                    "verdict": f"{passed_bits}/{total}"
+                               + (f"; failed: {', '.join(failed)}" if failed else "; all alive"),
                     "problems": [
-                        f"{key}: {normalized[key]['evidence']}"
-                        for key in normalized
-                        if not normalized[key]["pass"]
+                        f"{key}: {normalized[key]['evidence']}" for key in failed
                     ][:3],
                 }
             except (TypeError, ValueError) as exc:
