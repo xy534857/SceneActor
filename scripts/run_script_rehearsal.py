@@ -34,6 +34,8 @@ parser.add_argument("--attempts", type=int, default=3, help="parallel attempts p
 parser.add_argument("--min-dialogue-score", type=int, default=4)
 parser.add_argument("--model", default="owtr-anthropic/claude-fable-5")
 parser.add_argument("--fallback-model", default="owtr/gpt-5.6-sol")
+parser.add_argument("--review-model", default="", help="review model; defaults to --model")
+parser.add_argument("--review-fallback-model", default="", help="review fallback; defaults to --fallback-model")
 parser.add_argument("--thinking", default="low", help="omp thinking level for all calls")
 parser.add_argument("--review-lenses", default="dialogue", help="comma-separated blind review lenses")
 args = parser.parse_args()
@@ -66,6 +68,14 @@ ACTOR_CONDITIONS = {
 
 def build_model() -> FallbackModel:
     return FallbackModel(OmpCliCompletion(thinking=args.thinking), primary=args.model, fallback=args.fallback_model)
+
+
+def build_review_model() -> FallbackModel:
+    return FallbackModel(
+        OmpCliCompletion(thinking=args.thinking),
+        primary=args.review_model or args.model,
+        fallback=args.review_fallback_model or args.fallback_model,
+    )
 review_lenses = tuple(item.strip() for item in args.review_lenses.split(",") if item.strip())
 
 shared_setting = scene_pack["shared_setting"]
@@ -75,7 +85,7 @@ world_facts = dict(scene_pack.get("world_facts", {}))
 def rehearse_scene(scene_cfg: dict, prev_summary: str, attempt_tag: int) -> tuple[list[dict], dict] | None:
     """One attempt at one scene; returns (transcript, dialogue_review) or None."""
     generation_model = build_model()
-    review_model = build_model()
+    review_model = build_review_model()
     turn_order = list(scene_cfg["turn_order"])
     cast_ids = list(dict.fromkeys(turn_order))
     host = InMemorySceneHost(
