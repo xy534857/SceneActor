@@ -155,24 +155,29 @@ class GatewayCompletion:
         payload = json.dumps(
             {"model": model, "messages": messages, "max_tokens": self.max_tokens}
         ).encode("utf-8")
-        request = Request(
-            f"{self.base_url}/chat/completions",
-            data=payload,
-            headers={
-                "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json",
-            },
-        )
-        try:
-            with urlopen(request, timeout=self.timeout) as response:
-                data = json.loads(response.read())
-        except HTTPError as exc:
-            detail = exc.read().decode("utf-8", "replace")[:500] if exc.fp else str(exc)
-            raise RuntimeError(f"gateway completion failed ({exc.code}): {detail}") from exc
-        except (URLError, TimeoutError, OSError) as exc:
-            raise RuntimeError(f"gateway completion failed: {exc}") from exc
-        choices = data.get("choices") or []
-        content = (choices[0].get("message") or {}).get("content") if choices else None
-        if not content or not str(content).strip():
-            raise RuntimeError("gateway completion returned empty content")
-        return str(content).strip()
+        failure: Exception = RuntimeError("gateway completion produced no output")
+        for _ in range(2):
+            request = Request(
+                f"{self.base_url}/chat/completions",
+                data=payload,
+                headers={
+                    "Authorization": f"Bearer {self.api_key}",
+                    "Content-Type": "application/json",
+                },
+            )
+            try:
+                with urlopen(request, timeout=self.timeout) as response:
+                    data = json.loads(response.read())
+            except HTTPError as exc:
+                detail = exc.read().decode("utf-8", "replace")[:500] if exc.fp else str(exc)
+                failure = RuntimeError(f"gateway completion failed ({exc.code}): {detail}")
+                continue
+            except (URLError, TimeoutError, OSError) as exc:
+                failure = RuntimeError(f"gateway completion failed: {exc}")
+                continue
+            choices = data.get("choices") or []
+            content = (choices[0].get("message") or {}).get("content") if choices else None
+            if content and str(content).strip():
+                return str(content).strip()
+            failure = RuntimeError("gateway completion returned empty content")
+        raise failure
