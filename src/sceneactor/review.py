@@ -131,7 +131,7 @@ class JsonBlindReviewPort:
     DIALOGUE_CHECKLIST = {
         "idiomatic_speech": "Every human line is idiomatic spoken Chinese a person could say aloud under this pressure: no calques, no essay connectives, no dangling objects. One violating line fails the item.",
         "no_written_aphorism": "No speaker delivers a polished written maxim, balanced antithesis, or closing epigram as live speech. A machine-register actor's contract language does not count.",
-        "turn_length_variety": "Turn lengths vary with the beat: the transcript contains at least one single-beat short turn (a bare denial, echo, or refusal) AND at least one longer turn, from HUMAN speakers.",
+        "turn_length_variety": "Turn lengths follow the beats instead of one uniform shape: no speaker delivers all turns at the same length and structure. A deliberately laconic character whose voice contract prescribes near-silence satisfies this item through varied ACTIONS around the short lines; do not demand long speeches from a character built to say nothing.",
         "no_template_turns": "No speaker repeats the same internal turn structure (same opener + same development + same closer) in two or more turns.",
         "listens_and_reacts": "At least one turn demonstrably picks up a specific word, number, or object from the opponent's PREVIOUS turn and acts on it (steal, mock, deny, exploit). Parallel monologues fail this item.",
         "concrete_objects": "The argument lands on concrete nameable objects or specifics from this scene, not restated abstract theses; a reader could name what each exchange is about.",
