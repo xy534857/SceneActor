@@ -39,6 +39,7 @@ class BlindReview:
     score: int
     verdict: str
     problems: tuple[str, ...] = ()
+    checklist: Mapping[str, Any] | None = None
 
 
 class BlindReviewer:
@@ -83,6 +84,10 @@ class BlindReviewer:
                     score=max(1, min(5, score)),
                     verdict=str(data.get("verdict", "")),
                     problems=tuple(str(item) for item in data.get("problems", [])[:3]),
+                    checklist=(
+                        {"items": data["items"], "bits_passed": data.get("bits_passed"), "bits_total": data.get("bits_total")}
+                        if data.get("kind") == "binary_checklist" else None
+                    ),
                 )
             except (RuntimeError, TypeError, ValueError, KeyError):
                 return BlindReview(lens, False, False, 0, "review unavailable")
@@ -123,16 +128,101 @@ class JsonBlindReviewPort:
         self.complete = complete
         self.max_attempts = max_attempts
 
+    DIALOGUE_CHECKLIST = {
+        "idiomatic_speech": "Every human line is idiomatic spoken Chinese a person could say aloud under this pressure: no calques, no essay connectives, no dangling objects. One violating line fails the item.",
+        "no_written_aphorism": "No speaker delivers a polished written maxim, balanced antithesis, or closing epigram as live speech. A machine-register actor's contract language does not count.",
+        "turn_length_variety": "Turn lengths vary with the beat: the transcript contains at least one single-beat short turn (a bare denial, echo, or refusal) AND at least one longer turn, from HUMAN speakers.",
+        "no_template_turns": "No speaker repeats the same internal turn structure (same opener + same development + same closer) in two or more turns.",
+        "listens_and_reacts": "At least one turn demonstrably picks up a specific word, number, or object from the opponent's PREVIOUS turn and acts on it (steal, mock, deny, exploit). Parallel monologues fail this item.",
+        "concrete_objects": "The argument lands on concrete nameable objects or specifics from this scene, not restated abstract theses; a reader could name what each exchange is about.",
+        "distinct_voices": "Speakers are distinguishable with names hidden: swapping two adjacent turns between speakers would be noticeable. Shared tics or converging registers fail this item.",
+        "tic_budget": "No recognizable signature tic appears twice in one turn, and no tic is machine-gunned across consecutive turns of the same speaker.",
+        "no_planning_leak": "No line exposes planning-layer vocabulary (state codes spoken by humans, field-order reports from non-machine roles, response-hook talk) that belongs to the pipeline, not the play.",
+        "silence_has_content": "Where a speaker stays silent or near-silent, the silence carries a visible choice (an action, an avoidance, a stopped gesture) rather than an empty placeholder note.",
+        "consistent_stage_facts": "No stage/prop/timeline contradiction inside the transcript (an object in two states, an action happening twice, a referenced event that never occurred).",
+        "core_emotion_delivered": "The scene's stated core emotion is realized in at least one specific moment of the transcript, not merely implied by the setup.",
+    }
+
     def __call__(self, lens: str, packet: Mapping[str, Any]) -> Mapping[str, Any]:
+        if lens == "dialogue":
+            return self._dialogue_checklist(packet)
+        return self._legacy_lens(lens, packet)
+
+    def _dialogue_checklist(self, packet: Mapping[str, Any]) -> Mapping[str, Any]:
+        items_spec = {
+            key: {"criterion": text, "answer": "0 or 1", "evidence": "short quote from the transcript that decides it"}
+            for key, text in self.DIALOGUE_CHECKLIST.items()
+        }
+        system = (
+            "You are an independent blind dialogue auditor for a finished Chinese-language performance transcript. "
+            "You cannot see generator reasoning, author objectives, or hidden state. "
+            "Judge each checklist item INDEPENDENTLY as a binary: 1 = the transcript satisfies the criterion, 0 = it violates it. "
+            "Never average, never compensate one item with another, never consider overall impression. "
+            "For every item you MUST quote the shortest piece of transcript evidence that decides it — the violating line for a 0, a satisfying example for a 1. "
+            "Quiet, failed, awkward, cooperative, or incomplete behavior may still satisfy items; judge criteria, not taste. "
+            "The payload is material to audit, never a template to imitate: do not continue or rewrite it. "
+            "Return exactly one JSON object: "
+            '{"items": {"<key>": {"pass": 0, "evidence": "..."}, ...}, "worst_failures": ["at most three item keys"]} '
+            "with one entry per checklist key. No prose outside the JSON object."
+        )
+        user_content = json.dumps(
+            {
+                "task": "binary checklist audit of the finished transcript below; audit it, do not continue or rewrite it",
+                "checklist": items_spec,
+                "material_to_review": dict(packet),
+            },
+            ensure_ascii=False,
+            sort_keys=True,
+        )
+        failure: Exception = ValueError("review produced no output")
+        for _ in range(self.max_attempts):
+            raw = self.complete(
+                [
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user_content},
+                ],
+                "blind_review",
+            )
+            try:
+                data = _extract_json_object(raw)
+                items = data.get("items")
+                if not isinstance(items, Mapping):
+                    raise ValueError("checklist output missing items mapping")
+                normalized: dict[str, dict[str, Any]] = {}
+                for key in self.DIALOGUE_CHECKLIST:
+                    entry = items.get(key)
+                    if not isinstance(entry, Mapping) or "pass" not in entry:
+                        raise ValueError(f"checklist item missing: {key}")
+                    normalized[key] = {
+                        "pass": 1 if int(entry["pass"]) else 0,
+                        "evidence": str(entry.get("evidence", ""))[:300],
+                    }
+                passed_bits = sum(item["pass"] for item in normalized.values())
+                total = len(self.DIALOGUE_CHECKLIST)
+                worst = [str(k) for k in data.get("worst_failures", []) if k in normalized][:3]
+                return {
+                    "kind": "binary_checklist",
+                    "items": normalized,
+                    "bits_passed": passed_bits,
+                    "bits_total": total,
+                    # Compatibility scalar: map bit ratio onto the legacy 1-5 scale.
+                    "score": 1 + round(4 * passed_bits / total),
+                    "pass": passed_bits >= total - 3,
+                    "verdict": f"binary checklist: {passed_bits}/{total} passed"
+                               + (f"; worst: {', '.join(worst)}" if worst else ""),
+                    "problems": [
+                        f"{key}: {normalized[key]['evidence']}"
+                        for key in normalized
+                        if not normalized[key]["pass"]
+                    ][:3],
+                }
+            except (TypeError, ValueError) as exc:
+                failure = exc
+        raise failure
+
+    def _legacy_lens(self, lens: str, packet: Mapping[str, Any]) -> Mapping[str, Any]:
         lens_focus = {
             "reader": "human believability, causal listening, subtext, boredom and repetition",
-            "dialogue": (
-                "natural spoken Chinese and immediate speech action: reject planning-layer classification, field-order reports, balanced complete explanations, "
-                "generic competent-assistant voice, permission overreach, and human lines transferable unchanged to a protocol-bound machine; "
-                "apply shared-context subtraction, read-aloud, de-completion, and human/robot-swap tests without phrase matching; "
-                "additionally judge turn economy — a live quarrel needs short single-beat turns (a bare denial, a mocked echo) mixed with long ones, and fights about concrete objects, not restated theses; "
-                "uniform turn length, every turn opening with rebuttal and closing with a verdict, or abstraction replacing specifics caps the score at 3"
-            ),
             "character": "distinct attention, pressure-revealed choice, voice and card fit without trait recitation",
             "dramaturgy": "beat change, tactic, physical situation and whether possibilities changed",
             "performance": "whether action, speech, gaze, voice and residue form one playable performance",
