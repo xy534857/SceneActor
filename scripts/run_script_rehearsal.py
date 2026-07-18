@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from sceneactor.cognition import CognitionModelError, JsonCognitionPort
 from sceneactor.hosts import InMemorySceneHost
-from sceneactor.model import FallbackModel, OmpCliCompletion
+from sceneactor.model import FallbackModel, GatewayCompletion, OmpCliCompletion
 from sceneactor.performance import JsonPerformancePort, PerformanceModelError
 from sceneactor.persona import Persona
 from sceneactor.rehearsal import ActorSetup, SceneSetup, create_rehearsal
@@ -38,6 +38,8 @@ parser.add_argument("--review-model", default="", help="review model; defaults t
 parser.add_argument("--review-fallback-model", default="", help="review fallback; defaults to --fallback-model")
 parser.add_argument("--thinking", default="low", help="omp thinking level for all calls")
 parser.add_argument("--review-lenses", default="dialogue", help="comma-separated blind review lenses")
+parser.add_argument("--gateway-url", default="", help="direct gateway base url; bypasses omp CLI when set")
+parser.add_argument("--gateway-key", default="", help="gateway api key")
 args = parser.parse_args()
 if args.attempts < 1 or not 3 <= args.min_dialogue_score <= 5:
     parser.error("attempts must be positive and min dialogue score between three and five")
@@ -66,13 +68,19 @@ ACTOR_CONDITIONS = {
     "waixingren-yi": "现场数据充足，采集顺利。",
 }
 
+def _completion():
+    if args.gateway_url:
+        return GatewayCompletion(args.gateway_url, args.gateway_key)
+    return OmpCliCompletion(thinking=args.thinking)
+
+
 def build_model() -> FallbackModel:
-    return FallbackModel(OmpCliCompletion(thinking=args.thinking), primary=args.model, fallback=args.fallback_model)
+    return FallbackModel(_completion(), primary=args.model, fallback=args.fallback_model)
 
 
 def build_review_model() -> FallbackModel:
     return FallbackModel(
-        OmpCliCompletion(thinking=args.thinking),
+        _completion(),
         primary=args.review_model or args.model,
         fallback=args.review_fallback_model or args.fallback_model,
     )
