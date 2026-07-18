@@ -129,18 +129,43 @@ class JsonBlindReviewPort:
         self.max_attempts = max_attempts
 
     DIALOGUE_CHECKLIST = {
-        "idiomatic_speech": "Every human line is idiomatic spoken Chinese a person could say aloud under this pressure: no calques, no essay connectives, no dangling objects. One violating line fails the item.",
+        # ---- language surface (AI-flavor tier 1: how sentences are built) ----
+        "idiomatic_speech": "Every human line is idiomatic spoken Chinese a person could say aloud under this pressure: no calques, no essay connectives (但是/因此/然而 as clause glue), no dangling objects, no un-Chinese verb frames. One violating line fails the item.",
         "no_written_aphorism": "No speaker delivers a polished written maxim, balanced antithesis, or closing epigram as live speech. A machine-register actor's contract language does not count.",
-        "turn_length_variety": "Turn lengths follow the beats instead of one uniform shape: no speaker delivers all turns at the same length and structure. A deliberately laconic character whose voice contract prescribes near-silence satisfies this item through varied ACTIONS around the short lines; do not demand long speeches from a character built to say nothing.",
+        "no_mirror_symmetry": "No 我一句你一句 mirrored sentence frames: speakers do not answer a structure with the same structure (X的是你/X的是我, 你数你的/我数我的), and no snap-back formula is echoed more than once.",
+        "no_enumeration_reflex": "Human speakers do not organize live speech into numbered lists or first/second/third scaffolds unless the voice contract prescribes it — and then at most once per scene.",
+        "colloquial_particles": "Lines carry the small change of real Mandarin speech where pressure warrants it — 语气词, elision, incomplete predicates — instead of every sentence arriving fully inflated and grammatically complete.",
+        # ---- turn mechanics (AI-flavor tier 2: how turns behave) ----
+        "turn_length_variety": "Turn lengths follow the beats instead of one uniform shape: no speaker delivers all turns at the same length and structure. A deliberately laconic character whose voice contract prescribes near-silence satisfies this item through varied ACTIONS around the short lines.",
         "no_template_turns": "No speaker repeats the same internal turn structure (same opener + same development + same closer) in two or more turns.",
+        "one_job_per_turn": "No single turn stacks rebuttal + case-making + verdict (or classify + read + confirm for procedural roles). Each turn does one job and leaves the rest unsaid.",
+        "no_explanatory_tail": "Turns stop when the social move lands: no line continues into an explanatory tail (mechanism, consequence, scope, consent) that the recipient never asked for. De-completion test: cutting the tail should break nothing.",
+        "leaves_hooks_open": "Speakers leave unequal knowledge and unanswered pressure on the table; nobody wraps each exchange into a closed, fully-resolved package before yielding the floor.",
+        # ---- interaction (AI-flavor tier 3: whether anyone is listening) ----
         "listens_and_reacts": "At least one turn demonstrably picks up a specific word, number, or object from the opponent's PREVIOUS turn and acts on it (steal, mock, deny, exploit). Parallel monologues fail this item.",
+        "answers_strongest_point": "Nobody consistently skips the opponent's strongest last point for a prepared line; at least once the hardest incoming hit is engaged rather than sidestepped.",
+        "no_restating_visible": "No line re-narrates what both parties can already see (repeating the shared scene back, reporting the opponent's action to the opponent). Shared-context subtraction holds.",
         "concrete_objects": "The argument lands on concrete nameable objects or specifics from this scene, not restated abstract theses; a reader could name what each exchange is about.",
+        "escalation_moves": "Across the scene the exchange changes tactic, angle, or referent at least once; re-performing the previous structure louder is not escalation.",
+        # ---- character (AI-flavor tier 4: who is talking) ----
         "distinct_voices": "Speakers are distinguishable with names hidden: swapping two adjacent turns between speakers would be noticeable. Shared tics or converging registers fail this item.",
         "tic_budget": "No recognizable signature tic appears twice in one turn, and no tic is machine-gunned across consecutive turns of the same speaker.",
+        "flaws_cost_something": "Where a voice contract prescribes a failure mode (restarts, miscounts, losing the thread), its traces COST the speaker something — a beat lost, an opening handed over — rather than resolving into a polished rhetorical device or self-aware joke.",
+        "pressure_changes_speech": "Speech observably changes under pressure per the voice contract (shorter, repeated, derailed, hand stops) at least once; characters who sound identical in calm and under fire fail this item.",
+        "no_authorial_verdict": "No speaker receives an unanswered closing verdict, moral of the story, or audience address that reads as the author's point; the scene does not crown a winner in its final beat unless a neutral third party owns the close.",
+        # ---- production (craft hygiene) ----
         "no_planning_leak": "No line exposes planning-layer vocabulary (state codes spoken by humans, field-order reports from non-machine roles, response-hook talk) that belongs to the pipeline, not the play.",
         "silence_has_content": "Where a speaker stays silent or near-silent, the silence carries a visible choice (an action, an avoidance, a stopped gesture) rather than an empty placeholder note.",
         "consistent_stage_facts": "No stage/prop/timeline contradiction inside the transcript (an object in two states, an action happening twice, a referenced event that never occurred).",
         "core_emotion_delivered": "The scene's stated core emotion is realized in at least one specific moment of the transcript, not merely implied by the setup.",
+    }
+
+    CHECKLIST_TIERS = {
+        "language_surface": ("idiomatic_speech", "no_written_aphorism", "no_mirror_symmetry", "no_enumeration_reflex", "colloquial_particles"),
+        "turn_mechanics": ("turn_length_variety", "no_template_turns", "one_job_per_turn", "no_explanatory_tail", "leaves_hooks_open"),
+        "interaction": ("listens_and_reacts", "answers_strongest_point", "no_restating_visible", "concrete_objects", "escalation_moves"),
+        "character": ("distinct_voices", "tic_budget", "flaws_cost_something", "pressure_changes_speech", "no_authorial_verdict"),
+        "production": ("no_planning_leak", "silence_has_content", "consistent_stage_facts", "core_emotion_delivered"),
     }
 
     def __call__(self, lens: str, packet: Mapping[str, Any]) -> Mapping[str, Any]:
@@ -199,15 +224,27 @@ class JsonBlindReviewPort:
                     }
                 passed_bits = sum(item["pass"] for item in normalized.values())
                 total = len(self.DIALOGUE_CHECKLIST)
+                tier_bits = {
+                    tier: {
+                        "passed": sum(normalized[k]["pass"] for k in keys),
+                        "total": len(keys),
+                        "failed": [k for k in keys if not normalized[k]["pass"]],
+                    }
+                    for tier, keys in self.CHECKLIST_TIERS.items()
+                }
                 worst = [str(k) for k in data.get("worst_failures", []) if k in normalized][:3]
+                gate = passed_bits >= total - 5 and all(
+                    t["passed"] >= t["total"] - 2 for t in tier_bits.values()
+                )
                 return {
                     "kind": "binary_checklist",
                     "items": normalized,
                     "bits_passed": passed_bits,
                     "bits_total": total,
+                    "tiers": tier_bits,
                     # Compatibility scalar: map bit ratio onto the legacy 1-5 scale.
                     "score": 1 + round(4 * passed_bits / total),
-                    "pass": passed_bits >= total - 3,
+                    "pass": gate,
                     "verdict": f"binary checklist: {passed_bits}/{total} passed"
                                + (f"; worst: {', '.join(worst)}" if worst else ""),
                     "problems": [

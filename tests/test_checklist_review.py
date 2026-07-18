@@ -37,10 +37,19 @@ class ChecklistReviewTests(unittest.TestCase):
         total = result["bits_total"]
         self.assertEqual(result["bits_passed"], total - 2)
         self.assertIn("no_template_turns: ev-no_template_turns", result["problems"])
-        self.assertTrue(result["pass"])  # within 3-miss tolerance
+        self.assertTrue(result["pass"])  # 2 misses in different tiers: within tolerance
 
-    def test_four_failures_fail_the_gate(self) -> None:
-        fails = tuple(list(JsonBlindReviewPort.DIALOGUE_CHECKLIST)[:4])
+    def test_tier_concentration_fails_the_gate(self) -> None:
+        # Three misses all inside language_surface breach the per-tier cap (tier total 5, floor 3).
+        fails = ("idiomatic_speech", "no_written_aphorism", "no_mirror_symmetry")
+        port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=fails))
+        result = port("dialogue", {"clean_transcript": []})
+        self.assertFalse(result["pass"])
+        self.assertEqual(result["tiers"]["language_surface"]["passed"], 2)
+
+    def test_six_scattered_failures_fail_the_total_gate(self) -> None:
+        fails = ("idiomatic_speech", "no_template_turns", "listens_and_reacts",
+                 "distinct_voices", "no_planning_leak", "no_mirror_symmetry")
         port = JsonBlindReviewPort(FakeChecklistModel(fail_keys=fails))
         result = port("dialogue", {"clean_transcript": []})
         self.assertFalse(result["pass"])
