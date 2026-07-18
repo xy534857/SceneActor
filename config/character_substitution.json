@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "pack_id": "character.chiikawa-main-cast",
+  "strategy": "round_robin",
+  "character_order": [
+    "chiikawa:chiikawa",
+    "chiikawa:hachiware",
+    "chiikawa:usagi",
+    "chiikawa:momonga",
+    "chiikawa:kurimanju",
+    "chiikawa:racco",
+    "chiikawa:shisa",
+    "chiikawa:furuhonya"
+  ],
+  "research_only": true
+}
