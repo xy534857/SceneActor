@@ -70,6 +70,8 @@ class CharacterIdentity:
     local_path: Path
     source_url: str
     material_real_person: bool
+    voice_reference_path: Path | None = None
+    voice_reference_url: str = ""
 
 
 @dataclass(frozen=True)
@@ -211,6 +213,12 @@ def _identity(raw: Mapping[str, Any]) -> CharacterIdentity:
     path = Path(str(image.get("local_path", "")))
     if not path.is_file():
         raise CharacterCastError(f"character image missing: {path}")
+    audio = raw.get("audio") or {}
+    voice_path: Path | None = None
+    if audio:
+        voice_path = Path(str(audio.get("local_path", "")))
+        if not voice_path.is_file():
+            raise CharacterCastError(f"character voice reference missing: {voice_path}")
     return CharacterIdentity(
         character_id=str(raw["character_id"]),
         code=str(raw["code"]),
@@ -220,6 +228,8 @@ def _identity(raw: Mapping[str, Any]) -> CharacterIdentity:
         local_path=path,
         source_url=str(raw.get("source_url", "")),
         material_real_person=bool(raw.get("material_real_person", False)),
+        voice_reference_path=voice_path,
+        voice_reference_url=str(audio.get("source_url", "")),
     )
 
 

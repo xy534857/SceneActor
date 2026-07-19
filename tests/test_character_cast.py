@@ -23,6 +23,8 @@ def _library(tmp_path: Path) -> tuple[CharacterReferenceLibrary, CharacterSubsti
     for code in ("a", "b"):
         image = tmp_path / f"{code}.png"
         image.write_bytes(code.encode())
+        voice = tmp_path / f"{code}.wav"
+        voice.write_bytes(b"wav" + code.encode())
         character_id = f"cast:{code}"
         order.append(character_id)
         chars.append({
@@ -36,6 +38,13 @@ def _library(tmp_path: Path) -> tuple[CharacterReferenceLibrary, CharacterSubsti
             "image": {
                 "content_hash": code * 64,
                 "local_path": str(image),
+            },
+            "audio": {
+                "audio_id": f"cast:{code}:voice",
+                "role": "official_character_intro_voice",
+                "local_path": str(voice),
+                "source_url": "https://official.example/pv",
+                "voice_clone_allowed": False,
             },
         })
     manifest = {
@@ -67,6 +76,9 @@ def test_round_robin_cast_preserves_actor_ids(tmp_path: Path) -> None:
     assert cast.character_for("carol").character_id == "cast:a"
     assert [item.entity_id for item in cast.reference_bindings()] == ["alice", "bob", "carol"]
     assert "alice uses A" in cast.prompt_prefix()
+    voice = cast.character_for("alice").voice_reference_path
+    assert voice is not None and voice.read_bytes() == b"wava"
+    assert cast.character_for("bob").voice_reference_url == "https://official.example/pv"
 
 
 def test_research_pack_publication_guard(tmp_path: Path) -> None:
