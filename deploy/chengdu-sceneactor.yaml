@@ -1,0 +1,106 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sceneactor-service
+  namespace: mc-xinyi
+  labels:
+    app: sceneactor-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sceneactor-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: sceneactor-service
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: submodel-cdh100-128-201
+      imagePullSecrets:
+        - name: ghcr-pull
+      containers:
+        - name: service
+          image: harbor.omgwow.ai/library/sceneactor-service:83dd5c4
+          imagePullPolicy: Always
+          args:
+            - --host
+            - 0.0.0.0
+            - --port
+            - "8377"
+            - --gateway-url
+            - $(SCENEACTOR_GATEWAY_URL)
+            - --gateway-key
+            - $(SCENEACTOR_GATEWAY_KEY)
+            - --api-key
+            - $(SCENEACTOR_SERVICE_API_KEY)
+            - --compile-model
+            - claude-opus-4.8
+            - --compile-fallback
+            - gemini-3.1-flash-lite
+            - --generation-model
+            - claude-fable-5
+            - --generation-fallback
+            - claude-opus-4.8
+            - --review-model
+            - claude-fable-5
+            - --review-fallback
+            - claude-opus-4.8
+            - --state-dir
+            - /data/state
+          envFrom:
+            - secretRef:
+                name: sceneactor-service-gateway
+            - secretRef:
+                name: sceneactor-service-public-auth
+          ports:
+            - name: http
+              containerPort: 8377
+              hostPort: 80
+          readinessProbe:
+            httpGet:
+              path: /v1/health
+              port: http
+            initialDelaySeconds: 2
+            periodSeconds: 5
+            timeoutSeconds: 2
+          livenessProbe:
+            httpGet:
+              path: /v1/health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 20
+            timeoutSeconds: 2
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: "2"
+              memory: 2Gi
+          volumeMounts:
+            - name: state
+              mountPath: /data/state
+              subPath: sceneactor-service/state
+      volumes:
+        - name: state
+          persistentVolumeClaim:
+            claimName: ct-datasets
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sceneactor-service
+  namespace: mc-xinyi
+  labels:
+    app: sceneactor-service
+spec:
+  type: ClusterIP
+  selector:
+    app: sceneactor-service
+  ports:
+    - name: http
+      port: 8377
+      targetPort: http

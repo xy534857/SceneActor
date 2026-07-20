@@ -34,6 +34,7 @@ parser.add_argument("--host", default="127.0.0.1")
 parser.add_argument("--port", type=int, default=8377)
 parser.add_argument("--gateway-url", required=True)
 parser.add_argument("--gateway-key", required=True)
+parser.add_argument("--api-key", default="", help="Bearer token required for all endpoints except /v1/health")
 parser.add_argument("--compile-model", default="claude-opus-4.8")
 parser.add_argument("--compile-fallback", default="gemini-3.1-flash-lite")
 parser.add_argument("--generation-model", default="claude-fable-5")
@@ -141,6 +142,15 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _authorized(self) -> bool:
+        if not args.api_key:
+            return True
+        supplied = self.headers.get("Authorization", "")
+        if supplied == f"Bearer {args.api_key}":
+            return True
+        self._send(401, {"error": "unauthorized"})
+        return False
+
     def _read_json(self) -> dict:
         length = int(self.headers.get("Content-Length", "0"))
         if not 0 < length <= 2_000_000:
@@ -154,6 +164,8 @@ class Handler(BaseHTTPRequestHandler):
         if self.path == "/v1/health":
             self._send(200, {"ok": True})
             return
+        if not self._authorized():
+            return
         if self.path.startswith("/v1/performances/"):
             job_id = self.path.rsplit("/", 1)[-1]
             with _LOCK:
@@ -166,6 +178,8 @@ class Handler(BaseHTTPRequestHandler):
         self._send(404, {"error": "unknown path"})
 
     def do_POST(self) -> None:  # noqa: N802 — BaseHTTPRequestHandler contract
+        if not self._authorized():
+            return
         try:
             body = self._read_json()
         except (ValueError, json.JSONDecodeError) as exc:
