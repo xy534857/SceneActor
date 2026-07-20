@@ -23,7 +23,7 @@ spec:
         - name: ghcr-pull
       containers:
         - name: service
-          image: harbor.omgwow.ai/library/sceneactor-service:83dd5c4
+          image: harbor.omgwow.ai/library/sceneactor-service:45feb03
           imagePullPolicy: Always
           args:
             - --host
@@ -58,7 +58,6 @@ spec:
           ports:
             - name: http
               containerPort: 8377
-              hostPort: 80
           readinessProbe:
             httpGet:
               path: /v1/health
@@ -97,10 +96,11 @@ metadata:
   labels:
     app: sceneactor-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: sceneactor-service
   ports:
     - name: http
       port: 8377
       targetPort: http
+      nodePort: 30927
