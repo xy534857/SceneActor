@@ -122,6 +122,13 @@
     .toast.error { background: var(--danger); }
     details { margin-top: 10px; }
     details summary { color: var(--muted); font-size: 11px; cursor: pointer; }
+    .api-block { margin: 18px 0; border: 1px solid var(--line); background: rgba(255,255,255,.32); }
+    .api-title { display: flex; align-items: center; gap: 8px; padding: 11px 14px; border-bottom: 1px solid var(--line); font: 650 13px var(--serif); }
+    .method { display: inline-block; padding: 2px 6px; border: 1px solid var(--green); color: var(--green); font: 700 9px var(--mono); letter-spacing: .06em; }
+    .api-desc { margin: 10px 14px 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .api-desc code { font-family: var(--mono); background: var(--paper-deep); padding: 1px 4px; }
+    .api-code { margin: 10px 14px 14px; padding: 12px; background: #201f1b; color: #e8e4d8; font: 10.5px/1.7 var(--mono); overflow-x: auto; white-space: pre; }
+    .api-code .api-base { color: #d8a24a; }
     @media (max-width: 980px) {
       header { padding: 0 18px; }
       .brand small { display: none; }
@@ -213,6 +220,7 @@
       <div class="tabs">
         <button class="tab active" data-tab="queue">任务队列 <span id="jobCount" class="count">0</span></button>
         <button class="tab" data-tab="productions">Production <span id="prodCount" class="count">0</span></button>
+        <button class="tab" data-tab="apidocs">API</button>
       </div>
       <div id="queuePanel" class="panel active">
         <div class="queue-head"><span>任务</span><span>状态</span><span>进度</span><span>模型</span></div>
@@ -221,6 +229,98 @@
       </div>
       <div id="productionsPanel" class="panel">
         <div id="productionGrid" class="production-grid"><div class="empty"><strong>暂无 Production</strong>编译成功后会出现在这里。</div></div>
+      </div>
+      <div id="apidocsPanel" class="panel">
+        <p class="kicker">Programmatic access</p>
+        <h2 style="font-size:21px">API 使用说明</h2>
+        <p class="lede">团队白名单网络内直接调用，无需鉴权。Base URL 就是当前地址。AI/脚本调用与本页面走完全相同的接口。</p>
+
+        <div class="api-block">
+          <div class="api-title"><span class="method">POST</span> /v1/productions — 功能一：剧本 → 内部结构</div>
+          <p class="api-desc">传自由文本剧本（<code>material</code>），或直接传写好的 <code>spec</code> 对象跳过编译。二选一。</p>
+          <pre class="api-code">curl -X POST <span class="api-base"></span>/v1/productions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "material": "场景：雨夜公交站。两个人争一把伞，本场4轮。\n人物甲急着接孩子，嘴快。人物乙谨慎，先看伞柄刻字。",
+    "models": {"compile": "claude-opus-4.8"}
+  }'
+
+# 返回 {"production_id": "prod:xxx", "spec": {...}}
+
+# 或直接注册自定义 spec（服务端校验，坏 spec 返回 400 带原因）：
+curl -X POST <span class="api-base"></span>/v1/productions \
+  -H "Content-Type: application/json" \
+  -d '{"spec": {"scenes": [...], "actors": [...]}}'</pre>
+        </div>
+
+        <div class="api-block">
+          <div class="api-title"><span class="method">POST</span> /v1/performances — 功能二：提交演出（异步）</div>
+          <p class="api-desc">用 <code>production_id</code> 或内联 <code>spec</code>。立即返回 job_id，演出在后台跑（几分钟到一小时，取决于模型）。</p>
+          <pre class="api-code">curl -X POST <span class="api-base"></span>/v1/performances \
+  -H "Content-Type: application/json" \
+  -d '{
+    "production_id": "prod:xxx",
+    "review": true,
+    "models": {"generation": "claude-fable-5", "generation_fallback": "claude-opus-4.8"}
+  }'
+
+# 返回 {"job_id": "job:yyy", "status": "running"}</pre>
+        </div>
+
+        <div class="api-block">
+          <div class="api-title"><span class="method">GET</span> /v1/performances/&lt;job_id&gt; — 轮询进度与取回成品</div>
+          <pre class="api-code">curl <span class="api-base"></span>/v1/performances/job%3Ayyy    # 冒号要 URL 编码为 %3A
+
+# 运行中: {"status": "running", "progress": {"scene": "...", "done": 12, "of": 16, "actor": "..."}}
+# 完成:   {"status": "done", "document": {"scenes": [...], "turns": [...], "blind_review": {...}}}
+# 失败:   {"status": "failed", "error": "..."}</pre>
+        </div>
+
+        <div class="api-block">
+          <div class="api-title"><span class="method">GET</span> 列表与配置</div>
+          <pre class="api-code">curl <span class="api-base"></span>/v1/performances          # 任务队列（不含 document，轻量）
+curl <span class="api-base"></span>/v1/productions           # 已注册 Production 列表
+curl <span class="api-base"></span>/v1/productions/prod%3Axxx  # 单个 spec 全文
+curl <span class="api-base"></span>/v1/config                # 服务端默认模型
+curl <span class="api-base"></span>/v1/health                # 健康检查</pre>
+        </div>
+
+        <div class="api-block">
+          <div class="api-title">models 可覆盖角色</div>
+          <p class="api-desc">六个角色任选覆盖，省略即用服务端默认（编译 opus-4.8 / 表演 fable-5 / 评审 fable-5）。写错角色名返回 400 并附合法列表。</p>
+          <pre class="api-code">"models": {
+  "compile": "...", "compile_fallback": "...",
+  "generation": "...", "generation_fallback": "...",
+  "review": "...", "review_fallback": "..."
+}
+
+# 可用模型：
+#   claude-opus-4.8        快速高质量
+#   claude-fable-5         质量最高/最慢（23轮约1小时）
+#   gemini-3.1-flash-lite  最快/调试（16轮约7分钟）
+#   gpt-5.6-sol            中速</pre>
+        </div>
+
+        <div class="api-block">
+          <div class="api-title">最小 Python 轮询示例</div>
+          <pre class="api-code">import json, time, urllib.request
+
+BASE = "<span class="api-base"></span>"
+
+def post(path, body):
+    req = urllib.request.Request(BASE + path, data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json"})
+    return json.loads(urllib.request.urlopen(req, timeout=300).read())
+
+prod = post("/v1/productions", {"material": "场景：……人物：……"})
+job = post("/v1/performances", {"production_id": prod["production_id"], "review": False})
+while True:
+    rec = json.loads(urllib.request.urlopen(
+        BASE + "/v1/performances/" + urllib.parse.quote(job["job_id"], safe="")).read())
+    if rec["status"] != "running": break
+    time.sleep(15)
+print(rec["document"]["turns"])</pre>
+        </div>
       </div>
     </section>
   </main>
@@ -380,8 +480,11 @@
   }
   function switchTab(name) {
     document.querySelectorAll('.tab').forEach(el => el.classList.toggle('active',el.dataset.tab===name));
-    $('queuePanel').classList.toggle('active',name==='queue'); $('productionsPanel').classList.toggle('active',name==='productions');
+    $('queuePanel').classList.toggle('active',name==='queue');
+    $('productionsPanel').classList.toggle('active',name==='productions');
+    $('apidocsPanel').classList.toggle('active',name==='apidocs');
   }
+  document.querySelectorAll('.api-base').forEach(el => el.textContent = location.origin);
   function startPolling() { clearInterval(state.polling); state.polling = setInterval(() => loadJobs(), 5000); }
   function esc(value) { return String(value ?? '').replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c])); }
   fetch('/v1/health').then(r=>r.json()).then(() => connect()).catch(() => { $('health').lastElementChild.textContent='服务离线'; });
