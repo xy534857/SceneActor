@@ -7,6 +7,7 @@ WORKDIR /app
 COPY pyproject.toml /app/
 COPY src /app/src
 COPY scripts/serve_sceneactor.py /app/scripts/serve_sceneactor.py
+COPY scripts/static /app/scripts/static
 RUN python -m pip install --no-cache-dir .
 
 USER 65532:65532

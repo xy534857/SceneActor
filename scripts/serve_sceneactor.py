@@ -19,6 +19,8 @@ from __future__ import annotations
 import argparse
 import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from urllib.parse import unquote, urlsplit
+from datetime import datetime, timezone
 from pathlib import Path
 import sys
 import threading
@@ -51,6 +53,7 @@ STATE = Path(args.state_dir)
 _LOCK = threading.Lock()
 _PRODUCTIONS: dict[str, ProductionSpec] = {}
 _JOBS: dict[str, dict] = {}
+UI_FILE = Path(__file__).resolve().parent / "static" / "index.html"
 
 
 def _model(primary: str, fallback: str) -> FallbackModel:
@@ -99,6 +102,8 @@ def _models_from(body: dict) -> dict:
 
 
 def _run_performance(job_id: str, spec: ProductionSpec, want_review: bool, models: dict) -> None:
+    with _LOCK:
+        _JOBS[job_id]["started_at"] = datetime.now(timezone.utc).isoformat()
     total = sum(episode.scene.max_turns for episode in spec.episodes)
     done_scenes: dict[str, int] = {}
 
@@ -124,10 +129,12 @@ def _run_performance(job_id: str, spec: ProductionSpec, want_review: bool, model
     try:
         document = perform(spec, generation, review=reviewer, on_turn=on_turn)
         with _LOCK:
+            _JOBS[job_id]["finished_at"] = datetime.now(timezone.utc).isoformat()
             _JOBS[job_id].update(status="done", document=document)
     except Exception as exc:  # noqa: BLE001 — job boundary must capture, not crash the server
         with _LOCK:
             _JOBS[job_id].update(status="failed", error=str(exc)[:1000])
+            _JOBS[job_id]["finished_at"] = datetime.now(timezone.utc).isoformat()
     _persist_job(job_id)
 
 
@@ -141,6 +148,28 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(body)))
         self.end_headers()
         self.wfile.write(body)
+
+    def _send_html(self, path: Path) -> None:
+        if not path.is_file():
+            self._send(404, {"error": "UI asset missing"})
+            return
+        body = path.read_bytes()
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _production_summary(self, production_id: str, spec: ProductionSpec) -> dict:
+        path = STATE / "productions" / f"{production_id}.json"
+        return {
+            "production_id": production_id,
+            "scenes": [episode.scene.scene_id for episode in spec.episodes],
+            "actors": [actor.persona.name for actor in spec.actors],
+            "turns": sum(episode.scene.max_turns for episode in spec.episodes),
+            "updated_at": datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat() if path.exists() else "",
+        }
 
     def _authorized(self) -> bool:
         if not args.api_key:
@@ -161,13 +190,48 @@ class Handler(BaseHTTPRequestHandler):
         return data
 
     def do_GET(self) -> None:  # noqa: N802 — BaseHTTPRequestHandler contract
-        if self.path == "/v1/health":
+        path = urlsplit(self.path).path
+        if path in ("/", "/ui", "/index.html"):
+            self._send_html(UI_FILE)
+            return
+        if path == "/v1/health":
             self._send(200, {"ok": True})
             return
         if not self._authorized():
             return
-        if self.path.startswith("/v1/performances/"):
-            job_id = self.path.rsplit("/", 1)[-1]
+        if path == "/v1/config":
+            self._send(200, {"models": {
+                "compile": args.compile_model,
+                "compile_fallback": args.compile_fallback,
+                "generation": args.generation_model,
+                "generation_fallback": args.generation_fallback,
+                "review": args.review_model,
+                "review_fallback": args.review_fallback,
+            }})
+            return
+        if path == "/v1/productions":
+            with _LOCK:
+                items = [self._production_summary(pid, spec) for pid, spec in _PRODUCTIONS.items()]
+            self._send(200, {"productions": sorted(items, key=lambda item: item["updated_at"], reverse=True)})
+            return
+        if path.startswith("/v1/productions/"):
+            production_id = unquote(path.rsplit("/", 1)[-1])
+            with _LOCK:
+                spec = _PRODUCTIONS.get(production_id)
+            if spec is None:
+                self._send(404, {"error": "unknown production"})
+                return
+            self._send(200, {"production_id": production_id, "spec": spec.to_dict()})
+            return
+        if path == "/v1/performances":
+            with _LOCK:
+                items = []
+                for job_id, record in _JOBS.items():
+                    items.append({key: value for key, value in record.items() if key != "document"} | {"job_id": job_id})
+            self._send(200, {"jobs": sorted(items, key=lambda item: item.get("started_at", ""), reverse=True)})
+            return
+        if path.startswith("/v1/performances/"):
+            job_id = unquote(path.rsplit("/", 1)[-1])
             with _LOCK:
                 record = _JOBS.get(job_id)
             if record is None:
@@ -180,15 +244,16 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self) -> None:  # noqa: N802 — BaseHTTPRequestHandler contract
         if not self._authorized():
             return
+        path = urlsplit(self.path).path
         try:
             body = self._read_json()
         except (ValueError, json.JSONDecodeError) as exc:
             self._send(400, {"error": str(exc)})
             return
-        if self.path == "/v1/productions":
+        if path == "/v1/productions":
             self._compile(body)
             return
-        if self.path == "/v1/performances":
+        if path == "/v1/performances":
             self._perform(body)
             return
         self._send(404, {"error": "unknown path"})
@@ -217,11 +282,11 @@ class Handler(BaseHTTPRequestHandler):
         production_id = f"prod:{uuid4().hex[:12]}"
         with _LOCK:
             _PRODUCTIONS[production_id] = spec
+        compiled_at = datetime.now(timezone.utc).isoformat()
         (STATE / "productions" / f"{production_id}.json").write_text(
             json.dumps(spec.to_dict(), ensure_ascii=False, indent=1), encoding="utf-8"
         )
-        self._send(201, {"production_id": production_id, "spec": spec.to_dict()})
-
+        self._send(201, {"production_id": production_id, "spec": spec.to_dict(), "compiled_at": compiled_at})
     def _perform(self, body: dict) -> None:
         try:
             models = _models_from(body)
@@ -250,6 +315,7 @@ class Handler(BaseHTTPRequestHandler):
             _JOBS[job_id] = {
                 "status": "running",
                 "progress": {"done": 0, "of": sum(e.scene.max_turns for e in spec.episodes)},
+                "production_id": production_id if isinstance(production_id, str) else "inline-spec",
                 "models": {
                     "generation": models.get("generation", args.generation_model),
                     "review": models.get("review", args.review_model),

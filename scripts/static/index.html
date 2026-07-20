@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SceneActor Console</title>
+  <style>
+    :root {
+      --paper: #f3efe5;
+      --paper-deep: #e7e0d2;
+      --ink: #1b1c19;
+      --muted: #6f6c62;
+      --line: #cbc4b6;
+      --rust: #a53c23;
+      --rust-soft: #e7c5b8;
+      --green: #1f6650;
+      --amber: #9a6a14;
+      --danger: #9c2f25;
+      --shadow: 0 18px 45px rgba(40, 34, 24, .09);
+      --serif: "Iowan Old Style", "Palatino Linotype", "Songti SC", Georgia, serif;
+      --sans: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif;
+      --mono: "SFMono-Regular", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; color: var(--ink); background: var(--paper); font-family: var(--sans); }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+    .grain { position: fixed; inset: 0; pointer-events: none; opacity: .035; z-index: 20; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .shell { min-height: 100vh; display: grid; grid-template-rows: 76px 1fr; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 0 32px; border-bottom: 1px solid var(--line); background: rgba(243,239,229,.94); position: sticky; top: 0; z-index: 15; backdrop-filter: blur(12px); }
+    .brand { display: flex; align-items: baseline; gap: 14px; }
+    .brand h1 { margin: 0; font: 700 29px/1 var(--serif); letter-spacing: -.04em; }
+    .brand small { color: var(--muted); letter-spacing: .14em; text-transform: uppercase; font: 600 10px/1 var(--mono); }
+    .connection { display: flex; gap: 10px; align-items: center; }
+    .status { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 12px; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #888; box-shadow: 0 0 0 4px rgba(80,80,80,.08); }
+    .status.online .status-dot { background: var(--green); box-shadow: 0 0 0 4px rgba(31,102,80,.12); }
+    .key-input { width: 220px; border: 1px solid var(--line); background: #faf7f0; padding: 9px 11px; font: 12px var(--mono); outline: none; }
+    .key-input:focus { border-color: var(--rust); }
+    .btn { border: 1px solid var(--ink); background: var(--ink); color: #fff; padding: 9px 14px; font-weight: 650; font-size: 12px; letter-spacing: .02em; transition: .16s ease; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 5px 0 rgba(27,28,25,.13); }
+    .btn.secondary { color: var(--ink); background: transparent; border-color: var(--line); box-shadow: none; }
+    .btn.secondary:hover { border-color: var(--ink); }
+    .btn.rust { background: var(--rust); border-color: var(--rust); }
+    .btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+    main { display: grid; grid-template-columns: minmax(410px, 44%) 1fr; min-height: calc(100vh - 76px); }
+    .studio { border-right: 1px solid var(--line); padding: 30px 30px 60px; overflow-y: auto; }
+    .monitor { padding: 30px 32px 60px; overflow-y: auto; min-width: 0; }
+    .kicker { margin: 0 0 6px; color: var(--rust); font: 700 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .14em; }
+    h2 { margin: 0; font: 600 25px/1.15 var(--serif); letter-spacing: -.025em; }
+    .lede { color: var(--muted); margin: 9px 0 24px; max-width: 62ch; font-size: 13px; line-height: 1.65; }
+    .step { position: relative; padding: 22px 0 27px 42px; border-top: 1px solid var(--line); }
+    .step:first-of-type { border-top: 0; }
+    .step-num { position: absolute; left: 0; top: 23px; font: 700 13px var(--serif); border-bottom: 2px solid var(--rust); width: 24px; padding-bottom: 3px; }
+    .step-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 13px; }
+    .step h3 { margin: 0; font: 650 17px var(--serif); }
+    label { display: block; margin: 12px 0 6px; font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: .04em; }
+    textarea, select, input[type=text] { width: 100%; border: 1px solid var(--line); background: rgba(255,255,255,.42); color: var(--ink); padding: 11px 12px; outline: none; border-radius: 0; }
+    textarea:focus, select:focus, input:focus { border-color: var(--rust); background: #faf7f0; }
+    #material { min-height: 265px; resize: vertical; line-height: 1.65; font-size: 13px; }
+    #specEditor { min-height: 260px; font: 11px/1.55 var(--mono); resize: vertical; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .actions { display: flex; align-items: center; gap: 9px; margin-top: 14px; flex-wrap: wrap; }
+    .hint { color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .spinner { display: none; width: 13px; height: 13px; border: 2px solid var(--rust-soft); border-top-color: var(--rust); border-radius: 50%; animation: spin .7s linear infinite; }
+    .busy .spinner { display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spec-summary { display: none; margin-top: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.36); }
+    .spec-summary.visible { display: block; }
+    .spec-metrics { display: grid; grid-template-columns: repeat(3,1fr); border-bottom: 1px solid var(--line); }
+    .metric { padding: 11px; border-right: 1px solid var(--line); }
+    .metric:last-child { border-right: 0; }
+    .metric strong { display: block; font: 650 20px var(--serif); }
+    .metric span { color: var(--muted); font-size: 10px; }
+    .spec-list { padding: 10px 12px; color: var(--muted); font-size: 11px; line-height: 1.7; }
+    .switch-line { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+    .switch-line input { accent-color: var(--rust); }
+    .tabs { display: flex; border-bottom: 1px solid var(--line); margin-bottom: 19px; }
+    .tab { border: 0; background: none; color: var(--muted); padding: 10px 16px 12px 0; margin-right: 19px; position: relative; font-size: 12px; font-weight: 650; }
+    .tab.active { color: var(--ink); }
+    .tab.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--rust); }
+    .count { display: inline-grid; place-items: center; min-width: 19px; height: 18px; padding: 0 5px; margin-left: 5px; border: 1px solid var(--line); font: 10px var(--mono); }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .queue-head { display: grid; grid-template-columns: 1.4fr .75fr 1.25fr .75fr; gap: 12px; padding: 0 12px 8px; color: var(--muted); font: 10px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .job { display: grid; grid-template-columns: 1.4fr .75fr 1.25fr .75fr; gap: 12px; align-items: center; padding: 13px 12px; border-top: 1px solid var(--line); cursor: pointer; transition: background .15s; }
+    .job:hover, .job.selected { background: rgba(255,255,255,.42); }
+    .job-id { font: 11px var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; width: fit-content; padding: 4px 7px; font: 700 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; border: 1px solid currentColor; }
+    .pill.running { color: var(--amber); }
+    .pill.done { color: var(--green); }
+    .pill.failed { color: var(--danger); }
+    .progress { display: flex; align-items: center; gap: 9px; min-width: 0; }
+    .progress-track { flex: 1; height: 3px; background: var(--paper-deep); }
+    .progress-bar { height: 100%; background: var(--rust); }
+    .progress small { color: var(--muted); font: 10px var(--mono); white-space: nowrap; }
+    .model { font-size: 10px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .empty { padding: 56px 20px; text-align: center; color: var(--muted); border: 1px dashed var(--line); }
+    .empty strong { display: block; color: var(--ink); font: 600 18px var(--serif); margin-bottom: 7px; }
+    .detail { margin-top: 28px; border-top: 3px double var(--ink); padding-top: 20px; }
+    .detail-top { display: flex; justify-content: space-between; align-items: start; gap: 12px; margin-bottom: 18px; }
+    .detail h3 { font: 600 21px var(--serif); margin: 0 0 4px; }
+    .detail-id { color: var(--muted); font: 10px var(--mono); }
+    .scene-block { margin: 24px 0; }
+    .scene-title { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; color: var(--muted); font: 700 10px var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+    .scene-title::after { content: ""; height: 1px; background: var(--line); flex: 1; }
+    .turn { display: grid; grid-template-columns: 88px 1fr; gap: 13px; margin: 13px 0; }
+    .actor { font: 700 10px var(--mono); color: var(--rust); padding-top: 4px; overflow-wrap: anywhere; }
+    .speech { font: 15px/1.7 var(--serif); text-wrap: pretty; }
+    .stage { color: var(--muted); font-size: 10px; line-height: 1.5; margin-top: 5px; }
+    .review-box { margin-top: 24px; border: 1px solid var(--line); padding: 16px; background: rgba(255,255,255,.35); }
+    .review-score { font: 700 34px var(--serif); color: var(--green); }
+    .production-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 11px; }
+    .production-card { border: 1px solid var(--line); padding: 14px; background: rgba(255,255,255,.3); cursor: pointer; }
+    .production-card:hover { border-color: var(--ink); }
+    .production-card h3 { margin: 0 0 8px; font: 600 16px var(--serif); }
+    .production-card p { margin: 4px 0; color: var(--muted); font-size: 11px; }
+    .toast { position: fixed; right: 28px; bottom: 26px; z-index: 30; min-width: 280px; max-width: 440px; padding: 13px 16px; color: #fff; background: var(--ink); box-shadow: var(--shadow); transform: translateY(18px); opacity: 0; pointer-events: none; transition: .2s ease; font-size: 12px; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast.error { background: var(--danger); }
+    details { margin-top: 10px; }
+    details summary { color: var(--muted); font-size: 11px; cursor: pointer; }
+    @media (max-width: 980px) {
+      header { padding: 0 18px; }
+      .brand small { display: none; }
+      .key-input { width: 145px; }
+      main { grid-template-columns: 1fr; }
+      .studio { border-right: 0; border-bottom: 1px solid var(--line); }
+      .monitor { min-height: 600px; }
+    }
+    @media (max-width: 620px) {
+      header { height: auto; min-height: 76px; padding: 12px 15px; align-items: flex-start; }
+      .connection { flex-wrap: wrap; justify-content: flex-end; }
+      .status { width: 100%; justify-content: flex-end; }
+      .key-input { width: 150px; }
+      .studio, .monitor { padding: 24px 17px 50px; }
+      .step { padding-left: 33px; }
+      .row { grid-template-columns: 1fr; }
+      .queue-head { display: none; }
+      .job { grid-template-columns: 1fr auto; }
+      .job .progress { grid-column: 1/-1; }
+      .turn { grid-template-columns: 64px 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="shell">
+  <header>
+    <div class="brand"><h1>SceneActor</h1><small>Performance Console · Chengdu</small></div>
+    <div class="connection">
+      <div id="health" class="status"><span class="status-dot"></span><span>检测中</span></div>
+      <input id="apiKey" class="key-input" type="password" autocomplete="off" placeholder="API Key（仅本次会话）">
+      <button id="connectBtn" class="btn secondary">连接</button>
+    </div>
+  </header>
+  <main>
+    <section class="studio">
+      <p class="kicker">Production desk</p>
+      <h2>从剧本到表演</h2>
+      <p class="lede">先把自由文本编译成人物与场景合同；确认结构后提交演出。两步分开，人在关键处保留控制权。</p>
+
+      <div class="step">
+        <span class="step-num">01</span>
+        <div class="step-head"><h3>剧本与人设</h3><button id="sampleBtn" class="btn secondary">载入样例</button></div>
+        <textarea id="material" placeholder="写场景、人物、秘密、压力下的变化。多场剧本按「场景一 / 场景二」分段。不要写死台词和结局。"></textarea>
+        <div class="row">
+          <div><label for="compileModel">编译模型</label><input id="compileModel" type="text" list="modelList" value="gemini-3.1-flash-lite"></div>
+          <div><label for="compileFallback">Fallback</label><input id="compileFallback" type="text" list="modelList" value="claude-opus-4.8"></div>
+        </div>
+        <div class="actions">
+          <button id="compileBtn" class="btn rust"><span class="spinner"></span> 编译内部结构</button>
+          <span id="compileHint" class="hint">通常需要 30–90 秒</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-num">02</span>
+        <div class="step-head"><h3>检查内部结构</h3><span id="prodIdLabel" class="hint">尚未编译</span></div>
+        <div id="specSummary" class="spec-summary">
+          <div class="spec-metrics"><div class="metric"><strong id="sceneCount">0</strong><span>场景</span></div><div class="metric"><strong id="actorCount">0</strong><span>人物</span></div><div class="metric"><strong id="turnCount">0</strong><span>总轮数</span></div></div>
+          <div id="specList" class="spec-list"></div>
+        </div>
+        <details><summary>展开 JSON 编辑器（修改后可直接以内联 spec 演出）</summary><textarea id="specEditor" spellcheck="false"></textarea></details>
+      </div>
+
+      <div class="step">
+        <span class="step-num">03</span>
+        <div class="step-head"><h3>演员与评审模型</h3></div>
+        <div class="row">
+          <div><label for="genModel">表演模型</label><input id="genModel" type="text" list="modelList" value="gemini-3.1-flash-lite"></div>
+          <div><label for="genFallback">Fallback</label><input id="genFallback" type="text" list="modelList" value="claude-opus-4.8"></div>
+          <div><label for="reviewModel">评审模型</label><input id="reviewModel" type="text" list="modelList" value="claude-fable-5"></div>
+          <div><label for="reviewFallback">Fallback</label><input id="reviewFallback" type="text" list="modelList" value="claude-opus-4.8"></div>
+        </div>
+        <label class="switch-line"><input id="reviewToggle" type="checkbox" checked> 演出完成后运行盲审（会增加等待时间）</label>
+        <div class="actions">
+          <button id="performBtn" class="btn" disabled>提交演出</button>
+          <button id="refreshBtn" class="btn secondary">刷新队列</button>
+        </div>
+      </div>
+      <datalist id="modelList"><option value="gemini-3.1-flash-lite"><option value="claude-opus-4.8"><option value="claude-fable-5"><option value="gpt-5.6-sol"></datalist>
+    </section>
+
+    <section class="monitor">
+      <div class="tabs">
+        <button class="tab active" data-tab="queue">任务队列 <span id="jobCount" class="count">0</span></button>
+        <button class="tab" data-tab="productions">Production <span id="prodCount" class="count">0</span></button>
+      </div>
+      <div id="queuePanel" class="panel active">
+        <div class="queue-head"><span>任务</span><span>状态</span><span>进度</span><span>模型</span></div>
+        <div id="queue"><div class="empty"><strong>暂无演出任务</strong>连接服务，编译剧本后提交第一场演出。</div></div>
+        <div id="detail"></div>
+      </div>
+      <div id="productionsPanel" class="panel">
+        <div id="productionGrid" class="production-grid"><div class="empty"><strong>暂无 Production</strong>编译成功后会出现在这里。</div></div>
+      </div>
+    </section>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const state = { key: sessionStorage.getItem('sceneactor-key') || '', productionId: '', spec: null, jobs: [], selectedJob: '', polling: null };
+  const sample = `剧名：《退租》两场版
+
+场景一：老小区一楼车库改的杂货铺，晚上九点半，卷帘门拉了一半。房东陈姨来收下季度房租，店主小马想退租但一直没敢说。本场8轮。
+
+场景二：三天后，周日上午，同一间铺子。货架已清了一半，纸箱堆在门口。陈姨带着一个看店面的新租客要来看房，小马还在收拾。上一场吵开的事没有下文，租金和违约金都还没结。本场8轮。
+
+人物一：陈姨，62岁，房东。退休纺织厂女工，就靠这间车库租金补贴退休金。嘴硬心软，讲话直，爱翻旧账。最怕车库空着租不出去。听到「退租」先发火，火过了算账，算完账讲价。
+
+人物二：小马，28岁，店主。开了三年杂货铺，网购冲击撑不下去了，已找好送外卖的工作。欠陈姨这季度租金。愧疚，嘴笨，绕圈子，一紧张就整理货架。
+
+要求：第二场里两人都记得第一场发生了什么。结尾不用和解。`;
+
+  $('apiKey').value = state.key;
+  $('sampleBtn').onclick = () => { $('material').value = sample; };
+  $('connectBtn').onclick = connect;
+  $('compileBtn').onclick = compile;
+  $('performBtn').onclick = submitPerformance;
+  $('refreshBtn').onclick = refreshAll;
+  document.querySelectorAll('.tab').forEach(btn => btn.onclick = () => switchTab(btn.dataset.tab));
+
+  function authHeaders(json=true) {
+    const headers = { 'Authorization': `Bearer ${state.key}` };
+    if (json) headers['Content-Type'] = 'application/json';
+    return headers;
+  }
+  async function api(path, options={}) {
+    const response = await fetch(path, { ...options, headers: { ...authHeaders(options.body !== undefined), ...(options.headers || {}) } });
+    const data = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
+    if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
+    return data;
+  }
+  function toast(message, error=false) {
+    const el = $('toast'); el.textContent = message; el.className = `toast show${error ? ' error' : ''}`;
+    clearTimeout(el._timer); el._timer = setTimeout(() => el.className = 'toast', 3500);
+  }
+  async function connect() {
+    state.key = $('apiKey').value.trim();
+    if (!state.key) return toast('请输入 API Key', true);
+    sessionStorage.setItem('sceneactor-key', state.key);
+    try {
+      const cfg = await api('/v1/config');
+      $('health').className = 'status online'; $('health').lastElementChild.textContent = '成都 · 已连接';
+      applyDefaults(cfg.models); await refreshAll(); startPolling(); toast('连接成功');
+    } catch (error) {
+      $('health').className = 'status'; $('health').lastElementChild.textContent = '鉴权失败'; toast(error.message, true);
+    }
+  }
+  function applyDefaults(models={}) {
+    const map = { compile:'compileModel', compile_fallback:'compileFallback', generation:'genModel', generation_fallback:'genFallback', review:'reviewModel', review_fallback:'reviewFallback' };
+    Object.entries(map).forEach(([key,id]) => { if (models[key] && !$(id).dataset.touched) $(id).value = models[key]; });
+  }
+  async function compile() {
+    if (!state.key) return toast('先连接服务', true);
+    const material = $('material').value.trim(); if (!material) return toast('剧本材料不能为空', true);
+    const btn = $('compileBtn'); btn.disabled = true; btn.classList.add('busy'); $('compileHint').textContent = '模型正在拆分场景与人物…';
+    try {
+      const data = await api('/v1/productions', { method:'POST', body: JSON.stringify({ material, models:{ compile:$('compileModel').value.trim(), compile_fallback:$('compileFallback').value.trim() } }) });
+      state.productionId = data.production_id; state.spec = data.spec; showSpec(); await loadProductions(); toast('编译完成，可以检查结构后提交演出');
+    } catch (error) { toast(error.message, true); }
+    finally { btn.disabled = false; btn.classList.remove('busy'); $('compileHint').textContent = '通常需要 30–90 秒'; }
+  }
+  function showSpec() {
+    const spec = state.spec; if (!spec) return;
+    const scenes = spec.scenes || (spec.scene ? [spec.scene] : []); const actors = spec.actors || [];
+    $('sceneCount').textContent = scenes.length; $('actorCount').textContent = actors.length;
+    $('turnCount').textContent = scenes.reduce((sum,s) => sum + (+s.max_turns || 0), 0);
+    $('specList').innerHTML = `<b>人物</b>　${actors.map(a => esc(a.persona?.name || a.persona?.id)).join(' · ')}<br><b>场景</b>　${scenes.map(s => esc(s.scene_id)).join(' → ')}`;
+    $('specSummary').classList.add('visible'); $('specEditor').value = JSON.stringify(spec,null,2); $('prodIdLabel').textContent = state.productionId || '内联 spec'; $('performBtn').disabled = false;
+  }
+  async function submitPerformance() {
+    if (!state.key) return toast('先连接服务', true);
+    let payload = { review:$('reviewToggle').checked, models:{ generation:$('genModel').value.trim(), generation_fallback:$('genFallback').value.trim(), review:$('reviewModel').value.trim(), review_fallback:$('reviewFallback').value.trim() } };
+    try {
+      const edited = $('specEditor').value.trim();
+      if (edited && state.spec && edited !== JSON.stringify(state.spec,null,2)) payload.spec = JSON.parse(edited); else if (state.productionId) payload.production_id = state.productionId; else payload.spec = JSON.parse(edited);
+    } catch { return toast('Spec JSON 格式错误', true); }
+    const btn = $('performBtn'); btn.disabled = true;
+    try { const data = await api('/v1/performances', { method:'POST', body:JSON.stringify(payload) }); state.selectedJob = data.job_id; switchTab('queue'); await loadJobs(); startPolling(); toast(`任务 ${data.job_id} 已入队`); }
+    catch (error) { toast(error.message, true); }
+    finally { btn.disabled = false; }
+  }
+  async function refreshAll() { await Promise.all([loadJobs(), loadProductions()]); }
+  async function loadJobs() {
+    if (!state.key) return;
+    try { const data = await api('/v1/performances'); state.jobs = data.jobs || []; renderQueue(); if (state.selectedJob) await loadJobDetail(state.selectedJob); }
+    catch (error) { if (!/unauthorized/i.test(error.message)) toast(error.message,true); }
+  }
+  async function loadProductions() {
+    if (!state.key) return;
+    try { const data = await api('/v1/productions'); const items = data.productions || []; $('prodCount').textContent = items.length; renderProductions(items); }
+    catch (error) { toast(error.message,true); }
+  }
+  function renderQueue() {
+    $('jobCount').textContent = state.jobs.length;
+    if (!state.jobs.length) { $('queue').innerHTML = '<div class="empty"><strong>暂无演出任务</strong>连接服务，编译剧本后提交第一场演出。</div>'; return; }
+    $('queue').innerHTML = state.jobs.map(job => {
+      const progress = job.progress || {}; const done = progress.done || 0, total = progress.of || 0, pct = total ? Math.min(100,done/total*100) : 0;
+      return `<div class="job ${state.selectedJob===job.job_id?'selected':''}" data-job="${esc(job.job_id)}"><span class="job-id">${esc(job.job_id)}</span><span class="pill ${esc(job.status)}">${esc(job.status)}</span><span class="progress"><span class="progress-track"><span class="progress-bar" style="width:${pct}%"></span></span><small>${done}/${total}${progress.scene?' · '+esc(progress.scene):''}</small></span><span class="model">${esc(job.models?.generation || '—')}</span></div>`;
+    }).join('');
+    document.querySelectorAll('.job').forEach(el => el.onclick = () => { state.selectedJob = el.dataset.job; renderQueue(); loadJobDetail(state.selectedJob); });
+  }
+  async function loadJobDetail(id) {
+    try { const job = await api(`/v1/performances/${encodeURIComponent(id)}`); renderDetail(id,job); }
+    catch (error) { toast(error.message,true); }
+  }
+  function renderDetail(id,job) {
+    const doc = job.document; const progress = job.progress || {};
+    if (!doc) { $('detail').innerHTML = `<section class="detail"><div class="detail-top"><div><h3>${job.status==='failed'?'任务失败':'表演进行中'}</h3><div class="detail-id">${esc(id)}</div></div><span class="pill ${esc(job.status)}">${esc(job.status)}</span></div>${job.error?`<div class="review-box">${esc(job.error)}</div>`:`<p class="lede">已完成 ${progress.done||0}/${progress.of||0} 轮。队列每 5 秒自动刷新。</p>`}</section>`; return; }
+    const scenes = doc.scenes || [{ scene_id:'performance', turns:doc.turns || [] }];
+    const transcript = scenes.map(scene => `<div class="scene-block"><div class="scene-title">${esc(scene.scene_id)}</div>${(scene.turns||[]).map(turn => `<div class="turn"><div class="actor">${esc(turn.actor_id)}</div><div><div class="speech">${esc(turn.speech||'（沉默）')}</div><div class="stage">${esc(turn.action||'')}</div></div></div>`).join('')}</div>`).join('');
+    const review = doc.blind_review ? `<div class="review-box"><div class="kicker">Blind review</div><span class="review-score">${doc.blind_review.score ?? '—'}</span> <span class="hint">/ 5 · ${doc.blind_review.pass?'通过':'未通过'}</span></div>` : '';
+    $('detail').innerHTML = `<section class="detail"><div class="detail-top"><div><h3>演出成品</h3><div class="detail-id">${esc(id)} · ${esc(job.models?.generation||'')}</div></div><button id="copyResult" class="btn secondary">复制 JSON</button></div>${transcript}${review}</section>`;
+    $('copyResult').onclick = () => navigator.clipboard.writeText(JSON.stringify(doc,null,2)).then(() => toast('已复制成品 JSON'));
+  }
+  function renderProductions(items) {
+    if (!items.length) { $('productionGrid').innerHTML = '<div class="empty"><strong>暂无 Production</strong>编译成功后会出现在这里。</div>'; return; }
+    $('productionGrid').innerHTML = items.map(item => `<article class="production-card" data-prod="${esc(item.production_id)}"><h3>${esc(item.scenes?.[0]||item.production_id)}</h3><p>${item.scenes?.length||0} 场 · ${item.turns||0} 轮 · ${esc((item.actors||[]).join(' / '))}</p><p class="job-id">${esc(item.production_id)}</p></article>`).join('');
+    document.querySelectorAll('.production-card').forEach(el => el.onclick = () => loadProduction(el.dataset.prod));
+  }
+  async function loadProduction(id) {
+    try { const data = await api(`/v1/productions/${encodeURIComponent(id)}`); state.productionId=id; state.spec=data.spec; showSpec(); switchTab('queue'); toast(`已载入 ${id}`); window.scrollTo({top:0,behavior:'smooth'}); }
+    catch (error) { toast(error.message,true); }
+  }
+  function switchTab(name) {
+    document.querySelectorAll('.tab').forEach(el => el.classList.toggle('active',el.dataset.tab===name));
+    $('queuePanel').classList.toggle('active',name==='queue'); $('productionsPanel').classList.toggle('active',name==='productions');
+  }
+  function startPolling() { clearInterval(state.polling); state.polling = setInterval(() => { if (state.key) loadJobs(); }, 5000); }
+  function esc(value) { return String(value ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  fetch('/v1/health').then(r=>r.json()).then(() => { $('health').lastElementChild.textContent = state.key?'待鉴权':'服务在线'; if (state.key) connect(); }).catch(() => { $('health').lastElementChild.textContent='服务离线'; });
+})();
+</script>
+</body>
+</html>
