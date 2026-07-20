@@ -34,8 +34,6 @@ spec:
             - $(SCENEACTOR_GATEWAY_URL)
             - --gateway-key
             - $(SCENEACTOR_GATEWAY_KEY)
-            - --api-key
-            - $(SCENEACTOR_SERVICE_API_KEY)
             - --compile-model
             - claude-opus-4.8
             - --compile-fallback
@@ -53,8 +51,6 @@ spec:
           envFrom:
             - secretRef:
                 name: sceneactor-service-gateway
-            - secretRef:
-                name: sceneactor-service-public-auth
           ports:
             - name: http
               containerPort: 8377

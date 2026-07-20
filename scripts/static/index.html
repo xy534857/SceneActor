@@ -60,6 +60,8 @@
     #material { min-height: 265px; resize: vertical; line-height: 1.65; font-size: 13px; }
     #specEditor { min-height: 260px; font: 11px/1.55 var(--mono); resize: vertical; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .model-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .model-note { color: var(--muted); font-size: 10px; margin-top: 5px; line-height: 1.35; }
     .actions { display: flex; align-items: center; gap: 9px; margin-top: 14px; flex-wrap: wrap; }
     .hint { color: var(--muted); font-size: 11px; line-height: 1.45; }
     .spinner { display: none; width: 13px; height: 13px; border: 2px solid var(--rust-soft); border-top-color: var(--rust); border-radius: 50%; animation: spin .7s linear infinite; }
@@ -150,8 +152,6 @@
     <div class="brand"><h1>SceneActor</h1><small>Performance Console · Chengdu</small></div>
     <div class="connection">
       <div id="health" class="status"><span class="status-dot"></span><span>检测中</span></div>
-      <input id="apiKey" class="key-input" type="password" autocomplete="off" placeholder="API Key（仅本次会话）">
-      <button id="connectBtn" class="btn secondary">连接</button>
     </div>
   </header>
   <main>
@@ -165,8 +165,8 @@
         <div class="step-head"><h3>剧本与人设</h3><button id="sampleBtn" class="btn secondary">载入样例</button></div>
         <textarea id="material" placeholder="写场景、人物、秘密、压力下的变化。多场剧本按「场景一 / 场景二」分段。不要写死台词和结局。"></textarea>
         <div class="row">
-          <div><label for="compileModel">编译模型</label><input id="compileModel" type="text" list="modelList" value="gemini-3.1-flash-lite"></div>
-          <div><label for="compileFallback">Fallback</label><input id="compileFallback" type="text" list="modelList" value="claude-opus-4.8"></div>
+          <div><label for="compileModel">编译模型</label><select id="compileModel"></select><div class="model-note">默认：Opus 4.8 · 结构理解优先</div></div>
+          <div><label for="compileFallback">Fallback</label><select id="compileFallback"></select></div>
         </div>
         <div class="actions">
           <button id="compileBtn" class="btn rust"><span class="spinner"></span> 编译内部结构</button>
@@ -188,10 +188,10 @@
         <span class="step-num">03</span>
         <div class="step-head"><h3>演员与评审模型</h3></div>
         <div class="row">
-          <div><label for="genModel">表演模型</label><input id="genModel" type="text" list="modelList" value="gemini-3.1-flash-lite"></div>
-          <div><label for="genFallback">Fallback</label><input id="genFallback" type="text" list="modelList" value="claude-opus-4.8"></div>
-          <div><label for="reviewModel">评审模型</label><input id="reviewModel" type="text" list="modelList" value="claude-fable-5"></div>
-          <div><label for="reviewFallback">Fallback</label><input id="reviewFallback" type="text" list="modelList" value="claude-opus-4.8"></div>
+          <div><label for="genModel">表演模型</label><select id="genModel"></select><div class="model-note">默认：Fable 5 · 质量最高，速度最慢</div></div>
+          <div><label for="genFallback">Fallback</label><select id="genFallback"></select></div>
+          <div><label for="reviewModel">评审模型</label><select id="reviewModel"></select></div>
+          <div><label for="reviewFallback">Fallback</label><select id="reviewFallback"></select></div>
         </div>
         <label class="switch-line"><input id="reviewToggle" type="checkbox" checked> 演出完成后运行盲审（会增加等待时间）</label>
         <div class="actions">
@@ -199,7 +199,6 @@
           <button id="refreshBtn" class="btn secondary">刷新队列</button>
         </div>
       </div>
-      <datalist id="modelList"><option value="gemini-3.1-flash-lite"><option value="claude-opus-4.8"><option value="claude-fable-5"><option value="gpt-5.6-sol"></datalist>
     </section>
 
     <section class="monitor">
@@ -222,7 +221,13 @@
 <script>
 (() => {
   const $ = id => document.getElementById(id);
-  const state = { key: sessionStorage.getItem('sceneactor-key') || '', productionId: '', spec: null, jobs: [], selectedJob: '', polling: null };
+  const state = { productionId: '', spec: null, jobs: [], selectedJob: '', polling: null };
+  const models = {
+    "claude-opus-4.8": "Opus 4.8 · 快速高质量",
+    "claude-fable-5": "Fable 5 · 质量最高/最慢",
+    "gemini-3.1-flash-lite": "Gemini Flash Lite · 最快/调试",
+    "gpt-5.6-sol": "GPT 5.6 Sol · 中速"
+  };
   const sample = `剧名：《退租》两场版
 
 场景一：老小区一楼车库改的杂货铺，晚上九点半，卷帘门拉了一半。房东陈姨来收下季度房租，店主小马想退租但一直没敢说。本场8轮。
@@ -235,19 +240,22 @@
 
 要求：第二场里两人都记得第一场发生了什么。结尾不用和解。`;
 
-  $('apiKey').value = state.key;
   $('sampleBtn').onclick = () => { $('material').value = sample; };
-  $('connectBtn').onclick = connect;
   $('compileBtn').onclick = compile;
   $('performBtn').onclick = submitPerformance;
   $('refreshBtn').onclick = refreshAll;
   document.querySelectorAll('.tab').forEach(btn => btn.onclick = () => switchTab(btn.dataset.tab));
+  ['compileModel','compileFallback','genModel','genFallback','reviewModel','reviewFallback'].forEach(id => {
+    $(id).innerHTML = Object.entries(models).map(([value,label]) => `<option value="${value}">${label}</option>`).join('');
+  });
+  $('compileModel').value = 'claude-opus-4.8';
+  $('compileFallback').value = 'gemini-3.1-flash-lite';
+  $('genModel').value = 'claude-fable-5';
+  $('genFallback').value = 'claude-opus-4.8';
+  $('reviewModel').value = 'claude-fable-5';
+  $('reviewFallback').value = 'claude-opus-4.8';
 
-  function authHeaders(json=true) {
-    const headers = { 'Authorization': `Bearer ${state.key}` };
-    if (json) headers['Content-Type'] = 'application/json';
-    return headers;
-  }
+  function authHeaders(json=true) { return json ? {'Content-Type':'application/json'} : {}; }
   async function api(path, options={}) {
     const response = await fetch(path, { ...options, headers: { ...authHeaders(options.body !== undefined), ...(options.headers || {}) } });
     const data = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
@@ -259,27 +267,14 @@
     clearTimeout(el._timer); el._timer = setTimeout(() => el.className = 'toast', 3500);
   }
   async function connect() {
-    state.key = $('apiKey').value.trim();
-    if (!state.key) return toast('请输入 API Key', true);
-    sessionStorage.setItem('sceneactor-key', state.key);
-    try {
-      const cfg = await api('/v1/config');
-      $('health').className = 'status online'; $('health').lastElementChild.textContent = '成都 · 已连接';
-      applyDefaults(cfg.models); await refreshAll(); startPolling(); toast('连接成功');
-    } catch (error) {
-      $('health').className = 'status'; $('health').lastElementChild.textContent = '鉴权失败'; toast(error.message, true);
-    }
-  }
-  function applyDefaults(models={}) {
-    const map = { compile:'compileModel', compile_fallback:'compileFallback', generation:'genModel', generation_fallback:'genFallback', review:'reviewModel', review_fallback:'reviewFallback' };
-    Object.entries(map).forEach(([key,id]) => { if (models[key] && !$(id).dataset.touched) $(id).value = models[key]; });
+    try { await api('/v1/config'); $('health').className='status online'; $('health').lastElementChild.textContent='成都 · 白名单已连接'; await refreshAll(); startPolling(); }
+    catch (error) { $('health').className='status'; $('health').lastElementChild.textContent='服务不可用'; toast(error.message,true); }
   }
   async function compile() {
-    if (!state.key) return toast('先连接服务', true);
     const material = $('material').value.trim(); if (!material) return toast('剧本材料不能为空', true);
     const btn = $('compileBtn'); btn.disabled = true; btn.classList.add('busy'); $('compileHint').textContent = '模型正在拆分场景与人物…';
     try {
-      const data = await api('/v1/productions', { method:'POST', body: JSON.stringify({ material, models:{ compile:$('compileModel').value.trim(), compile_fallback:$('compileFallback').value.trim() } }) });
+      const data = await api('/v1/productions', { method:'POST', body: JSON.stringify({ material, models:{ compile:$('compileModel').value, compile_fallback:$('compileFallback').value } }) });
       state.productionId = data.production_id; state.spec = data.spec; showSpec(); await loadProductions(); toast('编译完成，可以检查结构后提交演出');
     } catch (error) { toast(error.message, true); }
     finally { btn.disabled = false; btn.classList.remove('busy'); $('compileHint').textContent = '通常需要 30–90 秒'; }
@@ -293,7 +288,6 @@
     $('specSummary').classList.add('visible'); $('specEditor').value = JSON.stringify(spec,null,2); $('prodIdLabel').textContent = state.productionId || '内联 spec'; $('performBtn').disabled = false;
   }
   async function submitPerformance() {
-    if (!state.key) return toast('先连接服务', true);
     let payload = { review:$('reviewToggle').checked, models:{ generation:$('genModel').value.trim(), generation_fallback:$('genFallback').value.trim(), review:$('reviewModel').value.trim(), review_fallback:$('reviewFallback').value.trim() } };
     try {
       const edited = $('specEditor').value.trim();
@@ -306,12 +300,10 @@
   }
   async function refreshAll() { await Promise.all([loadJobs(), loadProductions()]); }
   async function loadJobs() {
-    if (!state.key) return;
     try { const data = await api('/v1/performances'); state.jobs = data.jobs || []; renderQueue(); if (state.selectedJob) await loadJobDetail(state.selectedJob); }
     catch (error) { if (!/unauthorized/i.test(error.message)) toast(error.message,true); }
   }
   async function loadProductions() {
-    if (!state.key) return;
     try { const data = await api('/v1/productions'); const items = data.productions || []; $('prodCount').textContent = items.length; renderProductions(items); }
     catch (error) { toast(error.message,true); }
   }
@@ -350,9 +342,9 @@
     document.querySelectorAll('.tab').forEach(el => el.classList.toggle('active',el.dataset.tab===name));
     $('queuePanel').classList.toggle('active',name==='queue'); $('productionsPanel').classList.toggle('active',name==='productions');
   }
-  function startPolling() { clearInterval(state.polling); state.polling = setInterval(() => { if (state.key) loadJobs(); }, 5000); }
-  function esc(value) { return String(value ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
-  fetch('/v1/health').then(r=>r.json()).then(() => { $('health').lastElementChild.textContent = state.key?'待鉴权':'服务在线'; if (state.key) connect(); }).catch(() => { $('health').lastElementChild.textContent='服务离线'; });
+  function startPolling() { clearInterval(state.polling); state.polling = setInterval(() => loadJobs(), 5000); }
+  function esc(value) { return String(value ?? '').replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c])); }
+  fetch('/v1/health').then(r=>r.json()).then(() => connect()).catch(() => { $('health').lastElementChild.textContent='服务离线'; });
 })();
 </script>
 </body>

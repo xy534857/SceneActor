@@ -33,7 +33,6 @@ class HttpServiceTests(unittest.TestCase):
                 "--host", "127.0.0.1", "--port", str(self.port),
                 "--gateway-url", "http://unused.invalid/v1",
                 "--gateway-key", "unused",
-                "--api-key", "test-key",
                 "--state-dir", self.temp.name,
             ],
             cwd=ROOT,
@@ -66,24 +65,17 @@ class HttpServiceTests(unittest.TestCase):
         headers = {"Authorization": "Bearer test-key"} if auth else {}
         return urlopen(Request(self.base + path, headers=headers), timeout=2)
 
-    def test_ui_and_health_are_public_but_data_is_authenticated(self) -> None:
+    def test_ui_and_data_are_public_on_whitelisted_service(self) -> None:
         ui = self.get("/").read().decode()
         self.assertIn("SceneActor Console", ui)
         self.assertIn("任务队列", ui)
         self.assertEqual(json.load(self.get("/v1/health")), {"ok": True})
-        try:
-            self.get("/v1/config")
-        except HTTPError as error:
-            self.assertEqual(error.code, 401)
-            error.close()
-        else:
-            self.fail("unauthenticated config request unexpectedly succeeded")
+        self.assertIn("generation", json.load(self.get("/v1/config"))["models"])
 
-    def test_authenticated_lists_and_config(self) -> None:
-        config = json.load(self.get("/v1/config", auth=True))
-        self.assertIn("generation", config["models"])
-        self.assertEqual(json.load(self.get("/v1/productions", auth=True)), {"productions": []})
-        self.assertEqual(json.load(self.get("/v1/performances", auth=True)), {"jobs": []})
+    def test_lists_are_available_without_browser_credentials(self) -> None:
+        self.assertEqual(json.load(self.get("/v1/productions")), {"productions": []})
+        self.assertEqual(json.load(self.get("/v1/performances")), {"jobs": []})
+
 
 
 if __name__ == "__main__":
