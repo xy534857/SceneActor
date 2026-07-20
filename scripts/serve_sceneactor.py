@@ -85,7 +85,19 @@ def _persist_job(job_id: str) -> None:
     )
 
 
-def _run_performance(job_id: str, spec: ProductionSpec, want_review: bool) -> None:
+def _models_from(body: dict) -> dict:
+    """Per-request model overrides: {"models": {"generation": "...", "generation_fallback": "...", "review": "...", "review_fallback": "...", "compile": "...", "compile_fallback": "..."}}."""
+    raw = body.get("models", {})
+    if not isinstance(raw, dict):
+        raise ValueError("models must be an object")
+    allowed = {"generation", "generation_fallback", "review", "review_fallback", "compile", "compile_fallback"}
+    unknown = set(raw) - allowed
+    if unknown:
+        raise ValueError(f"unknown model roles: {sorted(unknown)}; allowed: {sorted(allowed)}")
+    return {key: str(value) for key, value in raw.items() if str(value).strip()}
+
+
+def _run_performance(job_id: str, spec: ProductionSpec, want_review: bool, models: dict) -> None:
     total = sum(episode.scene.max_turns for episode in spec.episodes)
     done_scenes: dict[str, int] = {}
 
@@ -100,13 +112,16 @@ def _run_performance(job_id: str, spec: ProductionSpec, want_review: bool) -> No
                 "actor": actor_id,
             }
 
+    generation = _model(
+        models.get("generation", args.generation_model),
+        models.get("generation_fallback", args.generation_fallback),
+    )
+    reviewer = _model(
+        models.get("review", args.review_model),
+        models.get("review_fallback", args.review_fallback),
+    ) if want_review else None
     try:
-        document = perform(
-            spec,
-            _model(args.generation_model, args.generation_fallback),
-            review=_model(args.review_model, args.review_fallback) if want_review else None,
-            on_turn=on_turn,
-        )
+        document = perform(spec, generation, review=reviewer, on_turn=on_turn)
         with _LOCK:
             _JOBS[job_id].update(status="done", document=document)
     except Exception as exc:  # noqa: BLE001 — job boundary must capture, not crash the server
@@ -165,12 +180,23 @@ class Handler(BaseHTTPRequestHandler):
         self._send(404, {"error": "unknown path"})
 
     def _compile(self, body: dict) -> None:
+        try:
+            models = _models_from(body)
+        except ValueError as exc:
+            self._send(400, {"error": str(exc)})
+            return
         material = body.get("material", "")
         if not isinstance(material, str) or not material.strip():
             self._send(400, {"error": "material (non-empty string) is required"})
             return
         try:
-            spec = compile_production(material, _model(args.compile_model, args.compile_fallback))
+            spec = compile_production(
+                material,
+                _model(
+                    models.get("compile", args.compile_model),
+                    models.get("compile_fallback", args.compile_fallback),
+                ),
+            )
         except ProductionCompileError as exc:
             self._send(422, {"error": f"compile failed: {exc}"})
             return
@@ -183,6 +209,11 @@ class Handler(BaseHTTPRequestHandler):
         self._send(201, {"production_id": production_id, "spec": spec.to_dict()})
 
     def _perform(self, body: dict) -> None:
+        try:
+            models = _models_from(body)
+        except ValueError as exc:
+            self._send(400, {"error": str(exc)})
+            return
         spec: ProductionSpec | None = None
         production_id = body.get("production_id")
         if isinstance(production_id, str):
@@ -202,11 +233,18 @@ class Handler(BaseHTTPRequestHandler):
             return
         job_id = f"job:{uuid4().hex[:12]}"
         with _LOCK:
-            _JOBS[job_id] = {"status": "running", "progress": {"done": 0, "of": sum(e.scene.max_turns for e in spec.episodes)}}
+            _JOBS[job_id] = {
+                "status": "running",
+                "progress": {"done": 0, "of": sum(e.scene.max_turns for e in spec.episodes)},
+                "models": {
+                    "generation": models.get("generation", args.generation_model),
+                    "review": models.get("review", args.review_model),
+                },
+            }
         _persist_job(job_id)
         threading.Thread(
             target=_run_performance,
-            args=(job_id, spec, bool(body.get("review", True))),
+            args=(job_id, spec, bool(body.get("review", True)), models),
             daemon=True,
         ).start()
         self._send(202, {"job_id": job_id, "status": "running"})
