@@ -176,12 +176,20 @@
 
       <div class="step">
         <span class="step-num">02</span>
-        <div class="step-head"><h3>检查内部结构</h3><span id="prodIdLabel" class="hint">尚未编译</span></div>
+        <div class="step-head"><h3>内部结构 Spec</h3><span id="prodIdLabel" class="hint">尚未载入</span></div>
         <div id="specSummary" class="spec-summary">
           <div class="spec-metrics"><div class="metric"><strong id="sceneCount">0</strong><span>场景</span></div><div class="metric"><strong id="actorCount">0</strong><span>人物</span></div><div class="metric"><strong id="turnCount">0</strong><span>总轮数</span></div></div>
           <div id="specList" class="spec-list"></div>
         </div>
-        <details><summary>展开 JSON 编辑器（修改后可直接以内联 spec 演出）</summary><textarea id="specEditor" spellcheck="false"></textarea></details>
+        <label for="specEditor">Spec JSON（可直接修改；改完先「校验并保存」）</label>
+        <textarea id="specEditor" spellcheck="false" placeholder='还没有 spec。可以先编译剧本，或点「上传 spec」载入你自己的 JSON。'></textarea>
+        <div class="actions">
+          <button id="applySpecBtn" class="btn secondary">校验并保存修改</button>
+          <button id="uploadSpecBtn" class="btn secondary">上传 spec</button>
+          <button id="downloadSpecBtn" class="btn secondary" disabled>下载 spec</button>
+          <input id="specFile" type="file" accept="application/json,.json" hidden>
+          <span id="specHint" class="hint"></span>
+        </div>
       </div>
 
       <div class="step">
@@ -244,6 +252,10 @@
   $('compileBtn').onclick = compile;
   $('performBtn').onclick = submitPerformance;
   $('refreshBtn').onclick = refreshAll;
+  $('applySpecBtn').onclick = applySpec;
+  $('uploadSpecBtn').onclick = () => $('specFile').click();
+  $('specFile').onchange = uploadSpec;
+  $('downloadSpecBtn').onclick = () => { if (state.spec) downloadFile(`${(state.productionId||'spec').replace(/[:]/g,'-')}.json`, JSON.stringify(state.spec,null,2), 'application/json'); };
   document.querySelectorAll('.tab').forEach(btn => btn.onclick = () => switchTab(btn.dataset.tab));
   ['compileModel','compileFallback','genModel','genFallback','reviewModel','reviewFallback'].forEach(id => {
     $(id).innerHTML = Object.entries(models).map(([value,label]) => `<option value="${value}">${label}</option>`).join('');
@@ -285,10 +297,35 @@
     $('sceneCount').textContent = scenes.length; $('actorCount').textContent = actors.length;
     $('turnCount').textContent = scenes.reduce((sum,s) => sum + (+s.max_turns || 0), 0);
     $('specList').innerHTML = `<b>人物</b>　${actors.map(a => esc(a.persona?.name || a.persona?.id)).join(' · ')}<br><b>场景</b>　${scenes.map(s => esc(s.scene_id)).join(' → ')}`;
-    $('specSummary').classList.add('visible'); $('specEditor').value = JSON.stringify(spec,null,2); $('prodIdLabel').textContent = state.productionId || '内联 spec'; $('performBtn').disabled = false;
+    $('specSummary').classList.add('visible'); $('specEditor').value = JSON.stringify(spec,null,2); $('prodIdLabel').textContent = state.productionId || '未注册（提交演出时将内联使用）'; $('performBtn').disabled = false; $('downloadSpecBtn').disabled = false;
+  }
+  async function applySpec() {
+    const raw = $('specEditor').value.trim(); if (!raw) return toast('Spec 为空', true);
+    let parsed; try { parsed = JSON.parse(raw); } catch (error) { $('specHint').textContent = `JSON 解析失败：${error.message}`; return toast('Spec JSON 格式错误', true); }
+    $('specHint').textContent = '服务端校验中…';
+    try {
+      const data = await api('/v1/productions', { method:'POST', body: JSON.stringify({ spec: parsed }) });
+      state.productionId = data.production_id; state.spec = data.spec; showSpec(); await loadProductions();
+      $('specHint').textContent = `已保存为 ${data.production_id}`; toast('Spec 校验通过并注册为新 Production');
+    } catch (error) { $('specHint').textContent = error.message; toast(error.message, true); }
+  }
+  function uploadSpec(event) {
+    const file = event.target.files[0]; if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => { $('specEditor').value = String(reader.result); $('specHint').textContent = `已载入 ${file.name}，点「校验并保存」注册`; };
+    reader.readAsText(file); event.target.value = '';
+  }
+  function downloadFile(name, text, mime) {
+    const url = URL.createObjectURL(new Blob([text], {type: mime}));
+    const link = document.createElement('a'); link.href = url; link.download = name; link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 3000);
+  }
+  function scriptText(doc) {
+    const scenes = doc.scenes || [{ scene_id:'performance', turns:doc.turns || [] }];
+    return [`${doc.disclosure || ''}`, ...scenes.flatMap(scene => [``, `【${scene.scene_id}】${scene.setting ? ' ' + scene.setting : ''}`, ...(scene.turns||[]).map(turn => `${turn.actor_id}：${turn.speech || '（沉默）'}${turn.action ? `\n  （${turn.action}）` : ''}`)])].join('\n');
   }
   async function submitPerformance() {
-    let payload = { review:$('reviewToggle').checked, models:{ generation:$('genModel').value.trim(), generation_fallback:$('genFallback').value.trim(), review:$('reviewModel').value.trim(), review_fallback:$('reviewFallback').value.trim() } };
+    let payload = { review:$('reviewToggle').checked, models:{ generation:$('genModel').value, generation_fallback:$('genFallback').value, review:$('reviewModel').value, review_fallback:$('reviewFallback').value } };
     try {
       const edited = $('specEditor').value.trim();
       if (edited && state.spec && edited !== JSON.stringify(state.spec,null,2)) payload.spec = JSON.parse(edited); else if (state.productionId) payload.production_id = state.productionId; else payload.spec = JSON.parse(edited);
@@ -326,7 +363,10 @@
     const scenes = doc.scenes || [{ scene_id:'performance', turns:doc.turns || [] }];
     const transcript = scenes.map(scene => `<div class="scene-block"><div class="scene-title">${esc(scene.scene_id)}</div>${(scene.turns||[]).map(turn => `<div class="turn"><div class="actor">${esc(turn.actor_id)}</div><div><div class="speech">${esc(turn.speech||'（沉默）')}</div><div class="stage">${esc(turn.action||'')}</div></div></div>`).join('')}</div>`).join('');
     const review = doc.blind_review ? `<div class="review-box"><div class="kicker">Blind review</div><span class="review-score">${doc.blind_review.score ?? '—'}</span> <span class="hint">/ 5 · ${doc.blind_review.pass?'通过':'未通过'}</span></div>` : '';
-    $('detail').innerHTML = `<section class="detail"><div class="detail-top"><div><h3>演出成品</h3><div class="detail-id">${esc(id)} · ${esc(job.models?.generation||'')}</div></div><button id="copyResult" class="btn secondary">复制 JSON</button></div>${transcript}${review}</section>`;
+    const safeId = id.replace(/[:]/g,'-');
+    $('detail').innerHTML = `<section class="detail"><div class="detail-top"><div><h3>演出成品</h3><div class="detail-id">${esc(id)} · ${esc(job.models?.generation||'')}</div></div><div class="actions" style="margin-top:0"><button id="downloadScript" class="btn secondary">下载台词本 .txt</button><button id="downloadResult" class="btn secondary">下载成品 JSON</button><button id="copyResult" class="btn secondary">复制 JSON</button></div></div>${transcript}${review}</section>`;
+    $('downloadScript').onclick = () => downloadFile(`${safeId}-script.txt`, scriptText(doc), 'text/plain');
+    $('downloadResult').onclick = () => downloadFile(`${safeId}.json`, JSON.stringify(doc,null,2), 'application/json');
     $('copyResult').onclick = () => navigator.clipboard.writeText(JSON.stringify(doc,null,2)).then(() => toast('已复制成品 JSON'));
   }
   function renderProductions(items) {

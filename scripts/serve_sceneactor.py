@@ -265,19 +265,27 @@ class Handler(BaseHTTPRequestHandler):
             self._send(400, {"error": str(exc)})
             return
         material = body.get("material", "")
-        if not isinstance(material, str) or not material.strip():
-            self._send(400, {"error": "material (non-empty string) is required"})
-            return
-        try:
-            spec = compile_production(
-                material,
-                _model(
-                    models.get("compile", args.compile_model),
-                    models.get("compile_fallback", args.compile_fallback),
-                ),
-            )
-        except ProductionCompileError as exc:
-            self._send(422, {"error": f"compile failed: {exc}"})
+        if isinstance(body.get("spec"), dict):
+            # Register a caller-authored or hand-edited spec without recompiling.
+            try:
+                spec = ProductionSpec.from_dict(body["spec"])
+            except ValueError as exc:
+                self._send(400, {"error": f"invalid spec: {exc}"})
+                return
+        elif isinstance(material, str) and material.strip():
+            try:
+                spec = compile_production(
+                    material,
+                    _model(
+                        models.get("compile", args.compile_model),
+                        models.get("compile_fallback", args.compile_fallback),
+                    ),
+                )
+            except ProductionCompileError as exc:
+                self._send(422, {"error": f"compile failed: {exc}"})
+                return
+        else:
+            self._send(400, {"error": "material (non-empty string) or spec (object) is required"})
             return
         production_id = f"prod:{uuid4().hex[:12]}"
         with _LOCK:
@@ -287,6 +295,7 @@ class Handler(BaseHTTPRequestHandler):
             json.dumps(spec.to_dict(), ensure_ascii=False, indent=1), encoding="utf-8"
         )
         self._send(201, {"production_id": production_id, "spec": spec.to_dict(), "compiled_at": compiled_at})
+
     def _perform(self, body: dict) -> None:
         try:
             models = _models_from(body)
