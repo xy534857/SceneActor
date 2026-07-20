@@ -33,31 +33,46 @@ class ProductionCompileError(RuntimeError):
 
 
 @dataclass(frozen=True)
-class ProductionSpec:
-    """Validated internal form of an external script + character docs."""
+class SceneEpisode:
+    """One scene of a production: stage + its own facts and rotation."""
 
     scene: SceneSetup
-    actors: tuple[ActorSetup, ...]
     host_facts: dict[str, str] = field(default_factory=dict)
-    disclosure: str = "AI生成的虚构表演。"
     speaking_order: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
-        if len(self.actors) < 2:
-            raise ValueError("a production requires at least two actors")
-        ids = [item.persona.id for item in self.actors]
-        if len(set(ids)) != len(ids):
-            raise ValueError("actor persona ids must be unique")
-        unknown = set(self.speaking_order) - set(ids)
-        if unknown:
-            raise ValueError(f"speaking_order names unknown actors: {sorted(unknown)}")
         for key in self.host_facts:
             if not key.startswith("O."):
                 raise ValueError(f"host fact keys must start with 'O.': {key}")
 
+
+@dataclass(frozen=True)
+class ProductionSpec:
+    """Validated internal form of an external script + character docs."""
+
+    actors: tuple[ActorSetup, ...]
+    episodes: tuple[SceneEpisode, ...]
+    disclosure: str = "AI生成的虚构表演。"
+
+    def __post_init__(self) -> None:
+        if len(self.actors) < 2:
+            raise ValueError("a production requires at least two actors")
+        if not self.episodes:
+            raise ValueError("a production requires at least one scene")
+        ids = [item.persona.id for item in self.actors]
+        if len(set(ids)) != len(ids):
+            raise ValueError("actor persona ids must be unique")
+        seen_scenes: set[str] = set()
+        for episode in self.episodes:
+            if episode.scene.scene_id in seen_scenes:
+                raise ValueError(f"duplicate scene_id: {episode.scene.scene_id}")
+            seen_scenes.add(episode.scene.scene_id)
+            unknown = set(episode.speaking_order) - set(ids)
+            if unknown:
+                raise ValueError(f"speaking_order names unknown actors: {sorted(unknown)}")
+
     def to_dict(self) -> dict[str, Any]:
         return {
-            "scene": asdict(self.scene),
             "actors": [
                 {
                     "persona": item.persona.to_dict(),
@@ -68,24 +83,54 @@ class ProductionSpec:
                 }
                 for item in self.actors
             ],
-            "host_facts": dict(self.host_facts),
+            "scenes": [
+                {
+                    **asdict(episode.scene),
+                    "host_facts": dict(episode.host_facts),
+                    "speaking_order": list(episode.speaking_order),
+                }
+                for episode in self.episodes
+            ],
             "disclosure": self.disclosure,
-            "speaking_order": list(self.speaking_order),
         }
 
     @classmethod
     def from_dict(cls, data: Mapping[str, Any]) -> "ProductionSpec":
-        scene_data = data.get("scene")
         actors_data = data.get("actors")
-        if not isinstance(scene_data, Mapping) or not isinstance(actors_data, list):
-            raise ValueError("spec requires a scene object and an actors array")
-        scene = SceneSetup(
-            scene_id=str(scene_data.get("scene_id", "")),
-            setting=str(scene_data.get("setting", "")),
-            opening=str(scene_data.get("opening", "")),
-            affordances=tuple(str(item) for item in scene_data.get("affordances", [])),
-            max_turns=int(scene_data.get("max_turns", 8)),
-        )
+        if not isinstance(actors_data, list):
+            raise ValueError("spec requires an actors array")
+        scenes_data = data.get("scenes")
+        if not isinstance(scenes_data, list) or not scenes_data:
+            single = data.get("scene")
+            if not isinstance(single, Mapping):
+                raise ValueError("spec requires a scenes array (or a single scene object)")
+            scenes_data = [
+                {
+                    **dict(single),
+                    "host_facts": data.get("host_facts", {}),
+                    "speaking_order": data.get("speaking_order", []),
+                }
+            ]
+        episodes = []
+        for scene_data in scenes_data:
+            if not isinstance(scene_data, Mapping):
+                raise ValueError("each scene must be an object")
+            host_facts = scene_data.get("host_facts", {})
+            if not isinstance(host_facts, Mapping):
+                raise ValueError("scene host_facts must be an object")
+            episodes.append(
+                SceneEpisode(
+                    scene=SceneSetup(
+                        scene_id=str(scene_data.get("scene_id", "")),
+                        setting=str(scene_data.get("setting", "")),
+                        opening=str(scene_data.get("opening", "")),
+                        affordances=tuple(str(item) for item in scene_data.get("affordances", [])),
+                        max_turns=int(scene_data.get("max_turns", 8)),
+                    ),
+                    host_facts={str(key): str(value) for key, value in host_facts.items()},
+                    speaking_order=tuple(str(item) for item in scene_data.get("speaking_order", [])),
+                )
+            )
         actors = []
         for item in actors_data:
             if not isinstance(item, Mapping):
@@ -105,15 +150,10 @@ class ProductionSpec:
                     disclosure=str(item.get("disclosure", "guarded")),
                 )
             )
-        host_facts = data.get("host_facts", {})
-        if not isinstance(host_facts, Mapping):
-            raise ValueError("host_facts must be an object")
         return cls(
-            scene=scene,
             actors=tuple(actors),
-            host_facts={str(key): str(value) for key, value in host_facts.items()},
+            episodes=tuple(episodes),
             disclosure=str(data.get("disclosure", "AI生成的虚构表演。")),
-            speaking_order=tuple(str(item) for item in data.get("speaking_order", [])),
         )
 
 
@@ -121,7 +161,7 @@ _COMPILE_SYSTEM = """You convert a caller's free-form script, scene notes, and c
 
 Return exactly one JSON object:
 {
-  "scene": {"scene_id": "kebab-case", "setting": "...", "opening": "...", "affordances": ["..."], "max_turns": 8-24},
+  "scenes": [{"scene_id": "kebab-case", "setting": "...", "opening": "...", "affordances": ["..."], "max_turns": 8-24, "host_facts": {"O.<name>": "objective, publicly observable facts at THIS scene's start"}, "speaking_order": ["actor-id", "..."]}],
   "actors": [
     {
       "persona": {
@@ -138,17 +178,16 @@ Return exactly one JSON object:
       "disclosure": "closed|guarded|open"
     }
   ],
-  "host_facts": {"O.<name>": "objective, publicly observable scene facts only"},
-  "disclosure": "one-line AI-generated-fiction disclosure users will see",
-  "speaking_order": ["actor-id", "..."]
+  "disclosure": "one-line AI-generated-fiction disclosure users will see"
 }
 
 Rules:
 - Every field is filled from the caller's material or left as an empty string; missing identity is NOT inferred or invented.
 - Persona voice fields describe HOW the person organizes speech (evidence from the material), never catchphrase lists to recite.
 - goal is what the character would say they want; dramatic instructions like "conflict must escalate" belong nowhere.
-- host_facts hold only what any observer could see or verify at scene start; secrets stay in persona.secret or private_state.
-- speaking_order lists actor ids in the order turns should rotate; leave [] for simple alternation.
+- host_facts hold only what any observer could see or verify at the scene's start; secrets stay in persona.secret or private_state. Fact keys are semantic (O.visit_purpose, O.time_of_day), never actor names.
+- speaking_order lists actor ids in rotation order for that scene; [] means simple alternation.
+- One scene in the material = one entry in scenes, in story order. A single-scene script yields a one-element array. Later scenes' opening states what changed since the previous scene ended (time passed, location shift), without predetermining outcomes the actors have not played yet.
 - If the material includes real-person register evidence (transcripts), place it under persona.extensions verbatim keys the caller used (register_license, speech_corpus, performance_reference); otherwise leave extensions {}.
 - Output the JSON object only: no prose, no markdown."""
 
@@ -191,47 +230,87 @@ def perform(
     review_lenses: tuple[str, ...] = ("dialogue", "character", "dramaturgy"),
     cognition_factory: Callable[[Any], Any] = JsonCognitionPort,
     performance_factory: Callable[[Any], Any] = JsonPerformancePort,
-    on_turn: Callable[[int, str], None] | None = None,
+    on_turn: Callable[[str, int, str], None] | None = None,
 ) -> dict[str, Any]:
-    """Run one full performance of the spec and return the public document."""
-    host = InMemorySceneHost(
-        spec.scene.scene_id,
-        facts={"O.current": spec.scene.opening, **spec.host_facts},
-        targets=tuple(item.persona.id for item in spec.actors),
-        capabilities=("speak", "wait", "interact"),
-    )
-    run = create_rehearsal(
-        spec.scene,
-        spec.actors,
-        host=host,
-        cognition={item.persona.id: cognition_factory(generation) for item in spec.actors},
-        performance=performance_factory(generation),
-    )
-    order = list(spec.speaking_order) or [item.persona.id for item in spec.actors]
-    transcript: list[dict[str, Any]] = []
+    """Run every episode in order; actors carry standing intents and case notes across scenes."""
+    carried_intents: dict[str, dict[str, Any]] = {}
+    previous_close = ""
+    performed_scenes: list[dict[str, Any]] = []
     protocol_failure = ""
-    for index in range(spec.scene.max_turns):
-        actor_id = order[index % len(order)]
-        try:
-            result = run.advance(actor_id)
-        except (CognitionModelError, PerformanceModelError) as exc:
-            protocol_failure = str(exc)[:500]
-            break
-        if result.draft is None:
-            protocol_failure = "turn produced no performance draft"
-            break
-        entry = asdict(result.draft)
-        transcript.append(entry)
-        host.facts["O.current"] = (
-            f"上一位刚才：{(entry.get('speech') or entry.get('action', ''))[:180]}"
+    for episode in spec.episodes:
+        actors = spec.actors
+        if previous_close:
+            actors = tuple(
+                ActorSetup(
+                    item.persona,
+                    item.goal,
+                    item.relationship,
+                    {**dict(item.private_state), "previous_scene": previous_close},
+                    item.disclosure,
+                )
+                for item in spec.actors
+            )
+        host = InMemorySceneHost(
+            episode.scene.scene_id,
+            facts={"O.current": episode.scene.opening, **episode.host_facts},
+            targets=tuple(item.persona.id for item in actors),
+            capabilities=("speak", "wait", "interact"),
         )
-        if on_turn is not None:
-            on_turn(index + 1, actor_id)
+        run = create_rehearsal(
+            episode.scene,
+            actors,
+            host=host,
+            cognition={item.persona.id: cognition_factory(generation) for item in actors},
+            performance=performance_factory(generation),
+        )
+        run.standing_intents.update(
+            {actor_id: dict(intent) for actor_id, intent in carried_intents.items()}
+        )
+        order = list(episode.speaking_order) or [item.persona.id for item in actors]
+        transcript: list[dict[str, Any]] = []
+        for index in range(episode.scene.max_turns):
+            actor_id = order[index % len(order)]
+            try:
+                result = run.advance(actor_id)
+            except (CognitionModelError, PerformanceModelError) as exc:
+                protocol_failure = f"{episode.scene.scene_id}: {str(exc)[:400]}"
+                break
+            if result.draft is None:
+                protocol_failure = f"{episode.scene.scene_id}: turn produced no performance draft"
+                break
+            entry = asdict(result.draft)
+            transcript.append(entry)
+            host.facts["O.current"] = (
+                f"上一位刚才：{(entry.get('speech') or entry.get('action', ''))[:180]}"
+            )
+            if on_turn is not None:
+                on_turn(episode.scene.scene_id, index + 1, actor_id)
+        performed_scenes.append(
+            {
+                "scene_id": episode.scene.scene_id,
+                "setting": episode.scene.setting,
+                "opening": episode.scene.opening,
+                "turns": transcript,
+            }
+        )
+        if protocol_failure:
+            break
+        carried_intents = {
+            actor_id: dict(intent) for actor_id, intent in run.standing_intents.items()
+        }
+        spoken = [item for item in transcript if item.get("speech")]
+        last = spoken[-1] if spoken else (transcript[-1] if transcript else {})
+        previous_close = (
+            f"上一场（{episode.scene.setting[:60]}）结束时："
+            f"{(last.get('speech') or last.get('action', '无人说话'))[:120]}"
+        )
 
     public_scene = {
-        "setting": spec.scene.setting,
-        "opening": spec.scene.opening,
         "disclosure": spec.disclosure,
+        "scenes": [
+            {"scene_id": item["scene_id"], "setting": item["setting"], "opening": item["opening"]}
+            for item in performed_scenes
+        ],
         "characters": [
             {
                 "anonymous_actor": item.persona.id,
@@ -246,18 +325,21 @@ def perform(
             for item in spec.actors
         ],
     }
+    all_turns = [turn for item in performed_scenes for turn in item["turns"]]
+    expected = sum(episode.scene.max_turns for episode in spec.episodes)
     document: dict[str, Any] = {
-        "schema_version": "sceneactor-performance-service/1.0",
+        "schema_version": "sceneactor-performance-service/1.1",
         "performance_id": f"perf:{uuid4().hex[:12]}",
         "disclosure": spec.disclosure,
         "scene": public_scene,
-        "turns": transcript,
-        "completed": not protocol_failure and len(transcript) == spec.scene.max_turns,
+        "scenes": performed_scenes,
+        "turns": all_turns,
+        "completed": not protocol_failure and len(all_turns) == expected,
         "protocol_failure": protocol_failure,
     }
-    if review is not None and transcript:
+    if review is not None and all_turns:
         reviewer = BlindReviewer(JsonBlindReviewPort(review), lenses=review_lenses)
-        document["blind_review"] = reviewer.review(public_scene, transcript)
+        document["blind_review"] = reviewer.review(public_scene, all_turns)
     return document
 
 

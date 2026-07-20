@@ -86,9 +86,19 @@ def _persist_job(job_id: str) -> None:
 
 
 def _run_performance(job_id: str, spec: ProductionSpec, want_review: bool) -> None:
-    def on_turn(turn: int, actor_id: str) -> None:
+    total = sum(episode.scene.max_turns for episode in spec.episodes)
+    done_scenes: dict[str, int] = {}
+
+    def on_turn(scene_id: str, turn: int, actor_id: str) -> None:
+        done_scenes[scene_id] = turn
         with _LOCK:
-            _JOBS[job_id]["progress"] = {"turn": turn, "of": spec.scene.max_turns, "actor": actor_id}
+            _JOBS[job_id]["progress"] = {
+                "scene": scene_id,
+                "turn": turn,
+                "done": sum(done_scenes.values()),
+                "of": total,
+                "actor": actor_id,
+            }
 
     try:
         document = perform(
@@ -192,7 +202,7 @@ class Handler(BaseHTTPRequestHandler):
             return
         job_id = f"job:{uuid4().hex[:12]}"
         with _LOCK:
-            _JOBS[job_id] = {"status": "running", "progress": {"turn": 0, "of": spec.scene.max_turns}}
+            _JOBS[job_id] = {"status": "running", "progress": {"done": 0, "of": sum(e.scene.max_turns for e in spec.episodes)}}
         _persist_job(job_id)
         threading.Thread(
             target=_run_performance,
