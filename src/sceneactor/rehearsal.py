@@ -58,6 +58,7 @@ class RehearsalRun:
     turns: list[TurnResult] = field(default_factory=list)
     active_actor_index: int = 0
     actor_revisions: dict[str, int] = field(default_factory=dict)
+    standing_intents: dict[str, dict[str, Any]] = field(default_factory=dict)
     complete_reason: str = ""
 
     def __post_init__(self) -> None:
@@ -98,6 +99,11 @@ class RehearsalRun:
                 **dict(actor.private_state),
                 "counterpart": "、".join(item.persona.name for item in others),
                 "scene_setting": self.scene.setting,
+                **(
+                    {"standing_intent": self.standing_intents[actor.persona.id]}
+                    if actor.persona.id in self.standing_intents
+                    else {}
+                ),
             },
             relationships={
                 item.persona.id: {"summary": item.relationship or actor.relationship, "disclosure": actor.disclosure}
@@ -119,12 +125,14 @@ class RehearsalRun:
                 "preferences": actor.persona.preferences,
                 "competencies": actor.persona.competencies,
                 "cognition_lens": actor.persona.cognition_lens,
+                "scene_setting": self.scene.setting,
+                "physical_constraints": actor.persona.physical_constraints,
                 "voice": actor.persona.voice.to_dict(),
-                **(
-                    {"performance_reference": actor.persona.extensions["performance_reference"]}
-                    if isinstance(actor.persona.extensions, dict) and actor.persona.extensions.get("performance_reference")
-                    else {}
-                ),
+                **{
+                    key: actor.persona.extensions[key]
+                    for key in ("performance_reference", "register_license", "speech_corpus")
+                    if isinstance(actor.persona.extensions, dict) and actor.persona.extensions.get(key)
+                },
             },
         )
         orchestrator = TurnOrchestrator(
@@ -141,7 +149,42 @@ class RehearsalRun:
             scene_revision=self.host.revision,
             scene_id=self.scene.scene_id,
         )
+        if (
+            result.draft is None
+            and result.batch.lifecycle == "performance_pending"
+            and result.receipt.outcome is not None
+        ):
+            last_error: RuntimeError | ValueError | None = None
+            for retry_index in range(2):
+                try:
+                    result = orchestrator.complete_pending_performance(
+                        frame=frame,
+                        batch=result.batch,
+                        outcome=result.receipt.outcome,
+                        scene_id=self.scene.scene_id,
+                    )
+                    break
+                except (RuntimeError, ValueError) as exc:
+                    last_error = exc
+                    if retry_index == 1:
+                        raise
+            if result.draft is None and last_error is not None:
+                raise last_error
         self.turns.append(result)
+        if result.policy is not None:
+            previous = self.standing_intents.get(actor.persona.id, {})
+            if result.policy.intent_mode == "continue":
+                carried = dict(previous)
+                if result.policy.case_notes:
+                    carried["case_notes"] = list(result.policy.case_notes)
+                self.standing_intents[actor.persona.id] = carried
+            else:
+                self.standing_intents[actor.persona.id] = {
+                    "intent": result.policy.current_intent,
+                    "strategy": result.policy.chosen_strategy,
+                    "expected_response": result.policy.expected_response,
+                    "case_notes": list(result.policy.case_notes) or list(previous.get("case_notes", [])),
+                }
         self.actor_revisions[actor.persona.id] = result.actors[actor.persona.id].revision
         self.active_actor_index = (self.actors.index(actor) + 1) % len(self.actors)
         if len(self.turns) >= self.scene.max_turns:

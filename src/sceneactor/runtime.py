@@ -50,6 +50,7 @@ class TurnResult:
     draft: PerformanceDraft | None
     actors: dict[str, RuntimeState]
     scene: SceneState
+    policy: PerformancePolicy | None = None
 
 
 class TurnOrchestrator:
@@ -105,7 +106,7 @@ class TurnOrchestrator:
             )
             self.ledger.append_batch(batch)
             actors, scene = self._reduce(actor_revisions, scene_id)
-            return TurnResult(batch, receipt, None, actors, scene)
+            return TurnResult(batch, receipt, None, actors, scene, policy)
         if receipt.outcome is None:
             raise RuntimeError("terminal Host receipt must contain an outcome")
         outcome = receipt.outcome
@@ -130,7 +131,7 @@ class TurnOrchestrator:
             )
             self.ledger.append_batch(batch)
             actors, scene = self._reduce(actor_revisions, scene_id)
-            return TurnResult(batch, receipt, None, actors, scene)
+            return TurnResult(batch, receipt, None, actors, scene, policy)
         performance_event = self._performance_event(frame, batch_id, command.command_id, draft, ppi, scene_id)
         batch = TurnEventBatch.create(
             batch_id=batch_id,
@@ -148,7 +149,7 @@ class TurnOrchestrator:
         self.ledger.append_batch(batch)
         self._turn_number += 1
         actors, scene = self._reduce(actor_revisions, scene_id)
-        return TurnResult(batch, receipt, draft, actors, scene)
+        return TurnResult(batch, receipt, draft, actors, scene, policy)
     def resume_pending_host(
         self,
         *,

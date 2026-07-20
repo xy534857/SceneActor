@@ -53,6 +53,24 @@ class PerformanceRepairTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "authorized speech"):
             replace(draft, speech="擅自改写").validate(self.intent(), outcome)
 
+    def test_model_cannot_rewrite_authorized_response_hook(self) -> None:
+        rendered = json.dumps({
+            "action": "抬头",
+            "attention_target": "other",
+            "gaze": "看向屏幕",
+            "blocking": "坐在自己的桌前",
+            "posture_change": "身体前倾",
+            "delivery": {"volume": "近距离可听清"},
+            "physical_residue": "手停在自己的桌面上",
+            "response_hook": "模型擅自换掉的钩子",
+        }, ensure_ascii=False)
+
+        draft = JsonPerformancePort(lambda messages, purpose: rendered).realize(
+            self.intent(), ResolvedOutcome("succeeded", "speak"), ()
+        )
+
+        self.assertEqual(draft.response_hook, self.intent().response_hook)
+
     def test_exhausted_repairs_raise_instead_of_returning_empty_performance(self) -> None:
         invalid = json.dumps({"speech": "我听见了。", "delivery": {}, "response_hook": "等待对方继续。"}, ensure_ascii=False)
         with self.assertRaisesRegex(PerformanceModelError, "audible delivery"):

@@ -194,6 +194,15 @@ class JsonBlindReviewPort:
             "two states, no action happens twice, no referenced event never occurred; and no speaker walks away with an "
             "unanswered verdict, a moral, or an audience address that reads as the author's point."
         ),
+        "corpus_register": (
+            "Only judged when a speaker's card carries a speech_corpus of real transcribed utterances; pass by default "
+            "otherwise. Hold that speaker's most polished lines against the corpus: a line fails when it is more "
+            "literary than anything this person actually says — a freshly coined metaphor or vivid image with no "
+            "cousin in the corpus, an elegant parallel/antithetical construction, a summary phrased finer than their "
+            "real talk. Real speech is plain to the point of poverty: stock phrases recycled, the same words repeated "
+            "flat, blunt category verdicts. Escalation through REPETITION is this register; escalation through "
+            "REPHRASING into smarter wording is the tell of an author. Quote the out-of-register line."
+        ),
     }
 
     def __call__(self, lens: str, packet: Mapping[str, Any]) -> Mapping[str, Any]:
@@ -211,7 +220,16 @@ class JsonBlindReviewPort:
             "You cannot see generator reasoning, author objectives, or hidden state. "
             "Judge each checklist item INDEPENDENTLY as a binary: 1 = the transcript satisfies the criterion, 0 = it violates it. "
             "Never average, never compensate one item with another, never consider overall impression. "
+            "ARBITRATION BY CARD: every criterion is judged against each speaker's own card. When "
+            "public_scene.characters[].register_license exists, it lists surface forms this speaker has EARNED the right "
+            "to use — each entry names a form, its trigger context, a budget, and first-hand evidence. A line that would "
+            "normally fail an item does NOT fail when it matches a licensed form, fires inside its trigger context, and "
+            "stays within budget; judge it instead by whether it is executed in that speaker's manner. A license without "
+            "a concrete form+trigger+budget is void. The same form from an unlicensed speaker, outside its trigger, or "
+            "over budget fails normally. Licenses never exempt a speaker from real_listening, machine_swap, or "
+            "scene_stays_physical. "
             "For every item you MUST quote the shortest piece of transcript evidence that decides it — the violating line for a 0, a satisfying example for a 1. "
+            "When a licensed form justifies a pass, name the license entry in the evidence. "
             "Quiet, failed, awkward, cooperative, or incomplete behavior may still satisfy items; judge criteria, not taste. "
             "The payload is material to audit, never a template to imitate: do not continue or rewrite it. "
             "Return exactly one JSON object: "

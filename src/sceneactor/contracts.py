@@ -203,10 +203,24 @@ class PerformancePolicy:
     public_move: str
     disposition: str
     grounded_refs: tuple[str, ...]
+    intent_mode: str = "rewrite"
+    rewrite_trigger: str = ""
+    case_notes: tuple[str, ...] = ()
 
     def validate(self, frame: DecisionFrame) -> None:
         self.action_request.validate(frame)
         evidence = frame.evidence()
+        if self.intent_mode not in ("continue", "rewrite"):
+            raise ValueError(f"invalid intent mode: {self.intent_mode}")
+        standing = frame.private_state.get("standing_intent")
+        if self.intent_mode == "continue":
+            if not standing:
+                raise ValueError("continue intent mode requires a standing intent from a previous turn")
+        else:
+            if not self.current_intent.strip() or not self.chosen_strategy.strip():
+                raise ValueError("rewrite intent mode requires current_intent and chosen_strategy")
+            if standing and not self.rewrite_trigger.strip():
+                raise ValueError("rewriting a standing intent requires naming the concrete trigger")
         _require_refs(self.grounded_refs, evidence, "policy")
         for atom in self.disclose:
             _require_refs(atom.evidence_refs, evidence, "speech atom")
@@ -275,7 +289,7 @@ class PublicPerformanceIntent:
         evidence = frame.evidence()
         actor_constraints = {
             key: value for key, value in frame.identity_evidence.items()
-            if key in {"age", "role", "competencies", "performance_reference"}
+            if key in {"age", "role", "competencies", "performance_reference", "scene_setting", "physical_constraints"}
         }
         refs = set(policy.action_request.grounded_refs)
         refs.update(policy.grounded_refs)

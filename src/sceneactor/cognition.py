@@ -109,7 +109,7 @@ class JsonCognitionPort:
             "action_request_keys": ["action_kind", "target", "arguments", "required_capabilities", "grounded_refs"],
             "disclose_shape": "array of speech atom objects, one object per utterance chunk; never a summary string",
             "speech_atom_evidence_allowed_prefixes": ["O.", "H.", "S.identity.role", "S.identity.background", "S.identity.competencies"],
-            "speech_atom_evidence_rule": "every speech atom evidence_refs entry must start with one of speech_atom_evidence_allowed_prefixes; cite S.identity.voice.*, S.goal, other S.*, R.*, or L.* only in policy fields, never inside disclose",
+            "speech_atom_evidence_rule": "every speech atom evidence_refs entry must be copied verbatim from top-level evidence_refs and start with O., H., S.identity.role, S.identity.background, or S.identity.competencies; never invent a prefix or convert O. to H.; cite S.identity.voice.*, S.goal, other S.*, R.*, or L.* only in policy fields, never inside disclose",
             "withhold_shape": "array of strings",
             "emotion_changes_shape": "array of emotion change objects; [] when unchanged",
             "relationship_transition_choices": ["keep", "landed", "missed", "abandoned"],
@@ -117,12 +117,31 @@ class JsonCognitionPort:
             "delivery_mode_choices": ["restrained", "warm", "playful", "formal", "practical", "probing", "evasive", "tender", "blunt", "self_conscious"],
             "public_move_choices": ["action", "information", "stance", "relationship", "clean_close"],
             "disposition_choices": ["continue", "close", "withdraw"],
+            "intent_mode_choices": ["continue", "rewrite"],
+            "intent_mode_rule": (
+                "FIRST decision each turn: does what just happened justify changing your mind? "
+                "continue = keep executing private_state.standing_intent: current_intent, chosen_strategy, "
+                "expected_response, withhold MAY be empty or omitted — they are inherited; produce only this turn's "
+                "utterance and the per-turn fields. Only legal when standing_intent exists. "
+                "rewrite = change of mind: produce the full policy, and rewrite_trigger MUST name the concrete thing "
+                "from the last exchange that caused it (a word, a number, a repetition count, a leak); 'time to advance "
+                "my plan' is not a trigger. First turn of a scene is always rewrite (nothing stands yet)."
+            ),
+            "case_notes_rule": (
+                "case_notes = your durable working memory of this encounter, carried across turns. On rewrite, return "
+                "the UPDATED full list (keep what still matters, add what you just learned: parameters collected, "
+                "leaks heard, tactics already tried and failed). On continue, omit it or return it unchanged. "
+                "Notes are private shorthand, never spoken text. When you fire a register_license form, log it in "
+                "case_notes with a running count ('lethal_reversal 2/3 used'); before firing again, check that count — "
+                "budgets are per scene, not per turn, and an over-budget form reads as a tic, not a voice."
+            ),
             "policy_keys": [
                 "attention", "interpretation", "current_intent", "chosen_strategy",
                 "action_request", "disclose", "withhold", "expected_response",
                 "response_hook", "surface_action_intent", "accepted_cost",
                 "relationship_transition", "interaction_move", "delivery_mode",
                 "public_move", "disposition", "grounded_refs",
+                "intent_mode", "rewrite_trigger", "case_notes",
             ],
         }
         system = """You are the private cognition stage of one stateful NPC.
@@ -152,13 +171,26 @@ Response shape (exact top-level and nested key names; no other top-level keys):
     "delivery_mode": "...",
     "public_move": "...",
     "disposition": "...",
-    "grounded_refs": ["..."]
+    "grounded_refs": ["..."],
+    "intent_mode": "continue|rewrite",
+    "rewrite_trigger": "...",
+    "case_notes": ["..."]
   }
 }
 
 The situation outranks persona branding. Personality shapes what this person notices, protects, misreads, delays, and pays for; never recite a profile or demonstrate a trait on demand. Respond to the immediate observable trouble before advancing a plot checklist. A person may be mistaken, awkward, incomplete, indirect, silent, or unwilling. Do not optimize into an assistant-style package of explanation, reassurance, and closure.
+Evidence references are opaque authorization IDs, not semantic labels. Copy them exactly from `evidence_refs`; never rename `O.foo` to `H.foo` or cite an observation object by its unlisted parent key.
+
+INTENT CONTINUITY — this is how a real person carries a goal:
+A person does not re-plan at every breath. An intention, once formed, stands and keeps working — through routine questions, through brush-offs, through half-hearted replies — until something concrete breaks it. `private_state.standing_intent` (when present) is the intention you formed earlier: its intent, strategy, and your accumulated case_notes about this encounter. Your FIRST decision each turn is intent_mode:
+- `continue`: nothing that just happened justifies changing your mind. Keep executing the standing intent — the next question in your chain, the next number in your list, the brush-off that keeps the encounter moving, the wrap-up you already started. Do NOT restate or re-derive strategy; produce only this turn's utterance. Most turns of a working professional are continue turns. A perfunctory reply still advances the standing intent — coasting is execution, not absence.
+- `rewrite`: the last exchange produced something that genuinely changes what you are doing — a number that shocked you, a leak that hands you leverage, the third identical excuse proving persuasion is dead, a time pressure that kills the long route. Name that concrete thing in rewrite_trigger, then form the new intention. Giving up on persuasion and switching to wrap-this-up IS a rewrite with a real trigger.
+Never rewrite because a turn count advanced or because you feel you should vary. An intention that changes every turn belongs to no one; that is the author puppeting, not a person deciding.
+case_notes are what you actually remember of this encounter — digested, not transcript: parameters collected, what the other side wants, what they let slip, what you already tried that failed. Old lines fall out of the visible window; your case_notes are what survive. Update them on rewrite; carry them untouched on continue.
 
 Identity evidence has two roles only: age/life stage shapes natural language capacity; values, preferences, competencies, and voice shape attention and tactic. Do not quote, paraphrase, announce, or cite values/preferences/voice as spoken content. A supplied observation that already answers a question is a changed condition: respond to its consequence instead of asking the same question again unless the actor has a new concrete purpose for verification.
+When identity evidence carries a `register_license`, each entry is an EARNED surface form of this person's public voice (a verdict shape, a stacked repetition, a signature reversal, a joke-then-snap-back arc), with its trigger context, budget, and first-hand evidence. These are permissions, not quotas: fire one only when its trigger genuinely occurs in the immediate exchange, stay within budget, and always regenerate the form in this moment's words — never recite the evidence text. An unfired license costs nothing; a license fired without its trigger reads as performing the profile and is worse than silence.
+When identity evidence carries a `speech_corpus`, those are this person's REAL transcribed utterances, grouped by emotional beat. It is a register ceiling, not a quote bank: before finalizing any speech atom, hold it against the corpus lines of the current beat and ask — is my line more literary, more figurative, more balanced than anything this person actually says? Real talk is plain to the point of poverty: recycled stock phrases, flat repetition of the same words, blunt category verdicts. A freshly invented metaphor, an elegant parallel construction, or a vivid coined image that has no cousin in the corpus is OUT of register — replace it with the plain version or with exact repetition. Never copy corpus lines verbatim; absorb their level, not their content.
 When the immediate observation activates an explicit pressure_change or failure_mode in identity evidence, let that mode alter attention, sentence structure, interruption, or fixation. Do not fall back to generic next-step assistance. Use only observable details as the fixation; never quote the profile. A concrete competency may support one bounded, testable diagnosis from a public symptom, but the diagnosis must remain distinguishable from confirmed observation.
 
 Speech action and natural Chinese:
@@ -249,11 +281,13 @@ def _parse_cognition(raw: str) -> tuple[Appraisal, PerformancePolicy]:
         required_capabilities=_text_tuple(action_data, "required_capabilities"),
         grounded_refs=_text_tuple(action_data, "grounded_refs"),
     )
+    intent_mode = _optional_text(policy_data, "intent_mode") or "rewrite"
+    require_strategy = _required_text if intent_mode != "continue" else _optional_text
     policy = PerformancePolicy(
         attention=_text_tuple(policy_data, "attention"),
         interpretation=_required_text(policy_data, "interpretation"),
-        current_intent=_required_text(policy_data, "current_intent"),
-        chosen_strategy=_required_text(policy_data, "chosen_strategy"),
+        current_intent=require_strategy(policy_data, "current_intent"),
+        chosen_strategy=require_strategy(policy_data, "chosen_strategy"),
         action_request=action,
         disclose=tuple(
             SpeechAtom(
@@ -275,6 +309,9 @@ def _parse_cognition(raw: str) -> tuple[Appraisal, PerformancePolicy]:
         public_move=_required_text(policy_data, "public_move"),
         disposition=_required_text(policy_data, "disposition"),
         grounded_refs=_text_tuple(policy_data, "grounded_refs"),
+        intent_mode=intent_mode,
+        rewrite_trigger=_optional_text(policy_data, "rewrite_trigger"),
+        case_notes=_text_tuple(policy_data, "case_notes"),
     )
     return appraisal, policy
 

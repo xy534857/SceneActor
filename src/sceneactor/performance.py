@@ -85,6 +85,8 @@ class JsonPerformancePort:
                         "When several limbs differ, identify left/right or one/the other; never say both arms are down while a hand or finger remains at an object. "
                         "Only public_evidence, recent_surface, and outcome are established public context. Do not invent narrator-known props, measurements, names, or prior actions; introduce a currently visible object without words such as still, again, continue, or no longer. "
                         "Respect actor_constraints: never assign biological breathing, tears, pulse, or other human mechanisms to a nonhuman actor unless those constraints explicitly support them. "
+                        "actor_constraints.scene_setting is authoritative spatial reality: preserve whether participants share a room or communicate through a phone/screen. In a remote call, each actor may touch only objects on their own side; never pass, take, pin, or share props across the connection, and never describe across-the-table blocking. "
+                        "Respect actor_constraints.physical_constraints when present. "
                         "When actor_constraints carries a performance_reference (body_language, facial_expression, voice_reference), draw gaze, blocking, posture, and delivery from that repertoire matched to the current beat — the reference is a movement vocabulary, not a checklist; pick what this beat calls for and leave the rest. "
                         "If speech is nonempty, delivery must contain at least one externally audible direction among pace, volume, breath, articulation, pause, vocal_target, chosen to embody the authorized delivery mode without naming emotion. "
                         "physical_residue records only what remains physically visible on THIS actor's own body or the objects this actor touched after the turn ends (a held posture, a moved object, a mark); never other people's reactions, audience responses, motives, meanings, predictions, or narrative significance. "
@@ -124,7 +126,7 @@ class JsonPerformancePort:
                     ),
                     physical_residue=_text(data, "physical_residue"),
                     observable_outcome=tuple(outcome.observable_facts),
-                    response_hook=_text(data, "response_hook") or intent.response_hook,
+                    response_hook=intent.response_hook,
                 )
                 if not draft.action and not draft.speech:
                     raise PerformanceModelError("performance must contain action or speech")
