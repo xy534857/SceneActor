@@ -1,2 +1,6 @@
 examples/zhang_laoshi/reference_assets/
 __pycache__/
+.sceneactor-service/
+.tmp/
+*.attempt-*.json
+src/sceneactor.egg-info/
