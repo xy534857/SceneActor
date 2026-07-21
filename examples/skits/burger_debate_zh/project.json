@@ -1,0 +1,151 @@
+{
+  "project_id": "skit.burger-debate-zh",
+  "language": "zh",
+  "style": "flat kawaii chibi 2D animation, thick clean outlines, pastel palette, cel shading, consistent with the references.",
+  "stage": "TV debate studio in flat kawaii chibi Chiikawa anime style: thick clean dark outlines, soft pastel colors, flat cel shading. Deep navy-blue backdrop with subtle sparkle pattern, warm spotlights. Two wooden lecterns with microphones (rabbit LEFT, otter RIGHT), a small moderator desk at CENTER between them, and a big screen above showing a rising line chart labeled 'INFLATION'.",
+  "scene_ref": "assets/master_stage.png",
+  "characters": [
+    {
+      "code": "usagi",
+      "identity_desc": "RABBIT (cream-white rabbit, tall ears with pink insides, RED necktie, navy suit)",
+      "portrait": "assets/portrait_usagi.png",
+      "voice_ref": "assets/voice_usagi_ref.wav",
+      "voice_desc": "an excited squeaky high-pitched cartoon voice with chaotic energy"
+    },
+    {
+      "code": "racco",
+      "identity_desc": "OTTER (beige spiky-fur sea otter, star-shaped scar over LEFT eye, BLUE necktie, navy suit)",
+      "portrait": "assets/portrait_racco.png",
+      "voice_ref": "assets/voice_racco_ref.wav",
+      "voice_desc": "a calm LOW-pitched gruff masculine cartoon voice, mature and weary — clearly DEEPER than a squeaky voice"
+    },
+    {
+      "code": "hachi",
+      "identity_desc": "CAT (white cat, blue-gray top-half head marking, GRAY vest, cue cards)",
+      "portrait": "assets/portrait_hachi.png",
+      "voice_ref": "assets/voice_hachiware_ref.wav",
+      "voice_desc": "a soft gentle boyish cartoon voice, mild and polite, medium pitch — NOT squeaky, NOT deep"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "z01",
+      "duration": 11,
+      "speaker": "usagi",
+      "camera": "Medium close-up on the LEFT lectern, straight-on TV framing",
+      "action": "The rabbit spreads both paws wide bragging, pinches thumb and finger together making a circle gesture, stumbles on the number and re-opens the paw, then taps its own chest twice proudly",
+      "line": "那些汉堡，白宫历史上最好的汉堡，所有人都这么说。九百……不对，一千，一千多个，全是我自己掏的钱。"
+    },
+    {
+      "shot_id": "z02",
+      "duration": 9,
+      "speaker": "usagi",
+      "camera": "Close-up on the rabbit at the LEFT lectern leaning toward the right",
+      "action": "The rabbit drags one finger down its cheek miming a tear with an earnest face, then snaps to pointing straight at the opponent, eyebrows pressed down, ending frozen mid-point",
+      "line": "那些冠军，最强壮的人，吃到哭了。真的哭了。乔，你在白宫请过谁？说一个名字。"
+    },
+    {
+      "shot_id": "z03",
+      "duration": 8,
+      "speaker": "hachi",
+      "camera": "Medium shot of the center moderator desk",
+      "action": "The cat moderator flips a cue card, puts it down wearily, raises one paw in resignation; strained polite smile",
+      "line": "两位，我们本来在聊通货膨胀……好吧，那你说说你的汉堡。"
+    },
+    {
+      "shot_id": "z04",
+      "duration": 13,
+      "speaker": "racco",
+      "camera": "Medium close-up on the RIGHT lectern",
+      "action": "The otter holds up one finger, pauses on the name and corrects himself with a small headshake, pats the lectern softly on '一张桌子', then turns palm-up toward the audience on the egg-price line, weary frown",
+      "line": "说一个？行。斯克兰顿，一个消防员，马克……不对，麦克。他跟我坐一张桌子吃的，没哭。他就问了我一句——鸡蛋，怎么涨成这样。"
+    },
+    {
+      "shot_id": "z05",
+      "duration": 7,
+      "speaker": "hachi",
+      "camera": "Medium shot of the center moderator desk",
+      "action": "The cat points a paw up at the INFLATION screen, looks around, gets no reaction, slumps back in the chair with flat resigned eyes",
+      "line": "我提醒一句，通胀数据还在大屏上挂着——没人看是吧，行。"
+    },
+    {
+      "shot_id": "z06",
+      "duration": 7,
+      "speaker": "usagi",
+      "camera": "Close-up on the rabbit at the LEFT lectern",
+      "action": "The rabbit cups a paw to its ear in mock confusion swaying left then right on the two names, then slaps its palm flat on the lectern on the last word, mouth wide in a triumphant shout",
+      "line": "马克还是麦克？一张桌子吃的饭，名字都记不住？悲哀！"
+    },
+    {
+      "shot_id": "z07",
+      "duration": 8,
+      "speaker": "hachi",
+      "camera": "Medium shot of the center moderator desk",
+      "action": "The cat glances toward an off-screen control booth, makes a helpless two-finger 'two more rounds' gesture at the camera, ears drooping",
+      "line": "导播问我们要不要切广告。我说再给两轮，你们把汉堡这事说完。"
+    },
+    {
+      "shot_id": "z08",
+      "duration": 10,
+      "speaker": "racco",
+      "camera": "Medium close-up on the RIGHT lectern",
+      "action": "The otter presses a paw down flat on the lectern on the name confirmation, raises one finger then folds it back mid-sentence, then slowly pushes a half-closed fist toward the opponent and holds it in the air",
+      "line": "麦克。是麦克。得了吧，你那一千个……九百个汉堡，往桌上一摆就完了？你挨着哪一个坐下吃的？"
+    },
+    {
+      "shot_id": "z09",
+      "duration": 6,
+      "speaker": "hachi",
+      "camera": "Medium shot of the center moderator desk",
+      "action": "The cat rubs its temples with both paws, then holds up one stern finger",
+      "line": "最后一轮。说完汉堡，谁也别想再点别的菜。"
+    },
+    {
+      "shot_id": "z10",
+      "duration": 10,
+      "speaker": "usagi",
+      "camera": "Medium shot of the LEFT lectern with the silver platter piled with cartoon hamburgers on top",
+      "action": "The rabbit pats the center of the lectern claiming the head seat, then raises a paw high above its own head marking someone tall, freezes mid-gesture fumbling the name with fingers flexing",
+      "line": "我坐哪儿？主位，正中间。我旁边就是那个四分卫，克莱姆森的，特雷……德肖恩？反正是个大个子，两百三十磅。"
+    },
+    {
+      "shot_id": "z11",
+      "duration": 7,
+      "speaker": "usagi",
+      "camera": "Close-up on the rabbit at the LEFT lectern",
+      "action": "The rabbit thrusts four spread fingers toward the opponent, jabs them forward again on the repeat, then flings the last word out toward the audience with its chin raised",
+      "line": "他一个人吃了四十个，全熟的，多加番茄酱。四十个，乔。"
+    },
+    {
+      "shot_id": "z12",
+      "duration": 4,
+      "speaker": "hachi",
+      "camera": "Quick medium shot of the center moderator desk",
+      "action": "The cat lifts a paw and looks at an imaginary wristwatch, deadpan",
+      "line": "十秒。"
+    },
+    {
+      "shot_id": "z13",
+      "duration": 5,
+      "speaker": "racco",
+      "camera": "Close-up on the otter at the RIGHT lectern",
+      "action": "The otter extends one finger pointing slightly left, then adds a second finger pointing slightly right, keeps both fingers hanging in the air, gaze locked forward, absolutely still afterward",
+      "line": "特雷，还是德肖恩？"
+    },
+    {
+      "shot_id": "z14",
+      "duration": 9,
+      "speaker": "hachi",
+      "camera": "Wide establishing shot of the full stage, all three characters visible",
+      "action": "The cat moderator stands up, draws a hard horizontal stop-line in the air with a paw, walks to the center point between the two lecterns facing the audience; the rabbit and otter keep glaring at each other",
+      "line": "到点了，两位。话筒还给导播——广告回来是天气预报。晚安。",
+      "in_frame": [
+        "hachi",
+        "usagi",
+        "racco"
+      ]
+    }
+  ],
+  "source_script": "examples/public_figure_packs/burger_debate_parody_v2.json",
+  "notes": "台词取自已过盲审的中文汉堡辩论剧本；分镜按15s上限拆分。"
+}
