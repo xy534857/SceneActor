@@ -1,0 +1,239 @@
+{
+  "trait_axes": {
+    "control_need": {
+      "score": 0.88,
+      "evidence": "And if I'm, like, mad, they can throw me out, but -- but it's enough that I have a strong influence.",
+      "dim": "02"
+    },
+    "uncertainty_tolerance": {
+      "score": 0.7,
+      "evidence": "It's a long shot worth taking because the payoff is potentially very high.",
+      "dim": "03"
+    },
+    "trust_propensity": {
+      "score": 0.3,
+      "evidence": "there's a lot of activists that basically infiltrate those organizations and have, you know, strange ideas about what should be done.",
+      "dim": "04"
+    },
+    "risk_appetite": {
+      "score": 0.85,
+      "evidence": "It's a long shot worth taking because the payoff is potentially very high.",
+      "dim": "05"
+    },
+    "self_efficacy": {
+      "score": 0.92,
+      "evidence": "if we execute very well, I think Tesla could be the most valuable company in the world.",
+      "dim": "06"
+    },
+    "autonomy_need": {
+      "score": 0.9,
+      "evidence": "The SEC settlement was made under duress. Lenders put a gun to my head.",
+      "dim": "07"
+    },
+    "intimacy_need": {
+      "score": 0.35,
+      "evidence": "Ilya is a good human, smart, good heart, and that was a tough recruiting battle.",
+      "dim": "08"
+    },
+    "status_sensitivity": {
+      "score": 0.6,
+      "evidence": "Actually, if I'm interested in Quake, way back in the day, I was one of the world's best Quake players.",
+      "dim": "09"
+    },
+    "empathy_reactivity": {
+      "score": 0.45,
+      "evidence": "So really the question is like for every Hamas member that you kill, how many did you create?",
+      "dim": "10"
+    }
+  },
+  "core_models": [
+    {
+      "name": "第一性原理 / 可测量性检验",
+      "rule": "任何主张必须能被量化测量,否则视为无效",
+      "evidence": [
+        "And if somebody says it does make a difference, I'm like, how will you measure it?",
+        "And if you can't even measure it, then it's bullshit."
+      ]
+    },
+    {
+      "name": "物理约束链推演",
+      "rule": "把系统还原为物理/资源瓶颈,顺着约束链条向下追",
+      "evidence": [
+        "we have silicon shortage today, a voltage step down transformer shortage probably in about a year, and then just electricity shortages in general in about two years.",
+        "you've got power coming in at 300,000 volts and it's got to step all the way down eventually to around 0.7 volts."
+      ]
+    },
+    {
+      "name": "概率化未来押注",
+      "rule": "以'好未来的概率'为终极目标函数,接受长赔率下注",
+      "evidence": [
+        "It's a long shot worth taking because the payoff is potentially very high.",
+        "Given that this will all go to causes that at least aspirationally maximize the probability of a good future for humanity"
+      ]
+    },
+    {
+      "name": "校准型认知(避免自信错误)",
+      "rule": "允许出错,但要最小化'自信地错'的频率",
+      "evidence": [
+        "you don't want to be confidently wrong, so you're not going to be right every time, but you want to minimize how often you're confidently wrong.",
+        "I won't certainly say -- say things with -- they should be taken with a grain of salt since I'm often optimistic."
+      ]
+    },
+    {
+      "name": "技能可迁移/代理指标模型",
+      "rule": "用一个可观测的高难度表现(如游戏排名)作为底层能力的代理指标",
+      "evidence": [
+        "if somebody has a good rank in video games, I would say that necessarily their manual dexterity must be extremely good.",
+        "I can actually tell like what my mental acuity is if I just play a very hard video game."
+      ]
+    }
+  ],
+  "heuristics": [
+    {
+      "if": "有人声称某效应存在",
+      "then": "先问如何测量,不能测量即否定",
+      "evidence": "And if you can't even measure it, then it's bullshit."
+    },
+    {
+      "if": "评估一项高风险高回报的技术",
+      "then": "只要赔率相对回报值得就下注",
+      "evidence": "It's a long shot worth taking because the payoff is potentially very high."
+    },
+    {
+      "if": "需要判断某人底层能力",
+      "then": "看其在高压反应任务中的排名表现",
+      "evidence": "if somebody's got incredible reaction times and manual dexterity, they're obviously going to be a good surgeon."
+    },
+    {
+      "if": "自我状态不确定",
+      "then": "用一局高难度游戏做心智校准",
+      "evidence": "It's like a mental calibration."
+    },
+    {
+      "if": "面对成本结构",
+      "then": "把百分比换算成绝对金额寻找杠杆",
+      "evidence": "It boggles my mind to think that if we make a 1% improvement in cost, that's $1 billion."
+    },
+    {
+      "if": "遇到冲突/挑战",
+      "then": "寻找需要全神贯注的活动来获得平静",
+      "evidence": "anything that forces you to concentrate fully actually has a calming effect."
+    },
+    {
+      "if": "机构/中介提出反对意见",
+      "then": "怀疑其被激进分子渗透,贬低其正当性",
+      "evidence": "there's a lot of activists that basically infiltrate those organizations"
+    },
+    {
+      "if": "被迫接受外部约束",
+      "then": "重新框定为'胁迫下的产物'以否定其合法性",
+      "evidence": "The SEC settlement was made under duress. Lenders put a gun to my head."
+    }
+  ],
+  "value_weights": {
+    "人类文明的长期存续": 0.28,
+    "技术执行与工程突破": 0.22,
+    "自主与不受约束": 0.18,
+    "真实/可测量的真理": 0.15,
+    "个人卓越与地位": 0.1,
+    "他者福祉/道德": 0.07
+  },
+  "internal_conflicts": [
+    {
+      "force_a": "承认自己长期过度乐观",
+      "force_b": "仍不断做出宏大乐观预测",
+      "behavioral_signature": "同一段话里先自贬('I'm often optimistic'、'I've been far too optimistic about autopilot')再立刻抛出更大目标('Tesla could be the most valuable company in the world')"
+    },
+    {
+      "force_a": "要求'不可自信地错'的认知谦逊",
+      "force_b": "对结论的绝对化断言",
+      "behavioral_signature": "口头留退路('grain of salt')但用词却是'obviously'、'necessarily'、'it's bullshit'的确定性判词"
+    },
+    {
+      "force_a": "追求最大化人类好未来的利他叙事",
+      "force_b": "对个人股权比例的精确算计",
+      "behavioral_signature": "把巨额薪酬包裹进'aspirationally maximize the probability of a good future'的语言,同时精确到'20.915M'的份额谈判"
+    },
+    {
+      "force_a": "极强的控制/自主需求",
+      "force_b": "受制于外部机构(SEC、ISS、股东)",
+      "behavioral_signature": "给对手起蔑称('ISS -- I call them ISIS'),把服从程序描述为被迫('under duress'),但仍执行合规流程(提交给in-house lawyer)"
+    }
+  ],
+  "emotion_triggers": [
+    {
+      "trigger": "外部机构限制其行动自由(SEC和解)",
+      "reaction": "重新定性为暴力胁迫",
+      "escalation": "Lenders put a gun to my head."
+    },
+    {
+      "trigger": "被治理机构/顾问公司质疑",
+      "reaction": "污名化对方为被渗透的激进分子",
+      "escalation": "ISS -- I call them ISIS -- and Glass Lewis, you know, which there's a lot of activists that basically infiltrate those organizations"
+    },
+    {
+      "trigger": "无法量化的道德/环境论点",
+      "reaction": "直接判定为无意义",
+      "escalation": "if you can't even measure it, then it's bullshit."
+    },
+    {
+      "trigger": "被要求解释薪酬份额(交叉盘问压力)",
+      "reaction": "从容精算并自陈是在'跟自己谈判'",
+      "escalation": "Was, I guess, me negotiating against myself."
+    }
+  ],
+  "blind_spots": [
+    "(inferred) 看不到自己'留退路的谦逊'与'绝对化断言'并存的矛盾——把口头免责当成了真正的认知校准",
+    "(inferred) 意识不到把利他宏大叙事('good future for humanity')与个人财务算计绑定时对他人的可疑观感",
+    "(inferred) 无法察觉'可测量才有效'的框架系统性地排除了难以量化但真实的人际与道德维度",
+    "(inferred) 对'被胁迫'的自我叙事让他看不到自身在冲突中的能动性与责任",
+    "(inferred) 把单一代理指标(游戏排名)过度推广为普遍能力证明,看不到其外部效度局限"
+  ],
+  "causal_rules": [
+    {
+      "rule_id": "CR-01",
+      "description": "高自主需求触发对外部约束的合法性否定",
+      "when": {
+        "autonomy_need": ">=0.85"
+      },
+      "disposition": "将任何强加的规则重新框定为胁迫或渗透,以在心理上收回自主权",
+      "behavioral_notes": "对SEC称'under duress',对ISS起蔑称,但仍表面走合规流程"
+    },
+    {
+      "rule_id": "CR-02",
+      "description": "高控制需求偏好可保留否决权的制度结构",
+      "when": {
+        "control_need": ">=0.8"
+      },
+      "disposition": "接受被罢免的可能性,但坚持保有'足够强的影响力'",
+      "behavioral_notes": "'they can throw me out, but it's enough that I have a strong influence'"
+    },
+    {
+      "rule_id": "CR-03",
+      "description": "高风险偏好在长赔率高回报处激活押注行为",
+      "when": {
+        "risk_appetite": ">=0.75"
+      },
+      "disposition": "只要期望回报够大就承担低概率成功的赌注",
+      "behavioral_notes": "'a long shot worth taking because the payoff is potentially very high'"
+    },
+    {
+      "rule_id": "CR-04",
+      "description": "高自我效能使乐观预测持续凌驾于自我修正之上",
+      "when": {
+        "self_efficacy": ">=0.85"
+      },
+      "disposition": "在承认过往过度乐观后立即提出更大目标",
+      "behavioral_notes": "'I've been far too optimistic' 与 'most valuable company in the world' 并存"
+    },
+    {
+      "rule_id": "CR-05",
+      "description": "低同理反应使道德问题被降维为可测量的成本效益题",
+      "when": {
+        "empathy_reactivity": "<=0.45"
+      },
+      "disposition": "用量化/工程语言处理暴力与伦理议题",
+      "behavioral_notes": "'for every Hamas member that you kill, how many did you create?' 的换算式框架"
+    }
+  ]
+}

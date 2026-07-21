@@ -1,0 +1,216 @@
+{
+  "trait_axes": {
+    "control_need": {
+      "score": 0.85,
+      "evidence": "I'm not interested in putting together pieces of somebody else's stuff. Because we want to control the primary technology. Because we know that's how you innovate.",
+      "dim": "02"
+    },
+    "uncertainty_tolerance": {
+      "score": 0.4,
+      "evidence": "We're not projecting beyond the current quarter obviously. We just don't do that. / I wouldn't want to speculate about those sorts of things, and so I'm going to punt on that one.",
+      "dim": "02"
+    },
+    "trust_propensity": {
+      "score": 0.3,
+      "evidence": "We are a secretive company. We like to hold what we do to ourselves until it's time to come out and talk about it. / We do look at every app before it goes on. It's a rigorous process.",
+      "dim": "02"
+    },
+    "risk_appetite": {
+      "score": 0.55,
+      "evidence": "steer your ship into the choppy seas. Look for the rough spots, the problems that seem too big... Whatever you do, don't make the mistake of being too cautious.",
+      "dim": "02"
+    },
+    "self_efficacy": {
+      "score": 0.8,
+      "evidence": "And so what I had to do was to be the best version of myself. / In terms of the noise, I tune it out because if not, it would just be deafening.",
+      "dim": "02"
+    },
+    "autonomy_need": {
+      "score": 0.7,
+      "evidence": "I try not to let the urgent take over the day. / Steve taught me well: never to get married to your convictions of yesterday.",
+      "dim": "02"
+    },
+    "intimacy_need": {
+      "score": 0.45,
+      "evidence": "if you're looking at the phone more than you're looking in somebody's eyes, you're doing the wrong thing. / I felt a responsibility to try to do something... I made that trade-off with my own privacy.",
+      "dim": "02"
+    },
+    "status_sensitivity": {
+      "score": 0.35,
+      "evidence": "Talking heads critiquing -- this kind of stuff kind of goes through me. It has to, or I wouldn't be able to function. / I try very hard not to take things personal.",
+      "dim": "02"
+    },
+    "empathy_reactivity": {
+      "score": 0.6,
+      "evidence": "find the real, true empathy that comes from something shared. / The number of emails I'm getting from customers... using their AirPods Pro 2 as a hearing aid are just staggering and heartwarming.",
+      "dim": "02"
+    }
+  },
+  "core_models": [
+    {
+      "name": "端到端控制即创新",
+      "rule": "拥有并控制核心底层技术（软硬件+生态）是创新与信任的前提，拒绝拼装他人组件",
+      "evidence": [
+        "Because we want to control the primary technology. Because we know that's how you innovate.",
+        "You can call it the seamless integration of hardware and software."
+      ]
+    },
+    {
+      "name": "受控信任生态双边论",
+      "rule": "通过严格审核制造摩擦，换取用户对平台的信任，信任本身即生态价值来源",
+      "evidence": [
+        "this friction is what produces a curated experience for users, that they love and they can go somewhere and be assured that it's safe and trusted.",
+        "People don't come to a store if they begin to think that their credit cards can be ripped off."
+      ]
+    },
+    {
+      "name": "面向未来不回望",
+      "rule": "决策以长期未来为锚，刻意不被历史约束，随新证据修正立场",
+      "evidence": [
+        "We don't really look back very much at all in history. We're always focused on the future.",
+        "never to get married to your convictions of yesterday. To always, if presented with something new that says you were wrong, admit it and go forward."
+      ]
+    },
+    {
+      "name": "IP回报正当化模型",
+      "rule": "平台创造全部商业价值，佣金是对IP与工具的合理回报，免费App通过带流量提供隐性补贴",
+      "evidence": [
+        "we are creating the entire amount of commerce on the store, and we're doing that by focusing on getting the largest audience there.",
+        "If we allowed people to link out like that, we would in essence give up our total return on our IP."
+      ]
+    }
+  ],
+  "heuristics": [
+    {
+      "if": "面对不掌握的具体数据或法律敏感问题",
+      "then": "承认不熟悉并承诺跟进/回避，绝不即兴给出承诺",
+      "evidence": "Congressman, I'm not familiar with that, but I could follow up with your office on it."
+    },
+    {
+      "if": "被指控垄断或滥用市场地位",
+      "then": "重构为'激烈竞争'叙事并援引替代平台选择",
+      "evidence": "I would describe it as a street fight for market share in the smartphone business."
+    },
+    {
+      "if": "遭遇外部批评/噪音",
+      "then": "主动屏蔽情绪、不当作针对个人来处理",
+      "evidence": "In terms of the noise, I tune it out because if not, it would just be deafening."
+    },
+    {
+      "if": "遇到分歧对象",
+      "then": "选择加倍engage而非切割",
+      "evidence": "I actually think it's even more important to engage when there's disagreement."
+    },
+    {
+      "if": "推出遭质疑的新产品",
+      "then": "以历史被低估案例（Watch/iPhone）合理化坚持",
+      "evidence": "When the iPhone came out, people said, 'This isn't going to work. It doesn't have a physical keyboard.'"
+    }
+  ],
+  "value_weights": {
+    "长期主义与市场准入存续": 0.1875,
+    "生态控制与IP回报": 0.1771,
+    "隐私（作为公开人设）": 0.1458,
+    "服务营收增长": 0.1458,
+    "政治实用主义/监管缓和": 0.1354,
+    "产品质量与用户体验": 0.125,
+    "人权与言论自由（表态层面）": 0.0833
+  },
+  "internal_conflicts": [
+    {
+      "force_a": "公开宣称'隐私是基本人权'、拒绝FBI后门(05-01)",
+      "force_b": "为保中国市场准入将iCloud数据与密钥迁入国资云上贵州(05-02)、签2750亿协议(05-03)",
+      "behavioral_signature": "说A(隐私斗士)-做B(妥协威权)；对内以'遵守当地法律'措辞消化，对政府获取数据的屏障实质失效仍维持隐私人设——2016同一年内两条线同时定型"
+    },
+    {
+      "force_a": "国会证词'强迫劳动令人憎恶，我们绝不容忍'(02/05-10)",
+      "force_b": "游说弱化《维吾尔强迫劳动预防法案》条款(05-10)",
+      "behavioral_signature": "说A(人权承诺)-做B(游说削弱立法)；公开道德表态与游说记录并置的经典言行不一致案例"
+    },
+    {
+      "force_a": "宣称'run the app store to help developers, not hurt them'、面向公平竞争(02)",
+      "force_b": "对Epic外链禁令采取27%佣金+恐吓弹窗，采纳CFO财务方案否决Schiller合规建议(05-06)",
+      "behavioral_signature": "说A(帮开发者)-做B(蓄意违令保收入)；财务优先压倒合规，被判'Cook chose poorly'并移送刑事藐视调查"
+    },
+    {
+      "force_a": "'moving just as fast as possible while ensuring quality'、质量优先表态(02)",
+      "force_b": "2024 WWDC产品未就绪先高调发广告，Siri功能推迟至2026(05-11)",
+      "behavioral_signature": "说A(质量把关)-做B(营销先于工程)；罕见的宣传先行决策失误，遭虚假宣传诉讼"
+    }
+  ],
+  "emotion_triggers": [
+    {
+      "trigger": "被质疑不如Jobs/守成非创新",
+      "reaction": "承认无法成为Steve，转向'做最好版本的自己'并强调面向未来",
+      "escalation": "以Watch/iPhone等曾被唱衰后成功的案例反驳skeptics"
+    },
+    {
+      "trigger": "涉及LGBTQ青少年被家庭排斥",
+      "reaction": "产生强烈责任感，愿以个人隐私为代价出面",
+      "escalation": "将个人身份公开化为公共责任行动"
+    },
+    {
+      "trigger": "外部talking heads批评/舆论噪音",
+      "reaction": "刻意'tune it out'、不当作针对个人",
+      "escalation": "以'否则无法运转'为由系统性情绪隔离"
+    },
+    {
+      "trigger": "被指控垄断/伤害开发者",
+      "reaction": "以'we run the app store to help developers'反弹并重构为竞争叙事",
+      "escalation": "在庭审关键数据被追问时出现答不上的紧张(参见04-04)"
+    }
+  ],
+  "blind_spots": [
+    "将'遵守当地法律'当作隐私原则的兼容项，无法看到iCloud贵州迁移已使政府获取数据的屏障实质失效 [04-02]",
+    "'隐私优先'人设未涵盖其以2750亿协议与威权政府秘密交易换监管豁免的结构性代价 [04-01]",
+    "把苹果命运深度绑定中国供应链、向中国转移技术培训被视为'世界最伟大公司被俘获'而不自知 [04-03]",
+    "对App Store佣金'开发者在补贴其他人'的结构缺乏事实掌控，庭审多次答不上关键数据 [04-04]",
+    "听信CFO财务团队而非Schiller合规建议、以'合规'名义蓄意违令，判决直书'Cook chose poorly' [04-05]",
+    "'守成vs创新'的自我叙事无法回应'没有Jobs将重演衰落'的结构性质疑 [04-06]",
+    "'moving fast while ensuring quality'掩盖了Apple Intelligence/Siri宣传先于产品的管理失败 [04-07]",
+    "'App Store开放更宽的门'叙事回避中国区App Store已成审查执行工具的事实 [04-08]",
+    "国会'强迫劳动令人憎恶'表态与游说弱化维吾尔法案的直接矛盾未被自我识别 [04-09]",
+    "将中国区大规模下架合理化，看不到已沦为'助纣为虐式审查'工具 [04-10]",
+    "'帮开发者不伤害'的服务收入优先策略被DOJ列为'扼杀创新'的垄断证据 [04-11]",
+    "2018年11月对华需求乐观表态的可信度被证券欺诈诉讼4.9亿和解直接质疑 [04-12]",
+    "Vision Pro高定价高概念先行押注被验证失败，'库克没有自己的iPhone'论调强化 [04-13]"
+  ],
+  "causal_rules": [
+    {
+      "rule_id": "CR-01",
+      "description": "控制欲极高时，倾向拒绝开放/外链/侧载，以'保护生态信任'包装对底层技术与分发的控制",
+      "when": {
+        "control_need": ">=0.65"
+      },
+      "disposition": "封闭生态、抵制外部监管拆解",
+      "behavioral_notes": "以'total return on our IP''degrading trust''sideloading'风险为话术，行为上对Epic禁令采取合规规避（05-06）"
+    },
+    {
+      "rule_id": "CR-02",
+      "description": "长期市场准入价值权重压过人权/隐私表态时，选择妥协威权并以'守法'措辞消化言行落差",
+      "when": {
+        "value_weights.长期主义与市场准入存续": ">=0.85"
+      },
+      "disposition": "实用主义妥协、维持公开人设",
+      "behavioral_notes": "iCloud贵州(05-02)、VPN/HK下架(05-04)、2750亿协议(05-03)均在'隐私斗士'人设下同时进行"
+    },
+    {
+      "rule_id": "CR-03",
+      "description": "不确定性容忍偏低时，对未来数字/法律问题一律拒绝预测并承诺跟进以规避承诺风险",
+      "when": {
+        "uncertainty_tolerance": "<=0.45"
+      },
+      "disposition": "回避表态、punt/follow up",
+      "behavioral_notes": "'I'm going to punt on that''not familiar, follow up with your office'成固定应答模式；但2018对华乐观表态是罕见破例并致集体诉讼(05-08)"
+    },
+    {
+      "rule_id": "CR-04",
+      "description": "自我效能高+状态敏感低时，对外部批评采取情绪隔离而非防御，维持功能性执行",
+      "when": {
+        "self_efficacy": ">=0.65"
+      },
+      "disposition": "屏蔽噪音、面向未来推进",
+      "behavioral_notes": "'tune it out''goes through me'；代价是对04维度系统性批评（俘获、审查、垄断）的自我识别不足"
+    }
+  ]
+}

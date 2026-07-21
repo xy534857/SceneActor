@@ -138,3 +138,38 @@ def test_compile_persona_carries_disclosure_for_multi_real():
     persona = compile_persona(blend, persona_id="c", name="c",
                               shell={"role": "x"})
     assert "虚构合成" in persona.extensions["required_disclosure"]
+
+
+def test_rules_from_specs_parse_and_fire():
+    from sceneactor.genome import rules_from_specs, DEFAULT_RULES, TRAIT_AXES
+    spec = {
+        "rule_id": "performative_dominance",
+        "description": "高地位敏感+高自我效能+低共情 → 表演式支配",
+        "when": {"status_sensitivity": ">=0.7", "self_efficacy": ">=0.7",
+                 "empathy_reactivity": "<=0.4"},
+        "disposition": "表演式支配",
+    }
+    rules = rules_from_specs([spec])
+    assert len(rules) == len(DEFAULT_RULES) + 1
+    axes = {a: 0.5 for a in TRAIT_AXES}
+    axes.update(status_sensitivity=0.9, self_efficacy=0.9, empathy_reactivity=0.2)
+    assert rules[-1].condition(axes)
+    axes["empathy_reactivity"] = 0.8
+    assert not rules[-1].condition(axes)
+
+
+def test_rules_from_specs_override_by_id():
+    from sceneactor.genome import rules_from_specs, DEFAULT_RULES
+    spec = {"rule_id": "micromanager", "description": "重定义",
+            "when": {"control_need": ">=0.9"}, "disposition": "新定势"}
+    rules = rules_from_specs([spec])
+    assert len(rules) == len(DEFAULT_RULES)
+    assert [r for r in rules if r.rule_id == "micromanager"][0].disposition == "新定势"
+
+
+def test_rules_from_specs_reject_bad_axis_or_expr():
+    from sceneactor.genome import rules_from_specs
+    with pytest.raises(GenomeError, match="unknown axis"):
+        rules_from_specs([{"rule_id": "x", "when": {"nope": ">=0.5"}, "disposition": "d"}])
+    with pytest.raises(GenomeError, match="bad expr"):
+        rules_from_specs([{"rule_id": "x", "when": {"control_need": ">0.5"}, "disposition": "d"}])

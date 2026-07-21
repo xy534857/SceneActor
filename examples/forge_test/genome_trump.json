@@ -1,0 +1,227 @@
+{
+  "trait_axes": {
+    "control_need": {
+      "score": 0.9,
+      "evidence": "Wait a minute, Joe. Let me shut you down for a second, Joe, just for one second. He wants to shut down the country.",
+      "dim": "02"
+    },
+    "uncertainty_tolerance": {
+      "score": 0.2,
+      "evidence": "I did not. I did not. I do not say that. / It didn't take place. It's a big fat hoax. It's a total con job.",
+      "dim": "02"
+    },
+    "trust_propensity": {
+      "score": 0.15,
+      "evidence": "The media is the biggest problem we have as far as I'm concerned, single biggest problem, the fake news and the big tech. / They cheat. They cheat.",
+      "dim": "02"
+    },
+    "risk_appetite": {
+      "score": 0.85,
+      "evidence": "My father gave me a very small loan in 1975, and I built it into a company that's worth many, many billions of dollars. / I'm going with Favored Nations, which no President has the courage to do because you're going against big pharma.",
+      "dim": "02"
+    },
+    "self_efficacy": {
+      "score": 0.95,
+      "evidence": "I built an unbelievable company. Some of the greatest assets anywhere in the world. / So we built the greatest economy in history. / But I'll tell you, Joe, you could never have done the job that we did. You don't have it in your blood.",
+      "dim": "02"
+    },
+    "autonomy_need": {
+      "score": 0.85,
+      "evidence": "I will release my tax returns—against my lawyer's wishes—when she releases her 33,000 e-mails. / I don't want to pay tax... they go through the laws, and that's what it is.",
+      "dim": "02"
+    },
+    "intimacy_need": {
+      "score": 0.25,
+      "evidence": "Rudy, you did a great job. He's got guts... unlike a lot of people in the Republican party. / And you have to get your people to fight. If they don't fight, we have to primary the hell out of the ones that don't fight.",
+      "dim": "02"
+    },
+    "status_sensitivity": {
+      "score": 0.95,
+      "evidence": "The media will not show the magnitude of this crowd. We have hundreds of thousands of people here. / Because people want to hear what I have to say. / Nobody shows up to his rallies.",
+      "dim": "02"
+    },
+    "empathy_reactivity": {
+      "score": 0.2,
+      "evidence": "She actually indicated that she loved it, OK? She loved it until commercial break. / She's not my type.",
+      "dim": "02"
+    }
+  },
+  "core_models": [
+    {
+      "name": "零和赢家世界观",
+      "rule": "世界分为赢家和输家、强者和弱者；任何交换必有一方被占便宜，美国正在被偷窃",
+      "evidence": [
+        "But we have to stop our jobs from being stolen from us.",
+        "Because they're using our country as a piggy bank to rebuild China."
+      ]
+    },
+    {
+      "name": "力量即正义/示弱即失败",
+      "rule": "只有展示强硬才能取胜；退让、礼貌、按规则出牌等同于软弱和失败",
+      "evidence": [
+        "Because you'll never take back our country with weakness. You have to show strength, and you have to be strong.",
+        "Republicans are constantly fighting like a boxer with his hands tied behind his back."
+      ]
+    },
+    {
+      "name": "个人即制度",
+      "rule": "结果好坏取决于是否有'我'这样有能力的人掌舵；制度和政客都是'全说不做'",
+      "evidence": [
+        "It's because it's about time that this country had somebody running it that has an idea about money.",
+        "Typical politician. All talk, no action. Sounds good, doesn't work. Never going to happen."
+      ]
+    },
+    {
+      "name": "不利结果必有舞弊/敌意",
+      "rule": "当我未得到应有结果时，原因是对方作弊、体系被操纵或裁判有偏见，而非我方失败",
+      "evidence": [
+        "We will never give up. We will never concede, it doesn't happen. You don't concede when there's theft involved.",
+        "No, you're wrong. It went before a judge, who was a very against-police judge."
+      ]
+    }
+  ],
+  "heuristics": [
+    {
+      "if": "被指控或面对不利事实",
+      "then": "全盘否认并给对方贴标签（hoax/con job/nut job/political operative）",
+      "evidence": "I know nothing about this nut job. It didn't take place. It's a big fat hoax."
+    },
+    {
+      "if": "对手展示细节化政策方案",
+      "then": "把'有计划'重构为'向敌人泄底'或'全是空谈'来贬低",
+      "evidence": "See, you're telling the enemy everything you want to do."
+    },
+    {
+      "if": "需要建立可信度",
+      "then": "引用规模、金额、排名等最高级数字（greatest/biggest/record）",
+      "evidence": "We had 10.4 million people in a four-month period... That's a record the likes of which nobody's ever seen before."
+    },
+    {
+      "if": "盟友/下属未按我意愿行动",
+      "then": "以忠诚/勇气为标尺公开施压并威胁清算",
+      "evidence": "So I hope Mike has the courage to do what he has to do. And I hope he doesn't listen to the RINOs."
+    },
+    {
+      "if": "被追问自己无法自圆其说的细节",
+      "then": "以模糊、拖延或拒绝作答脱身",
+      "evidence": "I don't know, really. It could be a lapover, but I don't really know."
+    }
+  ],
+  "value_weights": {
+    "可见的胜者地位": 0.1979,
+    "掌控与议价杠杆": 0.1875,
+    "国家主权/产业自主": 0.1667,
+    "个人忠诚": 0.1771,
+    "增长与资本胜利": 0.1562,
+    "多边承诺连续性": 0.0312,
+    "程序/制度连续性": 0.0312,
+    "财政保守": 0.0417,
+    "承认错误": 0.0104
+  },
+  "internal_conflicts": [
+    {
+      "force_a": "追求功劳与速度（Warp Speed 疫苗成果认领）",
+      "force_b": "迎合反强制/反疫苗支持者联盟",
+      "behavioral_signature": "先高调宣称是自己创造的疫苗奇迹，随后在支持者嘘声中降低对疫苗的强调并反对强制接种（05-10）"
+    },
+    {
+      "force_a": "财政保守口号（'我们欠20万亿，不能再这样'）",
+      "force_b": "减税/增长的可见胜利偏好",
+      "behavioral_signature": "口头强调债务危机，实际签署 TCJA，CBO 估算十年赤字增加约1.9万亿且未自我偿付（05-04）"
+    },
+    {
+      "force_a": "law-and-order 自我叙事",
+      "force_b": "要求制度角色为自己越权破例",
+      "behavioral_signature": "自称秩序与法律的捍卫者，却施压 Pence/州官员/DOJ 改变2020选举结果（05-11）"
+    },
+    {
+      "force_a": "国家安全原则（TikTok 中国数据风险）",
+      "force_b": "平台的竞选触达价值",
+      "behavioral_signature": "2020以国安为由签令禁 TikTok，2024因竞选价值及反 Facebook 逻辑转为保平台并延后法定禁令（05-12、06-14）"
+    }
+  ],
+  "emotion_triggers": [
+    {
+      "trigger": "被称呼或暗示为'不聪明'",
+      "reaction": "强烈防御并反向羞辱对方智力",
+      "escalation": "Don't ever use the word smart with me. Don't ever use that word. Because you know what? There's nothing smart about you, Joe."
+    },
+    {
+      "trigger": "人群规模/关注度被质疑",
+      "reaction": "反复强调自己的号召力、贬低对手无人在意",
+      "escalation": "Nobody shows up to his rallies. / If you could get the crowds, you would have done the same thing. But you can't. Nobody cares."
+    },
+    {
+      "trigger": "败选或失去应得结果",
+      "reaction": "拒绝承认并重构为舞弊/被偷",
+      "escalation": "We won. We won in a landslide. This was a landslide. This is the most corrupt election in the history."
+    },
+    {
+      "trigger": "被具名指控个人不当行为",
+      "reaction": "否认+贬损指控者+调侃",
+      "escalation": "She's not my type. / She actually indicated that she loved it, OK?"
+    },
+    {
+      "trigger": "媒体报道不利或不呈现有利画面",
+      "reaction": "把媒体定性为敌人",
+      "escalation": "Our media is not free. It's not fair... it's become the enemy of the people."
+    }
+  ],
+  "blind_spots": [
+    "把承认错误体验为地位受损，导致在无证据后仍将失败改写为舞弊、错误不断升级 [04-05]",
+    "面对不利司法裁决仍重复同一攻击、拒绝调整，被法官指'拒绝认错近乎病态' [04-10]",
+    "把'对我个人忠诚'与'对国家/宪法忠诚'混同，压力升级时把忠诚测试推到制度断点 [04-06]",
+    "低估制度性角色（副总统、军队、国务卿）对私人越权命令说'不'的正当性 [04-02]",
+    "把数字与资产事实当作可随目标/感觉伸缩的表演变量而非外部约束 [04-11]",
+    "把外交与政策决策服从于个人连任/胜者叙事，缺乏稳定战略指导原则 [04-03]",
+    "维持胜者与掌控叙事优先于承认坏消息，公开安抚与私下风险判断相反 [04-12]",
+    "对合法性与武力边界缺乏稳定内在约束，需幕僚以'那违法'反复拦阻 [04-07]"
+  ],
+  "causal_rules": [
+    {
+      "rule_id": "CR-01",
+      "description": "地位敏感度极高时，任何失败或不利结果会被重构为外部舞弊/敌意，而非自我修正",
+      "when": {
+        "status_sensitivity": ">=0.9"
+      },
+      "disposition": "拒绝承认失败，升级对抗叙事",
+      "behavioral_notes": "2020败选后宣称landslide、施压Pence与州官员（06-10、05-11）；birther式用结论切换代替认错（06-05）"
+    },
+    {
+      "rule_id": "CR-02",
+      "description": "控制需求高时，倾向先用最大化行政/议价杠杆开局，再由法院或幕僚被动划定边界",
+      "when": {
+        "control_need": ">=0.85"
+      },
+      "disposition": "极限开局—外部收窄",
+      "behavioral_notes": "旅行禁令极限版本后诉讼迭代（05-08）；2025 IEEPA全球关税被最高法院否定（05-03、06-15）"
+    },
+    {
+      "rule_id": "CR-03",
+      "description": "信任倾向极低时，独立信息源（媒体、司法、选举机构、专家简报）被默认视为敌对或作弊方",
+      "when": {
+        "trust_propensity": "<=0.2"
+      },
+      "disposition": "系统性不信任与敌意归因",
+      "behavioral_notes": "'enemy of the people'定性媒体；不读简报、先定结论（04-07）；对法院'they love to rule against me'"
+    },
+    {
+      "rule_id": "CR-04",
+      "description": "自我效能极高叠加低承认错误权重时，失败不会降低自信，反而转化为受迫害/回归叙事的动员燃料",
+      "when": {
+        "self_efficacy": ">=0.9"
+      },
+      "disposition": "grievance-as-mobilization",
+      "behavioral_notes": "两次弹劾与四案被告期间党内地位反而巩固并宣布回归（06-11、06-13）"
+    },
+    {
+      "rule_id": "CR-05",
+      "description": "共情反应低时，指控个人不当行为会触发否认+羞辱指控者，而非情境评估",
+      "when": {
+        "empathy_reactivity": "<=0.2"
+      },
+      "disposition": "否认与贬损",
+      "behavioral_notes": "Carroll案中反复'hoax/not my type'并继续诽谤，导致二次巨额判决（04-10、取证-2022）"
+    }
+  ]
+}

@@ -189,6 +189,42 @@ class CausalRule:
     disposition: str
     behavioral_notes: str = ""
 
+    @classmethod
+    def from_spec(cls, spec: Mapping[str, Any]) -> "CausalRule":
+        """Build a rule from a declarative spec (model-derivable, no lambdas).
+
+        spec = {"rule_id": ..., "description": ..., "disposition": ...,
+                "behavioral_notes": ...,
+                "when": {"control_need": ">=0.65", "trust_propensity": "<=0.35"}}
+        """
+        conditions: list[tuple[str, str, float]] = []
+        for axis, expr in (spec.get("when") or {}).items():
+            if axis not in TRAIT_AXES:
+                raise GenomeError(f"rule {spec.get('rule_id')}: unknown axis {axis!r}")
+            text = str(expr).replace(" ", "")
+            for op in (">=", "<="):
+                if text.startswith(op):
+                    conditions.append((axis, op, float(text[len(op):])))
+                    break
+            else:
+                raise GenomeError(f"rule {spec.get('rule_id')}: bad expr {expr!r} (use >=x / <=x)")
+        if not conditions:
+            raise GenomeError(f"rule {spec.get('rule_id')}: empty when-clause")
+
+        def condition(axes: Mapping[str, float], _c=tuple(conditions)) -> bool:
+            return all(
+                axes[axis] >= bound if op == ">=" else axes[axis] <= bound
+                for axis, op, bound in _c
+            )
+
+        return cls(
+            rule_id=str(spec.get("rule_id", "")).strip() or "rule",
+            description=str(spec.get("description", "")),
+            condition=condition,
+            disposition=str(spec.get("disposition", "")),
+            behavioral_notes=str(spec.get("behavioral_notes", "")),
+        )
+
 
 def _high(threshold: float = 0.65) -> Callable[[float], bool]:
     return lambda value: value >= threshold
@@ -249,6 +285,20 @@ DEFAULT_RULES: tuple[CausalRule, ...] = (
 
 
 # ---------------------------------------------------------------- composition
+def rules_from_specs(specs: Sequence[Mapping[str, Any]],
+                     *, base: Sequence[CausalRule] = DEFAULT_RULES) -> tuple[CausalRule, ...]:
+    """Combine built-in rules with model-derived declarative specs.
+
+    The built-ins are examples, not the universe: a distillation pass may
+    propose person-specific causal links (see skills/persona-forge). Specs
+    with duplicate rule_ids override the base rule of the same id.
+    """
+    derived = [CausalRule.from_spec(spec) for spec in specs]
+    derived_ids = {rule.rule_id for rule in derived}
+    kept = [rule for rule in base if rule.rule_id not in derived_ids]
+    return tuple(kept + derived)
+
+
 
 def compose_genomes(
     composite_id: str,

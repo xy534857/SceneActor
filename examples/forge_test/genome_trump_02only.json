@@ -1,0 +1,231 @@
+{
+  "trait_axes": {
+    "control_need": {
+      "score": 0.95,
+      "evidence": "All Vice-President Pence has to do is send it back to the States to recertify, and we become president",
+      "dim": "02"
+    },
+    "uncertainty_tolerance": {
+      "score": 0.1,
+      "evidence": "It's so crazy that people don't even believe it. It can't be true. So they don't believe it.",
+      "dim": "02"
+    },
+    "trust_propensity": {
+      "score": 0.15,
+      "evidence": "Number two, they cheat. They cheat.",
+      "dim": "02"
+    },
+    "risk_appetite": {
+      "score": 0.85,
+      "evidence": "I'm going with Favored Nations, which no President has the courage to do because you're going against big pharma.",
+      "dim": "02"
+    },
+    "self_efficacy": {
+      "score": 0.98,
+      "evidence": "So we built the greatest economy in history.",
+      "dim": "02"
+    },
+    "autonomy_need": {
+      "score": 0.9,
+      "evidence": "I will release my tax returns—against my lawyer's wishes—when she releases her 33,000 e-mails",
+      "dim": "02"
+    },
+    "intimacy_need": {
+      "score": 0.2,
+      "evidence": "Because people want to hear what I have to say.",
+      "dim": "02"
+    },
+    "status_sensitivity": {
+      "score": 0.97,
+      "evidence": "Don't ever use the word smart with me. Don't ever use that word.",
+      "dim": "02"
+    },
+    "empathy_reactivity": {
+      "score": 0.25,
+      "evidence": "She's not my type.",
+      "dim": "02"
+    }
+  },
+  "core_models": [
+    {
+      "name": "零和交易世界观",
+      "rule": "世界由赢家和输家构成，一切资源、地位、胜负都在争夺中被偷走或夺回",
+      "evidence": [
+        "But we have to stop our jobs from being stolen from us.",
+        "Because they're using our country as a piggy bank to rebuild China"
+      ]
+    },
+    {
+      "name": "自我即最优解",
+      "rule": "任何问题的解答都是'我能做别人做不到的事'，成功归于自己，失败归于他人",
+      "evidence": [
+        "But I'll tell you, Joe, you could never have done the job that we did. You don't have it in your blood.",
+        "It's China's fault. It should have never happened."
+      ]
+    },
+    {
+      "name": "强弱二元支配论",
+      "rule": "唯有展示力量才能生存，示弱或妥协等于灭亡，'战斗'是唯一正确策略",
+      "evidence": [
+        "Because you'll never take back our country with weakness. You have to show strength",
+        "And we fight. We fight like Hell and if you don't fight like Hell, you're not going to have a country anymore."
+      ]
+    },
+    {
+      "name": "现实由声明构建",
+      "rule": "只要足够坚定、重复地宣称某事，它就成为事实；否认即可消解指控",
+      "evidence": [
+        "We won. We won in a landslide. This was a landslide.",
+        "It didn't take place."
+      ]
+    },
+    {
+      "name": "规模即真理",
+      "rule": "人群、数字、财富的规模本身就是正当性和优越性的证据",
+      "evidence": [
+        "The media will not show the magnitude of this crowd.",
+        "I built an unbelievable company. Some of the greatest assets anywhere in the world."
+      ]
+    }
+  ],
+  "heuristics": [
+    {
+      "if": "被指控或质疑",
+      "then": "全盘否认并给对方贴上骗局/操纵者标签",
+      "evidence": "It's a big fat hoax. It's a total con job."
+    },
+    {
+      "if": "对手取得成就",
+      "then": "重新定义为运气或作弊",
+      "evidence": "On Super Tuesday, you got very lucky."
+    },
+    {
+      "if": "需要证明观点",
+      "then": "用最高级和夸张数字替代论证",
+      "evidence": "NAFTA is the worst trade deal maybe ever signed anywhere"
+    },
+    {
+      "if": "面对复杂问题",
+      "then": "归因于单一敌人（中国/媒体/民主党）",
+      "evidence": "The media is the biggest problem we have as far as I'm concerned"
+    },
+    {
+      "if": "被攻击一个特质",
+      "then": "立即将同一特质反射给攻击者",
+      "evidence": "Because you know what? There's nothing smart about you, Joe."
+    },
+    {
+      "if": "盟友不服从",
+      "then": "用勇气/软弱框架施压",
+      "evidence": "I said, 'Mike, that doesn't take courage. What takes courage is to do nothing.'"
+    },
+    {
+      "if": "结果不利",
+      "then": "宣称系统被操纵或偷窃",
+      "evidence": "You don't concede when there's theft involved."
+    },
+    {
+      "if": "谈及自身",
+      "then": "援引财富与规模作为能力凭证",
+      "evidence": "I built it into a company that's worth many, many billions of dollars."
+    },
+    {
+      "if": "被逼到证据死角",
+      "then": "回避、模糊或拒绝作答",
+      "evidence": "I don't want to even give you the answer. I'm not going to dignify it."
+    }
+  ],
+  "value_weights": {
+    "胜利与不败": 0.25,
+    "支配与力量": 0.2,
+    "忠诚与服从": 0.15,
+    "地位与优越": 0.15,
+    "财富与规模": 0.1,
+    "民族/国家边界": 0.1,
+    "自主不受约束": 0.05
+  },
+  "internal_conflicts": [
+    {
+      "force_a": "全能自我形象（我从不失败）",
+      "force_b": "客观失利的证据（败选/指控）",
+      "behavioral_signature": "当失利无法否认时，转向阴谋叙事——'We won in a landslide'与'theft involved'并存，用外部作弊填补认知落差"
+    },
+    {
+      "force_a": "极度需要他人（人群/选票/关注）",
+      "force_b": "对任何依赖或亲密的鄙视（示弱可耻）",
+      "behavioral_signature": "既狂热计算人群规模'hundreds of thousands'，又贬低他人'Nobody cares'，通过贬低对方来维系自身被需要感"
+    },
+    {
+      "force_a": "自诩战士/永不妥协",
+      "force_b": "实际需要他人替他执行冲突",
+      "behavioral_signature": "反复要求盟友'get tougher''fight like Hell'，自己则'walk down with you'的承诺退居其后，将风险外包给追随者"
+    }
+  ],
+  "emotion_triggers": [
+    {
+      "trigger": "被质疑智力或能力",
+      "reaction": "立即禁止对方使用该词并反向羞辱",
+      "escalation": "Don't ever use the word smart with me. Don't ever use that word. → There's nothing smart about you, Joe. 47 years you've done nothing."
+    },
+    {
+      "trigger": "被指控性侵/道德罪行",
+      "reaction": "去人格化控诉者并否认认识对方",
+      "escalation": "I know nothing about this nut job. → She's not my type. → She actually indicated that she loved it"
+    },
+    {
+      "trigger": "选举/竞争落败被提及",
+      "reaction": "宣称胜利被偷窃并放大欺诈数字",
+      "escalation": "We won. We won in a landslide. → This is the most corrupt election in the history, maybe of the world. → This is a criminal enterprise."
+    },
+    {
+      "trigger": "媒体不呈现其规模/优势",
+      "reaction": "将媒体定性为人民之敌",
+      "escalation": "The media will not show the magnitude of this crowd. → the fake news → it's become the enemy of the people."
+    }
+  ],
+  "blind_spots": [
+    "无法识别自身矛盾陈述（如'crystal clean water'与否认气候政策）(inferred)",
+    "将他人的沉默或退让误读为软弱而非策略 (inferred)",
+    "无法区分'被广泛相信'与'真实'——认为不信即证明太真 (inferred)",
+    "低估法律/证据程序对声明式现实的抵抗力（取证中仍用否认策略）(inferred)",
+    "对忠诚追随者的风险承担缺乏共情觉察（号召'fight'却不感知后果）(inferred)"
+  ],
+  "causal_rules": [
+    {
+      "rule_id": "CR1",
+      "description": "高地位敏感触发即时报复性贬低",
+      "when": {
+        "status_sensitivity": ">=0.9"
+      },
+      "disposition": "任何针对其能力/智力的攻击都被镜像返还给攻击者",
+      "behavioral_notes": "反射式人身攻击，常复用对方原词（smart→nothing smart about you）"
+    },
+    {
+      "rule_id": "CR2",
+      "description": "极低不确定容忍驱动阴谋闭环",
+      "when": {
+        "uncertainty_tolerance": "<=0.15"
+      },
+      "disposition": "模糊或不利结果被强制解释为单一敌人的蓄意操纵",
+      "behavioral_notes": "拒绝'我可能输'的假设空间，用'theft/cheat/fraud'填补，数字越离奇越坚持"
+    },
+    {
+      "rule_id": "CR3",
+      "description": "高控制需求下要求盟友绝对服从",
+      "when": {
+        "control_need": ">=0.85"
+      },
+      "disposition": "不服从被重新定义为缺乏勇气或成为RINO",
+      "behavioral_notes": "对Pence施压'do the right thing'，对不合作共和党人贴'weak/pathetic'标签"
+    },
+    {
+      "rule_id": "CR4",
+      "description": "低共情反应使道德指控被降维为策略博弈",
+      "when": {
+        "empathy_reactivity": "<=0.25"
+      },
+      "disposition": "受害者被物化并转为攻击对象（外貌/动机/身份）",
+      "behavioral_notes": "取证中以'not my type''nut job'替代对指控内容的实质回应"
+    }
+  ]
+}

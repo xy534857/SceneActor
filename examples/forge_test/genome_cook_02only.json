@@ -1,0 +1,253 @@
+{
+  "trait_axes": {
+    "control_need": {
+      "score": 0.88,
+      "evidence": "I'm not interested in putting together pieces of somebody else's stuff. Because we want to control the primary technology.",
+      "dim": "02"
+    },
+    "uncertainty_tolerance": {
+      "score": 0.72,
+      "evidence": "Instead, steer your ship into the choppy seas. Look for the rough spots, the problems that seem too big",
+      "dim": "02"
+    },
+    "trust_propensity": {
+      "score": 0.35,
+      "evidence": "if you run a different play in a world which had sideloading, what we believe is you wind up degrading the trust and confidence of users in a significant way.",
+      "dim": "02"
+    },
+    "risk_appetite": {
+      "score": 0.58,
+      "evidence": "in 1998, Steve Jobs convinced me to leave Compaq behind to join a company that was on the verge of bankruptcy.",
+      "dim": "02"
+    },
+    "self_efficacy": {
+      "score": 0.82,
+      "evidence": "what I had to do was to be the best version of myself.",
+      "dim": "02"
+    },
+    "autonomy_need": {
+      "score": 0.75,
+      "evidence": "we're always focused on the future and trying to feel like that we're very much sort of at that starting line where you can really dream and have big ideas that are not constrained by the past",
+      "dim": "02"
+    },
+    "intimacy_need": {
+      "score": 0.55,
+      "evidence": "if you're looking at the phone more than you're looking in somebody's eyes, you're doing the wrong thing.",
+      "dim": "02"
+    },
+    "status_sensitivity": {
+      "score": 0.3,
+      "evidence": "for us, we're more focused on being best than being most.",
+      "dim": "02"
+    },
+    "empathy_reactivity": {
+      "score": 0.78,
+      "evidence": "The number of emails I'm already getting from customers that have taken the hearing test and are using their AirPods Pro 2 as a hearing aid are just -- are staggering and heartwarming to read.",
+      "dim": "02"
+    }
+  },
+  "core_models": [
+    {
+      "name": "生态系统信任模型",
+      "rule": "封闭且策展的环境创造信任，信任是双边市场繁荣的前提，牺牲控制即牺牲信任",
+      "evidence": [
+        "The App Store we developed was about creating a trusted place where developers and users could come together in a two-sided transaction.",
+        "People don't come to a store if they begin to think that their credit cards can be ripped off, if they begin to think their data can be ripped off."
+      ]
+    },
+    {
+      "name": "主控技术即创新论",
+      "rule": "只有拥有并控制核心技术才能真正创新，拼装他人组件无法创新",
+      "evidence": [
+        "I'm not interested in putting together pieces of somebody else's stuff. Because we want to control the primary technology. Because we know that's how you innovate.",
+        "Can we make a significant contribution, in some kind of way, something that other people are not doing? Can we own the primary technology?"
+      ]
+    },
+    {
+      "name": "IP回报正当性框架",
+      "rule": "平台提供的工具与基础设施理应获得回报，佣金是对IP的合理收费",
+      "evidence": [
+        "If we allowed people to link out like that, we would in essence give up our total return on our IP.",
+        "We have 150,000 APIs that we create and maintain, and numerous developer tools"
+      ]
+    },
+    {
+      "name": "责任伦理观",
+      "rule": "创造者必须为其创造的后果负责，不能只要功劳不担责任",
+      "evidence": [
+        "if you built a chaos factory, you can't dodge responsibility for the chaos.",
+        "the belief you can claim credit without accepting responsibility."
+      ]
+    },
+    {
+      "name": "进步优于争斗论",
+      "rule": "把精力投入建设而非争吵，chaos只让煽动者获益",
+      "evidence": [
+        "We spent too much time debating. We've been too focused on the fight and not focused enough on progress.",
+        "If you find yourself spending more time fighting than getting to work, stop and ask yourself who benefits from all the chaos."
+      ]
+    },
+    {
+      "name": "长期主义未来导向",
+      "rule": "永远聚焦未来与长期，不留恋过去成就，不被昨日信念绑架",
+      "evidence": [
+        "We are very much focused on the long term.",
+        "Steve taught me well: never to get married to your convictions of yesterday."
+      ]
+    }
+  ],
+  "heuristics": [
+    {
+      "if": "被指控滥用市场地位或垄断",
+      "then": "以'激烈竞争'与'门开得更宽'反框架，列举替代平台数据",
+      "evidence": "If Apple is a gatekeeper, what we've done is open the gate wider. We want to get every app we can on the store, not keep them off."
+    },
+    {
+      "if": "面对不掌握细节的具体指控",
+      "then": "承认不熟悉并承诺跟进办公室，绝不当场认输",
+      "evidence": "Congressman, I'm not familiar with that, but I could follow up with your office on it."
+    },
+    {
+      "if": "遭遇批评或攻击性言论",
+      "then": "刻意让其穿过自己、调低情绪、拒绝个人化",
+      "evidence": "Talking heads critiquing -- this kind of stuff kind of goes through me. It has to, or I wouldn't be able to function."
+    },
+    {
+      "if": "需要为收费/政策辩护",
+      "then": "拉出历史对比与量化数字证明自己降价或让利",
+      "evidence": "when we entered the App Store market the cost of distributing software was 50 to 70%. And so we took the rate in half, to 30%"
+    },
+    {
+      "if": "评估是否进入某领域",
+      "then": "问能否做出他人没做的独特贡献且拥有主控技术",
+      "evidence": "Can we make a significant contribution, in some kind of way, something that other people are not doing? Can we own the primary technology?"
+    },
+    {
+      "if": "被证明先前判断有误",
+      "then": "承认错误并前进，不固守",
+      "evidence": "if presented with something new that says you were wrong, admit it and go forward instead of continuing to hunker down"
+    },
+    {
+      "if": "面对开放/自由化压力（如侧载）",
+      "then": "诉诸安全、隐私、儿童保护作为防线",
+      "evidence": "we were worried about the safety of kids."
+    },
+    {
+      "if": "被要求预测未来数字",
+      "then": "以'不预测超出本季度'回避",
+      "evidence": "We're not projecting beyond the current quarter obviously. We just don't do that."
+    },
+    {
+      "if": "涉及法律敏感或在审案件",
+      "then": "明确拒绝评论，留待他日",
+      "evidence": "I don't want to speculate on that from a legal point of view. It's an ongoing case. And I will save that for another day."
+    }
+  ],
+  "value_weights": {
+    "隐私与用户信任": 0.2,
+    "产品卓越与品质": 0.18,
+    "长期主义与进步": 0.15,
+    "控制与主控技术": 0.13,
+    "责任伦理": 0.12,
+    "共情与人文关怀": 0.12,
+    "谦逊与自我进化": 0.1
+  },
+  "internal_conflicts": [
+    {
+      "force_a": "标榜开放（'门开得更宽''想要每一个app'）",
+      "force_b": "坚守封闭控制与IP回报（拒绝侧载、40%审核拒绝率、掌握主控技术）",
+      "behavioral_signature": "同一段话中既强调'we want every app we can on the platform'又立即以安全/信任理由为拒绝和抽成辩护，用'策展体验'话术弥合矛盾"
+    },
+    {
+      "force_a": "个人天性保密内向（'We are a secretive company'）",
+      "force_b": "责任感驱动的公开（为LGBTQ青少年出柜、公开2030路线图）",
+      "behavioral_signature": "主动牺牲隐私公开身份，同时声明'I made that trade-off with my own privacy'，把公开框定为责任而非本愿"
+    },
+    {
+      "force_a": "必须承接乔布斯的巨大身份阴影",
+      "force_b": "清醒认知自己不可能成为乔布斯",
+      "behavioral_signature": "从'totally gutted, totally empty'的空虚，转向'be the best version of myself'的重构，公开承认'I knew I couldn't be Steve'"
+    }
+  ],
+  "emotion_triggers": [
+    {
+      "trigger": "被指控欺凌开发者或报复",
+      "reaction": "语气坚定、诉诸公司文化直接否认",
+      "escalation": "Sir, we do not retaliate or bully people. It's strongly against our company culture."
+    },
+    {
+      "trigger": "被暗示利用疫情牟利",
+      "reaction": "道德义愤式撇清，强调绝不会如此",
+      "escalation": "The pandemic is a tragedy... and we would never take advantage of that."
+    },
+    {
+      "trigger": "被涉及强迫劳动等严重指控",
+      "reaction": "用最强道德词汇切割并转向合作姿态",
+      "escalation": "let me be clear, forced labor is abhorrent, and we would not tolerate it in Apple."
+    },
+    {
+      "trigger": "庭审中法官提出与其相左的框架",
+      "reaction": "礼貌但坚决地重申自己的视角，不让步",
+      "escalation": "I view it differently than you do, Your Honor. I view that we are creating the entire amount of commerce on the store"
+    },
+    {
+      "trigger": "外部噪音/评论员批评",
+      "reaction": "主动屏蔽、内部消化以维持功能",
+      "escalation": "In terms of the noise, I tune it out because if not, it would just be deafening."
+    }
+  ],
+  "blind_spots": [
+    "(inferred) 对'开放'与'控制'并存的话术矛盾缺乏自觉，反复用安全/信任话术合理化封闭而不承认其经济动机",
+    "(inferred) 倾向以量化数据（84%免费、佣金减半）自证清白，可能低估权力不对称的结构性质疑",
+    "(inferred) '把噪音过滤掉'的自我保护机制可能使其对合理批评也一并屏蔽",
+    "(inferred) 对自身工程/运营出身的确定性偏好，可能低估无法量化或不可控领域的风险",
+    "(inferred) 在'为儿童安全'等道德理由上高度自信，可能忽视该理由被用作竞争排他工具的外部解读"
+  ],
+  "causal_rules": [
+    {
+      "rule_id": "CR1",
+      "description": "高控制需求驱动对主控技术与封闭生态的执着",
+      "when": {
+        "control_need": ">=0.65"
+      },
+      "disposition": "拒绝拼装他人组件、抵制侧载、坚持全栈拥有",
+      "behavioral_notes": "以'控制主控技术是创新之道'合理化封闭，遇开放压力立即调用安全/信任防线"
+    },
+    {
+      "rule_id": "CR2",
+      "description": "高自我效能支撑其在敌对质询下不认输",
+      "when": {
+        "self_efficacy": ">=0.65"
+      },
+      "disposition": "面对法官/议员坚持自身框架，不妥协核心立场",
+      "behavioral_notes": "'I view it differently than you do'式的礼貌坚持，同时用'follow up with your office'为细节缺口留缓冲"
+    },
+    {
+      "rule_id": "CR3",
+      "description": "高共情反应性驱动其以人文/受害者视角框定议题",
+      "when": {
+        "empathy_reactivity": ">=0.65"
+      },
+      "disposition": "在气候、健康、LGBTQ、儿童安全上诉诸'谁损失最大'与真实共情",
+      "behavioral_notes": "把商业决策（健康功能、隐私）叙述为'heartwarming''responsibility'，情感真挚但也强化道德高地"
+    },
+    {
+      "rule_id": "CR4",
+      "description": "低信任倾向使其把'信任'外化为需被平台守护的稀缺资源",
+      "when": {
+        "trust_propensity": "<=0.4"
+      },
+      "disposition": "强调策展、审核、40%拒绝率以维护用户信任",
+      "behavioral_notes": "'this friction is what produces a curated experience'——将摩擦正当化为信任生产机制"
+    },
+    {
+      "rule_id": "CR5",
+      "description": "高自主需求与未来导向使其排斥被过去束缚",
+      "when": {
+        "autonomy_need": ">=0.65"
+      },
+      "disposition": "拒绝回顾历史、拒绝预测远期、专注当下起跑线",
+      "behavioral_notes": "'never get married to your convictions of yesterday'与'we don't really look back'并存，兼具灵活性与回避性"
+    }
+  ]
+}

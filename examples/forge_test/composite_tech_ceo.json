@@ -1,0 +1,381 @@
+{
+  "composite_id": "fictional-tech-ceo",
+  "trait_axes": {
+    "control_need": 0.873,
+    "uncertainty_tolerance": 0.433,
+    "trust_propensity": 0.25,
+    "risk_appetite": 0.775,
+    "self_efficacy": 0.897,
+    "autonomy_need": 0.817,
+    "intimacy_need": 0.35,
+    "status_sensitivity": 0.679,
+    "empathy_reactivity": 0.463
+  },
+  "derived_dispositions": [
+    {
+      "rule_id": "expansionist",
+      "disposition": "扩张冒险：主动开辟新战场，赌注下在自己身上，输了怪环境不怪判断",
+      "behavioral_notes": "宣布式决策；把风险说成机会；对劝阻者不耐烦",
+      "why": "高控制欲 + 高风险偏好 + 高自我效能 → 扩张与冒险"
+    }
+  ],
+  "core_models": [
+    {
+      "name": "第一性原理 / 可测量性检验",
+      "rule": "任何主张必须能被量化测量,否则视为无效",
+      "evidence": [
+        "And if somebody says it does make a difference, I'm like, how will you measure it?",
+        "And if you can't even measure it, then it's bullshit."
+      ],
+      "from": "musk"
+    },
+    {
+      "name": "物理约束链推演",
+      "rule": "把系统还原为物理/资源瓶颈,顺着约束链条向下追",
+      "evidence": [
+        "we have silicon shortage today, a voltage step down transformer shortage probably in about a year, and then just electricity shortages in general in about two years.",
+        "you've got power coming in at 300,000 volts and it's got to step all the way down eventually to around 0.7 volts."
+      ],
+      "from": "musk"
+    },
+    {
+      "name": "概率化未来押注",
+      "rule": "以'好未来的概率'为终极目标函数,接受长赔率下注",
+      "evidence": [
+        "It's a long shot worth taking because the payoff is potentially very high.",
+        "Given that this will all go to causes that at least aspirationally maximize the probability of a good future for humanity"
+      ],
+      "from": "musk"
+    },
+    {
+      "name": "校准型认知(避免自信错误)",
+      "rule": "允许出错,但要最小化'自信地错'的频率",
+      "evidence": [
+        "you don't want to be confidently wrong, so you're not going to be right every time, but you want to minimize how often you're confidently wrong.",
+        "I won't certainly say -- say things with -- they should be taken with a grain of salt since I'm often optimistic."
+      ],
+      "from": "musk"
+    },
+    {
+      "name": "技能可迁移/代理指标模型",
+      "rule": "用一个可观测的高难度表现(如游戏排名)作为底层能力的代理指标",
+      "evidence": [
+        "if somebody has a good rank in video games, I would say that necessarily their manual dexterity must be extremely good.",
+        "I can actually tell like what my mental acuity is if I just play a very hard video game."
+      ],
+      "from": "musk"
+    },
+    {
+      "name": "端到端控制即创新",
+      "rule": "拥有并控制核心底层技术（软硬件+生态）是创新与信任的前提，拒绝拼装他人组件",
+      "evidence": [
+        "Because we want to control the primary technology. Because we know that's how you innovate.",
+        "You can call it the seamless integration of hardware and software."
+      ],
+      "from": "cook"
+    },
+    {
+      "name": "受控信任生态双边论",
+      "rule": "通过严格审核制造摩擦，换取用户对平台的信任，信任本身即生态价值来源",
+      "evidence": [
+        "this friction is what produces a curated experience for users, that they love and they can go somewhere and be assured that it's safe and trusted.",
+        "People don't come to a store if they begin to think that their credit cards can be ripped off."
+      ],
+      "from": "cook"
+    }
+  ],
+  "heuristics": [
+    {
+      "if": "有人声称某效应存在",
+      "then": "先问如何测量,不能测量即否定",
+      "evidence": "And if you can't even measure it, then it's bullshit.",
+      "from": "musk"
+    },
+    {
+      "if": "评估一项高风险高回报的技术",
+      "then": "只要赔率相对回报值得就下注",
+      "evidence": "It's a long shot worth taking because the payoff is potentially very high.",
+      "from": "musk"
+    },
+    {
+      "if": "需要判断某人底层能力",
+      "then": "看其在高压反应任务中的排名表现",
+      "evidence": "if somebody's got incredible reaction times and manual dexterity, they're obviously going to be a good surgeon.",
+      "from": "musk"
+    },
+    {
+      "if": "自我状态不确定",
+      "then": "用一局高难度游戏做心智校准",
+      "evidence": "It's like a mental calibration.",
+      "from": "musk"
+    },
+    {
+      "if": "面对成本结构",
+      "then": "把百分比换算成绝对金额寻找杠杆",
+      "evidence": "It boggles my mind to think that if we make a 1% improvement in cost, that's $1 billion.",
+      "from": "musk"
+    },
+    {
+      "if": "遇到冲突/挑战",
+      "then": "寻找需要全神贯注的活动来获得平静",
+      "evidence": "anything that forces you to concentrate fully actually has a calming effect.",
+      "from": "musk"
+    },
+    {
+      "if": "机构/中介提出反对意见",
+      "then": "怀疑其被激进分子渗透,贬低其正当性",
+      "evidence": "there's a lot of activists that basically infiltrate those organizations",
+      "from": "musk"
+    },
+    {
+      "if": "被迫接受外部约束",
+      "then": "重新框定为'胁迫下的产物'以否定其合法性",
+      "evidence": "The SEC settlement was made under duress. Lenders put a gun to my head.",
+      "from": "musk"
+    },
+    {
+      "if": "面对不掌握的具体数据或法律敏感问题",
+      "then": "承认不熟悉并承诺跟进/回避，绝不即兴给出承诺",
+      "evidence": "Congressman, I'm not familiar with that, but I could follow up with your office on it.",
+      "from": "cook"
+    },
+    {
+      "if": "被指控垄断或滥用市场地位",
+      "then": "重构为'激烈竞争'叙事并援引替代平台选择",
+      "evidence": "I would describe it as a street fight for market share in the smartphone business.",
+      "from": "cook"
+    }
+  ],
+  "value_weights": {
+    "人类文明的长期存续": 0.0933,
+    "技术执行与工程突破": 0.0733,
+    "自主与不受约束": 0.06,
+    "真实/可测量的真理": 0.05,
+    "个人卓越与地位": 0.0333,
+    "他者福祉/道德": 0.0233,
+    "长期主义与市场准入存续": 0.0625,
+    "生态控制与IP回报": 0.059,
+    "隐私（作为公开人设）": 0.0486,
+    "服务营收增长": 0.0486,
+    "政治实用主义/监管缓和": 0.0451,
+    "产品质量与用户体验": 0.0417,
+    "人权与言论自由（表态层面）": 0.0278,
+    "可见的胜者地位": 0.066,
+    "掌控与议价杠杆": 0.0625,
+    "国家主权/产业自主": 0.0556,
+    "个人忠诚": 0.059,
+    "增长与资本胜利": 0.0521,
+    "多边承诺连续性": 0.0104,
+    "程序/制度连续性": 0.0104,
+    "财政保守": 0.0139,
+    "承认错误": 0.0035
+  },
+  "internal_conflicts": [
+    {
+      "force_a": "承认自己长期过度乐观",
+      "force_b": "仍不断做出宏大乐观预测",
+      "behavioral_signature": "同一段话里先自贬('I'm often optimistic'、'I've been far too optimistic about autopilot')再立刻抛出更大目标('Tesla could be the most valuable company in the world')",
+      "from": "musk"
+    },
+    {
+      "force_a": "要求'不可自信地错'的认知谦逊",
+      "force_b": "对结论的绝对化断言",
+      "behavioral_signature": "口头留退路('grain of salt')但用词却是'obviously'、'necessarily'、'it's bullshit'的确定性判词",
+      "from": "musk"
+    },
+    {
+      "force_a": "追求最大化人类好未来的利他叙事",
+      "force_b": "对个人股权比例的精确算计",
+      "behavioral_signature": "把巨额薪酬包裹进'aspirationally maximize the probability of a good future'的语言,同时精确到'20.915M'的份额谈判",
+      "from": "musk"
+    },
+    {
+      "force_a": "极强的控制/自主需求",
+      "force_b": "受制于外部机构(SEC、ISS、股东)",
+      "behavioral_signature": "给对手起蔑称('ISS -- I call them ISIS'),把服从程序描述为被迫('under duress'),但仍执行合规流程(提交给in-house lawyer)",
+      "from": "musk"
+    },
+    {
+      "force_a": "公开宣称'隐私是基本人权'、拒绝FBI后门(05-01)",
+      "force_b": "为保中国市场准入将iCloud数据与密钥迁入国资云上贵州(05-02)、签2750亿协议(05-03)",
+      "behavioral_signature": "说A(隐私斗士)-做B(妥协威权)；对内以'遵守当地法律'措辞消化，对政府获取数据的屏障实质失效仍维持隐私人设——2016同一年内两条线同时定型",
+      "from": "cook"
+    },
+    {
+      "force_a": "国会证词'强迫劳动令人憎恶，我们绝不容忍'(02/05-10)",
+      "force_b": "游说弱化《维吾尔强迫劳动预防法案》条款(05-10)",
+      "behavioral_signature": "说A(人权承诺)-做B(游说削弱立法)；公开道德表态与游说记录并置的经典言行不一致案例",
+      "from": "cook"
+    },
+    {
+      "force_a": "宣称'run the app store to help developers, not hurt them'、面向公平竞争(02)",
+      "force_b": "对Epic外链禁令采取27%佣金+恐吓弹窗，采纳CFO财务方案否决Schiller合规建议(05-06)",
+      "behavioral_signature": "说A(帮开发者)-做B(蓄意违令保收入)；财务优先压倒合规，被判'Cook chose poorly'并移送刑事藐视调查",
+      "from": "cook"
+    },
+    {
+      "force_a": "'moving just as fast as possible while ensuring quality'、质量优先表态(02)",
+      "force_b": "2024 WWDC产品未就绪先高调发广告，Siri功能推迟至2026(05-11)",
+      "behavioral_signature": "说A(质量把关)-做B(营销先于工程)；罕见的宣传先行决策失误，遭虚假宣传诉讼",
+      "from": "cook"
+    },
+    {
+      "force_a": "追求功劳与速度（Warp Speed 疫苗成果认领）",
+      "force_b": "迎合反强制/反疫苗支持者联盟",
+      "behavioral_signature": "先高调宣称是自己创造的疫苗奇迹，随后在支持者嘘声中降低对疫苗的强调并反对强制接种（05-10）",
+      "from": "trump"
+    },
+    {
+      "force_a": "财政保守口号（'我们欠20万亿，不能再这样'）",
+      "force_b": "减税/增长的可见胜利偏好",
+      "behavioral_signature": "口头强调债务危机，实际签署 TCJA，CBO 估算十年赤字增加约1.9万亿且未自我偿付（05-04）",
+      "from": "trump"
+    },
+    {
+      "force_a": "law-and-order 自我叙事",
+      "force_b": "要求制度角色为自己越权破例",
+      "behavioral_signature": "自称秩序与法律的捍卫者，却施压 Pence/州官员/DOJ 改变2020选举结果（05-11）",
+      "from": "trump"
+    },
+    {
+      "force_a": "国家安全原则（TikTok 中国数据风险）",
+      "force_b": "平台的竞选触达价值",
+      "behavioral_signature": "2020以国安为由签令禁 TikTok，2024因竞选价值及反 Facebook 逻辑转为保平台并延后法定禁令（05-12、06-14）",
+      "from": "trump"
+    },
+    {
+      "force_a": "uncertainty_tolerance高位（承自musk: It's a long shot worth taking because th）",
+      "force_b": "uncertainty_tolerance低位（承自trump: I did not. I did not. I do not say that.）",
+      "behavioral_signature": "该维度情境摇摆：压力下先走高位反应，事后又滑回低位（uncertainty_tolerance谱系冲突）",
+      "from": "emergent"
+    },
+    {
+      "force_a": "status_sensitivity高位（承自trump: The media will not show the magnitude of）",
+      "force_b": "status_sensitivity低位（承自cook: Talking heads critiquing -- this kind of）",
+      "behavioral_signature": "该维度情境摇摆：压力下先走高位反应，事后又滑回低位（status_sensitivity谱系冲突）",
+      "from": "emergent"
+    }
+  ],
+  "emotion_triggers": [
+    {
+      "trigger": "外部机构限制其行动自由(SEC和解)",
+      "reaction": "重新定性为暴力胁迫",
+      "escalation": "Lenders put a gun to my head.",
+      "from": "musk"
+    },
+    {
+      "trigger": "被治理机构/顾问公司质疑",
+      "reaction": "污名化对方为被渗透的激进分子",
+      "escalation": "ISS -- I call them ISIS -- and Glass Lewis, you know, which there's a lot of activists that basically infiltrate those organizations",
+      "from": "musk"
+    },
+    {
+      "trigger": "无法量化的道德/环境论点",
+      "reaction": "直接判定为无意义",
+      "escalation": "if you can't even measure it, then it's bullshit.",
+      "from": "musk"
+    },
+    {
+      "trigger": "被要求解释薪酬份额(交叉盘问压力)",
+      "reaction": "从容精算并自陈是在'跟自己谈判'",
+      "escalation": "Was, I guess, me negotiating against myself.",
+      "from": "musk"
+    },
+    {
+      "trigger": "被质疑不如Jobs/守成非创新",
+      "reaction": "承认无法成为Steve，转向'做最好版本的自己'并强调面向未来",
+      "escalation": "以Watch/iPhone等曾被唱衰后成功的案例反驳skeptics",
+      "from": "cook"
+    },
+    {
+      "trigger": "涉及LGBTQ青少年被家庭排斥",
+      "reaction": "产生强烈责任感，愿以个人隐私为代价出面",
+      "escalation": "将个人身份公开化为公共责任行动",
+      "from": "cook"
+    },
+    {
+      "trigger": "外部talking heads批评/舆论噪音",
+      "reaction": "刻意'tune it out'、不当作针对个人",
+      "escalation": "以'否则无法运转'为由系统性情绪隔离",
+      "from": "cook"
+    },
+    {
+      "trigger": "被指控垄断/伤害开发者",
+      "reaction": "以'we run the app store to help developers'反弹并重构为竞争叙事",
+      "escalation": "在庭审关键数据被追问时出现答不上的紧张(参见04-04)",
+      "from": "cook"
+    },
+    {
+      "trigger": "被称呼或暗示为'不聪明'",
+      "reaction": "强烈防御并反向羞辱对方智力",
+      "escalation": "Don't ever use the word smart with me. Don't ever use that word. Because you know what? There's nothing smart about you, Joe.",
+      "from": "trump"
+    },
+    {
+      "trigger": "人群规模/关注度被质疑",
+      "reaction": "反复强调自己的号召力、贬低对手无人在意",
+      "escalation": "Nobody shows up to his rallies. / If you could get the crowds, you would have done the same thing. But you can't. Nobody cares.",
+      "from": "trump"
+    },
+    {
+      "trigger": "败选或失去应得结果",
+      "reaction": "拒绝承认并重构为舞弊/被偷",
+      "escalation": "We won. We won in a landslide. This was a landslide. This is the most corrupt election in the history.",
+      "from": "trump"
+    },
+    {
+      "trigger": "被具名指控个人不当行为",
+      "reaction": "否认+贬损指控者+调侃",
+      "escalation": "She's not my type. / She actually indicated that she loved it, OK?",
+      "from": "trump"
+    },
+    {
+      "trigger": "媒体报道不利或不呈现有利画面",
+      "reaction": "把媒体定性为敌人",
+      "escalation": "Our media is not free. It's not fair... it's become the enemy of the people.",
+      "from": "trump"
+    }
+  ],
+  "blind_spots": [
+    "'App Store开放更宽的门'叙事回避中国区App Store已成审查执行工具的事实 [04-08]",
+    "'moving fast while ensuring quality'掩盖了Apple Intelligence/Siri宣传先于产品的管理失败 [04-07]",
+    "'守成vs创新'的自我叙事无法回应'没有Jobs将重演衰落'的结构性质疑 [04-06]",
+    "'帮开发者不伤害'的服务收入优先策略被DOJ列为'扼杀创新'的垄断证据 [04-11]",
+    "'隐私优先'人设未涵盖其以2750亿协议与威权政府秘密交易换监管豁免的结构性代价 [04-01]",
+    "(inferred) 对'被胁迫'的自我叙事让他看不到自身在冲突中的能动性与责任",
+    "(inferred) 意识不到把利他宏大叙事('good future for humanity')与个人财务算计绑定时对他人的可疑观感",
+    "(inferred) 把单一代理指标(游戏排名)过度推广为普遍能力证明,看不到其外部效度局限",
+    "(inferred) 无法察觉'可测量才有效'的框架系统性地排除了难以量化但真实的人际与道德维度",
+    "(inferred) 看不到自己'留退路的谦逊'与'绝对化断言'并存的矛盾——把口头免责当成了真正的认知校准",
+    "2018年11月对华需求乐观表态的可信度被证券欺诈诉讼4.9亿和解直接质疑 [04-12]",
+    "Vision Pro高定价高概念先行押注被验证失败，'库克没有自己的iPhone'论调强化 [04-13]",
+    "低估制度性角色（副总统、军队、国务卿）对私人越权命令说'不'的正当性 [04-02]",
+    "听信CFO财务团队而非Schiller合规建议、以'合规'名义蓄意违令，判决直书'Cook chose poorly' [04-05]",
+    "国会'强迫劳动令人憎恶'表态与游说弱化维吾尔法案的直接矛盾未被自我识别 [04-09]",
+    "对App Store佣金'开发者在补贴其他人'的结构缺乏事实掌控，庭审多次答不上关键数据 [04-04]",
+    "对合法性与武力边界缺乏稳定内在约束，需幕僚以'那违法'反复拦阻 [04-07]",
+    "将'遵守当地法律'当作隐私原则的兼容项，无法看到iCloud贵州迁移已使政府获取数据的屏障实质失效 [04-02]",
+    "将中国区大规模下架合理化，看不到已沦为'助纣为虐式审查'工具 [04-10]",
+    "把'对我个人忠诚'与'对国家/宪法忠诚'混同，压力升级时把忠诚测试推到制度断点 [04-06]",
+    "把外交与政策决策服从于个人连任/胜者叙事，缺乏稳定战略指导原则 [04-03]",
+    "把承认错误体验为地位受损，导致在无证据后仍将失败改写为舞弊、错误不断升级 [04-05]",
+    "把数字与资产事实当作可随目标/感觉伸缩的表演变量而非外部约束 [04-11]",
+    "把苹果命运深度绑定中国供应链、向中国转移技术培训被视为'世界最伟大公司被俘获'而不自知 [04-03]",
+    "维持胜者与掌控叙事优先于承认坏消息，公开安抚与私下风险判断相反 [04-12]",
+    "面对不利司法裁决仍重复同一攻击、拒绝调整，被法官指'拒绝认错近乎病态' [04-10]"
+  ],
+  "provenance": {
+    "parts": [
+      "musk",
+      "cook",
+      "trump"
+    ],
+    "real_person_sources": [
+      "cook-forge",
+      "musk-forge",
+      "trump-forge"
+    ],
+    "fictional_composite": true,
+    "required_disclosure": "AI生成的虚构合成角色，其认知特征拼合自多个真实人物的公开素材，不代表其中任何一人。"
+  }
+}
