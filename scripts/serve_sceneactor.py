@@ -361,6 +361,10 @@ class Handler(BaseHTTPRequestHandler):
         chat_model = str(body.get("model") or args.chat_model)
         chat_fallback = str(body.get("fallback_model") or args.chat_fallback)
         search_enabled = bool(body.get("search", False))
+        verbosity = str(body.get("verbosity") or "interview")
+        if verbosity not in ("brief", "interview", "deep"):
+            self._send(400, {"error": "verbosity must be one of: brief, interview, deep"})
+            return
         try:
             session = ChatSession(
                 record=record,
@@ -369,6 +373,7 @@ class Handler(BaseHTTPRequestHandler):
                 scene=str(body.get("scene") or ""),
                 lang=str(body.get("lang") or ""),
                 search_enabled=search_enabled,
+                verbosity=verbosity,
             )
         except (ValueError, KeyError) as exc:
             self._send(422, {"error": f"session build failed: {exc}"})

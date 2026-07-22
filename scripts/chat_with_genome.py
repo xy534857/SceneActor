@@ -41,6 +41,8 @@ parser.add_argument("--gateway-url", default="http://161.118.219.11:8081/v1")
 parser.add_argument("--gateway-key", default="")
 parser.add_argument("--lang", default="", help="force output language, e.g. zh-CN / en-US")
 parser.add_argument("--search", action="store_true", help="enable web grounding for time-sensitive questions")
+parser.add_argument("--verbosity", default="interview", choices=["brief", "interview", "deep"],
+                    help="reply density: brief=short banter, interview=default long-form, deep=full paragraphs")
 parser.add_argument("--transcript", default="")
 args = parser.parse_args()
 
@@ -75,6 +77,7 @@ session = ChatSession(
     scene=args.scene,
     lang=args.lang,
     search_enabled=args.search,
+    verbosity=args.verbosity,
 )
 
 print(f"[{session.disclosure}]")

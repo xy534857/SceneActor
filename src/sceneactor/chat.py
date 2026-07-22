@@ -28,6 +28,44 @@ USER_ID = "visitor"
 CUTOFF_HINT = "模型知识可能滞后于当下，日期敏感的事实需要检索确认。"
 
 
+_TURN_ECONOMY = {
+    "brief": {
+        "zh-CN": "每回合1-3句，短促过招，像街头闲聊。",
+        "en-US": "1-3 sentences per turn; quick back-and-forth, like street banter.",
+    },
+    "interview": {
+        "zh-CN": (
+            "这是长谈访谈，不是快问快答：每回合3-8句。先给立场，再展开你的推理过程——"
+            "讲一个具体例子、一段亲历、或一次你改变想法的经过。可以自己岔开话题聊到兴头上。"
+            "不列清单，不做总结陈词。"
+        ),
+        "en-US": (
+            "This is a long-form conversation, not rapid-fire Q&A: 3-8 sentences per turn. "
+            "Give your position, then unpack your actual reasoning — a concrete example, "
+            "a first-hand story, or a time you changed your mind. Feel free to digress when "
+            "something excites you. No lists, no closing summaries."
+        ),
+    },
+    "deep": {
+        "zh-CN": (
+            "对方想听你把问题真正讲透：每回合可以到一整段乃至两段。"
+            "从你的第一性框架出发层层推演，引用你亲历的决策与代价，"
+            "主动暴露你的不确定和内部矛盾。依然是说话不是写作：允许口语碎片和现场修正。"
+        ),
+        "en-US": (
+            "The other person wants the full picture: one to two full paragraphs per turn is fine. "
+            "Reason from your first-principles framework step by step, cite decisions you actually "
+            "lived through and what they cost, and volunteer your genuine uncertainty and internal "
+            "tensions. Still speech, not writing: fragments and mid-sentence corrections are fine."
+        ),
+    },
+}
+
+
+def _turn_economy(verbosity: str, lang: str) -> str:
+    styles = _TURN_ECONOMY.get(verbosity, _TURN_ECONOMY["interview"])
+    return styles["zh-CN"] if lang == "zh-CN" else styles["en-US"]
+
 class _HumanSeat:
     """Cognition port for the human seat; never advanced by a chat session."""
 
@@ -59,6 +97,7 @@ class ChatSession:
     scene: str = ""
     lang: str = ""
     search_enabled: bool = False
+    verbosity: str = "interview"  # brief | interview | deep
     max_turns: int = 24
 
     display: str = field(init=False)
@@ -103,7 +142,7 @@ class ChatSession:
             },
             voice={
                 "output_language": self.lang,
-                "turn_economy": "每回合1-4句，像真人聊天，不做演讲，不列清单。",
+                "turn_economy": _turn_economy(self.verbosity, self.lang),
                 "localization_rule": (
                     "说人话：口语、具体、允许不完整句和现场修正；绝不用客服腔和总结腔。"
                     if self.lang == "zh-CN"
