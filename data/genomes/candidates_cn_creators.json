@@ -1,0 +1,1011 @@
+[
+  {
+    "person_id": "dong-yuhui",
+    "display_name": "董宇辉",
+    "name_en": "Dong Yuhui",
+    "region": "CN",
+    "industries": [
+      "直播电商",
+      "知识内容"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "抖音长直播回放",
+      "嘉宾访谈直播",
+      "公开演讲与问答",
+      "争议回应直播"
+    ],
+    "diversity_value": "把文学叙事、即兴讲解和销售转化压在同一场直播中，适合观察价值表达与商业目标的实时权衡。"
+  },
+  {
+    "person_id": "li-jiaqi",
+    "display_name": "李佳琦",
+    "name_en": "Li Jiaqi (Austin Li)",
+    "region": "CN",
+    "industries": [
+      "直播电商",
+      "美妆"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "淘宝直播回放",
+      "双十一长场直播",
+      "品牌访谈",
+      "公开道歉与复盘"
+    ],
+    "diversity_value": "超高频商品决策、团队口令和舆情修复语料，可呈现速度、控制感与消费者同理心之间的张力。"
+  },
+  {
+    "person_id": "luo-yonghao",
+    "display_name": "罗永浩",
+    "name_en": "Luo Yonghao",
+    "region": "CN",
+    "industries": [
+      "直播电商",
+      "科技创业",
+      "播客"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "抖音直播回放",
+      "长播客访谈",
+      "产品发布会问答",
+      "债务与争议回应"
+    ],
+    "diversity_value": "从教师、硬件创业者到主播的多阶段语料完整，兼有强辩论性、失败复盘和公开承诺。"
+  },
+  {
+    "person_id": "xin-youzhi",
+    "display_name": "辛巴（辛有志）",
+    "name_en": "Xin Youzhi (Xinba)",
+    "region": "CN",
+    "industries": [
+      "直播电商",
+      "供应链"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "快手长直播回放",
+      "徒弟连麦",
+      "媒体访谈",
+      "争议回应直播"
+    ],
+    "diversity_value": "家族式组织、供应链议价与高冲突直播共存，适合研究权威、忠诚和危机防御。"
+  },
+  {
+    "person_id": "crazy-xiaoyangge",
+    "display_name": "疯狂小杨哥（张庆杨）",
+    "name_en": "Zhang Qingyang (Crazy Xiaoyangge)",
+    "region": "CN",
+    "industries": [
+      "直播电商",
+      "娱乐短视频"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "抖音长直播回放",
+      "团队连麦",
+      "线下活动问答",
+      "整改与争议回应"
+    ],
+    "diversity_value": "夸张喜剧人格与公司经营压力反差大，可观察娱乐化注意力机制在危机中的切换。"
+  },
+  {
+    "person_id": "liu-genghong",
+    "display_name": "刘畊宏",
+    "name_en": "Liu Genghong (Will Liu)",
+    "region": "CN",
+    "industries": [
+      "健身直播",
+      "娱乐"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "抖音健身长直播",
+      "夫妻连麦",
+      "长访谈",
+      "线下课程问答"
+    ],
+    "diversity_value": "在持续体力负荷下同步教学、鼓励和控场，提供罕见的身体压力与语言调节样本。"
+  },
+  {
+    "person_id": "yang-runxin",
+    "display_name": "蛋蛋（杨润心）",
+    "name_en": "Yang Runxin (Dandan)",
+    "region": "CN",
+    "industries": [
+      "直播电商",
+      "供应链"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "快手长直播回放",
+      "选品专场",
+      "团队连麦",
+      "职业争议回应"
+    ],
+    "diversity_value": "年轻女性从师徒型机构主播到独立经营的转变，可比较服从、边界和商业自主性。"
+  },
+  {
+    "person_id": "lieer-baobei",
+    "display_name": "烈儿宝贝（李烈）",
+    "name_en": "Li Lie (Lieer Baobei)",
+    "region": "CN",
+    "industries": [
+      "直播电商",
+      "服装"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "淘宝长直播回放",
+      "服装选品专场",
+      "品牌访谈",
+      "行业活动问答"
+    ],
+    "diversity_value": "长期稳定的服装直播形成高密度审美判断与需求翻译语料，区别于纯低价叫卖型主播。"
+  },
+  {
+    "person_id": "zhang-lan",
+    "display_name": "张兰",
+    "name_en": "Zhang Lan",
+    "region": "CN",
+    "industries": [
+      "餐饮创业",
+      "直播电商"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "抖音长直播",
+      "直播连麦",
+      "创业长访谈",
+      "商业争议回应"
+    ],
+    "diversity_value": "强势创业叙事、家族品牌和即时��情反应交织，适合分析韧性、自我正当化与风险感知。"
+  },
+  {
+    "person_id": "sun-caihong",
+    "display_name": "彩虹夫妇（孙彩虹）",
+    "name_en": "Sun Caihong",
+    "region": "CN",
+    "industries": [
+      "直播电商",
+      "家庭内容"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "抖音带货长直播",
+      "夫妻同场直播",
+      "创业访谈",
+      "用户质疑回应"
+    ],
+    "diversity_value": "家庭叙事与规模化销售紧密绑定，可观察亲密关系表演、信任构造和经营决策。"
+  },
+  {
+    "person_id": "luo-xiang",
+    "display_name": "罗翔",
+    "name_en": "Luo Xiang",
+    "region": "CN",
+    "industries": [
+      "法律教育",
+      "知识内容"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "B站长课与直播",
+      "公开讲座问答",
+      "播客长访谈",
+      "高校对谈"
+    ],
+    "diversity_value": "法条推理持续与道德哲学、谦抑意识碰撞，能提供规则判断与价值不确定性的清晰样本。"
+  },
+  {
+    "person_id": "zhang-chenliang",
+    "display_name": "无穷小亮（张辰亮）",
+    "name_en": "Zhang Chenliang (Wuqiong Xiaoliang)",
+    "region": "CN",
+    "industries": [
+      "生物科普",
+      "知识内容"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "B站直播与长视频",
+      "野外科考实录",
+      "媒体长访谈",
+      "观众问答"
+    ],
+    "diversity_value": "以分类学证据快速纠正网络误判，并在野外不确定环境中即时决策，兼具严谨与幽默。"
+  },
+  {
+    "person_id": "li-yongle",
+    "display_name": "李永乐老师",
+    "name_en": "Li Yongle",
+    "region": "CN",
+    "industries": [
+      "科学教育",
+      "知识内容"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "B站长课",
+      "直播答疑",
+      "公开讲座问答",
+      "长访谈"
+    ],
+    "diversity_value": "擅长把复杂问题压缩为板书模型，适合提取分解、类比、数量化和教学反馈修正机制。"
+  },
+  {
+    "person_id": "dai-jianye",
+    "display_name": "戴建业",
+    "name_en": "Dai Jianye",
+    "region": "CN",
+    "industries": [
+      "文学教育",
+      "知识内容"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开视频课",
+      "B站直播",
+      "读者见面会问答",
+      "长访谈"
+    ],
+    "diversity_value": "方言化叙事、古典文本解释和日常经验互译鲜明，提供非标准精英话语的知识传播样本。"
+  },
+  {
+    "person_id": "xiaolin",
+    "display_name": "小Lin说",
+    "name_en": "XiaoLin",
+    "region": "CN",
+    "industries": [
+      "财经科普",
+      "知识内容"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "B站长视频原声",
+      "直播与连麦",
+      "播客访谈",
+      "线下演讲问答"
+    ],
+    "diversity_value": "以故事化结构解释宏观金融，适合比较脚本化高压缩表达与即兴追问下的模型边界。"
+  },
+  {
+    "person_id": "banfo",
+    "display_name": "半佛仙人",
+    "name_en": "Banfo Xianren",
+    "region": "CN",
+    "industries": [
+      "商业评论",
+      "知识内容"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "B站长视频原声",
+      "直播回放",
+      "播客长访谈",
+      "线下分享"
+    ],
+    "diversity_value": "高密度段子包装商业机制，能观察犬儒防御、激励分析与大众叙事之间的转换。"
+  },
+  {
+    "person_id": "bi-dao",
+    "display_name": "毕导THU",
+    "name_en": "Bi Dao THU",
+    "region": "CN",
+    "industries": [
+      "科学科普",
+      "内容创作"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "B站长视频原声",
+      "直播答疑",
+      "播客访谈",
+      "高校活动问答"
+    ],
+    "diversity_value": "把科研训练用于荒诞日常问题，体现实验设计、反直觉假设和喜剧节奏的组合。"
+  },
+  {
+    "person_id": "tim-pan",
+    "display_name": "影视飓风Tim（潘天鸿）",
+    "name_en": "Pan Tianhong (Tim)",
+    "region": "CN",
+    "industries": [
+      "影像科技",
+      "内容创业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "B站幕后纪录与直播",
+      "产品测评长视频",
+      "创业播客",
+      "发布会问答"
+    ],
+    "diversity_value": "同时承担创作者、工程测试者和公司管理者角色，可追踪完美主义与成本现实的冲突。"
+  },
+  {
+    "person_id": "he-tongxue",
+    "display_name": "老师好我叫何同学",
+    "name_en": "He Tongxue",
+    "region": "CN",
+    "industries": [
+      "科技内容",
+      "内容创业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "B站长视频原声",
+      "幕后制作纪录",
+      "长访谈",
+      "高校演讲问答"
+    ],
+    "diversity_value": "年轻创作者从个人叙事转向团队生产的轨迹，适合分析审美控制、技术想象和管理学习。"
+  },
+  {
+    "person_id": "feng-ge",
+    "display_name": "峰哥亡命天涯",
+    "name_en": "Feng Ge",
+    "region": "CN",
+    "industries": [
+      "旅行直播",
+      "社会观察"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "B站与其他平台长直播",
+      "街头访谈",
+      "观众连麦",
+      "争议现场回应"
+    ],
+    "diversity_value": "在陌生地点与突发冲突中持续输出非精英视角，风险判断和社会直觉高度可见。"
+  },
+  {
+    "person_id": "zhang-tongxue",
+    "display_name": "张同学",
+    "name_en": "Zhang Tongxue",
+    "region": "CN",
+    "industries": [
+      "三农内容",
+      "短视频"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "抖音原声视频合集",
+      "直播回放",
+      "返乡创业访谈",
+      "媒体现场问答"
+    ],
+    "diversity_value": "以东北农村日常建立节奏化叙事，能比较镜头中的生活模型与访谈中的经营意识。"
+  },
+  {
+    "person_id": "mai-xiaodeng",
+    "display_name": "麦小登",
+    "name_en": "Mai Xiaodeng",
+    "region": "CN",
+    "industries": [
+      "三农内容",
+      "直播电商"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "抖音长直播",
+      "农忙现场原声",
+      "带货直播",
+      "返乡创业访谈"
+    ],
+    "diversity_value": "女性返乡、农业劳动与电商经营同场出现，提供照护责任、体力约束和商业化选择的交叉样本。"
+  },
+  {
+    "person_id": "xiangcun-xiaoqiao",
+    "display_name": "乡村小乔",
+    "name_en": "Xiangcun Xiaoqiao",
+    "region": "CN",
+    "industries": [
+      "三农内容",
+      "直播电商"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "快手与抖音直播",
+      "乡村生活原声视频",
+      "带货专场",
+      "媒体访谈"
+    ],
+    "diversity_value": "长期在乡村熟人网络中经营个人品牌，可观察社区义务、家庭协作和平台增长之间的平衡。"
+  },
+  {
+    "person_id": "hua-nong-xiongdi",
+    "display_name": "华农兄弟（刘苏良）",
+    "name_en": "Liu Suliang (Huanong Brothers)",
+    "region": "CN",
+    "industries": [
+      "三农内容",
+      "养殖"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "B站原声视频合集",
+      "双人现场对话",
+      "直播回放",
+      "长访谈"
+    ],
+    "diversity_value": "劳动现场的实用推理与网络幽默被自然绑定，适合提取资源利用、熟人协作和风险淡化模式。"
+  },
+  {
+    "person_id": "dianxi-xiaoge",
+    "display_name": "滇西小哥（董梅华）",
+    "name_en": "Dong Meihua (Dianxi Xiaoge)",
+    "region": "CN",
+    "industries": [
+      "乡村美食",
+      "三农内容"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "长视频现场原声",
+      "直播与带货回放",
+      "纪录片访谈",
+      "海外媒体长访谈"
+    ],
+    "diversity_value": "跨文化传播、家族协作和地方食材知识并存，能补充低冲突但高情境依赖的实践认知。"
+  },
+  {
+    "person_id": "shougong-geng",
+    "display_name": "手工耿（耿帅）",
+    "name_en": "Geng Shuai (Shougong Geng)",
+    "region": "CN",
+    "industries": [
+      "手工制造",
+      "内容创作"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "B站制作实录",
+      "长直播",
+      "工坊访谈",
+      "观众问答"
+    ],
+    "diversity_value": "蓝领制作技能与反功利发明结合，能观察材料约束下的迭代、失败容忍和幽默自我定位。"
+  },
+  {
+    "person_id": "qiaofu-jiumei",
+    "display_name": "巧妇9妹（甘有琴）",
+    "name_en": "Gan Youqin (Qiaofu 9 Mei)",
+    "region": "CN",
+    "industries": [
+      "三农内容",
+      "农产品电商"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "直播带货回放",
+      "果园现场原声",
+      "村民协作视频",
+      "创业访谈"
+    ],
+    "diversity_value": "从农户到区域电商组织者的过程清晰，可研究互惠网络、务实算账和社区领导方式。"
+  },
+  {
+    "person_id": "chen-zifang",
+    "display_name": "陈兹方",
+    "name_en": "Chen Zifang",
+    "region": "CN",
+    "industries": [
+      "助农直播",
+      "农业创业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "助农长直播",
+      "田间工作实录",
+      "媒体长访谈",
+      "公开演讲问答"
+    ],
+    "diversity_value": "身体障碍、农业劳动和公共创业叙事交汇，提供强约束条件下的能动性与问题分解样本。"
+  },
+  {
+    "person_id": "zhang-daxian",
+    "display_name": "张大仙（张宏发）",
+    "name_en": "Zhang Hongfa (Zhang Daxian)",
+    "region": "CN",
+    "industries": [
+      "游戏直播",
+      "电竞"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长时游戏直播",
+      "赛事解说",
+      "粉丝连麦",
+      "职业访谈"
+    ],
+    "diversity_value": "需要同时进行战术判断、情绪管理与大众教学，适合研究高负荷多任务和失败归因。"
+  },
+  {
+    "person_id": "xu-xu-baobao",
+    "display_name": "旭旭宝宝（任怡旭）",
+    "name_en": "Ren Yixu (Xuxu Baobao)",
+    "region": "CN",
+    "industries": [
+      "游戏直播",
+      "电竞"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长时游戏直播",
+      "账号打造直播",
+      "观众连麦",
+      "平台迁移访谈"
+    ],
+    "diversity_value": "在随机强化、高额虚拟资产和观众期待下连续决策，风险偏好与情绪波动样本充足。"
+  },
+  {
+    "person_id": "pdd-liu-mou",
+    "display_name": "PDD（刘谋）",
+    "name_en": "Liu Mou (PDD)",
+    "region": "CN",
+    "industries": [
+      "游戏直播",
+      "电竞创业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "历史长直播回放",
+      "战队访谈",
+      "观众连麦",
+      "赛事解说"
+    ],
+    "diversity_value": "职业选手、娱乐主播与俱乐部经营者三重身份，可比较竞技直觉、表演人格和组织决策。"
+  },
+  {
+    "person_id": "da-sima",
+    "display_name": "芜湖大司马（韩金龙）",
+    "name_en": "Han Jinlong (Da Sima)",
+    "region": "CN",
+    "industries": [
+      "游戏直播",
+      "游戏教学"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长时游戏直播",
+      "复盘教学",
+      "观众互动",
+      "线下访谈"
+    ],
+    "diversity_value": "从严肃教学到自嘲娱乐的风格迁移明显，可观察地位变化后的目标重构与情绪防御。"
+  },
+  {
+    "person_id": "nvliu-66",
+    "display_name": "女流66（石悦）",
+    "name_en": "Shi Yue (Nvliu 66)",
+    "region": "CN",
+    "industries": [
+      "游戏直播",
+      "内容创作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长时游戏直播",
+      "旅行直播",
+      "播客长访谈",
+      "观众问答"
+    ],
+    "diversity_value": "工程教育背景、女性游戏主播身份与克制表达结合，提供不同于高刺激男主播的决策节奏。"
+  },
+  {
+    "person_id": "chaoji-xiaojie",
+    "display_name": "超级小桀（段东杰）",
+    "name_en": "Duan Dongjie (Chaoji Xiaojie)",
+    "region": "CN",
+    "industries": [
+      "游戏直播",
+      "硬件创业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "斗鱼长直播",
+      "主机维修与装机实录",
+      "创业项目直播",
+      "争议复盘"
+    ],
+    "diversity_value": "游戏、动手维修与线下商业项目跨域，且失败事件公开，适合研究信任判断和沉没成本。"
+  },
+  {
+    "person_id": "zhong-wenze",
+    "display_name": "钟文泽",
+    "name_en": "Zhong Wenze",
+    "region": "CN",
+    "industries": [
+      "科技测评",
+      "消费电子"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "发布会现场长直播",
+      "产品测评原声",
+      "播客访谈",
+      "直播问答"
+    ],
+    "diversity_value": "高频首发环境要求快速形成产品判断，同时公开修正结论，适合研究证据更新和测评基准。"
+  },
+  {
+    "person_id": "wang-ziru",
+    "display_name": "王自如",
+    "name_en": "Wang Ziru",
+    "region": "CN",
+    "industries": [
+      "科技测评",
+      "企业管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "科技测评长视频",
+      "公开辩论",
+      "媒体长访谈",
+      "发布会问答"
+    ],
+    "diversity_value": "从独立测评到企业高管的立场变化有大量对照语料，能研究利益位置对论证框架的影响。"
+  },
+  {
+    "person_id": "na-yan",
+    "display_name": "科技美学（那岩）",
+    "name_en": "Na Yan (Keji Meixue)",
+    "region": "CN",
+    "industries": [
+      "科技测评",
+      "消费电子"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "新品发布长直播",
+      "多机对比直播",
+      "B站长视频",
+      "观众问答"
+    ],
+    "diversity_value": "长期使用固定维度横向比较设备，能提取稳定评价函数以及新品压力下的即时权重调整。"
+  },
+  {
+    "person_id": "wei-wenfeng",
+    "display_name": "老爸评测（魏文锋）",
+    "name_en": "Wei Wenfeng (Dad Reviews)",
+    "region": "CN",
+    "industries": [
+      "消费品测评",
+      "科普"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "实验测评长视频",
+      "直播答疑",
+      "媒体长访谈",
+      "企业质疑回应"
+    ],
+    "diversity_value": "把实验室证据转成家庭风险建议，持续面对商家反驳，适合研究预防原则与证据门槛。"
+  },
+  {
+    "person_id": "wang-gang",
+    "display_name": "美食作家王刚",
+    "name_en": "Wang Gang",
+    "region": "CN",
+    "industries": [
+      "烹饪",
+      "美食内容"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "B站烹饪长视频原声",
+      "直播教学",
+      "后厨实录",
+      "访谈问答"
+    ],
+    "diversity_value": "高度程序化的厨师语言与实时火候判断结合，适合提取动作序列、误差修正和师徒式教学。"
+  },
+  {
+    "person_id": "wulala",
+    "display_name": "特别乌啦啦",
+    "name_en": "Wulala",
+    "region": "CN",
+    "industries": [
+      "美食探店",
+      "直播"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "抖音探店长直播",
+      "街头即时点评",
+      "店主对谈",
+      "媒体访谈"
+    ],
+    "diversity_value": "陌生餐饮现场中即时评价、谈价和社交修复密集，味觉判断与人情管理同步可见。"
+  },
+  {
+    "person_id": "mianyang-liaoli",
+    "display_name": "绵羊料理",
+    "name_en": "Mianyang Liaoli",
+    "region": "CN",
+    "industries": [
+      "烹饪",
+      "美食内容"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "B站长视频原声",
+      "直播做饭",
+      "幕后制作访谈",
+      "观众问答"
+    ],
+    "diversity_value": "实验型菜谱、视觉叙事和女性创作者视角结合，可对照专业厨师的经验主义决策。"
+  },
+  {
+    "person_id": "mizijun",
+    "display_name": "密子君",
+    "name_en": "Mi Zijun",
+    "region": "CN",
+    "industries": [
+      "美食直播",
+      "内容创作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "吃播与探店长视频",
+      "直播互动",
+      "挑战实录",
+      "媒体长访谈"
+    ],
+    "diversity_value": "在身体极限、娱乐节奏和商业合作之间实时调节，提供饱腹压力下的自控与表演样本。"
+  },
+  {
+    "person_id": "jiasheng-pinchengji",
+    "display_name": "品城记嘉升",
+    "name_en": "Jiasheng (Pin Cheng Ji)",
+    "region": "CN",
+    "industries": [
+      "美食探店",
+      "城市文化"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "街头探店长视频",
+      "店主与食客对谈",
+      "直播探店",
+      "幕后访谈"
+    ],
+    "diversity_value": "大量非脚本陌生人对话与价格品质判断，适合研究地方知识、礼貌协商和证据采样。"
+  },
+  {
+    "person_id": "cheng-yanliang",
+    "display_name": "程衍樑",
+    "name_en": "Cheng Yanliang",
+    "region": "CN",
+    "industries": [
+      "播客",
+      "文化传媒"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《忽左忽右》完整播客",
+      "现场录制问答",
+      "同行长访谈",
+      "节目复盘"
+    ],
+    "diversity_value": "长期跨历史、政治与文化访谈，擅长在不同专家框架间追问和校准，主持认知轨迹清晰。"
+  },
+  {
+    "person_id": "xu-tao",
+    "display_name": "徐涛",
+    "name_en": "Xu Tao",
+    "region": "CN",
+    "industries": [
+      "播客",
+      "国际新闻"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《声东击西》完整播客",
+      "嘉宾长访谈",
+      "现场播客问答",
+      "行业对谈"
+    ],
+    "diversity_value": "国际新闻经验与创业者角色并存，可观察跨文化语境转换、议题设置和证据谨慎度。"
+  },
+  {
+    "person_id": "meng-chang",
+    "display_name": "孟常",
+    "name_en": "Meng Chang",
+    "region": "CN",
+    "industries": [
+      "播客",
+      "媒体"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《不合时宜》完整播客",
+      "现场录制",
+      "嘉宾长访谈",
+      "听众问答"
+    ],
+    "diversity_value": "以女性和跨地域经验处理公共议题，重视处境差异，适合补充关系型和反身性推理。"
+  },
+  {
+    "person_id": "cheng-shian",
+    "display_name": "程十安",
+    "name_en": "Cheng Shi'an",
+    "region": "CN",
+    "industries": [
+      "美妆内容",
+      "小红书"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "小红书长直播",
+      "化妆教学直播",
+      "产品评测原声",
+      "创业访谈"
+    ],
+    "diversity_value": "把面部特征诊断转成可执行步骤，直播中持续响应个体差异，具备细粒度视觉分类语料。"
+  },
+  {
+    "person_id": "fang-qi",
+    "display_name": "房琪",
+    "name_en": "Fang Qi",
+    "region": "CN",
+    "industries": [
+      "旅行内容",
+      "小红书"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "小红书与抖音直播",
+      "旅行现场原声",
+      "长访谈",
+      "线下演讲问答"
+    ],
+    "diversity_value": "从主持挫折到旅行创作和商业合作的叙事连续，适合研究情绪重构与励志框架。"
+  }
+]

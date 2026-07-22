@@ -1,0 +1,1323 @@
+[
+  {
+    "person_id": "lei-jun",
+    "display_name": "雷军",
+    "name_en": "Lei Jun",
+    "region": "CN",
+    "industries": [
+      "互联网",
+      "智能硬件",
+      "新能源汽车"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "年度演讲Q&A",
+      "产品发布会",
+      "长访谈",
+      "财报电话会"
+    ],
+    "diversity_value": "工程师式拆解与群众化表达并存，适合分析参数推理、用户反馈和长期复盘。"
+  },
+  {
+    "person_id": "dong-mingzhu",
+    "display_name": "董明珠",
+    "name_en": "Dong Mingzhu",
+    "region": "CN",
+    "industries": [
+      "制造业",
+      "家电",
+      "企业管理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "股东大会",
+      "争议访谈",
+      "直播",
+      "演讲Q&A"
+    ],
+    "diversity_value": "强控制、强执行且冲突场景丰富，可观察原则坚持与现场反击。"
+  },
+  {
+    "person_id": "cao-dewang",
+    "display_name": "曹德旺",
+    "name_en": "Cao Dewang",
+    "region": "CN",
+    "industries": [
+      "制造业",
+      "汽车玻璃",
+      "慈善"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "纪录片长访谈",
+      "演讲Q&A",
+      "争议访谈",
+      "公开座谈"
+    ],
+    "diversity_value": "以成本、制度和乡土经验直言判断，提供非互联网工业家样本。"
+  },
+  {
+    "person_id": "zhang-ruimin",
+    "display_name": "张瑞敏",
+    "name_en": "Zhang Ruimin",
+    "region": "CN",
+    "industries": [
+      "制造业",
+      "家电",
+      "管理学"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "管理演讲Q&A",
+      "长访谈",
+      "论坛对话",
+      "内部公开讲话"
+    ],
+    "diversity_value": "持续用管理概念重构组织，适合研究抽象模型如何落到组织实验。"
+  },
+  {
+    "person_id": "wang-chuanfu",
+    "display_name": "王传福",
+    "name_en": "Wang Chuanfu",
+    "region": "CN",
+    "industries": [
+      "制造业",
+      "新能源汽车",
+      "电池"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "股东大会",
+      "财报会",
+      "技术发布会",
+      "媒体访谈"
+    ],
+    "diversity_value": "技术信念与垂直整合决策鲜明，可对照工程判断和资本市场压力。"
+  },
+  {
+    "person_id": "li-shufu",
+    "display_name": "李书福",
+    "name_en": "Li Shufu",
+    "region": "CN",
+    "industries": [
+      "制造业",
+      "汽车",
+      "全球化"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "演讲Q&A",
+      "长访谈",
+      "股东大会",
+      "论坛对话"
+    ],
+    "diversity_value": "兼具草根创业、并购和全球化经验，语言中常见现实主义权衡。"
+  },
+  {
+    "person_id": "yu-minhong",
+    "display_name": "俞敏洪",
+    "name_en": "Michael Yu",
+    "region": "CN",
+    "industries": [
+      "教育",
+      "直播电商",
+      "企业管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "直播",
+      "演讲Q&A",
+      "长访谈",
+      "危机回应"
+    ],
+    "diversity_value": "从教育创业到直播转型且公开复盘密集，适合分析挫折叙事和价值排序。"
+  },
+  {
+    "person_id": "ma-yun",
+    "display_name": "马云",
+    "name_en": "Jack Ma",
+    "region": "CN",
+    "industries": [
+      "互联网",
+      "电子商务",
+      "金融科技"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "演讲Q&A",
+      "论坛对话",
+      "长访谈",
+      "争议演讲"
+    ],
+    "diversity_value": "愿景式类比和即兴问答充足，可研究叙事驱动、风险判断与监管语境变化。"
+  },
+  {
+    "person_id": "li-yanhong",
+    "display_name": "李彦宏",
+    "name_en": "Robin Li",
+    "region": "CN",
+    "industries": [
+      "互联网",
+      "人工智能",
+      "搜索"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "财报电话会",
+      "产品发布会",
+      "演讲Q&A",
+      "长访谈"
+    ],
+    "diversity_value": "技术乐观主义与商业化约束并置，可追踪长期技术押注如何被解释。"
+  },
+  {
+    "person_id": "zhou-hongyi",
+    "display_name": "周鸿祎",
+    "name_en": "Zhou Hongyi",
+    "region": "CN",
+    "industries": [
+      "互联网安全",
+      "人工智能",
+      "投资"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "直播",
+      "播客长谈",
+      "争议访谈",
+      "演讲Q&A"
+    ],
+    "diversity_value": "高频即兴、好辩且频繁修正观点，是压力反应和竞争框架的高密度样本。"
+  },
+  {
+    "person_id": "li-xiang",
+    "display_name": "李想",
+    "name_en": "Li Xiang",
+    "region": "CN",
+    "industries": [
+      "新能源汽车",
+      "互联网",
+      "产品管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "财报电话会",
+      "产品发布会",
+      "长访谈",
+      "内部公开课"
+    ],
+    "diversity_value": "第一性原理、产品细节与组织复盘表达完整，适合分析系统化决策。"
+  },
+  {
+    "person_id": "he-xiaopeng",
+    "display_name": "何小鹏",
+    "name_en": "He Xiaopeng",
+    "region": "CN",
+    "industries": [
+      "新能源汽车",
+      "互联网",
+      "人工智能"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "财报电话会",
+      "产品发布会",
+      "长访谈",
+      "论坛Q&A"
+    ],
+    "diversity_value": "连续创业和技术路线转换丰富，可观察不确定性下的概率判断与纠偏。"
+  },
+  {
+    "person_id": "ding-lei",
+    "display_name": "丁磊",
+    "name_en": "William Ding",
+    "region": "CN",
+    "industries": [
+      "互联网",
+      "游戏",
+      "音乐",
+      "消费"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "财报电话会",
+      "长访谈",
+      "直播",
+      "论坛对话"
+    ],
+    "diversity_value": "长期经营但表达务实松弛，能补充非扩张型互联网创始人的判断方式。"
+  },
+  {
+    "person_id": "yu-chengdong",
+    "display_name": "余承东",
+    "name_en": "Richard Yu",
+    "region": "CN",
+    "industries": [
+      "通信",
+      "消费电子",
+      "新能源汽车"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "产品发布会",
+      "媒体群访",
+      "直播访谈",
+      "演讲Q&A"
+    ],
+    "diversity_value": "强目标叙事和竞争性表达突出，适合研究承诺升级与危机沟通。"
+  },
+  {
+    "person_id": "wang-jian",
+    "display_name": "王坚",
+    "name_en": "Wang Jian",
+    "region": "CN",
+    "industries": [
+      "云计算",
+      "人工智能",
+      "科研管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "技术演讲Q&A",
+      "长访谈",
+      "公开课",
+      "论坛对话"
+    ],
+    "diversity_value": "横跨心理学、计算机和产业建设，能呈现跨学科类比与逆共识坚持。"
+  },
+  {
+    "person_id": "jia-guolong",
+    "display_name": "贾国龙",
+    "name_en": "Jia Guolong",
+    "region": "CN",
+    "industries": [
+      "餐饮",
+      "消费",
+      "连锁经营"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "争议访谈",
+      "媒体群访",
+      "直播",
+      "行业演讲"
+    ],
+    "diversity_value": "在价格、预制菜等争议中持续公开回应，压力语料和经营直觉都很充足。"
+  },
+  {
+    "person_id": "zhang-lan",
+    "display_name": "张兰",
+    "name_en": "Zhang Lan",
+    "region": "CN",
+    "industries": [
+      "餐饮",
+      "直播电商",
+      "消费"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "直播",
+      "长访谈",
+      "争议回应",
+      "创业演讲"
+    ],
+    "diversity_value": "高情绪能量、强自我叙事与危机应对并存，补充女性消费创业者样本。"
+  },
+  {
+    "person_id": "meng-wanzhou",
+    "display_name": "孟晚舟",
+    "name_en": "Meng Wanzhou",
+    "region": "CN",
+    "industries": [
+      "通信",
+      "企业财务",
+      "企业管理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "年度报告发布会",
+      "演讲Q&A",
+      "媒体采访",
+      "公开庭审陈述"
+    ],
+    "diversity_value": "财务理性与组织忠诚表达集中，且跨境司法压力形成少见语境。"
+  },
+  {
+    "person_id": "zhong-shanshan",
+    "display_name": "钟睒睒",
+    "name_en": "Zhong Shanshan",
+    "region": "CN",
+    "industries": [
+      "饮料",
+      "医药",
+      "消费"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "记者会长答问",
+      "争议回应",
+      "长访谈",
+      "股东大会"
+    ],
+    "diversity_value": "极少常规曝光但在争议答问中高度直接，可补充低曝光强控制型创始人。"
+  },
+  {
+    "person_id": "liang-jianzhang",
+    "display_name": "梁建章",
+    "name_en": "James Liang",
+    "region": "CN",
+    "industries": [
+      "互联网旅游",
+      "人口经济学",
+      "公共政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "演讲Q&A",
+      "政策辩论",
+      "财报电话会"
+    ],
+    "diversity_value": "把企业实验与人口研究结合，适合比较数据模型、价值主张和政策说服。"
+  },
+  {
+    "person_id": "duan-yongping",
+    "display_name": "段永平",
+    "name_en": "Duan Yongping",
+    "region": "CN",
+    "industries": [
+      "消费电子",
+      "投资",
+      "企业管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "投资问答",
+      "长访谈",
+      "校友对话Q&A",
+      "公开网络答问"
+    ],
+    "diversity_value": "强调本分、护城河与错误复盘，形成稳定而可检验的投资决策词汇。"
+  },
+  {
+    "person_id": "zhang-lei",
+    "display_name": "张磊",
+    "name_en": "Zhang Lei",
+    "region": "CN",
+    "industries": [
+      "投资",
+      "私募股权",
+      "教育公益"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长访谈",
+      "演讲Q&A",
+      "论坛对话",
+      "投资案例复盘"
+    ],
+    "diversity_value": "长期主义框架明确且横跨多行业，可分析原则叙事与真实配置之间的张力。"
+  },
+  {
+    "person_id": "shen-nanpeng",
+    "display_name": "沈南鹏",
+    "name_en": "Neil Shen",
+    "region": "CN",
+    "industries": [
+      "风险投资",
+      "互联网",
+      "金融"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "论坛对话",
+      "长访谈",
+      "演讲Q&A",
+      "创业者公开问答"
+    ],
+    "diversity_value": "创业者与投资人双重经验使其擅长模式匹配，适合研究筛选逻辑和克制表达。"
+  },
+  {
+    "person_id": "xu-xiaoping",
+    "display_name": "徐小平",
+    "name_en": "Bob Xu",
+    "region": "CN",
+    "industries": [
+      "风险投资",
+      "教育",
+      "创业服务"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "演讲Q&A",
+      "长访谈",
+      "创业问诊",
+      "播客"
+    ],
+    "diversity_value": "高感染力、强人本判断且现场问答多，可观察直觉投资和情绪反馈。"
+  },
+  {
+    "person_id": "li-lu",
+    "display_name": "李录",
+    "name_en": "Li Lu",
+    "region": "CN",
+    "industries": [
+      "价值投资",
+      "金融",
+      "公益"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "大学演讲Q&A",
+      "投资人长谈",
+      "股东会问答",
+      "公开课"
+    ],
+    "diversity_value": "历史经验、价值投资与制度观察交织，具有长链条因果推理语料。"
+  },
+  {
+    "person_id": "xu-xin",
+    "display_name": "徐新",
+    "name_en": "Xu Xin",
+    "region": "CN",
+    "industries": [
+      "风险投资",
+      "消费",
+      "互联网"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "投资演讲Q&A",
+      "长访谈",
+      "创业课堂",
+      "论坛对话"
+    ],
+    "diversity_value": "以消费者洞察和创始人判断见长，补充女性投资者的高确信决策样本。"
+  },
+  {
+    "person_id": "dan-bin",
+    "display_name": "但斌",
+    "name_en": "Dan Bin",
+    "region": "CN",
+    "industries": [
+      "证券投资",
+      "资产管理",
+      "消费"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "路演直播",
+      "长访谈",
+      "投资者问答",
+      "争议访谈"
+    ],
+    "diversity_value": "公开市场涨跌中持续发言，可追踪信念、止损与事后解释的动态变化。"
+  },
+  {
+    "person_id": "zhu-xiaohu",
+    "display_name": "朱啸虎",
+    "name_en": "Allen Zhu",
+    "region": "CN",
+    "industries": [
+      "风险投资",
+      "互联网",
+      "消费科技"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "辩论",
+      "演讲Q&A",
+      "争议访谈"
+    ],
+    "diversity_value": "观点尖锐且常与创业者公开交锋，适合提取快速筛选和反共识启发式。"
+  },
+  {
+    "person_id": "zhang-xin",
+    "display_name": "张欣",
+    "name_en": "Zhang Xin",
+    "region": "CN",
+    "industries": [
+      "房地产",
+      "投资",
+      "城市发展"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国际演讲Q&A",
+      "长访谈",
+      "论坛对话",
+      "媒体采访"
+    ],
+    "diversity_value": "从工厂女工到全球地产经营者，兼具阶层流动、审美和周期判断。"
+  },
+  {
+    "person_id": "wang-shutong",
+    "display_name": "王树彤",
+    "name_en": "Diane Wang",
+    "region": "CN",
+    "industries": [
+      "跨境电商",
+      "互联网",
+      "女性创业"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "创业演讲Q&A",
+      "长访谈",
+      "论坛对话",
+      "公开课"
+    ],
+    "diversity_value": "早期职业经理人转创业且长期面向中小商户，补充跨境与女性领导视角。"
+  },
+  {
+    "person_id": "long-yu",
+    "display_name": "龙宇",
+    "name_en": "Ruby Lu",
+    "region": "CN",
+    "industries": [
+      "风险投资",
+      "科技",
+      "医疗投资"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "演讲Q&A",
+      "论坛辩论",
+      "长访谈"
+    ],
+    "diversity_value": "表达密度高并跨科技与生命科学，适合研究趋势判断和组合式思考。"
+  },
+  {
+    "person_id": "li-yinuo",
+    "display_name": "李一诺",
+    "name_en": "Jennifer Li",
+    "region": "CN",
+    "industries": [
+      "教育创新",
+      "公益",
+      "咨询"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "演讲Q&A",
+      "长访谈",
+      "公开课"
+    ],
+    "diversity_value": "在科学训练、咨询、公益和教育间迁移，能呈现身份反思与系统变革思维。"
+  },
+  {
+    "person_id": "yang-zhenning",
+    "display_name": "杨振宁",
+    "name_en": "Chen-Ning Yang",
+    "region": "CN",
+    "industries": [
+      "理论物理",
+      "科学史",
+      "教育"
+    ],
+    "gender": "male",
+    "living": false,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "学术演讲Q&A",
+      "长访谈",
+      "公开课",
+      "学术对谈"
+    ],
+    "diversity_value": "跨中美科学共同体且回顾跨度极长，适合研究科学直觉和价值观随时代漂移。"
+  },
+  {
+    "person_id": "yan-ning",
+    "display_name": "颜宁",
+    "name_en": "Nieng Yan",
+    "region": "CN",
+    "industries": [
+      "结构生物学",
+      "科研教育",
+      "科研管理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "学术报告Q&A",
+      "长访谈",
+      "直播对话",
+      "公开演讲"
+    ],
+    "diversity_value": "科研细节、制度评论与女性科学家经验兼具，表达直接且现场互动多。"
+  },
+  {
+    "person_id": "shi-yigong",
+    "display_name": "施一公",
+    "name_en": "Yigong Shi",
+    "region": "CN",
+    "industries": [
+      "结构生物学",
+      "高等教育",
+      "科研管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "学术演讲Q&A",
+      "长访谈",
+      "毕业演讲",
+      "论坛对话"
+    ],
+    "diversity_value": "实验科学家与大学创建者双重角色，可分析科学标准、组织雄心和人才判断。"
+  },
+  {
+    "person_id": "rao-yi",
+    "display_name": "饶毅",
+    "name_en": "Yi Rao",
+    "region": "CN",
+    "industries": [
+      "神经科学",
+      "科研政策",
+      "高等教育"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "学术演讲Q&A",
+      "辩论",
+      "长访谈",
+      "争议回应"
+    ],
+    "diversity_value": "批判性强且长期参与科研制度争论，提供罕见的公开冲突型学者语料。"
+  },
+  {
+    "person_id": "zhang-wenhong",
+    "display_name": "张文宏",
+    "name_en": "Wenhong Zhang",
+    "region": "CN",
+    "industries": [
+      "感染病学",
+      "公共卫生",
+      "医学传播"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "新闻发布会Q&A",
+      "医学讲座",
+      "长访谈",
+      "危机沟通"
+    ],
+    "diversity_value": "能把概率和风险翻译成大众语言，疫情压力下的即时判断尤其有价值。"
+  },
+  {
+    "person_id": "zhong-nanshan",
+    "display_name": "钟南山",
+    "name_en": "Nanshan Zhong",
+    "region": "CN",
+    "industries": [
+      "呼吸医学",
+      "公共卫生",
+      "医学政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "记者会Q&A",
+      "医学演讲",
+      "长访谈",
+      "公共卫生座谈"
+    ],
+    "diversity_value": "跨多次公共卫生危机且敢于纠正官方叙事，适合研究证据与责任判断。"
+  },
+  {
+    "person_id": "li-lanjuan",
+    "display_name": "李兰娟",
+    "name_en": "Lanjuan Li",
+    "region": "CN",
+    "industries": [
+      "感染病学",
+      "公共卫生",
+      "医学工程"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "记者会Q&A",
+      "医学讲座",
+      "长访谈",
+      "院士论坛"
+    ],
+    "diversity_value": "临床、公共卫生决策和工程转化并重，补充女性医学领导者样本。"
+  },
+  {
+    "person_id": "xue-qikun",
+    "display_name": "薛其坤",
+    "name_en": "Qikun Xue",
+    "region": "CN",
+    "industries": [
+      "凝聚态物理",
+      "量子科学",
+      "高等教育"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "学术报告Q&A",
+      "公开课",
+      "长访谈",
+      "校长演讲"
+    ],
+    "diversity_value": "实验节奏和失败复盘具体，能提取严谨、耐心与竞争性科研决策。"
+  },
+  {
+    "person_id": "wang-yifang",
+    "display_name": "王贻芳",
+    "name_en": "Yifang Wang",
+    "region": "CN",
+    "industries": [
+      "粒子物理",
+      "大科学工程",
+      "科研政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "学术演讲Q&A",
+      "公开辩论",
+      "长访谈",
+      "项目答辩"
+    ],
+    "diversity_value": "大科学装置论争语料丰富，可观察成本收益、国家战略和同行反驳。"
+  },
+  {
+    "person_id": "gao-fu",
+    "display_name": "高福",
+    "name_en": "George F. Gao",
+    "region": "CN",
+    "industries": [
+      "病毒学",
+      "公共卫生",
+      "科研管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "新闻发布会Q&A",
+      "学术演讲",
+      "长访谈",
+      "争议回应"
+    ],
+    "diversity_value": "兼有实验室、疾控和危机舆论角色，适合分析信息不完整时的科学沟通。"
+  },
+  {
+    "person_id": "qiao-jie",
+    "display_name": "乔杰",
+    "name_en": "Jie Qiao",
+    "region": "CN",
+    "industries": [
+      "生殖医学",
+      "妇产科学",
+      "医院管理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "医学讲座Q&A",
+      "院士访谈",
+      "论坛对话",
+      "政策座谈"
+    ],
+    "diversity_value": "临床伦理、人口议题与医院治理交汇，提供女性医学管理者的权衡样本。"
+  },
+  {
+    "person_id": "chen-saijuan",
+    "display_name": "陈赛娟",
+    "name_en": "Saijuan Chen",
+    "region": "CN",
+    "industries": [
+      "血液学",
+      "转化医学",
+      "科研管理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "学术演讲Q&A",
+      "院士访谈",
+      "公开课",
+      "科研论坛"
+    ],
+    "diversity_value": "强调从机制到临床的闭环，可补充团队型转化医学决策方式。"
+  },
+  {
+    "person_id": "hu-hailan",
+    "display_name": "胡海岚",
+    "name_en": "Hailan Hu",
+    "region": "CN",
+    "industries": [
+      "神经科学",
+      "情绪研究",
+      "科研教育"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "学术报告Q&A",
+      "播客长谈",
+      "长访谈",
+      "公开课"
+    ],
+    "diversity_value": "研究情绪机制且能清晰解释实验因果，兼具年轻女性PI的组织经验。"
+  },
+  {
+    "person_id": "wang-xiaoyun",
+    "display_name": "王小云",
+    "name_en": "Xiaoyun Wang",
+    "region": "CN",
+    "industries": [
+      "密码学",
+      "网络安全",
+      "高等教育"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "学术报告Q&A",
+      "院士访谈",
+      "公开演讲",
+      "课堂讲座"
+    ],
+    "diversity_value": "密码攻破解题路径独特，补充极度抽象、长期独立推演的认知样本。"
+  },
+  {
+    "person_id": "lin-yifu",
+    "display_name": "林毅夫",
+    "name_en": "Justin Yifu Lin",
+    "region": "CN",
+    "industries": [
+      "经济学",
+      "发展经济学",
+      "公共政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开课",
+      "演讲Q&A",
+      "政策辩论",
+      "长访谈"
+    ],
+    "diversity_value": "以新结构经济学解释发展问题，适合检验理论框架如何回应反例和政策争议。"
+  },
+  {
+    "person_id": "zhang-weiying",
+    "display_name": "张维迎",
+    "name_en": "Weiying Zhang",
+    "region": "CN",
+    "industries": [
+      "经济学",
+      "企业理论",
+      "公共政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开课",
+      "辩论",
+      "演讲Q&A",
+      "长访谈"
+    ],
+    "diversity_value": "坚持市场与企业家理论并频繁参与争论，价值前提和推理链条都清晰。"
+  },
+  {
+    "person_id": "wen-tiejun",
+    "display_name": "温铁军",
+    "name_en": "Tiejun Wen",
+    "region": "CN",
+    "industries": [
+      "农村经济",
+      "社会科学",
+      "公共政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇讲座",
+      "公开课Q&A",
+      "长访谈",
+      "基层调研分享"
+    ],
+    "diversity_value": "用成本转嫁和周期框架解释城乡问题，提供强历史结构主义样本。"
+  },
+  {
+    "person_id": "huang-yiping",
+    "display_name": "黄益平",
+    "name_en": "Yiping Huang",
+    "region": "CN",
+    "industries": [
+      "金融学",
+      "数字金融",
+      "公共政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "演讲Q&A",
+      "长访谈",
+      "论坛辩论",
+      "公开课"
+    ],
+    "diversity_value": "在学术、央行政策咨询和平台研究间切换，善于概率化表达风险。"
+  },
+  {
+    "person_id": "yao-yang",
+    "display_name": "姚洋",
+    "name_en": "Yang Yao",
+    "region": "CN",
+    "industries": [
+      "经济学",
+      "政治经济学",
+      "高等教育"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开课",
+      "演讲Q&A",
+      "辩论",
+      "播客长谈"
+    ],
+    "diversity_value": "愿意公开修正预测并讨论制度约束，是观点更新和现实主义推理的好样本。"
+  },
+  {
+    "person_id": "xu-xiaonian",
+    "display_name": "许小年",
+    "name_en": "Xiaonian Xu",
+    "region": "CN",
+    "industries": [
+      "经济学",
+      "金融",
+      "企业管理教育"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "企业课堂Q&A",
+      "长访谈",
+      "演讲",
+      "争议对谈"
+    ],
+    "diversity_value": "语言尖锐、微观导向明确，可研究经济诊断中的反共识与归因方式。"
+  },
+  {
+    "person_id": "fan-gang",
+    "display_name": "樊纲",
+    "name_en": "Gang Fan",
+    "region": "CN",
+    "industries": [
+      "宏观经济学",
+      "公共政策",
+      "改革研究"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "论坛Q&A",
+      "长访谈",
+      "政策座谈",
+      "公开演讲"
+    ],
+    "diversity_value": "长期处在学界与政策之间，表达重视渐进约束和多目标平衡。"
+  },
+  {
+    "person_id": "xue-zhaofeng",
+    "display_name": "薛兆丰",
+    "name_en": "Zhaofeng Xue",
+    "region": "CN",
+    "industries": [
+      "经济学教育",
+      "法律经济学",
+      "内容创作"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长播客",
+      "公开课",
+      "辩论",
+      "直播Q&A"
+    ],
+    "diversity_value": "擅长用价格与产权模型解释日常冲突，便于提取稳定可组合的启发式。"
+  },
+  {
+    "person_id": "li-yinhe",
+    "display_name": "李银河",
+    "name_en": "Yinhe Li",
+    "region": "CN",
+    "industries": [
+      "社会学",
+      "性别研究",
+      "公共写作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长访谈",
+      "公开讲座Q&A",
+      "电视对谈",
+      "纪录片采访"
+    ],
+    "diversity_value": "以个体自由和社会规范为核心，能补充性别、亲密关系与代际变化视角。"
+  },
+  {
+    "person_id": "xiang-biao",
+    "display_name": "项飙",
+    "name_en": "Biao Xiang",
+    "region": "CN",
+    "industries": [
+      "人类学",
+      "迁移研究",
+      "社会理论"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "讲座Q&A",
+      "长访谈",
+      "青年对话"
+    ],
+    "diversity_value": "擅长从日常经验反推结构，概念生成过程和自我质疑均有完整语料。"
+  },
+  {
+    "person_id": "luo-xiang",
+    "display_name": "罗翔",
+    "name_en": "Xiang Luo",
+    "region": "CN",
+    "industries": [
+      "法学教育",
+      "刑法",
+      "公共传播"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开课",
+      "长访谈",
+      "直播Q&A",
+      "辩论"
+    ],
+    "diversity_value": "在规则、道德运气和谦抑之间反复推演，兼具案例化推理与自我修正。"
+  },
+  {
+    "person_id": "he-xuefeng",
+    "display_name": "贺雪峰",
+    "name_en": "Xuefeng He",
+    "region": "CN",
+    "industries": [
+      "社会学",
+      "乡村治理",
+      "公共政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇讲座",
+      "田野分享Q&A",
+      "长访谈",
+      "公开课"
+    ],
+    "diversity_value": "以高频田野经验挑战抽象政策，补充基层治理和区域比较的经验主义样本。"
+  },
+  {
+    "person_id": "hu-shuli",
+    "display_name": "胡舒立",
+    "name_en": "Hu Shuli",
+    "region": "CN",
+    "industries": [
+      "财经媒体",
+      "调查新闻",
+      "企业治理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长访谈",
+      "演讲Q&A",
+      "论坛对话",
+      "公开课"
+    ],
+    "diversity_value": "调查新闻与媒体创业经历使其重证据、追问和制度边界，补充女性媒体领导者。"
+  },
+  {
+    "person_id": "zhang-quanling",
+    "display_name": "张泉灵",
+    "name_en": "Quanling Zhang",
+    "region": "CN",
+    "industries": [
+      "风险投资",
+      "教育科技",
+      "媒体"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "演讲Q&A",
+      "长访谈",
+      "创业评审"
+    ],
+    "diversity_value": "从记者转投资人，既擅长连续追问也会公开拆解项目判断与认知转型。"
+  }
+]

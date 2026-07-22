@@ -1,0 +1,1099 @@
+[
+  {
+    "person_id": "dou-wentao",
+    "display_name": "窦文涛",
+    "name_en": "Dou Wentao",
+    "region": "CN",
+    "industries": [
+      "媒体",
+      "主持",
+      "访谈"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《圆桌派》即兴群聊",
+      "《锵锵三人行》长对谈",
+      "播客访谈",
+      "公开活动Q&A"
+    ],
+    "diversity_value": "以联想、追问和自我暴露组织多人对话，适合研究高情境社交推理与观点调停。"
+  },
+  {
+    "person_id": "chen-luyu",
+    "display_name": "陈鲁豫",
+    "name_en": "Chen Luyu",
+    "region": "CN",
+    "industries": [
+      "媒体",
+      "主持",
+      "人物访谈"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《鲁豫有约》长访谈",
+      "《热浪之外》深度对谈",
+      "播客客访",
+      "公开演讲Q&A"
+    ],
+    "diversity_value": "低姿态倾听与关键细节追问并存，可分析采访者如何建模他人并控制叙事节奏。"
+  },
+  {
+    "person_id": "yang-lan",
+    "display_name": "杨澜",
+    "name_en": "Yang Lan",
+    "region": "CN",
+    "industries": [
+      "媒体",
+      "主持",
+      "纪录片"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《杨澜访谈录》长访谈",
+      "论坛主持与Q&A",
+      "公开演讲",
+      "播客客访"
+    ],
+    "diversity_value": "国际化框架、礼貌质询和议题整合能力突出，提供跨文化精英访谈型认知样本。"
+  },
+  {
+    "person_id": "chai-jing",
+    "display_name": "柴静",
+    "name_en": "Chai Jing",
+    "region": "CN",
+    "industries": [
+      "新闻",
+      "纪录片",
+      "写作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《看见》人物调查访谈",
+      "《陌生人》长对谈",
+      "纪录片问答",
+      "公开演讲及读者Q&A"
+    ],
+    "diversity_value": "以个人体验进入公共议题并持续证据追问，适合观察道德直觉与调查推理的耦合。"
+  },
+  {
+    "person_id": "bai-yansong",
+    "display_name": "白岩松",
+    "name_en": "Bai Yansong",
+    "region": "CN",
+    "industries": [
+      "新闻",
+      "主持",
+      "公共演讲"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "高校长演讲Q&A",
+      "电视深度访谈",
+      "论坛对话",
+      "读书活动问答"
+    ],
+    "diversity_value": "擅长把复杂公共议题压缩成格言式判断，可比较宏观叙事、风险沟通与现场应答。"
+  },
+  {
+    "person_id": "sa-beining",
+    "display_name": "撒贝宁",
+    "name_en": "Sa Beining",
+    "region": "CN",
+    "industries": [
+      "主持",
+      "法治媒体",
+      "综艺"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "法治节目即席访谈",
+      "综艺长时互动",
+      "高校演讲Q&A",
+      "主持人对谈"
+    ],
+    "diversity_value": "法律训练、快速反应与游戏化表达兼具，适合研究规则推理如何切换为高密度幽默。"
+  },
+  {
+    "person_id": "yi-lijing",
+    "display_name": "易立竞",
+    "name_en": "Yi Lijing",
+    "region": "CN",
+    "industries": [
+      "新闻",
+      "主持",
+      "人物访谈"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《立场》长访谈",
+      "《易时间》深度访谈",
+      "播客对谈",
+      "综艺即席质询"
+    ],
+    "diversity_value": "直接、持续且低回避的质询风格，为压力场中的边界测试与矛盾追踪提供清晰样本。"
+  },
+  {
+    "person_id": "xu-zhiyuan",
+    "display_name": "许知远",
+    "name_en": "Xu Zhiyuan",
+    "region": "CN",
+    "industries": [
+      "媒体",
+      "写作",
+      "访谈"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《十三邀》长对谈",
+      "播客访谈",
+      "书店活动Q&A",
+      "公开演讲"
+    ],
+    "diversity_value": "强历史感、持续自我怀疑且允许谈话失控，适合研究抽象人文框架与现场修正。"
+  },
+  {
+    "person_id": "ma-dong",
+    "display_name": "马东",
+    "name_en": "Ma Dong",
+    "region": "CN",
+    "industries": [
+      "媒体",
+      "主持",
+      "喜剧制作"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《奇葩说》长时辩论主持",
+      "播客长访谈",
+      "行业论坛Q&A",
+      "公开课对谈"
+    ],
+    "diversity_value": "商业判断、语言节奏和冲突管理高度融合，可分析娱乐产品思维与人际洞察。"
+  },
+  {
+    "person_id": "li-jing-host",
+    "display_name": "李静",
+    "name_en": "Li Jing",
+    "region": "CN",
+    "industries": [
+      "主持",
+      "人物访谈",
+      "媒体"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《非常静距离》长访谈",
+      "直播访谈",
+      "播客客访",
+      "行业活动Q&A"
+    ],
+    "diversity_value": "以生活化共情换取受访者开放，提供关系建立、情绪读秒和柔性追问的女性主持样本。"
+  },
+  {
+    "person_id": "li-dan",
+    "display_name": "李诞",
+    "name_en": "Li Dan",
+    "region": "CN",
+    "industries": [
+      "脱口秀",
+      "喜剧制作",
+      "写作"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "直播",
+      "《十三邀》等深度访谈",
+      "喜剧行业对谈Q&A"
+    ],
+    "diversity_value": "犬儒表层下有强产品与组织判断，适合分析幽默防御、收益权衡和价值冲突。"
+  },
+  {
+    "person_id": "li-xueqin",
+    "display_name": "李雪琴",
+    "name_en": "Li Xueqin",
+    "region": "CN",
+    "industries": [
+      "脱口秀",
+      "演员",
+      "内容创作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "直播回放",
+      "人物深度访谈",
+      "综艺即兴群聊"
+    ],
+    "diversity_value": "高自省、低能量表演与敏锐社会观察并存，可研究抑郁叙事之外的策略性幽默和关系判断。"
+  },
+  {
+    "person_id": "yang-li",
+    "display_name": "杨笠",
+    "name_en": "Yang Li",
+    "region": "CN",
+    "industries": [
+      "脱口秀",
+      "喜剧",
+      "内容创作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "脱口秀赛后访谈",
+      "直播与连麦",
+      "公开对谈Q&A"
+    ],
+    "diversity_value": "把日常性别经验快速抽象为冲突命题，适合观察冒犯边界、舆论压力与观点校准。"
+  },
+  {
+    "person_id": "siwen",
+    "display_name": "思文",
+    "name_en": "Siwen",
+    "region": "CN",
+    "industries": [
+      "脱口秀",
+      "写作",
+      "喜剧"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "个人直播",
+      "深度人物访谈",
+      "线下喜剧对谈"
+    ],
+    "diversity_value": "克制的关系解剖和人生转向复盘突出，适合研究亲密关系建模与身份重建。"
+  },
+  {
+    "person_id": "niaoniao",
+    "display_name": "鸟鸟",
+    "name_en": "Niaoniao",
+    "region": "CN",
+    "industries": [
+      "脱口秀",
+      "喜剧",
+      "写作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "播客长谈",
+      "喜剧赛后访谈",
+      "线下分享Q&A",
+      "综艺即兴对话"
+    ],
+    "diversity_value": "内向观察、概念化措辞与非对抗幽默鲜明，为低支配型但高解析度的表达提供样本。"
+  },
+  {
+    "person_id": "guo-degang",
+    "display_name": "郭德纲",
+    "name_en": "Guo Degang",
+    "region": "CN",
+    "industries": [
+      "相声",
+      "主持",
+      "喜剧"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇访谈",
+      "相声后台直播",
+      "主持节目即兴对谈",
+      "公开问答"
+    ],
+    "diversity_value": "江湖经验、师徒秩序和高速语言反击并存，适合研究传统行业生存启发式与冲突策略。"
+  },
+  {
+    "person_id": "yu-qian",
+    "display_name": "于谦",
+    "name_en": "Yu Qian",
+    "region": "CN",
+    "industries": [
+      "相声",
+      "演员",
+      "生活方式"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "《十三邀》等人物访谈",
+      "直播与综艺即兴聊天",
+      "公开活动Q&A"
+    ],
+    "diversity_value": "松弛、去中心化且重经验趣味，可对照高控制型公众人物的低焦虑决策与关系维持。"
+  },
+  {
+    "person_id": "jia-ling",
+    "display_name": "贾玲",
+    "name_en": "Jia Ling",
+    "region": "CN",
+    "industries": [
+      "导演",
+      "演员",
+      "喜剧"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "电影主创长访谈",
+      "喜剧节目即兴互动",
+      "映后Q&A",
+      "早期电台与人物访谈"
+    ],
+    "diversity_value": "以自我贬抑建立安全感，又能承担大型项目决策，适合分析喜剧人格与导演控制力的反差。"
+  },
+  {
+    "person_id": "jia-zhangke",
+    "display_name": "贾樟柯",
+    "name_en": "Jia Zhangke",
+    "region": "CN",
+    "industries": [
+      "导演",
+      "编剧",
+      "电影教育"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "电影节大师课Q&A",
+      "映后长谈",
+      "《十三邀》等深度访谈",
+      "播客对谈"
+    ],
+    "diversity_value": "从地方细节推演时代结构，兼具纪实伦理和作者判断，是社会观察型创作者的高价值样本。"
+  },
+  {
+    "person_id": "jiang-wen",
+    "display_name": "姜文",
+    "name_en": "Jiang Wen",
+    "region": "CN",
+    "industries": [
+      "导演",
+      "演员",
+      "编剧"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "电影主创长访谈",
+      "发布会即席问答",
+      "映后Q&A",
+      "电视人物对谈"
+    ],
+    "diversity_value": "高支配、高隐喻且善于重构问题，可研究强作者如何控制叙事并应对质疑。"
+  },
+  {
+    "person_id": "zhang-yimou",
+    "display_name": "张艺谋",
+    "name_en": "Zhang Yimou",
+    "region": "CN",
+    "industries": [
+      "导演",
+      "大型活动创意",
+      "电影"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "纪录片跟拍访谈",
+      "电影大师课Q&A",
+      "主创长访谈",
+      "发布会问答"
+    ],
+    "diversity_value": "极强执行纪律与视觉系统思维兼具，适合研究大型协作、约束优化和长期职业适应。"
+  },
+  {
+    "person_id": "ann-hui",
+    "display_name": "许鞍华",
+    "name_en": "Ann Hui",
+    "region": "CN",
+    "industries": [
+      "导演",
+      "电影",
+      "教育"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "电影节大师班",
+      "映后长谈Q&A",
+      "纪录片访谈",
+      "高校公开对谈"
+    ],
+    "diversity_value": "温和自嘲与现实主义伦理并存，提供女性导演处理记忆、资源约束和作者性的长期样本。"
+  },
+  {
+    "person_id": "li-shaohong",
+    "display_name": "李少红",
+    "name_en": "Li Shaohong",
+    "region": "CN",
+    "industries": [
+      "导演",
+      "制片",
+      "电影"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "导演协会论坛对话",
+      "电影大师课Q&A",
+      "主创长访谈",
+      "映后交流"
+    ],
+    "diversity_value": "跨越体制制片与市场工业，适合分析女性权威、组织判断和审美决策。"
+  },
+  {
+    "person_id": "guo-fan",
+    "display_name": "郭帆",
+    "name_en": "Frant Gwo",
+    "region": "CN",
+    "industries": [
+      "导演",
+      "科幻电影",
+      "电影工业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "电影工业长演讲Q&A",
+      "播客长谈",
+      "主创路演问答",
+      "高校大师课"
+    ],
+    "diversity_value": "工程化拆解创作流程且频繁复盘失败，是系统工程型导演与团队协作研究的优质样本。"
+  },
+  {
+    "person_id": "xu-zheng",
+    "display_name": "徐峥",
+    "name_en": "Xu Zheng",
+    "region": "CN",
+    "industries": [
+      "导演",
+      "演员",
+      "制片"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "电影主创长访谈",
+      "映后与路演Q&A",
+      "行业论坛",
+      "综艺即兴对谈"
+    ],
+    "diversity_value": "演员共情、商业类型判断和制片协调并存，可观察多角色切换下的权衡方式。"
+  },
+  {
+    "person_id": "zhou-xun",
+    "display_name": "周迅",
+    "name_en": "Zhou Xun",
+    "region": "CN",
+    "industries": [
+      "演员",
+      "音乐",
+      "公益"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《十三邀》等长访谈",
+      "纪录片跟拍对谈",
+      "播客访谈",
+      "电影节Q&A"
+    ],
+    "diversity_value": "高度感受驱动、非理论化却有精细人物直觉，为具身型和情绪型认知提供稀缺样本。"
+  },
+  {
+    "person_id": "yao-chen",
+    "display_name": "姚晨",
+    "name_en": "Yao Chen",
+    "region": "CN",
+    "industries": [
+      "演员",
+      "制片",
+      "公益"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "人物长访谈",
+      "电影节论坛Q&A",
+      "播客对谈",
+      "主创路演问答"
+    ],
+    "diversity_value": "公共议题意识、职业野心与家庭经验均有持续表达，适合研究多重身份下的价值排序。"
+  },
+  {
+    "person_id": "yong-mei",
+    "display_name": "咏梅",
+    "name_en": "Yong Mei",
+    "region": "CN",
+    "industries": [
+      "演员",
+      "电影"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "电影节长访谈",
+      "映后Q&A",
+      "女性主题公开对谈",
+      "播客访谈"
+    ],
+    "diversity_value": "慢节奏、边界清晰且反对年龄规训，提供低反应性、长期主义的表演者样本。"
+  },
+  {
+    "person_id": "hai-qing",
+    "display_name": "海清",
+    "name_en": "Hai Qing",
+    "region": "CN",
+    "industries": [
+      "演员",
+      "电影",
+      "电视"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "演员长访谈",
+      "电影路演Q&A",
+      "行业论坛发言",
+      "综艺即兴对话"
+    ],
+    "diversity_value": "表达直接且频繁讨论行业结构与女性困境，适合分析务实行动和公共倡议之间的张力。"
+  },
+  {
+    "person_id": "hu-ge",
+    "display_name": "胡歌",
+    "name_en": "Hu Ge",
+    "region": "CN",
+    "industries": [
+      "演员",
+      "戏剧",
+      "公益"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "人物深度访谈",
+      "戏剧映后Q&A",
+      "电影节对谈",
+      "公益项目长访谈"
+    ],
+    "diversity_value": "成名、事故与舞台转向形成清晰时间轴，可研究身份危机、克制表达与意义重建。"
+  },
+  {
+    "person_id": "cui-jian",
+    "display_name": "崔健",
+    "name_en": "Cui Jian",
+    "region": "CN",
+    "industries": [
+      "音乐",
+      "摇滚",
+      "创作"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《圆桌派》等长对谈",
+      "音乐纪录片访谈",
+      "高校演讲Q&A",
+      "演出后访谈"
+    ],
+    "diversity_value": "个人主义、现场性和社会隐喻持续稳定，适合追踪创作者价值轴在数十年间的变化。"
+  },
+  {
+    "person_id": "han-hong",
+    "display_name": "韩红",
+    "name_en": "Han Hong",
+    "region": "CN",
+    "industries": [
+      "音乐",
+      "公益",
+      "综艺"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公益行动长访谈",
+      "音乐节目即席点评",
+      "直播",
+      "公开演讲Q&A"
+    ],
+    "diversity_value": "高情绪强度、强道德承诺与组织执行力并存，可观察压力下的保护性决策和直言风格。"
+  },
+  {
+    "person_id": "zhou-shen",
+    "display_name": "周深",
+    "name_en": "Zhou Shen",
+    "region": "CN",
+    "industries": [
+      "音乐",
+      "综艺",
+      "直播"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长时直播",
+      "播客及电台访谈",
+      "音乐节目即席交流",
+      "演唱会互动与Q&A"
+    ],
+    "diversity_value": "高速接梗、自我调侃与专业听觉判断结合，适合研究敏捷社交监测和舞台风险管理。"
+  },
+  {
+    "person_id": "zhang-yadong",
+    "display_name": "张亚东",
+    "name_en": "Zhang Yadong",
+    "region": "CN",
+    "industries": [
+      "音乐制作",
+      "作曲",
+      "综艺"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "《圆桌派》等长谈",
+      "音乐节目长点评",
+      "播客访谈",
+      "制作人公开课Q&A"
+    ],
+    "diversity_value": "低冲突、审美驱动且擅长倾听，提供幕后创作者处理模糊判断与合作关系的样本。"
+  },
+  {
+    "person_id": "yu-hua",
+    "display_name": "余华",
+    "name_en": "Yu Hua",
+    "region": "CN",
+    "industries": [
+      "文学",
+      "写作",
+      "公共演讲"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "高校讲座Q&A",
+      "文学节长对谈",
+      "播客访谈",
+      "读者见面会"
+    ],
+    "diversity_value": "用荒诞幽默解释苦难与偶然，口语语料极丰富，适合分析叙事压缩和经验主义判断。"
+  },
+  {
+    "person_id": "liu-zhenyun",
+    "display_name": "刘震云",
+    "name_en": "Liu Zhenyun",
+    "region": "CN",
+    "industries": [
+      "文学",
+      "编剧",
+      "公共演讲"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "文学长对谈",
+      "电影映后Q&A",
+      "高校演讲",
+      "读者活动问答"
+    ],
+    "diversity_value": "反复从语言误差与人际错位建模社会，适合研究递归叙事和关系因果推理。"
+  },
+  {
+    "person_id": "mo-yan",
+    "display_name": "莫言",
+    "name_en": "Mo Yan",
+    "region": "CN",
+    "industries": [
+      "文学",
+      "写作",
+      "教育"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "诺奖及文学节访谈",
+      "高校演讲Q&A",
+      "作家对谈",
+      "读者见面会"
+    ],
+    "diversity_value": "民间叙事、感官记忆与公共身份压力交织，可观察作家在不同政治文化语境中的表达校准。"
+  },
+  {
+    "person_id": "wang-anyi",
+    "display_name": "王安忆",
+    "name_en": "Wang Anyi",
+    "region": "CN",
+    "industries": [
+      "文学",
+      "写作",
+      "教育"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "文学节长对谈",
+      "高校讲座Q&A",
+      "作家访谈",
+      "读者交流"
+    ],
+    "diversity_value": "重日常结构、城市记忆和缓慢辨析，提供与强戏剧性叙事相反的细部认知样本。"
+  },
+  {
+    "person_id": "chi-zijian",
+    "display_name": "迟子建",
+    "name_en": "Chi Zijian",
+    "region": "CN",
+    "industries": [
+      "文学",
+      "写作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "文学节长访谈",
+      "读者见面会Q&A",
+      "电视人物对谈",
+      "高校讲座"
+    ],
+    "diversity_value": "地域生态、生命韧性与温和伦理持续贯穿表达，补充东北女性作家的地方性视角。"
+  },
+  {
+    "person_id": "ma-boyong",
+    "display_name": "马伯庸",
+    "name_en": "Ma Boyong",
+    "region": "CN",
+    "industries": [
+      "文学",
+      "编剧",
+      "历史写作"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "读书活动Q&A",
+      "影视主创访谈",
+      "公开课"
+    ],
+    "diversity_value": "善用资料考据与类型叙事搭建机制模型，适合研究历史信息如何转化为可传播故事。"
+  },
+  {
+    "person_id": "jiang-fangzhou",
+    "display_name": "蒋方舟",
+    "name_en": "Jiang Fangzhou",
+    "region": "CN",
+    "industries": [
+      "文学",
+      "媒体",
+      "写作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "《圆桌派》等群聊",
+      "作家对谈",
+      "读者活动Q&A"
+    ],
+    "diversity_value": "早熟公众身份、女性经验和高语言自省交织，可研究评价敏感性与观点形成。"
+  },
+  {
+    "person_id": "lang-ping",
+    "display_name": "郎平",
+    "name_en": "Lang Ping",
+    "region": "CN",
+    "industries": [
+      "排球",
+      "教练",
+      "体育"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后发布会",
+      "纪录片跟队访谈",
+      "教练长访谈",
+      "公开演讲Q&A"
+    ],
+    "diversity_value": "运动员与中外执教双重经历完整，适合研究高压团队决策、人才判断和赛后复盘。"
+  },
+  {
+    "person_id": "yao-ming",
+    "display_name": "姚明",
+    "name_en": "Yao Ming",
+    "region": "CN",
+    "industries": [
+      "篮球",
+      "体育管理",
+      "公益"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "中英文长访谈",
+      "赛后及协会发布会",
+      "政协媒体问答",
+      "公开演讲Q&A"
+    ],
+    "diversity_value": "跨文化沟通、幽默降压与制度治理经验兼具，可观察运动员向管理者转型后的思维迁移。"
+  },
+  {
+    "person_id": "li-na-tennis",
+    "display_name": "李娜",
+    "name_en": "Li Na",
+    "region": "CN",
+    "industries": [
+      "网球",
+      "体育",
+      "公益"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后发布会",
+      "自传主题长访谈",
+      "纪录片访谈",
+      "公开活动Q&A"
+    ],
+    "diversity_value": "高度直接、个人主义且压力反应可追踪，提供职业体育中自主决策和情绪调节样本。"
+  },
+  {
+    "person_id": "liu-guoliang",
+    "display_name": "刘国梁",
+    "name_en": "Liu Guoliang",
+    "region": "CN",
+    "industries": [
+      "乒乓球",
+      "教练",
+      "体育管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后发布会",
+      "队伍纪录片谈话",
+      "教练长访谈",
+      "直播解说与公开Q&A"
+    ],
+    "diversity_value": "临场读局、人才分层和团队心理管理突出，是竞技策略与组织权威结合的高价值样本。"
+  },
+  {
+    "person_id": "deng-yaping",
+    "display_name": "邓亚萍",
+    "name_en": "Deng Yaping",
+    "region": "CN",
+    "industries": [
+      "乒乓球",
+      "体育评论",
+      "公共演讲"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "冠军长访谈",
+      "体育解说与直播",
+      "高校演讲Q&A",
+      "播客对谈"
+    ],
+    "diversity_value": "从逆势竞争到公共表达转型，适合研究强成就动机、反证意识和复盘习惯。"
+  },
+  {
+    "person_id": "zhang-weili",
+    "display_name": "张伟丽",
+    "name_en": "Zhang Weili",
+    "region": "CN",
+    "industries": [
+      "综合格斗",
+      "体育"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛前赛后发布会",
+      "训练纪录片访谈",
+      "播客长谈",
+      "直播与公开Q&A"
+    ],
+    "diversity_value": "蓝领经历、身体风险和顶级竞技压力连续可见，适合研究恐惧管理、韧性和战术调整。"
+  },
+  {
+    "person_id": "su-bingtian",
+    "display_name": "苏炳添",
+    "name_en": "Su Bingtian",
+    "region": "CN",
+    "industries": [
+      "田径",
+      "体育",
+      "教育"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后采访与发布会",
+      "高校讲座Q&A",
+      "训练技术长访谈",
+      "纪录片访谈"
+    ],
+    "diversity_value": "以数据和动作细节复盘短跑突破，提供精细技术迭代、年龄管理与长期训练样本。"
+  },
+  {
+    "person_id": "chen-xiaoqing",
+    "display_name": "陈晓卿",
+    "name_en": "Chen Xiaoqing",
+    "region": "CN",
+    "industries": [
+      "纪录片",
+      "美食",
+      "媒体"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "播客长谈",
+      "《圆桌派》等即兴群聊",
+      "纪录片幕后Q&A",
+      "美食文化演讲"
+    ],
+    "diversity_value": "从味觉和地方经验理解社会网络，适合研究感官记忆、田野观察与大众叙事。"
+  },
+  {
+    "person_id": "wang-gang-chef",
+    "display_name": "王刚",
+    "name_en": "Wang Gang",
+    "region": "CN",
+    "industries": [
+      "厨师",
+      "美食创作",
+      "直播"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长时烹饪直播",
+      "教学视频现场讲解",
+      "返乡纪录与人物访谈",
+      "粉丝问答"
+    ],
+    "diversity_value": "职业厨师的程序化思维、成本意识与乡村生活经验并存，补充非精英手艺人认知样本。"
+  }
+]

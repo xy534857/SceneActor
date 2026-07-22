@@ -1,0 +1,1892 @@
+[
+  {
+    "person_id": "elon-musk",
+    "display_name": "埃隆·马斯克",
+    "name_en": "Elon Musk",
+    "region": "INTL",
+    "industries": [
+      "科技创业",
+      "航天与人工智能"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客逐字稿",
+      "产品发布会Q&A",
+      "法庭证词与监管访谈",
+      "公开对抗式采访"
+    ],
+    "diversity_value": "跨工程、资本与政治议题频繁即兴作答，能呈现高风险偏好、第一性原理和受压时的反击模式。"
+  },
+  {
+    "person_id": "sam-altman",
+    "display_name": "萨姆·奥尔特曼",
+    "name_en": "Sam Altman",
+    "region": "INTL",
+    "industries": [
+      "人工智能",
+      "科技创业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会听证会逐字稿",
+      "长篇播客",
+      "公开访谈Q&A",
+      "创业演讲"
+    ],
+    "diversity_value": "善于把高不确定技术风险转译为制度语言，危机后访谈可观察克制表达与控制需求。"
+  },
+  {
+    "person_id": "satya-nadella",
+    "display_name": "萨提亚·纳德拉",
+    "name_en": "Satya Nadella",
+    "region": "INTL",
+    "industries": [
+      "科技管理",
+      "云计算"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "财报会逐字稿",
+      "长篇访谈",
+      "开发者大会Q&A",
+      "国会与监管证词"
+    ],
+    "diversity_value": "印度移民背景与大型组织转型经历兼具，突出同理心叙事、平台战略和低冲突权力表达。"
+  },
+  {
+    "person_id": "sundar-pichai",
+    "display_name": "桑达尔·皮查伊",
+    "name_en": "Sundar Pichai",
+    "region": "INTL",
+    "industries": [
+      "科技管理",
+      "互联网与人工智能"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会听证会逐字稿",
+      "财报会",
+      "开发者大会Q&A",
+      "长篇访谈"
+    ],
+    "diversity_value": "在反垄断和隐私追问中保持高度程序化措辞，适合研究低情绪外显下的风险规避与边界控制。"
+  },
+  {
+    "person_id": "tim-cook",
+    "display_name": "蒂姆·库克",
+    "name_en": "Tim Cook",
+    "region": "INTL",
+    "industries": [
+      "科技管理",
+      "消费电子"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会听证会逐字稿",
+      "财报会",
+      "电视长访谈",
+      "大学演讲Q&A"
+    ],
+    "diversity_value": "供应链运营者转型公共价值倡议者，隐私、产业政策与股东压力间的权衡材料丰富。"
+  },
+  {
+    "person_id": "mark-zuckerberg",
+    "display_name": "马克·扎克伯格",
+    "name_en": "Mark Zuckerberg",
+    "region": "INTL",
+    "industries": [
+      "科技创业",
+      "社交媒体"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会听证会逐字稿",
+      "长篇播客",
+      "财报会",
+      "产品发布Q&A"
+    ],
+    "diversity_value": "从极度受控的听证答复到长播客技术畅谈反差显著，可分析声誉压力下的表达收缩。"
+  },
+  {
+    "person_id": "bill-gates",
+    "display_name": "比尔·盖茨",
+    "name_en": "Bill Gates",
+    "region": "INTL",
+    "industries": [
+      "科技创业",
+      "慈善与公共卫生"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "庭审与证词逐字稿",
+      "长篇访谈",
+      "播客",
+      "国会作证"
+    ],
+    "diversity_value": "跨越反垄断对抗期与全球卫生倡议期，便于观察竞争型认知向系统型治理认知的长期漂移。"
+  },
+  {
+    "person_id": "jensen-huang",
+    "display_name": "黄仁勋",
+    "name_en": "Jensen Huang",
+    "region": "INTL",
+    "industries": [
+      "半导体",
+      "人工智能"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "财报会逐字稿",
+      "长篇技术访谈",
+      "大学Q&A",
+      "开发者大会问答"
+    ],
+    "diversity_value": "台湾移民创业者，以高能叙事把工程细节、市场周期与组织生存连接起来，决策语料密集。"
+  },
+  {
+    "person_id": "lisa-su",
+    "display_name": "苏姿丰",
+    "name_en": "Lisa Su",
+    "region": "INTL",
+    "industries": [
+      "半导体",
+      "科技管理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "财报会逐字稿",
+      "技术大会Q&A",
+      "长篇访谈",
+      "投资者会议"
+    ],
+    "diversity_value": "工程师式精确表达与长期逆转企业的决策记录结合，为低戏剧性、高执行可信度的认知样本。"
+  },
+  {
+    "person_id": "melanie-perkins",
+    "display_name": "梅拉妮·珀金斯",
+    "name_en": "Melanie Perkins",
+    "region": "INTL",
+    "industries": [
+      "科技创业",
+      "设计软件"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "长篇创业访谈",
+      "播客",
+      "大会Q&A",
+      "公司发布访谈"
+    ],
+    "diversity_value": "澳大利亚女性创始人以高拒绝耐受和产品民主化叙事区别于硅谷男性融资模板。"
+  },
+  {
+    "person_id": "masayoshi-son",
+    "display_name": "孙正义",
+    "name_en": "Masayoshi Son",
+    "region": "INTL",
+    "industries": [
+      "科技投资",
+      "电信"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "股东大会Q&A",
+      "财报发布会",
+      "长篇采访",
+      "主题演讲问答"
+    ],
+    "diversity_value": "日英双语商业语料中超长期愿景、集中下注和亏损复盘并存，是极端风险偏好的非美样本。"
+  },
+  {
+    "person_id": "fei-fei-li",
+    "display_name": "李飞飞",
+    "name_en": "Fei-Fei Li",
+    "region": "INTL",
+    "industries": [
+      "人工智能",
+      "计算机科学"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会听证会逐字稿",
+      "长篇播客",
+      "学术演讲Q&A",
+      "政策访谈"
+    ],
+    "diversity_value": "华裔女性科学家在技术愿景、人本价值与政策约束间切换，兼有个人迁移叙事和制度性辩论。"
+  },
+  {
+    "person_id": "donald-trump",
+    "display_name": "唐纳德·特朗普",
+    "name_en": "Donald Trump",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "商业与媒体"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "总统辩论逐字稿",
+      "庭审与证词",
+      "记者会",
+      "集会即兴问答"
+    ],
+    "diversity_value": "海量对抗性语料中打断、议题转移、地位挑战和升级路径高度可见，是压力反应的标杆样本。"
+  },
+  {
+    "person_id": "barack-obama",
+    "display_name": "贝拉克·奥巴马",
+    "name_en": "Barack Obama",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "公共政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "总统辩论逐字稿",
+      "记者会",
+      "长篇播客",
+      "市民大会Q&A"
+    ],
+    "diversity_value": "多族裔身份与法律训练塑造的审慎框架化表达，适合与即兴幽默及被追问时的节奏变化对照。"
+  },
+  {
+    "person_id": "hillary-clinton",
+    "display_name": "希拉里·克林顿",
+    "name_en": "Hillary Clinton",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "外交"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "总统辩论逐字稿",
+      "国会听证会",
+      "长篇访谈",
+      "市民大会"
+    ],
+    "diversity_value": "长期处于性别化审视和高敌意听证环境，能呈现准备型控制、韧性与公开私密风格张力。"
+  },
+  {
+    "person_id": "kamala-harris",
+    "display_name": "卡玛拉·哈里斯",
+    "name_en": "Kamala Harris",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "法律"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "竞选辩论逐字稿",
+      "参议院质询",
+      "长篇访谈",
+      "记者会"
+    ],
+    "diversity_value": "检察官式追问与候选人式防守均有大量材料，可比较掌控提问权和承受追问时的认知切换。"
+  },
+  {
+    "person_id": "alexandria-ocasio-cortez",
+    "display_name": "亚历山德里娅·奥卡西奥-科尔特斯",
+    "name_en": "Alexandria Ocasio-Cortez",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "社会运动"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会听证与质询",
+      "直播",
+      "长篇播客",
+      "竞选辩论"
+    ],
+    "diversity_value": "年轻拉丁裔女性议员兼具直播口语和高度结构化质询，阶层叙事与冲突动员特征鲜明。"
+  },
+  {
+    "person_id": "bernie-sanders",
+    "display_name": "伯尼·桑德斯",
+    "name_en": "Bernie Sanders",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "劳工政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "总统辩论逐字稿",
+      "国会质询",
+      "市民大会",
+      "长篇访谈"
+    ],
+    "diversity_value": "数十年价值主张高度稳定且重复模式明显，在敌意追问中仍回到阶级框架，适合测量信念刚性。"
+  },
+  {
+    "person_id": "boris-johnson",
+    "display_name": "鲍里斯·约翰逊",
+    "name_en": "Boris Johnson",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "新闻写作"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "议会质询逐字稿",
+      "调查听证会",
+      "电视采访",
+      "竞选辩论"
+    ],
+    "diversity_value": "议会高压交锋、调查听证和表演性幽默并存，可观察语言繁复如何服务回避、支配与恢复地位。"
+  },
+  {
+    "person_id": "rishi-sunak",
+    "display_name": "里希·苏纳克",
+    "name_en": "Rishi Sunak",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "财政"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "议会质询逐字稿",
+      "竞选辩论",
+      "电视深访",
+      "记者会"
+    ],
+    "diversity_value": "英裔印度背景、金融训练与政治危机应对结合，技术官僚式精确和被打断后的控制反应清晰。"
+  },
+  {
+    "person_id": "angela-merkel",
+    "display_name": "安格拉·默克尔",
+    "name_en": "Angela Merkel",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "科学政策"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "记者会逐字稿",
+      "议会答辩",
+      "长篇访谈",
+      "国际峰会Q&A"
+    ],
+    "diversity_value": "东德成长的物理学家型领导者，以渐进、证据和联盟维护为主，提供非英语政治家的低情绪决策样本。"
+  },
+  {
+    "person_id": "emmanuel-macron",
+    "display_name": "埃马纽埃尔·马克龙",
+    "name_en": "Emmanuel Macron",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "经济政策"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "总统辩论逐字稿",
+      "记者会",
+      "英语长访谈",
+      "市民辩论"
+    ],
+    "diversity_value": "能在法英双语中进行超长论证，也有街头和记者敌意追问材料，精英自信与说服冲动突出。"
+  },
+  {
+    "person_id": "jacinda-ardern",
+    "display_name": "杰辛达·阿德恩",
+    "name_en": "Jacinda Ardern",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "公共领导"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "议会质询逐字稿",
+      "疫情记者会",
+      "长篇访谈",
+      "市民大会"
+    ],
+    "diversity_value": "女性与年轻领导者样本，以高共情公开表达处理危机，同时保留议会对抗和艰难决策记录。"
+  },
+  {
+    "person_id": "volodymyr-zelenskyy",
+    "display_name": "弗拉基米尔·泽连斯基",
+    "name_en": "Volodymyr Zelenskyy",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "表演艺术"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "战争时期记者会",
+      "英语长访谈",
+      "竞选辩论",
+      "国际议会Q&A"
+    ],
+    "diversity_value": "喜剧演员到战时总统的角色转变巨大，危机沟通、道德诉求与资源争取的压力语料罕见。"
+  },
+  {
+    "person_id": "benjamin-netanyahu",
+    "display_name": "本雅明·内塔尼亚胡",
+    "name_en": "Benjamin Netanyahu",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "安全与外交"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "英语电视对抗采访",
+      "记者会",
+      "法庭证词",
+      "议会辩论"
+    ],
+    "diversity_value": "长期安全威胁框架、精通英语媒体攻防且争议决策密集，适合研究高威胁感知和叙事控制。"
+  },
+  {
+    "person_id": "tsai-ing-wen",
+    "display_name": "蔡英文",
+    "name_en": "Tsai Ing-wen",
+    "region": "INTL",
+    "industries": [
+      "政治",
+      "国际法"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "英语政策访谈",
+      "记者会",
+      "总统辩论",
+      "国际媒体Q&A"
+    ],
+    "diversity_value": "台湾女性法律学者型领导者，在高地缘压力下保持低调精确，提供华语世界不同于大陆的政治认知样本。"
+  },
+  {
+    "person_id": "demis-hassabis",
+    "display_name": "德米斯·哈萨比斯",
+    "name_en": "Demis Hassabis",
+    "region": "INTL",
+    "industries": [
+      "人工��能",
+      "神经科学"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "科学演讲Q&A",
+      "政策听证与圆桌",
+      "研究访谈"
+    ],
+    "diversity_value": "棋手、游戏设计师与科学创业者三重路径，使规划、搜索和科学使命之间的心智模型格外可辨。"
+  },
+  {
+    "person_id": "neil-degrasse-tyson",
+    "display_name": "尼尔·德格拉斯·泰森",
+    "name_en": "Neil deGrasse Tyson",
+    "region": "INTL",
+    "industries": [
+      "天体物理",
+      "科学传播"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "公开辩论",
+      "现场Q&A",
+      "电视访谈"
+    ],
+    "diversity_value": "非裔科学传播者，善用类比和纠错，在与宗教、政治及公众误解交锋时有鲜明的地位与教学反应。"
+  },
+  {
+    "person_id": "brian-cox",
+    "display_name": "布莱恩·考克斯",
+    "name_en": "Brian Cox",
+    "region": "INTL",
+    "industries": [
+      "粒子物理",
+      "科学传播"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "现场演讲Q&A",
+      "电视辩论",
+      "科学访谈"
+    ],
+    "diversity_value": "从摇滚乐手到物理学家，兼具审美化宇宙叙事和与伪科学争辩时的证据边界。"
+  },
+  {
+    "person_id": "richard-dawkins",
+    "display_name": "理查德·道金斯",
+    "name_en": "Richard Dawkins",
+    "region": "INTL",
+    "industries": [
+      "进化生物学",
+      "思想写作"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开辩论逐字稿",
+      "长篇访谈",
+      "演讲Q&A",
+      "播客"
+    ],
+    "diversity_value": "与宗教和伦理对手的长期公开辩论提供高密度冲突材料，科学还原论和低含混容忍度显著。"
+  },
+  {
+    "person_id": "yuval-noah-harari",
+    "display_name": "尤瓦尔·赫拉利",
+    "name_en": "Yuval Noah Harari",
+    "region": "INTL",
+    "industries": [
+      "历史学",
+      "公共思想"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "公开辩论",
+      "大会Q&A",
+      "政策访谈"
+    ],
+    "diversity_value": "以宏大历史压缩复杂性并持续讨论AI、民族与虚构秩序，能检验抽象化倾向及其盲区。"
+  },
+  {
+    "person_id": "jordan-peterson",
+    "display_name": "乔丹·彼得森",
+    "name_en": "Jordan Peterson",
+    "region": "INTL",
+    "industries": [
+      "心理学",
+      "公共思想"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "电视对抗采访",
+      "公开辩论",
+      "大学讲座Q&A"
+    ],
+    "diversity_value": "海量长谈和高冲突访谈中，道德秩序、个人责任、情绪升级与反诘风格均高度外显。"
+  },
+  {
+    "person_id": "cornel-west",
+    "display_name": "科内尔·韦斯特",
+    "name_en": "Cornel West",
+    "region": "INTL",
+    "industries": [
+      "哲学",
+      "政治思想"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开辩论",
+      "长篇访谈",
+      "大学讲座Q&A",
+      "竞选采访"
+    ],
+    "diversity_value": "非裔哲学家将宗教、爵士节奏与激进民主结合，情感强度和道德批判不同于技术理性样本。"
+  },
+  {
+    "person_id": "judith-butler",
+    "display_name": "朱迪思·巴特勒",
+    "name_en": "Judith Butler",
+    "region": "INTL",
+    "industries": [
+      "哲学",
+      "性别研究"
+    ],
+    "gender": "nonbinary",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "学术讲座Q&A",
+      "长篇访谈",
+      "公开辩论",
+      "播客"
+    ],
+    "diversity_value": "非二元思想家以语言、权力和身份建构为核心，提供高抽象度且持续受公开挑战的认知风格。"
+  },
+  {
+    "person_id": "angela-davis",
+    "display_name": "安吉拉·戴维斯",
+    "name_en": "Angela Davis",
+    "region": "INTL",
+    "industries": [
+      "政治思想",
+      "社会运动"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "历史庭审语料",
+      "长篇访谈",
+      "大学演讲Q&A",
+      "公开论坛"
+    ],
+    "diversity_value": "非裔女性活动家横跨司法对抗和数十年运动反思，制度性思维与个人风险承担证据都很强。"
+  },
+  {
+    "person_id": "steven-pinker",
+    "display_name": "史蒂文·平克",
+    "name_en": "Steven Pinker",
+    "region": "INTL",
+    "industries": [
+      "认知科学",
+      "公共思想"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开辩论",
+      "长篇播客",
+      "大学Q&A",
+      "批评者对谈"
+    ],
+    "diversity_value": "数据乐观主义频繁遭受历史与伦理反驳，适合观察统计框架如何应对反例和价值冲突。"
+  },
+  {
+    "person_id": "esther-duflo",
+    "display_name": "埃丝特·迪弗洛",
+    "name_en": "Esther Duflo",
+    "region": "INTL",
+    "industries": [
+      "经济学",
+      "减贫政策"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "诺奖访谈",
+      "政策听证与圆桌",
+      "长篇播客",
+      "学术Q&A"
+    ],
+    "diversity_value": "法裔女性实验经济学家强调局部证据和可验证干预，为宏大叙事型人物提供强烈反差。"
+  },
+  {
+    "person_id": "geoffrey-hinton",
+    "display_name": "杰弗里·辛顿",
+    "name_en": "Geoffrey Hinton",
+    "region": "INTL",
+    "industries": [
+      "人工智能",
+      "认知科学"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇访谈",
+      "学术演讲Q&A",
+      "政策圆桌",
+      "电视质询"
+    ],
+    "diversity_value": "从技术奠基者到公开风险警告者的立场变化可追踪，能研究信念修正、责任感与末日风险推理。"
+  },
+  {
+    "person_id": "jennifer-doudna",
+    "display_name": "珍妮弗·杜德纳",
+    "name_en": "Jennifer Doudna",
+    "region": "INTL",
+    "industries": [
+      "生物化学",
+      "基因编辑"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇科学访谈",
+      "国会与政策听证",
+      "演讲Q&A",
+      "伦理圆桌"
+    ],
+    "diversity_value": "发现者同时推动技术暂停与治理，科学竞争、伦理自限和现实应用间的内在冲突清楚。"
+  },
+  {
+    "person_id": "peter-singer",
+    "display_name": "彼得·辛格",
+    "name_en": "Peter Singer",
+    "region": "INTL",
+    "industries": [
+      "伦理学",
+      "公共思想"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开辩论",
+      "长篇访谈",
+      "课堂与演讲Q&A",
+      "播客"
+    ],
+    "diversity_value": "功利主义结论长期接受敌意道德追问，可观察原则一致性、情感距离和反直觉立场防御。"
+  },
+  {
+    "person_id": "noam-chomsky",
+    "display_name": "诺姆·乔姆斯基",
+    "name_en": "Noam Chomsky",
+    "region": "INTL",
+    "industries": [
+      "语言学",
+      "政治思想"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "公开辩论逐字稿",
+      "长篇访谈",
+      "讲座Q&A",
+      "历史媒体档案"
+    ],
+    "diversity_value": "跨越六十余年的语言学与政治语料，可测长期稳定信念、权力怀疑和高龄阶段的表达漂移。"
+  },
+  {
+    "person_id": "taylor-swift",
+    "display_name": "泰勒·斯威夫特",
+    "name_en": "Taylor Swift",
+    "region": "INTL",
+    "industries": [
+      "音乐",
+      "创作与娱乐商业"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "长篇视频访谈",
+      "纪录片逐字稿",
+      "创作人圆桌",
+      "颁奖与演讲Q&A"
+    ],
+    "diversity_value": "女性创作者对叙事所有权、名誉和产业控制的长期演化清晰，但即兴对抗语料应重点筛选。"
+  },
+  {
+    "person_id": "lady-gaga",
+    "display_name": "Lady Gaga",
+    "name_en": "Lady Gaga",
+    "region": "INTL",
+    "industries": [
+      "音乐",
+      "影视表演"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇访谈",
+      "演员圆桌",
+      "公开演讲Q&A",
+      "纪录片逐字稿"
+    ],
+    "diversity_value": "高度表演性外壳与坦率心理健康叙事并存，身份重塑、羞耻应对和完美主义材料丰富。"
+  },
+  {
+    "person_id": "madonna",
+    "display_name": "麦当娜",
+    "name_en": "Madonna",
+    "region": "INTL",
+    "industries": [
+      "音乐",
+      "流行文化"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "历史对抗采访",
+      "长篇电视访谈",
+      "记者会",
+      "演讲Q&A"
+    ],
+    "diversity_value": "四十年媒体对抗中持续处理性别、宗教、年龄与控制权挑战，代际纵向语料价值极高。"
+  },
+  {
+    "person_id": "bono",
+    "display_name": "博诺",
+    "name_en": "Bono",
+    "region": "INTL",
+    "industries": [
+      "音乐",
+      "国际倡议"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "政治访谈",
+      "演讲Q&A",
+      "国会与政策论坛"
+    ],
+    "diversity_value": "摇滚明星与政策游说者双重身份，使道德激情、务实妥协和自我戏剧化可在同一人物中比较。"
+  },
+  {
+    "person_id": "arnold-schwarzenegger",
+    "display_name": "阿诺德·施瓦辛格",
+    "name_en": "Arnold Schwarzenegger",
+    "region": "INTL",
+    "industries": [
+      "影视表演",
+      "政治与健身"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "州长辩论与记者会",
+      "健身演讲Q&A",
+      "纪录片访谈"
+    ],
+    "diversity_value": "移民、健美冠军、电影明星与州长四种角色叠加，目标驱动、自我塑造和跨阵营交易特征鲜明。"
+  },
+  {
+    "person_id": "viola-davis",
+    "display_name": "维奥拉·戴维斯",
+    "name_en": "Viola Davis",
+    "region": "INTL",
+    "industries": [
+      "影视表演",
+      "戏剧"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "演员圆桌逐字稿",
+      "长篇播客",
+      "大师课Q&A",
+      "回忆录访谈"
+    ],
+    "diversity_value": "非裔女性演员以贫困、创伤和技艺训练为长期主题，情绪觉察与社会地位敏感度均可观察。"
+  },
+  {
+    "person_id": "priyanka-chopra-jonas",
+    "display_name": "佩丽冉卡·乔普拉·乔纳斯",
+    "name_en": "Priyanka Chopra Jonas",
+    "region": "INTL",
+    "industries": [
+      "影视表演",
+      "娱乐商业"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "国际电视访谈",
+      "演员圆桌",
+      "演讲Q&A"
+    ],
+    "diversity_value": "印度与好莱坞双市场迁移经历突出代码切换、野心表达和跨文化身份协商。"
+  },
+  {
+    "person_id": "michelle-yeoh",
+    "display_name": "杨紫琼",
+    "name_en": "Michelle Yeoh",
+    "region": "INTL",
+    "industries": [
+      "影视表演",
+      "动作电影"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "medium",
+    "source_types": [
+      "长篇访谈",
+      "演员圆桌",
+      "电影节Q&A",
+      "大师课"
+    ],
+    "diversity_value": "马来西亚华裔女性在动作风险、年龄壁垒和跨国职业中形成纪律、谦抑与坚决并存的样本。"
+  },
+  {
+    "person_id": "shakira",
+    "display_name": "夏奇拉",
+    "name_en": "Shakira",
+    "region": "INTL",
+    "industries": [
+      "音乐",
+      "娱乐商业"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "英西双语长访谈",
+      "电视对抗采访",
+      "创作访谈",
+      "公开演讲Q&A"
+    ],
+    "diversity_value": "哥伦比亚跨语种创作者兼商业管理者，文化适应、创作控制和危机后的公开重构均有语料。"
+  },
+  {
+    "person_id": "billie-eilish",
+    "display_name": "比莉·艾利什",
+    "name_en": "Billie Eilish",
+    "region": "INTL",
+    "industries": [
+      "音乐",
+      "青年文化"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "年度纵向访谈",
+      "创作对谈",
+      "现场Q&A"
+    ],
+    "diversity_value": "年轻女性创作者有连续多年同题访谈，可追踪成名、身体评价和自主边界带来的认知变化。"
+  },
+  {
+    "person_id": "serena-williams",
+    "display_name": "塞雷娜·威廉姆斯",
+    "name_en": "Serena Williams",
+    "region": "INTL",
+    "industries": [
+      "网球",
+      "投资与时尚"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后记者会",
+      "长篇访谈",
+      "纪录片逐字稿",
+      "商业播客"
+    ],
+    "diversity_value": "非裔女性冠军长期面对种族、性别和裁判冲突，竞争怒气、家庭转型与商业野心都有一手材料。"
+  },
+  {
+    "person_id": "lebron-james",
+    "display_name": "勒布朗·詹姆斯",
+    "name_en": "LeBron James",
+    "region": "INTL",
+    "industries": [
+      "篮球",
+      "媒体与商业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后记者会",
+      "长篇节目对谈",
+      "纪录片",
+      "商业访谈"
+    ],
+    "diversity_value": "从少年天才到球员领袖和商业决策者，地位管理、团队责任与公共政治表达可做长期追踪。"
+  },
+  {
+    "person_id": "simone-biles",
+    "display_name": "西蒙·拜尔斯",
+    "name_en": "Simone Biles",
+    "region": "INTL",
+    "industries": [
+      "体操",
+      "运动员倡议"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会听证会逐字稿",
+      "赛后记者会",
+      "长篇访谈",
+      "纪录片"
+    ],
+    "diversity_value": "非裔女性冠军在奥运压力、创伤听证和退赛争议中公开重设边界，是自我保护与责任冲突的强样本。"
+  },
+  {
+    "person_id": "megan-rapinoe",
+    "display_name": "梅根·拉皮诺埃",
+    "name_en": "Megan Rapinoe",
+    "region": "INTL",
+    "industries": [
+      "足球",
+      "社会运动"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后记者会",
+      "电视辩论式访谈",
+      "长篇播客",
+      "国会证词"
+    ],
+    "diversity_value": "公开出柜女性运动员把竞技、薪酬平等和政治抗议结合，面对敌意时价值优先级表达明确。"
+  },
+  {
+    "person_id": "naomi-osaka",
+    "display_name": "大坂直美",
+    "name_en": "Naomi Osaka",
+    "region": "INTL",
+    "industries": [
+      "网球",
+      "运动员倡议"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后记者会",
+      "纪录片逐字稿",
+      "长篇访谈",
+      "商业播客"
+    ],
+    "diversity_value": "日海混血且横跨美日文化，围绕记者会焦虑、种族抗议和竞争沉默形成独特的回避—倡议张力。"
+  },
+  {
+    "person_id": "lewis-hamilton",
+    "display_name": "刘易斯·汉密尔顿",
+    "name_en": "Lewis Hamilton",
+    "region": "INTL",
+    "industries": [
+      "赛车",
+      "运动员倡议"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后记者会",
+      "车手发布会逐字稿",
+      "长篇播客",
+      "纪录片访谈"
+    ],
+    "diversity_value": "F1首位黑人多冠车手在技术风险、团队政治和反种族倡议间切换，压力场合高度密集。"
+  },
+  {
+    "person_id": "virat-kohli",
+    "display_name": "维拉特·科利",
+    "name_en": "Virat Kohli",
+    "region": "INTL",
+    "industries": [
+      "板球",
+      "体育商业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后记者会",
+      "英语长篇访谈",
+      "纪录片",
+      "队长发布会"
+    ],
+    "diversity_value": "印度超高关注度队长以外露竞争情绪、纪律转型和领导权争议补足非西方团队运动样本。"
+  },
+  {
+    "person_id": "giannis-antetokounmpo",
+    "display_name": "扬尼斯·阿德托昆博",
+    "name_en": "Giannis Antetokounmpo",
+    "region": "INTL",
+    "industries": [
+      "篮球",
+      "体育商业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后记者会",
+      "长篇访谈",
+      "纪录片",
+      "现场Q&A"
+    ],
+    "diversity_value": "尼日利亚裔希腊移民从贫困到巨星，家庭忠诚、成长心态和著名的失败观答辩构成鲜明样本。"
+  },
+  {
+    "person_id": "coco-gauff",
+    "display_name": "科科·高芙",
+    "name_en": "Coco Gauff",
+    "region": "INTL",
+    "industries": [
+      "网球",
+      "青年体育"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后记者会",
+      "长篇访谈",
+      "现场Q&A",
+      "纪录短片"
+    ],
+    "diversity_value": "年轻非裔女性冠军从青少年起即有连续公开语料，可研究快速成名下的成熟、��治��识和失利复盘。"
+  },
+  {
+    "person_id": "tom-brady",
+    "display_name": "汤姆·布雷迪",
+    "name_en": "Tom Brady",
+    "region": "INTL",
+    "industries": [
+      "美式橄榄球",
+      "体育商业"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "赛后记者会",
+      "长篇播客",
+      "纪录片逐字稿",
+      "商业访谈"
+    ],
+    "diversity_value": "极端长期主义、竞争纪律和晚期职业迁移材料充足，可与失利时受控表达和私下团队评价交叉。"
+  },
+  {
+    "person_id": "joe-rogan",
+    "display_name": "乔·罗根",
+    "name_en": "Joe Rogan",
+    "region": "INTL",
+    "industries": [
+      "播客",
+      "喜剧与格斗评论"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "数千小时长篇播客",
+      "现场喜剧访谈",
+      "公开辩论",
+      "格斗评论"
+    ],
+    "diversity_value": "极大规模即兴对话覆盖科学、政治与亚文化，信任启发式、好奇心和受纠错时反应都可量化。"
+  },
+  {
+    "person_id": "lex-fridman",
+    "display_name": "莱克斯·弗里德曼",
+    "name_en": "Lex Fridman",
+    "region": "INTL",
+    "industries": [
+      "播客",
+      "人工智能"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "数百期长篇播客逐字稿",
+      "技术讲座Q&A",
+      "嘉宾互访",
+      "公开圆桌"
+    ],
+    "diversity_value": "俄裔技术主持人以低冲突、长停顿和善意假设处理强对立人物，是低对抗访谈风格的极端样本。"
+  },
+  {
+    "person_id": "oprah-winfrey",
+    "display_name": "奥普拉·温弗瑞",
+    "name_en": "Oprah Winfrey",
+    "region": "INTL",
+    "industries": [
+      "主持与媒体",
+      "娱乐商业"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "数十年访谈逐字稿",
+      "长篇特别节目",
+      "公开演讲Q&A",
+      "播客"
+    ],
+    "diversity_value": "非裔女性媒体领袖擅长情绪揭示与亲密控制，主持者和被访者两种位置均有丰富语料。"
+  },
+  {
+    "person_id": "trevor-noah",
+    "display_name": "特雷弗·诺亚",
+    "name_en": "Trevor Noah",
+    "region": "INTL",
+    "industries": [
+      "主持与喜剧",
+      "政治评论"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "政治人物访谈",
+      "现场观众Q&A",
+      "喜剧专场与幕后对谈"
+    ],
+    "diversity_value": "南非混血背景、跨文化模仿和幽默降冲突能力突出，也有与政治人物即时攻防的高价值片段。"
+  },
+  {
+    "person_id": "jon-stewart",
+    "display_name": "乔恩·斯图尔特",
+    "name_en": "Jon Stewart",
+    "region": "INTL",
+    "industries": [
+      "主持与喜剧",
+      "政治评论"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "对抗式电视访谈",
+      "长篇播客",
+      "国会证词",
+      "现场Q&A"
+    ],
+    "diversity_value": "喜剧框架与道德愤怒快速切换，国会倡议和敌意访谈能显示证据组织、讽刺与升级路径。"
+  },
+  {
+    "person_id": "kara-swisher",
+    "display_name": "卡拉·斯威舍",
+    "name_en": "Kara Swisher",
+    "region": "INTL",
+    "industries": [
+      "科技新闻",
+      "播客"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客逐字稿",
+      "科技高管对抗采访",
+      "现场大会Q&A",
+      "电视评论"
+    ],
+    "diversity_value": "公开出柜女性科技记者以高直接性和内部行业知识追问权力者，边界、自信与不耐烦反应鲜明。"
+  },
+  {
+    "person_id": "ezra-klein",
+    "display_name": "埃兹拉·克莱因",
+    "name_en": "Ezra Klein",
+    "region": "INTL",
+    "industries": [
+      "播客",
+      "政策新闻"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客逐字稿",
+      "公开辩论",
+      "政策访谈",
+      "现场Q&A"
+    ],
+    "diversity_value": "善于复述对手模型再提出抽象追问，跨意识形态对话多，适合分析高开放度和框架整合能力。"
+  },
+  {
+    "person_id": "piers-morgan",
+    "display_name": "皮尔斯·摩根",
+    "name_en": "Piers Morgan",
+    "region": "INTL",
+    "industries": [
+      "电视主持",
+      "新闻评论"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "大量对抗采访逐字稿",
+      "现场辩论",
+      "长篇特别访谈",
+      "新闻节目"
+    ],
+    "diversity_value": "以打断、道德挑战和冲突升级著称，同时频繁成为被反击对象，是主持权争夺的高密度样本。"
+  },
+  {
+    "person_id": "christiane-amanpour",
+    "display_name": "克里斯蒂安·阿曼普尔",
+    "name_en": "Christiane Amanpour",
+    "region": "INTL",
+    "industries": [
+      "国际新闻",
+      "电视主持"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "战争与政治访谈逐字稿",
+      "领导人对抗采访",
+      "现场报道",
+      "演讲Q&A"
+    ],
+    "diversity_value": "伊朗裔女性战地记者在高风险和权力不对称场合坚持事实追问，提供非娱乐化的勇气与控制样本。"
+  },
+  {
+    "person_id": "megyn-kelly",
+    "display_name": "梅根·凯利",
+    "name_en": "Megyn Kelly",
+    "region": "INTL",
+    "industries": [
+      "新闻评论",
+      "播客"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "政治辩论主持逐字稿",
+      "长篇播客",
+      "对抗式采访",
+      "电视圆桌"
+    ],
+    "diversity_value": "法律训练、保守媒体经历与公开职业冲突结合，可比较审讯式提问、身份防御和立场迁移。"
+  },
+  {
+    "person_id": "warren-buffett",
+    "display_name": "沃伦·巴菲特",
+    "name_en": "Warren Buffett",
+    "region": "INTL",
+    "industries": [
+      "投资",
+      "保险与企业管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "数十年股东大会Q&A逐字稿",
+      "国会证词",
+      "长篇访谈",
+      "大学问答"
+    ],
+    "diversity_value": "数十年同类问题与真实资本配置可交叉验证，概率、声誉和能力圈启发式极易做纵向建模。"
+  },
+  {
+    "person_id": "ray-dalio",
+    "display_name": "瑞·达利欧",
+    "name_en": "Ray Dalio",
+    "region": "INTL",
+    "industries": [
+      "对冲基金",
+      "宏观投资"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "投资会议Q&A",
+      "电视对抗采访",
+      "公开课程"
+    ],
+    "diversity_value": "将决策原则显式算法化并经历基金权力争议，可检验书面规则、实际控制和受批评反应之间的差距。"
+  },
+  {
+    "person_id": "jamie-dimon",
+    "display_name": "杰米·戴蒙",
+    "name_en": "Jamie Dimon",
+    "region": "INTL",
+    "industries": [
+      "银行",
+      "企业管理"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会听证会逐字稿",
+      "财报会",
+      "投资者大会Q&A",
+      "长篇访谈"
+    ],
+    "diversity_value": "在议员质询、金融危机复盘和股东压力下均高强度作答，直率权威和制度现实主义突出。"
+  },
+  {
+    "person_id": "indra-nooyi",
+    "display_name": "英德拉·努伊",
+    "name_en": "Indra Nooyi",
+    "region": "INTL",
+    "industries": [
+      "消费品管理",
+      "商业领导"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇访谈",
+      "商学院Q&A",
+      "投资者会议",
+      "回忆录对谈"
+    ],
+    "diversity_value": "印度移民女性CEO在家庭角色、组织权力和长期健康战略间的取舍，为企业家池增加非创始人视角。"
+  },
+  {
+    "person_id": "mary-barra",
+    "display_name": "玛丽·博拉",
+    "name_en": "Mary Barra",
+    "region": "INTL",
+    "industries": [
+      "汽车制造",
+      "企业管理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会听证会逐字稿",
+      "财报会",
+      "危机记者会",
+      "长篇访谈"
+    ],
+    "diversity_value": "从工厂工程师到汽车巨头女性CEO，并有致命召回危机听证，责任语言与组织防御材料扎实。"
+  },
+  {
+    "person_id": "sheryl-sandberg",
+    "display_name": "雪莉·桑德伯格",
+    "name_en": "Sheryl Sandberg",
+    "region": "INTL",
+    "industries": [
+      "科技管理",
+      "女性领导倡议"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国会与监管证词",
+      "长篇访谈",
+      "商学院Q&A",
+      "公开演讲"
+    ],
+    "diversity_value": "女性领导叙事与平台治理争议形成明显言行压力，可研究野心、韧性和机构责任的内在冲突。"
+  },
+  {
+    "person_id": "mellody-hobson",
+    "display_name": "梅洛迪·霍布森",
+    "name_en": "Mellody Hobson",
+    "region": "INTL",
+    "industries": [
+      "资产管理",
+      "公司治理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "投资访谈",
+      "公司治理论坛Q&A",
+      "长篇播客",
+      "国会与政策圆桌"
+    ],
+    "diversity_value": "非裔女性投资高管以金融素养、董事会治理和种族议题为长期主题，补足资本行业人口与表达多样性。"
+  },
+  {
+    "person_id": "richard-branson",
+    "display_name": "理查德·布兰森",
+    "name_en": "Richard Branson",
+    "region": "INTL",
+    "industries": [
+      "多元化创业",
+      "航空与航天"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇访谈",
+      "创业大会Q&A",
+      "纪录片",
+      "危机媒体采访"
+    ],
+    "diversity_value": "阅读障碍创业者依赖品牌、授权和冒险试验，失败项目与人身风险经历可用于检验乐观偏差。"
+  },
+  {
+    "person_id": "ngozi-okonjo-iweala",
+    "display_name": "恩戈齐·奥孔乔-伊韦阿拉",
+    "name_en": "Ngozi Okonjo-Iweala",
+    "region": "INTL",
+    "industries": [
+      "国际经济",
+      "公共管理"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "国际组织记者会",
+      "国会与议会证词",
+      "长篇访谈",
+      "政策论坛Q&A"
+    ],
+    "diversity_value": "尼日利亚女性经济学家跨财政部、世行和WTO，在腐败压力与多边谈判中展现制度韧性和联盟思维。"
+  },
+  {
+    "person_id": "martin-scorsese",
+    "display_name": "马丁·斯科塞斯",
+    "name_en": "Martin Scorsese",
+    "region": "INTL",
+    "industries": [
+      "电影导演",
+      "电影史"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "导演长访谈",
+      "电影节Q&A",
+      "大师课",
+      "行业争议访谈"
+    ],
+    "diversity_value": "数十年口述创作史和对流媒体商业的公开争论并存，宗教、罪责、保护电影传统等核心模型稳定。"
+  },
+  {
+    "person_id": "james-cameron",
+    "display_name": "詹姆斯·卡梅隆",
+    "name_en": "James Cameron",
+    "region": "INTL",
+    "industries": [
+      "电影导演",
+      "深海探索"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇导演访谈",
+      "技术Q&A",
+      "纪录片",
+      "争议性媒体采访"
+    ],
+    "diversity_value": "高控制片场领导、工程创新和极端探索结合，面对预算、事故与批评时的自我效能和风险计算鲜明。"
+  },
+  {
+    "person_id": "greta-gerwig",
+    "display_name": "格蕾塔·葛韦格",
+    "name_en": "Greta Gerwig",
+    "region": "INTL",
+    "industries": [
+      "电影导演",
+      "编剧与表演"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "导演圆桌逐字稿",
+      "长篇播客",
+      "电影节Q&A",
+      "创作访谈"
+    ],
+    "diversity_value": "女性导演从独立即兴表演进入大型商业片，合作式创作、野心与女性经验的协商过程可追踪。"
+  },
+  {
+    "person_id": "ava-duvernay",
+    "display_name": "艾娃·杜威内",
+    "name_en": "Ava DuVernay",
+    "region": "INTL",
+    "industries": [
+      "电影导演",
+      "社会议题创作"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "导演圆桌",
+      "长篇访谈",
+      "电影节Q&A",
+      "政策与社会论坛"
+    ],
+    "diversity_value": "非裔女性导演将产业准入、制度性种族问题和自主发行结合，价值驱动与组织建设语料充分。"
+  },
+  {
+    "person_id": "spike-lee",
+    "display_name": "斯派克·李",
+    "name_en": "Spike Lee",
+    "region": "INTL",
+    "industries": [
+      "电影导演",
+      "社会评论"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "对抗式媒体访谈",
+      "电影节Q&A",
+      "长篇对谈",
+      "大学讲座"
+    ],
+    "diversity_value": "数十年直面种族与城市政治争议，易怒、幽默、忠诚和艺术立场在被挑战时高度外显。"
+  },
+  {
+    "person_id": "guillermo-del-toro",
+    "display_name": "吉尔莫·德尔·托罗",
+    "name_en": "Guillermo del Toro",
+    "region": "INTL",
+    "industries": [
+      "电影导演",
+      "幻想文学"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇导演访谈",
+      "大师课Q&A",
+      "电影节对谈",
+      "播客"
+    ],
+    "diversity_value": "墨西哥导演以怪物、天主教成长和手工技艺构建稳定心智模型，英语即兴叙事丰富且跨文化。"
+  },
+  {
+    "person_id": "salman-rushdie",
+    "display_name": "萨尔曼·鲁西迪",
+    "name_en": "Salman Rushdie",
+    "region": "INTL",
+    "industries": [
+      "文学",
+      "言论自由倡议"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇文学访谈",
+      "公开辩论",
+      "庭审相关证词与访谈",
+      "节庆Q&A"
+    ],
+    "diversity_value": "印度裔作家经历数十年死亡威胁与袭击后仍公开辩论，恐惧、自由、讽刺与韧性有罕见一手语料。"
+  },
+  {
+    "person_id": "margaret-atwood",
+    "display_name": "玛格丽特·阿特伍德",
+    "name_en": "Margaret Atwood",
+    "region": "INTL",
+    "industries": [
+      "文学",
+      "公共思想"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇文学访谈",
+      "现场Q&A",
+      "公开辩论",
+      "大师课"
+    ],
+    "diversity_value": "加拿大女性作家以反乌托邦、权力和环境为长期主题，尖锐幽默与拒绝标签的反应稳定且可追踪。"
+  },
+  {
+    "person_id": "chimamanda-ngozi-adichie",
+    "display_name": "奇玛曼达·恩戈兹·阿迪契",
+    "name_en": "Chimamanda Ngozi Adichie",
+    "region": "INTL",
+    "industries": [
+      "文学",
+      "性别与文化评论"
+    ],
+    "gender": "female",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇文学访谈",
+      "公开辩论",
+      "演讲Q&A",
+      "播客"
+    ],
+    "diversity_value": "尼日利亚女性作家在非洲、美国与性别话语间代码切换，对单一叙事、归属和争议反击均材料丰富。"
+  },
+  {
+    "person_id": "ta-nehisi-coates",
+    "display_name": "塔-内西斯·科茨",
+    "name_en": "Ta-Nehisi Coates",
+    "region": "INTL",
+    "industries": [
+      "写作",
+      "种族与政治评论"
+    ],
+    "gender": "male",
+    "living": true,
+    "status": "planned",
+    "corpus_availability": "high",
+    "source_types": [
+      "长篇播客",
+      "电视对抗采访",
+      "大学Q&A",
+      "公开辩论"
+    ],
+    "diversity_value": "非裔作家以历史证据和身体经验讨论权力，近期敌意采访尤其适合分析框架防守、克制和道德确定性。"
+  }
+]

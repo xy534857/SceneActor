@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sceneactor-cognitive-genome/1.0",
+  "title": "SceneActor Cognitive Genome Database Record",
+  "type": "object",
+  "required": ["person_id", "display_name", "region", "industries", "status", "research", "genome"],
+  "properties": {
+    "person_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "display_name": {"type": "string", "minLength": 1},
+    "name_en": {"type": "string"},
+    "region": {"enum": ["CN", "INTL"]},
+    "industries": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "gender": {"enum": ["female", "male", "nonbinary", "unknown"]},
+    "living": {"type": "boolean"},
+    "status": {"enum": ["planned", "collecting", "research_complete", "distilled", "validated"]},
+    "corpus_stats": {
+      "type": "object",
+      "properties": {
+        "verbatim_lines": {"type": "integer", "minimum": 0},
+        "conversation_contexts": {"type": "integer", "minimum": 0},
+        "adversarial_contexts": {"type": "integer", "minimum": 0},
+        "sources_dim01": {"type": "integer", "minimum": 0},
+        "sources_dim02": {"type": "integer", "minimum": 0},
+        "sources_dim03": {"type": "integer", "minimum": 0},
+        "sources_dim04": {"type": "integer", "minimum": 0},
+        "sources_dim05": {"type": "integer", "minimum": 0},
+        "sources_dim06": {"type": "integer", "minimum": 0}
+      }
+    },
+    "research": {
+      "type": "object",
+      "required": ["dimensions"],
+      "properties": {
+        "dimensions": {
+          "type": "object",
+          "required": ["01-writings", "02-conversations", "03-expression", "04-external", "05-decisions", "06-timeline"],
+          "properties": {
+            "01-writings": {"$ref": "#/$defs/dimension"},
+            "02-conversations": {"$ref": "#/$defs/dimension"},
+            "03-expression": {"$ref": "#/$defs/dimension"},
+            "04-external": {"$ref": "#/$defs/dimension"},
+            "05-decisions": {"$ref": "#/$defs/dimension"},
+            "06-timeline": {"$ref": "#/$defs/dimension"}
+          }
+        },
+        "last_researched_at": {"type": "string"}
+      }
+    },
+    "genome": {
+      "type": "object",
+      "required": ["trait_axes", "core_models", "heuristics", "value_weights", "internal_conflicts", "emotion_triggers", "blind_spots"],
+      "properties": {
+        "trait_axes": {"type": "object"},
+        "core_models": {"type": "array", "minItems": 3, "maxItems": 7},
+        "heuristics": {"type": "array", "minItems": 5, "maxItems": 10},
+        "value_weights": {"type": "object"},
+        "internal_conflicts": {"type": "array", "minItems": 2, "maxItems": 4},
+        "emotion_triggers": {"type": "array", "minItems": 1},
+        "blind_spots": {"type": "array", "minItems": 1},
+        "causal_rules": {"type": "array"}
+      }
+    }
+  },
+  "$defs": {
+    "dimension": {
+      "type": "object",
+      "required": ["status", "sources"],
+      "properties": {
+        "status": {"enum": ["missing", "collecting", "complete"]},
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["url", "kind", "evidence_grade"],
+            "properties": {
+              "url": {"type": "string"},
+              "kind": {"type": "string"},
+              "year": {"type": ["integer", "null"]},
+              "evidence_grade": {"enum": ["verbatim", "documented", "claimed", "inferred"]},
+              "note": {"type": "string"}
+            }
+          }
+        },
+        "artifact": {"type": "string"}
+      }
+    }
+  }
+}
