@@ -1,0 +1,182 @@
+[Acquired-2023] “We also made the decision to use this technology called emulation.”
+[Acquired-2023] “On the day that I called them, they were just shutting the company down because they had no customers.”
+[Acquired-2023] “If you figure out how much money that we have, if we taped out a chip and we got it back from the fab and we started working on our software, by the time that we found all the bugs because we did the software, then we taped out the chip again, we would’ve been out of business already.”
+[Acquired-2023] “If we only had six months and you get to tape out just one time, then obviously you’re going to tape out a perfect chip.”
+[Acquired-2023] “I said, I know it’s going to be perfect, because if it’s not, we’ll be out of business.”
+[Acquired-2023] “We essentially virtually prototyped the chip by buying this emulator.”
+[Acquired-2023] “Everybody was clear we had no shot.”
+[Acquired-2023] “Not doing it would be crazy.”
+[Acquired-2023] “We taped that out and went directly to production.”
+[Acquired-2023] “When you push your chips in, I know it’s going to work.”
+[Acquired-2023] “When you bet the farm you’re saying, I’m going to take everything in the future, all the risky things, and I pull in in advance.”
+[Acquired-2023] “To this day, everything that we can prefetch, everything in the future that we can simulate today, we prefetch it.”
+[Acquired-2023] “Nvidia’s not built like a military.”
+[Acquired-2023] “We’re really built much more like a computing stack.”
+[Acquired-2023] “The architecture of the company is a computer with a computing stack.”
+[Acquired-2023] “Your organization should be the architecture of the machinery of building the product.”
+[Acquired-2023] “Why would the machinery, why would the process be exactly the same?”
+[Acquired-2023] “We’re wired up like a neural network.”
+[Acquired-2023] “There’s a phrase in the company called ‘mission is the boss.’”
+[Acquired-2023] “Build Hopper.”
+[Acquired-2023] “Your mission is to do something.”
+[Acquired-2023] “The downside is the pressure on the leaders is fairly high.”
+[Acquired-2023] “Nobody has more power than anybody else.”
+[Acquired-2023] “You earned the right to have your job based on your ability to reason through problems and help other people succeed.”
+[Acquired-2023] “You’re supposed to ask yourself, what does it mean to you?”
+[Acquired-2023] “You’re supposed to be inspired and learn from everybody else.”
+[Acquired-2023] “It could be a competitor, it could be an adjacent industry, it could be nothing to do with us.”
+[Acquired-2023] “Our job as CEO is to look around corners and to anticipate where will opportunities be someday.”
+[Acquired-2023] “You want to position yourself near opportunities.”
+[Acquired-2023] “It’s our way of saying there’s no market yet, but we believe there will be one.”
+[Acquired-2023] “Oftentimes there’s non-consumption, and we like to navigate our company there.”
+[Acquired-2023] “I don’t love thinking about it in the context of a moat.”
+[Acquired-2023] “That network is about enabling other people to enjoy the success of the final market.”
+[Acquired-2023] “I owe them a great deal.”
+[Acquired-2023] “The more we learn from what’s happening out in the world, the better.”
+[Acquired-2023] “We have to keep AI safe.”
+[Acquired-2023] “As long as it’s sensible, human is in the loop.”
+[Acquired-2023] “The ability for an AI to self-learn, improve, and change out in the wild in a digital form should be avoided.”
+[Acquired-2023] “Technology is a tool and it’s only so large.”
+[Acquired-2023] “We’re in the manufacturing of intelligence.”
+[Acquired-2023] “The world has infinite ambition.”
+[Acquired-2023] “I think jobs will change.”
+[Acquired-2023] “The first thing that everybody should do is learn how to use AI.”
+[Acquired-2023] “There’s plenty of time.”
+[Acquired-2023] “Just don’t do everything.”
+[Acquired-2023] “Don’t let Outlook determine that.”
+[Acquired-2023] “I didn’t know how to write a business plan.”
+[Acquired-2023] “The important things that a business plan probably could have teased out, I think that the art of writing a business plan ought to be much, much shorter.”
+[Acquired-2023] “What is the unmet need that you believe will emerge?”
+[Acquired-2023] “It has to be sufficiently hard to do.”
+[Acquired-2023] “I wouldn’t do it.”
+[Acquired-2023] “Building a company and building Nvidia turned out to have been a million times harder than I expected it to be.”
+[Acquired-2023] “Nobody in their right mind would do it.”
+[Acquired-2023] “They don’t know how hard it is, and they only ask themselves how hard can it be?”
+[Acquired-2023] “To this day, I trick my brain into thinking, how hard can it be?”
+[Acquired-2023] “Your belief system has to be really, really strong.”
+[Acquired-2023] “It’s embarrassing no matter how you think about it.”
+[Acquired-2023] “The technology industry is that what we discovered is that by separating ourselves from being a chip company but building on top of a chip and you’re now an AI company, the market opportunity has grown by probably a thousand times.”
+[NVIDIA-Q2-2025-earnings-2024] “The change to the mask is complete.”
+[NVIDIA-Q2-2025-earnings-2024] “There were no functional changes necessary.”
+[NVIDIA-Q2-2025-earnings-2024] “We expect to start production in Q4.”
+[NVIDIA-Q2-2025-earnings-2024] “The first one is transitioning from general-purpose computing to accelerated computing.”
+[NVIDIA-Q2-2025-earnings-2024] “CPU scaling has been known to be slowing for some time and it has slowed to a crawl.”
+[NVIDIA-Q2-2025-earnings-2024] “The amount of computing demand continues to grow quite significantly.”
+[NVIDIA-Q2-2025-earnings-2024] “The answer is accelerated computing.”
+[NVIDIA-Q2-2025-earnings-2024] “It’s not unusual to see someone save 90% of their computing cost.”
+[NVIDIA-Q2-2025-earnings-2024] “The second was enabled by accelerated computing because we drove down the cost of training large language models.”
+[NVIDIA-Q2-2025-earnings-2024] “It’s a fundamental new form of computer science.”
+[NVIDIA-Q2-2025-earnings-2024] “It’s affecting how every layer of computing is done.”
+[NVIDIA-Q2-2025-earnings-2024] “The frontier models are growing in quite substantial scale.”
+[NVIDIA-Q2-2025-earnings-2024] “Whenever you double the size of a model, you also have to more than double the size of the data set.”
+[NVIDIA-Q2-2025-earnings-2024] “The amount of flops necessary in order to create that model goes up quadratically.”
+[NVIDIA-Q2-2025-earnings-2024] “The next-generation models could take 10, 20, 40 times more compute than last generation.”
+[NVIDIA-Q2-2025-earnings-2024] “There are several things that are happening in generative AI.”
+[NVIDIA-Q2-2025-earnings-2024] “The first person to the next plateau gets to introduce a revolutionary level of AI.”
+[NVIDIA-Q2-2025-earnings-2024] “The second person who gets there is incrementally better or about the same.”
+[NVIDIA-Q2-2025-earnings-2024] “The ability to systematically and consistently race to the next plateau is how you establish leadership.”
+[NVIDIA-Q2-2025-earnings-2024] “We want to set the pace.”
+[NVIDIA-Q2-2025-earnings-2024] “The demand for Hopper is really strong.”
+[NVIDIA-Q2-2025-earnings-2024] “The demand for Blackwell is incredible.”
+[NVIDIA-Q2-2025-earnings-2024] “The amount of GPU capacity they have available, it’s basically none.”
+[NVIDIA-Q2-2025-earnings-2024] “The primary use case long before generative AI came along is the migration of applications one after another to accelerated computing.”
+[NVIDIA-Q2-2025-earnings-2024] “The first person to the next plateau gets to be the first one there.”
+[NVIDIA-Q2-2025-earnings-2024] “People are just clamoring to transition the $1 trillion of established installed infrastructure.”
+[NVIDIA-Q2-2025-earnings-2024] “The people who are investing in NVIDIA infrastructure are getting returns on it right away.”
+[NVIDIA-Q2-2025-earnings-2024] “It’s the best ROI infrastructure, computing infrastructure investment you can make today.”
+[NVIDIA-Q2-2025-earnings-2024] “You start saving money.”
+[NVIDIA-Q2-2025-earnings-2024] “Your capacity gets rented right away.”
+[NVIDIA-Q2-2025-earnings-2024] “Generative AI is also a fast ROI.”
+[NVIDIA-Q2-2025-earnings-2024] “The world of general-purpose computing is shifting to accelerated computing.”
+[NVIDIA-Q2-2025-earnings-2024] “That’s the best way to do it.”
+[NVIDIA-Q2-2025-earnings-2024] “The next $1 trillion of the world’s infrastructure will clearly be different than the last $1 trillion.”
+[NVIDIA-Q2-2025-earnings-2024] “Liquid cooling is cheaper.”
+[NVIDIA-Q2-2025-earnings-2024] “Our TCO is better.”
+[NVIDIA-Q2-2025-earnings-2024] “The large NVLink domain is going to be a game changer.”
+[NVIDIA-Q2-2025-earnings-2024] “We have the ability, fairly uniquely, to integrate, to design an AI factory.”
+[NVIDIA-Q2-2025-earnings-2024] “It’s not possible to come up with a new AI factory every year unless you have all the parts.”
+[NVIDIA-Q2-2025-earnings-2024] “We want to be a technology provider.”
+[NVIDIA-Q2-2025-earnings-2024] “Blackwell is an AI infrastructure platform, not just the GPU.”
+[NVIDIA-Q2-2025-earnings-2024] “The data center worldwide are in full steam to modernize the entire computing stack.”
+[NVIDIA-Q2-2025-earnings-2024] “The anticipation for Blackwell is incredible.”
+[Stratechery-2025] “We’re trying to reinvent Nvidia so that we could be ahead of the puck.”
+[Stratechery-2025] “We’re building computers for a new industry called AI.”
+[Stratechery-2025] “This new technology called AI actually is a new industry wholly.”
+[Stratechery-2025] “Data centers are really AI factories.”
+[Stratechery-2025] “The diffusion rule as it was written will exactly cause us to lose our lead.”
+[Stratechery-2025] “AI is full stack.”
+[Stratechery-2025] “You can’t just say, ‘Let’s go write a diffusion rule, protect one layer at the expense of everything else.’”
+[Stratechery-2025] “China’s doing fantastic.”
+[Stratechery-2025] “DeepSeek is deeply excellent work.”
+[Stratechery-2025] “Huawei is a formidable company.”
+[Stratechery-2025] “The researchers, the AI scientists in China, they’re world-class.”
+[Stratechery-2025] “Everybody loves competition.”
+[Stratechery-2025] “We ought to go and give American companies the opportunity to compete in China.”
+[Stratechery-2025] “The idea that we would have America not compete in the Chinese market makes absolutely no sense.”
+[Stratechery-2025] “The China market is about $50 billion a year.”
+[Stratechery-2025] “This additional ban on Nvidia’s H20 is deeply painful.”
+[Stratechery-2025] “We wrote off $5.5 billion.”
+[Stratechery-2025] “We walked away from $15 billion of sales.”
+[Stratechery-2025] “That’s the real threat to CUDA in the long run.”
+[Stratechery-2025] “Anybody who thought that one chess move to somehow ban China from H20s would somehow cut off their ability to do AI is deeply uninformed.”
+[Stratechery-2025] “The IT industry is about a trillion.”
+[Stratechery-2025] “We’re about to bring, because of AI, all of us into about a $50 trillion industry.”
+[Stratechery-2025] “I think it’s going to happen.”
+[Stratechery-2025] “I would hire a robot for $100,000 a year in a heartbeat.”
+[Stratechery-2025] “You can’t design a chip or a system that’s only good at one.”
+[Stratechery-2025] “Dynamo disaggregates all the processing.”
+[Stratechery-2025] “It’s essentially the operating system of an AI factory.”
+[Stratechery-2025] “Slow thinking is fast.”
+[Stratechery-2025] “Serving a customer is just smart.”
+[Stratechery-2025] “We want to make sure that we’re able to serve every customer however they’d like to be served.”
+[NTU-commencement-2023] “You are running for food, or you are running from becoming food.”
+[NTU-commencement-2023] “Often times, you can’t tell which.”
+[NTU-commencement-2023] “Either way, run.”
+[NTU-commencement-2023] “Whatever it is, run after it like we did.”
+[NTU-commencement-2023] “Run. Don’t walk.”
+[NTU-commencement-2023] “I was successful — until I started NVIDIA.”
+[NTU-commencement-2023] “At NVIDIA, I experienced failures — great big ones.”
+[NTU-commencement-2023] “Many nearly doomed us.”
+[NTU-commencement-2023] “Confronting our mistake and, with humility, asking for help saved NVIDIA.”
+[NTU-commencement-2023] “Our market cap hovered just above a billion dollars.”
+[NTU-commencement-2023] “We suffered many years of poor performance.”
+[NTU-commencement-2023] “Our shareholders were skeptical of CUDA.”
+[NTU-commencement-2023] “The market quickly commoditized.”
+[NTU-commencement-2023] “NVIDIA retreated just as quickly.”
+[NTU-commencement-2023] “Our strategic retreat paid off.”
+[NTU-commencement-2023] “By leaving the phone market, we opened our minds to invent a new one.”
+[NTU-commencement-2023] “Admit mistakes and ask for help.”
+[NTU-commencement-2023] “Endure pain and suffering to realize your dreams.”
+[NTU-commencement-2023] “Make sacrifices to dedicate yourself to a life of purpose.”
+[CNBC-Squawk-Box-2025] “Our deal is very different from theirs.”
+[CNBC-Squawk-Box-2025] “We’re the only company in the world today that really focuses on building the entire AI infrastructure.”
+[CNBC-Squawk-Box-2025] “I’m surprised that they would give away 10% of the company before they even built it.”
+[CNBC-Squawk-Box-2025] “It’s a clever, I guess.”
+[CNBC-Squawk-Box-2025] “Our chips are quite special.”
+[CNBC-Squawk-Box-2025] “We just kind of keep running fast.”
+[CNBC-Squawk-Box-2025] “Almost everything that Elon is part of, you really want to be part of as well.”
+[CNBC-Squawk-Box-2025] “That’s not vendor financing, per se.”
+[CNBC-Squawk-Box-2025] “What’s going on in the world versus what happened in 2000 is just dramatically different.”
+[CNBC-Squawk-Box-2025] “The tokens are profitable.”
+[CNBC-Squawk-Box-2025] ��Enterprise AI is here.”
+[CNBC-Squawk-Box-2025] “We are going to have incredibly profitable and incredibly useful AIs, long before AGI.”
+[CNBC-Squawk-Box-2025] “This tool user industry is $100 trillion.”
+[CNBC-Squawk-Box-2025] “All of these deals have to be done in a way that is fair to others.”
+[CNBC-Squawk-Box-2025] “There are no exclusivities.”
+[CNBC-Squawk-Box-2025] “We’re going to drive down the cost of tokens 10 to 20 times.”
+[CNBC-Squawk-Box-2025] “The things that are hard for us, that are new for us are geopolitical risk.”
+[CNBC-Squawk-Box-2025] “The best thing that we could do is just inform policymakers and governments.”
+[CNBC-Squawk-Box-2025] “Overall, I would say we’re not far ahead.”
+[CNBC-Squawk-Box-2025] “China is well ahead of us on energy.”
+[CNBC-Squawk-Box-2025] “We have to be quite mindful.”
+[CNBC-Squawk-Box-2025] “No government, surely Chinese government, is going to be building their defense on Western technology.”
+[CNBC-Squawk-Box-2025] “We have to find a nuanced strategy.”
+[CNBC-Squawk-Box-2025] “Immigration is the foundation of the American dream.”
+[CNBC-Squawk-Box-2025] “My family would not have been able to afford the $100,000.”
+[CNBC-Squawk-Box-2025] “My job is to create the conditions by which amazing people could do their life’s work.”
+[CNBC-Squawk-Box-2025] “We’re at the beginning of a new build out.”
+[Wired-AI-bubble-2025] “There’s been a lot of talk about an AI bubble.”
+[Wired-AI-bubble-2025] “From our vantage point, we see something very different.”
+[Wired-AI-bubble-2025] “AI is taking over the world.”
+[Wired-AI-bubble-2025] “Nvidia chips will be sorely needed to power that technological revolution underway.”
+[Wired-AI-bubble-2025] “The number of customers coming to us and the number of platforms coming to us after they’ve explored others, is increasing, not decreasing.”

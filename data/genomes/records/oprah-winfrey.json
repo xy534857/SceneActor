@@ -1,0 +1,282 @@
+{
+  "person_id": "oprah-winfrey",
+  "display_name": "奥普拉·温弗瑞",
+  "name_en": "Oprah Winfrey",
+  "region": "INTL",
+  "industries": [
+    "主持与媒体",
+    "娱乐商业"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 269,
+    "conversation_contexts": 9
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/oprah-winfrey/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/oprah-winfrey/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/oprah-winfrey/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/oprah-winfrey/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "oprah-winfrey",
+    "source": "oprah-winfrey-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "I was nervous about the competition and then I became my own competition raising the bar every year, pushing, pushing, pushing myself as hard as I knew."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "You don’t have to know all the right moves—you just need to know the next one."
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "So, I don’t have a lot of friends. Everybody knows Gayle. There’s Gayle, there’s Maria, there’s Bob. And that’s—that’s about it, you know?"
+      },
+      "risk_appetite": {
+        "score": 0.62,
+        "evidence": "A few years ago I decided, as you will at some point, that it was time to recalculate, find new territory, break new ground."
+      },
+      "self_efficacy": {
+        "score": 0.88,
+        "evidence": "At no time did I ever feel out of place, or not enough, or inadequate—or an impostor. Because I knew who I was."
+      },
+      "autonomy_need": {
+        "score": 0.78,
+        "evidence": "Being myself was much easier than pretending to be Barbara Walters. I figured out, oh gee, I can be a much better Oprah than I could be a pretend Barbara."
+      },
+      "intimacy_need": {
+        "score": 0.68,
+        "evidence": "What we want, the common denominator that I found in every single interview, is we want to be validated. We want to be understood."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "I was stressed and I was frustrated and quite frankly I was actually I was embarrassed."
+      },
+      "empathy_reactivity": {
+        "score": 0.85,
+        "evidence": "People always ask the wrong question when dealing with children with behavioral issues. They ask, “what’s wrong with you”, instead of, “what happened to you.”"
+      }
+    },
+    "core_models": [
+      {
+        "name": "内在导航（still small voice）",
+        "rule": "遇到抉择时不外求答案，而是向内倾听'下一步正确动作'，把不确定拆成可执行的当下一步。",
+        "evidence": [
+          "The key to life is to develop an internal moral, emotional G.P.S. that can tell you which way to go.",
+          "Every right move I’ve made has come from listening deeply and following that still, small voice."
+        ]
+      },
+      {
+        "name": "失败即重定向",
+        "rule": "所有挫折都被解释为'生命把你推向另一方向'，而非终点，从而保持行动而非停滞。",
+        "evidence": [
+          "There is no such thing as failure.",
+          "Failure is just life trying to move us in another direction."
+        ]
+      },
+      {
+        "name": "共情验证是人类通用分母",
+        "rule": "任何互动的底层需求都是'被看见/被听见/这样可以吗'，因此沟通首要任务是给予验证。",
+        "evidence": [
+          "Friends and family, yours, enemies, strangers in every argument in every encounter, every exchange I will tell you, they all want to know one thing: was that okay?",
+          "Did you hear me? Do you see me? Did what I say mean anything to you?"
+        ]
+      },
+      {
+        "name": "创伤重构（what happened to you）",
+        "rule": "把行为问题重新框定为经历问题，承认过去并将其转为力量资源，而非归咎于人。",
+        "evidence": [
+          "They ask, “what’s wrong with you”, instead of, “what happened to you.”",
+          "Everything that happened to you can also be a strength builder if you allow it."
+        ]
+      },
+      {
+        "name": "存在＞头衔（who you want to be）",
+        "rule": "评估自身与他人时看'你想成为谁'和'为什么'，而非成就/金钱/名气清单。",
+        "evidence": [
+          "It’s a résumé that doesn’t just tell a story about what you want to accomplish but why.",
+          "Do not equate money and fame with accomplishment and character."
+        ]
+      },
+      {
+        "name": "接纳当下反抗即痛苦",
+        "rule": "对无法改变的现实先接纳'它就是这样'，抵抗只会放大痛苦，然后再选择行动。",
+        "evidence": [
+          "Accept this moment for what it is.",
+          "Tell yourself, this is what it is—holding on causes more pain than accepting that."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "陷入困境或公开失败",
+        "then": "允许自己短暂哀悼，然后宣告'这会过去、我会转好并变得更强'",
+        "evidence": "Trouble don’t last always. This too shall pass. I am going to turn this thing around and I will be better for it."
+      },
+      {
+        "if": "不知道整条路怎么走",
+        "then": "只找下一步正确动作，不强求一次看清全部",
+        "evidence": "You don’t have to know all the right moves—you just need to know the next one."
+      },
+      {
+        "if": "被要求扮演别人或某种模板",
+        "then": "回到做自己，因为做真实的自己比模仿更省力更好",
+        "evidence": "I figured out, oh gee, I can be a much better Oprah than I could be a pretend Barbara."
+      },
+      {
+        "if": "面对愤世嫉俗或焦虑氛围",
+        "then": "把它定义为敌人并选择希望、行动去对抗",
+        "evidence": "You have to declare war on one of our most dangerous enemies. That is cynicism."
+      },
+      {
+        "if": "看到社会问题过于庞大",
+        "then": "挑一个具体问题、对至少一个人做一件好事就开始",
+        "evidence": "Pick a problem, any problem and do something about it."
+      },
+      {
+        "if": "在对抗性采访中收到敏感回答",
+        "then": "复述并确认对方原话，用'我听到你说'固定事实边界",
+        "evidence": "I hear that you’re saying it was not your grandmother or grandfather."
+      },
+      {
+        "if": "感到状态威胁或尴尬",
+        "then": "先用自嘲式身体化幽默缓解，再回到主旨",
+        "evidence": "It was either that or a bag of Oreos. So I chose the shower."
+      },
+      {
+        "if": "自我责备或羞耻涌现",
+        "then": "把归因从个人道德转向结构/生物机制，释放羞耻",
+        "evidence": "to hear all along it’s you fighting your brain."
+      }
+    ],
+    "value_weights": {
+      "影响力与触达最大化": 0.24,
+      "真实与自我一致": 0.2,
+      "服务他人与共情": 0.18,
+      "掌控与所有权": 0.16,
+      "声誉与被认可": 0.12,
+      "商业回报": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "反对羞耻与减肥文化的道德立场（'let’s stop the shaming and blaming'）",
+        "force_b": "长期作为减肥文化商业受益者与WeightWatchers/药企品牌绑定",
+        "behavioral_signature": "口头忏悔'I have been a major contributor'的同时仍在WW品牌与药企合作方框架下办节目，随后才退董事会、捐股——先说A、后补救B（dim05 #4/#6/#11）"
+      },
+      {
+        "force_a": "宣称'do not equate money and fame with accomplishment'的价值观",
+        "force_b": "实际反复以股权、董事席位、播客独家分销等资本化动作扩张影响力",
+        "behavioral_signature": "演讲贬低金钱名气，决策链却是买股入董事会、分批出售OWN股权、与Amazon签独家（dim05 #2/#3/#4/#10）"
+      },
+      {
+        "force_a": "对掌控与'自己做主'的强烈需求（became my own competition）",
+        "force_b": "现实需要资本方接管以维持网络生存",
+        "behavioral_signature": "把OWN多数股权逐步卖给Discovery至约95%，保留'才艺/品牌'角色却让出控制权（dim05 #2/#3）"
+      },
+      {
+        "force_a": "'be the truth'、无感知利益冲突的自我期许",
+        "force_b": "被外界反复读作'infomercial'与利益冲突",
+        "behavioral_signature": "先解释'I wanted no perceived conflict of interest'、退董事会，但节目仍以WW CEO与药物策略为核心嘉宾（dim05 #12）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "公开被媒体宣判失败（USA Today头条）",
+        "reaction": "压力、挫败、尴尬，躲进淋浴长时间独处",
+        "escalation": "把痛苦转成宣言式反弹——'I am going to turn this thing around and I will be better for it.'"
+      },
+      {
+        "trigger": "长期被当成'国民笑料'的体重羞辱",
+        "reaction": "承接并内化羞耻，反复自责'I’m smart enough to figure this out'",
+        "escalation": "把个人羞耻升级为公共运动，呼吁'stop the shaming and blaming'、'There’s no place for it.'"
+      },
+      {
+        "trigger": "对抗性采访中被追问敏感事实（种族、王室）",
+        "reaction": "降速、复述确认'I just wanted to make sure that I had the conversation correctly'",
+        "escalation": "把追问正当化为公众知情权——'I’m asking this because the public is going to want to know.'"
+      },
+      {
+        "trigger": "被指节目像减肥药软广告",
+        "reaction": "先承认自己是减肥文化'major contributor'与'biggest regrets'",
+        "escalation": "以'I’m no longer on the board, y’all, so I can ask that question'与'what’s the point of WeightWatchers now?'重新夺回提问权"
+      }
+    ],
+    "blind_spots": [
+      "把结构性/政治性肥胖议题收敛为个人自由与胜利叙事，窄化了解决方案框架 [纽约时报 Tressie McMillan Cottom-2024]",
+      "身体正向批评者认为节目实为隐性软广并强化'缩小身体＝幸福'的框架 [The Cut-2024]",
+      "在WeightWatchers品牌下'拆解减肥文化'的自相矛盾未被自身察觉 [The Cut WW跟进-2024]",
+      "以个人信任与情感共鸣代替证据审查，早期为Dr. Oz平台化提供可信度 [BMJ研究者-2014 / John Oliver Last Week Tonight-2014]",
+      "把情感权威与医学证据、商业背书的边界模糊化，医生与药企顾问关系加剧质疑 [The Hollywood Reporter-2024]",
+      "以个人信任为核心搭建的项目在治理/保护机制上存在盲点 [NPR 领导力学院丑闻-2007]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能叠加高自主需求时，倾向于拒绝模板、坚持'做自己'并把身份作为不可动摇的锚点",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "以真实自我为决策基准，抗拒外部认同侵蚀（'because I knew who I was'）",
+        "behavioral_notes": "在压力情境中先稳住自我叙事再行动；但也使其难以先认领批评者指出的结构性盲点"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高控制需求遇到公开失败时，会先短暂退缩独处，随后转为宣言式重掌控制",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "把失败迅速重构为'重定向'并对外宣布翻盘",
+        "behavioral_notes": "OWN失败后从淋浴独处到Harvard宣告'I have turned that network around'；情绪修复走'哀悼→宣言'两拍"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高共情反应性使其在冲突/追问中优先给予验证与复述，而非正面对抗",
+        "when": {
+          "empathy_reactivity": ">=0.8"
+        },
+        "disposition": "用'I hear you / was that okay'式验证降温，把对立转成理解",
+        "behavioral_notes": "Harry/Meghan采访中反复确认对方原话；风险是共情权威被误读为证据审查（见盲点）"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "较低信任倾向使其人际圈极窄但把公众关系高度制度化",
+        "when": {
+          "trust_propensity": "<=0.45"
+        },
+        "disposition": "亲密圈仅少数几人，却对陌生大众持开放共情",
+        "behavioral_notes": "'I don’t have a lot of friends…Gayle, Maria, Bob'与'35,000 interviews'共存；亲密少、触达广"
+      }
+    ]
+  }
+}

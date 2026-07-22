@@ -1,0 +1,278 @@
+{
+  "person_id": "jensen-huang",
+  "display_name": "黄仁勋",
+  "name_en": "Jensen Huang",
+  "region": "INTL",
+  "industries": [
+    "半导体",
+    "人工智能"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 182,
+    "conversation_contexts": 6
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jensen-huang/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jensen-huang/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jensen-huang/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jensen-huang/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "jensen-huang",
+    "source": "jensen-huang-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "To this day, everything that we can prefetch, everything in the future that we can simulate today, we prefetch it."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.8,
+        "evidence": "It’s our way of saying there’s no market yet, but we believe there will be one."
+      },
+      "trust_propensity": {
+        "score": 0.62,
+        "evidence": "Confronting our mistake and, with humility, asking for help saved NVIDIA."
+      },
+      "risk_appetite": {
+        "score": 0.85,
+        "evidence": "When you bet the farm you’re saying, I’m going to take everything in the future, all the risky things, and I pull in in advance."
+      },
+      "self_efficacy": {
+        "score": 0.88,
+        "evidence": "I said, I know it’s going to be perfect, because if it’s not, we’ll be out of business."
+      },
+      "autonomy_need": {
+        "score": 0.68,
+        "evidence": "I didn’t know how to write a business plan."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "My job is to create the conditions by which amazing people could do their life’s work."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "The first person to the next plateau gets to introduce a revolutionary level of AI."
+      },
+      "empathy_reactivity": {
+        "score": 0.45,
+        "evidence": "That network is about enabling other people to enjoy the success of the final market."
+      }
+    },
+    "core_models": [
+      {
+        "name": "预取未来（Prefetch the Future）",
+        "rule": "把所有未来能模拟、能提前锁定的风险与工作提前到现在完成，用一次做对代替试错循环",
+        "evidence": [
+          "To this day, everything that we can prefetch, everything in the future that we can simulate today, we prefetch it.",
+          "When you bet the farm you’re saying, I’m going to take everything in the future, all the risky things, and I pull in in advance."
+        ]
+      },
+      {
+        "name": "零十亿美元市场（Zero-billion-dollar Market）",
+        "rule": "把公司导向尚无需求但终将出现的非消费地带，在市场可见前占位",
+        "evidence": [
+          "It’s our way of saying there’s no market yet, but we believe there will be one.",
+          "Oftentimes there’s non-consumption, and we like to navigate our company there."
+        ]
+      },
+      {
+        "name": "全栈平台而非单点产品（Full-stack Platform）",
+        "rule": "问题不在单一芯片层，而在整个计算栈；价值随生态而非孤立产品复利",
+        "evidence": [
+          "AI is full stack.",
+          "Blackwell is an AI infrastructure platform, not just the GPU."
+        ]
+      },
+      {
+        "name": "第一性经济学（First-principles TCO）",
+        "rule": "面对质疑时回到成本/回报的系统经济学，用ROI与TCO重构对话",
+        "evidence": [
+          "It’s the best ROI infrastructure, computing infrastructure investment you can make today.",
+          "Our TCO is better."
+        ]
+      },
+      {
+        "name": "使命即老板（Mission is the Boss）",
+        "rule": "组织按产品机器的架构而非军事层级组织，用使命而非命令驱动",
+        "evidence": [
+          "There’s a phrase in the company called ‘mission is the boss.’",
+          "Your organization should be the architecture of the machinery of building the product."
+        ]
+      },
+      {
+        "name": "追赶或被吞（Run for Food / From Becoming Food）",
+        "rule": "生存框架：无论追逐机会还是逃避被淘汰，都必须以最高速度前进",
+        "evidence": [
+          "You are running for food, or you are running from becoming food.",
+          "Run. Don’t walk."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "一次投产就要成功且资源不足试错",
+        "then": "先用模拟/仿真把未来问题提前跑一遍再定型",
+        "evidence": "We essentially virtually prototyped the chip by buying this emulator."
+      },
+      {
+        "if": "面对看似不可能的大工程",
+        "then": "自我催眠“这能有多难”以启动，而非评估真实难度",
+        "evidence": "To this day, I trick my brain into thinking, how hard can it be?"
+      },
+      {
+        "if": "某个市场已商品化且方向错误",
+        "then": "迅速战略性撤退以释放心智做新发明",
+        "evidence": "By leaving the phone market, we opened our minds to invent a new one."
+      },
+      {
+        "if": "犯了重大错误",
+        "then": "承认错误并谦卑求助",
+        "evidence": "Admit mistakes and ask for help."
+      },
+      {
+        "if": "��要建立领导地位",
+        "then": "系统性、持续地第一个冲上下一个技术高地",
+        "evidence": "The ability to systematically and consistently race to the next plateau is how you establish leadership."
+      },
+      {
+        "if": "遭遇敌意前提（如泡沫论/禁令）",
+        "then": "承认痛感后立刻回到系统经济学与需求数据",
+        "evidence": "From our vantage point, we see something very different."
+      },
+      {
+        "if": "判断是否值得做一件事",
+        "then": "问是否有将出现的未满足需求且足够难",
+        "evidence": "It has to be sufficiently hard to do."
+      },
+      {
+        "if": "设计芯片或系统时",
+        "then": "拒绝单一用途优化，保持全栈通用性",
+        "evidence": "You can’t design a chip or a system that’s only good at one."
+      }
+    ],
+    "value_weights": {
+      "长期平台占位与技术领先": 0.28,
+      "生存与速度": 0.2,
+      "生态/开发者绑定": 0.17,
+      "市场规模与增长": 0.15,
+      "承认错误与学习韧性": 0.12,
+      "公平与合规节制": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "生态惠及所有人、开放服务的叙事（‘enabling other people to enjoy the success’）",
+        "force_b": "全栈整合造成的锁定与开关成本（dim-05 full-stack strategy → 反垄断审查）",
+        "behavioral_signature": "口头淡化护城河（‘I don’t love thinking about it in the context of a moat’），实际决策却系统性构建CUDA与全栈开关成本，招致DOJ/EC审查"
+      },
+      {
+        "force_a": "‘We have to keep AI safe’、‘human is in the loop’的克制表态",
+        "force_b": "对华合规芯片与公开游说以保住销售与开发者（dim-05 H20 + 游说）",
+        "behavioral_signature": "在安全议题上说要节制，在export-control上却以‘compete to win developers’推动放松规则，被批评优先销售与CUDA锁定"
+      },
+      {
+        "force_a": "自信断言‘I know it’s going to work’‘tokens are profitable’的最大化增长姿态",
+        "force_b": "承认痛与失败‘great big ones’‘deeply painful’的谦卑叙事",
+        "behavioral_signature": "对外用失败故事建立可信度，同时对质疑（泡沫、ROI）以确定性口吻反驳而不提供客户级证据"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "出口管制/禁令威胁中国市场与领先地位",
+        "reaction": "直陈痛感并量化损失",
+        "escalation": "升级为对政策制定者的‘deeply uninformed’式反驳：‘Anybody who thought that one chess move… is deeply uninformed.’"
+      },
+      {
+        "trigger": "被质疑存在AI泡沫",
+        "reaction": "以‘我们看到的完全不同’重构视角",
+        "escalation": "转为最大化断言：‘AI is taking over the world.’与客户数量‘increasing, not decreasing’"
+      },
+      {
+        "trigger": "竞争对手/交易被拿来比较",
+        "reaction": "强调自身独特性与克制评价对手",
+        "escalation": "略带讥讽的距离感：‘I’m surprised that they would give away 10% of the company before they even built it.’ ‘It’s a clever, I guess.’"
+      },
+      {
+        "trigger": "生存性危机（资金将耗尽/无胜算）",
+        "reaction": "以绝对确定性锁定单次成功",
+        "escalation": "把风险归零式表述：‘I know it’s going to be perfect, because if it’s not, we’ll be out of business.’"
+      }
+    ],
+    "blind_spots": [
+      "在波动性邻近市场（加密挖矿）扭曲核心业务时低估信息披露风险 [SEC加密挖矿披露令-2022]",
+      "假设技术优越性本身能中和平台权力/反垄断关切 [美国DOJ反垄断调查-2024]",
+      "‘生态惠及所有人’叙事回避了对竞争行为的审查 [欧盟委员会/法国竞争调查-2023–2024]",
+      "公开游说被指优先销售与CUDA锁定而非安全政策 [美国出口管制争议-2022–2025]",
+      "把生态依赖当作持久而非可被开放标准/自研ASIC挑战 [AMD及自研ASIC倡导者的竞争批评-2024–2025]",
+      "以基础设施经济学回应却未提供客户级ROI证据 [Sequoia/华尔街AI泡沫质疑-2024–2025]",
+      "对就业的‘用AI者替代不用AI者’回答承认了替代却无过渡方案 [劳工与自动化批评者-2023–2025]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高风险偏好叠加高自我效能时，倾向于把一切押注于单次一次做对而非分阶段试错",
+        "when": {
+          "risk_appetite": ">=0.8"
+        },
+        "disposition": "bet-the-farm 式预取未来",
+        "behavioral_notes": "资源不足时反而升级为‘一次投产完美’的绝对承诺，用生存压力担保确定性"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定性容忍度使其主动进入无可见需求的‘零十亿美元市场’并承受多年怀疑",
+        "when": {
+          "uncertainty_tolerance": ">=0.7"
+        },
+        "disposition": "提前占位非消费地带",
+        "behavioral_notes": "以CUDA为例，长期弱回报与股东怀疑中仍坚持路线图"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高控制需求驱动全栈整合以掌控系统瓶颈",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "自建整条AI工厂栈",
+        "behavioral_notes": "带来更高价值与开关成本，同时触发反垄断与生态锁定批评"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自我效能在遭遇敌意质疑时转化为确定性断言而非提供证据",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "以第一性经济学与最大化叙事反驳",
+        "behavioral_notes": "对泡沫/ROI质疑给出系统经济学而非客户级数据，构成盲点"
+      }
+    ]
+  }
+}

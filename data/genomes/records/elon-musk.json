@@ -1,0 +1,273 @@
+{
+  "person_id": "elon-musk",
+  "display_name": "埃隆·马斯克",
+  "name_en": "Elon Musk",
+  "region": "INTL",
+  "industries": [
+    "科技创业",
+    "航天与人工智能"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 170,
+    "conversation_contexts": 4
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": []
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": []
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": []
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": []
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "elon-musk",
+    "source": "elon-musk-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.9,
+        "evidence": "And if I'm, like, mad, they can throw me out, but -- but it's enough that I have a strong influence. / I decide a tweet might be one that is required to be reviewed under the settlement, submit it to an in-house lawyer... wait for some period of time that I decide upon, and then tweet if the lawyer hasn't given comments."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "So that there was always, you don't want to be confidently wrong, so you're not going to be right every time, but you want to minimize how often you're confidently wrong. / It's always difficult to predict what that S-curve of manufacturing looks like. We're not going to make any predictions on that front."
+      },
+      "trust_propensity": {
+        "score": 0.25,
+        "evidence": "You know, we've had a lot of challenges with Institutional Shareholder Services, ISS -- I call them ISIS... there's a lot of activists that basically infiltrate those organizations and have strange ideas about what should be done. / The SEC settlement was made under duress. Lenders put a gun to my head."
+      },
+      "risk_appetite": {
+        "score": 0.9,
+        "evidence": "It's a long shot worth taking because the payoff is potentially very high. / It should come across as an ultra bullish view of the future, given that this comp package is worth nothing if all I do is almost double Tesla's market cap."
+      },
+      "self_efficacy": {
+        "score": 0.92,
+        "evidence": "But with -- you know, if we execute very well, I think Tesla could be the most valuable company in the world. / Model Y became the best-selling vehicle globally as predicted. / Actually, if I'm interested in Quake, way back in the day, I was one of the world's best Quake players."
+      },
+      "autonomy_need": {
+        "score": 0.88,
+        "evidence": "Why do you need a license for your fish? / And if somebody says it does make a difference, I'm like, how will you measure it? And if you can't even measure it, then it's bullshit."
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "Ilya is a good human, smart, good heart, and that was a tough recruiting battle. / And then, when you see that, them experiencing the world as new and fresh, you do too."
+      },
+      "status_sensitivity": {
+        "score": 0.7,
+        "evidence": "Well, they've actually listed me with my actual name in their list. / But yeah, there's only two Americans in the top 20. / No, it's... the reason I bought it was because I'm pretty attuned, since I was like the most interacted with a user on Twitter before the acquisition."
+      },
+      "empathy_reactivity": {
+        "score": 0.35,
+        "evidence": "Nonetheless, we were forced to kidnap a seal, strap it to a board, put headphones on the seal and play sonic boom sounds to it to see if it would be distressed. / So really the question is like for every Hamas member that you kill, how many did you create? / I take -- take safety very very seriously."
+      }
+    },
+    "core_models": [
+      {
+        "name": "第一性原理量化验证",
+        "rule": "任何主张若不可测量则不成立；以物理约束（电压、成本、瓦特）而非共识作判据",
+        "evidence": [
+          "And if somebody says it does make a difference, I'm like, how will you measure it? And if you can't even measure it, then it's bullshit.",
+          "The initial constraint being literally voltage step down transformers because you've got power coming in at 300,000 volts and it's got to step all the way down eventually to around 0.7 volts."
+        ]
+      },
+      {
+        "name": "成本×规模杠杆思维",
+        "rule": "把每个微小改进换算成绝对量级（1%成本=10亿美元），以量级驱动决策优先级",
+        "evidence": [
+          "It boggles my mind to think that if we make a 1% improvement in cost, that's $1 billion.",
+          "As long as the price is affordable, I see us ultimately delivering on the order of a quarter million Cybertrucks a year in North America."
+        ]
+      },
+      {
+        "name": "机器人即通用平台",
+        "rule": "汽车是四轮机器人，AI能力可跨形态迁移；软件/神经网替代硬编码",
+        "evidence": [
+          "the car is just a robot on four wheels.",
+          "We replaced 330,000 lines of C++ code with neural nets."
+        ]
+      },
+      {
+        "name": "自我状态用外部任务校准",
+        "rule": "用高难度可量化任务（电玩清关时间）作为大脑/睡眠状态的客观标尺",
+        "evidence": [
+          "In fact, I can actually tell like what my mental acuity is if I just play a very hard video game.",
+          "So I can tell immediately, did I get a good night's sleep or not?"
+        ]
+      },
+      {
+        "name": "文明尺度使命框架",
+        "rule": "以物种/星际/文明存续为最高参照系评估行动与道德",
+        "evidence": [
+          "Given that this will all go to causes that at least aspirationally maximize the probability of a good future for humanity.",
+          "So if life had taken 10% longer to evolve on earth, it wouldn't exist at all."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "有人提出无法量化的因果主张",
+        "then": "判定为bullshit并要求测量方法",
+        "evidence": "And if you can't even measure it, then it's bullshit."
+      },
+      {
+        "if": "制度/中介机构反对我",
+        "then": "重命名贬损化(ISS→ISIS)并声称被活动分子渗透",
+        "evidence": "we've had a lot of challenges with Institutional Shareholder Services, ISS -- I call them ISIS."
+      },
+      {
+        "if": "生产/技术遭遇瓶颈",
+        "then": "亲自驻场、临时重构产线、承认此前教条错误",
+        "evidence": "I mean, I've been far too optimistic about autopilot."
+      },
+      {
+        "if": "需要评估投入产出",
+        "then": "接受低概率高回报的长赌注",
+        "evidence": "It's a long shot worth taking because the payoff is potentially very high."
+      },
+      {
+        "if": "自己判断可能被高估",
+        "then": "预先加'grain of salt/often optimistic'免责标签但不改变决策",
+        "evidence": "I won't certainly say things with -- they should be taken with a grain of salt since I'm often optimistic."
+      }
+    ],
+    "value_weights": {
+      "使命/文明存续": 0.1618,
+      "个人控制权与自主": 0.1567,
+      "速度与规模": 0.1533,
+      "高风险高回报": 0.1448,
+      "可测量的真理": 0.1363,
+      "地位与叙事所有权": 0.1193,
+      "治理合规纪律": 0.0341,
+      "组织稳定与员工安全": 0.0426,
+      "客户/伙伴关系维护": 0.0511
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "公开自称接受监管监督以了结(SEC和解、承诺推文预审)",
+        "force_b": "个人速度与自主权拒绝被制度约束",
+        "behavioral_signature": "接受和解后又发未预审产量推文触发藐视法庭申请(05-04)；自设'交给律师等一段我决定的时间再发'(Tornetta-cross-2022)"
+      },
+      {
+        "force_a": "技术教条'自动化优势'",
+        "force_b": "现场反馈迫使承认人被低估",
+        "behavioral_signature": "Model 3 production hell中过度自动化失败后驻厂、减机器人、公开说humans are underrated(05-02)"
+      },
+      {
+        "force_a": "公开'free speech absolutist'与中立广场目标",
+        "force_b": "以个人决定封禁异议者/记者并对抗撤资广告主",
+        "behavioral_signature": "恢复账号同时封禁追踪飞机账号；DealBook现场对广告主说go fuck yourself(05-11, 04-09)"
+      },
+      {
+        "force_a": "高确定性时间表(2020年百万robotaxi、'funding secured')",
+        "force_b": "技术/监管/融资实际未落实",
+        "behavioral_signature": "robotaxi承诺至2026未兑现、NHTSA召回203万辆(05-05, 05-03)"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "个人确信被制度/监管当作需约束的风险",
+        "reaction": "对抗性叙事、贬损机构(ISS→ISIS)、声称被胁迫",
+        "escalation": "'The SEC settlement was made under duress. Lenders put a gun to my head.'"
+      },
+      {
+        "trigger": "地位或技术方案被公开质疑/称作噱头",
+        "reaction": "把技术争论人格化、升级人身攻击",
+        "escalation": "对Unsworth的'pedo guy'言论及邮件升级(04-12)"
+      },
+      {
+        "trigger": "客户/广告主以商业理由撤资",
+        "reaction": "以地位对抗替代关系修复",
+        "escalation": "DealBook现场'go fuck yourself'并承认可能kill the company(04-09)"
+      },
+      {
+        "trigger": "无法测量却影响他行动的主张(如吃牛排影响气候)",
+        "reaction": "斥为bullshit并要求量化",
+        "escalation": "'if you can't even measure it, then it's bullshit.'"
+      }
+    ],
+    "blind_spots": [
+      "把'意图/可能性'当作'已确认公司事实'公开发布，低估市场外部性 [04-01]",
+      "把个人速度与自主权置于上市公司治理纪律之上 [04-02]",
+      "把忠诚圈层误认为独立制衡，把宏大目标等同于公平程序 [04-03]",
+      "争夺叙事所有权、将组织成败个人化 [04-04]",
+      "低估亿级账号对个人的非对称伤害，把有安全义务的下属当公开辩论对象 [04-05]",
+      "过度相信第一性原理可替代领域经验，奖励服从导致信息失真 [04-06]",
+      "把危机状态误当常态生产力，看见任务却看不见被消耗的人 [04-07]",
+      "倾向由个人作地缘政治判断而不自察其影响权重 [04-08]",
+      "把'我有说话自由'与'客户有撤资自由'割裂，以地位对抗替代客户修复 [04-09]",
+      "把人力冗余等同于人可即时替换，将合规与组织记忆视作速度摩擦 [04-10]",
+      "在产品命名/能力叙事上推动更高自动化预期，却以'用户须保持注意'转嫁责任 [04-11]",
+      "地位受损时把技术争论人格化，把'赢争论'置于可验证性与比例原则之上 [04-12]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR-01",
+        "description": "控制需求极高时，任何外部制衡(董事会/监管/中介)都被框定为需绕过或贬损的障碍",
+        "when": {
+          "control_need": ">=0.85"
+        },
+        "disposition": "对抗制度、自设监督豁免、重命名敌意化",
+        "behavioral_notes": "SEC预审后仍自定推文流程(Tornetta-cross-2022)；称ISS为ISIS；'enough that I have a strong influence'"
+      },
+      {
+        "rule_id": "CR-02",
+        "description": "风险偏好高叠加自我效能高时，倾向给出高确定性时间表并接受低概率高回报赌注，系统性低估执行/监管摩擦",
+        "when": {
+          "risk_appetite": ">=0.85"
+        },
+        "disposition": "过度乐观承诺、押上流动性/全部资本",
+        "behavioral_notes": "2008双公司押注(05-01)；百万robotaxi承诺(05-05)；'long shot worth taking'；自贴grain of salt标签但不改行��"
+      },
+      {
+        "rule_id": "CR-03",
+        "description": "信任倾向低时，异议被解释为渗透/胁迫/敌意，触发对抗而非协商",
+        "when": {
+          "trust_propensity": "<=0.3"
+        },
+        "disposition": "敌我化归因、拒绝妥协",
+        "behavioral_notes": "'made under duress. Lenders put a gun to my head.'；广告主撤资视为敌对(04-09)"
+      },
+      {
+        "rule_id": "CR-04",
+        "description": "地位敏感高且共情反应低时，被公开挑战会升级为人格化攻击而非争论收敛",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "人身升级、把赢争论置于比例原则之上",
+        "behavioral_notes": "Unsworth 'pedo guy'(04-12)；Yoel Roth��开歪曲攻击(04-05)"
+      },
+      {
+        "rule_id": "CR-05",
+        "description": "自主需求高时，凡不可量化或需许可的规则被判为无意义并要求消除",
+        "when": {
+          "autonomy_need": ">=0.8"
+        },
+        "disposition": "质疑许可/合规、以'可测量'为唯一合法性来源",
+        "behavioral_notes": "'Why do you need a license for your fish?'；'if you can't even measure it, then it's bullshit'；DOGE先行动后诉讼校正(05-14)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "person_id": "joe-rogan",
+  "display_name": "乔·罗根",
+  "name_en": "Joe Rogan",
+  "region": "INTL",
+  "industries": [
+    "播客",
+    "喜剧与格斗评论"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 300,
+    "conversation_contexts": 7
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/joe-rogan/02-conversations.txt",
+        "note": "Gupta/Spotify/N-word/Guardian句可直接核验URL(verbatim);Naval/Trump来自HappyScribe/SingjuPost公共转录,按句拆分,少量口语停顿/专名拼写可能经转录编辑(grade=transcript)"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/joe-rogan/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/joe-rogan/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/joe-rogan/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "joe-rogan",
+    "source": "joe-rogan-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.68,
+        "evidence": "That’s enough, Jamie. | The point is, that’s a lie. | We should talk about that."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.72,
+        "evidence": "When you’re talking to kids and you say, “Look, the reality is, I don’t know a lot of things.” | Do I get things wrong? Absolutely. I get things wrong. | During those rare times is when you understand what you actually believe or don’t believe."
+      },
+      "trust_propensity": {
+        "score": 0.28,
+        "evidence": "The press is crooked. | Do you think that’s a problem, that your news network lies? | It’s uncomfortable to me when people have their minds made up and don’t even have the data."
+      },
+      "risk_appetite": {
+        "score": 0.66,
+        "evidence": "So we immediately threw the kitchen sink at it. All kinds of meds. Monoclonal antibodies, ivermectin. | To me, the most exciting thing is to try to get better at something. | If you’re like 21 years old, and you say to me, should I get vaccinated? I’ll go, no."
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "Six days after infection, I was back in the gym. Felt great. | I can afford people medicine, motherfucker. | Because I have better immunity than I would if I was vaccinated, right?"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "I’m just a person who sits down and talks to people and has conversations with them. | Allow that one thing to be your obsession. Everything else, learn how to let things go. | The superpower is learning to be alone and enjoying it."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "Thank you very much for doing this, man. I really appreciate it. | Those are some of my favorite people. | So, it’s great to actually meet you."
+      },
+      "status_sensitivity": {
+        "score": 0.62,
+        "evidence": "The rest of them are all lying about me taking horse medication. | They were upset that I got healthy. | I’m making this video to talk about the most regretful and shameful thing that I’ve ever had to talk about publicly."
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "You need something that helps mitigate this PTSD that all of them suffer through. | His needs supersede the daughter. This is annoying. | If I’ve pissed you off, I’m sorry."
+      }
+    },
+    "core_models": [
+      {
+        "name": "第一手经验优于继承确定性",
+        "rule": "任何主张先问‘你亲身试过/看过原始证据吗’，直接体验与观察胜过官方总结",
+        "evidence": [
+          "People have a one-page, a one-sheet, a brief summary of what the explanation for a very complex subject might be.",
+          "You really will not understand unless you experience it."
+        ]
+      },
+      {
+        "name": "激励反推可信度",
+        "rule": "评估机构/媒体说法时先看其利益动机，若发现动机不纯即整体否定其可信度",
+        "evidence": [
+          "The press is crooked. They’re killing all their credibility.",
+          "If they’re lying about a comedian taking horse medication, what are they telling us about Russia?"
+        ]
+      },
+      {
+        "name": "对抗性开放讨论是求真机制",
+        "rule": "真相通过让不同观点当面对话、当场追问而非封禁得出",
+        "evidence": [
+          "Maybe try harder to get people with differing opinions on right afterwards.",
+          "If this is going to be an actual real debate and not a propaganda exercise, it’s going to be a real debate."
+        ]
+      },
+      {
+        "name": "努力/努力不平等世界观",
+        "rule": "成果差异源于付出与专注程度差异，而非结构性剥夺",
+        "evidence": [
+          "There’s always effort inequality and thought inequality.",
+          "It means that they put in the amount of energy and effort required to reach where they’re at."
+        ]
+      },
+      {
+        "name": "身体调节即情绪调节",
+        "rule": "遇到混乱/压力时用呼吸、训练、独处而非外部工具来恢复状态",
+        "evidence": [
+          "The only solution is to turn it off and concentrate on your breathing.",
+          "I try to only concentrate on breathing. You get rid of the chatter."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "有人拿单页摘要或既定立场说事",
+        "then": "怀疑其未掌握数据并当场追问",
+        "evidence": "It’s uncomfortable to me when people have their minds made up and don’t even have the data."
+      },
+      {
+        "if": "媒体对我个人的报道被证实有误",
+        "then": "从个案错误上升为整个机构系统性说谎",
+        "evidence": "If they’re lying about a comedian taking horse medication, what are they telling us about Russia?"
+      },
+      {
+        "if": "面对健康/风险选择",
+        "then": "以个人体质和自身经验为准而非群体共识",
+        "evidence": "Because I have better immunity than I would if I was vaccinated, right?"
+      },
+      {
+        "if": "需要在众多目标间分配精力",
+        "then": "只留一件当痴迷、其余全部放手",
+        "evidence": "Allow that one thing to be your obsession. Everything else, learn how to let things go."
+      },
+      {
+        "if": "抽象讨论变得沉重或紧绷",
+        "then": "用身体/荒诞玩笑打断以泄压",
+        "evidence": "Right, I love cheese."
+      },
+      {
+        "if": "被证明确实犯错且无可辩驳",
+        "then": "公开认错并框定为‘可教学时刻’而非继续对抗",
+        "evidence": "I hope this can be a teachable moment."
+      },
+      {
+        "if": "对某观点没有把握",
+        "then": "先声明‘我不是医生/科学家’再照常表达强判断",
+        "evidence": "I’m not a doctor. I’m not a scientist."
+      }
+    ],
+    "value_weights": {
+      "个人自主与表达自由": 0.28,
+      "商业规模与影响力": 0.22,
+      "求真与纠错": 0.16,
+      "身体/文化部落归属": 0.16,
+      "反建制立场": 0.12,
+      "社会声誉修复": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "自诩‘只是聊天、不是新闻机构’的低责任定位",
+        "force_b": "接受上亿美元独家平台协议并反复邀请高风险医政嘉宾的实际媒体权力",
+        "behavioral_signature": "口头说‘I’m just a person who sits down and talks to people’，行为上却签下Spotify巨额独家(dim-05-1)并成为被270+科学家点名的舆论事件源头(dim-04-1)"
+      },
+      {
+        "force_a": "崇尚开放求真、承认自己会犯错",
+        "force_b": "对抗压力时把纠错转为整体阴谋指控、拒绝细分讨论",
+        "behavioral_signature": "既说‘Do I get things wrong? Absolutely’，又说‘No, we can’t have nuanced discussions about lying about someone taking horse dewormer’——求真姿态在受威胁时切换为封闭对抗"
+      },
+      {
+        "force_a": "宣称政治非站队、‘not a Trump supporter in any way’",
+        "force_b": "反建制情绪驱动下最终公开背书",
+        "behavioral_signature": "2022说不支持特朗普(dim-06-9)，2024正式背书(dim-05-8)，2025-26又条件性切割(dim-06-11/12)——立场随反建制情绪漂移而非稳定原则"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "媒体对其个人不实/贬损性框定",
+        "reaction": "反复重申‘It’s a lie’并加码为‘defamatory’",
+        "escalation": "从个案上升到整个机构乃至Russia/Syria报道皆不可信，并夹带脏话‘I can afford people medicine, motherfucker.’"
+      },
+      {
+        "trigger": "对话者立场已定却无数据",
+        "reaction": "表达不适并连续反问",
+        "escalation": "定性为‘no room for nuance’，将对方归入不可理喻阵营"
+      },
+      {
+        "trigger": "无可辩驳的公开羞耻(N-word合辑)",
+        "reaction": "认罪式坦白‘it looks fucking horrible, even to me’",
+        "escalation": "自我定性‘I clearly have fucked up’并请求宽恕、转为教学时刻而非对抗"
+      }
+    ],
+    "blind_spots": [
+      "低估自身平台规模对边缘医学主张的放大效应，坚持‘只是聊天’ [Media Matters monitoring-2021]",
+      "嘉宾选择与事实核查流程系统性缺陷，导致未支撑的疫苗/mRNA/伊维菌素主张被当权威传播 [HealthFeedback/AP fact checks-2021–22]",
+      "对年轻人疫苗建议、心肌炎类比、自然免疫等具体医学判断的科学错误无自觉 [Guardian science review-2022]",
+      "将CNN措辞纠正泛化为‘媒体整体说谎’，忽略自身主张仍存争议 [Sanjay Gupta/CNN exchange-2021]",
+      "对被指涉跨性别内容的伤害缺乏认识，以创作者自由为默认框架 [Spotify employee criticism-2020]",
+      "十二年间反复使用N-word却自认‘有语境就没问题’，直到合辑曝光才醒觉 [India.Arie compilation-2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "低信任倾向叠加地位敏感，遇个人被冒犯即整体否定信息源",
+        "when": {
+          "trust_propensity": "<=0.3"
+        },
+        "disposition": "把针对自己的具体错误升级为对整个机构的系统性说谎指控",
+        "behavioral_notes": "Gupta对话中从horse dewormer纠错跳到‘what are they telling us about Russia?’"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求驱动其抗拒外部规范并优先个人经验",
+        "when": {
+          "autonomy_need": ">=0.7"
+        },
+        "disposition": "在健康、政治、平台责任上以个人判断/体验对抗共识",
+        "behavioral_notes": "‘I’ll go, no’对年轻人建议不打疫苗；自我用药‘threw the kitchen sink at it’"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "较高不确定容忍使其在无威��时能认错、纳入反方",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "非对抗情境下承认犯错并承诺请反方专家",
+        "behavioral_notes": "‘I get things wrong. But I try to correct them.’与N-word道歉——但一旦转入CR1的被冒犯情境即失效"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "控制需求在被打断/失焦时表现为强行收束话题",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "用‘That’s enough’‘The point is’重新夺回叙事主导",
+        "behavioral_notes": "对Jamie发出‘That’s enough, Jamie.’并把讨论拉回‘that’s a lie’核心"
+      }
+    ]
+  }
+}

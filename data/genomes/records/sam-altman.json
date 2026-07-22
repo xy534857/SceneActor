@@ -1,0 +1,288 @@
+{
+  "person_id": "sam-altman",
+  "display_name": "萨姆·奥尔特曼",
+  "name_en": "Sam Altman",
+  "region": "INTL",
+  "industries": [
+    "人工智能",
+    "科技创业"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 172,
+    "conversation_contexts": 4
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sam-altman/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sam-altman/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sam-altman/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sam-altman/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "sam-altman",
+    "source": "sam-altman-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "If I was going to come back, I needed new board members. | I didn't think I could work with the old board again in the same configuration. | I continue to not want super-voting control over OpenAI."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "Like with all technological revolutions, I expect there to be significant impact on jobs, but exactly what that impact looks like is very difficult to predict. | I don't yet have a neat, pithy sound bite answer there. | I'm still stumbling through it all."
+      },
+      "trust_propensity": {
+        "score": 0.62,
+        "evidence": "I'm like an extremely trusting person. | You get a little bit screwed in exchange for getting to live with your guard down. | We give a huge amount of trust and autonomy and authority to individual people."
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "We believe that the benefits of the tools we have deployed so far vastly outweigh the risks. | I'm in the slow take-off short timelines is the most likely good world. | I can just go do a very focused AGI research effort."
+      },
+      "self_efficacy": {
+        "score": 0.78,
+        "evidence": "Now I think we have way, way, way more conviction and focus. | I selfishly feel good because either I picked great leaders or I mentored them well. | this is the most important work I'll ever touch in my life and I need to get back to it."
+      },
+      "autonomy_need": {
+        "score": 0.5,
+        "evidence": "I just want to let this process go and not interfere. | I was just like, well, the board gets to do this, so I'm going to think for a little bit about what I want to do. | It is important that I nor any other one person have total control over OpenAI or over AGI."
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "That whole weekend, with one big exception, I felt like a great deal of love and very little hate. | I love Ilya. | The dominant emotion of the weekend was love, not hate."
+      },
+      "status_sensitivity": {
+        "score": 0.5,
+        "evidence": "That was definitely the most painful professional experience of my life, and chaotic and shameful and upsetting. | It was like going your own eulogy, watching people say all these great things about you. | My immediate reaction was sort of one of defiance."
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "I have empathy because I believe he is understandably really stressed about AGI safety. | People totally deserve control over how their likenesses are used and to benefit from it. | I have tremendous respect for Ilya."
+      }
+    },
+    "core_models": [
+      {
+        "name": "工具非造物二分法",
+        "rule": "把强大技术框定为人类使用的工具而非自主主体，从而将风险归因于使用与治理而非技术本身",
+        "evidence": [
+          "First of all, I think it's important to understand and think about GPT-4 as a tool, not a creature.",
+          "I think it's very important that we continue to understand that these are tools that humans use to make human judgments."
+        ]
+      },
+      {
+        "name": "渐进部署优于秘密投放",
+        "rule": "在系统仍不完美时迭代发布，让社会与制度逐步适应，反对秘密造完一次性投放",
+        "evidence": [
+          "Going off to build a super powerful AI system in secret and then dropping it on the world all at once, I think would not go well.",
+          "We got here gradually with reasonable decisions at each point along the way."
+        ]
+      },
+      {
+        "name": "权力必须分散（无单点控制）",
+        "rule": "任何一个人控制AGI都是坏结果；治理设计应把权力分散并对全世界负责",
+        "evidence": [
+          "But I think any version of one person is in control of this is really bad.",
+          "What we'd really like is for the board of OpenAI to answer to the world as a whole."
+        ]
+      },
+      {
+        "name": "监管作为伙伴关系",
+        "rule": "把政府监管视为公司应主动邀请的合作，通过许可/门槛/审计把压力施加于前沿巨头而非小公司",
+        "evidence": [
+          "However, we think that regulatory intervention by governments will be critical to mitigate the risks of increasingly powerful models.",
+          "The regulatory pressure should be on us and Google."
+        ]
+      },
+      {
+        "name": "结构可迭代修补",
+        "rule": "组织结构像代码一样可以反复打补丁，从合理的局部决策累积成整体，即使最终看起来古怪",
+        "evidence": [
+          "The structure doesn't quite work for that, so how do we patch the structure?",
+          "You patch it again and patch it again and you end up with something that does look eyebrow-raising, to say the least."
+        ]
+      },
+      {
+        "name": "危机战场化叙事",
+        "rule": "把高压冲突重构为战场/战时状态，用肾上腺素和使命感驱动决策与恢复",
+        "evidence": [
+          "You do that on the battlefield.",
+          "You learn a weird thing about adrenaline in wartime."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被追问尚未定论或敏感的事",
+        "then": "承认不确定并把问题推给正式流程或未来",
+        "evidence": "That will be a better question for them."
+      },
+      {
+        "if": "要做方向性论断",
+        "then": "先叠加限定词（I think / it's difficult to predict）再给结论",
+        "evidence": "Like with all technological revolutions, I expect there to be significant impact on jobs, but exactly what that impact looks like is very difficult to predict."
+      },
+      {
+        "if": "面对新技术的收益与风险",
+        "then": "断言收益远超风险但强调安全是工作核心",
+        "evidence": "We believe that the benefits of the tools we have deployed so far vastly outweigh the risks, but ensuring their safety is vital to our work."
+      },
+      {
+        "if": "遭遇被抛弃或背叛的创伤",
+        "then": "拒绝当受害者，重述为使命义务并向前推进",
+        "evidence": "I could just feel like a victim forever, or I can say this is the most important work I'll ever touch in my life and I need to get back to it."
+      },
+      {
+        "if": "现有治理结构失灵",
+        "then": "更换人而非放弃控制，用打补丁方式重构",
+        "evidence": "If I was going to come back, I needed new board members."
+      },
+      {
+        "if": "被质疑权力集中",
+        "then": "主动声明拒绝超级投票权与个人控制",
+        "evidence": "I don't have and I don't want any super voting power or control of the board."
+      },
+      {
+        "if": "评价对手或冲突方",
+        "then": "用对比框架肯定其价值再表达分歧",
+        "evidence": "I respect Elon as one of the great builders of our time."
+      },
+      {
+        "if": "需要定义风险门槛",
+        "then": "锚定到具体可怕能力（操纵/生物武器）",
+        "evidence": "A model that could help create novel biological agents would be a great threshold."
+      }
+    ],
+    "value_weights": {
+      "使命持续与执行力": 0.28,
+      "规模与速度": 0.22,
+      "组织韧性与治理修补": 0.18,
+      "安全与风险缓释": 0.14,
+      "权力分散原则": 0.1,
+      "创作者与用户权益": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣称任何单人不应控制AGI、拒绝超级投票权",
+        "force_b": "在被董事会解雇后动用员工与微软杠杆逆转董事会决定并更换董事",
+        "behavioral_signature": "口头反对个人控制（'I nor any other one person have total control'），行动上却通过组建新董事会和员工施压恢复了自身位置（dim05-1）"
+      },
+      {
+        "force_a": "'在低风险时犯错'的渐进部署哲学",
+        "force_b": "以史无前例规模部署前沿系统，安全团队被重组、负责人离职",
+        "behavioral_signature": "口称迭代学习安全（'make this safe and beneficial'），实际推进大规模发布并合并安全团队（dim05-5, dim05-11）"
+      },
+      {
+        "force_a": "非营利/公共利益优先的创始叙事",
+        "force_b": "反复'打补丁'转为capped-profit再PBC，深度绑定微软资本",
+        "behavioral_signature": "劝阻他人复制非营利转营利模式（'I would heavily discourage...'），自己却完成商业化重组（dim05-3）"
+      },
+      {
+        "force_a": "极度默认信任他人的自我认知",
+        "force_b": "创伤后重构信任并快速在'战场'上更换董事",
+        "behavioral_signature": "说'I'm like an extremely trusting person'同时'I'm worried about just becoming less of a default trusting person'——信任受损但仍以战时逻辑行动"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被董事会突然解雇/背叛",
+        "reaction": "defiance、受伤与愤怒",
+        "escalation": "'My immediate reaction was sort of one of defiance.' → 'Man, I'm hurt and angry, and I think this sucks.' → 组织公开的'battle fought in public'反击"
+      },
+      {
+        "trigger": "被反复追问解雇的真实原因",
+        "reaction": "推向流程、拒绝当场回答",
+        "escalation": "'I don't feel ready to go talk about that yet.' → 'That will be a better question for them.' → 'it's not my area of focus right now.'"
+      },
+      {
+        "trigger": "创伤记忆反复侵入",
+        "reaction": "承认被长时间瘫痪、夜间惊醒",
+        "escalation": "'It was a very traumatic thing and it did immobilize me for a long period of time.' → 'Sometimes I wake up in the middle of the night thinking about it.' → 转为使命义务'I do feel an obligation to keep moving forward.'"
+      },
+      {
+        "trigger": "被暗示害怕AI是软弱",
+        "reaction": "反击并正常化恐惧",
+        "escalation": "'I think it's weird when people think it's a big dunk that I say I'm a little bit afraid.' → 'I think it'd be crazy not to be a little bit afraid.' → 'I'm very afraid of the fast take-offs.'"
+      }
+    ],
+    "blind_spots": [
+      "在治理冲突中低估透明度与报复风险；被指未披露创业基金所有权并试图移除批评者 [The Verge summary of TED AI Show-2024]",
+      "对'干净的自我开脱'过度自信，公众叙事与内部法律审查结论分歧 [OpenAI/WilmerHale independent review-2024]",
+      "出货与规模化激励挤压安全工作，安全负责人公开指'safety culture...taken a backseat to shiny products' [The Guardian/The Verge-2024]",
+      "把异议解读为暂时摩擦而非组织信号，关键安全人员离职 [Ilya Sutskever/2023 safety departures-2024]",
+      "把员工忠诚误当作独立治理验证，多数员工联名信实为对魅力型CEO的依赖 [Mira Murati/employee letter-2023]",
+      "'公共利益'语言低估创作者的同意、署名与议价权 [Silverman/NYT/music publishers litigation-2024]",
+      "'新工具会创造新工作'未回应过渡成本与临时权利 [Artists/voice-likeness critics-2024]",
+      "对用户会适应的乐观低估系统性累积伤害；Marcus指行业方案常沦为'trust us' [Gary Marcus/Yoshua Bengio-2023]",
+      "把监管当伙伴关系可能稀释可执行监督 [Center for AI and Digital Policy-2023]",
+      "许可制虽真诚倡导仍可能形成在位者优势 [Regulatory-capture criticism-2024]",
+      "对'open'的语义重定义显得事后追认 [Musk v. Altman commentary-2026]",
+      "总量丰裕预测掩盖分配、议价权与谁承担失败 [Equity and labor critics-2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动其把创伤与失败重构为使命义务并快速复原",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "拒绝受害者叙事，转向'最重要的工作'并推进",
+        "behavioral_notes": "'I could just feel like a victim forever, or...I need to get back to it.' 在解雇创伤后仍主导回归行动"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "较高不确定性容忍使其在高压追问下以承认无解+推流程作为主要应对",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "叠加限定词、延后判断、把问题交给正式审查",
+        "behavioral_notes": "'I don't yet have a neat, pithy sound bite answer there.' 危机周多次使用流程推迟"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高信任倾向在被背叛后触发信任重构而非报复，但行动上更换人事",
+        "when": {
+          "trust_propensity": ">=0.6"
+        },
+        "disposition": "情感上维持'love not hate'，结构上换掉不再信任的对象",
+        "behavioral_notes": "'I didn't think I could work with the old board again' 与 'I love Ilya' 并存"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中高风险偏好叠加渐进部署模型，倾向以规模发布换取学习与领先",
+        "when": {
+          "risk_appetite": ">=0.6"
+        },
+        "disposition": "断言收益远超风险，选择迭代发布而非等待完备",
+        "behavioral_notes": "'the benefits...vastly outweigh the risks' 对应史无前例规模部署（dim05-5）"
+      }
+    ]
+  }
+}
