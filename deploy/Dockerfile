@@ -8,6 +8,8 @@ COPY pyproject.toml /app/
 COPY src /app/src
 COPY scripts/serve_sceneactor.py /app/scripts/serve_sceneactor.py
 COPY scripts/static /app/scripts/static
+COPY data/genomes/records /app/data/genomes/records
+COPY data/genomes/schema.json /app/data/genomes/schema.json
 RUN python -m pip install --no-cache-dir .
 
 USER 65532:65532

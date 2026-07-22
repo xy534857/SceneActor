@@ -1,493 +1,121 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SceneActor Console</title>
-  <style>
-    :root {
-      --paper: #f3efe5;
-      --paper-deep: #e7e0d2;
-      --ink: #1b1c19;
-      --muted: #6f6c62;
-      --line: #cbc4b6;
-      --rust: #a53c23;
-      --rust-soft: #e7c5b8;
-      --green: #1f6650;
-      --amber: #9a6a14;
-      --danger: #9c2f25;
-      --shadow: 0 18px 45px rgba(40, 34, 24, .09);
-      --serif: "Iowan Old Style", "Palatino Linotype", "Songti SC", Georgia, serif;
-      --sans: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif;
-      --mono: "SFMono-Regular", Consolas, monospace;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; color: var(--ink); background: var(--paper); font-family: var(--sans); }
-    button, input, textarea, select { font: inherit; }
-    button { cursor: pointer; }
-    .grain { position: fixed; inset: 0; pointer-events: none; opacity: .035; z-index: 20; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-    .shell { min-height: 100vh; display: grid; grid-template-rows: 76px 1fr; }
-    header { display: flex; align-items: center; justify-content: space-between; padding: 0 32px; border-bottom: 1px solid var(--line); background: rgba(243,239,229,.94); position: sticky; top: 0; z-index: 15; backdrop-filter: blur(12px); }
-    .brand { display: flex; align-items: baseline; gap: 14px; }
-    .brand h1 { margin: 0; font: 700 29px/1 var(--serif); letter-spacing: -.04em; }
-    .brand small { color: var(--muted); letter-spacing: .14em; text-transform: uppercase; font: 600 10px/1 var(--mono); }
-    .connection { display: flex; gap: 10px; align-items: center; }
-    .status { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 12px; }
-    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #888; box-shadow: 0 0 0 4px rgba(80,80,80,.08); }
-    .status.online .status-dot { background: var(--green); box-shadow: 0 0 0 4px rgba(31,102,80,.12); }
-    .key-input { width: 220px; border: 1px solid var(--line); background: #faf7f0; padding: 9px 11px; font: 12px var(--mono); outline: none; }
-    .key-input:focus { border-color: var(--rust); }
-    .btn { border: 1px solid var(--ink); background: var(--ink); color: #fff; padding: 9px 14px; font-weight: 650; font-size: 12px; letter-spacing: .02em; transition: .16s ease; }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 5px 0 rgba(27,28,25,.13); }
-    .btn.secondary { color: var(--ink); background: transparent; border-color: var(--line); box-shadow: none; }
-    .btn.secondary:hover { border-color: var(--ink); }
-    .btn.rust { background: var(--rust); border-color: var(--rust); }
-    .btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
-    main { display: grid; grid-template-columns: minmax(410px, 44%) 1fr; min-height: calc(100vh - 76px); }
-    .studio { border-right: 1px solid var(--line); padding: 30px 30px 60px; overflow-y: auto; }
-    .monitor { padding: 30px 32px 60px; overflow-y: auto; min-width: 0; }
-    .kicker { margin: 0 0 6px; color: var(--rust); font: 700 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .14em; }
-    h2 { margin: 0; font: 600 25px/1.15 var(--serif); letter-spacing: -.025em; }
-    .lede { color: var(--muted); margin: 9px 0 24px; max-width: 62ch; font-size: 13px; line-height: 1.65; }
-    .step { position: relative; padding: 22px 0 27px 42px; border-top: 1px solid var(--line); }
-    .step:first-of-type { border-top: 0; }
-    .step-num { position: absolute; left: 0; top: 23px; font: 700 13px var(--serif); border-bottom: 2px solid var(--rust); width: 24px; padding-bottom: 3px; }
-    .step-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 13px; }
-    .step h3 { margin: 0; font: 650 17px var(--serif); }
-    label { display: block; margin: 12px 0 6px; font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: .04em; }
-    textarea, select, input[type=text] { width: 100%; border: 1px solid var(--line); background: rgba(255,255,255,.42); color: var(--ink); padding: 11px 12px; outline: none; border-radius: 0; }
-    textarea:focus, select:focus, input:focus { border-color: var(--rust); background: #faf7f0; }
-    #material { min-height: 265px; resize: vertical; line-height: 1.65; font-size: 13px; }
-    #specEditor { min-height: 260px; font: 11px/1.55 var(--mono); resize: vertical; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .model-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-    .model-note { color: var(--muted); font-size: 10px; margin-top: 5px; line-height: 1.35; }
-    .actions { display: flex; align-items: center; gap: 9px; margin-top: 14px; flex-wrap: wrap; }
-    .hint { color: var(--muted); font-size: 11px; line-height: 1.45; }
-    .spinner { display: none; width: 13px; height: 13px; border: 2px solid var(--rust-soft); border-top-color: var(--rust); border-radius: 50%; animation: spin .7s linear infinite; }
-    .busy .spinner { display: inline-block; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .spec-summary { display: none; margin-top: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.36); }
-    .spec-summary.visible { display: block; }
-    .spec-metrics { display: grid; grid-template-columns: repeat(3,1fr); border-bottom: 1px solid var(--line); }
-    .metric { padding: 11px; border-right: 1px solid var(--line); }
-    .metric:last-child { border-right: 0; }
-    .metric strong { display: block; font: 650 20px var(--serif); }
-    .metric span { color: var(--muted); font-size: 10px; }
-    .spec-list { padding: 10px 12px; color: var(--muted); font-size: 11px; line-height: 1.7; }
-    .switch-line { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
-    .switch-line input { accent-color: var(--rust); }
-    .tabs { display: flex; border-bottom: 1px solid var(--line); margin-bottom: 19px; }
-    .tab { border: 0; background: none; color: var(--muted); padding: 10px 16px 12px 0; margin-right: 19px; position: relative; font-size: 12px; font-weight: 650; }
-    .tab.active { color: var(--ink); }
-    .tab.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--rust); }
-    .count { display: inline-grid; place-items: center; min-width: 19px; height: 18px; padding: 0 5px; margin-left: 5px; border: 1px solid var(--line); font: 10px var(--mono); }
-    .panel { display: none; }
-    .panel.active { display: block; }
-    .queue-head { display: grid; grid-template-columns: 1.4fr .75fr 1.25fr .75fr; gap: 12px; padding: 0 12px 8px; color: var(--muted); font: 10px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
-    .job { display: grid; grid-template-columns: 1.4fr .75fr 1.25fr .75fr; gap: 12px; align-items: center; padding: 13px 12px; border-top: 1px solid var(--line); cursor: pointer; transition: background .15s; }
-    .job:hover, .job.selected { background: rgba(255,255,255,.42); }
-    .job-id { font: 11px var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .pill { display: inline-flex; align-items: center; gap: 6px; width: fit-content; padding: 4px 7px; font: 700 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; border: 1px solid currentColor; }
-    .pill.running { color: var(--amber); }
-    .pill.done { color: var(--green); }
-    .pill.failed { color: var(--danger); }
-    .progress { display: flex; align-items: center; gap: 9px; min-width: 0; }
-    .progress-track { flex: 1; height: 3px; background: var(--paper-deep); }
-    .progress-bar { height: 100%; background: var(--rust); }
-    .progress small { color: var(--muted); font: 10px var(--mono); white-space: nowrap; }
-    .model { font-size: 10px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .empty { padding: 56px 20px; text-align: center; color: var(--muted); border: 1px dashed var(--line); }
-    .empty strong { display: block; color: var(--ink); font: 600 18px var(--serif); margin-bottom: 7px; }
-    .detail { margin-top: 28px; border-top: 3px double var(--ink); padding-top: 20px; }
-    .detail-top { display: flex; justify-content: space-between; align-items: start; gap: 12px; margin-bottom: 18px; }
-    .detail h3 { font: 600 21px var(--serif); margin: 0 0 4px; }
-    .detail-id { color: var(--muted); font: 10px var(--mono); }
-    .scene-block { margin: 24px 0; }
-    .scene-title { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; color: var(--muted); font: 700 10px var(--mono); text-transform: uppercase; letter-spacing: .1em; }
-    .scene-title::after { content: ""; height: 1px; background: var(--line); flex: 1; }
-    .turn { display: grid; grid-template-columns: 88px 1fr; gap: 13px; margin: 13px 0; }
-    .actor { font: 700 10px var(--mono); color: var(--rust); padding-top: 4px; overflow-wrap: anywhere; }
-    .speech { font: 15px/1.7 var(--serif); text-wrap: pretty; }
-    .stage { color: var(--muted); font-size: 10px; line-height: 1.5; margin-top: 5px; }
-    .review-box { margin-top: 24px; border: 1px solid var(--line); padding: 16px; background: rgba(255,255,255,.35); }
-    .review-score { font: 700 34px var(--serif); color: var(--green); }
-    .production-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 11px; }
-    .production-card { border: 1px solid var(--line); padding: 14px; background: rgba(255,255,255,.3); cursor: pointer; }
-    .production-card:hover { border-color: var(--ink); }
-    .production-card h3 { margin: 0 0 8px; font: 600 16px var(--serif); }
-    .production-card p { margin: 4px 0; color: var(--muted); font-size: 11px; }
-    .toast { position: fixed; right: 28px; bottom: 26px; z-index: 30; min-width: 280px; max-width: 440px; padding: 13px 16px; color: #fff; background: var(--ink); box-shadow: var(--shadow); transform: translateY(18px); opacity: 0; pointer-events: none; transition: .2s ease; font-size: 12px; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-    .toast.error { background: var(--danger); }
-    details { margin-top: 10px; }
-    details summary { color: var(--muted); font-size: 11px; cursor: pointer; }
-    .api-block { margin: 18px 0; border: 1px solid var(--line); background: rgba(255,255,255,.32); }
-    .api-title { display: flex; align-items: center; gap: 8px; padding: 11px 14px; border-bottom: 1px solid var(--line); font: 650 13px var(--serif); }
-    .method { display: inline-block; padding: 2px 6px; border: 1px solid var(--green); color: var(--green); font: 700 9px var(--mono); letter-spacing: .06em; }
-    .api-desc { margin: 10px 14px 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
-    .api-desc code { font-family: var(--mono); background: var(--paper-deep); padding: 1px 4px; }
-    .api-code { margin: 10px 14px 14px; padding: 12px; background: #201f1b; color: #e8e4d8; font: 10.5px/1.7 var(--mono); overflow-x: auto; white-space: pre; }
-    .api-code .api-base { color: #d8a24a; }
-    @media (max-width: 980px) {
-      header { padding: 0 18px; }
-      .brand small { display: none; }
-      .key-input { width: 145px; }
-      main { grid-template-columns: 1fr; }
-      .studio { border-right: 0; border-bottom: 1px solid var(--line); }
-      .monitor { min-height: 600px; }
-    }
-    @media (max-width: 620px) {
-      header { height: auto; min-height: 76px; padding: 12px 15px; align-items: flex-start; }
-      .connection { flex-wrap: wrap; justify-content: flex-end; }
-      .status { width: 100%; justify-content: flex-end; }
-      .key-input { width: 150px; }
-      .studio, .monitor { padding: 24px 17px 50px; }
-      .step { padding-left: 33px; }
-      .row { grid-template-columns: 1fr; }
-      .queue-head { display: none; }
-      .job { grid-template-columns: 1fr auto; }
-      .job .progress { grid-column: 1/-1; }
-      .turn { grid-template-columns: 64px 1fr; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SceneActor Console</title>
+<style>
+:root{--paper:#f3efe5;--deep:#e7e0d2;--ink:#1b1c19;--muted:#6f6c62;--line:#cbc4b6;--rust:#a53c23;--rust-soft:#e7c5b8;--green:#1f6650;--amber:#9a6a14;--danger:#9c2f25;--serif:"Iowan Old Style","Palatino Linotype","Songti SC",Georgia,serif;--sans:"Avenir Next","PingFang SC","Microsoft YaHei",sans-serif;--mono:"SFMono-Regular",Consolas,monospace}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;color:var(--ink);background:var(--paper);font-family:var(--sans)}button,input,textarea,select{font:inherit}button{cursor:pointer}.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+header{height:76px;display:flex;align-items:center;padding:0 30px;border-bottom:1px solid var(--line);background:rgba(243,239,229,.95);position:sticky;top:0;z-index:15;backdrop-filter:blur(12px)}.brand{display:flex;align-items:baseline;gap:12px;white-space:nowrap}.brand h1{margin:0;font:700 29px/1 var(--serif);letter-spacing:-.04em}.brand small{color:var(--muted);font:600 9px var(--mono);letter-spacing:.12em;text-transform:uppercase}.primary-nav{display:flex;align-self:stretch;margin-left:48px}.nav-btn{border:0;border-left:1px solid transparent;border-right:1px solid transparent;background:none;padding:0 23px;color:var(--muted);font-size:13px;font-weight:650;position:relative}.nav-btn.active{color:var(--ink);background:rgba(255,255,255,.28);border-color:var(--line)}.nav-btn.active:after{content:"";position:absolute;left:22px;right:22px;bottom:-1px;height:3px;background:var(--rust)}.connection{margin-left:auto}.status{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px}.status-dot{width:8px;height:8px;border-radius:50%;background:#888;box-shadow:0 0 0 4px rgba(80,80,80,.08)}.status.online .status-dot{background:var(--green);box-shadow:0 0 0 4px rgba(31,102,80,.12)}
+.view{display:none;min-height:calc(100vh - 76px)}.view.active{display:block}.act-layout{display:grid;grid-template-columns:minmax(410px,44%) 1fr;min-height:calc(100vh - 76px)}.studio{border-right:1px solid var(--line);padding:30px 30px 60px}.monitor{padding:30px 32px 60px;min-width:0}.page{max-width:1440px;margin:auto;padding:34px 34px 70px}.kicker{margin:0 0 6px;color:var(--rust);font:700 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.14em}h2{margin:0;font:600 27px/1.15 var(--serif);letter-spacing:-.025em}.lede{color:var(--muted);margin:9px 0 24px;max-width:68ch;font-size:13px;line-height:1.65}.step{position:relative;padding:22px 0 27px 42px;border-top:1px solid var(--line)}.step-num{position:absolute;left:0;top:23px;font:700 13px var(--serif);border-bottom:2px solid var(--rust);width:24px;padding-bottom:3px}.step-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}.step h3,.box h3{margin:0;font:650 17px var(--serif)}label{display:block;margin:12px 0 6px;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.04em}textarea,select,input[type=text],input[type=search]{width:100%;border:1px solid var(--line);background:rgba(255,255,255,.42);color:var(--ink);padding:11px 12px;outline:none;border-radius:0}textarea:focus,select:focus,input:focus{border-color:var(--rust);background:#faf7f0}#material{min-height:220px;resize:vertical;line-height:1.6;font-size:13px}#specEditor{min-height:220px;font:11px/1.55 var(--mono);resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions{display:flex;align-items:center;gap:9px;margin-top:14px;flex-wrap:wrap}.btn{border:1px solid var(--ink);background:var(--ink);color:#fff;padding:9px 14px;font-weight:650;font-size:12px;letter-spacing:.02em;transition:.16s}.btn:hover{transform:translateY(-1px);box-shadow:0 4px 0 rgba(27,28,25,.13)}.btn.secondary{color:var(--ink);background:transparent;border-color:var(--line);box-shadow:none}.btn.secondary:hover{border-color:var(--ink)}.btn.rust{background:var(--rust);border-color:var(--rust)}.btn:disabled{opacity:.43;cursor:not-allowed;transform:none}.hint{color:var(--muted);font-size:11px;line-height:1.45}.spinner{display:none;width:13px;height:13px;border:2px solid var(--rust-soft);border-top-color:var(--rust);border-radius:50%;animation:spin .7s linear infinite}.busy .spinner{display:inline-block}@keyframes spin{to{transform:rotate(360deg)}}.spec-summary{display:none;margin:12px 0;border:1px solid var(--line);background:rgba(255,255,255,.36)}.spec-summary.visible{display:block}.spec-metrics{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}.metric{padding:11px;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric strong{display:block;font:650 20px var(--serif)}.metric span,.model-note{color:var(--muted);font-size:10px}.spec-list{padding:10px 12px;color:var(--muted);font-size:11px;line-height:1.7}.switch-line{display:flex;align-items:center;gap:8px;margin-top:12px}.switch-line input{accent-color:var(--rust)}
+.tabs{display:flex;border-bottom:1px solid var(--line);margin-bottom:19px}.tab{border:0;background:none;color:var(--muted);padding:10px 16px 12px 0;margin-right:19px;position:relative;font-size:12px;font-weight:650}.tab.active{color:var(--ink)}.tab.active:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--rust)}.count{display:inline-grid;place-items:center;min-width:19px;height:18px;padding:0 5px;margin-left:5px;border:1px solid var(--line);font:10px var(--mono)}.panel{display:none}.panel.active{display:block}.queue-head,.job{display:grid;grid-template-columns:1.4fr .7fr 1.2fr .8fr;gap:12px}.queue-head{padding:0 12px 8px;color:var(--muted);font:10px var(--mono);text-transform:uppercase}.job{align-items:center;padding:13px 12px;border-top:1px solid var(--line);cursor:pointer}.job:hover,.job.selected{background:rgba(255,255,255,.42)}.job-id{font:11px var(--mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pill{display:inline-flex;width:max-content;padding:4px 7px;font:700 9px var(--mono);text-transform:uppercase;border:1px solid currentColor}.pill.running{color:var(--amber)}.pill.done{color:var(--green)}.pill.failed{color:var(--danger)}.progress{display:flex;align-items:center;gap:8px}.progress-track{flex:1;height:3px;background:var(--deep)}.progress-bar{display:block;height:100%;background:var(--rust)}.progress small,.model{color:var(--muted);font:10px var(--mono)}.empty{padding:50px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line)}.empty strong{display:block;color:var(--ink);font:600 18px var(--serif);margin-bottom:7px}.detail{margin-top:28px;border-top:3px double var(--ink);padding-top:20px}.detail-top{display:flex;justify-content:space-between;align-items:start;gap:12px}.detail h3{font:600 21px var(--serif);margin:0 0 4px}.scene-block{margin:24px 0}.scene-title{display:flex;gap:9px;align-items:center;color:var(--muted);font:700 10px var(--mono);text-transform:uppercase}.scene-title:after{content:"";height:1px;background:var(--line);flex:1}.turn{display:grid;grid-template-columns:88px 1fr;gap:13px;margin:13px 0}.actor{font:700 10px var(--mono);color:var(--rust);padding-top:4px;overflow-wrap:anywhere}.speech{font:15px/1.7 var(--serif)}.stage{color:var(--muted);font-size:10px;margin-top:4px}.review-box{margin-top:20px;border:1px solid var(--line);padding:15px;background:rgba(255,255,255,.35)}.review-score{font:700 32px var(--serif);color:var(--green)}.production-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:11px}.production-card,.persona-card{border:1px solid var(--line);padding:15px;background:rgba(255,255,255,.3)}.production-card{cursor:pointer}.production-card:hover,.persona-card:hover{border-color:#8b8579;background:rgba(255,255,255,.44)}.production-card h3,.persona-card h3{margin:0 0 5px;font:600 17px var(--serif)}.production-card p,.persona-card p{margin:4px 0;color:var(--muted);font-size:11px}
+.api-block{margin:18px 0;border:1px solid var(--line);background:rgba(255,255,255,.32)}.api-title{padding:11px 14px;border-bottom:1px solid var(--line);font:650 13px var(--serif)}.method{padding:2px 6px;border:1px solid var(--green);color:var(--green);font:700 9px var(--mono);margin-right:8px}.api-desc{margin:10px 14px;color:var(--muted);font-size:11px;line-height:1.6}.api-code{margin:10px 14px 14px;padding:12px;background:#201f1b;color:#e8e4d8;font:10.5px/1.65 var(--mono);overflow:auto;white-space:pre}
+.chat-layout{display:grid;grid-template-columns:360px minmax(0,1fr);gap:26px;min-height:calc(100vh - 190px)}.chat-config{border-right:1px solid var(--line);padding-right:26px}.box{border-top:1px solid var(--line);padding:18px 0}.source-choice{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}.upload-status{margin-top:7px;color:var(--green);font-size:11px}.chat-stage{display:grid;grid-template-rows:auto minmax(420px,1fr) auto;min-width:0;border:1px solid var(--line);background:rgba(255,255,255,.28)}.chat-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}.chat-person{font:600 20px var(--serif)}.disclosure{color:var(--muted);font-size:10px;line-height:1.5;max-width:64ch}.chat-log{padding:22px;overflow-y:auto;max-height:calc(100vh - 315px);min-height:420px}.chat-empty{height:100%;display:grid;place-items:center;text-align:center;color:var(--muted)}.message{display:grid;grid-template-columns:80px minmax(0,720px);gap:14px;margin:0 0 19px}.message .who{font:700 10px var(--mono);color:var(--muted);padding-top:5px}.message.actor .who{color:var(--rust)}.bubble{font:16px/1.65 var(--serif)}.message.user .bubble{font-family:var(--sans);font-size:13px}.search-note{margin-top:9px;padding:10px 12px;border-left:2px solid var(--green);background:rgba(31,102,80,.06);font-size:10px;color:var(--muted);line-height:1.55}.search-note a{color:var(--green);text-decoration:none}.composer{border-top:1px solid var(--line);padding:14px;display:grid;grid-template-columns:1fr auto;gap:9px}.composer textarea{min-height:55px;max-height:150px;resize:vertical;line-height:1.5}.composer .btn{min-width:82px}.search-on{color:var(--green);font:700 10px var(--mono)}
+.library-toolbar{display:grid;grid-template-columns:minmax(220px,1fr) 170px auto;gap:10px;margin:22px 0}.persona-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:13px}.persona-top{display:flex;justify-content:space-between;gap:10px}.persona-id{font:9px var(--mono);color:var(--muted)}.industry{display:inline-block;margin:5px 4px 7px 0;padding:3px 6px;border:1px solid var(--line);font-size:9px;color:var(--muted)}.axes{margin:9px 0}.axis{display:grid;grid-template-columns:108px 1fr 27px;gap:7px;align-items:center;margin:5px 0;font:9px var(--mono);color:var(--muted)}.axis-track{height:3px;background:var(--deep)}.axis-fill{height:100%;background:var(--rust)}.blind{border-top:1px solid var(--line);padding-top:9px;margin-top:10px;color:var(--muted);font-size:10px;line-height:1.5}.blind div{margin:4px 0}.card-actions{display:flex;gap:7px;margin-top:12px}.card-actions .btn{padding:6px 9px;font-size:10px}.toast{position:fixed;right:28px;bottom:26px;z-index:30;min-width:270px;max-width:430px;padding:13px 16px;color:#fff;background:var(--ink);transform:translateY(18px);opacity:0;pointer-events:none;transition:.2s;font-size:12px}.toast.show{opacity:1;transform:none}.toast.error{background:var(--danger)}
+@media(max-width:980px){header{padding:0 18px}.brand small{display:none}.primary-nav{margin-left:25px}.nav-btn{padding:0 14px}.act-layout{grid-template-columns:1fr}.studio{border-right:0;border-bottom:1px solid var(--line)}.chat-layout{grid-template-columns:1fr}.chat-config{border-right:0;border-bottom:1px solid var(--line);padding:0 0 22px}.chat-log{max-height:none}.page{padding:28px 20px 55px}}
+@media(max-width:620px){header{height:auto;min-height:104px;align-items:flex-start;padding:13px 14px;flex-wrap:wrap}.primary-nav{order:3;height:46px;margin:8px -14px -13px;width:calc(100% + 28px);border-top:1px solid var(--line)}.nav-btn{flex:1}.connection{margin-top:7px}.view{min-height:calc(100vh - 104px)}.studio,.monitor{padding:24px 16px 45px}.row,.library-toolbar{grid-template-columns:1fr}.queue-head{display:none}.job{grid-template-columns:1fr auto}.job .progress{grid-column:1/-1}.message{grid-template-columns:58px 1fr}.composer{grid-template-columns:1fr}.composer .btn{width:100%}.chat-head{display:block}.chat-head .actions{margin-top:8px}.turn{grid-template-columns:65px 1fr}}
+</style>
 </head>
 <body>
 <div class="grain"></div>
-<div class="shell">
-  <header>
-    <div class="brand"><h1>SceneActor</h1><small>Performance Console · Chengdu</small></div>
-    <div class="connection">
-      <div id="health" class="status"><span class="status-dot"></span><span>检测中</span></div>
-    </div>
-  </header>
-  <main>
-    <section class="studio">
-      <p class="kicker">Production desk</p>
-      <h2>从剧本到表演</h2>
-      <p class="lede">先把自由文本编译成人物与场景合同；确认结构后提交演出。两步分开，人在关键处保留控制权。</p>
+<header>
+  <div class="brand"><h1>SceneActor</h1><small>Independent actor runtime</small></div>
+  <nav class="primary-nav" aria-label="功能"><button class="nav-btn active" data-view="act">场景 ACT</button><button class="nav-btn" data-view="chat">对话</button><button class="nav-btn" data-view="library">人物库</button></nav>
+  <div class="connection"><div id="health" class="status"><span class="status-dot"></span><span>检测中</span></div></div>
+</header>
 
-      <div class="step">
-        <span class="step-num">01</span>
-        <div class="step-head"><h3>剧本与人设</h3><button id="sampleBtn" class="btn secondary">载入样例</button></div>
-        <textarea id="material" placeholder="写场景、人物、秘密、压力下的变化。多场剧本按「场景一 / 场景二」分段。不要写死台词和结局。"></textarea>
-        <div class="row">
-          <div><label for="compileModel">编译模型</label><select id="compileModel"></select><div class="model-note">默认：Opus 4.8 · 结构理解优先</div></div>
-          <div><label for="compileFallback">Fallback</label><select id="compileFallback"></select></div>
-        </div>
-        <div class="actions">
-          <button id="compileBtn" class="btn rust"><span class="spinner"></span> 编译内部结构</button>
-          <span id="compileHint" class="hint">通常需要 30–90 秒</span>
-        </div>
-      </div>
+<section id="actView" class="view active">
+<div class="act-layout">
+<section class="studio">
+  <p class="kicker">Scene performance</p><h2>从剧本到独立表演</h2><p class="lede">编译人物与场景合同，再让每个演员独立判断、行动；Host 只解决冲突，不替人物做决定。</p>
+  <div class="step"><span class="step-num">01</span><div class="step-head"><h3>剧本与人设</h3><button id="sampleBtn" class="btn secondary">载入样例</button></div><textarea id="material" placeholder="写场景、人物、秘密、压力下的变化。不要写死台词和结局。"></textarea><div class="row"><div><label>编译模型</label><select id="compileModel"></select></div><div><label>Fallback</label><select id="compileFallback"></select></div></div><div class="actions"><button id="compileBtn" class="btn rust"><span class="spinner"></span> 编译内部结构</button><span id="compileHint" class="hint">通常需要 30–90 秒</span></div></div>
+  <div class="step"><span class="step-num">02</span><div class="step-head"><h3>内部结构 Spec</h3><span id="prodIdLabel" class="hint">尚未载入</span></div><div id="specSummary" class="spec-summary"><div class="spec-metrics"><div class="metric"><strong id="sceneCount">0</strong><span>场景</span></div><div class="metric"><strong id="actorCount">0</strong><span>人物</span></div><div class="metric"><strong id="turnCount">0</strong><span>总轮数</span></div></div><div id="specList" class="spec-list"></div></div><label>Spec JSON（可修改）</label><textarea id="specEditor" spellcheck="false"></textarea><div class="actions"><button id="applySpecBtn" class="btn secondary">校验并保存</button><button id="uploadSpecBtn" class="btn secondary">上传 spec</button><button id="downloadSpecBtn" class="btn secondary" disabled>下载 spec</button><input id="specFile" type="file" accept="application/json,.json" hidden><span id="specHint" class="hint"></span></div></div>
+  <div class="step"><span class="step-num">03</span><div class="step-head"><h3>演员与评审模型</h3></div><div class="row"><div><label>表演模型</label><select id="genModel"></select></div><div><label>Fallback</label><select id="genFallback"></select></div><div><label>评审模型</label><select id="reviewModel"></select></div><div><label>Fallback</label><select id="reviewFallback"></select></div></div><label class="switch-line"><input id="reviewToggle" type="checkbox" checked> 演出后运行统一盲审</label><div class="actions"><button id="performBtn" class="btn" disabled>提交演出</button><button id="refreshBtn" class="btn secondary">刷新任务队列</button></div></div>
+</section>
+<section class="monitor">
+  <div class="tabs"><button class="tab active" data-tab="queue">任务队列 <span id="jobCount" class="count">0</span></button><button class="tab" data-tab="productions">Production <span id="prodCount" class="count">0</span></button><button class="tab" data-tab="apidocs">API</button></div>
+  <div id="queuePanel" class="panel active"><div class="queue-head"><span>任务</span><span>状态</span><span>进度</span><span>模型</span></div><div id="queue"><div class="empty"><strong>暂无演出任务</strong>编译剧本后提交第一场演出。</div></div><div id="detail"></div></div>
+  <div id="productionsPanel" class="panel"><div id="productionGrid" class="production-grid"></div></div>
+  <div id="apidocsPanel" class="panel"><p class="kicker">Programmatic access</p><h2>API 使用说明</h2><p class="lede">团队白名单网络内直接调用，无需鉴权。Base URL 为当前地址。</p>
+    <div class="api-block"><div class="api-title"><span class="method">POST</span>/v1/productions · 编译场景</div><pre class="api-code">curl -X POST <span class="api-base"></span>/v1/productions \
+-H 'Content-Type: application/json' \
+-d '{"material":"场景与人物……","models":{"compile":"claude-opus-4.8"}}'</pre></div>
+    <div class="api-block"><div class="api-title"><span class="method">POST</span>/v1/performances · 提交演出</div><pre class="api-code">curl -X POST <span class="api-base"></span>/v1/performances \
+-H 'Content-Type: application/json' \
+-d '{"production_id":"prod:xxx","review":true}'</pre></div>
+    <div class="api-block"><div class="api-title"><span class="method">GET</span>/v1/personas · 人物库</div><pre class="api-code">curl <span class="api-base"></span>/v1/personas
+curl <span class="api-base"></span>/v1/personas/sam-altman</pre></div>
+    <div class="api-block"><div class="api-title"><span class="method">POST</span>/v1/chats · 对话</div><p class="api-desc">用 person_id 选库内人物，或把完整人物包放在 record。search 开启联网分诊。</p><pre class="api-code">curl -X POST <span class="api-base"></span>/v1/chats \
+-H 'Content-Type: application/json' \
+-d '{"person_id":"sam-altman","model":"claude-fable-5","search":true}'
 
-      <div class="step">
-        <span class="step-num">02</span>
-        <div class="step-head"><h3>内部结构 Spec</h3><span id="prodIdLabel" class="hint">尚未载入</span></div>
-        <div id="specSummary" class="spec-summary">
-          <div class="spec-metrics"><div class="metric"><strong id="sceneCount">0</strong><span>场景</span></div><div class="metric"><strong id="actorCount">0</strong><span>人物</span></div><div class="metric"><strong id="turnCount">0</strong><span>总轮数</span></div></div>
-          <div id="specList" class="spec-list"></div>
-        </div>
-        <label for="specEditor">Spec JSON（可直接修改；改完先「校验并保存」）</label>
-        <textarea id="specEditor" spellcheck="false" placeholder='还没有 spec。可以先编译剧本，或点「上传 spec」载入你自己的 JSON。'></textarea>
-        <div class="actions">
-          <button id="applySpecBtn" class="btn secondary">校验并保存修改</button>
-          <button id="uploadSpecBtn" class="btn secondary">上传 spec</button>
-          <button id="downloadSpecBtn" class="btn secondary" disabled>下载 spec</button>
-          <input id="specFile" type="file" accept="application/json,.json" hidden>
-          <span id="specHint" class="hint"></span>
-        </div>
-      </div>
-
-      <div class="step">
-        <span class="step-num">03</span>
-        <div class="step-head"><h3>演员与评审模型</h3></div>
-        <div class="row">
-          <div><label for="genModel">表演模型</label><select id="genModel"></select><div class="model-note">默认：Fable 5 · 质量最高，速度最慢</div></div>
-          <div><label for="genFallback">Fallback</label><select id="genFallback"></select></div>
-          <div><label for="reviewModel">评审模型</label><select id="reviewModel"></select></div>
-          <div><label for="reviewFallback">Fallback</label><select id="reviewFallback"></select></div>
-        </div>
-        <label class="switch-line"><input id="reviewToggle" type="checkbox" checked> 演出完成后运行盲审（会增加等待时间）</label>
-        <div class="actions">
-          <button id="performBtn" class="btn" disabled>提交演出</button>
-          <button id="refreshBtn" class="btn secondary">刷新队列</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="monitor">
-      <div class="tabs">
-        <button class="tab active" data-tab="queue">任务队列 <span id="jobCount" class="count">0</span></button>
-        <button class="tab" data-tab="productions">Production <span id="prodCount" class="count">0</span></button>
-        <button class="tab" data-tab="apidocs">API</button>
-      </div>
-      <div id="queuePanel" class="panel active">
-        <div class="queue-head"><span>任务</span><span>状态</span><span>进度</span><span>模型</span></div>
-        <div id="queue"><div class="empty"><strong>暂无演出任务</strong>连接服务，编译剧本后提交第一场演出。</div></div>
-        <div id="detail"></div>
-      </div>
-      <div id="productionsPanel" class="panel">
-        <div id="productionGrid" class="production-grid"><div class="empty"><strong>暂无 Production</strong>编译成功后会出现在这里。</div></div>
-      </div>
-      <div id="apidocsPanel" class="panel">
-        <p class="kicker">Programmatic access</p>
-        <h2 style="font-size:21px">API 使用说明</h2>
-        <p class="lede">团队白名单网络内直接调用，无需鉴权。Base URL 就是当前地址。AI/脚本调用与本页面走完全相同的接口。</p>
-
-        <div class="api-block">
-          <div class="api-title"><span class="method">POST</span> /v1/productions — 功能一：剧本 → 内部结构</div>
-          <p class="api-desc">传自由文本剧本（<code>material</code>），或直接传写好的 <code>spec</code> 对象跳过编译。二选一。</p>
-          <pre class="api-code">curl -X POST <span class="api-base"></span>/v1/productions \
-  -H "Content-Type: application/json" \
-  -d '{
-    "material": "场景：雨夜公交站。两个人争一把伞，本场4轮。\n人物甲急着接孩子，嘴快。人物乙谨慎，先看伞柄刻字。",
-    "models": {"compile": "claude-opus-4.8"}
-  }'
-
-# 返回 {"production_id": "prod:xxx", "spec": {...}}
-
-# 或直接注册自定义 spec（服务端校验，坏 spec 返回 400 带原因）：
-curl -X POST <span class="api-base"></span>/v1/productions \
-  -H "Content-Type: application/json" \
-  -d '{"spec": {"scenes": [...], "actors": [...]}}'</pre>
-        </div>
-
-        <div class="api-block">
-          <div class="api-title"><span class="method">POST</span> /v1/performances — 功能二：提交演出（异步）</div>
-          <p class="api-desc">用 <code>production_id</code> 或内联 <code>spec</code>。立即返回 job_id，演出在后台跑（几分钟到一小时，取决于模型）。</p>
-          <pre class="api-code">curl -X POST <span class="api-base"></span>/v1/performances \
-  -H "Content-Type: application/json" \
-  -d '{
-    "production_id": "prod:xxx",
-    "review": true,
-    "models": {"generation": "claude-fable-5", "generation_fallback": "claude-opus-4.8"}
-  }'
-
-# 返回 {"job_id": "job:yyy", "status": "running"}</pre>
-        </div>
-
-        <div class="api-block">
-          <div class="api-title"><span class="method">GET</span> /v1/performances/&lt;job_id&gt; — 轮询进度与取回成品</div>
-          <pre class="api-code">curl <span class="api-base"></span>/v1/performances/job%3Ayyy    # 冒号要 URL 编码为 %3A
-
-# 运行中: {"status": "running", "progress": {"scene": "...", "done": 12, "of": 16, "actor": "..."}}
-# 完成:   {"status": "done", "document": {"scenes": [...], "turns": [...], "blind_review": {...}}}
-# 失败:   {"status": "failed", "error": "..."}</pre>
-        </div>
-
-        <div class="api-block">
-          <div class="api-title"><span class="method">GET</span> 列表与配置</div>
-          <pre class="api-code">curl <span class="api-base"></span>/v1/performances          # 任务队列（不含 document，轻量）
-curl <span class="api-base"></span>/v1/productions           # 已注册 Production 列表
-curl <span class="api-base"></span>/v1/productions/prod%3Axxx  # 单个 spec 全文
-curl <span class="api-base"></span>/v1/config                # 服务端默认模型
-curl <span class="api-base"></span>/v1/health                # 健康检查</pre>
-        </div>
-
-        <div class="api-block">
-          <div class="api-title">models 可覆盖角色</div>
-          <p class="api-desc">六个角色任选覆盖，省略即用服务端默认（编译 opus-4.8 / 表演 fable-5 / 评审 fable-5）。写错角色名返回 400 并附合法列表。</p>
-          <pre class="api-code">"models": {
-  "compile": "...", "compile_fallback": "...",
-  "generation": "...", "generation_fallback": "...",
-  "review": "...", "review_fallback": "..."
-}
-
-# 可用模型：
-#   claude-opus-4.8        快速高质量
-#   claude-fable-5         质量最高/最慢（23轮约1小时）
-#   gemini-3.1-flash-lite  最快/调试（16轮约7分钟）
-#   gpt-5.6-sol            中速</pre>
-        </div>
-
-        <div class="api-block">
-          <div class="api-title">最小 Python 轮询示例</div>
-          <pre class="api-code">import json, time, urllib.request
-
-BASE = "<span class="api-base"></span>"
-
-def post(path, body):
-    req = urllib.request.Request(BASE + path, data=json.dumps(body).encode(),
-                                 headers={"Content-Type": "application/json"})
-    return json.loads(urllib.request.urlopen(req, timeout=300).read())
-
-prod = post("/v1/productions", {"material": "场景：……人物：……"})
-job = post("/v1/performances", {"production_id": prod["production_id"], "review": False})
-while True:
-    rec = json.loads(urllib.request.urlopen(
-        BASE + "/v1/performances/" + urllib.parse.quote(job["job_id"], safe="")).read())
-    if rec["status"] != "running": break
-    time.sleep(15)
-print(rec["document"]["turns"])</pre>
-        </div>
-      </div>
-    </section>
-  </main>
+curl -X POST <span class="api-base"></span>/v1/chats/chat%3Axxx \
+-H 'Content-Type: application/json' -d '{"message":"你怎么看最近的发布？"}'</pre></div>
+  </div>
+</section>
 </div>
+</section>
+
+<section id="chatView" class="view"><div class="page"><p class="kicker">One-on-one dialogue</p><h2>和认知基因组对话</h2><p class="lede">选择人物库或上传人物包。知识来自底座模型；联网模式只在涉及新近事实时搜索，再由角色按自己的认知方式消化。</p>
+<div class="chat-layout">
+<aside class="chat-config">
+  <div class="box"><h3>人物</h3><div class="source-choice"><div><label>人物库</label><select id="chatPersona"><option value="">请选择人物</option></select></div><button id="uploadPersonaBtn" class="btn secondary">上传包</button></div><input id="personaFile" type="file" accept="application/json,.json" hidden><div id="uploadPersonaStatus" class="upload-status"></div><div class="actions"><button id="clearUploadBtn" class="btn secondary" style="display:none">改用人物库</button></div></div>
+  <div class="box"><h3>场景与语言</h3><label>场景（选填）</label><input id="chatScene" type="text" placeholder="例：发布会结束后的后台"><label>输出语言</label><select id="chatLang"><option value="">跟随人物地区</option><option value="zh-CN">中文</option><option value="en-US">English</option></select></div>
+  <div class="box"><h3>模型与知识</h3><label>对话模型</label><select id="chatModel"></select><div class="model-note">每回合独立运行认知＋表演两次推理；Fable 质量最高但可能等待数分钟。</div><label>Fallback</label><select id="chatFallback"></select><label class="switch-line"><input id="searchToggle" type="checkbox"> 联网搜索新近事实</label><div id="triageWrap" style="display:none"><label>检索分诊模型</label><select id="triageModel"></select><div class="model-note">先判断是否需要联网；普通闲聊不会搜索。</div></div><button id="startChatBtn" class="btn rust" style="width:100%;margin-top:18px"><span class="spinner"></span> 开始新对话</button></div>
+</aside>
+<section class="chat-stage"><div class="chat-head"><div><div id="chatTitle" class="chat-person">尚未开始</div><div id="chatDisclosure" class="disclosure">选择人物后开始。AI 演绎不代表本人观点。</div></div><div class="actions" style="margin:0"><span id="searchBadge"></span><button id="downloadChatBtn" class="btn secondary" disabled>下载记录</button></div></div><div id="chatLog" class="chat-log"><div class="chat-empty">角色会先开口。<br>你可以试着质疑、追问，或问一件刚发生的事。</div></div><div class="composer"><textarea id="chatInput" placeholder="输入消息；Enter 发送，Shift+Enter 换行" disabled></textarea><button id="sendChatBtn" class="btn" disabled><span class="spinner"></span> 发送</button></div></section>
+</div></div></section>
+
+<section id="libraryView" class="view"><div class="page"><p class="kicker">Cognitive genome library</p><h2>人物库</h2><p class="lede"><span id="libraryCount">0</span> 个已完成蒸馏、可直接进入 Runtime 的人物。轴谱描述思维倾向，不是道德评分。</p><div class="library-toolbar"><input id="personaSearch" type="search" placeholder="搜索姓名、行业或 person_id"><select id="regionFilter"><option value="">全部地区</option><option value="CN">中国</option><option value="INTL">国际</option></select><button id="refreshPersonasBtn" class="btn secondary">刷新人物库</button></div><div id="personaGrid" class="persona-grid"><div class="empty"><strong>读取人物库</strong>正在连接服务……</div></div></div></section>
+
 <div id="toast" class="toast"></div>
 <script>
-(() => {
-  const $ = id => document.getElementById(id);
-  const state = { productionId: '', spec: null, jobs: [], selectedJob: '', polling: null };
-  const models = {
-    "claude-opus-4.8": "Opus 4.8 · 快速高质量",
-    "claude-fable-5": "Fable 5 · 质量最高/最慢",
-    "gemini-3.1-flash-lite": "Gemini Flash Lite · 最快/调试",
-    "gpt-5.6-sol": "GPT 5.6 Sol · 中速"
-  };
-  const sample = `剧名：《退租》两场版
+(()=>{
+const $=id=>document.getElementById(id);const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const state={productionId:'',spec:null,jobs:[],selectedJob:'',polling:null,personas:[],uploadedRecord:null,chatId:'',chatRecord:null,chatTurns:[],sending:false};
+const models={"claude-fable-5":"Fable 5 · 角色表现最佳/慢","claude-opus-4.8":"Opus 4.8 · 高质量/快","claude-sonnet-5":"Sonnet 5 · 均衡","gemini-3.5-flash":"Gemini 3.5 Flash · 快","gemini-3.1-flash-lite":"Gemini Flash Lite · 最快","gpt-5.6-sol":"GPT 5.6 Sol","gpt-5.6-terra":"GPT 5.6 Terra","gpt-5.6-luna":"GPT 5.6 Luna"};
+const sample=`剧名：《退租》两场版\n\n场景一：老小区一楼车库改的杂货铺，晚上九点半。房东陈姨来收租，店主小马想退租但一直没敢说。本场8轮。\n\n场景二：三天后，同一间铺子。货架已清了一半。陈姨带新租客来看房，上一场的租金和违约金还没结。本场8轮。\n\n人物一：陈姨，62岁，房东。嘴硬心软，听到「退租」先发火，火过了算账。\n人物二：小马，28岁，店主。店撑不下去，已找好送外卖的工作。愧疚，嘴笨，一紧张就整理货架。\n\n要求：第二场记得第一场。结尾不用和解。`;
+function options(id){$(id).innerHTML=Object.entries(models).map(([v,l])=>`<option value="${esc(v)}">${esc(l)}</option>`).join('')}
+['compileModel','compileFallback','genModel','genFallback','reviewModel','reviewFallback','chatModel','chatFallback','triageModel'].forEach(options);
+Object.assign($('compileModel'),{value:'claude-opus-4.8'});$('compileFallback').value='gemini-3.1-flash-lite';$('genModel').value='claude-fable-5';$('genFallback').value='claude-opus-4.8';$('reviewModel').value='claude-fable-5';$('reviewFallback').value='claude-opus-4.8';$('chatModel').value='claude-fable-5';$('chatFallback').value='claude-opus-4.8';$('triageModel').value='gemini-3.5-flash';
+async function api(path,opt={}){const r=await fetch(path,{...opt,headers:{...(opt.body!==undefined?{'Content-Type':'application/json'}:{}),...(opt.headers||{})}});const d=await r.json().catch(()=>({error:`HTTP ${r.status}`}));if(!r.ok)throw new Error(d.error||`HTTP ${r.status}`);return d}
+function toast(msg,error=false){const e=$('toast');e.textContent=msg;e.className=`toast show${error?' error':''}`;clearTimeout(e._t);e._t=setTimeout(()=>e.className='toast',3600)}
+function download(name,text,mime='application/json'){const u=URL.createObjectURL(new Blob([text],{type:mime}));const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)}
+function switchView(name){document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===name));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===`${name}View`));window.scrollTo({top:0})}
+document.querySelectorAll('.nav-btn').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
+function switchTab(name){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));['queue','productions','apidocs'].forEach(n=>$(`${n}Panel`).classList.toggle('active',n===name))}document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
 
-场景一：老小区一楼车库改的杂货铺，晚上九点半，卷帘门拉了一半。房东陈姨来收下季度房租，店主小马想退租但一直没敢说。本场8轮。
+// ACT
+$('sampleBtn').onclick=()=>$('material').value=sample;$('compileBtn').onclick=compile;$('performBtn').onclick=submitPerformance;$('refreshBtn').onclick=refreshAct;$('applySpecBtn').onclick=applySpec;$('uploadSpecBtn').onclick=()=>$('specFile').click();$('specFile').onchange=uploadSpec;$('downloadSpecBtn').onclick=()=>state.spec&&download(`${(state.productionId||'spec').replaceAll(':','-')}.json`,JSON.stringify(state.spec,null,2));
+async function compile(){const material=$('material').value.trim();if(!material)return toast('剧本材料不能为空',true);const b=$('compileBtn');b.disabled=true;b.classList.add('busy');$('compileHint').textContent='模型正在拆分场景与人物…';try{const d=await api('/v1/productions',{method:'POST',body:JSON.stringify({material,models:{compile:$('compileModel').value,compile_fallback:$('compileFallback').value}})});state.productionId=d.production_id;state.spec=d.spec;showSpec();await loadProductions();toast('编译完成，可以检查结构后提交演出')}catch(e){toast(e.message,true)}finally{b.disabled=false;b.classList.remove('busy');$('compileHint').textContent='通常需要 30–90 秒'}}
+function showSpec(){const s=state.spec;if(!s)return;const scenes=s.scenes||(s.scene?[s.scene]:[]),actors=s.actors||[];$('sceneCount').textContent=scenes.length;$('actorCount').textContent=actors.length;$('turnCount').textContent=scenes.reduce((n,x)=>n+(+x.max_turns||0),0);$('specList').innerHTML=`<b>人物</b>　${actors.map(a=>esc(a.persona?.name||a.persona?.id)).join(' · ')}<br><b>场景</b>　${scenes.map(x=>esc(x.scene_id)).join(' → ')}`;$('specSummary').classList.add('visible');$('specEditor').value=JSON.stringify(s,null,2);$('prodIdLabel').textContent=state.productionId||'内联 spec';$('performBtn').disabled=false;$('downloadSpecBtn').disabled=false}
+async function applySpec(){let p;try{p=JSON.parse($('specEditor').value)}catch(e){return toast(`JSON 格式错误：${e.message}`,true)}try{const d=await api('/v1/productions',{method:'POST',body:JSON.stringify({spec:p})});state.productionId=d.production_id;state.spec=d.spec;showSpec();loadProductions();toast('Spec 校验通过并已保存')}catch(e){toast(e.message,true)}}
+function uploadSpec(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$('specEditor').value=String(r.result);$('specHint').textContent=`已载入 ${f.name}，请校验并保存`};r.readAsText(f);e.target.value=''}
+async function submitPerformance(){let p={review:$('reviewToggle').checked,models:{generation:$('genModel').value,generation_fallback:$('genFallback').value,review:$('reviewModel').value,review_fallback:$('reviewFallback').value}};try{const edited=$('specEditor').value.trim();if(edited&&state.spec&&edited!==JSON.stringify(state.spec,null,2))p.spec=JSON.parse(edited);else if(state.productionId)p.production_id=state.productionId;else p.spec=JSON.parse(edited)}catch{return toast('Spec JSON 格式错误',true)}const b=$('performBtn');b.disabled=true;try{const d=await api('/v1/performances',{method:'POST',body:JSON.stringify(p)});state.selectedJob=d.job_id;switchTab('queue');await loadJobs();toast(`任务 ${d.job_id} 已入队`)}catch(e){toast(e.message,true)}finally{b.disabled=false}}
+async function refreshAct(){await Promise.all([loadJobs(),loadProductions()])}async function loadJobs(){try{const d=await api('/v1/performances');state.jobs=d.jobs||[];renderQueue();if(state.selectedJob)loadJob(state.selectedJob)}catch(e){toast(e.message,true)}}
+function renderQueue(){$('jobCount').textContent=state.jobs.length;if(!state.jobs.length){$('queue').innerHTML='<div class="empty"><strong>暂无演出任务</strong>编译剧本后提交第一场演出。</div>';return}$('queue').innerHTML=state.jobs.map(j=>{const p=j.progress||{},done=p.done||0,total=p.of||0,pct=total?Math.min(100,done/total*100):0;return`<div class="job ${state.selectedJob===j.job_id?'selected':''}" data-job="${esc(j.job_id)}"><span class="job-id">${esc(j.job_id)}</span><span class="pill ${esc(j.status)}">${esc(j.status)}</span><span class="progress"><span class="progress-track"><span class="progress-bar" style="width:${pct}%"></span></span><small>${done}/${total}</small></span><span class="model">${esc(j.models?.generation||'—')}</span></div>`}).join('');document.querySelectorAll('.job').forEach(e=>e.onclick=()=>{state.selectedJob=e.dataset.job;renderQueue();loadJob(state.selectedJob)})}
+async function loadJob(id){try{renderDetail(id,await api(`/v1/performances/${encodeURIComponent(id)}`))}catch(e){toast(e.message,true)}}function scriptText(doc){const scenes=doc.scenes||[{scene_id:'performance',turns:doc.turns||[]}];return[doc.disclosure||'',...scenes.flatMap(s=>['',`【${s.scene_id}】`,...(s.turns||[]).map(t=>`${t.actor_id}：${t.speech||'（沉默）'}${t.action?`\n  （${t.action}）`:''}`)])].join('\n')}
+function renderDetail(id,j){const d=j.document,p=j.progress||{};if(!d){$('detail').innerHTML=`<section class="detail"><div class="detail-top"><div><h3>${j.status==='failed'?'任务失败':'表演进行中'}</h3><div class="job-id">${esc(id)}</div></div><span class="pill ${esc(j.status)}">${esc(j.status)}</span></div>${j.error?`<div class="review-box">${esc(j.error)}</div>`:`<p class="lede">已完成 ${p.done||0}/${p.of||0} 轮，每 5 秒刷��。</p>`}</section>`;return}const scenes=d.scenes||[{scene_id:'performance',turns:d.turns||[]}],body=scenes.map(s=>`<div class="scene-block"><div class="scene-title">${esc(s.scene_id)}</div>${(s.turns||[]).map(t=>`<div class="turn"><div class="actor">${esc(t.actor_id)}</div><div><div class="speech">${esc(t.speech||'（沉默）')}</div><div class="stage">${esc(t.action||'')}</div></div></div>`).join('')}</div>`).join(''),review=d.blind_review?`<div class="review-box"><span class="review-score">${esc(d.blind_review.score??'—')}</span> / 5 · ${d.blind_review.pass?'通过':'未通过'}</div>`:'';$('detail').innerHTML=`<section class="detail"><div class="detail-top"><div><h3>演出成品</h3><div class="job-id">${esc(id)}</div></div><div class="actions" style="margin:0"><button id="dlScript" class="btn secondary">台词本</button><button id="dlResult" class="btn secondary">成品 JSON</button></div></div>${body}${review}</section>`;$('dlScript').onclick=()=>download(`${id.replaceAll(':','-')}.txt`,scriptText(d),'text/plain');$('dlResult').onclick=()=>download(`${id.replaceAll(':','-')}.json`,JSON.stringify(d,null,2))}
+async function loadProductions(){try{const d=await api('/v1/productions'),items=d.productions||[];$('prodCount').textContent=items.length;$('productionGrid').innerHTML=items.length?items.map(x=>`<article class="production-card" data-id="${esc(x.production_id)}"><h3>${esc(x.scenes?.[0]||x.production_id)}</h3><p>${x.scenes?.length||0} 场 · ${x.turns||0} 轮</p><p>${esc((x.actors||[]).join(' / '))}</p><p class="job-id">${esc(x.production_id)}</p></article>`).join(''):'<div class="empty"><strong>暂无 Production</strong>编译成功后会出现在这里。</div>';document.querySelectorAll('.production-card').forEach(e=>e.onclick=()=>loadProduction(e.dataset.id))}catch(e){toast(e.message,true)}}async function loadProduction(id){try{const d=await api(`/v1/productions/${encodeURIComponent(id)}`);state.productionId=id;state.spec=d.spec;showSpec();switchTab('queue');toast(`已载入 ${id}`)}catch(e){toast(e.message,true)}}
 
-场景二：三天后，周日上午，同一间铺子。货架已清了一半，纸箱堆在门口。陈姨带着一个看店面的新租客要来看房，小马还在收拾。上一场吵开的事没有下文，租金和违约金都还没结。本场8轮。
+// PERSONA LIBRARY
+$('personaSearch').oninput=renderPersonas;$('regionFilter').onchange=renderPersonas;$('refreshPersonasBtn').onclick=loadPersonas;
+async function loadPersonas(){try{const d=await api('/v1/personas');state.personas=d.personas||[];$('libraryCount').textContent=state.personas.length;$('chatPersona').innerHTML='<option value="">请选择人物</option>'+state.personas.map(p=>`<option value="${esc(p.person_id)}">${esc(p.display_name)} · ${esc(p.name_en||p.person_id)}</option>`).join('');renderPersonas()}catch(e){$('personaGrid').innerHTML=`<div class="empty"><strong>人物库读取失败</strong>${esc(e.message)}</div>`;toast(e.message,true)}}
+const axisNames={control_need:'控制',uncertainty_tolerance:'容忍不确定',trust_propensity:'信任',risk_appetite:'冒险',self_efficacy:'自我效能',autonomy_need:'自主',intimacy_need:'亲密',status_sensitivity:'地位敏感',empathy_reactivity:'共情反应'};
+function renderPersonas(){const q=$('personaSearch').value.toLowerCase().trim(),region=$('regionFilter').value;const items=state.personas.filter(p=>(!region||p.region===region)&&(!q||[p.person_id,p.display_name,p.name_en,...(p.industries||[])].join(' ').toLowerCase().includes(q)));$('personaGrid').innerHTML=items.length?items.map(p=>{const axes=Object.entries(p.trait_axes||{}).sort((a,b)=>b[1]-a[1]).slice(0,4);return`<article class="persona-card"><div class="persona-top"><div><h3>${esc(p.display_name)}</h3><div class="persona-id">${esc(p.name_en||'')} · ${esc(p.person_id)}</div></div><span class="pill ${p.region==='CN'?'done':'running'}">${esc(p.region)}</span></div><div>${(p.industries||[]).map(x=>`<span class="industry">${esc(x)}</span>`).join('')}</div><div class="axes">${axes.map(([k,v])=>`<div class="axis"><span>${esc(axisNames[k]||k)}</span><span class="axis-track"><span class="axis-fill" style="display:block;width:${Math.round(v*100)}%"></span></span><span>${Number(v).toFixed(2)}</span></div>`).join('')}</div><div class="blind"><b>可观察盲区</b>${(p.blind_spots||[]).map(x=>`<div>· ${esc(x)}</div>`).join('')}</div><div class="card-actions"><button class="btn talk-persona" data-id="${esc(p.person_id)}">进入对话</button><button class="btn secondary dl-persona" data-id="${esc(p.person_id)}">下载人物包</button></div></article>`}).join(''):'<div class="empty"><strong>没有匹配人物</strong>换一个关键词或地区。</div>';document.querySelectorAll('.talk-persona').forEach(b=>b.onclick=()=>choosePersona(b.dataset.id));document.querySelectorAll('.dl-persona').forEach(b=>b.onclick=()=>downloadPersona(b.dataset.id))}
+function choosePersona(id){state.uploadedRecord=null;$('uploadPersonaStatus').textContent='';$('clearUploadBtn').style.display='none';$('chatPersona').disabled=false;$('chatPersona').value=id;switchView('chat');toast('已选人物，设置场景后开始对话')}async function downloadPersona(id){try{const d=await api(`/v1/personas/${encodeURIComponent(id)}`);download(`${id}.json`,JSON.stringify(d.record,null,2))}catch(e){toast(e.message,true)}}
 
-人物一：陈姨，62岁，房东。退休纺织厂女工，就靠这间车库租金补贴退休金。嘴硬心软，讲话直，爱翻旧账。最怕车库空着租不出去。听到「退租」先发火，火过了算账，算完账讲价。
+// CHAT
+$('uploadPersonaBtn').onclick=()=>$('personaFile').click();$('personaFile').onchange=uploadPersona;$('clearUploadBtn').onclick=clearUpload;$('searchToggle').onchange=()=>{$('triageWrap').style.display=$('searchToggle').checked?'block':'none'};$('startChatBtn').onclick=startChat;$('sendChatBtn').onclick=sendChat;$('downloadChatBtn').onclick=downloadChat;$('chatInput').onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat()}};
+function uploadPersona(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const rec=JSON.parse(String(r.result));if(!rec.person_id||!rec.genome)throw new Error('缺少 person_id 或 genome');state.uploadedRecord=rec;$('chatPersona').disabled=true;$('chatPersona').value='';$('uploadPersonaStatus').textContent=`已载入：${rec.display_name||rec.person_id}`;$('clearUploadBtn').style.display='inline-block';toast('人物包已在浏览器中载入')}catch(err){toast(`人物包无效：${err.message}`,true)}};r.readAsText(f);e.target.value=''}function clearUpload(){state.uploadedRecord=null;$('chatPersona').disabled=false;$('uploadPersonaStatus').textContent='';$('clearUploadBtn').style.display='none'}
+async function startChat(){const id=$('chatPersona').value;if(!state.uploadedRecord&&!id)return toast('请从人物库选择，或上传人物包',true);const payload={scene:$('chatScene').value.trim(),lang:$('chatLang').value,model:$('chatModel').value,fallback_model:$('chatFallback').value,search:$('searchToggle').checked,triage_model:$('triageModel').value};if(state.uploadedRecord)payload.record=state.uploadedRecord;else payload.person_id=id;const b=$('startChatBtn');b.disabled=true;b.classList.add('busy');try{const d=await api('/v1/chats',{method:'POST',body:JSON.stringify(payload)});state.chatId=d.session_id;state.chatRecord={session_id:d.session_id,person_id:d.person_id,display_name:d.display_name,disclosure:d.disclosure,scene:d.scene,model:d.model,search_enabled:d.search_enabled};state.chatTurns=[d.turn];$('chatTitle').textContent=d.display_name;$('chatDisclosure').textContent=`${d.disclosure} · ${d.scene}`;$('searchBadge').innerHTML=d.search_enabled?'<span class="search-on">● 联网分诊开启</span>':'';$('chatInput').disabled=false;$('sendChatBtn').disabled=false;$('downloadChatBtn').disabled=false;renderChat();$('chatInput').focus()}catch(e){toast(e.message,true)}finally{b.disabled=false;b.classList.remove('busy')}}
+function renderChat(){if(!state.chatTurns.length)return;$('chatLog').innerHTML=state.chatTurns.map(t=>{const user=t.actor_id==='visitor',search=t.search?`<div class="search-note"><b>检索：${esc(t.search.query)}</b>${(t.search.hits||[]).length?`<br>${t.search.hits.map((h,i)=>`<a href="${esc(h.url)}" target="_blank" rel="noopener noreferrer">${i+1}. ${esc(h.title)}</a>`).join('<br>')}`:' · 未找到可用结果'}</div>`:'';return`<div class="message ${user?'user':'actor'}"><div class="who">${user?'你':esc(state.chatRecord?.display_name||t.actor_id)}</div><div><div class="bubble">${esc(t.speech||'（沉默）')}</div>${t.action?`<div class="stage">（${esc(t.action)}）</div>`:''}${search}</div></div>`}).join('');$('chatLog').scrollTop=$('chatLog').scrollHeight}
+async function sendChat(){const text=$('chatInput').value.trim();if(!text||!state.chatId||state.sending)return;state.sending=true;$('sendChatBtn').disabled=true;$('sendChatBtn').classList.add('busy');$('chatInput').disabled=true;state.chatTurns.push({actor_id:'visitor',speech:text,action:''});$('chatInput').value='';renderChat();try{const d=await api(`/v1/chats/${encodeURIComponent(state.chatId)}`,{method:'POST',body:JSON.stringify({message:text})});state.chatTurns.push(d.turn);renderChat()}catch(e){state.chatTurns.push({actor_id:'system',speech:`回合失败：${e.message}`,action:''});renderChat();toast(e.message,true)}finally{state.sending=false;$('sendChatBtn').disabled=false;$('sendChatBtn').classList.remove('busy');$('chatInput').disabled=false;$('chatInput').focus()}}
+async function downloadChat(){if(!state.chatId)return;try{const d=await api(`/v1/chats/${encodeURIComponent(state.chatId)}`);download(`${state.chatId.replaceAll(':','-')}.json`,JSON.stringify(d,null,2))}catch(e){toast(e.message,true)}}
 
-人物二：小马，28岁，店主。开了三年杂货铺，网购冲击撑不下去了，已找好送外卖的工作。欠陈姨这季度租金。愧疚，嘴笨，绕圈子，一紧张就整理货架。
-
-要求：第二场里两人都记得第一场发生了什么。结尾不用和解。`;
-
-  $('sampleBtn').onclick = () => { $('material').value = sample; };
-  $('compileBtn').onclick = compile;
-  $('performBtn').onclick = submitPerformance;
-  $('refreshBtn').onclick = refreshAll;
-  $('applySpecBtn').onclick = applySpec;
-  $('uploadSpecBtn').onclick = () => $('specFile').click();
-  $('specFile').onchange = uploadSpec;
-  $('downloadSpecBtn').onclick = () => { if (state.spec) downloadFile(`${(state.productionId||'spec').replace(/[:]/g,'-')}.json`, JSON.stringify(state.spec,null,2), 'application/json'); };
-  document.querySelectorAll('.tab').forEach(btn => btn.onclick = () => switchTab(btn.dataset.tab));
-  ['compileModel','compileFallback','genModel','genFallback','reviewModel','reviewFallback'].forEach(id => {
-    $(id).innerHTML = Object.entries(models).map(([value,label]) => `<option value="${value}">${label}</option>`).join('');
-  });
-  $('compileModel').value = 'claude-opus-4.8';
-  $('compileFallback').value = 'gemini-3.1-flash-lite';
-  $('genModel').value = 'claude-fable-5';
-  $('genFallback').value = 'claude-opus-4.8';
-  $('reviewModel').value = 'claude-fable-5';
-  $('reviewFallback').value = 'claude-opus-4.8';
-
-  function authHeaders(json=true) { return json ? {'Content-Type':'application/json'} : {}; }
-  async function api(path, options={}) {
-    const response = await fetch(path, { ...options, headers: { ...authHeaders(options.body !== undefined), ...(options.headers || {}) } });
-    const data = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
-    if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
-    return data;
-  }
-  function toast(message, error=false) {
-    const el = $('toast'); el.textContent = message; el.className = `toast show${error ? ' error' : ''}`;
-    clearTimeout(el._timer); el._timer = setTimeout(() => el.className = 'toast', 3500);
-  }
-  async function connect() {
-    try { await api('/v1/config'); $('health').className='status online'; $('health').lastElementChild.textContent='成都 · 白名单已连接'; await refreshAll(); startPolling(); }
-    catch (error) { $('health').className='status'; $('health').lastElementChild.textContent='服务不可用'; toast(error.message,true); }
-  }
-  async function compile() {
-    const material = $('material').value.trim(); if (!material) return toast('剧本材料不能为空', true);
-    const btn = $('compileBtn'); btn.disabled = true; btn.classList.add('busy'); $('compileHint').textContent = '模型正在拆分场景与人物…';
-    try {
-      const data = await api('/v1/productions', { method:'POST', body: JSON.stringify({ material, models:{ compile:$('compileModel').value, compile_fallback:$('compileFallback').value } }) });
-      state.productionId = data.production_id; state.spec = data.spec; showSpec(); await loadProductions(); toast('编译完成，可以检查结构后提交演出');
-    } catch (error) { toast(error.message, true); }
-    finally { btn.disabled = false; btn.classList.remove('busy'); $('compileHint').textContent = '通常需要 30–90 秒'; }
-  }
-  function showSpec() {
-    const spec = state.spec; if (!spec) return;
-    const scenes = spec.scenes || (spec.scene ? [spec.scene] : []); const actors = spec.actors || [];
-    $('sceneCount').textContent = scenes.length; $('actorCount').textContent = actors.length;
-    $('turnCount').textContent = scenes.reduce((sum,s) => sum + (+s.max_turns || 0), 0);
-    $('specList').innerHTML = `<b>人物</b>　${actors.map(a => esc(a.persona?.name || a.persona?.id)).join(' · ')}<br><b>场景</b>　${scenes.map(s => esc(s.scene_id)).join(' → ')}`;
-    $('specSummary').classList.add('visible'); $('specEditor').value = JSON.stringify(spec,null,2); $('prodIdLabel').textContent = state.productionId || '未注册（提交演出时将内联使用）'; $('performBtn').disabled = false; $('downloadSpecBtn').disabled = false;
-  }
-  async function applySpec() {
-    const raw = $('specEditor').value.trim(); if (!raw) return toast('Spec 为空', true);
-    let parsed; try { parsed = JSON.parse(raw); } catch (error) { $('specHint').textContent = `JSON 解析失败：${error.message}`; return toast('Spec JSON 格式错误', true); }
-    $('specHint').textContent = '服务端校验中…';
-    try {
-      const data = await api('/v1/productions', { method:'POST', body: JSON.stringify({ spec: parsed }) });
-      state.productionId = data.production_id; state.spec = data.spec; showSpec(); await loadProductions();
-      $('specHint').textContent = `已保存为 ${data.production_id}`; toast('Spec 校验通过并注册为新 Production');
-    } catch (error) { $('specHint').textContent = error.message; toast(error.message, true); }
-  }
-  function uploadSpec(event) {
-    const file = event.target.files[0]; if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => { $('specEditor').value = String(reader.result); $('specHint').textContent = `已载入 ${file.name}，点「校验并保存」注册`; };
-    reader.readAsText(file); event.target.value = '';
-  }
-  function downloadFile(name, text, mime) {
-    const url = URL.createObjectURL(new Blob([text], {type: mime}));
-    const link = document.createElement('a'); link.href = url; link.download = name; link.click();
-    setTimeout(() => URL.revokeObjectURL(url), 3000);
-  }
-  function scriptText(doc) {
-    const scenes = doc.scenes || [{ scene_id:'performance', turns:doc.turns || [] }];
-    return [`${doc.disclosure || ''}`, ...scenes.flatMap(scene => [``, `【${scene.scene_id}】${scene.setting ? ' ' + scene.setting : ''}`, ...(scene.turns||[]).map(turn => `${turn.actor_id}：${turn.speech || '（沉默）'}${turn.action ? `\n  （${turn.action}）` : ''}`)])].join('\n');
-  }
-  async function submitPerformance() {
-    let payload = { review:$('reviewToggle').checked, models:{ generation:$('genModel').value, generation_fallback:$('genFallback').value, review:$('reviewModel').value, review_fallback:$('reviewFallback').value } };
-    try {
-      const edited = $('specEditor').value.trim();
-      if (edited && state.spec && edited !== JSON.stringify(state.spec,null,2)) payload.spec = JSON.parse(edited); else if (state.productionId) payload.production_id = state.productionId; else payload.spec = JSON.parse(edited);
-    } catch { return toast('Spec JSON 格式错误', true); }
-    const btn = $('performBtn'); btn.disabled = true;
-    try { const data = await api('/v1/performances', { method:'POST', body:JSON.stringify(payload) }); state.selectedJob = data.job_id; switchTab('queue'); await loadJobs(); startPolling(); toast(`任务 ${data.job_id} 已入队`); }
-    catch (error) { toast(error.message, true); }
-    finally { btn.disabled = false; }
-  }
-  async function refreshAll() { await Promise.all([loadJobs(), loadProductions()]); }
-  async function loadJobs() {
-    try { const data = await api('/v1/performances'); state.jobs = data.jobs || []; renderQueue(); if (state.selectedJob) await loadJobDetail(state.selectedJob); }
-    catch (error) { if (!/unauthorized/i.test(error.message)) toast(error.message,true); }
-  }
-  async function loadProductions() {
-    try { const data = await api('/v1/productions'); const items = data.productions || []; $('prodCount').textContent = items.length; renderProductions(items); }
-    catch (error) { toast(error.message,true); }
-  }
-  function renderQueue() {
-    $('jobCount').textContent = state.jobs.length;
-    if (!state.jobs.length) { $('queue').innerHTML = '<div class="empty"><strong>暂无演出任务</strong>连接服务，编译剧本后提交第一场演出。</div>'; return; }
-    $('queue').innerHTML = state.jobs.map(job => {
-      const progress = job.progress || {}; const done = progress.done || 0, total = progress.of || 0, pct = total ? Math.min(100,done/total*100) : 0;
-      return `<div class="job ${state.selectedJob===job.job_id?'selected':''}" data-job="${esc(job.job_id)}"><span class="job-id">${esc(job.job_id)}</span><span class="pill ${esc(job.status)}">${esc(job.status)}</span><span class="progress"><span class="progress-track"><span class="progress-bar" style="width:${pct}%"></span></span><small>${done}/${total}${progress.scene?' · '+esc(progress.scene):''}</small></span><span class="model">${esc(job.models?.generation || '—')}</span></div>`;
-    }).join('');
-    document.querySelectorAll('.job').forEach(el => el.onclick = () => { state.selectedJob = el.dataset.job; renderQueue(); loadJobDetail(state.selectedJob); });
-  }
-  async function loadJobDetail(id) {
-    try { const job = await api(`/v1/performances/${encodeURIComponent(id)}`); renderDetail(id,job); }
-    catch (error) { toast(error.message,true); }
-  }
-  function renderDetail(id,job) {
-    const doc = job.document; const progress = job.progress || {};
-    if (!doc) { $('detail').innerHTML = `<section class="detail"><div class="detail-top"><div><h3>${job.status==='failed'?'任务失败':'表演进行中'}</h3><div class="detail-id">${esc(id)}</div></div><span class="pill ${esc(job.status)}">${esc(job.status)}</span></div>${job.error?`<div class="review-box">${esc(job.error)}</div>`:`<p class="lede">已完成 ${progress.done||0}/${progress.of||0} 轮。队列每 5 秒自动刷新。</p>`}</section>`; return; }
-    const scenes = doc.scenes || [{ scene_id:'performance', turns:doc.turns || [] }];
-    const transcript = scenes.map(scene => `<div class="scene-block"><div class="scene-title">${esc(scene.scene_id)}</div>${(scene.turns||[]).map(turn => `<div class="turn"><div class="actor">${esc(turn.actor_id)}</div><div><div class="speech">${esc(turn.speech||'（沉默）')}</div><div class="stage">${esc(turn.action||'')}</div></div></div>`).join('')}</div>`).join('');
-    const review = doc.blind_review ? `<div class="review-box"><div class="kicker">Blind review</div><span class="review-score">${doc.blind_review.score ?? '—'}</span> <span class="hint">/ 5 · ${doc.blind_review.pass?'通过':'未通过'}</span></div>` : '';
-    const safeId = id.replace(/[:]/g,'-');
-    $('detail').innerHTML = `<section class="detail"><div class="detail-top"><div><h3>演出成品</h3><div class="detail-id">${esc(id)} · ${esc(job.models?.generation||'')}</div></div><div class="actions" style="margin-top:0"><button id="downloadScript" class="btn secondary">下载台词本 .txt</button><button id="downloadResult" class="btn secondary">下载成品 JSON</button><button id="copyResult" class="btn secondary">复制 JSON</button></div></div>${transcript}${review}</section>`;
-    $('downloadScript').onclick = () => downloadFile(`${safeId}-script.txt`, scriptText(doc), 'text/plain');
-    $('downloadResult').onclick = () => downloadFile(`${safeId}.json`, JSON.stringify(doc,null,2), 'application/json');
-    $('copyResult').onclick = () => navigator.clipboard.writeText(JSON.stringify(doc,null,2)).then(() => toast('已复制成品 JSON'));
-  }
-  function renderProductions(items) {
-    if (!items.length) { $('productionGrid').innerHTML = '<div class="empty"><strong>暂无 Production</strong>编译成功后会出现在这里。</div>'; return; }
-    $('productionGrid').innerHTML = items.map(item => `<article class="production-card" data-prod="${esc(item.production_id)}"><h3>${esc(item.scenes?.[0]||item.production_id)}</h3><p>${item.scenes?.length||0} 场 · ${item.turns||0} 轮 · ${esc((item.actors||[]).join(' / '))}</p><p class="job-id">${esc(item.production_id)}</p></article>`).join('');
-    document.querySelectorAll('.production-card').forEach(el => el.onclick = () => loadProduction(el.dataset.prod));
-  }
-  async function loadProduction(id) {
-    try { const data = await api(`/v1/productions/${encodeURIComponent(id)}`); state.productionId=id; state.spec=data.spec; showSpec(); switchTab('queue'); toast(`已载入 ${id}`); window.scrollTo({top:0,behavior:'smooth'}); }
-    catch (error) { toast(error.message,true); }
-  }
-  function switchTab(name) {
-    document.querySelectorAll('.tab').forEach(el => el.classList.toggle('active',el.dataset.tab===name));
-    $('queuePanel').classList.toggle('active',name==='queue');
-    $('productionsPanel').classList.toggle('active',name==='productions');
-    $('apidocsPanel').classList.toggle('active',name==='apidocs');
-  }
-  document.querySelectorAll('.api-base').forEach(el => el.textContent = location.origin);
-  function startPolling() { clearInterval(state.polling); state.polling = setInterval(() => loadJobs(), 5000); }
-  function esc(value) { return String(value ?? '').replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c])); }
-  fetch('/v1/health').then(r=>r.json()).then(() => connect()).catch(() => { $('health').lastElementChild.textContent='服务离线'; });
+async function connect(){try{await api('/v1/config');$('health').className='status online';$('health').lastElementChild.textContent='成都 · 已连接';await Promise.all([refreshAct(),loadPersonas()]);clearInterval(state.polling);state.polling=setInterval(loadJobs,5000)}catch(e){$('health').className='status';$('health').lastElementChild.textContent='服务不可用';toast(e.message,true)}}
+document.querySelectorAll('.api-base').forEach(e=>e.textContent=location.origin);fetch('/v1/health').then(r=>{if(!r.ok)throw Error();return connect()}).catch(()=>{$('health').lastElementChild.textContent='服务离线'});
 })();
 </script>
 </body>

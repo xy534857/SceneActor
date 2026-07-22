@@ -1,0 +1,246 @@
+"""Genome chat sessions: one human seat opposite one compiled genome persona.
+
+Used by both the CLI (scripts/chat_with_genome.py) and the HTTP service.
+The runtime is the same independent-actor stack used for performances; the
+genome supplies cognition, a light scene shell and voice are synthesized here.
+
+Optional web grounding: a cheap aux-model triage decides whether the user's
+line needs post-training-cutoff facts; if so, a search briefing is injected
+as world facts the actor absorbed — the actor still answers in character.
+"""
+
+from __future__ import annotations
+from datetime import date
+
+import json
+from dataclasses import dataclass, field
+from typing import Callable
+
+from sceneactor.cognition import CognitionModelError, JsonCognitionPort
+from sceneactor.genome import CognitiveGenome, compile_persona, compose_genomes, rules_from_specs
+from sceneactor.hosts import InMemorySceneHost
+from sceneactor.performance import JsonPerformancePort, PerformanceModelError
+from sceneactor.persona import Persona
+from sceneactor.rehearsal import ActorSetup, SceneSetup, create_rehearsal
+from sceneactor.search import briefing, parse_triage, triage_prompt, web_search
+
+USER_ID = "visitor"
+CUTOFF_HINT = "模型知识可能滞后于当下，日期敏感的事实需要检索确认。"
+
+
+class _HumanSeat:
+    """Cognition port for the human seat; never advanced by a chat session."""
+
+    def decide(self, frame):  # pragma: no cover — guard only
+        raise RuntimeError("human seat should never be advanced")
+
+
+@dataclass
+class ChatTurn:
+    actor_id: str
+    speech: str
+    action: str = ""
+    search: dict | None = None
+
+    def to_dict(self) -> dict:
+        data = {"actor_id": self.actor_id, "speech": self.speech, "action": self.action}
+        if self.search:
+            data["search"] = self.search
+        return data
+
+
+@dataclass
+class ChatSession:
+    """A live one-on-one conversation with a compiled genome persona."""
+
+    record: dict
+    model: Callable  # FallbackModel for cognition+performance
+    aux_model: Callable | None = None  # cheap model for search triage
+    scene: str = ""
+    lang: str = ""
+    search_enabled: bool = False
+    max_turns: int = 24
+
+    display: str = field(init=False)
+    disclosure: str = field(init=False)
+    scene_text: str = field(init=False)
+    transcript: list[ChatTurn] = field(init=False, default_factory=list)
+
+    def __post_init__(self) -> None:
+        record = self.record
+        genome = CognitiveGenome.from_dict(
+            record["genome"],
+            genome_id=record["person_id"],
+            source=f"{record['person_id']}-genome-db",
+            source_real_person=True,
+        )
+        self.composite = compose_genomes(
+            record["person_id"],
+            [(genome, None)],
+            rules=rules_from_specs(record["genome"].get("causal_rules", [])),
+        )
+        self.display = record.get("display_name") or record["person_id"]
+        region = record.get("region", "INTL")
+        self.lang = self.lang or ("zh-CN" if region == "CN" else "en-US")
+        industries = "、".join(record.get("industries", [])) or "公众人物"
+        default_scene = (
+            f"一场轻松的一对一长谈。{self.display}状态放松，对面是一位好奇但功课做得不错的访谈者。"
+            if self.lang == "zh-CN"
+            else f"A relaxed one-on-one long-form conversation. {self.display} is at ease; "
+            f"the interviewer opposite is curious and well-prepared."
+        )
+        self.scene_text = self.scene or default_scene
+        self.disclosure = f"AI生成的虚构角色演绎，基于{self.display}的公开语料蒸馏，不代表本人真实观点。"
+
+        persona = compile_persona(
+            self.composite,
+            persona_id=record["person_id"],
+            name=f"{self.display}（AI虚构演绎）",
+            shell={
+                "role": f"{industries}领域公众人物的非欺骗性AI演绎",
+                "gender": record.get("gender", ""),
+                "background": f"基于公开语料蒸馏的认知基因组驱动。场景：{self.scene_text}",
+            },
+            voice={
+                "output_language": self.lang,
+                "turn_economy": "每回合1-4句，像真人聊天，不做演讲，不列清单。",
+                "localization_rule": (
+                    "说人话：口语、具体、允许不完整句和现场修正；绝不用客服腔和总结腔。"
+                    if self.lang == "zh-CN"
+                    else "Talk like a person: colloquial, concrete, self-corrections allowed; "
+                    "never sound like support staff or a summary."
+                ),
+            },
+        )
+        self.persona = persona
+        scene_id = f"genome-chat-{record['person_id']}"
+        self.host = InMemorySceneHost(
+            scene_id,
+            facts={
+                "O.current": (
+                    "对话刚开始，对面的人还没说话。"
+                    if self.lang == "zh-CN"
+                    else "The conversation just started; the visitor hasn't spoken yet."
+                ),
+                "W.disclosure": self.disclosure,
+                "W.format": self.scene_text,
+            },
+            targets=(persona.id, USER_ID),
+            capabilities=("speak", "wait", "interact"),
+        )
+        setup = SceneSetup(scene_id, self.scene_text, "访谈者刚坐下。", ("seat", "table"), max_turns=self.max_turns)
+        visitor = Persona(USER_ID, "访谈者", role="真人输入", background="不详，随对话展开")
+        self.run = create_rehearsal(
+            setup,
+            (
+                ActorSetup(
+                    persona,
+                    "像本人一样接住对话：有自己的议程和边界，不迎合，不表演金句"
+                    if self.lang == "zh-CN"
+                    else "Hold the conversation like the real person: own agenda, own boundaries, no pandering.",
+                    "对访谈者：初次见面" if self.lang == "zh-CN" else "First meeting with the visitor.",
+                    {"portrayal_mode": "explicit_fictional_parody", "disclosure": self.disclosure},
+                    "open",
+                ),
+                ActorSetup(visitor, "聊天", "初次见面", {}, "open"),
+            ),
+            host=self.host,
+            cognition={persona.id: JsonCognitionPort(self.model), USER_ID: _HumanSeat()},
+            performance=JsonPerformancePort(self.model),
+        )
+
+    # -- turns -----------------------------------------------------------
+
+    def _advance(self) -> ChatTurn:
+        try:
+            result = self.run.advance(self.persona.id)
+        except (CognitionModelError, PerformanceModelError):
+            result = self.run.advance(self.persona.id)  # one retry, then propagate
+        draft = result.draft
+        turn = ChatTurn(
+            actor_id=self.persona.id,
+            speech=draft.speech if draft else "",
+            action=(draft.action if draft and draft.action != "speak" else ""),
+        )
+        self.transcript.append(turn)
+        return turn
+
+    def open(self) -> ChatTurn:
+        """The persona speaks first (greeting / settling into the scene)."""
+        return self._advance()
+
+    def _maybe_search(self, line: str) -> dict | None:
+        if not (self.search_enabled and self.aux_model):
+            return None
+        try:
+            cutoff = f"{CUTOFF_HINT} 当前日期/current date: {date.today().isoformat()}"
+            raw = self.aux_model(triage_prompt(line, cutoff, self.lang), "search-triage")
+        except Exception:
+            return None
+        need, query = parse_triage(raw)
+        if not need:
+            return None
+        hits = web_search(query, count=5)
+        if not hits:
+            return {"query": query, "hits": []}
+        self.host.facts["K.fresh_info"] = briefing(query, hits, self.lang)
+        return {"query": query, "hits": [hit.to_dict() for hit in hits]}
+
+    def say(self, line: str) -> ChatTurn:
+        """Human speaks; persona replies. Returns the persona's turn."""
+        line = line.strip() or ("（沉默）" if self.lang == "zh-CN" else "(silence)")
+        self.transcript.append(ChatTurn(actor_id=USER_ID, speech=line))
+        self.host.facts.pop("K.fresh_info", None)
+        search_note = self._maybe_search(line)
+        self.host.facts["O.current"] = (
+            f"对面的人刚说：{line}" if self.lang == "zh-CN" else f"The visitor just said: {line}"
+        )
+        if search_note and search_note.get("hits"):
+            self.host.facts["O.current"] += (
+                " 旁边的 K.fresh_info 是与这个问题直接相关的实时检索简报；涉及新近事实时以它为依据，不要凭记忆补细节。"
+                if self.lang == "zh-CN"
+                else " K.fresh_info is a live search briefing directly relevant to this question; "
+                "use it for recent facts and do not fill gaps from memory."
+            )
+        self.host.facts["H.recent_dialogue"] = json.dumps(
+            [t.to_dict() for t in self.transcript[-6:]], ensure_ascii=False
+        )
+        turn = self._advance()
+        turn.search = search_note
+        return turn
+
+    # -- introspection -----------------------------------------------------
+
+    def genome_card(self) -> dict:
+        gd = self.record["genome"]
+        return {
+            "trait_axes": {k: v["score"] for k, v in gd["trait_axes"].items()},
+            "core_models": [m["name"] for m in gd["core_models"]],
+            "dispositions": [d["rule_id"] for d in self.composite["derived_dispositions"]],
+            "blind_spots": gd["blind_spots"][:3],
+        }
+
+    def to_dict(self) -> dict:
+        return {
+            "person_id": self.record["person_id"],
+            "display_name": self.display,
+            "disclosure": self.disclosure,
+            "scene": self.scene_text,
+            "lang": self.lang,
+            "search_enabled": self.search_enabled,
+            "turns": [t.to_dict() for t in self.transcript],
+        }
+
+
+def validate_record(record: dict) -> None:
+    """Minimal gate for uploaded persona packs before a session is built."""
+    if not isinstance(record, dict):
+        raise ValueError("record must be a JSON object")
+    if not str(record.get("person_id", "")).strip():
+        raise ValueError("record.person_id is required")
+    genome = record.get("genome")
+    if not isinstance(genome, dict):
+        raise ValueError("record.genome (object) is required")
+    for key in ("trait_axes", "core_models", "blind_spots"):
+        if key not in genome:
+            raise ValueError(f"record.genome.{key} is required")

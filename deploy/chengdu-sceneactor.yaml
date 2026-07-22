@@ -23,7 +23,7 @@ spec:
         - name: ghcr-pull
       containers:
         - name: service
-          image: harbor.omgwow.ai/library/sceneactor-service:e777890
+          image: harbor.omgwow.ai/library/sceneactor-service:chat-ui-v3
           imagePullPolicy: Always
           args:
             - --host
@@ -46,6 +46,14 @@ spec:
             - claude-fable-5
             - --review-fallback
             - claude-opus-4.8
+            - --chat-model
+            - claude-fable-5
+            - --chat-fallback
+            - claude-opus-4.8
+            - --triage-model
+            - gemini-3.5-flash
+            - --genome-dir
+            - /app/data/genomes
             - --state-dir
             - /data/state
           envFrom:

@@ -28,7 +28,10 @@ from uuid import uuid4
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
+from sceneactor.chat import ChatSession, validate_record
+from sceneactor.cognition import CognitionModelError
 from sceneactor.model import FallbackModel, GatewayCompletion
+from sceneactor.performance import PerformanceModelError
 from sceneactor.service import ProductionCompileError, ProductionSpec, compile_production, perform
 
 parser = argparse.ArgumentParser()
@@ -43,6 +46,10 @@ parser.add_argument("--generation-model", default="claude-fable-5")
 parser.add_argument("--generation-fallback", default="claude-opus-4.8")
 parser.add_argument("--review-model", default="claude-fable-5")
 parser.add_argument("--review-fallback", default="claude-opus-4.8")
+parser.add_argument("--chat-model", default="claude-fable-5")
+parser.add_argument("--chat-fallback", default="claude-opus-4.8")
+parser.add_argument("--triage-model", default="gemini-3.5-flash")
+parser.add_argument("--genome-dir", default="data/genomes", help="persona library root (records/*.json + index.json)")
 parser.add_argument("--state-dir", default=".sceneactor-service")
 args = parser.parse_args()
 
@@ -53,7 +60,11 @@ STATE = Path(args.state_dir)
 _LOCK = threading.Lock()
 _PRODUCTIONS: dict[str, ProductionSpec] = {}
 _JOBS: dict[str, dict] = {}
+_CHATS: dict[str, dict] = {}  # session_id -> {"session": ChatSession, "touched": float, "lock": Lock}
+CHAT_TTL_SECONDS = 6 * 3600
+CHAT_MAX_SESSIONS = 200
 UI_FILE = Path(__file__).resolve().parent / "static" / "index.html"
+GENOME_DIR = Path(args.genome_dir)
 
 
 def _model(primary: str, fallback: str) -> FallbackModel:
@@ -99,6 +110,47 @@ def _models_from(body: dict) -> dict:
     if unknown:
         raise ValueError(f"unknown model roles: {sorted(unknown)}; allowed: {sorted(allowed)}")
     return {key: str(value) for key, value in raw.items() if str(value).strip()}
+
+
+def _library_index() -> list[dict]:
+    """Distilled records only — cards a chat can actually start from."""
+    cards = []
+    for path in sorted((GENOME_DIR / "records").glob("*.json")):
+        try:
+            record = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        genome = record.get("genome", {})
+        cards.append({
+            "person_id": record.get("person_id", path.stem),
+            "display_name": record.get("display_name", path.stem),
+            "name_en": record.get("name_en", ""),
+            "region": record.get("region", ""),
+            "industries": record.get("industries", []),
+            "gender": record.get("gender", ""),
+            "trait_axes": {k: v.get("score") for k, v in genome.get("trait_axes", {}).items()},
+            "blind_spots": [b.get("description", b) if isinstance(b, dict) else b for b in genome.get("blind_spots", [])][:2],
+        })
+    return cards
+
+
+def _load_record(person_id: str) -> dict | None:
+    path = GENOME_DIR / "records" / f"{person_id}.json"
+    if not path.is_file():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+
+
+def _reap_chats(now: float) -> None:
+    dead = [sid for sid, item in _CHATS.items() if now - item["touched"] > CHAT_TTL_SECONDS]
+    for sid in dead:
+        _CHATS.pop(sid, None)
+    if len(_CHATS) > CHAT_MAX_SESSIONS:
+        for sid, _ in sorted(_CHATS.items(), key=lambda kv: kv[1]["touched"])[: len(_CHATS) - CHAT_MAX_SESSIONS]:
+            _CHATS.pop(sid, None)
 
 
 def _run_performance(job_id: str, spec: ProductionSpec, want_review: bool, models: dict) -> None:
@@ -207,7 +259,30 @@ class Handler(BaseHTTPRequestHandler):
                 "generation_fallback": args.generation_fallback,
                 "review": args.review_model,
                 "review_fallback": args.review_fallback,
+                "chat": args.chat_model,
+                "chat_fallback": args.chat_fallback,
+                "triage": args.triage_model,
             }})
+            return
+        if path == "/v1/personas":
+            self._send(200, {"personas": _library_index()})
+            return
+        if path.startswith("/v1/personas/"):
+            person_id = unquote(path.rsplit("/", 1)[-1])
+            record = _load_record(person_id)
+            if record is None:
+                self._send(404, {"error": "unknown persona"})
+                return
+            self._send(200, {"record": record})
+            return
+        if path.startswith("/v1/chats/"):
+            session_id = unquote(path.rsplit("/", 1)[-1])
+            with _LOCK:
+                item = _CHATS.get(session_id)
+            if item is None:
+                self._send(404, {"error": "unknown or expired chat session"})
+                return
+            self._send(200, {"session_id": session_id} | item["session"].to_dict())
             return
         if path == "/v1/productions":
             with _LOCK:
@@ -256,7 +331,93 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/v1/performances":
             self._perform(body)
             return
+        if path == "/v1/chats":
+            self._chat_start(body)
+            return
+        if path.startswith("/v1/chats/"):
+            self._chat_say(unquote(path.rsplit("/", 1)[-1]), body)
+            return
         self._send(404, {"error": "unknown path"})
+
+    def _chat_start(self, body: dict) -> None:
+        """Create a chat session from the library (person_id) or an uploaded pack (record)."""
+        record = None
+        person_id = body.get("person_id")
+        if isinstance(person_id, str) and person_id.strip():
+            record = _load_record(person_id.strip())
+            if record is None:
+                self._send(404, {"error": f"unknown persona {person_id!r}"})
+                return
+        elif isinstance(body.get("record"), dict):
+            record = body["record"]
+            try:
+                validate_record(record)
+            except ValueError as exc:
+                self._send(400, {"error": f"invalid persona pack: {exc}"})
+                return
+        else:
+            self._send(400, {"error": "person_id (library) or record (uploaded pack) is required"})
+            return
+        chat_model = str(body.get("model") or args.chat_model)
+        chat_fallback = str(body.get("fallback_model") or args.chat_fallback)
+        search_enabled = bool(body.get("search", False))
+        try:
+            session = ChatSession(
+                record=record,
+                model=_model(chat_model, chat_fallback),
+                aux_model=_model(str(body.get("triage_model") or args.triage_model), chat_fallback) if search_enabled else None,
+                scene=str(body.get("scene") or ""),
+                lang=str(body.get("lang") or ""),
+                search_enabled=search_enabled,
+            )
+        except (ValueError, KeyError) as exc:
+            self._send(422, {"error": f"session build failed: {exc}"})
+            return
+        try:
+            opening = session.open()
+        except (CognitionModelError, PerformanceModelError, RuntimeError) as exc:
+            self._send(502, {"error": f"opening turn failed: {str(exc)[:200]}"})
+            return
+        session_id = f"chat:{uuid4().hex[:12]}"
+        now = datetime.now(timezone.utc).timestamp()
+        with _LOCK:
+            _reap_chats(now)
+            _CHATS[session_id] = {"session": session, "touched": now, "lock": threading.Lock()}
+        self._send(201, {
+            "session_id": session_id,
+            "person_id": session.record["person_id"],
+            "display_name": session.display,
+            "disclosure": session.disclosure,
+            "scene": session.scene_text,
+            "lang": session.lang,
+            "search_enabled": session.search_enabled,
+            "model": chat_model,
+            "turn": opening.to_dict(),
+        })
+
+    def _chat_say(self, session_id: str, body: dict) -> None:
+        line = body.get("message")
+        if not isinstance(line, str) or not line.strip():
+            self._send(400, {"error": "message (non-empty string) is required"})
+            return
+        with _LOCK:
+            item = _CHATS.get(session_id)
+            if item is not None:
+                item["touched"] = datetime.now(timezone.utc).timestamp()
+        if item is None:
+            self._send(404, {"error": "unknown or expired chat session"})
+            return
+        if not item["lock"].acquire(blocking=False):
+            self._send(409, {"error": "a turn is already in flight for this session"})
+            return
+        try:
+            turn = item["session"].say(line.strip())
+        except (CognitionModelError, PerformanceModelError, RuntimeError) as exc:
+            self._send(502, {"error": f"turn failed: {str(exc)[:200]}"})
+            return
+        finally:
+            item["lock"].release()
+        self._send(200, {"session_id": session_id, "turn": turn.to_dict()})
 
     def _compile(self, body: dict) -> None:
         try:

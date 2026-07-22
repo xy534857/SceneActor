@@ -70,11 +70,40 @@ class HttpServiceTests(unittest.TestCase):
         self.assertIn("SceneActor Console", ui)
         self.assertIn("任务队列", ui)
         self.assertEqual(json.load(self.get("/v1/health")), {"ok": True})
-        self.assertIn("generation", json.load(self.get("/v1/config"))["models"])
+        config = json.load(self.get("/v1/config"))["models"]
+        self.assertIn("generation", config)
+        self.assertEqual(config["chat"], "claude-fable-5")
+        self.assertEqual(config["triage"], "gemini-3.5-flash")
 
     def test_lists_are_available_without_browser_credentials(self) -> None:
         self.assertEqual(json.load(self.get("/v1/productions")), {"productions": []})
         self.assertEqual(json.load(self.get("/v1/performances")), {"jobs": []})
+
+    def test_persona_library_exposes_only_chat_ready_records(self) -> None:
+        data = json.load(self.get("/v1/personas"))
+        self.assertGreaterEqual(len(data["personas"]), 13)
+        sam = next(person for person in data["personas"] if person["person_id"] == "sam-altman")
+        self.assertEqual(sam["display_name"], "萨姆·奥尔特曼")
+        self.assertIn("control_need", sam["trait_axes"])
+
+        detail = json.load(self.get("/v1/personas/sam-altman"))
+        self.assertEqual(detail["record"]["person_id"], "sam-altman")
+        self.assertIn("genome", detail["record"])
+
+    def test_invalid_uploaded_persona_pack_is_rejected_before_model_call(self) -> None:
+        request = Request(
+            self.base + "/v1/chats",
+            data=json.dumps({"record": {"person_id": "broken", "genome": {}}}).encode(),
+            headers={"Content-Type": "application/json"},
+        )
+        try:
+            urlopen(request, timeout=5)
+        except HTTPError as error:
+            self.assertEqual(error.code, 400)
+            self.assertIn("invalid persona pack", json.load(error)["error"])
+            error.close()
+        else:
+            self.fail("invalid persona pack unexpectedly accepted")
 
     def test_uploading_a_spec_registers_a_production_without_compiling(self) -> None:
         spec = {
