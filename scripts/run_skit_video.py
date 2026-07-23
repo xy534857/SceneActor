@@ -88,9 +88,13 @@ def stage_upload() -> dict[str, str]:
 def _extract_last_frame(video: Path) -> Path:
     """Grab the real final frame of a rendered clip for chained continuation."""
     frame = video.with_suffix(".last.jpg")
+    # -sseof must land inside the VIDEO stream: audio often outlasts video by
+    # ~0.2s, so a tiny offset seeks past the final frame and emits nothing.
     subprocess.run(
-        ["ffmpeg", "-y", "-v", "error", "-sseof", "-0.15", "-i", str(video),
-         "-frames:v", "1", "-q:v", "2", str(frame)], check=True)
+        ["ffmpeg", "-y", "-v", "error", "-sseof", "-0.5", "-i", str(video),
+         "-frames:v", "1", "-update", "1", "-q:v", "2", str(frame)], check=True)
+    if not frame.is_file() or frame.stat().st_size == 0:
+        raise RuntimeError(f"last-frame extraction produced nothing: {video}")
     return frame
 
 
