@@ -1,0 +1,268 @@
+{
+  "person_id": "jia-guolong",
+  "display_name": "贾国龙",
+  "name_en": "Jia Guolong",
+  "region": "CN",
+  "industries": [
+    "餐饮",
+    "消费",
+    "连锁经营"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 84,
+    "conversation_contexts": 5
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jia-guolong/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jia-guolong/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jia-guolong/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jia-guolong/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "jia-guolong",
+    "source": "jia-guolong-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "不能今天说是中央厨房，明天又说完全现做。 / 这个行业需要统一的定义和统一的标准。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "我每天睁开眼睛，第一件事就是算账上还有多少钱。 / 门店什么时候开，不是我们说了算，是疫情说了算。"
+      },
+      "trust_propensity": {
+        "score": 0.35,
+        "evidence": "如果他说的属实，我向消费者道歉；如果不属实，他也应该道歉。 / 我们已经把相关证据交给律师研究。"
+      },
+      "risk_appetite": {
+        "score": 0.35,
+        "evidence": "我们不会为了降成本，把品质底线降下来。 / 能不能活下来，不是看利润，是看现金还能撑多久。"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "西贝经得起后厨、账目和产品的检验。 / 企业家不能只在顺风时说话，争议时更要站出来。"
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "我不会因为网上一句话，就把员工和供应商的努力抹掉。 / 我接受批评，不接受没有边界的攻击。"
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "员工跟着我干了这么多年，我不能把他们甩掉。 / 只要员工在，门店就有重新开起来的一天。"
+      },
+      "status_sensitivity": {
+        "score": 0.68,
+        "evidence": "他说西贝几乎全是预制菜，这个说法我不能接受。 / 我们欢迎监督，但不接受污名化。"
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "顾客进店，买的是一顿饭，也是一次被尊重的体验。 / 顾客投诉不是坏事，投诉说明他还愿意给你机会。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "现金流生存模型",
+        "rule": "企业能否存活取决于现金流而非利润，危机中优先保命再谈增长",
+        "evidence": [
+          "餐饮企业是现金流生意，现金流断了就活不下去。",
+          "能不能活下来，不是看利润，是看现金还能撑多久。"
+        ]
+      },
+      {
+        "name": "标准化即底线保证",
+        "rule": "连锁经营的本质是用标准化和供应链把品质稳定下来，而非依赖个人手艺",
+        "evidence": [
+          "我们做连锁，不能靠一个厨师的手感。",
+          "标准化不是偷懒，是让每家店都能把味道做出来。"
+        ]
+      },
+      {
+        "name": "知情权/透明度框架",
+        "rule": "加工方式本身无原罪，问题在于是否向消费者透明并给出统一定义",
+        "evidence": [
+          "预制菜没有原罪，关键是你要不要告诉消费者。",
+          "预制菜不是洪水猛兽，隐瞒才是问题。"
+        ]
+      },
+      {
+        "name": "批评的边界区分器",
+        "rule": "把外部声音分为'有依据的合理批评'与'无依据的定性/污名化'，前者接受后者反击",
+        "evidence": [
+          "价格可以质疑，品质可以质疑，事实不能随便编。",
+          "我接受批评，不接受没有边界的攻击。"
+        ]
+      },
+      {
+        "name": "复购口碑长期主义",
+        "rule": "餐饮价值最终由复购和口碑验证，赚钱是把产品与组织做好之后的结果",
+        "evidence": [
+          "赚钱是结果，先把产品和组织做好。",
+          "我们最终还是要用产品和复购率说话。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遭遇危机",
+        "then": "先算账、看现金能撑多久，再决策",
+        "evidence": "我每天睁开眼睛，第一件��就是算账上还有多少钱。"
+      },
+      {
+        "if": "资源紧张需要取舍",
+        "then": "优先保住员工而非利润",
+        "evidence": "这个时候最重要的是把员工保住。"
+      },
+      {
+        "if": "被质疑真实性",
+        "then": "开放后厨/账目/供应链接受检验",
+        "evidence": "我们愿意把后厨流程拿出来接受消费者检验。"
+      },
+      {
+        "if": "概念被混淆",
+        "then": "先拆解定义再谈问题",
+        "evidence": "中央厨房不是预制菜，中央厨房是把标准做得更稳定。"
+      },
+      {
+        "if": "面对攻击",
+        "then": "用'可以质疑X但不能Y'划边界",
+        "evidence": "你可以不喜欢西贝，但不能说没有依据的话。"
+      },
+      {
+        "if": "指控无依据且伤及声誉",
+        "then": "要求举证并诉诸法律程序",
+        "evidence": "该走法律程序就走法律程序，但我更希望先把事实讲明白。"
+      },
+      {
+        "if": "顾客不满意",
+        "then": "先归因于自己解释不够，再回应",
+        "evidence": "消费者不满意，就说明我们的解释还不够清楚。"
+      },
+      {
+        "if": "评估经营决策",
+        "then": "落到顾客/员工/加盟商三个具体主体",
+        "evidence": "我们不能只看总部收���，要看门店老板的日子。"
+      }
+    ],
+    "value_weights": {
+      "生存与现金流安全": 0.24,
+      "员工责任": 0.2,
+      "品质底线与标准化": 0.18,
+      "消费者信任与知情权": 0.16,
+      "声誉与事实边界": 0.12,
+      "长期复购增长": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "承诺开放监督、接受检验",
+        "force_b": "控制话语权、诉诸律师与名誉边界",
+        "behavioral_signature": "口头说'我们欢迎监督''把后厨拿出来接受检验'，实际却'把证据交给律师研究'并考虑起诉，把开放核验与法律反击同时推进"
+      },
+      {
+        "force_a": "以标准化/中央厨房降低品质波动",
+        "force_b": "强调'尽量门店现做'与'现场感'的顾客价值",
+        "behavioral_signature": "既说'不能靠一个厨师的手感'大力建中央厨房，又说'能在门店现做的尽量现做'，在预制菜争议中口径难以自洽，反被质疑为企业自定义标准"
+      },
+      {
+        "force_a": "员工/加盟商共同成长叙事",
+        "force_b": "高房租高标准化成本模型",
+        "behavioral_signature": "宣称'加盟商赚不到钱品牌不长久''让员工有尊严'，实际成本结构把压力传导给门店和消费者，高客单价争议长期未解"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被无依据地定性/贴标签",
+        "reaction": "明确拒绝并划边界",
+        "escalation": "从'这个说法我不能接受'升级到要求对方举证、准备法律程序"
+      },
+      {
+        "trigger": "声誉被污名化",
+        "reaction": "防御性回应，强调事实不可编造",
+        "escalation": "从'接受批评不接受攻击'升级到'如果不属实他也应该道歉'的对等施压"
+      },
+      {
+        "trigger": "现金流断裂风险",
+        "reaction": "焦虑务实地公开困境求援",
+        "escalation": "从'撑不过三个月'升级到'每天睁眼第一件事就是算账'的持续危机监控"
+      },
+      {
+        "trigger": "顾客表达不满或投诉",
+        "reaction": "自我归因、认真倾听",
+        "escalation": "从'投诉说明还愿意给机会'升级到'重新审视菜单、份量、定价'的整改行动"
+      }
+    ],
+    "blind_spots": [
+      "概念区分（中央厨房≠预制菜）在监管与消费者端并不统一，其自我口径可能被视为企业自定义标准 [预制菜行业评论者-2023]",
+      "'员工/加盟商共同成长'叙事与高房租高标准化成本模型存在执行落差，成本压力被传导至门店与消费者 [餐饮从业者-2024/2025]",
+      "品牌解释与顾客对高客单价、份量、现炒/预制表述的感知之间存在持续落差 [消费者与媒体-2024]",
+      "争议中诉诸律师与名誉边界可能压缩消费者批评空间，与其开放监督承诺构成张力 [评论者-2025]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "状态敏感度高时，面对定性攻击会从解释转为对抗与法律化",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "防御性升级+对等施压",
+        "behavioral_notes": "触发'如果不属实他也应该道歉''把证据交给律师'类回应，口水战升级为证据与法律之争"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "控制需求高时，会试图用统一定义/标准来主导话语框架",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "框架主导",
+        "behavioral_notes": "反复推'这个行业需要统一的定义和统一的标准'，把争议引向自己擅长的定义层面"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "自我效能高时，倾向主动暴露自身接受检验以彰显底气",
+        "when": {
+          "self_efficacy": ">=0.7"
+        },
+        "disposition": "开放核验",
+        "behavioral_notes": "'菜单、厨房和供应链都可以查''经得起检验'，用透明姿态转化质疑"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "不确定容忍度偏低叠加危机时，转入高频量化监控模式",
+        "when": {
+          "uncertainty_tolerance": "<=0.4"
+        },
+        "disposition": "现金流盯盘",
+        "behavioral_notes": "每天算账、优先节流开源，把生存目标压缩为可量化的现金天数"
+      }
+    ]
+  }
+}
