@@ -262,6 +262,38 @@ def forge_from_questionnaire(
     return record
 
 
+_EXPAND_STYLE_PROMPT = """你是台词风格设计师。用户用自然语言描述了想要的角色说话风格，你把它展开成给AI演员用的可执行口播指令。
+
+用户的描述：{description}
+角色设定：{name}，{background}。
+
+要求：
+1. 如果描述里引用了公众人物（如"像大司马"、"郭德纲那种"），调用你对此人说话习惯的了解：口头禅、句式、语气节奏、招牌梗——但化用不照搬，保留味道、换掉专属指纹（如把标志性名词换成同构的新说法）。
+2. 严格执行用户的修正语（如"但没那么否定性"、"更温和"）——这些减法比加法更重要，被点名去掉的特质一条都不能留。
+3. 输出120字以内的可执行指令，格式如：「语速快、爱连环短句；口头禅『……』用在得意时；打比方偏游戏化；被质疑先自嘲再反击」。
+4. 只输出风格说明文本，不要解释，不要JSON。"""
+
+
+def expand_style(
+    *,
+    description: str,
+    name: str,
+    background: str,
+    complete: Callable[[list[dict[str, str]], str], str],
+) -> str:
+    """Expand a natural-language style wish into an executable speech spec."""
+    if not description.strip():
+        raise GenomeError("style description is required")
+    prompt = _EXPAND_STYLE_PROMPT.format(
+        description=description.strip(),
+        name=name.strip() or "未命名", background=background.strip() or "不详",
+    )
+    style = complete([{"role": "user", "content": prompt}], "forge-style-expand").strip()
+    if not style:
+        raise GenomeError("style expansion returned empty text")
+    return style[:400]
+
+
 _STYLE_PROMPT = """你是台词风格设计师。一个虚构角色由以下人物按权重融合而成：
 {sources_block}
 

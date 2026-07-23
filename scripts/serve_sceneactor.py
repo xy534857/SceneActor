@@ -29,7 +29,7 @@ from uuid import uuid4
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from sceneactor.chat import ChatSession, validate_record
-from sceneactor.forge import forge_from_fusion, forge_from_questionnaire, next_question
+from sceneactor.forge import expand_style, forge_from_fusion, forge_from_questionnaire, next_question
 from sceneactor.genome import GenomeError
 from sceneactor.cognition import CognitionModelError
 from sceneactor.model import FallbackModel, GatewayCompletion
@@ -364,7 +364,27 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/v1/forge/question":
             self._forge_question(body)
             return
+        if path == "/v1/forge/style":
+            self._forge_style(body)
+            return
         self._send(404, {"error": "unknown path"})
+
+    def _forge_style(self, body: dict) -> None:
+        """Expand a natural-language style description into a speech spec."""
+        try:
+            style = expand_style(
+                description=str(body.get("description", "")),
+                name=str(body.get("name", "")),
+                background=str(body.get("background", "")),
+                complete=_model(str(body.get("model") or args.triage_model), args.chat_fallback),
+            )
+        except GenomeError as exc:
+            self._send(422, {"error": str(exc)})
+            return
+        except RuntimeError as exc:
+            self._send(502, {"error": f"style model failed: {str(exc)[:200]}"})
+            return
+        self._send(200, {"style": style})
 
     def _forge_question(self, body: dict) -> None:
         """Generate the next adaptive questionnaire question."""
