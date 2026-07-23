@@ -94,12 +94,17 @@ class SkitShot:
     line: str
     in_frame: tuple[str, ...] = ()  # character codes visible; default: speaker only
     extra_constraints: str = ""
-    # -- long-video consistency layer (from public seedance skills: timestamp
-    #    storyboarding / end-state anchoring / chained continuation) --
+    # -- xyz-style shot structure: JSON storyboard + still-frame anchors.
+    #    NO multi-panel storyboard images — every visual anchor is a single
+    #    per-shot still generated from character portraits + scene sheet.
     time_beats: tuple[str, ...] = ()  # e.g. "0-3秒：…" lines for multi-phase shots
-    end_state: str = ""  # visual landing point; prevents random wandering
+    start_state: str = ""  # first-frame story anchor: poised-to-act state (NOT mid-action)
+    end_state: str = ""  # last-frame story anchor: the reached state (NOT "maybe")
+    anchor_stills: str = "none"  # none | first | first_last — generate still refs for this shot
     chain_from_previous: bool = False  # start from previous shot's real last frame
-    # -- blocking & spatial contracts (xyz-video-skill patterns, hardened) --
+    transition_in: str = "cut"  # cut | dissolve | flash — editing joint FROM previous shot
+    transition_duration: float = 0.5  # seconds, used by dissolve/flash
+    # -- blocking & spatial contracts --
     props_in_shot: tuple[str, ...] = ()  # prop_ids visible in this shot
     pose_contract: tuple[str, ...] = ()  # physical support relations that MUST hold
     gaze_target: str = ""  # who/where the speaker looks: "对面讲台的水獭"
@@ -175,8 +180,12 @@ class SkitProject:
                 in_frame=tuple(str(c) for c in item.get("in_frame", [])),
                 extra_constraints=str(item.get("extra_constraints", "")),
                 time_beats=tuple(str(b) for b in item.get("time_beats", [])),
+                start_state=str(item.get("start_state", "")),
                 end_state=str(item.get("end_state", "")),
+                anchor_stills=str(item.get("anchor_stills", "none")),
                 chain_from_previous=bool(item.get("chain_from_previous", False)),
+                transition_in=str(item.get("transition_in", "cut")),
+                transition_duration=float(item.get("transition_duration", 0.5)),
                 props_in_shot=tuple(str(p) for p in item.get("props_in_shot", [])),
                 pose_contract=tuple(str(p) for p in item.get("pose_contract", [])),
                 gaze_target=str(item.get("gaze_target", "")),
@@ -225,6 +234,27 @@ class SkitProject:
                 raise SkitProjectError(f"{shot.shot_id}: speaker must be in_frame")
             if not shot.line.strip():
                 raise SkitProjectError(f"{shot.shot_id}: empty dialogue line")
+            if shot.anchor_stills not in ("none", "first", "first_last"):
+                raise SkitProjectError(
+                    f"{shot.shot_id}: anchor_stills must be none|first|first_last"
+                )
+            if shot.anchor_stills != "none" and not shot.start_state.strip():
+                raise SkitProjectError(
+                    f"{shot.shot_id}: anchor_stills needs start_state (the still's story anchor)"
+                )
+            if shot.anchor_stills == "first_last" and not shot.end_state.strip():
+                raise SkitProjectError(
+                    f"{shot.shot_id}: anchor_stills=first_last needs end_state"
+                )
+            if shot.transition_in not in ("cut", "dissolve", "flash"):
+                raise SkitProjectError(
+                    f"{shot.shot_id}: transition_in must be cut|dissolve|flash"
+                )
+            if shot.chain_from_previous and shot.anchor_stills != "none":
+                raise SkitProjectError(
+                    f"{shot.shot_id}: chained shots inherit the previous real frame; "
+                    "anchor_stills must be none"
+                )
             for pid in shot.props_in_shot:
                 if pid not in self.props:
                     raise SkitProjectError(f"{shot.shot_id}: unknown prop {pid!r}")
@@ -273,6 +303,18 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
     beats_txt = ""
     if shot.time_beats:
         beats_txt = "TIMELINE: " + " ".join(shot.time_beats) + "\n"
+    start_txt = ""
+    if shot.start_state:
+        start_txt = f"START STATE: the shot opens on: {shot.start_state}\n"
+    still_txt = ""
+    if shot.anchor_stills != "none":
+        which = ("the attached composition still defines this shot's opening framing"
+                 if shot.anchor_stills == "first" else
+                 "the two attached composition stills define this shot's opening and closing framing")
+        still_txt = (
+            f"COMPOSITION: {which} — camera angle, character placement, blocking. "
+            "Match the framing; character appearance still follows the portrait references.\n"
+        )
     end_txt = ""
     if shot.end_state:
         end_txt = (
@@ -335,7 +377,7 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
         f"ACTION: {shot.action}. Mouth movements sync to the dialogue. "
         "Subtle idle motion otherwise; steady TV framing.\n"
         f"{pose_txt}{gaze_txt}{delta_txt}"
-        f"{beats_txt}{end_txt}{chain_txt}"
+        f"{still_txt}{start_txt}{beats_txt}{end_txt}{chain_txt}"
         f"DIALOGUE ({lang}, spoken aloud in {speaker.voice_desc}, cloned from the "
         f"reference audio — match its timbre exactly): {quote.format(shot.line)}\n"
         f"{strict_txt}{extra}"
@@ -361,25 +403,62 @@ def _mentions_same_subject(fact: str, delta: str) -> bool:
     return len(overlap) >= 2
 
 
+def build_still_prompts(project: SkitProject, shot: SkitShot) -> dict[str, str]:
+    """Per-shot still-frame prompts (xyz pattern: single stills, NO panels).
+
+    Returns {} / {"first": …} / {"first","last"} per ``anchor_stills``. Each
+    still is generated by the image model from the character portraits + scene
+    sheet, so identity and stage stay anchored; the still then locks this
+    shot's COMPOSITION when attached to the video task.
+    """
+    if shot.anchor_stills == "none":
+        return {}
+    cast = "; ".join(project.characters[c].identity_desc for c in shot.visible())
+    base = (
+        f"Single cinematic still frame, {project.aspect_ratio} framing. "
+        "Characters must match the attached portrait references EXACTLY "
+        "(head shape, colors, outfit, markings, proportions); the setting must "
+        f"match the attached scene reference.\n"
+        f"STAGE: {project.stage}\n"
+        f"SHOT: {shot.camera}.\n"
+        f"CHARACTERS: {cast}.\n"
+        f"STYLE: {project.style} "
+        "One single frame — NO panels, NO grids, NO borders, NO annotations, "
+        "NO text anywhere.\n"
+    )
+    stills = {"first": base + f"MOMENT: {shot.start_state}"}
+    if shot.anchor_stills == "first_last":
+        stills["last"] = base + f"MOMENT: {shot.end_state}"
+    return stills
+
+
 def build_shot_references(
     project: SkitProject,
     shot: SkitShot,
     uploads: Mapping[str, str],
     *,
     prev_last_frame: str = "",
+    still_first: str = "",
+    still_last: str = "",
 ) -> tuple[ReferenceMedia, ...]:
-    """identity anchors for every visible character + scene style + speaker voice.
+    """identity anchors + scene style + speaker voice + optional stills.
 
-    ``uploads`` maps portrait/voice/scene keys (or paths) to public URLs.
-    ``prev_last_frame``: public URL of the previous shot's real final frame;
-    attached LAST when ``shot.chain_from_previous`` so the prompt's CONTINUITY
-    clause can reference "the last attached reference image".
+    ``still_first``/``still_last``: public URLs of this shot's generated
+    composition stills; attached as scene_style references so seedance locks
+    framing/blocking to them without inheriting compression artifacts as the
+    generation base (unlike first_frame pixel-chaining).
+    ``prev_last_frame``: previous shot's real final frame for chained shots;
+    attached LAST so the CONTINUITY clause can say "the last attached image".
     """
     refs: list[ReferenceMedia] = []
     for code in shot.visible():
         ch = project.characters[code]
         refs.append(ReferenceMedia(url=_resolve(uploads, ch.portrait), category="Image", role="identity_anchor"))
     refs.append(ReferenceMedia(url=_resolve(uploads, project.scene_ref), category="Image", role="scene_style"))
+    if still_first:
+        refs.append(ReferenceMedia(url=still_first, category="Image", role="scene_style"))
+    if still_last:
+        refs.append(ReferenceMedia(url=still_last, category="Image", role="scene_style"))
     speaker = project.characters[shot.speaker]
     refs.append(ReferenceMedia(url=_resolve(uploads, speaker.voice_ref), category="Audio", role="reference"))
     if shot.chain_from_previous and prev_last_frame:
@@ -415,6 +494,72 @@ def plan_tasks(
             }
         )
     return plan
+
+
+def concat_manifest(project: SkitProject, clips_dir: Path, tag_by_shot: Mapping[str, str]) -> str:
+    """ffmpeg concat file body honoring per-shot take tags (cut-only path)."""
+    lines = []
+    for shot in project.shots:
+        tag = tag_by_shot.get(shot.shot_id, "v1")
+        lines.append(f"file '{clips_dir / f'{shot.shot_id}_{tag}.mp4'}'")
+    return "\n".join(lines) + "\n"
+
+
+_XFADE = {"dissolve": "fade", "flash": "fadewhite"}
+
+
+def assemble_command(
+    project: SkitProject,
+    clips_dir: Path,
+    tag_by_shot: Mapping[str, str],
+    durations: Mapping[str, float],
+    output: Path,
+) -> list[str]:
+    """Transition-aware ffmpeg command (xyz editing layer: cut/dissolve/flash).
+
+    ``durations``: measured clip duration per shot_id (ffprobe), needed to
+    place xfade offsets. All-cut projects should keep using concat_manifest —
+    it avoids re-encoding drift entirely.
+    """
+    shots = project.shots
+    inputs: list[str] = []
+    for shot in shots:
+        tag = tag_by_shot.get(shot.shot_id, "v1")
+        inputs += ["-i", str(clips_dir / f"{shot.shot_id}_{tag}.mp4")]
+    filters: list[str] = []
+    # normalize every input
+    for index in range(len(shots)):
+        filters.append(
+            f"[{index}:v]scale=1280:720,fps=24,settb=AVTB[v{index}];"
+            f"[{index}:a]aresample=44100,asetpts=PTS-STARTPTS[a{index}]"
+        )
+    video, audio = "v0", "a0"
+    elapsed = durations[shots[0].shot_id]
+    for index, shot in enumerate(shots[1:], start=1):
+        nv, na = f"vx{index}", f"ax{index}"
+        if shot.transition_in in _XFADE:
+            dur = max(0.1, min(shot.transition_duration, 1.5))
+            offset = max(0.0, elapsed - dur)
+            style = _XFADE[shot.transition_in]
+            filters.append(
+                f"[{video}][v{index}]xfade=transition={style}:duration={dur}:offset={offset:.3f}[{nv}];"
+                f"[{audio}][a{index}]acrossfade=d={dur}[{na}]"
+            )
+            elapsed = offset + dur + (durations[shot.shot_id] - dur)
+        else:  # cut
+            filters.append(
+                f"[{video}][{audio}][v{index}][a{index}]concat=n=2:v=1:a=1[{nv}][{na}]"
+            )
+            elapsed += durations[shot.shot_id]
+        video, audio = nv, na
+    filter_complex = ";".join(filters)
+    return [
+        "ffmpeg", "-y", "-v", "error", *inputs,
+        "-filter_complex", filter_complex,
+        "-map", f"[{video}]", "-map", f"[{audio}]",
+        "-c:v", "libx264", "-preset", "fast", "-crf", "20",
+        "-c:a", "aac", "-b:a", "128k", str(output),
+    ]
 
 
 def upload_keys(project: SkitProject) -> tuple[str, ...]:

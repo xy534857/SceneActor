@@ -52,6 +52,21 @@ duplicated）；托盘从左讲台瞬移到右讲台（`location` 固定 + never
 | `gaze_target` | "看向谁"本身是戏（对视/回头/发现） | 写目标+方位："对面讲台的水獭" |
 | `shot_delta` | 本镜要改变 STABLE FACTS 里的任何事实 | 只列允许的变化；同主语稳定事实自动挂起，没列的变化=审查违规 |
 | `extra_constraints` | 上一 take 的 fail 原因 | 重生成时把审查结论翻成新约束（如"无贴纸描边"） |
+| `anchor_stills` | 构图必须精确（开场定调镜/复杂多人站位/关键落点） | `first` 或 `first_last`；引擎按 `start_state`/`end_state` 先生成**单帧剧照**（gpt-image-2 + 立绘/场景参考），作为 scene_style 挂给视频任务锁构图。与 `chain_from_previous` 互斥 |
+| `start_state` | 写了 `anchor_stills` 就必填 | 与 `end_state` 同语法：写"画面开场已是什么状态" |
+| `transition_in` | 时空跳跃（换场景/时间流逝）需要软转场 | `cut`(默认硬切)/`dissolve`(叠化=时间流逝)/`flash`(白闪=情绪重音)；组装时 xfade/fadewhite 执行 |
+| `transition_duration` | 非 cut 转场想调节奏 | 秒，默认 0.5，组装时 clamp 到 [0.1,1.5] |
+
+### 三级构图锚定（按需选择，勿全上）
+
+| 层级 | 用什么 | 什么时候 |
+|---|---|---|
+| 文本 | `time_beats` + `end_state` | 默认。单人、构图简单、动作线性的镜 |
+| 剧照 | `anchor_stills: first`(或 `first_last`) | 构图是戏的镜：多人站位、开场定调、精确落点。**单帧剧照，绝不是多格 storyboard 面板**——面板内格间头身比漂移会被视频模型放大（v2 教训） |
+| 链帧 | `chain_from_previous` | 同场景同角色连续动作。抽前镜**真实尾帧**（不是剧照）挂末位参考 |
+
+剧照挂的是 scene_style 参考而非 first_frame：tencent-vod 的 first_frame 不能与
+其他参考混用，且像素级续接会继承压缩伪影（v1 画质退化教训）。
 
 ## 资产阶段（一致性的根，最重要）
 
@@ -110,6 +125,8 @@ ACTION: 动作 + 口型同步
 POSE CONTRACT: 支撑关系（如有）
 GAZE: 视线目标（如有）
 SHOT DELTA (the ONLY things allowed to change): 本镜许可变化（如有）
+COMPOSITION: 附图剧照定义本镜开场(/收尾)构图——外形仍归立绘（anchor_stills 镜）
+START STATE: 开场已达状态（如有）
 TIMELINE: 0-3秒：…（如有）
 END STATE: 结束落点（如有）
 CONTINUITY: 最后一张附图是前镜末帧（链式镜）
@@ -121,9 +138,11 @@ STYLE: 风格句（全片逐字相同）+ 只要人声和房间底噪，无音�
 引用挂载（tencent-vod 路线）：
 - 每个**在场**角色一张立绘 `identity_anchor`
 - 场景主图 `scene_style`
+- anchor_stills 镜：首(/尾)帧剧照再挂 `scene_style`（锁构图不锁像素）
 - 说话人干声 `reference`（Audio）
 - 链式镜：前镜尾帧再挂一张 `identity_anchor`
-- ⚠️ `first_frame` 不能与其他 reference 混用（API 限制）
+- ⚠️ `first_frame` 不能与其他 reference 混用（API 限制）——所以构图锚
+  一律走 scene_style 参考，绝不走 first_frame
 
 ## 生成与审查（质量的根：两阶段，全自动粗筛+模型裁定）
 
@@ -145,7 +164,9 @@ STYLE: 风格句（全片逐字相同）+ 只要人声和房间底噪，无音�
 - 只重生成 fail 的镜，`--shots z11,z12 --tag v2`
 - 重生成时把 fail 原因翻成新约束加进 `extra_constraints`
   （如"角色与背景自然融合，无贴纸描边"）
-- 拼接用 take 表：`--assemble takes.json`，每镜选最佳 take
+- 拼接用 take 表：`--assemble takes.json`，每镜选最佳 take。
+  全片纯 cut → concat 无重编码；任一镜声明 dissolve/flash → 自动切换
+  xfade/fadewhite 滤镜链（acrossfade 同步过渡音频）
 
 ## 已踩过的坑（不要再踩）
 

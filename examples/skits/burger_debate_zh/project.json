@@ -34,7 +34,9 @@
       "speaker": "usagi",
       "camera": "Medium close-up on the LEFT lectern, straight-on TV framing",
       "action": "The rabbit spreads both paws wide bragging, pinches thumb and finger together making a circle gesture, stumbles on the number and re-opens the paw, then taps its own chest twice proudly",
-      "line": "那些汉堡，白宫历史上最好的汉堡，所有人都这么说。九百……不对，一千，一千多个，全是我自己掏的钱。"
+      "line": "那些汉堡，白宫历史上最好的汉堡，所有人都这么说。九百……不对，一千，一千多个，全是我自己掏的钱。",
+      "anchor_stills": "first",
+      "start_state": "The rabbit stands behind the LEFT lectern facing camera, both paws resting on the lectern edge, mouth just opening; the INFLATION chart glows on the big screen behind"
     },
     {
       "shot_id": "z02",
@@ -50,7 +52,9 @@
       "speaker": "hachi",
       "camera": "Medium shot of the center moderator desk",
       "action": "The cat moderator flips a cue card, puts it down wearily, raises one paw in resignation; strained polite smile",
-      "line": "两位，我们本来在聊通货膨胀……好吧，那你说说你的汉堡。"
+      "line": "两位，我们本来在聊通货膨胀……好吧，那你说说你的汉堡。",
+      "transition_in": "dissolve",
+      "transition_duration": 0.6
     },
     {
       "shot_id": "z04",

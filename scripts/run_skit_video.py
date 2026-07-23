@@ -43,6 +43,7 @@ from sceneactor.adapters.tokenrouter import (  # noqa: E402
 )
 from sceneactor.skit_pipeline import (  # noqa: E402
     SkitProject,
+    assemble_command,
     concat_manifest,
     plan_tasks,
     upload_keys,
@@ -100,7 +101,11 @@ def stage_submit_poll(uploads: dict[str, str]) -> dict[str, dict]:
     ``chain_from_previous`` waits for its predecessor's clip, extracts the real
     last frame, uploads it, and attaches it as the final identity anchor.
     """
-    from sceneactor.skit_pipeline import build_shot_prompt, build_shot_references
+    from sceneactor.skit_pipeline import (
+        build_shot_prompt,
+        build_shot_references,
+        build_still_prompts,
+    )
 
     selected_ids = {s.shot_id for s in selected}
     results: dict[str, dict] = {}
@@ -108,6 +113,44 @@ def stage_submit_poll(uploads: dict[str, str]) -> dict[str, dict]:
     prev_frame_url: dict[str, str] = {}  # shot_id -> its own last-frame URL
     order = [s for s in project.shots if s.shot_id in selected_ids]
     plan_dump = []
+
+    def _gen_still(shot, which: str, prompt: str) -> str:
+        """Generate one composition still via gpt-image-2 edits (v3-proven path)."""
+        import base64
+        import mimetypes
+        import uuid
+        refs = [project_dir / project.characters[c].portrait for c in shot.visible()]
+        refs.append(project_dir / project.scene_ref)
+        out = workdir / "stills" / f"{shot.shot_id}_{which}.png"
+        out.parent.mkdir(exist_ok=True)
+        if not out.is_file():
+            key_file = Path(__file__).resolve().parents[1] / \
+                "examples/zhang_laoshi/ablation/_openai_key.txt"
+            api_key = key_file.read_text().strip()
+            boundary = uuid.uuid4().hex
+            parts = []
+            for name, value in (("model", "gpt-image-2"), ("prompt", prompt),
+                                ("size", "1536x1024")):
+                parts.append(
+                    f'--{boundary}\r\nContent-Disposition: form-data; '
+                    f'name="{name}"\r\n\r\n{value}\r\n'.encode())
+            for rp in refs:
+                mime = mimetypes.guess_type(str(rp))[0] or "image/png"
+                parts.append(
+                    (f'--{boundary}\r\nContent-Disposition: form-data; name="image[]"; '
+                     f'filename="{rp.name}"\r\nContent-Type: {mime}\r\n\r\n').encode()
+                    + rp.read_bytes() + b"\r\n")
+            parts.append(f"--{boundary}--\r\n".encode())
+            req = urllib.request.Request(
+                "https://api.openai.com/v1/images/edits", data=b"".join(parts),
+                headers={"Authorization": f"Bearer {api_key}",
+                         "Content-Type": f"multipart/form-data; boundary={boundary}"})
+            with urllib.request.urlopen(req, timeout=600) as resp:
+                payload = json.loads(resp.read())
+            out.write_bytes(base64.b64decode(payload["data"][0]["b64_json"]))
+        url = client.upload_reference(out)
+        log(stage="still", shot=shot.shot_id, which=which)
+        return url
 
     def submit_one(shot) -> str:
         prev_url = ""
@@ -121,7 +164,13 @@ def stage_submit_poll(uploads: dict[str, str]) -> dict[str, dict]:
                     if prev_clip.is_file():
                         prev_url = client.upload_reference(_extract_last_frame(prev_clip))
                         prev_frame_url[prev_id] = prev_url
-        refs = build_shot_references(project, shot, uploads, prev_last_frame=prev_url)
+        still_urls = {}
+        for which, sprompt in build_still_prompts(project, shot).items():
+            still_urls[which] = _gen_still(shot, which, sprompt)
+        refs = build_shot_references(
+            project, shot, uploads, prev_last_frame=prev_url,
+            still_first=still_urls.get("first", ""),
+            still_last=still_urls.get("last", ""))
         prompt = build_shot_prompt(project, shot)
         plan_dump.append({"shot_id": shot.shot_id, "prompt": prompt,
                           "references": [r.to_file_info() for r in refs]})
@@ -241,15 +290,33 @@ def stage_verify() -> dict:
     return report
 
 
+def _clip_duration(path: Path) -> float:
+    out = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "csv=p=0", str(path)], capture_output=True, text=True, check=True)
+    return float(out.stdout.strip())
+
+
 def stage_assemble(tag_by_shot: dict[str, str]) -> Path:
-    concat = workdir / "concat.txt"
-    concat.write_text(concat_manifest(project, clips, tag_by_shot))
     final = workdir / "final.mp4"
-    subprocess.run(
-        ["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(concat),
-         "-vf", "scale=1280:720,fps=24", "-c:v", "libx264", "-preset", "fast", "-crf", "20",
-         "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-ac", "2", str(final)],
-        check=True)
+    has_transitions = any(s.transition_in != "cut" for s in project.shots[1:])
+    if has_transitions:
+        durations = {
+            s.shot_id: _clip_duration(clips / f"{s.shot_id}_{tag_by_shot.get(s.shot_id, 'v1')}.mp4")
+            for s in project.shots}
+        cmd = assemble_command(project, clips, tag_by_shot, durations, final)
+        log(stage="assemble", mode="xfade",
+            transitions=[s.transition_in for s in project.shots[1:]])
+        subprocess.run(cmd, check=True)
+    else:
+        concat = workdir / "concat.txt"
+        concat.write_text(concat_manifest(project, clips, tag_by_shot))
+        subprocess.run(
+            ["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(concat),
+             "-vf", "scale=1280:720,fps=24", "-c:v", "libx264", "-preset", "fast", "-crf", "20",
+             "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-ac", "2", str(final)],
+            check=True)
+        log(stage="assemble", mode="concat")
     log(stage="assemble", final=str(final), kb=final.stat().st_size // 1024)
     return final
 

@@ -10,8 +10,10 @@ import pytest
 from sceneactor.skit_pipeline import (
     SkitProject,
     SkitProjectError,
+    assemble_command,
     build_shot_prompt,
     build_shot_references,
+    build_still_prompts,
     concat_manifest,
     plan_tasks,
     upload_keys,
@@ -255,6 +257,79 @@ class TestConsistencyContracts:
         raw["shots"][0]["chain_from_previous"] = True
         with pytest.raises(SkitProjectError, match="first shot cannot chain"):
             SkitProject.from_mapping(raw)
+
+
+class TestXyzStillAnchorsAndTransitions:
+    def _raw_stills(self) -> dict:
+        raw = _raw()
+        raw["shots"][0]["start_state"] = "角色a站在左讲台后，手刚抬起。"
+        raw["shots"][0]["end_state"] = "角色a的手掌拍在讲台上。"
+        raw["shots"][0]["anchor_stills"] = "first_last"
+        raw["shots"][1]["transition_in"] = "dissolve"
+        raw["shots"][1]["transition_duration"] = 0.8
+        return raw
+
+    def test_still_prompts_generated(self) -> None:
+        p = SkitProject.from_mapping(self._raw_stills())
+        stills = build_still_prompts(p, p.shots[0])
+        assert set(stills) == {"first", "last"}
+        assert "手刚抬起" in stills["first"]
+        assert "拍在讲台上" in stills["last"]
+        assert "NO panels" in stills["first"] and "NO grids" in stills["first"]
+
+    def test_no_stills_for_plain_shot(self) -> None:
+        p = SkitProject.from_mapping(_raw())
+        assert build_still_prompts(p, p.shots[0]) == {}
+
+    def test_still_urls_attached_as_scene_style(self) -> None:
+        p = SkitProject.from_mapping(self._raw_stills())
+        refs = build_shot_references(
+            p, p.shots[0], UPLOADS,
+            still_first="https://x/s1_first.png", still_last="https://x/s1_last.png")
+        styles = [r.url for r in refs if r.role == "scene_style"]
+        assert "https://x/s1_first.png" in styles and "https://x/s1_last.png" in styles
+
+    def test_composition_clause_in_prompt(self) -> None:
+        p = SkitProject.from_mapping(self._raw_stills())
+        prompt = build_shot_prompt(p, p.shots[0])
+        assert "COMPOSITION" in prompt
+        assert "START STATE" in prompt
+
+    def test_anchor_stills_requires_states(self) -> None:
+        raw = _raw()
+        raw["shots"][0]["anchor_stills"] = "first"
+        with pytest.raises(SkitProjectError, match="needs start_state"):
+            SkitProject.from_mapping(raw)
+
+    def test_chained_shot_cannot_have_stills(self) -> None:
+        raw = self._raw_stills()
+        raw["shots"][1]["chain_from_previous"] = True
+        raw["shots"][1]["anchor_stills"] = "first"
+        raw["shots"][1]["start_state"] = "x"
+        with pytest.raises(SkitProjectError, match="chained shots inherit"):
+            SkitProject.from_mapping(raw)
+
+    def test_bad_transition_rejected(self) -> None:
+        raw = _raw()
+        raw["shots"][1]["transition_in"] = "wipe"
+        with pytest.raises(SkitProjectError, match="transition_in"):
+            SkitProject.from_mapping(raw)
+
+    def test_assemble_command_xfade_and_cut(self) -> None:
+        p = SkitProject.from_mapping(self._raw_stills())
+        cmd = assemble_command(
+            p, Path("/tmp/clips"), {}, {"s01": 8.2, "s02": 15.1}, Path("/tmp/out.mp4"))
+        joined = " ".join(cmd)
+        assert "xfade=transition=fade:duration=0.8" in joined
+        assert "offset=7.400" in joined  # 8.2 - 0.8
+        assert "acrossfade=d=0.8" in joined
+
+    def test_assemble_command_flash(self) -> None:
+        raw = self._raw_stills()
+        raw["shots"][1]["transition_in"] = "flash"
+        p = SkitProject.from_mapping(raw)
+        cmd = assemble_command(p, Path("/c"), {}, {"s01": 8.0, "s02": 15.0}, Path("/o.mp4"))
+        assert "fadewhite" in " ".join(cmd)
     def test_upload_keys_deduplicated(self) -> None:
         p = SkitProject.from_mapping(_raw())
         keys = upload_keys(p)
