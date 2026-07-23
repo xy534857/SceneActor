@@ -23,7 +23,7 @@ spec:
         - name: ghcr-pull
       containers:
         - name: service
-          image: harbor.omgwow.ai/library/sceneactor-service:chat-ui-v4
+          image: harbor.omgwow.ai/library/sceneactor-service:genome-batch1
           imagePullPolicy: Always
           args:
             - --host
