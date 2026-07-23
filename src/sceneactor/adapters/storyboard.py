@@ -137,6 +137,16 @@ def speech_end(video: Path, *, noise: str = "-38dB", min_silence: float = 0.5) -
     return duration, duration
 
 
+# Fastest plausible Mandarin delivery observed in our renders; the speech of a
+# clip can never END before spoken_chars/FAST_CPS seconds have elapsed.
+FAST_CHARS_PER_SECOND = 5.0
+
+
+def _tail_key(speech: str, length: int = 5) -> str:
+    """Normalized last characters of a line, for completeness checks."""
+    return _PUNCT.sub("", speech)[-length:]
+
+
 def speech_end_gemini(
     video: Path,
     speech: str,
@@ -166,11 +176,15 @@ def speech_end_gemini(
     )
     try:
         encoded = base64.b64encode(compressed.read_bytes()).decode()
+        tail = _tail_key(speech)
         prompt = (
             f"这段视频里角色念的台词是：「{speech}」\n"
-            f"视频总长 {duration:.1f} 秒。请精确判断：角色说完台词最后一个字是在第几秒？\n"
-            "注意：只看人声台词，背景音乐、音效、环境声、哼唱都不算说话。\n"
-            '只输出严格JSON：{"speech_end_seconds": <数字>, "trailing_content": "台词后剩余内容的简述"}'
+            f"视频总长 {duration:.1f} 秒。请完成两件事：\n"
+            "1. 逐字转写角色实际说出的台词（人声部分，背景音乐/音效/哼唱不算）。\n"
+            "2. 精确判断角色说完台词最后一个字是在第几秒。\n"
+            '只输出严格JSON：{"transcript": "...", "speech_end_seconds": <数字>, '
+            '"line_complete": true/false}  其中 line_complete 表示台词是否说完整'
+            f"（结尾应落在「{tail}」附近，允许口音同音字差异）。"
         )
         body = json.dumps({
             "model": model,
@@ -190,7 +204,21 @@ def speech_end_gemini(
                 text = payload["choices"][0]["message"]["content"]
                 match = re.search(r'\{[^{}]*"speech_end_seconds"[^{}]*\}', text, re.DOTALL)
                 if match:
-                    end = float(json.loads(match.group(0))["speech_end_seconds"])
+                    data = json.loads(match.group(0))
+                    end = float(data["speech_end_seconds"])
+                    transcript = _PUNCT.sub("", str(data.get("transcript", "")))
+                    complete = bool(data.get("line_complete", True))
+                    # completeness guard: if the model itself says the line is
+                    # unfinished, or the transcribed tail shares no character
+                    # with the expected tail, DO NOT trim — a wrong early end
+                    # here is what cuts lines mid-word.
+                    tail_seen = (not transcript) or any(ch in transcript[-12:] for ch in tail)
+                    if not complete or not tail_seen:
+                        return duration, duration
+                    # physics guard: speech cannot end before the line could
+                    # possibly have been spoken at maximum plausible speed.
+                    floor_end = spoken_chars(speech) / FAST_CHARS_PER_SECOND
+                    end = max(end, floor_end)
                     if 0 < end <= duration + 0.5:
                         return min(end, duration), duration
             except Exception:  # noqa: BLE001
@@ -267,11 +295,20 @@ class StoryboardBrief:
     actor_labels: tuple[str, ...]
     scene_notes: Mapping[str, str] = field(default_factory=dict)
     persona_notes: Mapping[str, str] = field(default_factory=dict)
+    scene_ref_labels: tuple[str, ...] = ()
+    """Actors whose multi-angle scene sheets are attached as reference images,
+    numbered right after the character references. When set, the board model
+    draws backgrounds from these images instead of imagining them from text."""
 
     def to_prompt(self) -> str:
         numbered = "、".join(
             f"参考图{index + 1}作为角色{label}"
             for index, label in enumerate(self.actor_labels)
+        )
+        offset = len(self.actor_labels)
+        scene_numbered = "、".join(
+            f"参考图{offset + index + 1}是{label}的场景多角度表"
+            for index, label in enumerate(self.scene_ref_labels)
         )
         lines = []
         for shot in self.shots:
@@ -292,7 +329,17 @@ class StoryboardBrief:
             f"戏剧功能和角色此刻的心理，再决定每个镜头的构图、景别、角色姿态和身体动作——"
             f"这些由你设计，不要每格都画成同样的正面中景。\n\n"
             f"使用{numbered}——面板里的人物必须与参考图的发型、眼镜、体型、服装一致。\n"
-            f"{personas}\n{scenes}\n\n"
+            + (f"{scene_numbered}——每格背景必须取自对应场景表的某个视角，"
+               f"陈设/道具/方位与场景表完全一致，不要自己发明背景。\n" if scene_numbered else "")
+            + f"{personas}\n{scenes}\n\n"
+            f"空间连续性硬要求：同一角色的所有面板画的是同一个真实空间——场景描述里列出的道具"
+            f"是这个空间的固定陈设，位置和方位在所有面板中保持不变。景别变化只是取景框在动，"
+            f"空间本身不动：中景里在桌上的东西，另一格中景里必须还在原位；只有推到特写时"
+            f"才允许道具自然出画。禁止同一景别下道具时有时无。\n\n"
+            f"体型尺度硬要求：角色的头身比和体型以参考图为唯一标准，在所有面板中保持完全一致——"
+            f"景别推近时是取景框变化，不是人变大；相同景别下角色占画面的比例必须相同。"
+            f"每个面板用固定陈设（桌沿高度、台灯、货架层高）作为角色身高的标尺：同一角色"
+            f"坐姿时头顶相对桌面的高度在所有面板中不变。禁止同一角色在不同面板中头身比漂移。\n\n"
             f"镜头表（每个镜头一个面板，按顺序；情绪/动作/视线是表演事实，构图和景别由你设计）：\n"
             + "\n".join(lines) + "\n\n"
             f"{BOARD_STYLE}\n{ANNOTATION_LEGEND}\n"
@@ -308,6 +355,7 @@ def paginate_briefs(
     actor_labels: Sequence[str] = (),
     scene_notes: Mapping[str, str] | None = None,
     persona_notes: Mapping[str, str] | None = None,
+    scene_ref_labels: Sequence[str] = (),
 ) -> list[StoryboardBrief]:
     """Split shots into board-page briefs; the image model designs each panel."""
     briefs: list[StoryboardBrief] = []
@@ -319,19 +367,26 @@ def paginate_briefs(
             actor_labels=tuple(actor_labels),
             scene_notes=dict(scene_notes or {}),
             persona_notes=dict(persona_notes or {}),
+            scene_ref_labels=tuple(scene_ref_labels),
         ))
     return briefs
 
 
 REVIEW_QUESTIONS = (
     "A. 镜头对应：每个面板是否对应正确的镜头号和说话角色？",
-    "B. 角色一致性：同一角色在所有面板里发型/眼镜/体型/服装是否一致，且与参考图一致？",
-    "C. 空间一致性：同一场景的面板之间，桌子/道具/门窗方位是否稳定？有没有越轴（角色朝向突然翻转）？",
+    "B. 角色一致性：同一角色在所有面板里发型/眼镜/体型/服装是否一致，且与参考图一致？"
+    "重点核查头身比：同一角色在相同景别的面板之间，头身比和相对固定陈设（桌面/台灯/货架）的"
+    "身高是否一致——同一角色一格里三头身、另一格里五头身，或坐姿头顶忽高忽低，即为fail。",
+    "C. 空间一致性：同一场景的面板之间，桌子/道具/门窗方位是否稳定？有没有越轴（角色朝向突然翻转）？"
+    "重点核查：同一场景中相同或相近景别的面板，桌面和背景道具是否完全相同——一件道具（如桌上的设备、"
+    "纸张、工具）在一格出现、在另一格同景别里消失，即为fail。",
     "D. 画面一致性：不同角色各自的场景是否始终可区分，没有互相串场（一个角色的场景道具出现在另一个角色的背景里）？",
-    "E. 物品摆放合理性：道具的位置和持握方式是否符合物理常识和台词动作？",
+    "E. 物品摆放合理性：道具的位置和持握方式是否符合物理常识和台词动作？道具与场景描述列出的固定陈设是否一致？",
     "F. 镜头合理性：景别与戏剧强度是否匹配（爆发拍近景、要参数拍中景等），构图有没有变化而不是每格同样正面中景？",
     "G. 注释系统：红蓝箭头和彩色标记是否存在且语义合理？",
     "H. 画风：是否黑白粗铅笔草稿，彩色只出现在注释上？",
+    "I. 面板比例：每个有画面的面板是否都是16:9横构图？任何面板被拉成超宽横幅"
+    "（明显宽于16:9，如整行一条）或压成竖构图，即为fail——分镜格是成片构图权威，比例必须与16:9成片一致。",
 )
 
 

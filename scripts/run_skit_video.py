@@ -84,21 +84,71 @@ def stage_upload() -> dict[str, str]:
     return uploads
 
 
-def stage_submit(uploads: dict[str, str]) -> dict[str, str]:
-    plan = [p for p in plan_tasks(project, uploads) if p["shot_id"] in {s.shot_id for s in selected}]
-    (workdir / "plan.json").write_text(json.dumps(
-        [{**p, "references": [r.to_file_info() for r in p["references"]]} for p in plan],
-        ensure_ascii=False, indent=2))
+def _extract_last_frame(video: Path) -> Path:
+    """Grab the real final frame of a rendered clip for chained continuation."""
+    frame = video.with_suffix(".last.jpg")
+    subprocess.run(
+        ["ffmpeg", "-y", "-v", "error", "-sseof", "-0.15", "-i", str(video),
+         "-frames:v", "1", "-q:v", "2", str(frame)], check=True)
+    return frame
+
+
+def stage_submit_poll(uploads: dict[str, str]) -> dict[str, dict]:
+    """Submit shots in chain-aware waves.
+
+    Unchained shots are submitted in parallel. A shot with
+    ``chain_from_previous`` waits for its predecessor's clip, extracts the real
+    last frame, uploads it, and attaches it as the final identity anchor.
+    """
+    from sceneactor.skit_pipeline import build_shot_prompt, build_shot_references
+
+    selected_ids = {s.shot_id for s in selected}
+    results: dict[str, dict] = {}
     tasks: dict[str, str] = {}
-    for p in plan:
+    prev_frame_url: dict[str, str] = {}  # shot_id -> its own last-frame URL
+    order = [s for s in project.shots if s.shot_id in selected_ids]
+    plan_dump = []
+
+    def submit_one(shot) -> str:
+        prev_url = ""
+        if shot.chain_from_previous:
+            idx = [s.shot_id for s in project.shots].index(shot.shot_id)
+            if idx > 0:
+                prev_id = project.shots[idx - 1].shot_id
+                prev_url = prev_frame_url.get(prev_id, "")
+                if not prev_url:
+                    prev_clip = clips / f"{prev_id}_{args.tag}.mp4"
+                    if prev_clip.is_file():
+                        prev_url = client.upload_reference(_extract_last_frame(prev_clip))
+                        prev_frame_url[prev_id] = prev_url
+        refs = build_shot_references(project, shot, uploads, prev_last_frame=prev_url)
+        prompt = build_shot_prompt(project, shot)
+        plan_dump.append({"shot_id": shot.shot_id, "prompt": prompt,
+                          "references": [r.to_file_info() for r in refs]})
         payload = client.build_create_payload(
-            p["prompt"], model=p["model"], version=p["version"],
-            resolution=p["resolution"], duration=p["duration"],
-            aspect_ratio=p["aspect_ratio"], audio=True, references=p["references"])
-        tasks[p["shot_id"]] = client.create_task(payload)
-        log(stage="submit", shot=p["shot_id"], task=tasks[p["shot_id"]][-16:])
+            prompt, model=project.model, version=project.version,
+            resolution=project.resolution, duration=shot.duration,
+            aspect_ratio=project.aspect_ratio, audio=True, references=refs)
+        tid = client.create_task(payload)
+        log(stage="submit", shot=shot.shot_id, chained=bool(prev_url), task=tid[-16:])
+        return tid
+
+    # wave 1: everything not chained
+    for shot in order:
+        if not shot.chain_from_previous:
+            tasks[shot.shot_id] = submit_one(shot)
+    results.update(stage_poll(tasks))
+    # chained shots: submit sequentially as predecessors land
+    for shot in order:
+        if shot.chain_from_previous:
+            wave = {shot.shot_id: submit_one(shot)}
+            results.update(stage_poll(wave))
+            clip = clips / f"{shot.shot_id}_{args.tag}.mp4"
+            if clip.is_file():
+                prev_frame_url[shot.shot_id] = ""  # lazily extracted if needed
+    (workdir / "plan.json").write_text(json.dumps(plan_dump, ensure_ascii=False, indent=2))
     (workdir / f"tasks_{args.tag}.json").write_text(json.dumps(tasks, indent=2))
-    return tasks
+    return results
 
 
 def stage_poll(tasks: dict[str, str]) -> dict[str, dict]:
@@ -210,8 +260,7 @@ elif args.verify_only:
     stage_verify()
 else:
     uploads = stage_upload()
-    tasks = stage_submit(uploads)
-    results = stage_poll(tasks)
+    results = stage_submit_poll(uploads)
     ok = [sid for sid, r in results.items() if r.get("ok")]
     if ok:
         stage_verify()

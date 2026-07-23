@@ -143,6 +143,39 @@ class TestReferencePlan:
         with pytest.raises(SkitProjectError, match="no uploaded URL"):
             build_shot_references(p, p.shots[0], {})
 
+class TestLongVideoConsistencyLayer:
+    def test_time_beats_and_end_state_in_prompt(self) -> None:
+        raw = _raw()
+        raw["shots"][0]["time_beats"] = ["0-3秒：抬手", "3-8秒：放下"]
+        raw["shots"][0]["end_state"] = "手放回桌面，视线看向对面。"
+        p = SkitProject.from_mapping(raw)
+        prompt = build_shot_prompt(p, p.shots[0])
+        assert "TIMELINE: 0-3秒：抬手 3-8秒：放下" in prompt
+        assert "END STATE" in prompt and "手放回桌面" in prompt
+
+    def test_chain_adds_continuity_clause_and_ref(self) -> None:
+        raw = _raw()
+        raw["shots"][1]["chain_from_previous"] = True
+        p = SkitProject.from_mapping(raw)
+        prompt = build_shot_prompt(p, p.shots[1])
+        assert "CONTINUITY" in prompt and "previous shot" in prompt
+        refs = build_shot_references(p, p.shots[1], UPLOADS, prev_last_frame="https://x/last.jpg")
+        assert refs[-1].url == "https://x/last.jpg"
+        assert refs[-1].role == "identity_anchor"
+
+    def test_chain_without_frame_adds_no_ref(self) -> None:
+        raw = _raw()
+        raw["shots"][1]["chain_from_previous"] = True
+        p = SkitProject.from_mapping(raw)
+        refs = build_shot_references(p, p.shots[1], UPLOADS)
+        assert all(r.url != "https://x/last.jpg" for r in refs)
+
+    def test_plain_shot_has_no_new_sections(self) -> None:
+        p = SkitProject.from_mapping(_raw())
+        prompt = build_shot_prompt(p, p.shots[0])
+        assert "TIMELINE" not in prompt
+        assert "END STATE" not in prompt
+        assert "CONTINUITY" not in prompt
     def test_upload_keys_deduplicated(self) -> None:
         p = SkitProject.from_mapping(_raw())
         keys = upload_keys(p)

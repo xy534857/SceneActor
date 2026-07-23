@@ -59,6 +59,11 @@ class SkitShot:
     line: str
     in_frame: tuple[str, ...] = ()  # character codes visible; default: speaker only
     extra_constraints: str = ""
+    # -- long-video consistency layer (from public seedance skills: timestamp
+    #    storyboarding / end-state anchoring / chained continuation) --
+    time_beats: tuple[str, ...] = ()  # e.g. "0-3秒：…" lines for multi-phase shots
+    end_state: str = ""  # visual landing point; prevents random wandering
+    chain_from_previous: bool = False  # start from previous shot's real last frame
 
     def visible(self) -> tuple[str, ...]:
         return self.in_frame or (self.speaker,)
@@ -110,6 +115,9 @@ class SkitProject:
                 line=str(item["line"]),
                 in_frame=tuple(str(c) for c in item.get("in_frame", [])),
                 extra_constraints=str(item.get("extra_constraints", "")),
+                time_beats=tuple(str(b) for b in item.get("time_beats", [])),
+                end_state=str(item.get("end_state", "")),
+                chain_from_previous=bool(item.get("chain_from_previous", False)),
             )
             shots.append(shot)
         if not shots:
@@ -176,6 +184,22 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
         strict.append("NO subtitles, NO captions, NO text overlays on the frame")
     strict_txt = ("STRICT: " + "; ".join(strict) + ".\n") if strict else ""
     extra = (shot.extra_constraints + "\n") if shot.extra_constraints else ""
+    beats_txt = ""
+    if shot.time_beats:
+        beats_txt = "TIMELINE: " + " ".join(shot.time_beats) + "\n"
+    end_txt = ""
+    if shot.end_state:
+        end_txt = (
+            f"END STATE: by the last second the frame settles on: {shot.end_state} "
+            "Do not wander past this landing point.\n"
+        )
+    chain_txt = ""
+    if shot.chain_from_previous:
+        chain_txt = (
+            "CONTINUITY: the last attached reference image is the final frame of the "
+            "previous shot — this shot continues directly from that exact state: same "
+            "positions, same lighting, same props.\n"
+        )
     return (
         "IDENTITY: the attached portrait reference image(s) define each character's "
         "EXACT appearance — head shape, colors, outfit, markings, proportions. "
@@ -185,6 +209,7 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
         f"SPEAKING CHARACTER: {speaker.identity_desc}.{others_txt}\n"
         f"ACTION: {shot.action}. Mouth movements sync to the dialogue. "
         "Subtle idle motion otherwise; steady TV framing.\n"
+        f"{beats_txt}{end_txt}{chain_txt}"
         f"DIALOGUE ({lang}, spoken aloud in {speaker.voice_desc}, cloned from the "
         f"reference audio — match its timbre exactly): {quote.format(shot.line)}\n"
         f"{strict_txt}{extra}"
@@ -197,10 +222,15 @@ def build_shot_references(
     project: SkitProject,
     shot: SkitShot,
     uploads: Mapping[str, str],
+    *,
+    prev_last_frame: str = "",
 ) -> tuple[ReferenceMedia, ...]:
     """identity anchors for every visible character + scene style + speaker voice.
 
     ``uploads`` maps portrait/voice/scene keys (or paths) to public URLs.
+    ``prev_last_frame``: public URL of the previous shot's real final frame;
+    attached LAST when ``shot.chain_from_previous`` so the prompt's CONTINUITY
+    clause can reference "the last attached reference image".
     """
     refs: list[ReferenceMedia] = []
     for code in shot.visible():
@@ -209,6 +239,8 @@ def build_shot_references(
     refs.append(ReferenceMedia(url=_resolve(uploads, project.scene_ref), category="Image", role="scene_style"))
     speaker = project.characters[shot.speaker]
     refs.append(ReferenceMedia(url=_resolve(uploads, speaker.voice_ref), category="Audio", role="reference"))
+    if shot.chain_from_previous and prev_last_frame:
+        refs.append(ReferenceMedia(url=prev_last_frame, category="Image", role="identity_anchor"))
     return tuple(refs)
 
 

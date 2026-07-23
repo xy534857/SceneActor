@@ -63,9 +63,9 @@ def upload_refs():
         refs[f"char_{key}"] = client.upload_reference(HERE / f"char_sheet_{key}.png")
         refs[f"voice_{key}"] = client.upload_reference(HERE / f"_voice_{key}.wav")
     for page in (1, 2, 3):
-        refs[f"board_full{page}"] = client.upload_reference(HERE / f"storyboard_full_p{page}_openai.png")
+        refs[f"board_full{page}"] = client.upload_reference(HERE / f"storyboard_full_p{page}_v3.png")
     for page in (1, 2):
-        refs[f"board_abl{page}"] = client.upload_reference(HERE / f"storyboard_abl_p{page}_openai.png")
+        refs[f"board_abl{page}"] = client.upload_reference(HERE / f"storyboard_abl_p{page}_v3.png")
     return refs
 
 
@@ -88,6 +88,8 @@ def shot_prompt(shot):
         f"参考图2是场景多角度参考表：{SCENE_DESC[actor]}的四个视角。按分镜格的机位，"
         f"从中选对应角度的陈设作为背景，道具布局与表内一致。\n"
         f"参考图3是角色三视图：这就是本镜头唯一的角色。按分镜格的姿态把这个角色放进场景里。\n"
+        f"体型硬要求：角色的头身比以参考图3为唯一标准——分镜格只定构图和姿态，不定体型；"
+        f"无论景别推近拉远，角色始终保持参考图3的三头身Q版比例，坐姿时头顶相对桌面的高度固定。\n"
         f"{action}{VOICE[actor]}\n"
         f"参考音频只提供音色，不要复现参考音频里的内容。\n"
         f"角色用中文清楚流畅地说这句台词，只念一遍，念完就安静保持姿态到结束（对{other}说，口型对上）：\n"
@@ -139,7 +141,9 @@ def audit(shot, video):
         f"角色应念台词（一遍）：「{shot['speech']}」（预期声线：{VOICE_EXPECT[actor]}）\n"
         "逐字转写实际内容，审核：A整句重复 B怪声/他人声音 C含糊听不懂 D漏关键部分 E声线不符 F中断 "
         "G背景音乐/配乐/转场音效（画面真实动作声不算）H卡壳重启 "
-        "I画面异常：出现分镜板/网格/黑白铅笔画面/文字注释/三视图并排（画面必须是正常彩色卡通场景里的单个角色）。\n"
+        "I画面异常：出现分镜板/网格/黑白铅笔画面/文字注释/三视图并排（画面必须是正常彩色卡通场景里的单个角色）"
+        "J体型异常：角色应为大头小身三头身Q版——如果角色是写实成人比例（五头身以上）"
+        "或体型在视频中途明显变化，判fail。\n"
         '最后一行严格JSON：{"transcript":"...","issues":[...],"verdict":"pass|fail"}'
     )
     body = json.dumps({"model": "gemini-3.5-flash", "messages": [{"role": "user", "content": [
@@ -162,7 +166,7 @@ def audit(shot, video):
 
 def process_shot(args):
     variant, shot = args
-    dest_dir = HERE / f"shots_{variant}_v2"
+    dest_dir = HERE / f"shots_{variant}_v3"
     dest_dir.mkdir(exist_ok=True)
     dest = dest_dir / f"{shot['shot_id']}.mp4"
     if dest.exists() and dest.stat().st_size > 0:
@@ -182,10 +186,10 @@ def process_shot(args):
 
 def normalize_and_concat(variant):
     plan = PLANS[variant]
-    norm = HERE / f"shots_{variant}_v2norm"
+    norm = HERE / f"shots_{variant}_v3norm"
     norm.mkdir(exist_ok=True)
     for shot in plan:
-        src = HERE / f"shots_{variant}_v2" / f"{shot['shot_id']}.mp4"
+        src = HERE / f"shots_{variant}_v3" / f"{shot['shot_id']}.mp4"
         if not src.exists():
             continue
         dst = norm / f"{shot['shot_id']}.mp4"
@@ -197,12 +201,12 @@ def normalize_and_concat(variant):
             capture_output=True,
         )
     entries = "\n".join(
-        f"file 'shots_{variant}_v2norm/{shot['shot_id']}.mp4'"
+        f"file 'shots_{variant}_v3norm/{shot['shot_id']}.mp4'"
         for shot in plan if (norm / f"{shot['shot_id']}.mp4").exists()
     )
-    list_file = HERE / f"concat_{variant}_v2.txt"
+    list_file = HERE / f"concat_{variant}_v3.txt"
     list_file.write_text(entries, encoding="utf-8")
-    final = HERE / f"consult_{variant}_v2.mp4"
+    final = HERE / f"consult_{variant}_v3.mp4"
     subprocess.run(
         ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(list_file),
          "-c", "copy", str(final)],

@@ -6,7 +6,9 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from sceneactor.adapters.storyboard import (
+    FAST_CHARS_PER_SECOND,
     REVIEW_QUESTIONS,
+    _tail_key,
     estimate_duration,
     paginate_briefs,
     review_prompt,
@@ -72,3 +74,26 @@ def test_review_covers_consistency_axes():
     brief = paginate_briefs(shots, actor_labels=["a"])[0]
     prompt = review_prompt(brief)
     assert "S01" in prompt and "verdict" in prompt
+
+
+def test_review_checks_body_scale_drift():
+    checks = "".join(REVIEW_QUESTIONS)
+    assert "头身比" in checks
+
+
+def test_brief_prompt_pins_body_scale():
+    shots = [{"shot_id": "S01", "actor_label": "a", "speech": "x"}]
+    prompt = paginate_briefs(shots, actor_labels=["a"])[0].to_prompt()
+    assert "体型尺度硬要求" in prompt
+    assert "头身比" in prompt
+
+
+def test_tail_key_strips_punctuation():
+    assert _tail_key("我听人说的。") == "我听人说的"
+    assert _tail_key("好！") == "好"
+
+
+def test_fast_cps_floor_exceeds_default():
+    # physics guard must be meaningfully faster than the planning speed,
+    # otherwise it would override legitimate gemini answers
+    assert FAST_CHARS_PER_SECOND > 3.5
