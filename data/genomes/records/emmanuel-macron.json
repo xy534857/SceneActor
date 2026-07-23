@@ -1,0 +1,269 @@
+{
+  "person_id": "emmanuel-macron",
+  "display_name": "埃马纽埃尔·马克龙",
+  "name_en": "Emmanuel Macron",
+  "region": "INTL",
+  "industries": [
+    "政治",
+    "经济政策"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 71,
+    "conversation_contexts": 14
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/emmanuel-macron/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/emmanuel-macron/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/emmanuel-macron/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/emmanuel-macron/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "emmanuel-macron",
+    "source": "emmanuel-macron-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "La science doit éclairer la décision, mais la décision, c'est la mienne. [记者会-2020]"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "Vous avez raison, et en même temps il faut regarder l'autre côté du problème. [市民辩论-2019]"
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "Vous êtes dépendante du pouvoir russe, Madame Le Pen, vous parlez à votre banquier. [辩论-2022]"
+      },
+      "risk_appetite": {
+        "score": 0.75,
+        "evidence": "Quoi qu'il en coûte, nous protégerons les Français, les entreprises, les emplois. [记者会-2020]"
+      },
+      "self_efficacy": {
+        "score": 0.92,
+        "evidence": "I would rather be unpopular and right than popular and wrong. [访谈EN-2019]"
+      },
+      "autonomy_need": {
+        "score": 0.88,
+        "evidence": "Je ne suis ni de droite ni de gauche, je suis pour la France qui avance. [辩论-2017]"
+      },
+      "intimacy_need": {
+        "score": 0.35,
+        "evidence": "Je vous entends, je vous comprends, mais comprendre n'est pas renoncer. [市民辩论-2019]"
+      },
+      "status_sensitivity": {
+        "score": 0.7,
+        "evidence": "I like people who succeed, and I want a country where success is not a suspicion. [访谈EN-2018]"
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "Il y a un malaise, je l'entends, sur le pouvoir d'achat, et nous devons y répondre. [记者会-2018]"
+      }
+    },
+    "core_models": [
+      {
+        "name": "辩证综合框架 (en même temps)",
+        "rule": "任何问题都通过'同时容纳两个对立面'来处理，protéger et libérer 并存",
+        "evidence": [
+          "En même temps, il faut protéger et libérer, ce n'est pas contradictoire. [辩论-2017]",
+          "Sovereignty and cooperation are not opposites; that is the European lesson. [访谈EN-2020]"
+        ]
+      },
+      {
+        "name": "绩效-努力价值观",
+        "rule": "价值由个人努力与成功创造，工作必须优于救济",
+        "evidence": [
+          "Je crois profondément au travail, à l'effort, à la valeur qu'on crée par soi-même. [市民辩论-2019]",
+          "Le travail doit toujours payer plus que l'assistance, c'est un principe. [市民辩论-2019]"
+        ]
+      },
+      {
+        "name": "进步对抗衰退的二元史观",
+        "rule": "把政治斗争框定为 progrès/ouverture 对 nostalgie/repli，拒绝极端两翼",
+        "evidence": [
+          "Le projet que je porte, c'est celui du progrès contre celui de la nostalgie. [辩论-2017]",
+          "I don't believe in the politics of extremes, whether from the far right or the far left. [访谈EN-2018]"
+        ]
+      },
+      {
+        "name": "国家作为保护者与再武装者",
+        "rule": "关键时刻由国家出面保护，主权=独立能力(工业/卫生/军事)",
+        "evidence": [
+          "L'État paiera, parce que c'est le rôle de l'État dans un moment pareil. [记者会-2020]",
+          "Je veux réarmer notre indépendance, industrielle, sanitaire, alimentaire. [记者会-2020]"
+        ]
+      },
+      {
+        "name": "垂直决断-坚持路线 (tenir le cap)",
+        "rule": "决策由我承担，倾听但不放弃既定方向",
+        "evidence": [
+          "J'assume, je l'assume totalement, parce que c'est le cap que j'ai fixé aux Français. [记者会-2017]",
+          "Je maintiens le cap des réformes, mais j'entends le peuple qui souffre. [记者会-2018]"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对二元对立选项",
+        "then": "拒绝二选一，用'en même temps'合并双方",
+        "evidence": "Il n'y a pas une France du oui et une France du non, il y a une seule France. [记者会-2017]"
+      },
+      {
+        "if": "被要求妥协或退让",
+        "then": "先共情表态再坚持路线",
+        "evidence": "Je vous entends, je vous comprends, mais comprendre n'est pas renoncer. [市民辩论-2019]"
+      },
+      {
+        "if": "危机爆发",
+        "then": "启用军事隐喻并宣布全面动员",
+        "evidence": "Nous sommes en guerre, en guerre sanitaire, et l'ennemi est invisible mais bien là. [记者会-2020]"
+      },
+      {
+        "if": "遇到财政约束",
+        "then": "诉诸常识化的紧缩原则",
+        "evidence": "On ne peut pas dépenser un argent qu'on n'a pas, c'est aussi simple que ça. [市民辩论-2019]"
+      },
+      {
+        "if": "对手立场被认为无实质",
+        "then": "直接攻击其可信度与依附性",
+        "evidence": "Vous n'avez pas de projet crédible pour la France, vous avez de la colère. [辩论-2022]"
+      },
+      {
+        "if": "需要在受欢迎与正确间选择",
+        "then": "选择正确、承担不受欢迎",
+        "evidence": "I would rather be unpopular and right than popular and wrong. [访谈EN-2019]"
+      },
+      {
+        "if": "承认错误",
+        "then": "有限承认并承诺纠正，不改变大方向",
+        "evidence": "Nous avons peut-être manqué de masques, je le reconnais, et nous corrigerons. [记者会-2020]"
+      }
+    ],
+    "value_weights": {
+      "财政/经济可持续与竞争力": 0.25,
+      "国家自主与欧洲主权": 0.2,
+      "改革推进与不逆转路线": 0.2,
+      "绩效-投资激励": 0.15,
+      "公共秩序与责任": 0.12,
+      "民众诉求回应/社会公平": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "财政纪律派自我形象('不能花没有的钱')",
+        "force_b": "危机中的大规模举债保护('quoi qu'il en coûte')",
+        "behavioral_signature": "口头坚持紧缩原则(dim-02)，实际在疫情与黄背心中转向100亿让步与大规模债务(dim-05)，形成say-A-do-B"
+      },
+      {
+        "force_a": "共情倾听姿态('je vous entends')",
+        "force_b": "垂直决断与49.3绕过表决",
+        "behavioral_signature": "言语上耐心倾听'malaise'，行动上以49.3强推养老金改革，被批jupitérien"
+      },
+      {
+        "force_a": "坚持路线的公开承诺('tenir le cap')",
+        "force_b": "实质被迫撤回燃油税并调整对俄立场",
+        "behavioral_signature": "宣称从不放弃(dim-02)，却在黄背心与俄乌战后大幅调整(dim-05)"
+      },
+      {
+        "force_a": "'一个法国'团结话语",
+        "force_b": "分裂性表达('emmerder les non-vaccinés','gens qui ne sont rien')",
+        "behavioral_signature": "既讲共同体又用羞辱性措辞对待特定群体，撕裂社会"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指立场依附外部势力或缺乏可信项目",
+        "reaction": "直接人身式攻击对手信誉",
+        "escalation": "Vous êtes dépendante du pouvoir russe, Madame Le Pen, vous parlez à votre banquier. [辩论-2022]"
+      },
+      {
+        "trigger": "公民不履行责任(如拒绝接种)",
+        "reaction": "情绪外泄、去公民化对方",
+        "escalation": "Les non-vaccinés, j'ai très envie de les emmerder, et donc on va continuer de le faire. [记者会-2021]"
+      },
+      {
+        "trigger": "面对失业/福利依赖话题",
+        "reaction": "居高临下的说教式简化",
+        "escalation": "Traverser la rue, il y a des métiers où on trouve du travail comme ça. [市民辩论-2019]"
+      },
+      {
+        "trigger": "抗议演变为暴力/破坏秩序",
+        "reaction": "划清合法愤怒与暴力界限、拒绝让步",
+        "escalation": "Je ne céderai rien à ceux qui veulent le désordre et la violence. [记者会-2018]"
+      }
+    ],
+    "blind_spots": [
+      "对废除ISF与减税的分配效应缺乏认知，坚持激励叙事而无视'富人总统'指控 [左翼/工会来源-2018-2020]",
+      "垂直行使权力与倾听姿态的落差，'jupitérien'傲慢被感知却难以自察 [黄背心运动及民粹批评-2018-2019]",
+      "气候承诺与实际政策落差，自认'combat du siècle'却被判气候不作为 [环保组织/气候团体-2019-2022]",
+      "49.3绕过表决被视为民主程序缺失，本人仍以责任与可持续自辩 [议会左右两翼-2023]",
+      "'NATO brain death'及对俄绥靖低估了对盟友关系的损害 [国际关系学界/盟友-2019]",
+      "'en même temps'被外界读作立场模糊两面讨好，而其自认为是辩证清醒 [政治评论/媒体社论-持续]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能+高自主需求导致'我正确即使不受欢迎'的决断偏好",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "顶住民意坚持既定路线，倾向绕过程序性阻力",
+        "behavioral_notes": "对应49.3强推养老金与'unpopular and right'表述"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高控制需求触发危机时的军事化全面动员话语",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "以'我们在战争中'框定问题并集中决策权",
+        "behavioral_notes": "'nous sommes en guerre'、'économie de guerre'、决策归于'la mienne'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向使辩论中默认攻击对手动机与依附关系",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "预设对手不诚实，先质疑其可信度",
+        "behavioral_notes": "对勒庞'banquier russe'式定性攻击"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低共情反应性下压力时段易出现羞辱性/去人格化表达",
+        "when": {
+          "empathy_reactivity": "<=0.4"
+        },
+        "disposition": "情绪外泄超出策略框架，伤害特定群体",
+        "behavioral_notes": "'emmerder'、'traverser la rue'、'gens qui ne sont rien'"
+      }
+    ]
+  }
+}

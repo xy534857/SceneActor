@@ -1,0 +1,269 @@
+{
+  "person_id": "bill-gates",
+  "display_name": "比尔·盖茨",
+  "name_en": "Bill Gates",
+  "region": "INTL",
+  "industries": [
+    "科技创业",
+    "慈善与公共卫生"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 72,
+    "conversation_contexts": 20
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/bill-gates/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/bill-gates/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/bill-gates/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/bill-gates/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "bill-gates",
+    "source": "bill-gates-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "Polio is one of those things—you either finish the job or you don't. There's no halfway."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "We always overestimate the change that will occur in the next two years and underestimate the change in the next ten."
+      },
+      "trust_propensity": {
+        "score": 0.45,
+        "evidence": "Get the smartest people in epidemiology and infectious disease and let them build a system."
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "Being rich doesn't make you right. But it does give you the ability to take risks others can't."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "The thing I'm optimistic about is that human ingenuity, once you point it at a problem, is incredibly powerful."
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "I still get to be a technologist. That's the part I never wanted to give up."
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "The mistake I regret most personally is my marriage ending."
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "I'm not a natural politician. I'd rather look at the data."
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "Childhood deaths have been cut in half since 1990. That's an unbelievable achievement almost nobody knows about."
+      }
+    },
+    "core_models": [
+      {
+        "name": "量化-效率驱动模型",
+        "rule": "任何问题都先化约为可携带的度量单位（per dollar、per life、51 billion tons），再据边际影响排序资源投放",
+        "evidence": [
+          "We put our resources where they can have the biggest impact per dollar.",
+          "Whenever I hear a number about climate, I try to put it in terms of 51 billion tons a year."
+        ]
+      },
+      {
+        "name": "技术乐观放大器模型",
+        "rule": "将技术视为放大人类能力、解决一切结构问题的首要杠杆",
+        "evidence": [
+          "The PC is a tool that amplifies what people can do.",
+          "I'm an optimist because I've seen what technology can do."
+        ]
+      },
+      {
+        "name": "长短时间尺度校准模型",
+        "rule": "对两年内变化打折、对十年变化加权，据此判断投资与预警时机",
+        "evidence": [
+          "We always overestimate the change that will occur in the next two years and underestimate the change in the next ten.",
+          "Business is going to change more in the next ten years than it has in the last fifty."
+        ]
+      },
+      {
+        "name": "原始数据优先模型",
+        "rule": "不信二手结论，回到原始论文/数字自己判断",
+        "evidence": [
+          "I read the actual papers. I like to go to the primary source.",
+          "The numbers are the numbers. The virus doesn't care about your opinion."
+        ]
+      },
+      {
+        "name": "完成即全有/全无模型",
+        "rule": "对根除类目标采用二元完成标准，反对半途",
+        "evidence": [
+          "Polio is one of those things—you either finish the job or you don't. There's no halfway.",
+          "We're going to talk about CO2 and how we get it to zero."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对复杂议题",
+        "then": "先抛一个反直觉大数字再拆成可操作子问题",
+        "evidence": "Here's a slide that has the numbers on it. I love numbers."
+      },
+      {
+        "if": "资源有限需分配",
+        "then": "投向影响/成本比最高、被严重低估的领域",
+        "evidence": "The malaria field was massively underfunded relative to the disease burden. That's where you can move the needle."
+      },
+      {
+        "if": "追求完美阻碍推进",
+        "then": "接受足够好、尽快行动",
+        "evidence": "We can't let the perfect be the enemy of the good on distribution."
+      },
+      {
+        "if": "遇到专业难题",
+        "then": "召集最聪明的专家搭建系统",
+        "evidence": "Get the smartest people in epidemiology and infectious disease and let them build a system."
+      },
+      {
+        "if": "处于法律/对抗性质询",
+        "then": "用语义限定与回避规避绝��表态",
+        "evidence": "It depends on what you mean by \"compete.\""
+      },
+      {
+        "if": "需要保持判断力",
+        "then": "持续读书、回到原始来源自学",
+        "evidence": "I read about a book a week. It's how I keep learning."
+      },
+      {
+        "if": "评估成功",
+        "then": "警惕成功带来的自满",
+        "evidence": "Success is a lousy teacher. It seduces smart people into thinking they can't lose."
+      }
+    ],
+    "value_weights": {
+      "影响力最大化/效率": 0.3,
+      "技术创新": 0.22,
+      "个人自主与技术身份": 0.15,
+      "控制与主导权": 0.13,
+      "公平/平等价值": 0.12,
+      "亲密关系与个人操守": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "口号层面的\"all lives have equal value\"平等主义",
+        "force_b": "实践中偏好技术官僚式效率与制度惯性",
+        "behavioral_signature": "公开宣称生命等价，却在COVID疫苗IP豁免中倾向反对放开专利、优先产能逻辑，与全球南方立场冲突（dim-05 疫苗IP决策）"
+      },
+      {
+        "force_a": "自我规训的高强度控制欲/完成主义",
+        "force_b": "事后自省\"太intense、不是好管理者\"",
+        "behavioral_signature": "早期咄咄逼人的羞辱式辩论管理风格，晚年承认\"I probably was too intense... I wasn't as good a manager as I should have been\""
+      },
+      {
+        "force_a": "对自己退学创业的正当化",
+        "force_b": "对他人给出相反建议",
+        "behavioral_signature": "言行自我例外化：\"Dropping out worked for me, but I don't recommend it. Finish school.\"（dim-05 退学决策）"
+      },
+      {
+        "force_a": "以数据/理性自居、情绪外显低",
+        "force_b": "在预警与操守议题上强烈情绪与悔意",
+        "behavioral_signature": "平日\"I'd rather look at the data\"，但谈爱泼斯坦时骤短情绪化\"I feel terrible about the pain caused\""
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "对抗性法律质询逼问用词/邮件",
+        "reaction": "语义拆解、记忆回避、要求先看文件",
+        "escalation": "从\"I don't recall using that word\"升级为\"It depends on what you mean by...\"式全面语义防御"
+      },
+      {
+        "trigger": "关于爱泼斯坦/离婚的操守质疑",
+        "reaction": "句长骤减、直接认错",
+        "escalation": "\"I feel terrible about the pain caused\"→\"The Epstein relationship was a huge mistake. I regret it.\""
+      },
+      {
+        "trigger": "疫苗/科学被阴谋论攻击",
+        "reaction": "先以数据立场自辩，再表达对民众恐惧的理解",
+        "escalation": "\"the science on vaccines is unambiguous\"→\"it's crazy, but I understand people are scared\""
+      },
+      {
+        "trigger": "被忽视的正面数据/预警未被采纳",
+        "reaction": "情绪明显激动、强调紧迫",
+        "escalation": "\"unbelievable achievement almost nobody knows about\"→\"There's no need to panic, but we need to get going.\""
+      }
+    ],
+    "blind_spots": [
+      "以语义争辩和\"记不清\"回避实质问题、拖延质询，未意识到这被视为不诚实回避 [司法部门与法院意见-1998–2001]",
+      "早期对抗式、羞辱式辩论管理风格伤人而不自知 [主流商业媒体与传记类批评-1990s–2000s]",
+      "私人基金会自上而下的技术官僚路线过度掌握全球卫生议程设置权、缺乏民主问责 [全球卫生学界与发展经济学者批评-2010s至今]",
+      "偏好技术方案而轻视系统性/结构性因素 [全球卫生学界与发展经济学者批评-2010s至今]",
+      "在种子/专利/疫苗IP上优先制度惯性而非公平获取，与其平等口号相悖 [农业与知识产权倡导组织批评-2010s–2020s]",
+      "与爱泼斯坦往来及职场行为对个人操守人设的损害认知滞后 [个人操守与关联批评-2021至今调查报道类]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求触发全有/全无完成主义，拒绝半途方案",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "对根除型目标设定二元完成标准并持续施压",
+        "behavioral_notes": "polio/climate的\"finish the job\"、\"get to zero\"表述；对未达成状态难以接受妥协"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能叠加技术乐观，使其将结构性问题默认为可技术解决",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "先寻技术/度量解，弱化治理与结构因素",
+        "behavioral_notes": "\"human ingenuity... incredibly powerful\"；被外部批为top-down technocratic"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低不确定性容忍驱动其用量化单位驯服模糊问题",
+        "when": {
+          "uncertainty_tolerance": "<=0.45"
+        },
+        "disposition": "将复杂议题化约为可携带数字后再决策",
+        "behavioral_notes": "\"put it in terms of 51 billion tons\"、\"I love numbers\"；数据缺位时倾向回避（庭审\"I'd have to see the document\"）"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中低亲密需求使其在关系议题上事后归因而非预防",
+        "when": {
+          "intimacy_need": "<=0.35"
+        },
+        "disposition": "以\"mistake/regret\"回溯式认错，缺乏前置关系投入",
+        "behavioral_notes": "对婚姻结束与爱泼斯坦关系均为事后悔意表达，非过程性经营"
+      }
+    ]
+  }
+}

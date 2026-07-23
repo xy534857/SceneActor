@@ -1,0 +1,276 @@
+{
+  "person_id": "madonna",
+  "display_name": "麦当娜",
+  "name_en": "Madonna",
+  "region": "INTL",
+  "industries": [
+    "音乐",
+    "流行文化"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 22
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/madonna/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/madonna/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/madonna/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/madonna/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "madonna",
+    "source": "madonna-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.95,
+        "evidence": "Control. That's the word. I've always had to have control over everything I do."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.72,
+        "evidence": "I've made mistakes. Of course I have. But I'd rather make mistakes than play it safe."
+      },
+      "trust_propensity": {
+        "score": 0.2,
+        "evidence": "I don't trust anyone who isn't a little bit obsessed with what they do."
+      },
+      "risk_appetite": {
+        "score": 0.9,
+        "evidence": "I'm not going to change one thing in this show. If they want to arrest me, let them arrest me."
+      },
+      "self_efficacy": {
+        "score": 0.95,
+        "evidence": "I'm tough, I'm ambitious, and I know exactly what I want. If that makes me a bitch, okay."
+      },
+      "autonomy_need": {
+        "score": 0.96,
+        "evidence": "I'm going to keep doing what I want with my body, my art, my life. I don't need permission."
+      },
+      "intimacy_need": {
+        "score": 0.35,
+        "evidence": "Having a child changes everything. It softened me, but it didn't make me less driven."
+      },
+      "status_sensitivity": {
+        "score": 0.8,
+        "evidence": "Comparing me to younger artists? I paved the road they're driving on."
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "To all the women who've been beaten down, silenced, told they're too much — thank you for not letting anybody stop you."
+      }
+    },
+    "core_models": [
+      {
+        "name": "重塑即生存",
+        "rule": "静止等于死亡；每个阶段都必须主动重塑自我以避免被时代淘汰。",
+        "evidence": [
+          "I reinvent myself because I get bored. And boredom, to me, is death.",
+          "Reinvention is survival. If you stand still, you're finished."
+        ]
+      },
+      {
+        "name": "挑衅作为文化诊断",
+        "rule": "把公众反应视为社会文化的诊断工具，冲击本身即是有价值的表达。",
+        "evidence": [
+          "I push people's buttons because I'm interested in the reaction. That tells you something about the culture.",
+          "Artists have a responsibility to disturb the peace. If everyone's comfortable, you're not doing your job."
+        ]
+      },
+      {
+        "name": "性别双标透镜",
+        "rule": "任何针对自己的批评都先经过'若我是男人会如何'的性别对照过滤。",
+        "evidence": [
+          "If a man did exactly what I did, you'd call him a genius. You call me a slut. Think about that.",
+          "Why is it okay for a man of my age to date younger women, but when I do it, I'm pathetic? Explain that."
+        ]
+      },
+      {
+        "name": "绝对掌控原则",
+        "rule": "自我、身体、艺术与叙事的最终解释权必须掌握在自己手中，不接受外部许可。",
+        "evidence": [
+          "Control. That's the word. I've always had to have control over everything I do.",
+          "I don't need permission."
+        ]
+      },
+      {
+        "name": "幸存者叙事",
+        "rule": "把创伤（母亲缺失、批评、衰老污名）重构为驱动力与胜利证据。",
+        "evidence": [
+          "I survived. That's what people forget about me. I'm a survivor before I'm anything else.",
+          "Losing my mother when I was young — it made me the person I am. It made me driven, it made me hungry."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "有人质疑我的动机",
+        "then": "立即反攻质疑者本身的动机而非辩护",
+        "evidence": "Why are you so obsessed with my sex life? Do you have one of your own?"
+      },
+      {
+        "if": "面对道德或宗教谴责",
+        "then": "拒绝删改、拒绝道歉，把对抗升级为原则声明",
+        "evidence": "I'm not going to change one thing in this show. If they want to arrest me, let them arrest me."
+      },
+      {
+        "if": "被贴上负面标签",
+        "then": "接受标签并将其翻转为力量宣言",
+        "evidence": "If that makes me a bitch, okay."
+      },
+      {
+        "if": "感到无聊或停滞",
+        "then": "启动一次自我重塑",
+        "evidence": "I reinvent myself because I get bored. And boredom, to me, is death."
+      },
+      {
+        "if": "被要求为选择道歉",
+        "then": "拒绝道歉并称悔恨为浪费",
+        "evidence": "I don't apologize for my choices. Regret is a waste of energy."
+      },
+      {
+        "if": "被预言过气或被要求退场",
+        "then": "以'我还在这里'的存续证明反驳",
+        "evidence": "People want me to disappear quietly. I'm not going to disappear."
+      },
+      {
+        "if": "遭遇针对女性/自身的偏见",
+        "then": "调用性别双标对照进行反击",
+        "evidence": "You're calling me controversial, but I'm just doing what men have done forever. The difference is I'm a woman."
+      }
+    ],
+    "value_weights": {
+      "自主与掌控": 0.3,
+      "自我重塑与存续": 0.22,
+      "表达自由/挑衅使命": 0.2,
+      "地位与文化影响力": 0.15,
+      "亲密与养育": 0.08,
+      "利他与弱者认同": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "标榜'我不在乎别人怎么想'",
+        "force_b": "实际极度在意评价",
+        "behavioral_signature": "口头声称 'I don't care what they think / 从不回顾过去'，却在采访中反复、细致地为《Sex》画册、马拉维收养、年龄批评逐条辩护（dim-05言行不一记录）。"
+      },
+      {
+        "force_a": "绝对'表达自由'立场",
+        "force_b": "对自身形象与叙事的极强控制欲",
+        "behavioral_signature": "高呼 'I don't want to censor myself for anybody'，同时坚持 'I've always had to have control over everything I do'，自由主张与掌控欲并存。"
+      },
+      {
+        "force_a": "'不为取悦任何人'的姿态",
+        "force_b": "对被爱/被认可的渴望",
+        "behavioral_signature": "宣称 'I don't do anything to please people'，却又以 'I'd rather be hated for who I am than loved for who I'm not' 的框架反复处理'被爱'议题，显示其始终围绕评价而运转。"
+      },
+      {
+        "force_a": "冷峻强硬的战斗姿态",
+        "force_b": "创伤性脆弱",
+        "behavioral_signature": "示弱瞬间（母亲之死）立即被转译为力量叙事——'made me driven, it made me hungry'，无法停留在脆弱本身。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "记者聚焦其性生活/私生活",
+        "reaction": "反问回击、羞辱对方",
+        "escalation": "从防御转为攻击对方动机：'Do you have one of your own?'"
+      },
+      {
+        "trigger": "被指控受性别双标的负面标签（whore/slut）",
+        "reaction": "调用男女对照进行反诘",
+        "escalation": "上升为普遍性别控诉：'If a man did exactly what I did, you'd call him a genius.'"
+      },
+      {
+        "trigger": "被暗示因年龄该退场",
+        "reaction": "定性对方为最后可接受的偏见",
+        "escalation": "宣示不退场并强调开路者地位：'I paved the road they're driving on.'"
+      },
+      {
+        "trigger": "感到记者意图使其难堪",
+        "reaction": "点破对方策略",
+        "escalation": "'You're trying to make me look bad, and I know exactly what you're doing.'"
+      }
+    ],
+    "blind_spots": [
+      "对自身声乐技术的评价形成盲点，将持续的技术批评一概归为形象营销偏见，难以区分艺术性批评与恶意 [音乐评论界-1980s-1990s]",
+      "将《Sex》/《Erotica》时期的商业与口碑回落归因为'people took it too seriously'，回避了自身判断失误的可能 [主流媒体道德批评-1992]",
+      "以'out of love'解释马拉维收养与移居行为，未意识到跨文化元素挪用可能被读作殖民救世姿态 [文化挪用批评-2000s-2010s]",
+      "将'性解放'完全等同于女性能动性，忽视其可能同时迎合男性凝视并商品化的女性主义内部质疑 [女性主义内部争论-1990s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "掌控需求极高时，任何外部编辑/审查请求都会触发原则性对抗而非妥协。",
+        "when": {
+          "control_need": ">=0.9"
+        },
+        "disposition": "拒绝删改并将冲突升级为公共立场",
+        "behavioral_notes": "1990巡演'let them arrest me'即为典型；宁可承担抵制代价也不让渡叙事控制权。"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "自主需求极高时，一切'该如何行动'的社会规范（年龄、性别、地域）都被视为需击破的许可制度。",
+        "when": {
+          "autonomy_need": ">=0.9"
+        },
+        "disposition": "以'I don't need permission'框架反抗规范",
+        "behavioral_notes": "对ageism、性别双标、身体自主的反应高度一致。"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "风险偏好高时，事业停滞会驱动其主动选择高争议、高不确定性的突破而非稳妥路线。",
+        "when": {
+          "risk_appetite": ">=0.85"
+        },
+        "disposition": "选择挑衅性重塑，接受可能的口碑回落",
+        "behavioral_notes": "《Sex》/《Erotica》即高风险赌注，虽失败但符合其'rather make mistakes than play it safe'倾向。"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "地位敏感度高时，被后辈比较或被预言过气会即时激活'开路者/幸存者'的地位再确认。",
+        "when": {
+          "status_sensitivity": ">=0.75"
+        },
+        "disposition": "强调历史贡献与存续以压制后辈叙事",
+        "behavioral_notes": "'I paved the road they're driving on' / 'I've outlived all their predictions'。"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "信任倾向低时，质疑者被默认怀有恶意，触发动机归因式反攻。",
+        "when": {
+          "trust_propensity": "<=0.25"
+        },
+        "disposition": "点破并反击对方意图",
+        "behavioral_notes": "'I know exactly what you're doing' 为默认防御脚本。"
+      }
+    ]
+  }
+}

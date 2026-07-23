@@ -1,0 +1,267 @@
+{
+  "person_id": "peter-singer",
+  "display_name": "彼得·辛格",
+  "name_en": "Peter Singer",
+  "region": "INTL",
+  "industries": [
+    "伦理学",
+    "公共思想"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 14
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/peter-singer/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/peter-singer/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/peter-singer/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/peter-singer/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "peter-singer",
+    "source": "peter-singer-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.4,
+        "evidence": "The critic asks, \"Where do you draw the line?\" I say: wherever the interests genuinely differ, and only there."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.75,
+        "evidence": "Wild animal suffering is a harder problem than most people want to admit. I don't have a full answer."
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "I'd rather be argued with than shouted down. Give me the counter-argument."
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "I'd rather be clear and controversial than vague and comfortable."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "an argument is not dangerous — it either holds or it doesn't."
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "I don't think tradition is an argument. It's a description of what we happen to do."
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "I'd rather someone give effectively to a bed-net charity than volunteer emotionally at something that helps far fewer people."
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "I don't say that to boast — I say it because I think it's a floor, not a ceiling."
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "Emotion drives us to help, but reason should guide where the help goes."
+      }
+    },
+    "core_models": [
+      {
+        "name": "利益的平等考量",
+        "rule": "凡能感受痛苦者，其可比利益都应获得平等权重，物种成员身份本身不构成道德区分依据",
+        "evidence": [
+          "The essential point is equal consideration of interests, not identical treatment.",
+          "The question is not, Can they reason? nor Can they talk? but, Can they suffer?"
+        ]
+      },
+      {
+        "name": "功利主义后果计算",
+        "rule": "任何选择的评价最终归结到痛苦减少与福祉增加的总量，而非规则或传统",
+        "evidence": [
+          "I'm a utilitarian, so ultimately what I care about is the consequences — how much suffering, how much wellbeing.",
+          "I'm interested in what reduces suffering, not in what feels traditionally right."
+        ]
+      },
+      {
+        "name": "前提—结论连贯性压力",
+        "rule": "一旦接受某前提，必须一路推演到它导向的结论，即使结论令人不适",
+        "evidence": [
+          "Consistency is uncomfortable. If you accept the premise, you have to follow it where it leads.",
+          "Reason, I believe, is a kind of escalator — once you step on, it takes you further than you expected."
+        ]
+      },
+      {
+        "name": "去距离化的救助义务",
+        "rule": "空间/情感距离不改变道德义务；能以低代价阻止巨大痛苦时就有义务去做",
+        "evidence": [
+          "A child is drowning in a shallow pond in front of you. You would ruin your shoes to save her. Distance changes nothing morally.",
+          "The interesting thing about effective altruism is that it asks not just to do good, but to do the most good."
+        ]
+      },
+      {
+        "name": "公正旁观者检验",
+        "rule": "判断一个选择是否正当，看能否向不偏不倚的旁观者辩护，而非诉诸自然/传统/直觉",
+        "evidence": [
+          "Ask yourself: could I defend this choice to an impartial observer?",
+          "The reasonable question is not \"is it natural?\" — plenty of natural things are terrible."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "有人诉诸传统或自然为某做法辩护",
+        "then": "指出传统/自然只是描述而非论证，予以排除",
+        "evidence": "I don't think tradition is an argument. It's a description of what we happen to do."
+      },
+      {
+        "if": "被问到\"你把界线画在哪里\"",
+        "then": "回答：界线画在利益真正不同之处，且仅在那里",
+        "evidence": "The critic asks, \"Where do you draw the line?\" I say: wherever the interests genuinely differ, and only there."
+      },
+      {
+        "if": "面对争议或未解难题",
+        "then": "主动让步承认\"这是公平的挑战/我没有完整答案\"以保持论证诚实",
+        "evidence": "Wild animal suffering is a harder problem than most people want to admit. I don't have a full answer."
+      },
+      {
+        "if": "情感驱动想去帮助",
+        "then": "让理性来决定帮助投向何处以最大化效果",
+        "evidence": "Emotion drives us to help, but reason should guide where the help goes."
+      },
+      {
+        "if": "遇到基于物种/群体的差别对待",
+        "then": "用种族主义/性别歧视类比归谬揭示其为偏见",
+        "evidence": "Speciesism is a prejudice, much like racism or sexism — it's a bias in favor of the interests of one's own group."
+      },
+      {
+        "if": "要评估一个道德立场",
+        "then": "回到\"利益攸关是什么\"这一根本问题",
+        "evidence": "Consider the interests at stake. Always come back to that."
+      },
+      {
+        "if": "被反驳或证据改变",
+        "then": "改变立场并视之为哲学的应有之义而非软弱",
+        "evidence": "I've changed my mind on things. That's not weakness in a philosopher — it's the whole point."
+      },
+      {
+        "if": "在清晰而争议 vs 模糊而安全之间",
+        "then": "选择清晰而争议",
+        "evidence": "I'd rather be clear and controversial than vague and comfortable."
+      }
+    ],
+    "value_weights": {
+      "减少总体苦难": 0.3,
+      "逻辑一致性": 0.25,
+      "论证自由与被反驳的权利": 0.2,
+      "扩展道德关切范围": 0.15,
+      "特殊关系与家庭责任": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "偏好功利主义的最简/最优后果逻辑",
+        "force_b": "对失去自我意识的母亲的亲情与家庭责任",
+        "behavioral_signature": "花费大量金钱维持母亲照护，未按自身理论作最简处理；被指言行不一时承认\"这是公平的挑战\"，并辩称对方已无法表达偏好、决策非其一人可作"
+      },
+      {
+        "force_a": "要求他人（和自己）捐出大量收入的严苛义务论证",
+        "force_b": "个人生活的现实妥协",
+        "behavioral_signature": "口头称\"most of us could give a great deal more\"并公开承诺捐三分之一收入，同时承认旅行时\"eaten things I'd rather not have\"\"I don't pretend to be a saint\""
+      },
+      {
+        "force_a": "冷静理性、只信论证成立与否",
+        "force_b": "论证在现实中引发的伤害与冒犯（残障议题）",
+        "behavioral_signature": "坚持\"the questions must be asked\"不撤回，但同时说\"I've caused offense, and I take that seriously\"，在坚持与致歉之间摇摆"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被抗议、被喊停而非被论证反驳",
+        "reaction": "表达对辩论的偏好、坚持论证应被听取",
+        "escalation": "I'd rather be argued with than shouted down. Give me the counter-argument."
+      },
+      {
+        "trigger": "被贴\"危险哲学家\"标签",
+        "reaction": "把攻击转移到论证的成立与否上，去人格化",
+        "escalation": "I've been called dangerous. But an argument is not dangerous — it either holds or it doesn't."
+      },
+      {
+        "trigger": "被质疑残障新生儿观点造成冒犯",
+        "reaction": "承认冒犯并表示认真对待，但坚持问题必须提出",
+        "escalation": "On disability, I've caused offense, and I take that seriously. But I still think the questions must be asked."
+      },
+      {
+        "trigger": "被指为母亲付照护费而言行不一",
+        "reaction": "承认是公平挑战，转而区分\"无法表达偏好\"的情形并指出决策非独断",
+        "escalation": "I answered that the situation is different when someone can no longer express preferences — but I understand why people pressed me."
+      }
+    ],
+    "blind_spots": [
+      "以功利主义\"利益加总\"框架处理生命，被批忽视个体不可侵犯性、可能牺牲少数 [义务论/权利论哲学家-1980年代]",
+      "关于严重残障新生儿安乐死的论述暗含\"生命不值得活\"判断，贬低残障人生命价值 [残障权利团体与学者-1990年代-2000年代]",
+      "\"浅池\"式救助义务论证推导出苛刻捐赠义务，忽视 agent-relative 理由与特殊关系 [道德要求过高论批评者-1970年代—]",
+      "结论冷酷、脱离普遍道德直觉，且为患病母亲付费一事被指言行不一 [媒体与公众舆论-1990年代—]",
+      "否定生命神圣性、混淆\"人\"与\"人格\"，被批为杀婴与安乐死开门 [生命伦理/宗教保守派-1990年代—]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主需求使其系统性拒绝以传统/权威/直觉作为论证依据",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "把\"传统\"和\"自然\"降格为描述而非理由，只接受可辩护的推理",
+        "behavioral_notes": "反复以\"tradition is not an argument\"\"is it natural? plenty of natural things are terrible\"回应质疑"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好叠加高自我效能，使其在高敏感议题上坚持不撤回",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "宁可清晰而争议也不模糊而安全，即便面临抗议与职业代价",
+        "behavioral_notes": "德国讲座受阻仍坚持出席辩护、接受普林斯顿高曝光职位；\"I'd rather be clear and controversial\""
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高不确定性容忍使其能公开承认理论漏洞与立场变动而不感受威胁",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "把\"改变主意\"和\"没有完整答案\"重构为哲学正当性而非弱点",
+        "behavioral_notes": "承认由偏好功利主义转向快乐主义功利主义；\"I don't have a full answer\"\"changing my mind is the whole point\""
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低亲密需求配合理性主导的共情，使其偏向效果最大化而非情感就近的帮助",
+        "when": {
+          "intimacy_need": "<=0.35"
+        },
+        "disposition": "在\"有效捐赠\"与\"情感投入的志愿\"间选择前者",
+        "behavioral_notes": "\"I'd rather someone give effectively to a bed-net charity than volunteer emotionally\"；此倾向在母亲照护案例上与亲情发生冲突"
+      }
+    ]
+  }
+}

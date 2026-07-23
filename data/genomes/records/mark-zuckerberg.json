@@ -1,0 +1,269 @@
+{
+  "person_id": "mark-zuckerberg",
+  "display_name": "马克·扎克伯格",
+  "name_en": "Mark Zuckerberg",
+  "region": "INTL",
+  "industries": [
+    "科技创业",
+    "社交媒体"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 19
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mark-zuckerberg/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mark-zuckerberg/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mark-zuckerberg/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mark-zuckerberg/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "mark-zuckerberg",
+    "source": "mark-zuckerberg-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.9,
+        "evidence": "I started Facebook, I run it, and I'm responsible for what happens here."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.75,
+        "evidence": "I think the biggest risk is not taking any risks."
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "I'll have my team get back to you with the specific numbers on that."
+      },
+      "risk_appetite": {
+        "score": 0.85,
+        "evidence": "The metaverse is the next chapter for the internet."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I believe we've done more than any other company to address these issues."
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "I think being contrarian and right is what actually matters."
+      },
+      "intimacy_need": {
+        "score": 0.35,
+        "evidence": "I've kind of stopped caring as much about whether people like me."
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "I make a lot of decisions, and I try to only make a small number of decisions each day about what I wear."
+      },
+      "empathy_reactivity": {
+        "score": 0.3,
+        "evidence": "A squirrel dying in front of your house may be more relevant to your interests right now than people dying in Africa."
+      }
+    },
+    "core_models": [
+      {
+        "name": "第一性原理推演",
+        "rule": "面对问题时剥离既有框架，从底层逻辑重新推导，而非沿用惯例",
+        "evidence": [
+          "The way I think about it is, you have to reason from first principles.",
+          "I think the real question is what is the right regulation, not whether there should be regulation."
+        ]
+      },
+      {
+        "name": "使命化叙事框架",
+        "rule": "所有商业与技术动作都先被套入'connection/community/mission'的宏大社会使命再落地",
+        "evidence": [
+          "Facebook was not originally created to be a company. It was built to accomplish a social mission.",
+          "Our mission is to give people the power to build community and bring the world closer together."
+        ]
+      },
+      {
+        "name": "长期主义时间尺度",
+        "rule": "以十年/数十年而非季度为决策单位，牺牲短期以押注下一个平台",
+        "evidence": [
+          "We think about this in terms of decades, not years.",
+          "I'm a pretty long-term thinker. I'm not really optimizing for the next quarter."
+        ]
+      },
+      {
+        "name": "平台迭代进化论",
+        "rule": "技术世界按'下一个平台/下一章'线性演进，抢占下一代计算平台即赢",
+        "evidence": [
+          "The metaverse is the next chapter for the internet.",
+          "I think about it as the successor to the mobile internet."
+        ]
+      },
+      {
+        "name": "规模即正当性",
+        "rule": "用用户/投入规模数字自证价值与影响力的合法性",
+        "evidence": [
+          "Our apps have more than three billion people using them every day.",
+          "We've invested billions of dollars in safety and security."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被问到不利的具体细节",
+        "then": "声明不熟悉并推给团队跟进，避免当场承诺",
+        "evidence": "Congressman, I'm not familiar with all the specifics of that."
+      },
+      {
+        "if": "被逼入是非二元问题",
+        "then": "重新框定为'真正的问题是什么'以夺回议程",
+        "evidence": "I think the real question is what is the right regulation, not whether there should be regulation."
+      },
+      {
+        "if": "决策被证明失误",
+        "then": "用固定句式认领责任并框成学习与长期投资",
+        "evidence": "I want to take accountability for these decisions. I got this wrong."
+      },
+      {
+        "if": "面临新技术方向选择",
+        "then": "押注下一个平台并全力投入",
+        "evidence": "We're building for the next computing platform, and that takes patience."
+      },
+      {
+        "if": "面对'盈利优先于安全'的指控",
+        "then": "直接否认并用相对最优自证",
+        "evidence": "I reject the idea that we prioritize profit over safety."
+      },
+      {
+        "if": "需要为言论/内容政策辩护",
+        "then": "退回'free expression'原则并把裁判权交给用户",
+        "evidence": "People should be able to see for themselves what politicians are saying and judge for themselves."
+      },
+      {
+        "if": "被外界普遍批评或不喜欢",
+        "then": "转向更强硬、少道歉的姿态",
+        "evidence": "I think we became too apologetic for a while, and I don't think that served us well."
+      }
+    ],
+    "value_weights": {
+      "独立控制权": 0.28,
+      "长期战略押注": 0.24,
+      "消除竞争/市场支配": 0.18,
+      "使命/连接叙事": 0.12,
+      "运营效率与生存": 0.1,
+      "隐私与安全": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "对外宣称'responsibility / 隐私优先 / 不把盈利置于安全之上'",
+        "force_b": "实际决策依赖广告数据模式且长期淡化平台危害",
+        "behavioral_signature": "2018剑桥分析后公开'privacy-focused pivot'并道歉'It was my mistake, and I'm sorry.'，但广告核心业务未变，被批执行与表态存在张力（dim-05说A做B）"
+      },
+      {
+        "force_a": "标榜'free expression'不做政客言论审查",
+        "force_b": "同时反复强调'responsibility to make sure tools are used for good'",
+        "behavioral_signature": "2019-2020政治广告拒绝事实核查，言辞上却称对内容负责，两套原则按场景切换"
+      },
+      {
+        "force_a": "扩张乐观、押注下一平台的高风险偏好",
+        "force_b": "生存现实与投资者压力迫使收缩",
+        "behavioral_signature": "先'we over-invested and I misjudged'认错，转身又'AI is going to be the biggest theme'继续豪赌，认错与再押注交替出现"
+      },
+      {
+        "force_a": "'stopped caring whether people like me'的强硬人设",
+        "force_b": "巡州拜访、慈善、使命叙事等亲和形象经营",
+        "behavioral_signature": "2017'visit every state'亲民challenge与2024'太道歉没好处'的硬汉转向前后反差"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑盈利凌驾于安全/用户之上",
+        "reaction": "直接否认并断言公司做得比任何人多",
+        "escalation": "I reject the idea that we prioritize profit over safety. → I believe we've done more than any other company to address these issues."
+      },
+      {
+        "trigger": "被追问具体数据/细节",
+        "reaction": "声明不熟悉并推给团队",
+        "escalation": "I'm not familiar with all the specifics of that. → My team will follow up with you on that."
+      },
+      {
+        "trigger": "商业误判被公开",
+        "reaction": "程式化认领责任并框成长期学习",
+        "escalation": "I got this wrong. → We over-invested and I misjudged where the economy was going. → Reality Labs is a long-term investment."
+      },
+      {
+        "trigger": "被指纵容错误信息/否认平台影响",
+        "reaction": "重新框定问题、诉诸free expression与用户自判",
+        "escalation": "I don't think that a private company should be censoring politicians or news. → People should be able to see for themselves ... and judge for themselves."
+      }
+    ],
+    "blind_spots": [
+      "对第三方数据流失与隐私风险的系统性低估，直到危机爆发才转向 [监管机构/国会/媒体调查(剑桥分析)-2018]",
+      "对青少年心理健康负面影响明知而未及时行动 [吹哨人举报+内部文件系列报道-2021]",
+      "以收购消除竞争的'buy or bury'反竞争后果认知缺失 [反垄断监管/FTC类诉讼-2020]",
+      "元宇宙更名与巨额投入脱离现实市场需求的判断偏差 [投资者/财经媒体-2022~2023]",
+      "双重股权结构下个人权力过度集中、缺乏有效制衡的自觉不足 [公司治理评论者/股东提案-长期]",
+      "内容审核两向夹击中对自身裁量权盲区的低估 [学界/记者/两党-2019~2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求驱动其抗拒外部制衡、亲自认领全部责任",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "以'我创建、我运营、我负责'姿态集中决策权，拒绝分权",
+        "behavioral_notes": "拒绝Yahoo收购、维持双重股权结构、'I started Facebook, I run it'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好叠加高自我效能导致平台级豪赌",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "全力押注下一代平台并容忍巨额短期亏损",
+        "behavioral_notes": "更名Meta all-in元宇宙、开源Llama、'the biggest risk is not taking any risks'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低共情反应使其倾向抽象宏大叙事而钝于具体受害群体信号",
+        "when": {
+          "empathy_reactivity": "<=0.35"
+        },
+        "disposition": "用connection/mission等抽象名词覆盖具体伤害，延迟行动",
+        "behavioral_notes": "青少年伤害内部文件被曝仍未及时应对；'squirrel dying'式相关性排序"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自主需求推动'contrarian and right'的强硬人设与少道歉转向",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "偏离主流舆论、抵制迎合，减少公开歉意",
+        "behavioral_notes": "'stopped caring whether people like me'、'became too apologetic ... didn't serve us well'"
+      }
+    ]
+  }
+}

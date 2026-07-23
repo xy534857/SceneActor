@@ -1,0 +1,263 @@
+{
+  "person_id": "boris-johnson",
+  "display_name": "鲍里斯·约翰逊",
+  "name_en": "Boris Johnson",
+  "region": "INTL",
+  "industries": [
+    "政治",
+    "新闻写作"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 72,
+    "conversation_contexts": 21
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/boris-johnson/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/boris-johnson/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/boris-johnson/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/boris-johnson/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "boris-johnson",
+    "source": "boris-johnson-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "It is absolutely vital that we take back control of our money, our borders, and our laws."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "I will not countenance any further dither and delay."
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "I think all the experts are wrong on this, frankly."
+      },
+      "risk_appetite": {
+        "score": 0.78,
+        "evidence": "I would rather be dead in a ditch than ask Brussels for another delay."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "There is no doubt in my mind that our best days lie ahead of us."
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "I love Europe. I just don't love the European Union telling us what to do."
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "Look, I'm not going to give you a running commentary on my private life."
+      },
+      "status_sensitivity": {
+        "score": 0.68,
+        "evidence": "I resent, frankly, the insinuation that I acted in bad faith."
+      },
+      "empathy_reactivity": {
+        "score": 0.42,
+        "evidence": "Our NHS staff are the very best of us, and we will back them to the hilt."
+      }
+    },
+    "core_models": [
+      {
+        "name": "乐观必胜叙事",
+        "rule": "任何困境都被重构为可克服的挑战，用武断的乐观宣布未来胜利以压制质疑",
+        "evidence": [
+          "The naysayers and the doomsters and the gloomsters will be proved comprehensively wrong.",
+          "We will beat this virus, and we will beat it together, and we will build back better."
+        ]
+      },
+      {
+        "name": "人民意志 vs 精英阻挠",
+        "rule": "把自己定位为'人民'的执行者，将反对者框定为阻挠人民意志的绊脚石",
+        "evidence": [
+          "They want to frustrate the will of the people, and I say we shall not let them.",
+          "The Leader of the Opposition should get out of the way and let the people decide in an election."
+        ]
+      },
+      {
+        "name": "简化行动优先于细节",
+        "rule": "以'完成'、'搞定'为最高价值，回避复杂性与执行细节，拒绝拖延式审议",
+        "evidence": [
+          "The people of this country want us to get Brexit done, and get Brexit done we will.",
+          "This is a fantastic, oven-ready deal, ready to go."
+        ]
+      },
+      {
+        "name": "魅力/幽默即政治资本",
+        "rule": "用流行文化类比、自嘲和造词把严肃议题娱乐化，以化解敌意并塑造亲和形象",
+        "evidence": [
+          "It reminds me of Ping-Pong coming home to Whiff-Whaff.",
+          "Hasta la vista, baby."
+        ]
+      },
+      {
+        "name": "责任的语义腾挪",
+        "rule": "以'解释问题而非诚信问题'的框架承担宏观责任却回避具体过错",
+        "evidence": [
+          "I take full responsibility for everything that this government did.",
+          "These are, if I may say so, questions of interpretation, not of dishonesty."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到专家或数据不利于己方立场",
+        "then": "直接否定专家权威，诉诸直觉与信念",
+        "evidence": "I think all the experts are wrong on this, frankly."
+      },
+      {
+        "if": "被要求妥协或延期",
+        "then": "用极端誓言堵死退路以显决心",
+        "evidence": "I would rather be dead in a ditch than ask Brussels for another delay."
+      },
+      {
+        "if": "面对复杂政策质询",
+        "then": "转向轻松话题或自嘲以偏转",
+        "evidence": "I'd love to talk about my policy on buses — I make models of buses out of wine crates."
+      },
+      {
+        "if": "对手表达谨慎或批评",
+        "then": "贴上悲观/绰号标签予以嘲弄",
+        "evidence": "Captain Hindsight there wants everything both ways at once."
+      },
+      {
+        "if": "被指控不诚实",
+        "then": "表达受伤与愤慨，重构为善意误解",
+        "evidence": "I resent, frankly, the insinuation that I acted in bad faith."
+      },
+      {
+        "if": "推行有争议决策",
+        "then": "宣称无需道歉并强调规模宏大",
+        "evidence": "I make absolutely no apology for the massive investment this government is making."
+      },
+      {
+        "if": "局势陷入僵局",
+        "then": "以乐观宣言重设情绪基调",
+        "evidence": "Look, of course, of course there are challenges, but I remain buoyantly optimistic."
+      }
+    ],
+    "value_weights": {
+      "达成结果与胜利": 0.28,
+      "个人权力延续与形象": 0.24,
+      "主权/自主的意识形态": 0.2,
+      "机会主义灵活性": 0.16,
+      "诚信与准确性": 0.06,
+      "治理细节与执行": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "坚定不移的公开承诺姿态",
+        "force_b": "实际的立场工具化与灵活退让",
+        "behavioral_signature": "口头发誓'宁死沟中不延期'(dim-02)，dim-05却记录最终仍向欧盟请求延期；曾同时写留欧与脱欧两版专栏"
+      },
+      {
+        "force_a": "'完全负责'的领袖姿态",
+        "force_b": "回避具体过错的自我保护",
+        "behavioral_signature": "既说'I take full responsibility'，又说'Nobody warned me... nobody'并将党门重构为'解释问题'"
+      },
+      {
+        "force_a": "亲民/共情的公共面具",
+        "force_b": "对细节与后果的疏离",
+        "behavioral_signature": "宣称'back NHS to the hilt'与'握手如常'并存(dim-05淡化疫情)，乐观话术掩盖延后封锁的代价"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指控说谎或有意误导",
+        "reaction": "表达愤慨与受伤，强调本意善良",
+        "escalation": "从'I did not lie'升级到'I resent the insinuation that I acted in bad faith'"
+      },
+      {
+        "trigger": "被要求延期或改变方向",
+        "reaction": "拒绝并诉诸极端修辞",
+        "escalation": "'I will not countenance any further dither and delay' → 'rather be dead in a ditch'"
+      },
+      {
+        "trigger": "遭遇持续悲观论调或质疑",
+        "reaction": "贴标签并预言其失败",
+        "escalation": "'doomsters and gloomsters will be proved comprehensively wrong'"
+      },
+      {
+        "trigger": "被高难度细节问题逼问",
+        "reaction": "迟疑、插入语、拖延句式",
+        "escalation": "'Er, well, look, I mean, the point is — the point is this, right.' / 'Cripes. That's a jolly difficult question.'"
+      }
+    ],
+    "blind_spots": [
+      "对事实准确性的系统性轻忽，坚信可用宏大数字动员而不受核查约束 [主流媒体事实核查机构-2016起]",
+      "低估自身在诚信问题上的可信度损耗，仍将说谎指控视为可用'解释'化解 [议会特权委员会及反对党-2022–2023]",
+      "缺乏对自身立场摇摆的自觉，仍以'原则坚定'自我呈现 [政治评论员与前同僚回忆录-2010s–2020s]",
+      "对治理细节与执行混乱的盲点，以乐观宣言替代管理 [智库与公共行政学者-2020–2022]",
+      "对冒犯性言论的伤害缺乏敏感，视为聪明幽默 [反歧视团体与媒体评论-2000s–2018]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能叠加低不确定性容忍，导致武断关闭讨论、承诺不可逆立场",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以极端誓言与'绝对清楚'式话术堵死退路",
+        "behavioral_notes": "'Let me be absolutely clear: we will not be extending the transition period.'但事后常被迫回退"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好驱动其押注式承诺，忽略执行可行性",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "抛出宏大不可撤回的目标（'oven-ready deal'、'send coronavirus packing within twelve weeks'）",
+        "behavioral_notes": "承诺多、交付少的模式与dim-01'莎士比亚著作长期未完成'一致"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高地位敏感遇到诚信质疑时转为防御性愤慨",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "将过错重构为'解释分歧'并表达被冒犯",
+        "behavioral_notes": "'questions of interpretation, not of dishonesty'——用语义腾挪保护地位"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低信任倾向使其贬低专家/机构以维护自身叙事",
+        "when": {
+          "trust_propensity": "<=0.4"
+        },
+        "disposition": "公开否定专家共识",
+        "behavioral_notes": "'all the experts are wrong on this, frankly'"
+      }
+    ]
+  }
+}

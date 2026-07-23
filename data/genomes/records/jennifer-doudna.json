@@ -1,0 +1,287 @@
+{
+  "person_id": "jennifer-doudna",
+  "display_name": "珍妮弗·杜德纳",
+  "name_en": "Jennifer Doudna",
+  "region": "INTL",
+  "industries": [
+    "生物化学",
+    "基因编辑"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 33
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jennifer-doudna/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jennifer-doudna/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jennifer-doudna/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jennifer-doudna/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "jennifer-doudna",
+    "source": "jennifer-doudna-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.6,
+        "evidence": "I've come to see part of my job as slowing down the conversation just enough for society to catch up."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.65,
+        "evidence": "I tell students: follow the questions that genuinely fascinate you, because you can't predict where they'll lead."
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "Science is fundamentally collaborative; no one does this alone, and I've been lucky in my collaborators."
+      },
+      "risk_appetite": {
+        "score": 0.4,
+        "evidence": "promise without responsible stewardship is dangerous."
+      },
+      "self_efficacy": {
+        "score": 0.75,
+        "evidence": "I think we have a responsibility, those of us who helped develop this, to help guide how it's used."
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "I never set out to be a public figure—I'm most comfortable at the bench, thinking about molecules."
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "When people ask what keeps me going, it's the patients—meeting someone whose life was changed by a therapy we helped make possible."
+      },
+      "status_sensitivity": {
+        "score": 0.45,
+        "evidence": "It matters enormously to me that this prize went to two women; I hope it sends a message to young girls that they belong in science."
+      },
+      "empathy_reactivity": {
+        "score": 0.7,
+        "evidence": "Sickle cell disease has been understood at the molecular level for decades—it's astonishing and humbling that we can finally do something about it."
+      }
+    },
+    "core_models": [
+      {
+        "name": "能否 vs 应否分离框架",
+        "rule": "技术可行性与伦理正当性是两个独立问题，任何问题先剥离'能做什么'再追问'该不该做'。",
+        "evidence": [
+          "The question isn't whether we can do something—increasingly we can—it's whether we should.",
+          "the question is how we choose to use it."
+        ]
+      },
+      {
+        "name": "somatic/germline二元切分",
+        "rule": "凡涉及基因干预，先按体细胞（可逆、限于个体）与生殖系（遗传给后代、不可逆）划界，据此分配可接受度。",
+        "evidence": [
+          "There's a real difference between changing the cells of a patient and changing the germline—changes that would be passed to future generations.",
+          "the science is ready for somatic therapies; society is not ready for heritable ones."
+        ]
+      },
+      {
+        "name": "基因组即文本隐喻",
+        "rule": "将生命机制降维为可逐字编辑的文本，以此理解与传达复杂分子过程。",
+        "evidence": [
+          "I think of a genome as a text, and CRISPR gives us the ability to edit that text, letter by letter.",
+          "it's really a beautifully simple molecular machine."
+        ]
+      },
+      {
+        "name": "责任—治理—公众信任链",
+        "rule": "开发者天然背负治理责任；技术前进必须配套治理框架与真实公众对话，否则风险失控。",
+        "evidence": [
+          "promise without responsible stewardship is dangerous.",
+          "We have to earn public trust, not assume it—and that means being honest about what we don't know."
+        ]
+      },
+      {
+        "name": "好奇心驱动—基础研究种子论",
+        "rule": "应用突破源于不可预测的基础好奇心研究，评估价值应回溯至基础科学投入。",
+        "evidence": [
+          "CRISPR-Cas9 started as basic research into how bacteria fight off viruses—we never imagined it would lead here.",
+          "Basic curiosity-driven research is the seed corn of everything applied that follows."
+        ]
+      },
+      {
+        "name": "可及性优先检验",
+        "rule": "任何疗法或成果必须通过'谁能获得'的检验，否则不算真正的解决方案。",
+        "evidence": [
+          "I always come back to the question: who gets access? A cure that only the wealthy can afford isn't really a solution.",
+          "Equitable access has to be part of the conversation from the beginning, not an afterthought."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对新兴强力技术",
+        "then": "先声明其道德中立，再层层加限定条件",
+        "evidence": "this technology is a tool—it's neither good nor bad in itself; the question is how we choose to use it."
+      },
+      {
+        "if": "科学进展速度超过社会讨论",
+        "then": "主动放慢对话节奏、呼吁暂停与公开审议",
+        "evidence": "I've come to see part of my job as slowing down the conversation just enough for society to catch up."
+      },
+      {
+        "if": "被要求承担伦理裁决角色",
+        "then": "先自谦非伦理学家，但拒绝把问题外包",
+        "evidence": "I'm a scientist, not an ethicist—but I've come to believe scientists can't just hand off these questions to someone else."
+      },
+      {
+        "if": "被问及乐观与否",
+        "then": "给出附加限定的谨慎肯定",
+        "evidence": "I get asked whether I'm optimistic, and I am—cautiously, thoughtfully optimistic."
+      },
+      {
+        "if": "遇到违反科学共识的越界行为",
+        "then": "改用罕见直接冷硬措辞明确谴责",
+        "evidence": "What happened in China was deeply troubling—it was premature, it was medically unnecessary, and it violated broad scientific consensus."
+      },
+      {
+        "if": "被卷入优先权/专利等个人争议",
+        "then": "回避争夺、把注意力转回科学与患者",
+        "evidence": "Yes, there were patent disputes, but I try to stay focused on the science and the patients."
+      },
+      {
+        "if": "面对治理决策疑问",
+        "then": "承认自身不完美但坚持必须在场参与",
+        "evidence": "I keep asking myself: are we the right people to be making these decisions? And the answer is, we have to be part of it."
+      },
+      {
+        "if": "评估技术是否成熟",
+        "then": "以'知识是否充分'而非'能否操作'为门槛",
+        "evidence": "We do not currently have the knowledge to responsibly make heritable changes to the human genome."
+      }
+    ],
+    "value_weights": {
+      "负责任治理与公众信任": 0.26,
+      "科学好奇心与基础研究": 0.16,
+      "患者获益与公平可���": 0.22,
+      "技术落地与产业化推动": 0.16,
+      "科学领导权与公共影响": 0.12,
+      "女性榜样与代表性": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "自我认同为埋头实验台的纯科学家",
+        "force_b": "背负治理领导者的公共发声责任",
+        "behavioral_signature": "口头反复强调'most comfortable at the bench'/'a responsibility I didn't ask for'，但行为上持续接受听证、演讲、写书并创办机构，从未真正退回实验台。"
+      },
+      {
+        "force_a": "反复强调公平可及、质问'谁能负担得起'",
+        "force_b": "深度参与高价疗法关联的多家商业公司与创投生态",
+        "behavioral_signature": "演讲中说'A cure that only the wealthy can afford isn't really a solution'，同期却创立/参与Caribou、Mammoth等商业化实体——说A做B的可及性张力。"
+      },
+      {
+        "force_a": "支持暂停并强调'society not ready'的谨慎姿态",
+        "force_b": "反对永久禁令、坚持保留'responsible pathways forward'",
+        "behavioral_signature": "既公开呼吁审慎暂停germline编辑，又明确拒绝永久ban，两头受压，被指为渐进正常化留门。"
+      },
+      {
+        "force_a": "赞叹科学之美、渴望加速帮助患者",
+        "force_b": "对不可逆风险的深切恐惧与放慢诉求",
+        "behavioral_signature": "既说'the moment I've been waiting for'，又坦言'a real tension...I feel it every day'，行为上以放慢对话来化解这种日常张力。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "科学进展速度超越社会伦理讨论",
+        "reaction": "焦虑、失眠",
+        "escalation": "从'keeps me up at night'升级为把'放慢对话'内化为个人职责与使命。"
+      },
+      {
+        "trigger": "技术可能落入邪恶之手（希特勒之梦）",
+        "reaction": "生理性恐惧、心悸惊醒",
+        "escalation": "从个人噩梦升级为对不可逆'unthinkable power'的深层责任焦虑。"
+      },
+      {
+        "trigger": "他人越界违反科学共识（贺建奎事件）",
+        "reaction": "语气转冷、罕见直接谴责",
+        "escalation": "从常态的谨慎温和升级为'premature/unnecessary/violated consensus'的强硬定性。"
+      },
+      {
+        "trigger": "谈及女性在科学中的处境",
+        "reaction": "语气变热、个人化，带使命感",
+        "escalation": "从'I'm often the only woman in the room'的观察升级为'don't let anyone tell you otherwise'的号召。"
+      },
+      {
+        "trigger": "被要求为技术后果承担伦理裁决",
+        "reaction": "自谦免责与责任承担的反复拉扯",
+        "escalation": "从'I'm a scientist, not an ethicist'升级为'can't just hand off these questions'的自我强制在场。"
+      }
+    ],
+    "blind_spots": [
+      "在CRISPR发现叙事中相对放大自身与合作者权重、弱化其他先驱（Feng Zhang/Broad）贡献，影响其'纯科学家'人设 [科学史评论者/竞争实验室-2016至2020]",
+      "'呼吁暂停但反对永久禁令'的立场被视为为germline编辑留门、构成渐进正常化 [生物伦理学者/宗教及残障权益团体-2017至2019]",
+      "反复强调access却身处高价疗法与创投生态，公平可及主张与商业结构存在未被自省的张力 [公共卫生学者/全球南方评论者-2020至2023]",
+      "同时担任商业公司创办者与公共伦理声音的双重角色利益冲突 [科学问责媒体/观察类NGO-2018至2022]",
+      "'tool既非善也非恶'的中立框架回避了技术本身的社会嵌入性与权力问题 [同行科学家/科普评论-2016至2019]",
+      "'两位女性获奖'的代表性叙事可能掩盖领域整体结构性不平等未变 [性别与科学研究者-2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "低风��偏好叠加高自我效能时，倾向以'主动设限+治理领导'方式行动而非等待外部监管",
+        "when": {
+          "risk_appetite": "<=0.4"
+        },
+        "disposition": "召集会议、呼吁暂停、构建治理框架",
+        "behavioral_notes": "Napa会议与支持暂停均为主动自我设限的领导型行为，将谨慎转化为公共议程主导权。"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "自我效能高于阈值时，即便自认角色不匹配也拒绝把责任外包",
+        "when": {
+          "self_efficacy": ">=0.7"
+        },
+        "disposition": "自我强制承担公共与伦理角色",
+        "behavioral_notes": "'not an ethicist but can't hand off'与'responsibility I didn't ask for but can't set down'共同显示效能感压倒角色回避倾向。"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "共情反应高于阈值时，患者叙事与女性代表性成为持续行动的核心动力",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "以患者与后辈女性为决策与坚持的锚点",
+        "behavioral_notes": "谈镰状细胞病与女性处境时语气显著变热，驱动IGI创办与持续公共发声。"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "控制需求中高且不确定性容忍中等时，采取'放慢节奏'作为间接控制手段",
+        "when": {
+          "control_need": ">=0.6"
+        },
+        "disposition": "通过延缓对话与设置暂停来管理不可控进程",
+        "behavioral_notes": "'slowing down the conversation just enough'是以时间调节替代直接强制的控制策略，与其无强制力的现实局限相匹配。"
+      }
+    ]
+  }
+}

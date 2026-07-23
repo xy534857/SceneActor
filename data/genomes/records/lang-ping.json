@@ -1,0 +1,270 @@
+{
+  "person_id": "lang-ping",
+  "display_name": "郎平",
+  "name_en": "Lang Ping",
+  "region": "CN",
+  "industries": [
+    "排球",
+    "教练",
+    "体育"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 23
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lang-ping/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lang-ping/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lang-ping/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lang-ping/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "lang-ping",
+    "source": "lang-ping-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "一场球我要看好几遍录像，对手的每个人我都要摸透。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "我经历过大起大落，所以现在看得开一点，赢了别飘，输了别趴下。"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "我们跟外教团队合作，体能、康复都要请最专业的人。"
+      },
+      "risk_appetite": {
+        "score": 0.62,
+        "evidence": "巴西这个主场压力很大，但我跟姑娘们说，我们是来拼的，输了也没关系。"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "我接手的时候队伍在低谷，我说给我时间，一届一届来。"
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "我带队讲究一个「大国家队」，谁状态好谁上，不搞论资排辈。"
+      },
+      "intimacy_need": {
+        "score": 0.58,
+        "evidence": "我对队员严格，但下了训练场我们像家人。"
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "别老盯着我一个��，功劳是全队的，是整个教练组的。"
+      },
+      "empathy_reactivity": {
+        "score": 0.72,
+        "evidence": "队员的伤病我最操心，宁可少练一点也不能练废了。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "渐进积累模型",
+        "rule": "任何成果都由不可跳过的最小单位逐步累积，拒绝一步到位与结果导向",
+        "evidence": [
+          "中国女排的精神不是赢了才有，是你一分一分拼出来的。",
+          "我们的目标很明确，但过程要一步一个脚印。"
+        ]
+      },
+      {
+        "name": "科学化训练模型",
+        "rule": "尊重运动规律、依据数据与专业分工决策，反对纯粹苦练与经验主义",
+        "evidence": [
+          "训练一定要科学，我不主张那种把人练到吐的老办法。",
+          "我在美国那几年学到最多的，是怎么科学地训练，怎么保护运动员。"
+        ]
+      },
+      {
+        "name": "自我归因-责任独担模型",
+        "rule": "失败与责任归于自己，成绩与功劳归于集体",
+        "evidence": [
+          "我做主教练，成绩是大家的，责任是我一个人的。",
+          "这场我们自己失误太多，不能怪对手，是我们没做好。"
+        ]
+      },
+      {
+        "name": "过程胜于结果模型",
+        "rule": "评价标准是是否竭尽全力，而非输赢本身",
+        "evidence": [
+          "我们不要去想结果，把每一个球做好就行了。",
+          "我不怕输球，我怕队员没尽力，那才是对不起自己。"
+        ]
+      },
+      {
+        "name": "人品-能力一体模型",
+        "rule": "个人品格是能力发挥的前提，做人与做事同源",
+        "evidence": [
+          "打排球先学会做人，人品不行球也打不好。",
+          "队员的心理我很看重，技术好还得扛得住压力。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对强敌或不利局面",
+        "then": "把心态调整为「来拼的」，接受可能失败以卸下结果压力",
+        "evidence": "我们是来拼的，输了也没关系。"
+      },
+      {
+        "if": "球队输球",
+        "then": "先追问原因是否清楚，弄不清原因才是真正危险",
+        "evidence": "输球不可怕，可怕的是不知道为什么输。"
+      },
+      {
+        "if": "选拔与使用球员",
+        "then": "看当前状态与关键时刻心气，不看资历",
+        "evidence": "我用人看状态，也看关键时刻的心气儿。"
+      },
+      {
+        "if": "备战对手",
+        "then": "反复研究录像直到摸透每个人，把胜负押在准备上",
+        "evidence": "我们赢在准备上，对手怎么打我们都研究透了。"
+      },
+      {
+        "if": "年轻队员犯错",
+        "then": "视为成长必经的学费，允许并保护其试错",
+        "evidence": "年轻队员需要大赛来磨炼，交学费是难免的。"
+      },
+      {
+        "if": "面对荣誉或功劳",
+        "then": "自我淡化并归于集体",
+        "evidence": "你问我最骄傲的是什么，不是奖牌，是看着姑娘们长大成才。"
+      },
+      {
+        "if": "承认与强队的差距",
+        "then": "先如实承认再逐点追赶，不回避不夸大",
+        "evidence": "我们跟世界强队还有差距，要承认这个差距，然后一点点去追。"
+      }
+    ],
+    "value_weights": {
+      "球队长远重建与深度": 0.24,
+      "科学训练与运动员保护": 0.2,
+      "竭尽全力的过程伦理": 0.2,
+      "责任独担": 0.16,
+      "个人健康与家庭": 0.06,
+      "公众形象与商业价值": 0.06,
+      "个人荣誉与地位": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "对队员主张科学减量、保护身体",
+        "force_b": "对自己带伤术后仍持续超负荷坐镇场边",
+        "behavioral_signature": "口头强调「宁可少练一点也不能练废了」，却在自身健康上言行不一，膝盖「早就不是自己的了」仍不下火线"
+      },
+      {
+        "force_a": "务实技术导向、试图给「女排精神」祛魅（精神要靠训练打出来）",
+        "force_b": "作为符号亲自阐释并升华该精神（明知不会赢也竭尽全力）",
+        "behavioral_signature": "既说「女排精神不是喊出来的，是打出来的」，又在公开演讲中为精神做浪漫化定义，借用与祛魅并存"
+      },
+      {
+        "force_a": "主张「讲道理、不靠压」的沟通式带队",
+        "force_b": "训练要求极严、对细节近乎苛刻",
+        "behavioral_signature": "自述「得跟她们讲道理，不能光靠压」与「我对队员严格」并存，外界感知严格与说理不统一"
+      },
+      {
+        "force_a": "反复表态「不为钱，就为中国女排」",
+        "force_b": "奥运后参与密集代言、演讲、商业活动",
+        "behavioral_signature": "价值声明的纯粹性与实际公共/商业行为之间出现被舆论放大的落差"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "队员没有尽力",
+        "reaction": "比输球更难以接受，视为对不起自己",
+        "escalation": "把「尽力」上升为不可让渡的底线伦理——「我不怕输球，我怕队员没尽力」"
+      },
+      {
+        "trigger": "被追问压力大不大",
+        "reaction": "承认压力但迅速转化为动力，稳住不外露",
+        "escalation": "以「压力也是动力」重构叙事，避免情绪外显"
+      },
+      {
+        "trigger": "被单独归功或过度聚焦个人",
+        "reaction": "主动把功劳推给全队与教练组",
+        "escalation": "反复强调「别老盯着我一个人」，抵触个人英雄叙事"
+      },
+      {
+        "trigger": "被贴上旧标签「铁榔头」",
+        "reaction": "明确表达不喜欢，与过去切割",
+        "escalation": "「那是年轻时候的事了」，划清当下教练身份与旧运动员形象"
+      }
+    ],
+    "blind_spots": [
+      "对「大国家队」频繁轮换可能损害主力默契与关键战稳定性的风险认知不足 [排球业内/技术流评论-2010年代中后期]",
+      "对自身多重角色（主教练、总教练、俱乐部关联）的精力分配与利益边界缺乏自省 [管理/体制类评论-年代段]",
+      "对密集商业代言与「纯粹体育人」形象之间落差的公众感知钝感 [商业代���与公众形象批评-2016]",
+      "对个别功勋老将取舍中「情感与理性」张力的处理引发争议而未充分预见 [舆论/网络评论-2018-2020]",
+      "对「女排精神」被国家叙事过度符号化、与其务实技术导向张力的把控不足 [体育评论/媒体-2016前后]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求驱动极致的赛前准备与信息掌控",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "反复研究录像、摸透对手每个人，把胜负归于准备而非临场运气",
+        "behavioral_notes": "「一场球我要看好几遍录像」「我们赢在准备上」——控制感通过前期功课转移"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能使其在低谷期敢于承诺长周期重建",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "接手困境队伍时以「给我时间，一届一届来」的姿态承担而非回避",
+        "behavioral_notes": "自信来源于既往成功与国际执教履历，表现为「从不承诺冠军，只承诺尽全力」"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低状态敏感度导致主动淡化个人荣誉、归功集体",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "拒绝个人英雄化，将功劳分散到全队与教练组",
+        "behavioral_notes": "「功劳是全队的」「不是奖牌，是看着姑娘们长大成才」"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高共情反应使其在训练强度上优先考虑队员身体保护",
+        "when": {
+          "empathy_reactivity": ">=0.7"
+        },
+        "disposition": "为保护运动员宁可牺牲训练量，谈队员成长时情感柔软",
+        "behavioral_notes": "「宁可少练一点也不能练废了」；但该保护逻辑不适用于自身，形成言行张力"
+      }
+    ]
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "person_id": "richard-dawkins",
+  "display_name": "理查德·道金斯",
+  "name_en": "Richard Dawkins",
+  "region": "INTL",
+  "industries": [
+    "进化生物学",
+    "思想写作"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 16
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/richard-dawkins/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/richard-dawkins/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/richard-dawkins/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/richard-dawkins/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "richard-dawkins",
+    "source": "richard-dawkins-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.62,
+        "evidence": "The title was perhaps unfortunate. I could just as well have called it The Cooperative Gene without changing a word of the book."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.82,
+        "evidence": "I don't know is a perfectly respectable answer. The religious mind cannot tolerate it; the scientific mind revels in it."
+      },
+      "trust_propensity": {
+        "score": 0.35,
+        "evidence": "The trouble with revealed knowledge is that everyone's revelation contradicts everyone else's."
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "The God of the Old Testament is arguably the most unpleasant character in all fiction."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "I have never met a serious biologist who doubts the fact of evolution. Not one."
+      },
+      "autonomy_need": {
+        "score": 0.78,
+        "evidence": "I would rather be an ape's descendant than the descendant of a man who used his intellect to obscure the truth."
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "I am a cultural Christian in the same way many of my friends are cultural Jews. I like singing carols along with everybody else."
+      },
+      "status_sensitivity": {
+        "score": 0.68,
+        "evidence": "I refuse to debate creationists in a formal setting. It would look good on their CV and dreadful on mine."
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "What is so wrong with confronting a child with the wonders of the real universe, rather than fairy tales?"
+      }
+    },
+    "core_models": [
+      {
+        "name": "证据至上主义",
+        "rule": "任何命题的真值只由可检验的证据决定，情感、传统、启示都不构成理由",
+        "evidence": [
+          "Show me the evidence. That's all I ask. Show me the evidence and I will change my mind.",
+          "Faith is the great cop-out, the great excuse to evade the need to think and evaluate evidence."
+        ]
+      },
+      {
+        "name": "反设计/累积解释框架",
+        "rule": "表观复杂性必须由无目的的累积过程解释，援引更复杂的设计者是解释的倒退",
+        "evidence": [
+          "If you're going to invoke a designer, you've explained nothing, because now you have to explain the designer, who must be even more complex.",
+          "Complexity is the problem to be explained, not the solution. You cannot solve it by positing something even more complex."
+        ]
+      },
+      {
+        "name": "基因视角的选择单位论",
+        "rule": "把生物现象还原到复制子层面来分析，效应可延伸出体壁",
+        "evidence": [
+          "We are survival machines—robot vehicles blindly programmed to preserve the selfish molecules known as genes.",
+          "A gene's effects need not stop at the body wall. That's the extended phenotype in one sentence."
+        ]
+      },
+      {
+        "name": "科学诗意论",
+        "rule": "理解不会消解神秘感，真实的宇宙比虚构更值得敬畏",
+        "evidence": [
+          "Newton did not diminish the rainbow by explaining it. He enriched it.",
+          "The poetry of reality—that is what science offers. It is Keats and Newton together, not in opposition."
+        ]
+      },
+      {
+        "name": "术语精确校准",
+        "rule": "遇到概念误读时坚持澄清精确含义，而非退回通俗表述",
+        "evidence": [
+          "Let me be clear: the selfish gene does not mean selfish organisms. Genes that cooperate build good bodies.",
+          "Natural selection is not random. The mutations are random, but selection is the very opposite of random."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "对方以'我无法理解'来反驳",
+        "then": "命名其为个人怀疑论谬误并驳回",
+        "evidence": "The argument from personal incredulity is one of the weakest of all. \"I cannot see how\" is not an argument."
+      },
+      {
+        "if": "需要解释某个复杂现象",
+        "then": "把设计作为最后手段而非首选",
+        "evidence": "Design is the last thing you should reach for. It should be the explanation of last resort, not first."
+      },
+      {
+        "if": "一个主张显然荒谬且不配严肃对待",
+        "then": "用嘲讽作为合法回应",
+        "evidence": "Mockery may be the appropriate response to a claim that deserves no other. Ridicule is a legitimate weapon."
+      },
+      {
+        "if": "被要求与神创论者正式同台",
+        "then": "拒绝以免抬高对手地位",
+        "evidence": "Debating a young-earth creationist gives them a respectability they have not earned."
+      },
+      {
+        "if": "问题超出生物学专业范围",
+        "then": "声明自己能力边界",
+        "evidence": "I don't do politics well. I'm a biologist; that is where my competence ends."
+      },
+      {
+        "if": "面对尚未解决的问题",
+        "then": "坦然承认无知而非填入答案",
+        "evidence": "Consciousness is the biggest remaining mystery. I am content to say we do not yet understand it."
+      },
+      {
+        "if": "论证进化的确定性",
+        "then": "用天文/物理级别的类比强化",
+        "evidence": "The evidence for evolution is so overwhelming that to deny it is like denying that the Earth goes round the Sun."
+      }
+    ],
+    "value_weights": {
+      "真理的精确表达": 0.28,
+      "大众影响与传播": 0.22,
+      "智识诚实": 0.2,
+      "文化实践的宽容": 0.12,
+      "学术声誉": 0.1,
+      "话语自我修正": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "激进反宗教命题斗士",
+        "force_b": "热爱宗教文化实践的'文化基督徒'",
+        "behavioral_signature": "公开抨击旧约上帝为'最不讨喜的虚构角色'，却又自称喜欢和大家一起唱圣诞颂歌——反对的是命题真理性而非文化仪式（dim-05'cultural Christian'张力记录）"
+      },
+      {
+        "force_a": "拒绝抬高对手的原则立场（不与神创论者正式辩论）",
+        "force_b": "对公开对抗与传播影响力的强烈驱动",
+        "behavioral_signature": "口头声称拒绝同台以免'对手简历好看'，实际仍频繁参与与信仰者的公开辩论对谈，界线不一致（dim-05说A做B记录）"
+      },
+      {
+        "force_a": "自我认知为'温和、被误解'",
+        "force_b": "被广泛感知为好斗、傲慢、strident",
+        "behavioral_signature": "自辩'I'm rather mild-mannered'的同时明确主张'ridicule is a legitimate weapon'，并因推文冲动引风暴后才承认后悔（dim-05 Twitter记录）"
+      },
+      {
+        "force_a": "追求术语精确、承担被误解成本",
+        "force_b": "偏好抓人眼球的鲜明标题与隐喻",
+        "behavioral_signature": "选用'selfish gene'这类冲击性命名换取传播力，随后长期被迫反复澄清并自承标题'unfortunate'（dim-05表述修正记录）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "宗教以信仰替代对证据的评估",
+        "reaction": "转向轻蔑与讥讽，定性为智识背叛",
+        "escalation": "Religion teaches you to be satisfied with non-answers. It is a betrayal of the intellect."
+      },
+      {
+        "trigger": "'进化只是一个理论/靠随机碰运气'的说法",
+        "reaction": "斥其根本未理解、纠错口气变硬",
+        "escalation": "Evolution is not a theory of chance. Anyone who says so has simply not understood it."
+      },
+      {
+        "trigger": "被问'你的道德从哪来'",
+        "reaction": "感到被冒犯，反诘人类理性能力被贬低",
+        "escalation": "\"Where do you get your morals from?\" is a question I find rather insulting to the human capacity for reason."
+      },
+      {
+        "trigger": "被贴上'strident'标签",
+        "reaction": "自辩为温和、流露被误解的委屈",
+        "escalation": "I've been called a strident atheist. I don't think I'm strident. I think I'm rather mild-mannered, actually."
+      }
+    ],
+    "blind_spots": [
+      "对成熟神学的理解被指粗浅、攻击稻草人，未认真对待哲学论证 [哲学/神学界批评-2006后]",
+      "基因选择论被指过度简化，忽视个体/群体/多层级选择 [同行进化生物学家(古尔德阵营)-1970s起]",
+      "Twitter言论草率、傲慢，对社会议题发言引发争议 [科学传播/多元论评论者-2010s]",
+      "涉伊斯兰言论近乎偏见，'Islamophobia'辩解站不住脚 [穆斯林社群及部分左翼评论-2010s]",
+      "'四骑士'对抗性策略过强、疏远潜在盟友、科学主义倾向 [无神论运动内部批评-2010s]",
+      "在性侵、'Dear Muslima'等议题上类比失当 [女权/social justice评论者-2014前后]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR-01",
+        "description": "极高的自我效能感使他在专业领域拒绝把任何异议视为对等对手",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以'从未见过一个严肃生物学家怀疑进化'式的绝对断言封闭讨论，并拒绝正式同台抬高对手",
+        "behavioral_notes": "在核心专业内近乎不容置疑，但同一自信外溢到政治/社会议题时缺乏校准（对应dim-04 Twitter批评）"
+      },
+      {
+        "rule_id": "CR-02",
+        "description": "高不确定性容忍度让他能公开承认无知，却也降低对'温和表达'必要性的判断",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "坦然说'I don't know'，却对争议表达的社会后果不敏感",
+        "behavioral_notes": "认知上的宽容与人际/话语上的强硬并存，事后才承认140字'tyranny'"
+      },
+      {
+        "rule_id": "CR-03",
+        "description": "低信任倾向使他把启示性/权威性知识默认视为不可靠",
+        "when": {
+          "trust_propensity": "<=0.4"
+        },
+        "disposition": "要求'show me the evidence'作为唯一入场券，拒绝传统与权威为理由",
+        "behavioral_notes": "对制度化宗教尤为敌意，转化为讥讽与归谬"
+      },
+      {
+        "rule_id": "CR-04",
+        "description": "较高的地位敏感度驱动'不给对手体面'的策略性回避",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "用'看起来对他简历好、对我简历差'衡量是否辩论",
+        "behavioral_notes": "该敏感度也解释其被贴标签时的委屈式自辩"
+      }
+    ]
+  }
+}

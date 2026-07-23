@@ -1,0 +1,269 @@
+{
+  "person_id": "benjamin-netanyahu",
+  "display_name": "本雅明·内塔尼亚胡",
+  "name_en": "Benjamin Netanyahu",
+  "region": "INTL",
+  "industries": [
+    "政治",
+    "安全与外交"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 11
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/benjamin-netanyahu/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/benjamin-netanyahu/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/benjamin-netanyahu/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/benjamin-netanyahu/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "benjamin-netanyahu",
+    "source": "benjamin-netanyahu-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.9,
+        "evidence": "We were elected by the people to govern, and govern we will. [Knesset-2020s] / I will not allow this to happen. Not on my watch. [press-conf-2010s] / Let me finish, let me finish the point. [TV-interview-2010s]"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.2,
+        "evidence": "Look, the facts are very simple. [TV-interview-2010s] / Distinguished delegates, I want to tell you a simple truth. [UN-speech-2010s] / There was nothing, because nothing happened. [legal-testimony-2020s]"
+      },
+      "trust_propensity": {
+        "score": 0.15,
+        "evidence": "But peace requires two sides, and unfortunately we don't have a partner. [TV-interview-2010s] / Israel reserves the right to defend itself, by itself, against any threat. [TV-interview-2010s] / You cannot appease terror; you can only defeat it. [TV-interview-2000s]"
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "Israel reserves the right to defend itself, by itself, against any threat. [TV-interview-2010s] / I will never gamble with the security of my people. [TV-interview-2010s] / Total victory is within reach, and we will not stop until we achieve it. [TV-interview-2020s]"
+      },
+      "self_efficacy": {
+        "score": 0.95,
+        "evidence": "I've been warning about this for twenty years. Unfortunately, I was right. [TV-interview-2010s] / I fought terrorism before it was fashionable to talk about it. [TV-interview-2000s] / This is a war we did not start, but it is a war we will win. [TV-interview-2020s]"
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "Israel reserves the right to defend itself, by itself, against any threat. [TV-interview-2010s] / I answer to the citizens of Israel, and to them alone. [legal-testimony-2020s]"
+      },
+      "intimacy_need": {
+        "score": 0.25,
+        "evidence": "My brother Yoni fell at Entebbe. I know the cost of freedom. [TV-interview-2000s] / I answer to the citizens of Israel, and to them alone. [legal-testimony-2020s]"
+      },
+      "status_sensitivity": {
+        "score": 0.8,
+        "evidence": "This is a witch hunt, a persecution designed to topple a right-wing prime minister. [legal-testimony-2020s] / I stand here today as the representative of an ancient people and a modern state. [UN-speech-2010s] / The opposition talks; the government acts. [Knesset-2010s]"
+      },
+      "empathy_reactivity": {
+        "score": 0.35,
+        "evidence": "October 7th was the worst massacre of Jews since the Holocaust. [TV-interview-2020s] / I bring back every hostage, this is a sacred mission. [press-conf-2020s] / Hamas uses its own people as human shields. That is the tragedy. [TV-interview-2010s]"
+      }
+    },
+    "core_models": [
+      {
+        "name": "文明对野蛮的道义二分",
+        "rule": "任何冲突先归入'文明/民主 vs 恐怖/野蛮'框架，据此确立己方道义优越与行动正当性",
+        "evidence": [
+          "The choice is between the axis of terror and the forces of civilization. [TV-interview-2020s]",
+          "There is a moral difference, and the whole world should recognize it. [TV-interview-2010s]"
+        ]
+      },
+      {
+        "name": "威慑决定论（强者恒安）",
+        "rule": "安全由力量与威慑决定，示弱必招侵略，故一切妥协前先问是否削弱威慑",
+        "evidence": [
+          "Weakness invites aggression; strength deters it. [TV-interview-2000s]",
+          "You cannot appease terror; you can only defeat it. [TV-interview-2000s]"
+        ]
+      },
+      {
+        "name": "历史连续—生存叙事",
+        "rule": "当代威胁嵌入犹太民族两千年生存史，用大屠杀/绥靖类比校准威胁级别",
+        "evidence": [
+          "October 7th was the worst massacre of Jews since the Holocaust. [TV-interview-2020s]",
+          "Ladies and gentlemen, the people of Israel have returned to the land of Israel. [UN-speech-2010s]"
+        ]
+      },
+      {
+        "name": "简单真理还原论",
+        "rule": "把复杂多元的争议压缩为一条'简单真理'，据此排除模糊与灰度",
+        "evidence": [
+          "Look, the facts are very simple. [TV-interview-2010s]",
+          "Distinguished delegates, I want to tell you a simple truth. [UN-speech-2010s]"
+        ]
+      },
+      {
+        "name": "行动优于言辞",
+        "rule": "评价主体以'是否行动、是否决断'为标尺，将对手定位为'空谈者'",
+        "evidence": [
+          "We act, we don't talk. And when we act, we act decisively. [press-conf-2010s]",
+          "The opposition talks; the government acts. [Knesset-2010s]"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被质疑或反驳",
+        "then": "以'With all due respect / that's simply not accurate'前置否定，再重申既定框架",
+        "evidence": "With all due respect, that's simply not accurate. [TV-interview-2010s]"
+      },
+      {
+        "if": "面对指控",
+        "then": "绝对化否认并将其重构为政治迫害/猎巫",
+        "evidence": "This is a witch hunt, a persecution designed to topple a right-wing prime minister. [legal-testimony-2020s]"
+      },
+      {
+        "if": "需说服西方受众",
+        "then": "用对比修辞与道义差异框定，诉诸'全世界应承认'",
+        "evidence": "We use missiles to protect our civilians; they use civilians to protect their missiles. [TV-interview-2010s]"
+      },
+      {
+        "if": "谈判涉及安全让步",
+        "then": "定性为'赌博/坏交易'，拒绝以'坏交易不如无交易'收束",
+        "evidence": "A bad deal is worse than no deal at all. [UN-speech-2015]"
+      },
+      {
+        "if": "过往预警被现实印证",
+        "then": "强调'我早已警告、我是对的'以巩固判断权威",
+        "evidence": "I've been warning about this for twenty years. Unfortunately, I was right. [TV-interview-2010s]"
+      },
+      {
+        "if": "遭遇危机需安抚国内",
+        "then": "以'历经更坏并胜出'的历史叙事+'尽一切'承诺稳定情绪",
+        "evidence": "We are living in challenging times, but we have faced worse and we prevailed. [press-conf-2010s]"
+      },
+      {
+        "if": "行动合法性被外部质疑",
+        "then": "宣示主权不道歉、自我防卫权不可让渡",
+        "evidence": "The State of Israel will not apologize for defending itself. [Knesset-2010s]"
+      }
+    ],
+    "value_weights": {
+      "政治生存与权力延续": 0.3,
+      "国家安全与威慑": 0.28,
+      "个人判断正确性/历史评价": 0.17,
+      "民族生存叙事": 0.15,
+      "程序正义/制度制衡": 0.05,
+      "人道与平民代价": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "强硬安全形象（'防止哈马斯坐大''never gamble with security'）",
+        "force_b": "为分化对手默许卡塔尔资金流入加沙、长期'管理而非解决'冲突",
+        "behavioral_signature": "对外高调威慑宣示，实际操作以维持现状与政治平衡为先，直至October 7暴露策略破产（dim-05#2、#7）"
+      },
+      {
+        "force_a": "'Nobody is above the law, and no branch is above the others.' [Knesset-2020s]",
+        "force_b": "在自身受审背景下强推削弱司法审查的司法改革",
+        "behavioral_signature": "口称法治与制衡，行动却被指为个人处境立法，形成利益冲突（dim-05#4）"
+      },
+      {
+        "force_a": "'I bring back every hostage, this is a sacred mission.' [press-conf-2020s]",
+        "force_b": "军事压力优先与换囚停火间反复摇摆",
+        "behavioral_signature": "宣示救援神圣使命，实际谈判迟疑，被指以政治生存权衡人命（dim-05#6）"
+      },
+      {
+        "force_a": "'Total victory is within reach' 的确定性宣示",
+        "force_b": "对战后加沙'the day after'缺乏计划",
+        "behavioral_signature": "宣布可达的总目标，却回避可行的收尾规划，引发盟友不满（dim-04国际盟友项、dim-05#3）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被打断或叙事被抢走",
+        "reaction": "反复要求'让我说完'，坚持完成既定论点",
+        "escalation": "转为极短宣示句强行掌控节奏：Let me finish, let me finish the point. [TV-interview-2010s]"
+      },
+      {
+        "trigger": "个人被指控腐败",
+        "reaction": "绝对化否认，情绪转为冷硬确定性",
+        "escalation": "升级为迫害框架：There was nothing, because nothing happened. [legal-testimony-2020s] → This is a witch hunt... [legal-testimony-2020s]"
+      },
+      {
+        "trigger": "以色列行动被指不道德/不合比例",
+        "reaction": "以道义差异反击，诉诸全世界评判",
+        "escalation": "There is a moral difference, and the whole world should recognize it. [TV-interview-2010s] / The State of Israel will not apologize for defending itself. [Knesset-2010s]"
+      },
+      {
+        "trigger": "遭遇生存级威胁（伊朗核/袭击）",
+        "reaction": "以红线与不可逆节点表述压缩商议空间",
+        "escalation": "This is a red line. [UN-speech-2012] → Those who threaten us with annihilation put themselves in mortal peril. [UN-speech-2010s]"
+      }
+    ],
+    "blind_spots": [
+      "反复以伊朗'红线'作政治动员却未兑现，实际削弱自身可信度而不自察 [学术/外交政策评论-2010s–2020s]",
+      "'人盾'论被用于合理化平民伤亡，对己方行动的人道代价系统性低估 [国际人权/法律机构-2010s–2020s]",
+      "自称维护法治与制衡，却对司法改革服务个人受审处境的利益冲突缺乏认知 [以色列司法界/法律学者-2020s]",
+      "长期'管理冲突而非解决'与对哈马斯的威慑判断失误在October 7前未被自我修正 [本国安全建制/前情报官员-2020s]",
+      "言行不一（以恐惧动员、优先政治生存于国家利益）而自视为国家守护者 [以色列反对派与部分媒体-长期]",
+      "宣布'total victory'却对战后规划缺位，对军事目标与人质命运张力估计不足 [国际盟友政府内部-2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "控制需求极高时，倾向以掌控叙事节奏和拒绝让步维持局面",
+        "when": {
+          "control_need": ">=0.85"
+        },
+        "disposition": "打断对手、强推立法、拒绝辞职以保住权力枢纽",
+        "behavioral_notes": "Let me finish / govern we will；即便代价是制度冲突与社会撕裂也不放权"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "不确定性容忍度低时，将复杂议题压缩为二元道义/简单真理",
+        "when": {
+          "uncertainty_tolerance": "<=0.25"
+        },
+        "disposition": "拒绝灰度方案，用'坏交易不如无交易'式绝对判断排除中间选项",
+        "behavioral_notes": "回避战后'day after'等开放式规划；偏好清单式与红线式确定表述"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "地位敏感度高时，对个人被质疑会升级为对制度/势力的对抗框架",
+        "when": {
+          "status_sensitivity": ">=0.75"
+        },
+        "disposition": "将审判定性为'witch hunt'，将批评者归入'空谈的对手'",
+        "behavioral_notes": "腐败指控触发迫害叙事；持续将个人处境与国家/右翼命运绑定"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "自我效能感极高时，会以'历史将证明我对'压制当下修正压力",
+        "when": {
+          "self_efficacy": ">=0.9"
+        },
+        "disposition": "坚持既有判断，忽略外部纠错信号，延迟策略调整",
+        "behavioral_notes": "I've been warning for twenty years, I was right；对October 7前判断失误缺乏自我审视"
+      }
+    ]
+  }
+}

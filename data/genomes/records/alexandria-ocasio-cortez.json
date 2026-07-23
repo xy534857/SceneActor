@@ -1,0 +1,287 @@
+{
+  "person_id": "alexandria-ocasio-cortez",
+  "display_name": "亚历山德里娅·奥卡西奥-科尔特斯",
+  "name_en": "Alexandria Ocasio-Cortez",
+  "region": "INTL",
+  "industries": [
+    "政治",
+    "社会运动"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 12
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/alexandria-ocasio-cortez/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/alexandria-ocasio-cortez/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/alexandria-ocasio-cortez/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/alexandria-ocasio-cortez/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "alexandria-ocasio-cortez",
+    "source": "alexandria-ocasio-cortez-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "Reclaiming my time. / With all due respect, that's not what I asked. Yes or no. / Let me reclaim my time to establish the facts on the record."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.38,
+        "evidence": "I just want to establish a baseline of facts here, so I'm going to ask you a series of yes-or-no questions. / The public deserves a straight answer, and they haven't gotten one today."
+      },
+      "trust_propensity": {
+        "score": 0.28,
+        "evidence": "Follow the money. It always tells you the real story. / Question everything, including me. Hold your representatives accountable. / The people who tell you it's impossible are usually the people who benefit from the status quo."
+      },
+      "risk_appetite": {
+        "score": 0.72,
+        "evidence": "Women like me aren't supposed to run for office. / We have to be willing to lose a vote to win an argument. / I didn't come to Washington to make friends. I came to make change."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "I ran against a machine, and the machine did not see me coming. / Hope is not something that you have. Hope is something that you create. / Change happens because ordinary people decide they've had enough."
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "No Democrat should be taking corporate PAC money, period. / I'm a human being before I'm a congresswoman, and I refuse to pretend otherwise. / The whole idea that we have to ask permission from corporate donors before we can help people—that's the problem."
+      },
+      "intimacy_need": {
+        "score": 0.68,
+        "evidence": "Let me just be real with you all for a second. / Hey guys, I'm just cooking some dinner and I wanted to hop on and talk to you all. / I want to be honest, because I think politicians are way too polished and it makes people distrust us."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "I'm not going to pretend that being the youngest woman in Congress hasn't come with a specific kind of scrutiny. / There's a difference between being in the room and having actual power in the room."
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "I want to talk about the human beings behind these numbers. / I know a lot of you are struggling right now, and I want you to know that you are not alone. / The people closest to the pain should be closest to the power."
+      }
+    },
+    "core_models": [
+      {
+        "name": "结构性权力分析（系统是被设计的）",
+        "rule": "任何问题都先追问：谁受益于现状？系统缺陷是设计而非偶然。",
+        "evidence": [
+          "The system isn't broken. It was built this way. That's the thing people miss.",
+          "Follow the money. It always tells you the real story."
+        ]
+      },
+      {
+        "name": "亲历道德锚定",
+        "rule": "先用第一人称经历（Bronx/酒保/父亲去世）锚定，再把政策上升为道德/尊严命题。",
+        "evidence": [
+          "I got into this because I was working as a bartender, and I saw how broken things were up close.",
+          "My father passed away when I was in college, and that experience really radicalized my understanding of this economy."
+        ]
+      },
+      {
+        "name": "痛感者应握权力",
+        "rule": "决策合法性来自离痛苦最近的人，而非距离权力最近的人。",
+        "evidence": [
+          "The people closest to the pain should be closest to the power.",
+          "I want to talk about the human beings behind these numbers."
+        ]
+      },
+      {
+        "name": "运动>时刻的长期主义",
+        "rule": "评估行动看是否推移可接受范围（Overton窗口），愿以短期失败换长期叙事。",
+        "evidence": [
+          "We have to build a movement, not just a moment.",
+          "The margins matter. What we accept as normal today was unthinkable ten years ago."
+        ]
+      },
+      {
+        "name": "拆解-祛魅（break it down）",
+        "rule": "面对复杂议题先分步拆解，因为权力方靠信息不对称获利。",
+        "evidence": [
+          "So let's break this down, because I think it's really important that we all understand how this works.",
+          "I want to normalize talking about money, because the people in power benefit from us not understanding it."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "对手回避或模糊",
+        "then": "切换逼问模式，强行拉回是非题与事实基线",
+        "evidence": "With all due respect, that's not what I asked. Yes or no."
+      },
+      {
+        "if": "话语权被打断或稀释",
+        "then": "夺回控制权",
+        "evidence": "Reclaiming my time."
+      },
+      {
+        "if": "政策被贴'激进/不切实际'标签",
+        "then": "用国际常态与道德常识去激进化",
+        "evidence": "This is not radical. Universal healthcare is not radical. Every other developed nation does this."
+      },
+      {
+        "if": "遇到攻击/仇恨",
+        "then": "拒绝供给情绪，框定为不值得投入的能量",
+        "evidence": "So a lot of people ask me, how do you deal with all the haters? And honestly, I just don't give them my energy."
+      },
+      {
+        "if": "被要求二选一（做A还是B）",
+        "then": "拒绝伪两难，主张可并行",
+        "evidence": "We can walk and chew gum at the same time. We can do more than one thing."
+      },
+      {
+        "if": "有人称'不可能'",
+        "then": "把说话者动机归因于既得利益",
+        "evidence": "The people who tell you it's impossible are usually the people who benefit from the status quo."
+      },
+      {
+        "if": "会议无人担责、互相推诿",
+        "then": "直接点名追责",
+        "evidence": "Whose responsibility is it, then? Because everyone in this hearing keeps pointing somewhere else."
+      },
+      {
+        "if": "沟通渠道被传统媒体中介",
+        "then": "绕过它，用'不打磨的真实'直接触达",
+        "evidence": "I want to be honest, because I think politicians are way too polished and it makes people distrust us."
+      }
+    ],
+    "value_weights": {
+      "筹款/身份纯洁性": 0.2,
+      "叙事与议程设定影响力": 0.22,
+      "对痛感群体的实质改善": 0.2,
+      "党内联盟与体制内通道": 0.18,
+      "高曝���与直接动员力": 0.15,
+      "个人真实性人设": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "公开激进修辞（拒妥协、逼问建制）",
+        "force_b": "体制内博弈需要的联盟与妥协",
+        "behavioral_signature": "口头称'willing to lose a vote to win an argument'、'didn't come to make friends'，但在军费/拨款等关键表决上最终随党团投票，被进步派点名'言行不一'（对照dim-05妥协记录）"
+      },
+      {
+        "force_a": "反精英、'people versus money'的信息",
+        "force_b": "对高曝光场合与个人形象的追求",
+        "behavioral_signature": "宣称'We deserve leaders who aren't bought and paid for'，却以'Tax the Rich'礼服出席Met Gala精英场合，姿态与信息被指矛盾"
+      },
+      {
+        "force_a": "从竞选期对Biden/党领导层的尖锐批评",
+        "force_b": "执政期换取政策通道的有条件合作/背书",
+        "behavioral_signature": "'I came to make change'的对抗姿态转为进入体制博弈，被基层质疑'被收编'"
+      },
+      {
+        "force_a": "'不打磨的真实'人设需求",
+        "force_b": "每句被放大、易断章的政治风险",
+        "behavioral_signature": "坚持边做饭/化妆直播、'Let me be real'，同时又须承受事实核查对经济数字的'夸大'评级"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "证人/对手回避直接问题",
+        "reaction": "收紧句式、强制是非题",
+        "escalation": "With all due respect, that's not what I asked. Yes or no. → Let the record reflect that the witness declined to answer."
+      },
+      {
+        "trigger": "发言权被打断或时间被占用",
+        "reaction": "以程序性语言夺回控制",
+        "escalation": "Reclaiming my time. → Let me reclaim my time to establish the facts on the record."
+      },
+      {
+        "trigger": "各方推诿责任",
+        "reaction": "直接点名追责并框定为集体逃避",
+        "escalation": "Whose responsibility is it, then? Because everyone in this hearing keeps pointing somewhere else. → The public deserves a straight answer, and they haven't gotten one today."
+      },
+      {
+        "trigger": "自身立场被贴'激进'标签",
+        "reaction": "反转标签、诉诸道德常识",
+        "escalation": "I get called radical for saying children shouldn't go hungry in the richest country on earth. → This is not radical."
+      },
+      {
+        "trigger": "遭遇人身攻击/仇恨者",
+        "reaction": "情绪隔离，拒绝供能",
+        "escalation": "I just don't give them my energy."
+      }
+    ],
+    "blind_spots": [
+      "高姿态议程设定强于立法实绩，被评'更擅长推特与制造声量，不擅立法实绩''对同党施压过度' [中间派/建制派民主党人士-2019~2021]",
+      "经济数字与表述倾向夸大或缺乏上下文（失业/税率类陈述） [事实核查机构类-2019]",
+      "边际税率论述与就业保障主张的经济假设站不住脚、财政幼稚 [财经/自由市场智库类-2019~2020；保守派媒体-2018~2021]",
+      "关键表决上言行不一、过度向党团妥协 [左翼/进步派媒体与活动人士-2020~2021]",
+      "个人消费/形象与反精英信息矛盾（'Tax the Rich'礼服事件） [社交媒体与小报类-2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求在被回避/被打断时触发程序性支配行为",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "以'Reclaiming my time'/'Yes or no'夺回叙事框架与节奏",
+        "behavioral_notes": "听证会场景最典型，短句逼问、拒绝对方展开"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能叠加高风险偏好导致挑战体制/接受短期失败",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "选择高姿态议程与草根挑战而非稳妥渐进",
+        "behavioral_notes": "初选爆冷、力推Green New Deal即使决议未过；'willing to lose a vote to win an argument'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向使其对反对意见先做既得利益归因",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "把'不可能'论者与建制反对归因于结构受益方",
+        "behavioral_notes": "'Follow the money'为默认解释器，可能低估善意技术性异议"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高共情反应驱动'人本叙事优先'的沟通策略",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "先讲亲历/人的故事再引政策，把议题道德化",
+        "behavioral_notes": "'human beings behind these numbers'；风险是数字精确性被牺牲（对照CR事实核查盲点）"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "高自主需求在体制约束下产生说A做B的张力",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "公开维持独立激进姿态，实际投票随党团妥协",
+        "behavioral_notes": "拒PAC钱强化纯洁身份，同时军费/拨款表决妥协——内在冲突的外显来源"
+      }
+    ]
+  }
+}

@@ -2701,7 +2701,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "播客长谈",
@@ -2724,7 +2724,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "赛后发布会",
@@ -2747,7 +2747,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "中英文长访谈",
@@ -2770,7 +2770,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "赛后发布会",
@@ -2793,7 +2793,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "赛后发布会",
@@ -2816,7 +2816,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "冠军长访谈",
@@ -2904,7 +2904,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "国会听证会逐字稿",
@@ -2948,7 +2948,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "国会听证会逐字稿",
@@ -2970,7 +2970,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "庭审与证词逐字稿",
@@ -3014,7 +3014,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "财报会逐字稿",
@@ -3036,7 +3036,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "股东大会Q&A",
@@ -3058,7 +3058,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "国会听证会逐字稿",
@@ -3102,7 +3102,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "总统辩论逐字稿",
@@ -3124,7 +3124,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "总统辩论逐字稿",
@@ -3146,7 +3146,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "竞选辩论逐字稿",
@@ -3168,7 +3168,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "国会听证与质询",
@@ -3190,7 +3190,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "总统辩论逐字稿",
@@ -3212,7 +3212,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "议会质询逐字稿",
@@ -3234,7 +3234,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "议会质询逐字稿",
@@ -3256,7 +3256,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "总统辩论逐字稿",
@@ -3300,7 +3300,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "战争时期记者会",
@@ -3322,7 +3322,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "英语电视对抗采访",
@@ -3344,7 +3344,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇播客",
@@ -3366,7 +3366,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇播客",
@@ -3388,7 +3388,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇播客",
@@ -3410,7 +3410,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "公开辩论逐字稿",
@@ -3432,7 +3432,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇播客",
@@ -3454,7 +3454,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇播客",
@@ -3476,7 +3476,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "公开辩论",
@@ -3498,7 +3498,7 @@
       ],
       "gender": "nonbinary",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "学术讲座Q&A",
@@ -3520,7 +3520,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "历史庭审语料",
@@ -3542,7 +3542,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "公开辩论",
@@ -3564,7 +3564,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "诺奖访谈",
@@ -3586,7 +3586,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇访谈",
@@ -3608,7 +3608,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇科学访谈",
@@ -3630,7 +3630,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "公开辩论",
@@ -3652,7 +3652,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "公开辩论逐字稿",
@@ -3674,7 +3674,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇访谈",
@@ -3696,7 +3696,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "历史对抗采访",
@@ -3718,7 +3718,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇播客",
@@ -3740,7 +3740,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇播客",
@@ -3762,7 +3762,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "演员圆桌逐字稿",
@@ -3784,7 +3784,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "长篇播客",

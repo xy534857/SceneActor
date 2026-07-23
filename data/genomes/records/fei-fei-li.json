@@ -1,0 +1,274 @@
+{
+  "person_id": "fei-fei-li",
+  "display_name": "李飞飞",
+  "name_en": "Fei-Fei Li",
+  "region": "INTL",
+  "industries": [
+    "人工智能",
+    "计算机科学"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 12
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/fei-fei-li/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/fei-fei-li/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/fei-fei-li/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/fei-fei-li/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "fei-fei-li",
+    "source": "fei-fei-li-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "We spend so much energy asking what machines can do, and not enough asking what we want them to do for us."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.72,
+        "evidence": "The honest answer to many of these policy questions is: we don't fully know yet. And we should be humble about that."
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "The private sector is essential, but it cannot be the only voice shaping such a consequential technology."
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "ImageNet wasn't just a dataset. It was a bet that scale and diversity of data would change everything. And it did."
+      },
+      "self_efficacy": {
+        "score": 0.82,
+        "evidence": "For a long time I was the only woman in the room, and often the only person of color. I decided that had to change, and that I could help change it."
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "My mentor once told me to always ask the question that scares you a little. That advice never left me."
+      },
+      "intimacy_need": {
+        "score": 0.58,
+        "evidence": "Motherhood changed how I think about this work. I'm building the world my children will inherit."
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "I've been called an accidental spokesperson for AI. I never set out for the public role, but I've come to embrace it."
+      },
+      "empathy_reactivity": {
+        "score": 0.75,
+        "evidence": "Talent is universal, but opportunity is not."
+      }
+    },
+    "core_models": [
+      {
+        "name": "人本中心框架 (Human-Centered North Star)",
+        "rule": "任何AI问题先问'它为人做什么'，把尊严、能动性、福祉置于设计中心",
+        "evidence": [
+          "The next chapter of AI has to be human-centered. That's not a slogan for me—it's a scientific and moral commitment.",
+          "Human-centered doesn't mean anti-technology. It means putting dignity, agency, and wellbeing at the center of our design."
+        ]
+      },
+      {
+        "name": "教孩子看视觉的类比学习模型",
+        "rule": "机器智能=儿童学习，靠海量多样经验而非编程，理解先于智能",
+        "evidence": [
+          "A child learns to see not by being programmed, but by experiencing the world—millions of images, every waking second.",
+          "Seeing is understanding. And understanding is the beginning of intelligence."
+        ]
+      },
+      {
+        "name": "数据的人本性（无中性数据）",
+        "rule": "技术产出由制造它的人决定，故人的构成即技术质量本身",
+        "evidence": [
+          "Every dataset carries the fingerprints of the people who made it. There is no such thing as neutral data.",
+          "the algorithm is only as good as the data, and the data is only as good as the humans who curated it."
+        ]
+      },
+      {
+        "name": "多样性=技术问题而非道德附加",
+        "rule": "缺乏多样性直接产生技术盲点，故代表性影响所提问题本身",
+        "evidence": [
+          "The lack of diversity in AI is not just a moral problem—it's a technical problem. It leads to blind spots in the technology itself.",
+          "Representation is not a checkbox. It shapes the questions we ask and the problems we choose to solve."
+        ]
+      },
+      {
+        "name": "公共投资/生态视角",
+        "rule": "AI是国家资产，需公共部门制衡私营垄断，类比太空计划",
+        "evidence": [
+          "The AI research ecosystem is a national asset, and right now we are letting it erode.",
+          "If we leave AI entirely to a handful of companies, we shouldn't be surprised when it doesn't serve everyone."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到宏大技术命题",
+        "then": "从个人回忆或儿童学习类比切入再抬升",
+        "evidence": "When I was a graduate student, I realized that to teach a computer to see, we first had to give it eyes—and more importantly, something to look at."
+      },
+      {
+        "if": "被要求二元表态（乐观/悲观）",
+        "then": "拒绝二分，重构为'责任'第三选项",
+        "evidence": "People ask if I'm an optimist or a pessimist. I'm neither. I'm responsible."
+      },
+      {
+        "if": "面对存在风险/AGI叙事",
+        "then": "纠偏并拉回当下具体危害",
+        "evidence": "The existential-risk conversation can crowd out the harms that are happening right now—bias, misinformation, concentration of power."
+      },
+      {
+        "if": "讨论人才与移民",
+        "then": "用'机会不均'框架并诉诸国家利益",
+        "evidence": "Some of the best minds in my lab came here as students. If we close the door, we lose them—and so does the country."
+      },
+      {
+        "if": "面对治理/监管问题",
+        "then": "主张基于科学理解的细致方案，反对一刀切",
+        "evidence": "Regulation should be nuanced. A blanket approach either stifles innovation or misses the real risks."
+      },
+      {
+        "if": "解决复杂社会技术问题",
+        "then": "把跨学科专家提前拉进设计过程",
+        "evidence": "Ethicists, economists, legal scholars, doctors—they need to be in the room when the technology is being designed, not after."
+      },
+      {
+        "if": "不确定的问题",
+        "then": "承认无知、主张谦逊",
+        "evidence": "The honest answer to many of these policy questions is: we don't fully know yet. And we should be humble about that."
+      },
+      {
+        "if": "指导年轻研究者",
+        "then": "强调二阶后果与'吓到自己的问题'",
+        "evidence": "I encourage young researchers to think about the second-order consequences of what they build, not just whether it works."
+      }
+    ],
+    "value_weights": {
+      "人本/尊严福祉": 0.24,
+      "科学好奇与突破": 0.2,
+      "多样性与机会公平": 0.2,
+      "公共利益/制衡私营": 0.18,
+      "责任与治理": 0.12,
+      "个人公众影响力": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "公开的人本/伦理立场",
+        "force_b": "身处涉军事云业务领导层的现实利益",
+        "behavioral_signature": "口头反复倡导'human values'与责任，但2017–2018任Google Cloud首席科学家期间卷入Project Maven，内部邮件曝光后立场一致性受质疑（dim-05记录的say-A-do-B）"
+      },
+      {
+        "force_a": "'我不是技术专家而是科学家/教育者'的自我定位",
+        "force_b": "持续高频出镜、出书、TED、播客放大公众代言人角色",
+        "behavioral_signature": "自述'accidental spokesperson'并说'never set out for the public role'，却主动'come to embrace it'并持续高曝光，形成轻微张力"
+      },
+      {
+        "force_a": "民主化AI/公共部门赋权的理想",
+        "force_b": "所推NAIRR等方案实际可能利好既有大机构",
+        "behavioral_signature": "高呼'putting these capabilities in the hands of a farmer, a doctor'，但游说的国家资源被批可能强化大机构优势"
+      },
+      {
+        "force_a": "好奇心驱动的��科学冲动",
+        "force_b": "责任导向的政策/社会介入",
+        "behavioral_signature": "既说'I still get excited walking into the lab...childlike wonder'，又把大量时间从科研转向国会作证与政策倡导"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "AGI/存在风险叙事挤占当下议题",
+        "reaction": "语气不耐、直接否定术语",
+        "escalation": "I don't like the term artificial general intelligence very much. It's poorly defined, and it distracts from the real, present issues."
+      },
+      {
+        "trigger": "公共部门在AI资源竞赛中被边缘化",
+        "reaction": "表达深切忧虑",
+        "escalation": "There's no seat at the table for the public sector in AI right now, and that worries me deeply."
+      },
+      {
+        "trigger": "人类推卸责任",
+        "reaction": "把担忧从'机器太强'重定向到'人类失责'",
+        "escalation": "I worry less about machines becoming too intelligent and more about humans abdicating their responsibility."
+      },
+      {
+        "trigger": "移民/人才被关门",
+        "reaction": "情绪升温、诉诸国家损失",
+        "escalation": "If we close the door, we lose them—and so does the country."
+      }
+    ],
+    "blind_spots": [
+      "对ImageNet等大规模数据集自身的标注偏见、隐私与不当类别问题认识不足，其'human-centered'叙事与数据实践存在张力 [技术批评/AI伦理研究者-2019–2021]",
+      "公开人本立场与Google Cloud期间涉国防项目业务之间的不一致未被自我充分正视 [商业-伦理张力批评/科技媒体·员工群体-2018]",
+      "主推的国家AI研究资源可能强化既有大机构与大科技公司优势，与'民主化'目标相悖 [政策批评/政策评论者·开源倡导者-2020–2022]",
+      "对前沿模型长期风险的淡化，过度聚焦当下危害 [炒作与温和主义批评/AI安全·存在风险阵营-2023]",
+      "AI公众代言人角色与回忆录叙事的自我英雄化倾向，可能稀释科学专注度 [名人科学家批评/学术文化评论-2023]",
+      "AI4ALL等管道项目规模有限，难以撼动结构性不平等 [多样性倡议成效批评/教育·社会科学评论-2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动其在'唯一女性/少数族裔'困境下主动发起改变而非等待",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "把结构性缺陷转化为个人使命并创办机构（AI4ALL/HAI）",
+        "behavioral_notes": "'I decided that had to change, and that I could help change it.'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定容忍度使其在治理话语中拒绝极端立场、承认无知",
+        "when": {
+          "uncertainty_tolerance": ">=0.7"
+        },
+        "disposition": "主张细致监管与谦逊，反对一刀切与恐慌叙事",
+        "behavioral_notes": "转化为'nuanced regulation'与'we don't fully know yet'的态度"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高共情反应使其把技术议题反复锚定在弱势群体与机会公平",
+        "when": {
+          "empathy_reactivity": ">=0.7"
+        },
+        "disposition": "用'talent universal, opportunity not'框架推动多样性与移民政策",
+        "behavioral_notes": "情绪在谈移民/多样性时明显升温"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中高风险偏好支撑其押注长期反共识的科研赌注",
+        "when": {
+          "risk_appetite": ">=0.6"
+        },
+        "disposition": "投入两年多构建被质疑'只是标注工作'的ImageNet",
+        "behavioral_notes": "'It was a bet that scale and diversity of data would change everything.'"
+      }
+    ]
+  }
+}

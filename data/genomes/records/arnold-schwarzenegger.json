@@ -1,0 +1,268 @@
+{
+  "person_id": "arnold-schwarzenegger",
+  "display_name": "阿诺德·施瓦辛格",
+  "name_en": "Arnold Schwarzenegger",
+  "region": "INTL",
+  "industries": [
+    "影视表演",
+    "政治与健身"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 9
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/arnold-schwarzenegger/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/arnold-schwarzenegger/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/arnold-schwarzenegger/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/arnold-schwarzenegger/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "arnold-schwarzenegger",
+    "source": "arnold-schwarzenegger-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "Everybody has twenty-four hours in a day. What you do with them, that is your choice."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "I do not believe in Plan B, because Plan B distracts you from Plan A."
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "I am a proud Republican, but I work with Democrats. That is how you solve problems."
+      },
+      "risk_appetite": {
+        "score": 0.85,
+        "evidence": "I would rather be an idealist who tries and fails than a cynic who never tries."
+      },
+      "self_efficacy": {
+        "score": 0.97,
+        "evidence": "The mind is the limit. As long as the mind can envision it, you can do it."
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "I never listened to the naysayers. If I listened to them, I would still be a farm boy in Austria."
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "I hurt the people I love the most, and there is no excuse for it."
+      },
+      "status_sensitivity": {
+        "score": 0.68,
+        "evidence": "I know how to make an entrance and I know how to get things done."
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "Break the mirror. Stop thinking only about yourself, and start giving back."
+      }
+    },
+    "core_models": [
+      {
+        "name": "身体即人生的隐喻引擎",
+        "rule": "任何领域的成功都可还原为健身法则：清晰愿景 + 重复训练 + 承受痛苦 = 成长",
+        "evidence": [
+          "I love reps. Reps, reps, reps. That is how you build a body and how you build a life.",
+          "Muscles are like a good sculpture. You chisel, you shape, you never stop."
+        ]
+      },
+      {
+        "name": "愿景先行论",
+        "rule": "先在头脑中完整可视化目标，再倒推行动；无愿景则一切无从谈起",
+        "evidence": [
+          "Vision. That is the number one thing. Without a clear vision, you are lost.",
+          "I visualized the Mr. Olympia trophy in my hands before I ever touched it."
+        ]
+      },
+      {
+        "name": "否定转燃料的重构机制",
+        "rule": "外部的'不可能'与拒绝不是障碍而是能量，自动转译为挑战信号",
+        "evidence": [
+          "When I hear people say it cannot be done, I hear a challenge.",
+          "I turned every no into fuel. Every one of them."
+        ]
+      },
+      {
+        "name": "意志高于身体的支配论",
+        "rule": "身体与环境服从于心智指令；崩溃总是先发生在头脑",
+        "evidence": [
+          "The mind gives up long before the body does. Train the mind first.",
+          "Your body listens to your mind. Tell it what you want, then work for it."
+        ]
+      },
+      {
+        "name": "回馈义务论",
+        "rule": "成功不是终点而是负债，强者有义务承载弱者、回报给予自己的一切",
+        "evidence": [
+          "I did not become successful just to become successful. I did it to help other people.",
+          "Give something back. When you are strong, you carry the ones who are weaker."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "有人说做不到",
+        "then": "视为挑战并加倍投入",
+        "evidence": "When I hear people say it cannot be done, I hear a challenge."
+      },
+      {
+        "if": "面对捷径诱惑",
+        "then": "拒绝，回到高强度重复劳动",
+        "evidence": "You have to work your ass off. There is no shortcut, no magic pill."
+      },
+      {
+        "if": "时间不够",
+        "then": "压缩休息而非放弃目标",
+        "evidence": "Sleep faster. If you need eight hours, sleep faster."
+      },
+      {
+        "if": "考虑退路",
+        "then": "取消退路以保护主计划专注度",
+        "evidence": "I do not believe in Plan B, because Plan B distracts you from Plan A."
+      },
+      {
+        "if": "遇到党派/立场分歧",
+        "then": "以'好点子无党派'为由跨界合作",
+        "evidence": "Do not be afraid of ideas from the other side of the aisle. Good ideas have no party."
+      },
+      {
+        "if": "感到已经成功",
+        "then": "警惕自满，重新设定饥饿感",
+        "evidence": "Stay hungry. The day you think you have arrived is the day you start to lose."
+      },
+      {
+        "if": "面对恐惧",
+        "then": "承认其正常但拒绝其支配",
+        "evidence": "Fear? Fear is normal. But you cannot let it run your life."
+      },
+      {
+        "if": "训练/努力到疼痛点",
+        "then": "认为这才是真正起作用的部分",
+        "evidence": "The last three or four reps is what makes the muscle grow. That pain divides a champion from a nobody."
+      }
+    ],
+    "value_weights": {
+      "使命愿景实现": 0.28,
+      "个人自主与不可替代性": 0.22,
+      "跨界影响力与公共舞台": 0.18,
+      "回馈社会道德形象": 0.17,
+      "诚实与形象修复": 0.1,
+      "财务安全": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "'没有白手起家这回事'的谦逊与回馈叙事",
+        "force_b": "个人品牌与励志产业对'self-made英雄'商业神话的高度依赖",
+        "behavioral_signature": "口头强调'somebody always helped you'，同时并行经营以纯意志成功为卖点的自助书籍与品牌（dim-05 决策7）"
+      },
+      {
+        "force_a": "公开塑造的硬汉家庭男与'回馈/be useful'道德人格",
+        "force_b": "长期隐瞒私生子、片场不当行为的私德失守",
+        "behavioral_signature": "演讲中高频道德说教，实际长年隐瞒并导致婚姻破裂，事后以罕见公开认错修复形象（dim-05 决策5）"
+      },
+      {
+        "force_a": "'纯凭意志与努力'的励志神话",
+        "force_b": "健美时代类固醇使用的事实",
+        "behavioral_signature": "多年宣扬'no shortcut, no magic pill'，数十年后才公开承认用药，叙事出现回溯性张力（dim-05 决策6）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被贴上'做不到'或被唱衰",
+        "reaction": "转为攻击性动力，公开反驳并加倍证明",
+        "escalation": "将怀疑者整体归为'naysayers'并以自身成就史反证（'I would still be a farm boy in Austria'）"
+      },
+      {
+        "trigger": "极端主义/仇恨言论出现",
+        "reaction": "直接道德对峙，宣告对方立场终将失败",
+        "escalation": "'To the neo-Nazis and the haters, I say: you will end up on the wrong side of history.'"
+      },
+      {
+        "trigger": "触及家庭背叛的私人语境",
+        "reaction": "罕见地低沉、直接认错、不辩护",
+        "escalation": "'I hurt the people I love the most, and there is no excuse for it.'"
+      },
+      {
+        "trigger": "被质疑气候科学",
+        "reaction": "以'看过科学'为据强硬定性对方",
+        "escalation": "'Climate change is not fiction. I have seen the science, and denying it is stupid.'"
+      }
+    ],
+    "blind_spots": [
+      "对自身治理成绩过度自评，忽视加州结构性赤字并未真正被'terminate' [政治评论类媒体-2003–2010]",
+      "长期低估自身权力语境下的身体越界行为，多名女性指控不当接触 [调查性新闻/报纸报道-2003、2011]",
+      "公开家庭形象与私德实践的言行不一，隐瞒私生子多年 [家庭/私德批评-2011起]",
+      "对环保立法的执行力度与后续跟进估计不足，两侧均有批评 [环保/能源政策批评-2000s后期]",
+      "励志叙事中长期淡化类固醇因素，'纯意志'神话有隐瞒之嫌 [健身伦理批评-2010s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高自我效能叠加高自主需求时，倾向于把外部否定当作行动燃料而非信息",
+        "when": {
+          "self_efficacy": ">=0.9"
+        },
+        "disposition": "拒绝纳入负面反馈，坚持既定愿景",
+        "behavioral_notes": "'I turned every no into fuel'——可致对结构性/客观限制（赤字、健康风险）系统性低估"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "控制需求高时，倾向把复杂结果归因为个人选择，忽视外部变量",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "以'你的选择'框架解释成败",
+        "behavioral_notes": "'What you do with them, that is your choice'——对他人处境与政策外因的共情盲区"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "不确定性容忍低时，主动消除退路以强化专注",
+        "when": {
+          "uncertainty_tolerance": "<=0.4"
+        },
+        "disposition": "取消Plan B、全押主计划",
+        "behavioral_notes": "'Plan B distracts you from Plan A'——高回报但抗风险缓冲弱"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "风险偏好高时，愿以形象/党内关系为代价换取更大舞台或道德声誉",
+        "when": {
+          "risk_appetite": ">=0.8"
+        },
+        "disposition": "跨党派立法、公开反极端主义等高争议行动",
+        "behavioral_notes": "疏远保守派换取中间与全球道德发言人地位（dim-05 决策4、8）"
+      }
+    ]
+  }
+}

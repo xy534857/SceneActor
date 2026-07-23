@@ -1,0 +1,273 @@
+{
+  "person_id": "liu-guoliang",
+  "display_name": "刘国梁",
+  "name_en": "Liu Guoliang",
+  "region": "CN",
+  "industries": [
+    "乒乓球",
+    "教练",
+    "体育管理"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 23
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-guoliang/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-guoliang/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-guoliang/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-guoliang/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "liu-guoliang",
+    "source": "liu-guoliang-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.78,
+        "evidence": "教练这个位置，赢了是队员的，输了是你的"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "我常说，天塌不下来，但你自己不能先塌"
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "带队这么多年，最大的体会就是要相信年轻人"
+      },
+      "risk_appetite": {
+        "score": 0.72,
+        "evidence": "关键分上，谁敢主动谁就占先机"
+      },
+      "self_efficacy": {
+        "score": 0.82,
+        "evidence": "我这个人认死理，认准的事就往前走"
+      },
+      "autonomy_need": {
+        "score": 0.68,
+        "evidence": "我这个人，说话可能直了点，但都是为了这支队伍"
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "队员在场上，我在场下比他们还紧张"
+      },
+      "status_sensitivity": {
+        "score": 0.75,
+        "evidence": "我们不是来拿第二的，第二对我们来说就是输了"
+      },
+      "empathy_reactivity": {
+        "score": 0.58,
+        "evidence": "一个运动员的巅峰就那么几年，得帮他抓住"
+      }
+    },
+    "core_models": [
+      {
+        "name": "居安思危模型",
+        "rule": "最大的对手是自己，一家独大即是危机的开端，须主动制造竞争压力",
+        "evidence": [
+          "中国乒乓球不能躺在功劳簿上睡觉",
+          "一支队伍最怕的是没有危机感"
+        ]
+      },
+      {
+        "name": "外压内化模型",
+        "rule": "先承认外部形势/对手，再把压力收束为对自身的更高要求",
+        "evidence": [
+          "里约这块金牌，压力全在我们自己身上，别人是来冲击我们的",
+          "对手在进步，我们更要进步得比他们快"
+        ]
+      },
+      {
+        "name": "责任归位模型",
+        "rule": "荣誉归集体、失败归自己；管理者承担一切下行代价",
+        "evidence": [
+          "教练这个位置，赢了是队员的，输了是你的",
+          "我这个人，说话可能直了点，但都是为了这支队伍"
+        ]
+      },
+      {
+        "name": "传承使命模型",
+        "rule": "个人价值在历史链条中衡量，目标是交接时队伍比接手时更强",
+        "evidence": [
+          "我希望离开这个位置的时候，队伍比我接手时更强",
+          "一代人有一代人的使命"
+        ]
+      },
+      {
+        "name": "关键分决胜模型",
+        "rule": "胜负拼在少数关键球与心态细节，敢主动者占先机",
+        "evidence": [
+          "关键分上，谁敢主动谁就占先机",
+          "高手过招，拼的就是这几个球的细节"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "领先或成绩好",
+        "then": "警惕松劲、强调居安思危",
+        "evidence": "别看比分领先，这种球最容易松劲"
+      },
+      {
+        "if": "评估队员",
+        "then": "技术之外必看关键时刻的那股劲和自律",
+        "evidence": "我看队员不光看技术，还看他关键时刻的那股劲"
+      },
+      {
+        "if": "面对竞争",
+        "then": "视为活力来源而主动欢迎",
+        "evidence": "我从来不怕竞争，越竞争这个项目越有活力"
+      },
+      {
+        "if": "遭遇失败",
+        "then": "追问为什么输而非畏惧输本身",
+        "evidence": "输球不可怕，怕的是输了不知道为什么输"
+      },
+      {
+        "if": "认准一件事",
+        "then": "认死理往前走",
+        "evidence": "我这个人认死理，认准的事就往前走"
+      },
+      {
+        "if": "取得荣誉",
+        "then": "立即清零、脚踩地上看明天",
+        "evidence": "荣誉是过去的，明天的��赛才是最重要的"
+      },
+      {
+        "if": "身份从执行者转为管理者",
+        "then": "学会放手、相信年轻人",
+        "evidence": "带队跟自己打球完全是两码事，你得学会放手"
+      },
+      {
+        "if": "存在项目短板",
+        "then": "必须重视、补齐、不能有短板",
+        "evidence": "混双这个项目我们必须重视，不能有短板"
+      }
+    ],
+    "value_weights": {
+      "队伍延续与传承": 0.28,
+      "竞技成绩至上": 0.24,
+      "危机感与开放竞争": 0.2,
+      "个人担责": 0.15,
+      "项目推广普及": 0.13
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "支持养狼计划/开放竞争削弱自身垄断",
+        "force_b": "现实中追求保持一家独大优势",
+        "behavioral_signature": "口头反复主张'养狼''一家独大不是好事'，但决策记录显示实际操作仍以维护自身长期优势为主（dim-05 记录2 言行不一）"
+      },
+      {
+        "force_a": "'脚踩在地上''专注竞技'的自我期许",
+        "force_b": "亲身介入解说、综艺、直播等流量场景",
+        "behavioral_signature": "言语强调'成绩再好脚也得踩在地上'，同时高频公开露面提升关注度，被批冲淡竞技专注（dim-05 记录5）"
+      },
+      {
+        "force_a": "宣称'竞争上岗、成绩说话'的客观标准",
+        "force_b": "同时以'那股劲'等主观直觉选人",
+        "behavioral_signature": "对外称'谁状态好谁上'，实际选人夹带主观维度，标准弹性大（dim-05 记录6）"
+      },
+      {
+        "force_a": "'学会放手、相信年轻人'的管理理念",
+        "force_b": "强人式核心的实际掌控习惯",
+        "behavioral_signature": "口头强调放权培养新人，但大赛仍倚重成熟老将、外界仍视其为集权核心（dim-05 记录3、7）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "队伍面临大赛/夺金压力",
+        "reaction": "把外部压力全部收拢到自身，比队员更紧张",
+        "escalation": "转化为'每一场都当决赛打''不能有丝毫松懈'的高强度动员"
+      },
+      {
+        "trigger": "出现躺功劳簿、松劲、缺乏危机感的苗头",
+        "reaction": "立即警告与敲打",
+        "escalation": "上升为'最怕的是没有危机感''不能躺在功劳簿上睡觉'的原则性批评"
+      },
+      {
+        "trigger": "被质疑或谈及自身性格",
+        "reaction": "以自嘲和'为了这支队伍'化解",
+        "escalation": "强化'我这个人认死理''不服输'的固执自我定位"
+      },
+      {
+        "trigger": "输球",
+        "reaction": "不畏惧结果，追问原因",
+        "escalation": "把'不知道为什么输'定义为真正的可怕，倒逼复盘"
+      }
+    ],
+    "blind_spots": [
+      "管理风格过度强人化、决策集中，个人色彩掩盖制度性放权 [体育评论/媒体类-2017]",
+      "养狼计划口惠而实不至，是否真正削弱自身长期优势存疑 [行业观察/专栏类-2018]",
+      "成绩导向下青训与普及'两条腿'并未真正平衡，推广多停留口号 [管理体制批评类-2021]",
+      "选人'凭状态、凭那股劲'标准主观性过强 [前运动员/圈内访谈类-2019]",
+      "队伍与个人过度介入综艺、直播、流量场景，冲淡竞技专注 [商业化/流量批评类-2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高控制需求叠加高地位敏感，使其在成绩面前把责任与压力独揽",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "主动扛责、绑定个人去留于成绩",
+        "behavioral_notes": "'输了是你的'式话语，成为舆论焦点仍不回避"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自我效能导致认死理式坚持，理念一旦确立便不轻易调整",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "认准即前进，减少中途质疑",
+        "behavioral_notes": "在养狼/传承等理念上言语坚定，但也造成言行落差的固化"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高地位敏感触发'第二即输'的零和目标设定",
+        "when": {
+          "status_sensitivity": ">=0.7"
+        },
+        "disposition": "只接受第一、拒绝任何松懈",
+        "behavioral_notes": "领先时反而更强调危机，用居安思危压制松劲"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "较高风险偏好使其在关键节点鼓励主动进攻而非保守",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "关键分敢上手、敢主动",
+        "behavioral_notes": "选人偏爱敢拼大赛、有'那股劲'的队员"
+      }
+    ]
+  }
+}

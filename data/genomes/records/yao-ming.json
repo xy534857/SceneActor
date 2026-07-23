@@ -1,0 +1,275 @@
+{
+  "person_id": "yao-ming",
+  "display_name": "姚明",
+  "name_en": "Yao Ming",
+  "region": "CN",
+  "industries": [
+    "篮球",
+    "体育管理",
+    "公益"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 13
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yao-ming/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yao-ming/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yao-ming/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yao-ming/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "yao-ming",
+    "source": "yao-ming-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "改革一定会得罪人，但如果因为怕得罪人就不做，那才是失职。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.72,
+        "evidence": "双国家队是一次尝试，成功了我们坚持，失败了我们改。"
+      },
+      "trust_propensity": {
+        "score": 0.7,
+        "evidence": "让专业的人做专业的事，这是最基本的道理。"
+      },
+      "risk_appetite": {
+        "score": 0.5,
+        "evidence": "三对三进奥运，这对中国篮球是新机会，不能错过。"
+      },
+      "self_efficacy": {
+        "score": 0.68,
+        "evidence": "我不怕失败，怕的是不去尝试。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "姚明就是姚明，我不需要成为下一个谁。"
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "队友信任你，把球交给你��这份信任比数据重要。"
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "我不太喜欢别人叫我\"移动长城\"，我就是个球员。"
+      },
+      "empathy_reactivity": {
+        "score": 0.62,
+        "evidence": "一个孩子如果因为打球就没书读，家长怎么可能放心让他打球。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "金字塔/根基长期主义",
+        "rule": "任何系统性问题都从塔基与根源解决，拒绝只盯塔尖的短期成绩",
+        "evidence": [
+          "联赛是根，国家队是果，根不好果不会甜。",
+          "我们不能只盯着奥运会那几块金牌，得看整个金字塔。"
+        ]
+      },
+      {
+        "name": "承认—复盘—改三段式",
+        "rule": "遇到失败先承认事实，再找结构性原因，最后落到可改进的动作",
+        "evidence": [
+          "输球不可怕，可怕的是不知道为什么输。",
+          "世界杯没打好，我们必须复盘，找到真正的原因。"
+        ]
+      },
+      {
+        "name": "种树而非拆房子",
+        "rule": "改革被视为缓慢培育过程，抵制推倒重来式的急功近利",
+        "evidence": [
+          "有人说我改革太慢，可篮球不是拆房子，是种树。",
+          "中国篮球的问题不是一天形成的，也不可能一天解决。"
+        ]
+      },
+      {
+        "name": "自我归因责任框架",
+        "rule": "作为领导者把结果责任内化到自身，而非归咎外部",
+        "evidence": [
+          "结果不理想，责任在我，作为主席我不推卸。",
+          "我不想给自己找借口，输了就是输了。"
+        ]
+      },
+      {
+        "name": "专业分工原则",
+        "rule": "让专业的人做专业的事，管理者做体系搭建而非包办",
+        "evidence": [
+          "让专业的人做专业的事，这是最基本的道理。",
+          "篮球改革不是我一个人的事，是整个体系的事。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遭遇失败或失利",
+        "then": "先承认再复盘，不找借口",
+        "evidence": "我不想给自己找借口，输了就是输了。"
+      },
+      {
+        "if": "面对做与不做的抉择",
+        "then": "宁可尝试冒得罪风险也不因怕失败而不动",
+        "evidence": "我不怕失败，怕的是不去尝试。"
+      },
+      {
+        "if": "评价问题严重性",
+        "then": "提醒它是长期累积、需要长期解决",
+        "evidence": "中国篮球的问题不是一天形成的，也不可能一天解决。"
+      },
+      {
+        "if": "身处高关注/易被放大的位置",
+        "then": "少说多做以降低风险",
+        "evidence": "我这个位置，说错一句话都会被放��，所以我更愿意少说多做。"
+      },
+      {
+        "if": "被贴标签或神话化",
+        "then": "去符号化、回归本职角色",
+        "evidence": "姚明就是姚明，我不需要成为下一个谁。"
+      },
+      {
+        "if": "获得荣誉",
+        "then": "转化为责任并归功于集体",
+        "evidence": "姚明这两个字后面，是很多人一起的努力。"
+      },
+      {
+        "if": "遇到专业性事务",
+        "then": "交给专业人士而非亲自决断",
+        "evidence": "让专业的人做专业的事，这是最基本的道理。"
+      },
+      {
+        "if": "承受球迷或外界批评",
+        "then": "接受批评合理性，理解对方情绪",
+        "evidence": "成绩不好我该挨批评，这没什么好抱怨的。"
+      }
+    ],
+    "value_weights": {
+      "长期体系建设": 0.28,
+      "责任担当": 0.2,
+      "教育与下一代": 0.18,
+      "自主与去符号化": 0.13,
+      "尝试与改革勇气": 0.12,
+      "个人成绩/荣誉": 0.09
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "面对现实、承认失败的坦诚",
+        "force_b": "改革成绩长期不见效、纠错并不总及时",
+        "behavioral_signature": "公开说\"失败了我们改\"\"责任在我\"，但双国家队等实验被批\"来回改、交了学费未见效\"，担责话语漂亮与结构性问题依旧之间的落差"
+      },
+      {
+        "force_a": "拥抱尝试与制度创新（不怕失败）",
+        "force_b": "种树式长期主义要求的慢与稳",
+        "behavioral_signature": "既推双国家队/三人篮球等激进实验，又以\"篮球不是拆房子是种树\"为改革迟缓辩护，进取话语与迟缓执行并存"
+      },
+      {
+        "force_a": "去符号化、\"我只是个球员\"的谦逊",
+        "force_b": "实际长期作为中国篮球的门面与个人背书",
+        "behavioral_signature": "说\"希望有一天不再需要姚明这个名字来撑中国篮球\"，同时接受主席职位并把成绩压力揽到个人身上"
+      },
+      {
+        "force_a": "面对伤病、承认身体极限的理性",
+        "force_b": "反复带伤复出的执着",
+        "behavioral_signature": "口头称\"伤病只能面对它\"，行为上多次带伤复出直至加速退役"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指责推卸责任或找借口",
+        "reaction": "主动揽责、拒绝辩解",
+        "escalation": "从\"责任在我\"升级到\"输了就是输了\"\"该挨批评没什么好抱怨的\"的彻底自我归因"
+      },
+      {
+        "trigger": "改革被批评太慢",
+        "reaction": "用比喻辩护而非情绪反驳",
+        "escalation": "以\"篮球不是拆房子，是种树\"\"不是一天形成的\"框定长期性，回避加速承诺"
+      },
+      {
+        "trigger": "被神话化或贴标签（移动长城/英雄叙事）",
+        "reaction": "温和自嘲并去中心化",
+        "escalation": "强调\"我就是个球员\"\"很多人一起的努力\"，把焦点从个人转移到系统"
+      },
+      {
+        "trigger": "球迷失望与不满",
+        "reaction": "共情并承认其正当性",
+        "escalation": "从\"理解球迷的失望\"到\"球迷有权利要求我们打得更好\"，将压力转为自我要求"
+      }
+    ],
+    "blind_spots": [
+      "倡导理念多、落地抓手少，政协提案获认可但实际效果有限 [青训/体教融合政策讨论-2010s—2020s]",
+      "改革被指雷声大雨点小，国家队成绩下滑 [体育媒体/篮球评论-2010s后期]",
+      "双国家队等实验方向不清、执行反复，交了学费未见效 [业内人士/教练群体-2010s]",
+      "名气大于管理能力，以球员思维当管理者 [部分球迷/网络舆论-2019前后]",
+      "商业身份（姚之队/代言）与公职之间的角色张力 [商业/利益冲突质疑类报道-2000s—2010s]",
+      "CBA商业化与竞技水平不同步，��革迟缓、既得利益难撼动 [改革节奏批评-2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高不确定性容忍驱动其发起风险性制度实验",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "倾向以\"先试再改\"方式推行未验证的创新",
+        "behavioral_notes": "双国家队、三人篮球等；配套是事后担责与复盘话语，但纠错节奏被外界质疑滞后"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自主需求导致抵制被套模板/符号化",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "拒绝\"下一个某某\"式定位，坚持自我定义角色",
+        "behavioral_notes": "\"姚明就是姚明\"\"我就是个球员\"，甚至希望篮球不再依赖其名字"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高信任倾向使其偏好授权而非集权",
+        "when": {
+          "trust_propensity": ">=0.65"
+        },
+        "disposition": "把专业事务交给专业人士，自我定位为体系搭建者",
+        "behavioral_notes": "\"让专业的人做专业的事\"；但外界认为管理落地缺抓手，授权与执行力之间存在缝隙"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "中高自我效能配合长期主义，形成对慢变量的耐受",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "承担难量化的长期投入（公益/青训）并抵御短期成绩焦虑",
+        "behavioral_notes": "姚基金、体教融合多年倡导；代价是效果慢、易被批\"倡导多抓手少\""
+      }
+    ]
+  }
+}

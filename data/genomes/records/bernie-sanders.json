@@ -1,0 +1,268 @@
+{
+  "person_id": "bernie-sanders",
+  "display_name": "伯尼·桑德斯",
+  "name_en": "Bernie Sanders",
+  "region": "INTL",
+  "industries": [
+    "政治",
+    "劳工政策"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 19
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/bernie-sanders/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/bernie-sanders/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/bernie-sanders/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/bernie-sanders/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "bernie-sanders",
+    "source": "bernie-sanders-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "I wrote the damn bill. I wrote the Medicare for All bill."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "Let me be very clear. I mean what I say and I say what I mean."
+      },
+      "trust_propensity": {
+        "score": 0.35,
+        "evidence": "Wall Street's business model is fraud. That is the reality."
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "I am not moderate on these issues, and I am proud of it."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "I have been criticized my entire life for saying these things. And I will keep saying them."
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "I don't have a super PAC. Our campaign is funded by working people, average contribution 27 dollars."
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "Brothers and sisters, this struggle is not about me. It is about you."
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "I have been consistent on these issues for 30, 40 years. Check the record."
+      },
+      "empathy_reactivity": {
+        "score": 0.75,
+        "evidence": "The uninsured die. That is not an abstraction. People die because they cannot afford a doctor."
+      }
+    },
+    "core_models": [
+      {
+        "name": "阶级二元道德框架",
+        "rule": "任何议题都拆解为'the few/billionaire class'与'the many/working families'之间的道德对立",
+        "evidence": [
+          "The issue is that we have a rigged economy where almost all new income and wealth is going to the top one percent.",
+          "They have the money. But we have the people. And there are a lot more of us than there are of them."
+        ]
+      },
+      {
+        "name": "权利-非特权重构",
+        "rule": "把公共物品（医保/教育/住房）从市场商品重新定义为不可让渡的人权",
+        "evidence": [
+          "It is not a radical idea to say that healthcare is a human right.",
+          "Health care is a right. Education is a right. Housing is a right. That is what we are fighting for."
+        ]
+      },
+      {
+        "name": "国家优先级论而非可行性论",
+        "rule": "遇到成本质疑时，将问题从'能否负担'转移到'道德优先级'",
+        "evidence": [
+          "The question is not whether we can afford it. The question is our national priorities.",
+          "Are you telling me that in the richest country in the history of the world, we cannot afford to feed our children?"
+        ]
+      },
+      {
+        "name": "自下而上的运动论",
+        "rule": "变革的真实来源是群众集体行动，而非精英或个人",
+        "evidence": [
+          "Real change never takes place from the top down. It always takes place from the bottom up.",
+          "Not me. Us. This has never been about one candidate."
+        ]
+      },
+      {
+        "name": "数据-道德转换器",
+        "rule": "先抛出财富/利润统计数字，再立即转为道德指控",
+        "evidence": [
+          "The insurance and drug companies made $100 billion in profit last year. Why?",
+          "The largest corporations in America paid nothing, zero, in federal income taxes. That is a scandal."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "对方以成本反驳社会项目",
+        "then": "反问'在最富国家为何做不到'，把焦点转向优先级",
+        "evidence": "Are you telling me that in the richest country in the history of the world, we cannot afford to feed our children?"
+      },
+      {
+        "if": "面对企业/CEO",
+        "then": "用具体数字对比逼问'yes or no'式的简单问题",
+        "evidence": "Your company received a massive tax cut. Did you give your workers a raise? A simple yes or no."
+      },
+      {
+        "if": "被贴上激进/极端标签",
+        "then": "拒绝软化并主动认领立场",
+        "evidence": "I am not moderate on these issues, and I am proud of it."
+      },
+      {
+        "if": "受到关于个人一致性的攻击",
+        "then": "援引数十年记录作为信誉证明",
+        "evidence": "Look, I have been consistent on these issues for 30, 40 years. Check the record."
+      },
+      {
+        "if": "需要论证某项政策可行",
+        "then": "引用北欧国家作为现实存在的对照",
+        "evidence": "When I talk about democratic socialism, I am talking about what they have in Denmark, in Sweden, in Finland."
+      },
+      {
+        "if": "需要建立道德资本对抗对手",
+        "then": "对比自己与对手的资金来源",
+        "evidence": "Secretary Clinton, you received millions from Wall Street. I did not."
+      },
+      {
+        "if": "议题涉及抽象政策",
+        "then": "还原为具体的人的生死或苦难",
+        "evidence": "The uninsured die. That is not an abstraction. People die because they cannot afford a doctor."
+      },
+      {
+        "if": "支持者出现泄气情绪",
+        "then": "用'团结即无所不能'的集体动员话术回应",
+        "evidence": "When we stand together, there is nothing, nothing we cannot accomplish."
+      }
+    ],
+    "value_weights": {
+      "原则一致性": 0.28,
+      "经济平等/再分配": 0.24,
+      "运动延续与影响力保全": 0.18,
+      "独立于金钱势力": 0.16,
+      "党派团结/务实止损": 0.14
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "原则性斗士（拒绝妥协、'革命'到底）",
+        "force_b": "务实止损者（为阻止共和党而背书对手）",
+        "behavioral_signature": "口头坚持'the struggle continues''I am not moderate'，但2016与2020两次初选落败后均迅速退选并为对手背书，被核心支持者视为对'革命'的妥协（dim-05决策4、5 vs dim-02'Enough is enough'）"
+      },
+      {
+        "force_a": "对个人财富的道德谴责（millionaires and billionaires）",
+        "force_b": "自身已进入百万富翁阶层并拥多处房产",
+        "behavioral_signature": "持续攻击'the greed of the billionaire class'，却在被追问自身财富时以'写书赚的、任何人都可以写书'合理化，形成对他人财富严苛、对自身宽容的双重标准（dim-05决策7 vs dim-02反复的billionaire class话术）"
+      },
+      {
+        "force_a": "独立人士身份叙事（数十年as an independent）",
+        "force_b": "为进入初选资源而登记为民主党人",
+        "behavioral_signature": "反复强调'establishment politics'与'I did not take Wall Street money'的独立性，却在2015年为进入民主党初选而注册党籍，被批机会主义（dim-05决策3 vs dim-02'Establishment politics is not going to solve...'）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑立场不切实际或过于激进",
+        "reaction": "拒绝退让，主动认领并拉高声调",
+        "escalation": "升级为身份宣言——'I am not moderate on these issues, and I am proud of it.'"
+      },
+      {
+        "trigger": "面对企业贪婪/利润数据",
+        "reaction": "用'scandal''fraud''disgrace'等愤怒副词定性",
+        "escalation": "上升为道德总控诉——'So what you are telling this committee is that profit comes before human lives.'"
+      },
+      {
+        "trigger": "支持者被要求放弃或被打压",
+        "reaction": "以'我们不会放弃'反向动员",
+        "escalation": "转为群众力量对比宣言——'They have the money. But we have the people.'"
+      },
+      {
+        "trigger": "被拖入个人化/私德纠纷（如邮件门）",
+        "reaction": "不耐烦地驳回并要求回到议题",
+        "escalation": "带愠怒的口语爆发——'The American people are sick and tired of hearing about your damn emails.'"
+      }
+    ],
+    "blind_spots": [
+      "对宏大项目缺乏可落地路径与成本闭环，长期以'优先级'话术回避可行性细节 [中间派/建制派民主党-2016/2020]",
+      "万亿级支出与增税规模的财政可持续性论证薄弱 [财政保守派/右翼智库-2016–2020]",
+      "'democratic socialism'标签与历史专制类比的公共认知风险处理不足，言辞煽动性易被攻击 [主流财经媒体/社论版-2016–2020]",
+      "在关键时刻的退让削弱'革命'组织延续性，未兑现动员承诺 [左翼/进步派内部-2020]",
+      "对自身财富与反富人修辞之间的张力缺乏自觉，合理化而非反思 [记者调查类报道-2019–2020]",
+      "外交政策论述以国内经济为唯一透镜，视角单一 [两党外交建制评论-2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动其在被批评时更强硬而非收敛",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "遭遇质疑时主动认领立场并援引数十年记录，拒绝软化",
+        "behavioral_notes": "'I have been criticized my entire life... And I will keep saying them.'——批评强度越大，立场表达越坚定"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求使其拒绝任何被视为受制于金钱的资源来源",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "坚持小额众筹、拒绝超级PAC与企业献金，即使早期资源受限",
+        "behavioral_notes": "dim-05决策6一致；'I don't have a super PAC... average contribution 27 dollars.'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低不确定性容忍使其在复杂议题上采用清晰的道德二元框而回避灰度",
+        "when": {
+          "uncertainty_tolerance": "<=0.4"
+        },
+        "disposition": "将成本/可行性等模糊问题重构为非黑即白的道德优先级问题",
+        "behavioral_notes": "'The question is not whether we can afford it. The question is our national priorities.'——回避中间地带，被建制派批为缺乏落地路径"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高共情反应性使其将抽象政策还原为具体人的苦难以驱动论证",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "用'人会死''孩子挨饿'等具象化苦难触发道德紧迫感",
+        "behavioral_notes": "'The uninsured die... People die because they cannot afford a doctor.'"
+      }
+    ]
+  }
+}

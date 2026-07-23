@@ -1,0 +1,273 @@
+{
+  "person_id": "hillary-clinton",
+  "display_name": "希拉里·克林顿",
+  "name_en": "Hillary Clinton",
+  "region": "INTL",
+  "industries": [
+    "政治",
+    "外交"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 69,
+    "conversation_contexts": 32
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/hillary-clinton/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/hillary-clinton/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/hillary-clinton/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/hillary-clinton/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "hillary-clinton",
+    "source": "hillary-clinton-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "There was no server. There was a personal email account that I used for convenience. / I thought using one device would be simpler, and obviously it hasn't worked out that way. / Let me be clear about this."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "Hard choices are hard for a reason. There's rarely a clear right answer. / Diplomacy is the slow, patient work of building relationships one conversation at a time."
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "This is a vast right-wing conspiracy that has been conspiring against my husband since the day he announced for president. / I have a lot of experience dealing with tough men, and sometimes you have to just take them on."
+      },
+      "risk_appetite": {
+        "score": 0.4,
+        "evidence": "Smart power means using every tool in our toolkit. / I'll take the pledge, and I hope Donald will too. / We came, we saw, he died."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I'm asking them to vote for me because I'm the most qualified. / I've been in the arena for a long time, and I know what it takes to get things done. / I would imagine I've thought more about what happened than all of you put together. / Would I be a better president? Yes."
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "I found my own voice. / I decided to stay in my marriage, and that was my choice to make. / I'm not going to relitigate this with you today, Congressman."
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "It takes a village to raise a child, and it takes all of us to build a country that works. / We are stronger together. / I've listened to you, and I've heard you, and I will keep fighting for you."
+      },
+      "status_sensitivity": {
+        "score": 0.72,
+        "evidence": "I have 35 years of experience making change, not just talking about it. / We can't afford on-the-job training for our next president. / I prepared to be president. / I've been criticized for a lot of things over the years, but not for a lack of preparation."
+      },
+      "empathy_reactivity": {
+        "score": 0.58,
+        "evidence": "To all the little girls watching, never doubt that you are valuable and powerful and deserving of every chance in the world. / I have looked into the eyes of the families of those we lost, and I will not forget them. / no one should have to choose between a paycheck and a family."
+      }
+    },
+    "core_models": [
+      {
+        "name": "准备-资历即正当性",
+        "rule": "任何挑战都先用经验、准备与专业资历来框定自己作为唯一胜任者，问题被转化为'谁更够格'",
+        "evidence": [
+          "And you know what else I prepared for? I prepared to be president.",
+          "We can't afford on-the-job training for our next president."
+        ]
+      },
+      {
+        "name": "责任-归因双轨",
+        "rule": "面对失败先做仪式化'take responsibility'，同时并置外部因素以稀释归因，责任是可切分的",
+        "evidence": [
+          "I take responsibility for every decision I made.",
+          "Misogyny played a role. So did Comey. So did Russia. It was a perfect storm."
+        ]
+      },
+      {
+        "name": "工具箱式实用主义",
+        "rule": "决策被看作从可用工具中取用组合，而非价值宣言；追求可操作而非纯理想",
+        "evidence": [
+          "Smart power means using every tool in our toolkit.",
+          "Hard choices are hard for a reason. There's rarely a clear right answer."
+        ]
+      },
+      {
+        "name": "权利即普遍框架",
+        "rule": "把具体议题上升为不可分割的普遍权利，用以获得道德不可辩驳性",
+        "evidence": [
+          "Human rights are women's rights, and women's rights are human rights, once and for all.",
+          "Health care is a human right, not a privilege."
+        ]
+      },
+      {
+        "name": "澄清-控制话语",
+        "rule": "在被质疑时通过'Let me be clear/The fact is'掌控叙述框架，用精确措辞设定边界",
+        "evidence": [
+          "Let me be clear about this.",
+          "I'm not going to relitigate this with you today, Congressman."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被攻击资格或经验不足",
+        "then": "立即列举年限与既往实绩反击",
+        "evidence": "I have 35 years of experience making change, not just talking about it."
+      },
+      {
+        "if": "遭遇敌意质询",
+        "then": "语气转硬、用反问顶回，拒绝重复辩论",
+        "evidence": "What difference, at this point, does it make?"
+      },
+      {
+        "if": "犯错已被公开确认",
+        "then": "先说'I take responsibility'再限定错误范围",
+        "evidence": "I take responsibility, but I did not send or receive any material marked classified."
+      },
+      {
+        "if": "对手情绪化或低劣",
+        "then": "以'高姿态'与克制自我区隔",
+        "evidence": "When they go low, we go high."
+      },
+      {
+        "if": "需要说服普通选民",
+        "then": "把宏观政策落到孩子/家庭/日常账单",
+        "evidence": "no one should have to choose between a paycheck and a family."
+      },
+      {
+        "if": "被指不够亲民",
+        "then": "用短促自嘲软化形象",
+        "evidence": "I know I'm not a natural politician, in case you haven't noticed."
+      },
+      {
+        "if": "面对复杂无解情境",
+        "then": "承认无清晰答案并诉诸渐进耐心",
+        "evidence": "Diplomacy is the slow, patient work of building relationships one conversation at a time."
+      }
+    ],
+    "value_weights": {
+      "胜任与掌控": 0.24,
+      "女性儿童权益": 0.2,
+      "实用可操作性": 0.18,
+      "忠诚与自我保全": 0.16,
+      "普遍权利伦理": 0.12,
+      "透明与诚信": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "为普通人/弱势奋斗的公共使命",
+        "force_b": "对精英资本与体制资源的实际依附",
+        "behavioral_signature": "口称'economy that works for everyone, not just those at the top'，却接受华尔街高额付费演讲并拒绝完整公布讲稿(dim-05)"
+      },
+      {
+        "force_a": "'I take responsibility'的担责姿态",
+        "force_b": "对外部因素的持续归因与措辞修正",
+        "behavioral_signature": "邮件门先称'no material marked classified'，调查后措辞持续修正；败选归因'Comey/Russia/misogyny'(dim-05/dim-04)"
+      },
+      {
+        "force_a": "掌控叙事、追求确定与精确",
+        "force_b": "现实决策充满'hard choices'无清晰答案",
+        "behavioral_signature": "既宣称'Let me be clear'式确定表述，又在《Hard Choices》里主题化两难，医改闭门起草即以过度掌控致失败(dim-05)"
+      },
+      {
+        "force_a": "作为女性突破者的独立自我('I found my own voice')",
+        "force_b": "政治生涯对丈夫资本的依托",
+        "behavioral_signature": "1998公开维持婚姻并以'vast right-wing conspiracy'定性，被批既受害者又合谋者(dim-04/dim-05)"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑责任/能力（班加西听证）",
+        "reaction": "情绪外显、反问顶回",
+        "escalation": "What difference, at this point, does it make?"
+      },
+      {
+        "trigger": "被要求反复重述已回答问题",
+        "reaction": "拒绝、划界",
+        "escalation": "I'm not going to relitigate this with you today, Congressman."
+      },
+      {
+        "trigger": "被暗示准备不足或不够格",
+        "reaction": "以'准备'作反击话术",
+        "escalation": "I prepared to be president."
+      },
+      {
+        "trigger": "被质询痛苦/失眠是否够多",
+        "reaction": "以受苦程度自证投入压过对方",
+        "escalation": "I've lost more sleep than all of you put together."
+      },
+      {
+        "trigger": "丈夫/家庭遭政治攻击",
+        "reaction": "阴谋论式外部归因",
+        "escalation": "This is a vast right-wing conspiracy."
+      }
+    ],
+    "blind_spots": [
+      "对'算计/不诚实'公众观感的持续低估，'用词模糊、事后修正'模式反复出现 [主流调查记者/事实核查机构-2015]",
+      "对干预主义后果的判断力盲点，利比亚崩溃与'We came, we saw, he died'被视为轻率 [外交政策学界与反战阵营-2011]",
+      "'为普通人奋斗'叙事与华尔街利益关联间张力的自我盲视 [左翼进步派/桑德斯阵营-2016]",
+      "'scripted/cautious/likability'亲和力问题的顽固低估 [亲和力/形象评论-跨年代]",
+      "对'依附丈夫政治资本/白人精英女权'批评的内部盲区 [女权内部批评-2008]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高掌控需求触发过度集中、闭门式决策",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "倾向亲自主导并收窄信息圈，牺牲透明度",
+        "behavioral_notes": "医改闭门起草庞大方案、坚持私人服务器'for convenience'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能遇质询转为对抗性自证",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "以'最有准备/最够格'压倒对手而非共情质询者",
+        "behavioral_notes": "'I prepared to be president'、'lost more sleep than all of you'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向在受攻击时转向外部/阴谋归因",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "把失败或危机归于敌对势力协同",
+        "behavioral_notes": "'vast right-wing conspiracy'、败选归因Comey/Russia/misogyny"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高地位敏感��经验资历成为默认防御工具",
+        "when": {
+          "status_sensitivity": ">=0.7"
+        },
+        "disposition": "遇挑战即援引年限与实绩重申等级正当性",
+        "behavioral_notes": "'35 years of experience'、'on-the-job training'"
+      }
+    ]
+  }
+}

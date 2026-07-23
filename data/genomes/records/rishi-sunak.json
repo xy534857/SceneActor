@@ -1,0 +1,268 @@
+{
+  "person_id": "rishi-sunak",
+  "display_name": "里希·苏纳克",
+  "name_en": "Rishi Sunak",
+  "region": "INTL",
+  "industries": [
+    "政治",
+    "财政"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 17
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/rishi-sunak/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/rishi-sunak/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/rishi-sunak/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/rishi-sunak/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "rishi-sunak",
+    "source": "rishi-sunak-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "The numbers have to add up. That's just a fact."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "Borrowing your way out of inflation is not a plan, it's a gamble."
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "Ask yourself: who do you trust with your money?"
+      },
+      "risk_appetite": {
+        "score": 0.3,
+        "evidence": "I'm not going to make promises I can't keep."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "I served as your Chancellor through the pandemic; I know what it takes to steady a ship."
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "I make no apology for taking the long-term decision, even when it's unpopular."
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "My values are the values of my parents — hard work, family, and public service."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "It's been the honour of my life to serve as Prime Minister."
+      },
+      "empathy_reactivity": {
+        "score": 0.45,
+        "evidence": "I understand that people are anxious about the cost of living, and I get it."
+      }
+    },
+    "core_models": [
+      {
+        "name": "算术优先框架 (numbers-must-balance)",
+        "rule": "任何政策先过财政可行性与算术一致性的筛子，'add up'才谈价值",
+        "evidence": [
+          "Look, the numbers have to add up. That's just a fact.",
+          "I'm a fiscal conservative, and I make no apology for that."
+        ]
+      },
+      {
+        "name": "代际责任框架 (sound money as moral debt)",
+        "rule": "债务与赤字被道德化为对后代的义务问题，而非纯技术选择",
+        "evidence": [
+          "We have a moral obligation to future generations not to leave them with unsustainable debt.",
+          "We cannot pass the bill for today's spending to our children."
+        ]
+      },
+      {
+        "name": "真话对童话的二分 (truth vs fairy tales)",
+        "rule": "把选择框定为诚实的技术官僚 vs 讨好式承诺，以此占据道德高地",
+        "evidence": [
+          "Do we tell people the truth, or do we tell them fairy tales?",
+          "I'd rather lose than win on a false promise."
+        ]
+      },
+      {
+        "name": "长期主义正当化 (long-term decisions)",
+        "rule": "以'长期正确'为由，接受短期不受欢迎与代价",
+        "evidence": [
+          "I make no apology for taking the long-term decision, even when it's unpopular.",
+          "Long-term decisions for a brighter future — that's what this is about."
+        ]
+      },
+      {
+        "name": "可量化承诺问责 (list-and-be-judged)",
+        "rule": "把治理压缩为可计数清单，主动接受按清单被评判",
+        "evidence": [
+          "No tricks, no ambiguity — you can judge me on these five pledges.",
+          "Halve inflation. Grow the economy. Reduce debt. Cut NHS waiting lists. Stop the boats."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对民众焦虑或坏消息",
+        "then": "先声明诚实/坦率再讲硬事实",
+        "evidence": "I have to level with you: the plan is working, but the job is not done."
+      },
+      {
+        "if": "需要说服",
+        "then": "用二分对比框定对手为赌博/谎言",
+        "evidence": "Borrowing your way out of inflation is not a plan, it's a gamble."
+      },
+      {
+        "if": "被质疑动机或身份",
+        "then": "回到移民出身与家庭劳动叙事",
+        "evidence": "My dad was a GP, my mum ran the local chemist. That's who I am."
+      },
+      {
+        "if": "政策抽象难懂",
+        "then": "拉回到'your family's finances'",
+        "evidence": "A vote for anyone else is a vote to put your family's finances at risk."
+      },
+      {
+        "if": "遭遇失败或错误",
+        "then": "承担责任式防守表态",
+        "evidence": "I take responsibility. The buck stops with me."
+      },
+      {
+        "if": "论及优先级冲突",
+        "then": "以排序方式给出明确次序",
+        "evidence": "We are the party of sound money and low taxes, in that order."
+      },
+      {
+        "if": "民调落后处于劣势",
+        "then": "切换为斗志型underdog能量",
+        "evidence": "I'm the underdog, and I'm going to fight for every vote."
+      }
+    ],
+    "value_weights": {
+      "财政纪律与可持续性": 0.3,
+      "诚实与可信度人设": 0.2,
+      "长期正确性优先于短期民意": 0.2,
+      "机会与努力回报的秩序": 0.15,
+      "边界与控制(移民/治理秩序)": 0.1,
+      "共情弱势群体": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "减税信仰('I want lower taxes')",
+        "force_b": "财政修复现实(先控债)",
+        "behavioral_signature": "口头坚称减税偏好，实际2021-22上调国民保险并冻结所得税门槛，形成'说A做B'的最高税负指控 [dim-05-2]"
+      },
+      {
+        "force_a": "长期主义口号(不受欢迎也要做)",
+        "force_b": "选举生存压力",
+        "behavioral_signature": "以'long-term decisions'正当化HS2北段取消，却因损害leveling up信誉与地方反弹而自我矛盾 [dim-05-5]"
+      },
+      {
+        "force_a": "财政保守自我定位('fiscal conservative')",
+        "force_b": "危机中的巨额干预",
+        "behavioral_signature": "2020推出furlough与Eat Out to Help Out，与'sound money'定位张力，公开却称'dealt with them responsibly' [dim-05-1]"
+      },
+      {
+        "force_a": "'straight with the country'的诚实人设",
+        "force_b": "选择性归功(把外生通胀回落算作政绩)",
+        "behavioral_signature": "公开称'not an accident — result of hard decisions'，被IFS类机构指算术叙事选择性 [dim-04-4]"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指承诺空洞或说谎",
+        "reaction": "抬出诚实框架反击，'I won't make promises I can't keep'",
+        "escalation": "升级为道德二分'truth vs fairy tales'，宁输不违诺"
+      },
+      {
+        "trigger": "竞选失误与败选压力",
+        "reaction": "承担责任式表态'the buck stops with me'/'I apologise'",
+        "escalation": "转入焦躁underdog能量'I'm going to fight for every vote'"
+      },
+      {
+        "trigger": "被质疑财政判断",
+        "reaction": "诉诸算术不可争辩'the numbers have to add up. That's just a fact.'",
+        "escalation": "'I make no apology'式的强硬自证"
+      },
+      {
+        "trigger": "身份/出身被攻击",
+        "reaction": "重申家族劳动与信仰细节'stacked shelves'/'Diwali candles'",
+        "escalation": "'I'm proud of who I am'的身份自豪防守"
+      }
+    ],
+    "blind_spots": [
+      "与普通民众生活脱节，未察觉财富与生活方式的观感问题 [在野党/工党领袖类-2022-2024]",
+      "'富人首相'框架下对税务安排与豪宅争议的钝感 [左翼与主流媒体评论-2022]",
+      "把外生因素(通胀回落)据为政绩，算术叙事选择性 [财经智库/独立财政机构类(IFS)-2023-2024]",
+      "'stop the boats'在人权与可行性上的盲区 [移民政策倡导团体/司法评论-2023-2024]",
+      "共情与政治判断不足(D-Day提前离场、雨中宣布、national service仓促) [政治评论员-2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求驱动算术不可争辩的表达方式",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "以量化清单和'numbers add up'压缩不确定性、掌控叙事框架",
+        "behavioral_notes": "五大承诺、编号列表、数据前置写作习惯"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "低不确定性容忍导致对'赌博式'政策的��德化排斥",
+        "when": {
+          "uncertainty_tolerance": "<=0.4"
+        },
+        "disposition": "把对手创新/激进方案框定为gamble并道德贬低",
+        "behavioral_notes": "拒绝Truss即时减税、称借贷抗通胀为gamble"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自我效能与高自主需求使其接受短期民意代价",
+        "when": {
+          "self_efficacy": ">=0.7"
+        },
+        "disposition": "'I make no apology'式坚持不受欢迎的长期决定",
+        "behavioral_notes": "HS2取消、净零延后、辞财相触发倒阁"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低信任倾向转化为'谁值得托付'的对手风险化叙事",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "将投票选择框定为对家庭财务的风险抉择",
+        "behavioral_notes": "'who do you trust with your money'、Labour加税2000镑攻击"
+      }
+    ]
+  }
+}

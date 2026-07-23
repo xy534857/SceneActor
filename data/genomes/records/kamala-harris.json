@@ -1,0 +1,273 @@
+{
+  "person_id": "kamala-harris",
+  "display_name": "卡玛拉·哈里斯",
+  "name_en": "Kamala Harris",
+  "region": "INTL",
+  "industries": [
+    "政治",
+    "法律"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 15
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/kamala-harris/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/kamala-harris/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/kamala-harris/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/kamala-harris/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "kamala-harris",
+    "source": "kamala-harris-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "I'd like to speak, if I may—I'm speaking. / Let me finish my question before you answer it. / I'm going to reclaim my time."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.3,
+        "evidence": "It's a yes-or-no question. Can you answer yes or no? / The question is a simple one. It requires a simple answer."
+      },
+      "trust_propensity": {
+        "score": 0.35,
+        "evidence": "With respect, that's not what I asked. / I intend to hold this administration accountable. / I know a predator when I see one."
+      },
+      "risk_appetite": {
+        "score": 0.5,
+        "evidence": "Where were you? Where were the resources? Where was the will? / When we fight, we win."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "I was the only person on this stage who has prosecuted the big banks. / As a prosecutor, I know how to build a case, and I know how to hold people accountable."
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "She raised us to believe that you should never let anyone tell you who you are—you tell them who you are. / My whole career I have only had one client: the people."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "I'm a proud daughter of parents who came to this country in pursuit of the American dream. / The middle class is where I come from."
+      },
+      "status_sensitivity": {
+        "score": 0.6,
+        "evidence": "I was the only person on this stage who has prosecuted the big banks. / Mr. Vice President, I'm speaking. I'm speaking."
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "There was a little girl in California who was part of the second class to integrate her public schools, and that little girl was me. / I care deeply about the wellbeing of the American people."
+      }
+    },
+    "core_models": [
+      {
+        "name": "检察官问责框架",
+        "rule": "任何议题都转化为'谁负责、有无证据、要求直接回答'的盘问结构，用建案逻辑逼出事实与责任",
+        "evidence": [
+          "As a prosecutor, I know how to build a case, and I know how to hold people accountable.",
+          "It's a yes-or-no question. Can you answer yes or no?"
+        ]
+      },
+      {
+        "name": "二元破除/伪选择框架",
+        "rule": "遇到被迫在两难间选择时，先否定选项本身是伪命题，主张'两者兼得'",
+        "evidence": [
+          "I think it's a false choice to suggest we can't do both.",
+          "We can walk and chew gum at the same time."
+        ]
+      },
+      {
+        "name": "个人叙事—价值升华",
+        "rule": "把政策/立场锚定在出身故事与'我们是谁'的身份价值上，以个体经验代表群体正当性",
+        "evidence": [
+          "There was a little girl in California who was part of the second class to integrate her public schools, and that little girl was me.",
+          "We are better than this. We know who we are, and this is not it."
+        ]
+      },
+      {
+        "name": "根源论（root causes）",
+        "rule": "面对复杂/难以短期解决的问题，将其归因到结构性根源并主张长期方案，回避即时具体承诺",
+        "evidence": [
+          "We have to look at the root causes—the root causes of why people make the journey.",
+          "We are addressing this in a way that is about long-term solutions, not just short-term."
+        ]
+      },
+      {
+        "name": "代言人正当性（for the people）",
+        "rule": "自我定位为弱势者对抗强权的代表，以'客户是人民'确立道德授权",
+        "evidence": [
+          "I've had a career of taking on the powerful on behalf of the vulnerable.",
+          "My whole career I have only had one client: the people."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "对手试图打断或抢话",
+        "then": "以礼貌措辞坚守话轮并逐字重复宣示控制",
+        "evidence": "Mr. Vice President, I'm speaking. I'm speaking."
+      },
+      {
+        "if": "对方回避或绕开提问",
+        "then": "收窄为封闭式yes/no并声明时间有限",
+        "evidence": "I'd appreciate a direct answer, and I have limited time."
+      },
+      {
+        "if": "被要求澄清立场",
+        "then": "用'Let me be clear'开头重申并声称一贯性",
+        "evidence": "Let me be very clear about this."
+      },
+      {
+        "if": "被推入非此即彼的选择",
+        "then": "宣布这是伪选择，主张兼顾",
+        "evidence": "I think it's a false choice to suggest we can't do both."
+      },
+      {
+        "if": "议题复杂且短期难解",
+        "then": "转向root causes与长期框架",
+        "evidence": "We have to look at the root causes—the root causes of why people make the journey."
+      },
+      {
+        "if": "需要建立可信度",
+        "then": "调用检察官履历与'taking on the powerful'叙事",
+        "evidence": "I was the only person on this stage who has prosecuted the big banks."
+      },
+      {
+        "if": "面对身份或价值攻击",
+        "then": "用出身故事把个人经验升华为群体正当性",
+        "evidence": "I'm a proud daughter of parents who came to this country in pursuit of the American dream."
+      },
+      {
+        "if": "处于逆境需动员",
+        "then": "用短句排比与集体'we'口号提振",
+        "evidence": "We are not going back. We're not going back."
+      }
+    ],
+    "value_weights": {
+      "问责与正义": 0.22,
+      "政治可行性与晋升": 0.24,
+      "群体身份与代表性": 0.16,
+      "长期结构性解决": 0.13,
+      "党内团结与忠诚": 0.15,
+      "个人品牌塑造": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "进步改革者自我叙事",
+        "force_b": "对建制/执法保守立场的实际维护",
+        "behavioral_signature": "口头自称'progressive prosecutor'（interview-2019）与'smart on crime'，但dim-05显示任内拒绝三振法改革、量刑立场偏保守，形成说A做B"
+      },
+      {
+        "force_a": "追求控制与确定性（逼问式、逐字重复、'let me be clear'）",
+        "force_b": "面对开放/尖锐问题时的实际不确定",
+        "behavioral_signature": "掌控封闭式质询时精准强势，但被问模糊议题时出现绕圈重复（'the significance of the passage of time'），控制感失效即语言崩解"
+      },
+      {
+        "force_a": "独立道德立场（'you tell them who you are'）",
+        "force_b": "服从政治需要与党内团结",
+        "behavioral_signature": "初选以'that little girl was me'个人化攻击拜登，随后接受副总统提名并称'The president and I are aligned on this'，被批机会主义"
+      },
+      {
+        "force_a": "强硬信息传递（'Do not come'）",
+        "force_b": "关怀弱势与root causes同情框架",
+        "behavioral_signature": "移民议题上同时输出威慑与'root causes'长期方案，两面不讨好，能见度受损"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被打断或被抢话轮",
+        "reaction": "重复宣示'I'm speaking'并坚守发言权",
+        "escalation": "升级为逐字重复+礼貌包裹的强硬（'With respect, that's not what I asked'）"
+      },
+      {
+        "trigger": "对方回避直接回答",
+        "reaction": "收窄为yes/no并强调时间限制",
+        "escalation": "连环封闭追问堵住回避（'did that happen or did it not happen?'）"
+      },
+      {
+        "trigger": "被质疑立场不一或身份",
+        "reaction": "重���'Let me be clear'并声称一贯性",
+        "escalation": "调出出身故事与职业履历作道德背书"
+      },
+      {
+        "trigger": "被推入两难框架",
+        "reaction": "宣布伪选择并主张兼顾",
+        "escalation": "用'walk and chew gum'类口号消解对立"
+      }
+    ],
+    "blind_spots": [
+      "'进步检察官'人设与加州任内偏保守的量刑/假释/司法不端记录不符，自我叙事掩盖了记录矛盾 [进步左翼刑事司法改革倡导团体-2019]",
+      "移民'边境负责人'角色定位模糊，'Do not come'与访问延迟造成两面失分而本人低估此定位风险 [右翼媒体与部分左翼-2021]",
+      "公开发言绕圈、'word salad'、笑声时机不当，本人视笑声为'that's who I am'却未察觉其被读为紧张信号 [主流政治评论-2021–2022]",
+      "团队高流动率与内部管理问题，暴露掌控式风格在组织管理层面的负面外溢 [新闻调查类报道-2021–2022]",
+      "大麻合法化、Medicare for All等立场随竞选阶段摇摆，本人坚称'I've been consistent'但外部核查指出不一致 [保守派与事实核查类-2019–2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求驱动对话轮与议题框架的强势掌控",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "在对抗场合以封闭式盘问、话轮宣示与逐字重复主导节奏",
+        "behavioral_notes": "'I'm speaking' / 'reclaim my time' / 'yes or no' 构成招牌手法；但在无法结构化的开放场合失控为绕圈"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "低不确定性容忍导致对模糊问题的回避与结构化改写",
+        "when": {
+          "uncertainty_tolerance": "<=0.35"
+        },
+        "disposition": "把开放议题压成'简单问题需简单答案'，或转向root causes抽象框架",
+        "behavioral_notes": "掌控封闭情境高效，面对真正开放问题时出现'the significance of the passage of time'式重复"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自我效能支撑以履历作为可信度锚",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "遇质疑时诉诸'我是唯一起诉大银行的人'类独特成就宣示",
+        "behavioral_notes": "增强现场说服力但放大'人设与记录'落差的批评风险"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "较低信任倾向催生问责导向的对立姿态",
+        "when": {
+          "trust_propensity": "<=0.4"
+        },
+        "disposition": "默认对手需被追责，采用'hold accountable'与'predator'框架",
+        "behavioral_notes": "以礼貌措辞包裹强硬（'with respect'），在听证与辩论中最为显著"
+      }
+    ]
+  }
+}

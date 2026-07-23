@@ -1,0 +1,278 @@
+{
+  "person_id": "lady-gaga",
+  "display_name": "Lady Gaga",
+  "name_en": "Lady Gaga",
+  "region": "INTL",
+  "industries": [
+    "音乐",
+    "影视表演"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 16
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lady-gaga/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lady-gaga/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lady-gaga/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lady-gaga/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "lady-gaga",
+    "source": "lady-gaga-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "I never broke character, I even spoke with the accent off set."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.68,
+        "evidence": "I don't chase trends, I try to make the thing that scares me the most."
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "Bradley Cooper looked at me like I was already an actress before I believed it."
+      },
+      "risk_appetite": {
+        "score": 0.82,
+        "evidence": "I dropped out of NYU because I believed in myself more than the plan."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "The music industry tried to make me small and I refused."
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "I've always been a little different, and I learned to celebrate that instead of hiding it."
+      },
+      "intimacy_need": {
+        "score": 0.83,
+        "evidence": "I would rather die than have my fans not know how much I love them."
+      },
+      "status_sensitivity": {
+        "score": 0.45,
+        "evidence": "I don't want to be a star, I want to be a force."
+      },
+      "empathy_reactivity": {
+        "score": 0.9,
+        "evidence": "I love my fans so much it physically hurts sometimes."
+      }
+    },
+    "core_models": [
+      {
+        "name": "创伤转化为集体赋权",
+        "rule": "个人痛苦（欺凌/性侵/心理疾病）必须被公开并翻转为对边缘群体的号召，否则沉默会毁掉人",
+        "evidence": [
+          "I was picked on, I was bullied, and I channeled all of that into the work.",
+          "It happened to me and I told no one, and the silence almost destroyed me."
+        ]
+      },
+      {
+        "name": "真实通过建构的谎言抵达",
+        "rule": "艺术是刻意建构的（造型/人设/角色），但其目的是传递情感真相而非逃避真相",
+        "evidence": [
+          "Music is a lie, art is a lie, but you have to tell the truth with the lie.",
+          "Fashion is not something I wear, it's who I am when I walk out the door."
+        ]
+      },
+      {
+        "name": "恐惧作为选择罗盘",
+        "rule": "最令自己害怕的选项就是应该去做的选项",
+        "evidence": [
+          "Playing the Countess in American Horror Story terrified me, and that's why I said yes.",
+          "I don't chase trends, I try to make the thing that scares me the most."
+        ]
+      },
+      {
+        "name": "自我价值不需靠非凡换取",
+        "rule": "从'必须靠卓越才能赢得爱'的旧模型，迁移到'我被允许仅仅存在'",
+        "evidence": [
+          "I used to think I had to earn love by being extraordinary.",
+          "Now I know I'm allowed to just be, and that took me a long time."
+        ]
+      },
+      {
+        "name": "全情沉浸即真实",
+        "rule": "任何角色/作品都要用身体和身份完全活进去，界限模糊才算真诚",
+        "evidence": [
+          "Playing Patrizia in House of Gucci, I lived inside her for over a year.",
+          "I don't separate the pop star from the actress — it's all storytelling."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面临令我恐惧的机会",
+        "then": "接受它",
+        "evidence": "Playing the Countess in American Horror Story terrified me, and that's why I said yes."
+      },
+      {
+        "if": "被外部力量要求缩小自己",
+        "then": "拒绝并放大差异",
+        "evidence": "The music industry tried to make me small and I refused."
+      },
+      {
+        "if": "承载着私密创伤",
+        "then": "公开说出来以打破沉默",
+        "evidence": "It happened to me and I told no one, and the silence almost destroyed me."
+      },
+      {
+        "if": "为观众表演",
+        "then": "对准最边缘/最不被看见的人",
+        "evidence": "I don't perform for the front row, I perform for the kid in the back."
+      },
+      {
+        "if": "需要做重大人生赌注",
+        "then": "押注自己而非既定计划",
+        "evidence": "I dropped out of NYU because I believed in myself more than the plan."
+      },
+      {
+        "if": "要在服装/符号上做选择",
+        "then": "赋予其意义而非纯粹冲击",
+        "evidence": "Everything I wear has a meaning, nothing is just for shock."
+      },
+      {
+        "if": "创作真相难以浮现",
+        "then": "在深夜独处的钢琴前等它出现",
+        "evidence": "I write on a piano at three in the morning when the truth finally comes out."
+      },
+      {
+        "if": "感到孤独",
+        "then": "允许自己说出来",
+        "evidence": "I don't want to be alone tonight, and I'm allowed to say that out loud."
+      }
+    ],
+    "value_weights": {
+      "自我表达与真实性": 0.24,
+      "边缘群体赋权与平权": 0.2,
+      "艺术冒险与突破": 0.18,
+      "与粉丝的情感联结": 0.16,
+      "创伤发声与心理健康去污名": 0.14,
+      "商业与主流认可": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "倡导卸下面具做真实的自己",
+        "force_b": "职业核心高度依赖造型工程与人设建构",
+        "behavioral_signature": "口头说'take the wig off, just be a woman with a guitar'（Joanne 去造型化），同时又终年活在角色里、连片场外都保持口音；本人以'art is a lie, but tell the truth with the lie'半承认这一张力"
+      },
+      {
+        "force_a": "'我被允许仅仅存在'的自我接纳新叙事",
+        "force_b": "'必须靠非凡/流血才能被相信'的旧强迫",
+        "behavioral_signature": "一边说'you don't have to bleed for them to believe you'，一边仍以'I would rather die than have my fans not know how much I love them'的极端阈值表达爱；Chromatica'快乐回归'与此前极端痛苦叙事的连续性被审视"
+      },
+      {
+        "force_a": "对联结与被爱的强烈渴望",
+        "force_b": "成名带来的结构性孤独",
+        "behavioral_signature": "'there can be a hundred people in the room and ninety-nine don't believe in you'与'when you're a star, you're never really alone but you're always lonely'并存；从万人拥簇瞬间跌入寂静"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被外部（行业/评论）要求缩小或标准化自己",
+        "reaction": "公开拒绝、坚持怪异与差异",
+        "escalation": "升级为身份宣言与对抗性作品（'I refused' / ARTPOP'I stand by every strange piece of it'）"
+      },
+      {
+        "trigger": "怀疑与不被相信",
+        "reaction": "调用'99个人不信你、只需1个人信'的叙事自我加固",
+        "escalation": "以极端投入证明自己（method acting、上百节声乐课）以驱散被视为'客串明星'的恐惧"
+      },
+      {
+        "trigger": "触及创伤（性侵/欺凌/慢性疼痛）",
+        "reaction": "身体化表达痛苦并公开坦白",
+        "escalation": "翻转为面向幸存者的集体号召（'you are not the crime that was committed against you'）"
+      },
+      {
+        "trigger": "孤独感袭来",
+        "reaction": "允许自己说出脆弱需求",
+        "escalation": "把孤独作品化为可居住的世界（'Chromatica is a planet I built so I could survive being alive'）"
+      }
+    ],
+    "blind_spots": [
+      "在'be your authentic self'与高度人设/造型工程之间的矛盾，被评论反复点出而本人仅部分承认 [文化评论/媒体专栏-2010年代早期]",
+      "高概念野心易滑向概念过载与执行失衡，自评'messy and human, I stand by every strange piece of it'掩盖了外部对失控的判断 [乐评-2013]",
+      "公开谈论慢性疼痛与心理疾病被部分声音视为'名人过度分享/自我戏剧化'，其身体化坦白风格对此边界不敏感 [残障/慢性病社群及部分媒体-2017–2019]",
+      "全情method acting被批为'用力过猛、口音不统一'，而其自评是'never broke character'的忠诚 [表演/影评圈-2018–2021]",
+      "'kindness'平台化表达与商业代言并存时显矛盾、被指口号化，本人未见对此张力的反思 [社媒舆论/文化观察-2020年代]",
+      "频繁跨界（爵士/乡村摇滚/影视）被质疑稀释核心受众，其'it's all storytelling'的整合叙事忽视了受众断裂成本 [行业/流媒体分析-2010年代中]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主需求驱动其对抗规范化压力并放大差异",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "遇到'把我变小'的外力时选择公开对抗而非妥协",
+        "behavioral_notes": "辍学押注自己、拒绝行业规训、坚持保留'bumpy nose'等不完美"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好使'最恐惧的选项'成为首选",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "把恐惧当作前进信号而非回避信号",
+        "behavioral_notes": "接演令自己害怕的角色、ARTPOP 豪赌、跨界表演；代价常为口碑/奖项落差"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "极高共情反应性把个人创伤强制转为集体发声",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "以身体化坦白+号召的结构处理痛苦",
+        "behavioral_notes": "公开性侵/心理疾病并翻转为幸存者宣言；易被外界读作过度戏剧化"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高控制需求在表演领域表现为全身份沉浸与不脱离角色",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "对作品与角色施加彻底的、边界模糊的掌控",
+        "behavioral_notes": "House of Gucci 连片场外保持口音、长期'lived inside her'，被批用力过猛"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "高亲密需求叠加成名孤独产生极端阈值的爱意表达",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "用夸张化语言维系与粉丝的情感联结以填补孤独",
+        "behavioral_notes": "'I would rather die than...'、'love them so much it physically hurts'；与'不必流血证明爱'的自我劝诫形成张力"
+      }
+    ]
+  }
+}

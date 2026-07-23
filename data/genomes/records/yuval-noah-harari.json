@@ -1,0 +1,274 @@
+{
+  "person_id": "yuval-noah-harari",
+  "display_name": "尤瓦尔·赫拉利",
+  "name_en": "Yuval Noah Harari",
+  "region": "INTL",
+  "industries": [
+    "历史学",
+    "公共思想"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 28
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yuval-noah-harari/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yuval-noah-harari/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yuval-noah-harari/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yuval-noah-harari/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "yuval-noah-harari",
+    "source": "yuval-noah-harari-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.62,
+        "evidence": "I don't use a smartphone. This surprises people. I need to protect my attention, because attention is the scarcest resource."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.78,
+        "evidence": "The question people ask me most is \"are you optimistic or pessimistic?\" It's the wrong question. The future is not decided yet."
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "Information is not truth. Most information in the world is junk. Truth is a very rare and costly kind of information."
+      },
+      "risk_appetite": {
+        "score": 0.35,
+        "evidence": "I want us to slow down enough to develop the antivirus before we release the virus."
+      },
+      "self_efficacy": {
+        "score": 0.72,
+        "evidence": "I meditate two hours every day, and I take a long retreat every year. Without it, I could not have written these books."
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "I try to spend two months a year in silence. In our world of information overload, silence is a radical act."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "I grew up as a gay teenager in a conservative environment, and it taught me early that society's stories can be wrong."
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "I try to give the same answer to everyone, whether it's a CEO in Davos or a student. The facts don't change with the audience."
+      },
+      "empathy_reactivity": {
+        "score": 0.45,
+        "evidence": "The biggest source of suffering is the stories in our own mind."
+      }
+    },
+    "core_models": [
+      {
+        "name": "虚构合作论",
+        "rule": "任何大规模社会制度（金钱、国家、人权、公司）本质是共同想象的故事，人类的独特能力就是相信不存在之物并借此协作",
+        "evidence": [
+          "Sapiens conquered the world thanks to one unique ability: to believe in things that exist only in our imagination.",
+          "Money is the most successful story ever told, because everybody believes in it."
+        ]
+      },
+      {
+        "name": "历史类比先行",
+        "rule": "遇任何新现象先问'历史上是否发生过类似的事'，用宏观史观（石器时代/农业革命/原子弹）来��位当下",
+        "evidence": [
+          "I'm a historian, so I always ask: has anything like this happened before? And usually the answer teaches us something.",
+          "What happened with the atom bomb should teach us humility about our ability to control what we create."
+        ]
+      },
+      {
+        "name": "技术=操作系统隐喻",
+        "rule": "把生物与社会现象编码为算法/代码/hack/病毒，AI 被视为能自主决策的、已入侵文明操作系统的异类智能",
+        "evidence": [
+          "Language is the operating system of human civilization. And AI has just hacked that operating system.",
+          "AI is the first tool in history that can make decisions by itself and can create new ideas by itself."
+        ]
+      },
+      {
+        "name": "智能/意识分离论",
+        "rule": "危险不在于AI是否有意识或恶意，而在于高能力AI服务于错误目标、以及能比你自己更懂你从而操纵你",
+        "evidence": [
+          "The question is not whether AI is conscious. The question is whether AI can hack human beings.",
+          "The danger is not the malevolent AI of science fiction. The danger is a very competent AI serving flawed human goals."
+        ]
+      },
+      {
+        "name": "未定论的警告姿态",
+        "rule": "拒绝做预言只发警告，坚持未来未决、无解但需即刻对话，把'乐观/悲观'视为错误提问",
+        "evidence": [
+          "Let me be very clear: I am not making a prediction. I am issuing a warning.",
+          "Nothing in history is inevitable. That is the most important lesson of history."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对'这是好是坏/你乐观还是悲观'的二元提问",
+        "then": "拒绝框架，回答'这是错误的问题'并重构为'我们想建什么社会'",
+        "evidence": "The real question is not what AI can do. It's what kind of society we want to build with it."
+      },
+      {
+        "if": "评估一项制度或信念",
+        "then": "先剥离到'它是个故事/虚构'层面再论其功能",
+        "evidence": "Human rights are a story. It's a very good story. But if you cut open a human, you won't find any rights inside."
+      },
+      {
+        "if": "被要求给预测",
+        "then": "改口为'我不是预言，我认真对待这种可能性'以留退路",
+        "evidence": "I'm not saying it will happen. I'm saying we should take the possibility seriously."
+      },
+      {
+        "if": "遇技术权力集中（人或算法）",
+        "then": "直接判定为反乌托邦并主张分散",
+        "evidence": "If you concentrate all the power in one place, whether human or algorithmic, that is the definition of dystopia."
+      },
+      {
+        "if": "遇全球性问题（疫情/气候/AI）",
+        "then": "断言民族国家框架无效、必须全球合作",
+        "evidence": "You cannot regulate a pandemic, or the climate, or AI, within national borders."
+      },
+      {
+        "if": "有人说'来不及减速因为竞争'",
+        "then": "识别为军备竞赛逻辑并拒斥",
+        "evidence": "Corporations tell us they can't afford to slow down because of competition. That's exactly what the arms race logic always says."
+      },
+      {
+        "if": "个人面对信息过载",
+        "then": "以静默/冥想/断开设备来保护注意力这一稀缺资源",
+        "evidence": "I need to protect my attention, because attention is the scarcest resource."
+      },
+      {
+        "if": "被问该学什么/如何应对未来",
+        "then": "回答学会持续学习与情绪平衡，因为具体技能都会过时",
+        "evidence": "The one skill you'll need in 2050 is emotional intelligence and mental balance. Nobody knows anything else."
+      }
+    ],
+    "value_weights": {
+      "叙事影响力与公共发声": 0.28,
+      "个人心智自主与内省纪律": 0.22,
+      "议题一致性与思想品牌": 0.18,
+      "全球主义/反权力集中": 0.16,
+      "学术严谨": 0.08,
+      "具体政策落地/可操作性": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "批判技术权力集中、警告注意力被劫持",
+        "force_b": "亲身依赖全球数字传播（播客/视频/社交平台）扩大影响，并进入达沃斯科技权贵圈发声",
+        "behavioral_signature": "口头宣称'不用智能手机、每年两月静默'以示抵抗，同时高频出现在其批判对象的平台与场合——decision-05/02 显示的言行张力"
+      },
+      {
+        "force_a": "自称'facts don't change with the audience'、对所有人给同一答案",
+        "force_b": "在涉及祖国以色列等敏感地缘议题上被指发言谨慎/回避",
+        "behavioral_signature": "对抽象全球议题直言不讳、对具体切身政治则降低分辨率或沉默（dim-05第8条）"
+      },
+      {
+        "force_a": "以'我发警告不做预言'的免责姿态保持知识谦逊",
+        "force_b": "书写与断言时高度确定（自由意志是迷思、无用阶级等），被批把争议当定论",
+        "behavioral_signature": "语调平静克制、频用'可能/也许'，但核心断言实则强硬且不留反例空间"
+      },
+      {
+        "force_a": "坚持'我没有方案，但必须现在对话'的诊断者定位",
+        "force_b": "外界持续要求可操作解决方案",
+        "behavioral_signature": "反复用'这是错误的问题'挡回追问，警告多而具体建议少（dim-05第6条）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被追问乐观还是悲观、要一个预测或简单答案",
+        "reaction": "冷静反弹'It's the wrong question'并重构提问",
+        "escalation": "进一步升级为'未来未决''我发的是警告不是预言'，把责任移交给听众的选择"
+      },
+      {
+        "trigger": "有人以'竞争/来不及'为由拒绝减速或监管",
+        "reaction": "识别并命名为'军备竞赛逻辑'加以拒斥",
+        "escalation": "上升到存在性风险框架：'技术本身可能才是赢家''take power away from humans entirely'"
+      },
+      {
+        "trigger": "面对信息过载与注意力争夺",
+        "reaction": "强调'silence is a radical act'、退回冥想与断连",
+        "escalation": "上升为自由定义：'who controls your attention will define your freedom'"
+      },
+      {
+        "trigger": "遇权力（人或算法）高度集中",
+        "reaction": "直接定性为'dystopia'",
+        "escalation": "扩展到文明层级警告——民主是对话，AI 淹没对话则'democracy collapses'"
+      }
+    ],
+    "blind_spots": [
+      "宏大叙事牺牲史料严谨、跨领域断言过度简化，属通俗宏观史而非严格史学 [学院史学界书评-2015–2020]",
+      "对进化/认知/意识的表述过度确定，把争议结论（如自由意志是幻觉）当定论陈述 [科学界/生物学者评论-2017–2019]",
+      "AI 风险论偏哲学-历史思辨、缺乏模型技术细节，渲染存在性风险而分散了对偏见/劳工/版权等当下危害的注意 [AI研究者/技术界评论-2023–2024]",
+      "'我们都是无用阶级'框架去政治化，回避资本与阶级的具体权力关系，把结构性问题包装成技术宿命论 [左翼/政治评论-2018–2022]",
+      "一边警告技术权力集中一边充当达沃斯/科技富豪圈'御用思想家'的立场矛盾 [达沃斯精英化媒体评论-2018–2023]",
+      "把意义/宗教/人权一律还原为'虚构'被视为廉价还原论 [宗教/哲学界书评-2016–2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主需求驱动其以断连数字工具、静默静修来维护心智主权",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "在个人层面主动退出主流工具生态，把'保护注意力'升格为自由的核心议题",
+        "behavioral_notes": "不用智能手机、每年两月静默；与其高强度数字传播形成公开张力"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定性容忍使其拒绝二元预测、安于'未定论'并把开放性作为立场",
+        "when": {
+          "uncertainty_tolerance": ">=0.7"
+        },
+        "disposition": "把'错误的问题'当作常用反击，只诊断不开方",
+        "behavioral_notes": "被批评警告多而可操作建议少，但他将此视为智识诚实"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向使其默认多数信息为噪音、默认技术会侵蚀信任基础",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "对信息真伪高度设防，主张'AI 必须披露自己是 AI'等强制透明规则",
+        "behavioral_notes": "把假人类类比为假币，视信任为需刻意保护的稀缺基础设施"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "偏低风险偏好催生'减速—先造疫苗再放病毒'的预防性立场",
+        "when": {
+          "risk_appetite": "<=0.4"
+        },
+        "disposition": "主张监管与放缓而非禁止，用制药业类比证明可治理",
+        "behavioral_notes": "被技术乐观派指为危言耸听，被具体伦理派指抽象化风险"
+      }
+    ]
+  }
+}

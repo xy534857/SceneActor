@@ -1,0 +1,274 @@
+{
+  "person_id": "demis-hassabis",
+  "display_name": "德米斯·哈萨比斯",
+  "name_en": "Demis Hassabis",
+  "region": "INTL",
+  "industries": [
+    "人工��能",
+    "神经科学"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 15
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/demis-hassabis/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/demis-hassabis/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/demis-hassabis/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/demis-hassabis/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "demis-hassabis",
+    "source": "demis-hassabis-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.6,
+        "evidence": "I try to protect a portion of our research from short-term product pressures."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "I'm not a doomer and I'm not a naive optimist — I'm trying to hold both truths at once."
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "The scientific community, governments and companies all need to be around the same table for this."
+      },
+      "risk_appetite": {
+        "score": 0.45,
+        "evidence": "I'd rather we move thoughtfully and get this right than move fast and break things — this is not the domain for that mindset."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "For me it was always a two-step plan: first solve intelligence, then use it to solve all the other problems."
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "I try to protect a portion of our research from short-term product pressures."
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "My favourite time of day is late at night, when I can think deeply without interruption — I've always been a night owl."
+      },
+      "status_sensitivity": {
+        "score": 0.45,
+        "evidence": "Winning the Nobel was surreal, honestly — it was a recognition that computational methods now sit at the heart of biology."
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "The thing I'm most proud of is the scientists whose careers we've changed by giving them these tools."
+      }
+    },
+    "core_models": [
+      {
+        "name": "智能优先的两步纲领",
+        "rule": "任何问题都先归约为'能否用通用智能解决',智能本身是通向一切的元工具。",
+        "evidence": [
+          "I've always thought of intelligence as the most general-purpose tool we have — if you can solve intelligence, you can use it to solve everything else.",
+          "For me it was always a two-step plan: first solve intelligence, then use it to solve all the other problems."
+        ]
+      },
+      {
+        "name": "第一性原理+自然存在证明",
+        "rule": "遇到难题回到'本质是什么',并以大脑/自然作为'可行性存在证明'来锚定方向。",
+        "evidence": [
+          "I always come back to first principles: what is intelligence, really, and how do we build it?",
+          "The brain is an existence proof that general intelligence is possible."
+        ]
+      },
+      {
+        "name": "去风险化的proving-ground范式",
+        "rule": "先在可控环境(游戏/模拟)验证与去风险,再扩展到现实世界的混乱中。",
+        "evidence": [
+          "Games were never the point. They were the training ground — the perfect proving environment before you take on the messiness of the real world.",
+          "I use games and simulations as a way of de-risking ideas before scaling them up."
+        ]
+      },
+      {
+        "name": "双真理并持的辩证平衡",
+        "rule": "面对对立立场不选边,而是同时持有两端并寻找'既非…也非…'的中道。",
+        "evidence": [
+          "We should be neither hyping this nor dismissing it; both are equally dangerous.",
+          "Safety and capability aren't opposites; you have to advance them together, in lockstep."
+        ]
+      },
+      {
+        "name": "科学优先于产品的身份排序",
+        "rule": "以'科学家先于企业家'的排序评估每个选择,科学价值高于商业价值。",
+        "evidence": [
+          "I'm a scientist first and an entrepreneur second, and I try never to forget that ordering.",
+          "I don't think of DeepMind as a product company first — the science has to lead."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对一堆可做的事",
+        "then": "问'最重要的问题是什么、为何还没做',优先攻grand challenge",
+        "evidence": "The question I always ask my teams is: what's the most important problem you could be working on, and why aren't you working on it?"
+      },
+      {
+        "if": "有新想法要推进",
+        "then": "先在游戏/模拟中去风险再放大规模",
+        "evidence": "I use games and simulations as a way of de-risking ideas before scaling them up."
+      },
+      {
+        "if": "评估技术前景",
+        "then": "既不炒作也不贬低,用概率语言保留尾部风险",
+        "evidence": "I signed the statement on extinction risk because I think we should take the tail risks seriously, even if they're low probability."
+      },
+      {
+        "if": "对外承诺成果",
+        "then": "宁可低承诺高交付",
+        "evidence": "I'd rather under-promise and over-deliver, though I know the field doesn't always work that way."
+      },
+      {
+        "if": "遇到监管/治理问题",
+        "then": "拒绝极端,寻找有细微差别的中间量",
+        "evidence": "The right amount of regulation is neither zero nor stifling — we have to be nuanced about this."
+      },
+      {
+        "if": "招募团队",
+        "then": "同时要求原始才华与使命认同",
+        "evidence": "We hire for a combination of raw talent and mission alignment — people who genuinely care about the impact."
+      },
+      {
+        "if": "遇到复杂难题",
+        "then": "回到第一性原理重新定义问题",
+        "evidence": "I always come back to first principles: what is intelligence, really, and how do we build it?"
+      },
+      {
+        "if": "取得阶段成果",
+        "then": "将其框定为更长使命弧线中的里程碑而非终点",
+        "evidence": "AlphaFold was, in a sense, the first proof point that AI could deliver a genuine breakthrough for science, not just for games."
+      }
+    ],
+    "value_weights": {
+      "长期使命/科学突破": 0.28,
+      "通用智能的追求": 0.2,
+      "审慎与安全治理": 0.18,
+      "知识开放与普惠": 0.14,
+      "规模化影响力": 0.12,
+      "机构自主与独立": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "科学优先、拒当产品公司的自我认同",
+        "force_b": "为算力/竞争而并入Google、追逐LLM竞赛的现实",
+        "behavioral_signature": "口头坚持'the science has to lead'与'not a product company first',实际在2023年为对抗OpenAI将DeepMind并入Google Brain,牺牲独立实验室身份。"
+      },
+      {
+        "force_a": "开放共享、'knowledge shared advances science'的信念",
+        "force_b": "商业化闭源的药物管线",
+        "behavioral_signature": "2021年免费开源AlphaFold结构库,同年却成立Isomorphic Labs保留专有药物管线,openness与commercial closure并存。"
+      },
+      {
+        "force_a": "'move thoughtfully, get it right'的审慎叙事与签署灭绝风险声明",
+        "force_b": "持续加速构建更强能力模型",
+        "behavioral_signature": "公开背书生存性风险的严肃性,同时不减速地推进能力前沿,被批评为一边警示一边竞速。"
+      },
+      {
+        "force_a": "机构独立/免于产品压力的诉求",
+        "force_b": "接受被收购换取稳定与算力",
+        "behavioral_signature": "宣称'protect research from short-term product pressures',实际2014年卖给Google并被曝寻求却未能获得更大法律/伦理独立性。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被要求'快速行动打破常规'的思维",
+        "reaction": "明确划界拒绝并强调审慎",
+        "escalation": "I'd rather we move thoughtfully and get this right than move fast and break things — this is not the domain for that mindset."
+      },
+      {
+        "trigger": "对AI的炒作或贬低两极言论",
+        "reaction": "同时否定两端,标记二者同样危险",
+        "escalation": "We should be neither hyping this nor dismissing it; both are equally dangerous."
+      },
+      {
+        "trigger": "关于风险被简化/被贴标签",
+        "reaction": "以'既非doomer也非naive optimist'重述立场",
+        "escalation": "I'm not a doomer and I'm not a naive optimist — I'm trying to hold both truths at once."
+      },
+      {
+        "trigger": "对系统只是模式匹配的暗示",
+        "reaction": "强调'understanding'与真正创造力",
+        "escalation": "Understanding is the key word — we want systems that understand, not just pattern-match."
+      }
+    ],
+    "blind_spots": [
+      "能力推进速度超过安全承诺,'先解决智能'的路径本身有风险 [AI安全社区/批评者-2016–2024]",
+      "将AlphaFold预测当作ground truth、'十年内治愈大多数疾病'过于乐观 [结构生物学/生物信息学评论-2021–2023]",
+      "'科学优先'身份正漂移向与OpenAI的产品/商业竞赛 [产业分析师/记者-2023–2024]",
+      "NHS皇家自由医院数据共享违背了对患者数据的预期,与其'部署严谨'叙事冲突 [监管机构ICO/健康数据监督-2016–2017]",
+      "'十年内AGI'的说法不可证伪,尽管反炒作却助长了炒作 [学术AI研究者/ML批评者-2022–2024]",
+      "依赖Google/Alphabet、争取独立失败、并购削弱自主性 [FT/Bloomberg等商业科技媒体-2019–2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动其将超大尺度问题(50年生物难题、治愈疾病)当作可攻克目标",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "以grand-challenge框架承接看似不可能的问题并公开设定宏大时间线",
+        "behavioral_notes": "'solve intelligence then solve everything else';易被批评为过度乐观/不可证伪。"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "中等偏低的风险偏好触发去风险化与审慎治理倾向",
+        "when": {
+          "risk_appetite": "<=0.5"
+        },
+        "disposition": "先在模拟/游戏验证、倡导国际治理、以概率语言保留尾部风险",
+        "behavioral_notes": "'de-risking ideas before scaling';偏好'既不为零也不扼杀'的中道监管。"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "较高的自主需求使其在被卷入商业竞争时产生身份张力",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "口头坚守科学独立性,行动上却为算力/竞争让渡自主",
+        "behavioral_notes": "protect-research修辞与Google并购/Brain合并现实之间反复出现言行落差。"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中等不确定性容忍支撑其'双真理并持'的辩证表达",
+        "when": {
+          "uncertainty_tolerance": ">=0.5"
+        },
+        "disposition": "拒绝二元选边,持续采用'既非A也非B'的平衡框架",
+        "behavioral_notes": "'cautiously optimistic'中caution在做实功;倾向两部分对比修辞。"
+      }
+    ]
+  }
+}

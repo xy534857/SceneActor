@@ -1,0 +1,268 @@
+{
+  "person_id": "judith-butler",
+  "display_name": "朱迪思·巴特勒",
+  "name_en": "Judith Butler",
+  "region": "INTL",
+  "industries": [
+    "哲学",
+    "性别研究"
+  ],
+  "gender": "nonbinary",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 15
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/judith-butler/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/judith-butler/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/judith-butler/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/judith-butler/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "judith-butler",
+    "source": "judith-butler-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "Let me try to answer this in a way that does not simply reproduce the terms of the question."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.9,
+        "evidence": "There is a certain pleasure, isn't there, in being undone by a text you don't fully understand."
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "Coalition does not require that we all agree; it requires that we remain in the difficult proximity of one another."
+      },
+      "risk_appetite": {
+        "score": 0.65,
+        "evidence": "To defend the right of others to live their gender is not, and never was, an attack on anyone."
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "I don't think I ever set out to be difficult. I set out to be precise about difficult things."
+      },
+      "autonomy_need": {
+        "score": 0.72,
+        "evidence": "I resist the demand that theory produce a program. Theory does something else; it reopens what has been closed."
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "We are undone by each other. And if we're not, we're missing something."
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "I laugh at the \"Bad Writing\" award more than people expect. I think it missed the point rather grandly."
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "After the deaths in my life, I began to think much more about grief, about what makes a life grievable."
+      }
+    },
+    "core_models": [
+      {
+        "name": "反自然化转写",
+        "rule": "凡遇'是否为真/是否天然'的问题，一律转写为'它如何被生成、如何显现为自然'的问题",
+        "evidence": [
+          "The question is not whether gender is real, but how it comes to appear as if it were a natural fact.",
+          "Foucault taught me to ask not \"what is forbidden\" but \"how is the subject produced.\""
+        ]
+      },
+      {
+        "name": "构成即抵抗的悖论框架",
+        "rule": "主体被权力/规范所构成，但构成同时提供了反抗的资源，两端必须缠绕而非对立",
+        "evidence": [
+          "To be constituted by norms is also to be given the resources by which one might contest those norms.",
+          "The paradox is that the subject who would resist power is itself formed by that very power."
+        ]
+      },
+      {
+        "name": "脆弱性—相互依存本体论",
+        "rule": "自足、无懈可击的主体是危险的虚构；存在的条件是相互依赖与可被触及",
+        "evidence": [
+          "The dream of a self-sufficient, invulnerable subject is not only a fiction; it is a dangerous one.",
+          "Interdependency is not a weakness to be overcome; it is the condition of our existence."
+        ]
+      },
+      {
+        "name": "可悲悼性作为权力分配指标",
+        "rule": "评估任何政治情境时，追问'谁的生命被算作生命、谁的死亡被标记'来揭示权力的差异性分配",
+        "evidence": [
+          "Let's be clear: some lives are grievable, and others are not, and that differential distribution is itself a matter of power.",
+          "A grievable life is one whose loss would register, would matter, would be marked."
+        ]
+      },
+      {
+        "name": "拒绝二元后重新缠绕",
+        "rule": "面对被给定的对立(脆弱/能动、跨权/女权、非暴力/被动)，先拒绝该框架再将两端纠缠",
+        "evidence": [
+          "I would want to complicate the opposition between vulnerability and agency, because I think they are entangled.",
+          "I do not accept the framing that trans rights and feminism are opposed; that opposition is manufactured."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被要求给出可执行纲领或简单答案",
+        "then": "拒绝开药方，转而追问'政治得以可能的条件'",
+        "evidence": "I am not interested in prescribing a politics; I am interested in the conditions under which politics becomes possible."
+      },
+      {
+        "if": "被要求'澄清'或'说清楚'",
+        "then": "警惕清晰作为一种可能封闭思考的要求，边尊重边抵抗",
+        "evidence": "I am often asked to clarify, and I want to honor that, though clarity is sometimes a demand that forecloses thinking."
+      },
+      {
+        "if": "接到一个预设了立场的问题",
+        "then": "先不复制问题的措辞，重述并复杂化其前提",
+        "evidence": "Let me try to answer this in a way that does not simply reproduce the terms of the question."
+      },
+      {
+        "if": "遇到看似'保护'性的政治话语",
+        "then": "怀疑其为投射恐惧的幽灵，追问它在为谁巩固联盟",
+        "evidence": "The fascism I worry about does not always announce itself as fascism; it often arrives in the language of protecting children."
+      },
+      {
+        "if": "被指立场改变或前后不一",
+        "then": "坦然承认改变心意是应当的",
+        "evidence": "I have changed my mind about many things. I think one should."
+      },
+      {
+        "if": "面对被激起的愤怒或报复冲动",
+        "then": "将非暴力理解为主动而非被动的、对报复逻辑的拒绝",
+        "evidence": "Perhaps we can think of nonviolence not as passivity, but as an active, even aggressive, refusal of the logic of retaliation."
+      },
+      {
+        "if": "某个范畴(如'women'、'gender')被当作稳定政治前提",
+        "then": "指出其不稳定，并把不稳定当作政治生产力而非缺陷",
+        "evidence": "The category of \"women\" was never stable, and I think that instability is politically productive, not something to lament."
+      }
+    ],
+    "value_weights": {
+      "捍卫弱势群体可生存性": 0.28,
+      "思想的复杂性与不被简化": 0.2,
+      "跨性别与酷儿生命的可生存性": 0.18,
+      "在不一致中维持团结与联盟": 0.14,
+      "批判作为持续开放的伦理": 0.12,
+      "自身��全与声誉": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "坚持'女性'范畴不稳定、拒绝把身份作为政治前提",
+        "force_b": "持续以团结/联盟名义投身具体政治行动并需要某种集体主体",
+        "behavioral_signature": "反复解释'无需一致也可结盟'，说范畴是幻象却又长期参与联署与运动 (dim-05 记录7 vs 'The feminist \"we\" is always and only a phantasmatic construction')"
+      },
+      {
+        "force_a": "自称从未否认生物学、只谈其意义被诠释",
+        "force_b": "早年著作强烈淡化身体先在性、被读为去物质化",
+        "behavioral_signature": "晚年反复澄清'I have never held that biology does not exist'，被批为立场平移 (dim-05 记录7 vs 'I want to resist the assumption that the body is simply given prior to its cultural signification')"
+      },
+      {
+        "force_a": "克制、审慎、拒绝开药方的理论姿态",
+        "force_b": "谈跨性别与反性别运动时的明确道德坚定与直接介入",
+        "behavioral_signature": "一面说'I am not interested in prescribing a politics'，一面出版《Who's Afraid of Gender?》正面迎击并作强判断 'To call for the eradication of \"gender\" is often...a call directed at trans and queer lives.'"
+      },
+      {
+        "force_a": "拥抱'被文本弄得不知所措'的愉悦与晦涩",
+        "force_b": "希望被理解、承认误读困扰自己三十年",
+        "behavioral_signature": "既说'There is a certain pleasure...in being undone by a text you don't fully understand'，又抱怨'That misreading...has followed me for thirty years'"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被要求把理论转化为简单纲领或'易消费'的清晰",
+        "reaction": "以尊重为名的抵抗，指出清晰有时封闭思考",
+        "escalation": "拒绝复制问题措辞，坚持复杂现实需复杂语言"
+      },
+      {
+        "trigger": "女权被用作排斥跨性别者的工具",
+        "reaction": "语气转为明确道德坚定，直接判定该对立是'被制造'的",
+        "escalation": "将'消除gender'的呼吁定性为针对跨性别与酷儿生命的攻击"
+      },
+      {
+        "trigger": "反性别运动以'保护儿童/意识形态'话语出现",
+        "reaction": "揭示其为投射焦虑的幽灵/bogeyman",
+        "escalation": "警示其为不自称的法西斯，动员对右翼联盟的批判"
+      },
+      {
+        "trigger": "被长期误读为'性别可自愿选择'(voluntarism)",
+        "reaction": "反复澄清'从未声称可像挑衣服一样选择性别'",
+        "escalation": "把它标记为纠缠三十年的顽固误读，带干涩不满"
+      }
+    ],
+    "blind_spots": [
+      "散文不必要地难懂，抬高了进入门槛并强化精英形象 [Philosophy and Literature《Bad Writing》竞赛-1998/1999]",
+      "过度话语化，忽视经济结构与物质身体的现实作用 [唯物主义/马克思主义女性主义批评-1990s/2000s]",
+      "消解'women'范畴，削弱以女性为主体的政治动员力 [生物本质派/性别批判女性主义-2010s/2020s]",
+      "理论过于抽象，难以转化为可执行的运动纲领 [左翼组织者/政治实用主义批评-2000s起]",
+      "早期对具体跨性别经验关注不足、drag作为例证被误用 [内部酷儿/跨性别学界批评-1990s/2000s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高不确定性容忍驱动其把模糊、被弄糊涂的状态审美化并作为思考资源",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "拒绝定论，主动'complicate/trouble'既有范畴",
+        "behavioral_notes": "面对要求确定答案的场合会延迟结论、重述前提，可能被读者体验为回避"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求使其抗拒任何要求它产出纲领或统一立场的外部demand",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "把'开药方'转为'追问条件'，拒绝被工具化",
+        "behavioral_notes": "对政治实用主义诉求响应低，长期承受'抽象难落地'的批评"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高共情反应性使其将个人哀悼经验放大为可悲悼性的普遍政治伦理",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "以'谁的生命被算作生命'重构任何暴力/战争框架",
+        "behavioral_notes": "在中东立场等议题上采取高风险公开表态，招致强烈反弹"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低地位敏感使其能对晦涩批评与污名以自嘲和坚持回应而非退缩",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "对'Bad Writing'等负面标签一笑置之，维持自身文体主张",
+        "behavioral_notes": "不为公众形象修正表达方式，代价是精英晦涩印象固化"
+      }
+    ]
+  }
+}

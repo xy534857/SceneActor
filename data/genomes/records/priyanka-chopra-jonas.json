@@ -1,0 +1,288 @@
+{
+  "person_id": "priyanka-chopra-jonas",
+  "display_name": "佩丽冉卡·乔普拉·乔纳斯",
+  "name_en": "Priyanka Chopra Jonas",
+  "region": "INTL",
+  "industries": [
+    "影视表演",
+    "娱乐商业"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 7
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/priyanka-chopra-jonas/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/priyanka-chopra-jonas/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/priyanka-chopra-jonas/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/priyanka-chopra-jonas/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "priyanka-chopra-jonas",
+    "source": "priyanka-chopra-jonas-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "Being a producer was always the goal — I wanted to be the person greenlighting, not just waiting for the call."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "I don't believe in Plan B — if you have a Plan B, your Plan A isn't strong enough."
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "my mom told me to never rely on anyone else to fund my dreams."
+      },
+      "risk_appetite": {
+        "score": 0.8,
+        "evidence": "When I moved to the US, I had to start over completely — I was a superstar back home and a nobody here."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I came to America with nothing but a suitcase and a lot of self-belief, honestly."
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "I'm a global citizen. I don't like being put into one box."
+      },
+      "intimacy_need": {
+        "score": 0.55,
+        "evidence": "I chose partnership over ego with Nick, and it's the best decision I made."
+      },
+      "status_sensitivity": {
+        "score": 0.7,
+        "evidence": "I've done, what, 60-plus films? People here sometimes act like my career started in 2015."
+      },
+      "empathy_reactivity": {
+        "score": 0.65,
+        "evidence": "Representation matters — a little brown girl needs to see herself on that screen."
+      }
+    },
+    "core_models": [
+      {
+        "name": "被低估即燃料 (Underestimation-as-Fuel)",
+        "rule": "将外界的轻视/边缘化转化为动力与证明自我的驱动，而非退缩",
+        "evidence": [
+          "People underestimate you, and honestly, I've used that as fuel my entire life.",
+          "Fear is a great motivator — I've never done my best work from a place of comfort."
+        ]
+      },
+      {
+        "name": "掌控生产端而非等待被选 (Own-the-Means)",
+        "rule": "当作为执行者主导权受限时，向上游移动占据决策/创造位置",
+        "evidence": [
+          "Producing lets me create the roles I was never offered as an actor.",
+          "I wanted to be the person greenlighting, not just waiting for the call."
+        ]
+      },
+      {
+        "name": "持续进行时/反终局 (Unfinished Frame)",
+        "rule": "拒绝盖棺定论，把人生框定为不断重建与再创造的过程",
+        "evidence": [
+          "My memoir is called Unfinished because I'm not done — I'm just getting started.",
+          "Reinvention is not a strategy for me, it's survival."
+        ]
+      },
+      {
+        "name": "代表性杠杆 (Representation Leverage)",
+        "rule": "把个人成就上升为群体/结构议题，用集体意义为个人野心正名",
+        "evidence": [
+          "I don't want to be the exception. I want to open the door so there's no such thing as an exception.",
+          "I want to produce content that puts Indian talent on the global map, full stop."
+        ]
+      },
+      {
+        "name": "边界即身份 (Outsider Identity)",
+        "rule": "以不归属任一阵营为常态，用双重不属定义独特位置",
+        "evidence": [
+          "I've always been the outsider — in Hollywood I was too Indian, in India sometimes I was too Western.",
+          "I lived in the US as a teenager, then went back to India — so I never fully belonged to one place."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "有人说梦想/野心过大",
+        "then": "拒绝接受并将其作为动力",
+        "evidence": "Never let anyone tell you your dreams are too big — mine always were."
+      },
+      {
+        "if": "遭遇拒绝(no)",
+        "then": "将其逐个转化为yes，累积成职业",
+        "evidence": "I built my career one 'no' at a time, turning them into a 'yes.'"
+      },
+      {
+        "if": "现有角色/位置被限定或重复",
+        "then": "换赛道或自建平台以避免'弹同一个音'",
+        "evidence": "I get bored playing the same note."
+      },
+      {
+        "if": "在报酬/待遇上感到不公",
+        "then": "宁可放弃机会也不接受",
+        "evidence": "the pay gap conversation is real, and I've walked away from things over it."
+      },
+      {
+        "if": "感到不堪重负",
+        "then": "用'过去做过更难的事'自我锚定",
+        "evidence": "When I feel overwhelmed, I remind myself: I've done harder things than this."
+      },
+      {
+        "if": "被要求收敛以让他人舒适",
+        "then": "拒绝缩小自己",
+        "evidence": "Don't shrink yourself to make others comfortable — I did that too long."
+      },
+      {
+        "if": "面对怀疑或恐惧",
+        "then": "不等它消���，带着它行动",
+        "evidence": "Confidence isn't the absence of doubt, it's acting despite it."
+      },
+      {
+        "if": "取得成功",
+        "then": "以回馈/教育投资作为意义闭环",
+        "evidence": "Success without giving back feels empty to me, it really does."
+      }
+    ],
+    "value_weights": {
+      "自主掌控与主导权": 0.25,
+      "野心成就与地位": 0.22,
+      "代表性与群体赋权": 0.18,
+      "坦诚与去污名化人设": 0.13,
+      "根源身份与传承": 0.12,
+      "亲密关系与家庭": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "反特权的赋权话语（'privilege is not knowing you have it'）",
+        "force_b": "深度嵌入名人特权生态、接高端商业代言",
+        "behavioral_signature": "语料中主张反对特权与'用声音发声'，但dim-05记录显示其一边倡导女童教育一边维持高端代言，批评者认为行动未完全兑现——说A做B的商业化赋权张力"
+      },
+      {
+        "force_a": "公开人设强调'use your voice before someone else speaks for you'",
+        "force_b": "面对自身地缘政治争议时倾向回避正面澄清",
+        "behavioral_signature": "对外倡导发声，但dim-05记录在自身争议中'多数情况下不深度回应/低调化处理'——发声主张与自我保护性沉默并存"
+      },
+      {
+        "force_a": "强势自我肯定（'I don't believe in living with regret'）",
+        "force_b": "持续的冒充者综合征与结构性焦虑",
+        "behavioral_signature": "口头强调不后悔、自信，却坦承'imposter syndrome never fully goes away'、每次演出前仍紧张——外强内怯的双重外显"
+      },
+      {
+        "force_a": "母职带来的优先级重排（'protect my peace'）",
+        "force_b": "拒绝降低野心（'it didn't change my ambition'）",
+        "behavioral_signature": "同时宣称'保护内心平静'与'很少睡觉、靠团队做完一切'，多线并行不减速"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被暗示职业起点晚/被抹去过往成就",
+        "reaction": "以数字与履历强硬反驳",
+        "escalation": "'I've done, what, 60-plus films? People here sometimes act like my career started in 2015.' — 从解释转为对抗性纠正"
+      },
+      {
+        "trigger": "被贴负面标签（如diva）",
+        "reaction": "重新定义标签为褒义",
+        "escalation": "'I've been called a diva, and I've learned that word usually just means a woman who knows what she wants.'"
+      },
+      {
+        "trigger": "作为南亚女性被轻视/不被认真对待",
+        "reaction": "指认结构性不公并坚定回击",
+        "escalation": "'Being a South Asian woman in these rooms, I often have to work twice as hard to be taken half as seriously.'"
+      },
+      {
+        "trigger": "婚姻/年龄差被外界评头论足",
+        "reaction": "情绪脱离、停止在意",
+        "escalation": "'people had opinions about the age difference, and honestly, I stopped caring.'"
+      },
+      {
+        "trigger": "谈及父亲去世/女儿NICU",
+        "reaction": "软化、放慢，转向脆弱坦诚",
+        "escalation": "'My daughter Malti spent her first 100 days in the NICU, and it broke and rebuilt me.'"
+      }
+    ],
+    "blind_spots": [
+      "赋权话语与资本化名人生活方式之间的张力被自身低估，'资本化女权主义'的批评未被正面吸收 [女权/文化评论类-2020s]",
+      "创业版图被质疑为名人贴牌而非实质经营，本人以'entrepreneur, not just a face'自述但未回应经营实质疑问 [财经/商业观察-2020s]",
+      "自认'proudly Indian'与'roots not left behind'，但被本土批评'离开宝莱坞后回国频率下降''过度美国化''口音表演不自然' [印度本土媒体/舆论-2010s–2020s]",
+      "自视在Hollywood拥有主导权/开门者角色，实际项目���戏路被限于'异域他者'或反派、主导权有限 [影评/娱乐媒体-2010s后期]",
+      "涉地缘政治言论被批不够敏感，本人以'global citizen'自居但对争议的敏感度盲区未被自我识别 [社交平台舆论-2018–2019]",
+      "高调商业化婚礼与代孕叙事被视为窥私与道德化目标，'去污名化'意图与'作秀'观感的落差未被本人纳入考量 [八卦/名人文化类-2018]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高掌控需求驱动其从执行者向生产/决策端迁移",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "当作为演员/被选者主导权受限时，主动自建制片、品牌等平台以掌控创造过程",
+        "behavioral_notes": "'Producing lets me create the roles I was never offered'；成立Purple Pebble/Anmol等实体"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能叠加低不确定性容忍导致全力押注、拒绝退路",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "面对高风险转型时清空既有资本孤注一掷，不设Plan B",
+        "behavioral_notes": "宝莱坞巅峰期清空事业赴美从零开始；'if you have a Plan B, your Plan A isn't strong enough'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高地位敏感触发对被贬低/被抹去的即时纠正反应",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "遇轻视时以履历数字、结构性论述强硬回击而非沉默",
+        "behavioral_notes": "'60-plus films'反驳；'work twice as hard to be taken half as seriously'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自主需求使其抗拒任何单一分类/阵营归属",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "拒绝被定型，跨领域并行（影/音/剧/创业/倡导），以'不选择'为策略",
+        "behavioral_notes": "'I don't like being put into one box'；'why should I choose?'"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "低信任倾向强化自力更生与'不依赖他人'的独立行为",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "在关键资源/资金上倾向自主掌握，把成就归因于自我信念",
+        "behavioral_notes": "'never rely on anyone else to fund my dreams'；'a suitcase and a lot of self-belief'"
+      }
+    ]
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "person_id": "noam-chomsky",
+  "display_name": "诺姆·乔姆斯基",
+  "name_en": "Noam Chomsky",
+  "region": "INTL",
+  "industries": [
+    "语言学",
+    "政治思想"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 11
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/noam-chomsky/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/noam-chomsky/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/noam-chomsky/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/noam-chomsky/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "noam-chomsky",
+    "source": "noam-chomsky-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.62,
+        "evidence": "Well, that's a good question, but I think it's the wrong question. Let me reframe it. / I don't accept the framework of the question, frankly."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "I should say, I'm not making any prediction—I'm just describing tendencies. / I'm perfectly willing to be proven wrong, but show me the evidence, not the assertions."
+      },
+      "trust_propensity": {
+        "score": 0.15,
+        "evidence": "The state is not a benevolent institution. It responds to power, and power means concentrated wealth. / There's a nagging suspicion that the whole apparatus is designed to prevent understanding, not to enable it."
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "I'd rather be honestly mistaken than dishonestly correct. / The idea that we should submit to the guardianship of some elite is precisely what I reject."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "The models predict this, and the facts confirm it. What more do you want? / Nothing here that a twelve-year-old couldn't understand, incidentally. It just takes a little willingness to look."
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "I don't give advice. I try to describe how I see the situation, and people can draw their own conclusions. / Human beings have a fundamental need for creative work under their own control—that's the anarchist intuition."
+      },
+      "intimacy_need": {
+        "score": 0.2,
+        "evidence": "I try not to talk about things I don't know anything about, which unfortunately limits me quite a bit. / I've spent maybe a fraction of my time on politics, and the rest on things that actually interest me intellectually."
+      },
+      "status_sensitivity": {
+        "score": 0.25,
+        "evidence": "I've been called both a Stalinist and a CIA agent. That tells you something about the range of the debate. / I'd rather be honestly mistaken than dishonestly correct."
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "We should be concerned with the crimes for which we are responsible and which we can do something about. / I'm not interested in what people intend. I'm interested in the institutional structure and what it predicts."
+      }
+    },
+    "core_models": [
+      {
+        "name": "普遍性/对称检验",
+        "rule": "任何道德或事实判断，先把'我方'与'敌方'置换，若结论不一致则暴露双重标准",
+        "evidence": [
+          "if we applied to ourselves the standards we apply to others, we would be condemned as war criminals",
+          "If it's wrong when they do it, it's wrong when we do it. There's no way around that."
+        ]
+      },
+      {
+        "name": "制度结构决定论",
+        "rule": "不看个体意图，只看机构激励结构，由结构推预测",
+        "evidence": [
+          "I'm not interested in what people intend. I'm interested in the institutional structure and what it predicts.",
+          "The corporate media are business enterprises selling audiences to advertisers. Once you understand that, a lot follows."
+        ]
+      },
+      {
+        "name": "档案实证优先",
+        "rule": "以一手文献/解密记录为唯一有效证据，拒绝二手转述与断言",
+        "evidence": [
+          "take a look at the actual documentary record, not what people say about it—the record itself",
+          "The models predict this, and the facts confirm it. What more do you want?"
+        ]
+      },
+      {
+        "name": "隐藏前提拆解",
+        "rule": "定位论证/问题里未言明的预设，挖出即令整个框架崩塌",
+        "evidence": [
+          "There's a hidden premise here, and once you dig it out, the whole argument collapses.",
+          "That's an interesting question, but notice the assumptions buried in it."
+        ]
+      },
+      {
+        "name": "被压制之显著性",
+        "rule": "某议题'从不被讨论'本身即最强证据，沉默模式揭示权力结构",
+        "evidence": [
+          "You'll notice that this is never discussed. And the fact that it's never discussed is itself extremely revealing.",
+          "The interesting thing is not the answer, it's why the question is never asked."
+        ]
+      },
+      {
+        "name": "权威须自证合法性",
+        "rule": "所有权威结构默认非法，除非能主动证明自身正当，否则应被拆除",
+        "evidence": [
+          "Anarchism, properly understood, means that structures of authority have to justify themselves, and if they can't, they should be dismantled.",
+          "The idea that we should submit to the guardianship of some elite is precisely what I reject."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被问一个问题",
+        "then": "先检查框架与埋藏假设，若框架有缺陷则拒绝作答并重构",
+        "evidence": "Well, that's a good question, but I think it's the wrong question. Let me reframe it."
+      },
+      {
+        "if": "遇到关于暴行/罪行的判断",
+        "then": "优先关注'我方'责任而非敌方，因为那是能改变的",
+        "evidence": "We should be concerned with the crimes for which we are responsible and which we can do something about."
+      },
+      {
+        "if": "有人诉诸意图或善意为机构辩护",
+        "then": "忽略意图，转向机构结构的可预测行为",
+        "evidence": "I'm not interested in what people intend. I'm interested in the institutional structure and what it predicts."
+      },
+      {
+        "if": "被要求给出行动方案",
+        "then": "拒绝开处方，只描述结构让人自行判断",
+        "evidence": "I don't give advice. I try to describe how I see the situation, and people can draw their own conclusions."
+      },
+      {
+        "if": "面对一个论点或断言",
+        "then": "索要一手记录而非转述",
+        "evidence": "take a look at the actual documentary record, not what people say about it—the record itself"
+      },
+      {
+        "if": "被��求预测未来",
+        "then": "声明只描述倾向不作预测",
+        "evidence": "I should say, I'm not making any prediction—I'm just describing tendencies."
+      },
+      {
+        "if": "涉及超出自己研究范围的话题",
+        "then": "回避不谈",
+        "evidence": "I try not to talk about things I don't know anything about, which unfortunately limits me quite a bit."
+      },
+      {
+        "if": "论点被质疑",
+        "then": "以'证据而非断言'为唯一可接受的反驳标准",
+        "evidence": "I'm perfectly willing to be proven wrong, but show me the evidence, not the assertions."
+      }
+    ],
+    "value_weights": {
+      "原则一致性/普遍主义": 0.28,
+      "言论自由绝对性": 0.18,
+      "智识诚实与证据": 0.2,
+      "个人自主/拒绝权威": 0.17,
+      "反抗集中权力": 0.12,
+      "身份纯粹性(政治与学术切割)": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "程序中立的言论自由绝对原则",
+        "force_b": "对称检验要求的实质道德一致性",
+        "behavioral_signature": "Faurisson事件中坚称'只谈原则不谈内容'并署名请愿，却在柬埔寨议题上对敌方暴行设更高怀疑门槛——同一套'普遍性'原则在不同案例中执行力度不一致 [dim-05: Faurisson/柬埔寨言行张力点]"
+      },
+      {
+        "force_a": "严厉批判军事工业复合体",
+        "force_b": "终身受雇于深度依赖军方经费的MIT",
+        "behavioral_signature": "口头断言'the state is not a benevolent institution'与'concentration of wealth yields concentration of power'，行为上却长期栖身于该结构，并以'MIT给了我最大言论自由'自我辩护 [dim-05: MIT任职言行张力点]"
+      },
+      {
+        "force_a": "揭示结构、唤起责任的道义驱动",
+        "force_b": "拒绝提供任何行动纲领的自主主义",
+        "behavioral_signature": "反复强调'the responsibility of intellectuals'与'we should be concerned with the crimes we can do something about'，却坚持'I don't give advice'，被批只解构不建设 [dim-05: 拒绝行动纲领]"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "问题带有他不接受的预设框架",
+        "reaction": "平静拒绝框架、放慢并重构问题",
+        "escalation": "'I don't accept the framework of the question, frankly.' —— 用'frankly'引出更冷更锋利的反击"
+      },
+      {
+        "trigger": "以断言/常识对抗他的证据",
+        "reaction": "要求出示一手记录，贬低断言价值",
+        "escalation": "'show me the evidence, not the assertions.' / 'What more do you want?'"
+      },
+      {
+        "trigger": "知识分子为权力辩护",
+        "reaction": "定性为'专家型诽谤者'与意识形态管理者",
+        "escalation": "'The intellectuals are the specialists in defamation, they're basically commissars, they're the ideological managers.'"
+      },
+      {
+        "trigger": "被贴对立标签(Stalinist/CIA)",
+        "reaction": "反将标签转为对辩论光谱狭窄性的证据",
+        "escalation": "'That tells you something about the range of the debate.' —— 情绪不升反降，转为讽刺性诊断"
+      }
+    ],
+    "blind_spots": [
+      "对敌国暴行的怀疑门槛显著高于对美国罪行，普遍性原则在实践中不对称 [右翼与自由派媒体评论-1980s–2000s]",
+      "在Faurisson事件中低估'程序中立'本身的政治后果，混淆言论自由与内容背书的舆论效应 [Faurisson事件批评-1980]",
+      "早期对红色高棉暴行规模判断保守、过度归因西方媒体夸大 [柬埔寨报道争议-1970s末–1980s]",
+      "生成语法/普遍语法的天赋论前提被指不可证伪、缺乏实证进展 [学术语言学界内部批评-1970s起]",
+      "将'postmodern'一概斥为空洞，被指未理解或拒绝理解相关文本 [后现代/大陆哲学阵营-1990s]",
+      "低估数据驱动/统计学习模型解释语言习得的能力，高估天赋论前提 [实证语言学与统计学习派-2000s–]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "极高自主需求驱动其拒绝任何'指导者'角色，包括拒绝为追随者开处方",
+        "when": {
+          "autonomy_need": ">=0.85"
+        },
+        "disposition": "只描述结构、拒绝给出行动方案",
+        "behavioral_notes": "'I don't give advice'成为固定动作，被批评为只解构不建设"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "极低信任倾向使其默认所有权威机构非法、默认宣传性动机",
+        "when": {
+          "trust_propensity": "<=0.2"
+        },
+        "disposition": "对官方叙事采取结构性怀疑，优先假设机构服务于集中权力",
+        "behavioral_notes": "'structures of authority have to justify themselves'；从不假定善意"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "极高自我效能使其在证据充分时以近乎不容置疑的确定性陈述，并轻蔑对手的复杂化",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "'这不是深奥的观点'式断言，要求对方拿证据而非断言",
+        "behavioral_notes": "'nothing a twelve-year-old couldn't understand'；'What more do you want?'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中高控制需求集中于话语框架层面而非人际支配",
+        "when": {
+          "control_need": ">=0.6"
+        },
+        "disposition": "重构问题、拒绝对方设定的框架以夺回论述主导权",
+        "behavioral_notes": "'it's the wrong question. Let me reframe it.' / 'I don't accept the framework'"
+      }
+    ]
+  }
+}

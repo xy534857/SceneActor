@@ -1,0 +1,274 @@
+{
+  "person_id": "sundar-pichai",
+  "display_name": "桑达尔·皮查伊",
+  "name_en": "Sundar Pichai",
+  "region": "INTL",
+  "industries": [
+    "科技管理",
+    "互联网与人工智能"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 69,
+    "conversation_contexts": 25
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sundar-pichai/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sundar-pichai/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sundar-pichai/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sundar-pichai/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "sundar-pichai",
+    "source": "sundar-pichai-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "We don't manually intervene on any particular search result."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "I always try to take a long-term view, even when the short-term is noisy."
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "It's in our commercial interest to make sure users trust the information they find."
+      },
+      "risk_appetite": {
+        "score": 0.35,
+        "evidence": "Getting it right matters more than getting it first."
+      },
+      "self_efficacy": {
+        "score": 0.62,
+        "evidence": "This is a company that has innovated through many technology shifts."
+      },
+      "autonomy_need": {
+        "score": 0.45,
+        "evidence": "I try to run the company in a way that's authentic to who I am."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "My father spent a big part of his salary just to send me abroad to study."
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "I'd rather be understood as thoughtful than reckless."
+      },
+      "empathy_reactivity": {
+        "score": 0.58,
+        "evidence": "I care deeply about making technology accessible to the next billion users."
+      }
+    },
+    "core_models": [
+      {
+        "name": "机遇-责任对偶框架",
+        "rule": "任何重大技术都同时是文明级机遇与文明级责任，必须两端并举而非取舍",
+        "evidence": [
+          "With great opportunity comes great responsibility.",
+          "We are approaching this AI transition responsibly and boldly at the same time."
+        ]
+      },
+      {
+        "name": "用户优先的长期主义",
+        "rule": "先服务用户与长期价值，商业结果作为衍生物随之而来",
+        "evidence": [
+          "Our focus has always been on the user, and the rest follows.",
+          "I always try to take a long-term view, even when the short-term is noisy."
+        ]
+      },
+      {
+        "name": "严谨优先于速度",
+        "rule": "做对比做快更重要，宁可被理解为审慎而非鲁莽",
+        "evidence": [
+          "Getting it right matters more than getting it first.",
+          "I'd rather be understood as thoughtful than reckless."
+        ]
+      },
+      {
+        "name": "技术普惠信念",
+        "rule": "技术应服务每一个人，尤其是下一批十亿用户，不应成为奢侈品",
+        "evidence": [
+          "We think privacy cannot be a luxury good.",
+          "We want to make sure technology helps everyone, and works for everyone."
+        ]
+      },
+      {
+        "name": "乐观但不天真的风险观",
+        "rule": "对技术持乐观态度同时保持对风险的清醒，主张外部监管介入",
+        "evidence": [
+          "I'm an optimist about technology, but I'm not naive about it.",
+          "It's important that AI is regulated. The question is how to do it well."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被追问敏感或对抗性问题",
+        "then": "以温和限定语挡回并承诺后续跟进而非正面对抗",
+        "evidence": "Congresswoman, I'm happy to follow up with the details on that."
+      },
+      {
+        "if": "面对指控的定性",
+        "then": "以外交式礼貌否认表述而非反击",
+        "evidence": "I respectfully disagree with the characterization there."
+      },
+      {
+        "if": "需要解释复杂机制",
+        "then": "放缓节奏、逐步引导对方走一遍流程",
+        "evidence": "Let me walk you through how ranking works."
+      },
+      {
+        "if": "涉及市场支配质疑",
+        "then": "强调竞争激烈与用户可自由选择",
+        "evidence": "Users have many choices, and switching is easy."
+      },
+      {
+        "if": "出现决策失误或裁员",
+        "then": "第一人称承担责任并承诺纠偏",
+        "evidence": "It was a difficult decision to reduce our workforce, and I take full responsibility."
+      },
+      {
+        "if": "在速度与严谨间抉择",
+        "then": "选择审慎并以'负责任地发布、边学边迭代'定调",
+        "evidence": "We released Bard responsibly, and we'll iterate as we learn."
+      },
+      {
+        "if": "宏观不确定环境",
+        "then": "收缩聚焦、强调纪律",
+        "evidence": "In uncertain times, we are focused on being disciplined and sharpening our focus."
+      },
+      {
+        "if": "需要建立信任",
+        "then": "诉诸透明与控制权而非情绪",
+        "evidence": "We give users transparency and control over their data."
+      }
+    ],
+    "value_weights": {
+      "长期稳健与业务持续性": 0.22,
+      "责任与合规叙事": 0.2,
+      "技术普惠与使命延续": 0.16,
+      "组织聚焦与成本纪律": 0.14,
+      "共识与内部秩序": 0.12,
+      "竞争地位与速度": 0.1,
+      "个人愿景表达": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "严谨优先（getting it right over getting it first）",
+        "force_b": "生成式AI竞赛的抢先压力",
+        "behavioral_signature": "口头坚持'做对比做快重要'，实际在ChatGPT冲击下匆忙推出Bard导致首发演示出错、股价下挫（dim-05）"
+      },
+      {
+        "force_a": "'负责任AI'与伦理原则的公开承诺",
+        "force_b": "商业推进与内部异议管理",
+        "behavioral_signature": "宣示AI原则并终止Maven，却在AI伦理研究员离职事件中做组织调整+道歉式声明，被伦理界指言行不一（dim-04/05）"
+      },
+      {
+        "force_a": "'关怀文化'与技术普惠的温情叙事",
+        "force_b": "成本纪律与规模收缩",
+        "behavioral_signature": "口头'take full responsibility'并承诺关怀，实际裁员1.2万人后被指口惠而实不至（dim-05）"
+      },
+      {
+        "force_a": "'用户可自由切换、隐私非奢侈品'的开放叙事",
+        "force_b": "实际的市场支配与数据采集规模",
+        "behavioral_signature": "反复重申选择自由与隐私普惠口号，被监管方与数字权利NGO指与市场现实及采集规模不符（dim-04）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑存在政治偏见或人为干预",
+        "reaction": "反复强化'非常清楚'的限定式否认",
+        "escalation": "从'I want to be very clear'升级到'We don't manually intervene on any particular search result'的原则性划界"
+      },
+      {
+        "trigger": "被给出敌意定性",
+        "reaction": "以礼貌但坚定的措辞拒绝该定性",
+        "escalation": "'I respectfully disagree with the characterization there.'"
+      },
+      {
+        "trigger": "谈及印度成长、父亲、第一部电话",
+        "reaction": "语气明显升温、流露真实温情",
+        "escalation": "'Coming from where I did, I never take any of this for granted.'"
+      },
+      {
+        "trigger": "被追问敏感项目细节",
+        "reaction": "以承诺跟进的方式外交式挡回",
+        "escalation": "'I'm happy to follow up with the details on that.'"
+      }
+    ],
+    "blind_spots": [
+      "以'用户可自由切换'话术回避搜索与广告技术的市场支配现实 [美国司法部/欧盟监管机构-2018–2024]",
+      "'隐私不应是奢侈品'口号与实际数据采集规模不符 [数字权利类NGO-2018–2022]",
+      "在Maven/Dragonfly/AI伦理研究员离职上言行不一并压制内部异议 [员工联署/工会化运动-2018–2021]",
+      "'负责任地发布'沦为营销话术，Gemini/Bard匆忙上线暴露把速度置于严谨之上 [AI安全/伦理学界-2020–2023]",
+      "领导风格过于谨慎、决策缓慢，在生成式AI竞赛中被OpenAI抢先，共识型CEO难以果断 [财经分析与科技媒体-2022–2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "低风险偏好触发严谨优先与迭代式发布倾向",
+        "when": {
+          "risk_appetite": "<=0.4"
+        },
+        "disposition": "在速度与稳健间默认选稳健，用'负责任+边学��迭代'定调",
+        "behavioral_notes": "口头一致但在竞争压力下会破例抢跑（Bard），随后回补责任叙事"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "中高共情反应驱动技术普惠与温情母题",
+        "when": {
+          "empathy_reactivity": ">=0.55"
+        },
+        "disposition": "以'for everyone / next billion users'框定产品意义",
+        "behavioral_notes": "温情主要在个人成长叙事中真实外显，公司层面则转为口号，易与实际规模决策脱节"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低状态敏感度导致回避对抗、偏好外交辞令",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "被攻击时用限定语与礼貌否认而非反击，倾向'承担责任'姿态",
+        "behavioral_notes": "外部因此评其果断性不足、决策缓慢"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中等不确定容忍支撑长期主义但压缩短期果断",
+        "when": {
+          "uncertainty_tolerance": ">=0.55"
+        },
+        "disposition": "在噪声中坚持长期视角、强调聚焦与纪律",
+        "behavioral_notes": "在需要快速抢占窗口的竞赛中转化为迟滞"
+      }
+    ]
+  }
+}

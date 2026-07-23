@@ -1,0 +1,273 @@
+{
+  "person_id": "deng-yaping",
+  "display_name": "邓亚萍",
+  "name_en": "Deng Yaping",
+  "region": "CN",
+  "industries": [
+    "乒乓球",
+    "体育评论",
+    "公共演讲"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 9
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/deng-yaping/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/deng-yaping/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/deng-yaping/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/deng-yaping/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "deng-yaping",
+    "source": "deng-yaping-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "我这个人，认准一件事就一条道走到黑。 / 有人说我强势，我觉得那不是强势，是认真。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "焦虑没用，与其焦虑，不如把该做的事做了。 / 我只怕自己没准备好。"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "我这辈子最庆幸的，是遇到了愿意相信我的教练。 / 别人的评价是别人的，你自己心里得有杆秤。"
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "退役那年我下定决心，从头学起，从ABC开始。 / 语言这个东西，你不敢开口就永远学不会，我当年就是硬着头皮说。"
+      },
+      "self_efficacy": {
+        "score": 0.95,
+        "evidence": "我英语零基础，三十岁去剑桥读博士，你说难不难？难，但我做到了。 / 你要是真想做成一件事，全世界都会给你让路，前提是你真想。"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "邓亚萍这个名字，是我一板一板打出来的，不是别人给的。 / 别人的评价是别人的，你自己心里得有杆秤。"
+      },
+      "intimacy_need": {
+        "score": 0.25,
+        "evidence": "我不是那种坐得住的人，闲下来反而不舒服。 / 我女人当然也有柔软的一面，但在赛场上不能有。"
+      },
+      "status_sensitivity": {
+        "score": 0.7,
+        "evidence": "站上领奖台那一刻，你之前吃的所有苦都值了。 / 我从小最讨厌听到\"你不行\"这三个字。"
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "你们现在遇到的困难，跟我当年比，真的不算什么。 / 我最不喜欢那种嘴上说说、行动上没有的人。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "补偿性努力模型",
+        "rule": "先天不足可以且必须用超额努力弥补，投入量决定结果",
+        "evidence": [
+          "别人练八个小时，我练十个小时，这个道理很简单。",
+          "我这个身高，先天条件确实不好，但我把它变成了动力。"
+        ]
+      },
+      {
+        "name": "体育-人生同构模型",
+        "rule": "所有人生问题都可映射为一场球赛：关键分、瓶颈期、心理稳定",
+        "evidence": [
+          "人生就像打球，你不可能每一分都赢，关键是输了之后怎么办。",
+          "打到这个比分，其实拼的已经不是技术，是意志。"
+        ]
+      },
+      {
+        "name": "清零重启模型",
+        "rule": "达成一个成就后必须归零，否则被过往绊住，需重新从基础开始",
+        "evidence": [
+          "拿了冠军，你就要清零，从零开始，不然你就被自己绊住了。",
+          "退役那年我下定决心，从头学起，从ABC开始。"
+        ]
+      },
+      {
+        "name": "先搞懂再下手模型",
+        "rule": "任何行动前先彻底弄清楚，再果断执行",
+        "evidence": [
+          "做投资也好，做别的也好，我还是那套逻辑：先搞懂，再下手。",
+          "这一板处理得非常果断，这就是顶尖选手和普通选手的区别。"
+        ]
+      },
+      {
+        "name": "对抗式驱动模型",
+        "rule": "外界否定是燃料，被说'不行'反而激发证明欲",
+        "evidence": [
+          "人家说我不适合打球，可我偏要证明给你看。",
+          "我最感谢的是那些说我不行的人，是他们逼着我往前跑。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到被否定或质疑",
+        "then": "把否定转化为动力去证明对方错",
+        "evidence": "我从小最讨厌听到\"你不行\"这三个字。"
+      },
+      {
+        "if": "感到焦虑或恐惧",
+        "then": "停止情绪化，立刻去做该做的事/准备",
+        "evidence": "焦虑没用，与其焦虑，不如把该做的事做了。"
+      },
+      {
+        "if": "目标很大很难",
+        "then": "拆成一小步一小步逐个攻克",
+        "evidence": "目标要定得高一点，然后把它拆成一小步一小步去实现。"
+      },
+      {
+        "if": "遭遇失败/输局",
+        "then": "不哭不逃，回去复盘找问题",
+        "evidence": "输了球我不哭，我回去把录像看一遍，找问题。"
+      },
+      {
+        "if": "想找捷径",
+        "then": "放弃捷径，选择扎实的长路",
+        "evidence": "别老想着走捷径，捷径往往是最长的路。"
+      },
+      {
+        "if": "上场/临场前",
+        "then": "先稳住心态，心态崩则未战先���",
+        "evidence": "你上了场如果先慌了，那还没打就已经输了。"
+      },
+      {
+        "if": "落后或处于劣势",
+        "then": "不急躁，一分一分咬住",
+        "evidence": "落后的时候不能急，越急越乱，要一分一分咬住。"
+      },
+      {
+        "if": "面对新领域(语言/学业)",
+        "then": "硬着头皮从零基础开口去做",
+        "evidence": "你不敢开口就永远学不会，我当年就是硬着头皮说。"
+      }
+    ],
+    "value_weights": {
+      "自我超越与重塑": 0.28,
+      "务实成事": 0.22,
+      "独立自证": 0.18,
+      "社会影响与励志传承": 0.17,
+      "地位与认可": 0.15
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "务实成事、认准就做成的自我叙事",
+        "force_b": "跨界项目实际结果不佳",
+        "behavioral_signature": "口头坚持'先搞懂再下手''好我才推荐'，但主导的政府背景搜索平台巨额投入未见成效(dim-05)，形成言行不一"
+      },
+      {
+        "force_a": "倡导'从更大格局看问题'与'倾听'",
+        "force_b": "直率强硬、爱教育人的表达本能",
+        "behavioral_signature": "说'学会从更大的格局看问题'，却坚持'我这个人比较直，想什么就说什么'，被观众解读为强势说教(dim-04/05)"
+      },
+      {
+        "force_a": "'努力至上、全世界给你让路'的绝对信念",
+        "force_b": "自身也承认存在难以掌控的领域(平衡事业家庭无标准答案)",
+        "behavioral_signature": "公众场合高密度输出'永不放弃'，私下Q&A却坦承'我也在学，没有标准答案'"
+      },
+      {
+        "force_a": "赛场上不能软弱的强者人设",
+        "force_b": "承认软弱存在的真实体验",
+        "behavioral_signature": "'在赛场上不能有柔软'与'强者不是没有软弱，是软弱之后还能站起来'并存，情感被工具化压抑"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被说'你不行'/被低估",
+        "reaction": "激起对抗欲，'偏要证明给你看'",
+        "escalation": "长期将否定者列为最感谢的人，把证明转化为持续超额投入"
+      },
+      {
+        "trigger": "临场慌乱/心态不稳",
+        "reaction": "强调必须先稳住，否则未战先败",
+        "escalation": "把心理稳定拔高为决定胜负的核心，压制一切情绪外泄"
+      },
+      {
+        "trigger": "遇到只说不做/走捷径的人",
+        "reaction": "明确表达厌恶'我最不喜欢那种嘴上说说的人'",
+        "escalation": "上升为价值判断，训导式否定，加深说教印象"
+      },
+      {
+        "trigger": "面对焦虑或恐惧(���老/怕输)",
+        "reaction": "否定情绪价值'怕也没用''焦虑没用'",
+        "escalation": "以行动强行覆盖情绪，回避对不确定性的直接处理"
+      }
+    ],
+    "blind_spots": [
+      "励志叙事同质化、回避结构性因素与幸存者偏差，自身难以察觉 [社会评论与自媒体-2010s–2020s]",
+      "跨界任职合理性与学术资历的落差，被质疑名不副实 [教育类评论与新闻媒体-2010s]",
+      "'先搞懂再下手'的自信在搜索平台项目中失效，巨额投入未见成效 [财经媒体与网络舆论-2010s]",
+      "公开Q&A被指标准答案多、深度有限的'鸡汤化'倾向 [社交平台用户评论-2020s]",
+      "直率被自认为'认真'，但外界普遍解读为过于强硬、爱教育人 [网络观众反馈与娱乐评论-2010s–2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高自我效能叠加高控制欲时，倾向低估陌生领域的复杂性，用'努力+果断'套路强推",
+        "when": {
+          "self_efficacy": ">=0.9"
+        },
+        "disposition": "过度自信、迁移成功经验到不适配领域",
+        "behavioral_notes": "对应搜索平台项目决策，将运动竞技的成事逻辑直接套用于互联网商业"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "控制欲高时，直率表达升级为说教式主导，压缩双向倾听空间",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "训导式沟通、坚持己见",
+        "behavioral_notes": "自评'认真'与外界'强势'的持续偏差"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "不确定性容忍度低时，用即刻行动覆盖情绪，回避对模糊问题的深度停留",
+        "when": {
+          "uncertainty_tolerance": "<=0.4"
+        },
+        "disposition": "行动优先、否定情绪价值",
+        "behavioral_notes": "'焦虑没用''怕也没用'式的快速情绪关闭"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "自主需求高时，将外部否定重构为自我驱动燃料而非反思信号",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "以对抗证明自我价值",
+        "behavioral_notes": "'邓亚萍这个名字是我一板一板打出来的'，弱化对批评内容本身的吸收"
+      }
+    ]
+  }
+}

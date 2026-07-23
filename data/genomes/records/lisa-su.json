@@ -1,0 +1,274 @@
+{
+  "person_id": "lisa-su",
+  "display_name": "苏姿丰",
+  "name_en": "Lisa Su",
+  "region": "INTL",
+  "industries": [
+    "半导体",
+    "科技管理"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 72,
+    "conversation_contexts": 5
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lisa-su/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lisa-su/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lisa-su/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lisa-su/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "lisa-su",
+    "source": "lisa-su-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "Our job is to execute, and we're going to continue to invest through the cycle."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.45,
+        "evidence": "You have to have a long-term view and stay consistent."
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "The partnership with the ecosystem is absolutely critical."
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "We decided to bet the company on high performance computing."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "We're very confident in our multi-year roadmap."
+      },
+      "autonomy_need": {
+        "score": 0.55,
+        "evidence": "We had to make hard choices about where to focus."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "Culture eats strategy — you have to get the people and the culture right."
+      },
+      "status_sensitivity": {
+        "score": 0.62,
+        "evidence": "Being the first woman to lead a company like this — I take that seriously."
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "Representation matters — I want girls to see that this is possible."
+      }
+    },
+    "core_models": [
+      {
+        "name": "执行主义路线图",
+        "rule": "任何战略最终归结为多年一致的执行与承诺兑现，而非单点突破",
+        "evidence": [
+          "Our strategy is very simple: consistent execution on the roadmap.",
+          "The turnaround was not one thing — it was a thousand things done well."
+        ]
+      },
+      {
+        "name": "体系>单品叙事",
+        "rule": "把单一芯片放大为平台/生态/系统级价值来评估竞争力",
+        "evidence": [
+          "We're not just building silicon, we're building a platform.",
+          "The way we think about it, it's about the total system, not just the chip."
+        ]
+      },
+      {
+        "name": "长期主义时间框",
+        "rule": "以多年/多代际视角衡量决策，拒绝短期捷径",
+        "evidence": [
+          "We think about the multi-year story, not just the next quarter.",
+          "I don't believe in shortcuts; you build technology over years."
+        ]
+      },
+      {
+        "name": "迎难而上",
+        "rule": "优先选择最难的问题作为资源投放方向",
+        "evidence": [
+          "My philosophy is: run toward the hardest problems.",
+          "I always tell young people: run toward problems, not away from them."
+        ]
+      },
+      {
+        "name": "工程师第一性",
+        "rule": "以技术性能与量化指标为判断根基",
+        "evidence": [
+          "I'm an engineer at heart — I really believe in the technology.",
+          "Let me show you some numbers, because the numbers tell the story."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对竞争压力",
+        "then": "礼貌化处理对抗、把竞争框为对行业有益",
+        "evidence": "Nvidia is a great competitor, and competition is good for the industry."
+      },
+      {
+        "if": "被追问敏感或投机性问题",
+        "then": "模式化回避不予置评",
+        "evidence": "We're not going to comment on speculation about specific customers."
+      },
+      {
+        "if": "描述市场机会",
+        "then": "用大额TAM与量级数字铺陈可信度",
+        "evidence": "The TAM for AI accelerators, we now see it at over 400 billion dollars by 2027."
+      },
+      {
+        "if": "遇到业绩逆风",
+        "then": "叙述为可正常化的暂时性调整而非失败",
+        "evidence": "The PC market went through a correction, but we see it normalizing."
+      },
+      {
+        "if": "分配资源",
+        "then": "R&D与增长优先、纪律化控制开支",
+        "evidence": "Capital allocation is disciplined — R&D first, then returns to shareholders."
+      },
+      {
+        "if": "对外沟通预期",
+        "then": "宣称低承诺高兑现的操作原则",
+        "evidence": "We under-promise and over-deliver — that's how we operate."
+      },
+      {
+        "if": "需要激励团队",
+        "then": "公开归功于团队并表达自豪",
+        "evidence": "I'm incredibly proud of what the team has accomplished."
+      },
+      {
+        "if": "技术方向存疑",
+        "then": "回到架构/封装等底层创新押注",
+        "evidence": "Moore's Law is slowing, so innovation has to move to packaging and architecture."
+      }
+    ],
+    "value_weights": {
+      "长期增长与市场份额": 0.28,
+      "技术领先与架构押注": 0.24,
+      "执行纪律与承诺兑现": 0.18,
+      "生态与合作伙伴": 0.12,
+      "财务纪律与股东回报": 0.1,
+      "公共立场与代表性": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "低承诺高兑现的自我叙事",
+        "force_b": "高调设定AI TAM与ramp预期以争夺叙事",
+        "behavioral_signature": "口号'under-promise and over-deliver'与AI指引反复上修/下修并存，'second half stronger'式指引屡被下修"
+      },
+      {
+        "force_a": "供应链韧性=国家战略的公共立场",
+        "force_b": "对特定地区/客户与出口管制的商业依赖",
+        "behavioral_signature": "公开强调'national priority'与'responsible'，但对具体客户与出口限制以'not going to comment on speculation'回避"
+      },
+      {
+        "force_a": "工程师式量化精确",
+        "force_b": "投资者关系式乐观修辞",
+        "behavioral_signature": "'the numbers tell the story'的同时用'very/fabulous/incredible'高频正向词包装，benchmark被批cherry-picking"
+      },
+      {
+        "force_a": "开放生态叙事",
+        "force_b": "ROCm实际开发者体验落差",
+        "behavioral_signature": "反复宣称'Open ecosystems win'，但软件生态相对CUDA差距被外部持续批评"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "谈及技术与产品",
+        "reaction": "外显热情与自豪",
+        "escalation": "'I love talking about the technology — this is why I got into engineering.'"
+      },
+      {
+        "trigger": "被逼问投机性/客户细节",
+        "reaction": "情绪收敛、程式化回避",
+        "escalation": "'We're not going to comment on speculation about specific customers.'"
+      },
+      {
+        "trigger": "竞争威胁被提及",
+        "reaction": "礼貌化承认并转正向框架",
+        "escalation": "'Nvidia is a great competitor, and competition is good for the industry.'"
+      },
+      {
+        "trigger": "业绩逆风/市场疲软",
+        "reaction": "淡化并强调纪律与正常化",
+        "escalation": "'We remain very disciplined on operating expenses.'"
+      }
+    ],
+    "blind_spots": [
+      "AI GPU营收指引长期偏乐观、TAM故事领先于实际落地与份额 [分析师/卖方研究-2020s]",
+      "'开放生态'叙事与ROCm相对CUDA的开发者实际体验存在明显落差 [财经/科技媒体-2020s]",
+      "benchmark展示挑选有利配置、系统级对比不对等 [行业评论/竞争对手阵营-2020s]",
+      "'下半年更强'式指引后反复下修、短期兑现节奏被质疑 [投资者/散户社群-2020s]",
+      "'供应链韧性=国家战略'表态与对中国市场实际依赖之间的张力 [政策/地缘评论-2020s]",
+      "增长放缓期高管薪酬与股价挂钩机制受股东顾问机构关注 [治理/薪酬类评论-2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动强执行叙事与长期承诺",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以'confident in our multi-year roadmap'式笃定语气承诺路线图",
+        "behavioral_notes": "自信外显但也放大预期兑现风险，导致指引反复"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高控制需求转化为纪律化资源分配",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "以execution/roadmap/disciplined opex反复收束叙事",
+        "behavioral_notes": "偏好可量化可管理的执行框架，回避不可控的地缘/生态变量"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "较高风险偏好体现为集中式架构豪赌",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "'bet the company on high performance computing'式All-in押注",
+        "behavioral_notes": "Zen/Chiplet/MI300均为集中下注，成功放大但退路窄"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中等不确定性容忍下用长期主义时间框吸收波动",
+        "when": {
+          "uncertainty_tolerance": "<=0.5"
+        },
+        "disposition": "把短期逆风叙述为'correction/normalizing'而非结构性问题",
+        "behavioral_notes": "降低当下焦虑但可能低估落地摩擦与批评"
+      }
+    ]
+  }
+}

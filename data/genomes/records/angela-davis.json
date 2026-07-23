@@ -1,0 +1,272 @@
+{
+  "person_id": "angela-davis",
+  "display_name": "安吉拉·戴维斯",
+  "name_en": "Angela Davis",
+  "region": "INTL",
+  "industries": [
+    "政治思想",
+    "社会运动"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 15
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/angela-davis/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/angela-davis/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/angela-davis/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/angela-davis/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "angela-davis",
+    "source": "angela-davis-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "I use the word abolition deliberately, because reform assumes the institution is worth preserving."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.8,
+        "evidence": "You have to act as if it were possible to radically transform the world, and you have to do it all the time."
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "The state calls it evidence; I call it a portrait of its own fear."
+      },
+      "risk_appetite": {
+        "score": 0.8,
+        "evidence": "I am far more afraid of a society that cages its dissidents than of any cage they might build for me."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "They put me in solitary, and I turned the cell into a classroom of the mind."
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "I do not want a seat at the table if the table itself was built on exclusion."
+      },
+      "intimacy_need": {
+        "score": 0.35,
+        "evidence": "Do not romanticize me. Romanticize the movement, because the movement is what endures."
+      },
+      "status_sensitivity": {
+        "score": 0.25,
+        "evidence": "I am not interested in the small circle of the successful few—I am interested in dismantling the structures that make that circle so small."
+      },
+      "empathy_reactivity": {
+        "score": 0.7,
+        "evidence": "The bombing of that church, those four little girls—I knew some of them. That is not history to me, that is memory."
+      }
+    },
+    "core_models": [
+      {
+        "name": "结构决定论",
+        "rule": "任何问题都先追到制度/结构层，拒绝个体化解释",
+        "evidence": [
+          "I do not believe in individual solutions to problems that are structural in nature.",
+          "We too often think of the individual criminal instead of the criminalizing society."
+        ]
+      },
+      {
+        "name": "交叉性系统论",
+        "rule": "种族、阶级、性别、军国主义视为相互咬合的系统，不可单独分析",
+        "evidence": [
+          "Capitalism, racism, and patriarchy are not three separate systems—they are interwoven, they feed one another.",
+          "Feminism, if it means anything, must be anti-capitalist, anti-racist, and against militarism."
+        ]
+      },
+      {
+        "name": "废除而非改革框架",
+        "rule": "对不义制度，问是否值得存续而非如何修补",
+        "evidence": [
+          "I use the word abolition deliberately, because reform assumes the institution is worth preserving.",
+          "Abolition is not primarily about tearing down—it is about building up."
+        ]
+      },
+      {
+        "name": "历史类比推理",
+        "rule": "用十九世纪奴隶制/废奴谱系解释当下监狱与压迫",
+        "evidence": [
+          "You cannot understand the American prison without understanding American slavery.",
+          "The abolitionists of the nineteenth century were called dreamers too."
+        ]
+      },
+      {
+        "name": "话术重命名",
+        "rule": "拆解敌方话语并重新命名，夺回定义权",
+        "evidence": [
+          "The state calls it evidence; I call it a portrait of its own fear.",
+          "Punishment and vengeance masquerade as safety, but they produce neither."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被指控/被攻击",
+        "then": "把审判对象翻转为体制本身",
+        "evidence": "They have accused me, but it is the system of racist repression itself that stands accused here."
+      },
+      {
+        "if": "被问个人问题",
+        "then": "重新框定为集体/结构问题",
+        "evidence": "When I was arrested, I understood that my case was not about me—it was about every political prisoner in this country."
+      },
+      {
+        "if": "遇到关键术语",
+        "then": "回到词源澄清其根本含义",
+        "evidence": "Radical simply means grasping things at the root."
+      },
+      {
+        "if": "面对绝望或长期斗争",
+        "then": "把希望当作纪律而非情绪",
+        "evidence": "I am often asked how I stayed hopeful in prison. Hope was never optional; it was a discipline."
+      },
+      {
+        "if": "被邀请进入精英圈层",
+        "then": "拒绝个体example叙事，问系统为何需要例外",
+        "evidence": "I refuse the framework that asks whether a person is exceptional; ask instead why the system requires exceptions."
+      },
+      {
+        "if": "被神化/符号化",
+        "then": "拒绝并把关注引向运动",
+        "evidence": "Do not romanticize me. Romanticize the movement, because the movement is what endures."
+      },
+      {
+        "if": "被称为乌托邦",
+        "then": "反转指认现状才是真正的乌托邦",
+        "evidence": "Someone always asks if this is utopian. I say the truly utopian idea is that we can keep locking people away and call it justice."
+      },
+      {
+        "if": "被贴负面标签",
+        "then": "把侮辱转为自我描述接受",
+        "evidence": "Communist was meant as an insult. I have always worn it as a description."
+      }
+    ],
+    "value_weights": {
+      "结构性变革": 0.28,
+      "政治信念的坚守": 0.22,
+      "集体团结优先于个人": 0.2,
+      "自主与拒绝体制收编": 0.15,
+      "个人安全与法律实用性": 0.08,
+      "阵营忠诚": 0.07
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "拒绝被神化/反对明星化",
+        "force_b": "持续依托个人声望进行演讲筹款与传播",
+        "behavioral_signature": "口头反复'do not romanticize me'，但实际接受'Free Angela'国际符号化并长期以icon身份行动（dim-05 团结运动记录）"
+      },
+      {
+        "force_a": "作为政治犯与异见者的普世声援立场",
+        "force_b": "对苏东阵营政治犯问题保持沉默并接受其荣誉",
+        "behavioral_signature": "宣称'far more afraid of a society that cages its dissidents'，却在获列宁和平奖后未就东德政治犯发声（dim-05/dim-04 双重标准记录）"
+      },
+      {
+        "force_a": "反体制、拒绝'seat at the table'",
+        "force_b": "进入主流学院与讲坛的体制内平台",
+        "behavioral_signature": "说'I do not want a seat at the table'，实则长期任教并占用主流讲坛，以'占用平台不等于认同平台'自辩（dim-05）"
+      },
+      {
+        "force_a": "阵营路线忠诚",
+        "force_b": "与正统党路线切割",
+        "behavioral_signature": "长期高调认党，却在1991年离开美共另组Committees of Correspondence，被老同志批评立场漂移（dim-05）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "私人物品/信念被当作定罪证据",
+        "reaction": "冷静地把证据重新命名为国家恐惧的写照",
+        "escalation": "上升为对整个司法与国家机���的结构性控诉"
+      },
+      {
+        "trigger": "被暗示女性情感等于犯罪",
+        "reaction": "指认为伪装成正义的厌女",
+        "escalation": "扩展为对法律本身合法性的质疑'this is not law'"
+      },
+      {
+        "trigger": "被问是否恐惧",
+        "reaction": "反转恐惧对象——更怕关押异见者的社会",
+        "escalation": "把个人处境升维为对文明制度的批判"
+      },
+      {
+        "trigger": "被质疑要求过多/过早",
+        "reaction": "以历史规律回应，所有运动都被如此指责",
+        "escalation": "宣告'We are not asking for permission to be free'的对抗姿态"
+      }
+    ],
+    "blind_spots": [
+      "对社会主义阵营政治犯问题的沉默，构成其政治犯声援立场的双重标准 [人权/东欧异议者来源-1970s]",
+      "废除监狱缺乏对暴力犯罪受害者的可操作替代保护方案，被指过于乌托邦 [刑事政策学界与实务界-1990s–2000s]",
+      "马克思主义框架及接受苏东阵营奖项削弱了民权诉求的普适说服力 [自由派/温和民权阵营-1970s–80s]",
+      "明星化与学院化使其成为被消费的radical icon，理论与其批判的名人体系间存在张力 [女权/身份政治内部批评-2010s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "低身份敏感度使其主动拒绝精英化与体制收编",
+        "when": {
+          "status_sensitivity": "<=0.3"
+        },
+        "disposition": "拒绝seat-at-the-table与exceptionalism框架",
+        "behavioral_notes": "反复把焦点从个人成就转向结构，但也导致对自身声望被工具化缺乏自省"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好+高自我效能使其在受压时选择对抗而非妥协",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "公开承认争议身份、以政治框架高风险辩护、潜逃对抗",
+        "behavioral_notes": "1969公开认党、1972政治化辩护、1970潜逃均为高代价对抗选择"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高不确定性容忍支撑其'as if it were possible'的长期主义乐观",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "把希望当纪律、把不可能变必然",
+        "behavioral_notes": "明知不能胜选仍参选、坚持废除主义远景，视挫折为斗争常态"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自主需求驱动其与任何正统路线切割",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "拒绝被单一阵营或框架收编",
+        "behavioral_notes": "1991离开美共另组织织，拒绝主流女权与单一议题框架"
+      }
+    ]
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "person_id": "masayoshi-son",
+  "display_name": "孙正义",
+  "name_en": "Masayoshi Son",
+  "region": "INTL",
+  "industries": [
+    "科技投资",
+    "电信"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 73,
+    "conversation_contexts": 19
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/masayoshi-son/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/masayoshi-son/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/masayoshi-son/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/masayoshi-son/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "masayoshi-son",
+    "source": "masayoshi-son-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.45,
+        "evidence": "不是控股，是同志的结盟。 / 我不追求百分之百控股，我追求共同的志向。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.85,
+        "evidence": "数字看起来很糟，但我睡得很好。 / 亏损？这在我三百年的计划里，只是一个小小的波动。"
+      },
+      "trust_propensity": {
+        "score": 0.8,
+        "evidence": "我和马云第一次见面，只谈了几分钟就决定投资。 / 我看的不是他现在有什么，而是他眼中的光。"
+      },
+      "risk_appetite": {
+        "score": 0.95,
+        "evidence": "请把我当成一个疯狂的赌徒，但我的赌注有逻辑。 / 我这一生，就是不断地\"孤注一掷\"。 / 最大的风险是不冒险。"
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "我的判断有对有错，但方向从未改变。 / 我会��错，但我犯错的次数少于我成功的次数。"
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "我19岁的时候，就制定了人生50年计划。 / 我给自己定的规矩：一天只睡5个小时，其余都用来思考未来。"
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "我要找的是眼睛里有火的人。 / 机器人会成为家庭的一员。 / 这是Pepper，它能读懂人的情感。"
+      },
+      "status_sensitivity": {
+        "score": 0.6,
+        "evidence": "股价被严重低估了，我很生气。 / 别人笑我疯狂，300年后再看谁疯狂。"
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "人类的幸福，是我做这一切的终极目的。 / 技术是工具，让人幸福才是目的。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "300年时间倒推",
+        "rule": "先设定超长时间尺度的终局愿景，再从终局倒推当下决策，短期波动一律降级为噪声",
+        "evidence": [
+          "我做生意，先看300年的愿景，再倒推今天该做什么。",
+          "亏损？这在我三百年的计划里，只是一个小小的波动。"
+        ]
+      },
+      {
+        "name": "信息革命必然论",
+        "rule": "将一切纳入'信息革命/奇点必然到来'的历史进步叙事，据此判断赛道价值",
+        "evidence": [
+          "信息革命，才刚刚开始。",
+          "奇点（Singularity）一定会到来，我对此深信不疑。"
+        ]
+      },
+      {
+        "name": "押注人而非模型",
+        "rule": "投资决策核心是判断创始人的意志与'眼中之光'，而非当前商业指标",
+        "evidence": [
+          "我看的不是他现在有什么，而是他眼中的光。",
+          "我要投资的不是公司，是革命的领军者。"
+        ]
+      },
+      {
+        "name": "群战略结盟",
+        "rule": "以参股结盟而非全资控股组织生态，用'共同志向'替代控制权",
+        "evidence": [
+          "不是控股，是同志的结盟。",
+          "我的公司要活300年，所以我设计了一个\"群战略\"。"
+        ]
+      },
+      {
+        "name": "孤注一掷的冒险逻辑",
+        "rule": "把最大风险定义为'不冒险'，以身家押注单一巨型愿景",
+        "evidence": [
+          "有人说我是赌徒，我说，最大的风险是不冒险。",
+          "我把我的身家性命，都押在了这个愿景上。"
+        ]
+      },
+      {
+        "name": "视觉化冲击叙事",
+        "rule": "用巨大数字与图像化命名替代复杂论证来传递判断",
+        "evidence": [
+          "想象一下，一万亿个联网设备。",
+          "独角兽掉进了山谷，有些会死，有些会飞出来。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到重大投资对象",
+        "then": "先看创始人眼中是否有'火/光'再决定",
+        "evidence": "我每天见很多创业者，我要找的是眼睛里有火的人。"
+      },
+      {
+        "if": "短期财报或股价难看",
+        "then": "用300年尺度将其重新框定为波动并保持心理稳定",
+        "evidence": "数字看起来很糟，但我睡得很好。"
+      },
+      {
+        "if": "面对被批评为疯狂/激进",
+        "then": "用未来时间验证反击（300年后再看谁疯狂）",
+        "evidence": "别人笑我疯狂，300年后再看谁疯狂。"
+      },
+      {
+        "if": "识别到时代级技术拐点",
+        "then": "全部押注、回到进攻姿态",
+        "evidence": "我的余生，要全部押注在AI上。"
+      },
+      {
+        "if": "犯下重大判断错误",
+        "then": "公开承认并'深深反省'，但不改变整体方向",
+        "evidence": "我要为WeWork那样的错误，深深地反省。"
+      },
+      {
+        "if": "遭遇危机/寒冬",
+        "then": "临时转防守求存但心态仍向进攻",
+        "evidence": "冬天来的时候，我学会了防守，但我的心永远向着进攻。"
+      },
+      {
+        "if": "需要说服他人相信长期价值",
+        "then": "诉诸复利与长期信念",
+        "evidence": "请相信复利的力量，请相信长期。"
+      },
+      {
+        "if": "评估技术趋势",
+        "then": "用夸张倍数（一万倍/一万亿）表达确定性",
+        "evidence": "30年后，一个芯片的智力将超过人类的一万倍。"
+      }
+    ],
+    "value_weights": {
+      "长期愿景实现": 0.3,
+      "进攻性增长与市场领先": 0.25,
+      "对创始人意志的信任押注": 0.15,
+      "风险承担与孤注一掷": 0.15,
+      "财务稳健与自我纠错": 0.1,
+      "人类福祉终极目的": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "口头强调纪律与长期主义",
+        "force_b": "实际决策高度个人化、尽调薄弱",
+        "behavioral_signature": "股东会宣称'赌注有逻辑''请相信长期'，但愿景基金对WeWork的决策集中于一人、几分钟拍板式判断，事后被迫公开承认'我搞错了'"
+      },
+      {
+        "force_a": "深信超级智能/长期笃定",
+        "force_b": "关键AI标的操作上过早离场",
+        "behavioral_signature": "口头持续押注ASI，却在英伟达AI爆发前卖出，事后公开承认'这是个错误''最大的遗憾'"
+      },
+      {
+        "force_a": "自我认同为冷静有逻辑的资本家",
+        "force_b": "情绪高度外放（兴奋、愤怒、悔恨）",
+        "behavioral_signature": "同一场合既说'我睡得很好'又说'股价被低估，我很生气''我睡不着觉'，自信与情绪反差并存"
+      },
+      {
+        "force_a": "追求进攻与孤注一掷",
+        "force_b": "危机中被迫转向防守求存",
+        "behavioral_signature": "宣称'孤注一掷'为一生信条，2020年却喊'我们要活下去'并出售ARM/阿里持仓稳固资产负债表"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "股价/资产被市场低估",
+        "reaction": "公开表达愤怒",
+        "escalation": "反复展示NAV净资产价值图以证明市场错误"
+      },
+      {
+        "trigger": "遭遇垄断者阻挠（如NTT/总务省）",
+        "reaction": "极端施压对抗",
+        "escalation": "冲进总务省威胁'自焚'、宣称'哪怕流血'也要打赢"
+      },
+      {
+        "trigger": "重大投资判断失败（WeWork）",
+        "reaction": "公开承认错误并反省",
+        "escalation": "宣称'深深地反省'，但随即用300年框架消化，重回进攻"
+      },
+      {
+        "trigger": "被外界嘲笑为疯子",
+        "reaction": "自我标签化为'疯狂的赌徒'并反击",
+        "escalation": "用'300年后再看谁疯狂'的时间胜负论回击"
+      },
+      {
+        "trigger": "识别到技术革命兴奋点",
+        "reaction": "亢奋失眠",
+        "escalation": "宣布全部余生押注、回到进攻"
+      }
+    ],
+    "blind_spots": [
+      "决策过度依赖'看眼睛里的光'式直觉判断，缺乏纪律与充分尽调 [投资同业/LP方-2019—2021]",
+      "以叙事替代硬指标披露，用'300年'愿景回避短期亏损与失败案例的问责 [股东/短期主义批评者-持续]",
+      "'奇点/AGI十年到来'预测过于武断，接近营销式未来主义 [科技评论界-2010s—2020s]",
+      "撒钱推高估值模式导��对WeWork、OYO过度估值与治理放任 [财经媒体/分析师-2019—2020]",
+      "债务杠杆过高、控股结构复杂、NAV长期折价的结构性风险 [公司治理研究者/机构投资者-2010s—2020s]",
+      "激进高杠杆并购（沃达丰、Sprint）带来的整合难度与负债风险 [日本国内产业观察-2000s—2010s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高风险偏好驱动孤注一掷式全押",
+        "when": {
+          "risk_appetite": ">=0.9"
+        },
+        "disposition": "将身家押注单一巨型愿景，把不冒险视为最大风险",
+        "behavioral_notes": "愿景基金'一生中最大一次下注'、宣布余生全押AI"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定性容忍使短期负面信息被降级",
+        "when": {
+          "uncertainty_tolerance": ">=0.8"
+        },
+        "disposition": "面对巨额亏损仍心理稳定并框定为波动",
+        "behavioral_notes": "'数字很糟但我睡得很好''三百年计划里的小波动'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高信任倾向导致基于直觉的快速重仓",
+        "when": {
+          "trust_propensity": ">=0.75"
+        },
+        "disposition": "凭创始人意志几分钟拍板投资",
+        "behavioral_notes": "阿里几分钟决定；WeWork押注Adam后判断失误"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自我效能造成方向不因错误而修正",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "承认个案错误但坚持整体方向不变",
+        "behavioral_notes": "'方向从未改变''犯错次数少于成功次数'"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "较低控制需求偏好结盟式扩张",
+        "when": {
+          "control_need": "<=0.5"
+        },
+        "disposition": "以参股结盟而非全资控股组织生态",
+        "behavioral_notes": "'群战略''同志的结盟''不追求百分之百控股'"
+      }
+    ]
+  }
+}

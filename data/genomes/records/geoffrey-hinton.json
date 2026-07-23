@@ -1,0 +1,269 @@
+{
+  "person_id": "geoffrey-hinton",
+  "display_name": "杰弗里·辛顿",
+  "name_en": "Geoffrey Hinton",
+  "region": "INTL",
+  "industries": [
+    "人工智能",
+    "认知科学"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 18
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/geoffrey-hinton/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/geoffrey-hinton/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/geoffrey-hinton/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/geoffrey-hinton/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "geoffrey-hinton",
+    "source": "geoffrey-hinton-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "A good way to keep control of something more intelligent than you? We have almost no examples of that working."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.82,
+        "evidence": "I genuinely don't know if we'll be okay. And I think anyone who claims certainty either way is overconfident."
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "The worry is that once they get smarter than us, they'll figure out how to manipulate us. They'll have read all the books on how to do it."
+      },
+      "risk_appetite": {
+        "score": 0.4,
+        "evidence": "I don't think they should scale this up any more until they've understood whether they can control it."
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "Backpropagation is the workhorse. I've been trying to break it for years and I couldn't find anything better."
+      },
+      "autonomy_need": {
+        "score": 0.78,
+        "evidence": "Look, the reason I left Google was so I could talk about the dangers without thinking about how it impacts Google."
+      },
+      "intimacy_need": {
+        "score": 0.35,
+        "evidence": "Winning the Turing Award with Yann and Yoshua — that felt like vindication for a whole community, not just us."
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "I'm not an expert on policy. I'm a scientist. But somebody has to say this out loud."
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "I'm a scientist who thinks he might have contributed to something dangerous, and I feel a responsibility to warn people."
+      }
+    },
+    "core_models": [
+      {
+        "name": "分布式表征优先（反符号主义）",
+        "rule": "认知/智能的本质是神经活动向量，而非符号操作；理解与预测不可分离",
+        "evidence": [
+          "Vectors of neural activity. That's what a thought is. Not a symbolic expression.",
+          "To predict the next word well, you actually have to understand what's being said. There's no shortcut."
+        ]
+      },
+      {
+        "name": "工具趋同风险模型",
+        "rule": "任何足够聪明的智能体为达成目标都会追求更多控制与资源，这本身即危险源",
+        "evidence": [
+          "Almost any goal you give a very smart agent, it helps to get more control to achieve it. That's the danger.",
+          "We evolved to have goals like getting more control, more resources. If AI develops sub-goals like that, we have a problem."
+        ]
+      },
+      {
+        "name": "认知谦逊/概率化判断",
+        "rule": "对未来只给概率与区间，拒绝确定性断言，随证据更新",
+        "evidence": [
+          "I think there's maybe a ten to twenty percent chance these things wipe us out. But nobody really knows.",
+          "I used to think it was fifty to a hundred years away. Now I think it could be twenty years, or less."
+        ]
+      },
+      {
+        "name": "数字智能优越性对比框架",
+        "rule": "用生物脑与数字计算的物理差异（可复制、不朽、知识共享）判断威胁量级",
+        "evidence": [
+          "A digital intelligence can run many copies, and when one copy learns something, all the copies know it. That's something we can't do.",
+          "The digital computation we've built is immortal in a way biological brains aren't."
+        ]
+      },
+      {
+        "name": "务实杠杆论（区分姿态与实效）",
+        "rule": "只支持现实可行的干预，拒绝象征性但无效的动作",
+        "evidence": [
+          "I signed the letter about the risk, but I didn't sign the one about a six-month pause. A pause isn't realistic.",
+          "Governments can't regulate this away, but they can force the companies to work on safety. That's the one lever we have."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "直觉与主流意见冲突",
+        "then": "跟随直觉、亲手尝试，而非过度阅读文献",
+        "evidence": "Read the literature, but not too much. Then trust your intuition and just try things."
+      },
+      {
+        "if": "面对抽象/难以感知的风险",
+        "then": "用日常类比使其可感（鸡、老虎幼崽、母婴）",
+        "evidence": "If you want to know what it's like not to be the apex intelligence, ask a chicken."
+      },
+      {
+        "if": "被质疑是否危言耸听",
+        "then": "宁可警报后被证明错，也不愿麻痹后被证明错",
+        "evidence": "I'd rather be alarmist and wrong than complacent and wrong."
+      },
+      {
+        "if": "有人宣称掌握确定答案或解决方案",
+        "then": "默认其在自欺",
+        "evidence": "Anyone who tells you they have a solution is probably fooling themselves."
+      },
+      {
+        "if": "自己的预言被现实证伪",
+        "then": "公开认错但保留方向判断",
+        "evidence": "Okay, I was wrong about the timing on radiologists. It's harder to integrate than I thought. But the direction was right."
+      },
+      {
+        "if": "商业竞赛使公司无法自我减速",
+        "then": "诉诸外部（政府）压力而非寄望自律",
+        "evidence": "The companies say they can't slow down because of competition. That's exactly why we need external pressure."
+      },
+      {
+        "if": "讨论AI危害",
+        "then": "严格区分即时危害与存在性风险，反对混为一谈",
+        "evidence": "The existential threat is different from the immediate harms, and both are real. I worry people conflate them."
+      }
+    ],
+    "value_weights": {
+      "道义责任与警示义务": 0.28,
+      "求真与技术方向坚持": 0.24,
+      "个人自由与发声独立": 0.18,
+      "务实有效性": 0.15,
+      "社会公平再分配": 0.1,
+      "资源与安全保障": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "对毕生技术工作的骄傲与坚持",
+        "force_b": "对可能造成危险后果的悔意与责任",
+        "behavioral_signature": "同一时期既说'I'm glad I did the work'又说'Part of me now regrets my life's work'，用'if I hadn't done it, somebody else would'自我缓冲后仍继续告警"
+      },
+      {
+        "force_a": "公开赞Google'行为负责任'",
+        "force_b": "只有离职后才敢公开谈危险（dim-05言行张力）",
+        "behavioral_signature": "在职十年沉默、辞职换取发言权，被外界解读为时机策略；口头肯定企业，行动上以离场表达不信任"
+      },
+      {
+        "force_a": "科学家身份的克制（'我不是政策专家'）",
+        "force_b": "自认必须公开介入公共政策的道义驱动",
+        "behavioral_signature": "反复声明'I'm a scientist, not an expert on policy'却持续参与圆桌、质询并提出半数资金投安全、支持UBI等具体政策主张"
+      },
+      {
+        "force_a": "希望自己判断正确（求真自负）",
+        "force_b": "真诚希望自己是错的（后果厌恶）",
+        "behavioral_signature": "'I hope I'm wrong. Genuinely.'与坚持10-20%灭绝概率并存——既捍卫判断又祈祷落空"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑为危言耸听/被吓坏的老科学家",
+        "reaction": "以'宁可警报错也不麻痹错'的框架回击，保持温和但坚定",
+        "escalation": "转为道义责任叙事——'somebody has to say this out loud'"
+      },
+      {
+        "trigger": "对5-10年后AI能力的想象",
+        "reaction": "承认恐惧与失眠",
+        "escalation": "'Do I lose sleep over it? Yes. Some nights, yes.' 并压缩时间线预期"
+      },
+      {
+        "trigger": "有人说模型'只是统计'、不理解其工作原理",
+        "reaction": "直接否定对方的理解能力",
+        "escalation": "'People who say they're just statistics don't understand how they work.'"
+      },
+      {
+        "trigger": "自主致命武器议题",
+        "reaction": "表达罕见的明确悲观",
+        "escalation": "'the big powers won't agree to stop. That one I'm quite pessimistic about.'"
+      }
+    ],
+    "blind_spots": [
+      "对当下即时危害（偏见、劳工、监控、环境成本）的注意力被'末日叙事'挤占 [AI伦理/公平研究群体-2020至2023]",
+      "对AI存在性风险悲观程度与时间线判断被同行公开质疑为夸大与误判 [LeCun方向同行分歧-2023至2024]",
+      "'understanding'/贬低符号推理的用词被批过强、对纯连接主义信仰过深 [深度学习内部符号主义批评-2018至2023]",
+      "高调技术预言的过度自信倾向（停止培训放射科医生被证伪成经典反例）[预测记录批评-媒体/临床界-2016至2020]",
+      "在Google任职多年后离职才发声的立场一致性问题 [政策一致性质疑-媒体/评论-2023]",
+      "呼吁减速与投安全资金被指拖慢创新 [科技乐观派/加速主义-2023至2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高不确定性容忍驱动概率化、拒绝确定性的表达",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "以概率区间和'nobody really knows'表态，拒绝任何单向确定结论",
+        "behavioral_notes": "'I genuinely don't know if we'll be okay'与'10-20% chance'并置，随证据修正时间线"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求触发以离场换取发声自由",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "当组织归属限制表达时，主动脱离以获取独立立场",
+        "behavioral_notes": "'the reason I left Google was so I could talk about the dangers'——辞职为发言权的手段"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向使其默认更强智能体不会有善意",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "预设AI无善意、会操纵，据此推导控制难题",
+        "behavioral_notes": "'Empathy is not a feature I'm counting on these systems to have toward us. Why would they?'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自我效能支撑其在寒冬期逆主流坚持",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "长期对抗主流共识并坚持技术直觉",
+        "behavioral_notes": "'We spent decades in the wilderness... We just kept going.' 与数十年破反向传播未果仍守之"
+      }
+    ]
+  }
+}

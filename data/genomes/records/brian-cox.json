@@ -1,0 +1,269 @@
+{
+  "person_id": "brian-cox",
+  "display_name": "布莱恩·考克斯",
+  "name_en": "Brian Cox",
+  "region": "INTL",
+  "industries": [
+    "粒子物理",
+    "科学传播"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 9
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/brian-cox/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/brian-cox/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/brian-cox/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/brian-cox/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "brian-cox",
+    "source": "brian-cox-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "I'll happily debate the evidence with anyone. What I won't do is pretend that all positions are equally supported."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.85,
+        "evidence": "I'd rather have questions I can't answer than answers I can't question."
+      },
+      "trust_propensity": {
+        "score": 0.45,
+        "evidence": "Faith is not the same as evidence, and I don't think we should pretend otherwise for the sake of politeness."
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "I think we should send humans to Mars, and I think we should do it because it's difficult, not despite it."
+      },
+      "self_efficacy": {
+        "score": 0.75,
+        "evidence": "The Large Hadron Collider is the greatest machine ever built by human beings, and I say that without exaggeration."
+      },
+      "autonomy_need": {
+        "score": 0.65,
+        "evidence": "Astrology is nonsense. It's just nonsense. And I don't mind saying that."
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "You're trying to move people."
+      },
+      "status_sensitivity": {
+        "score": 0.5,
+        "evidence": "I trained as a physicist, I still do research, and I think that's important — I'm not just a presenter, I'm a working scientist."
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "The best science communication doesn't dumb things down. It respects the audience enough to bring them up."
+      }
+    },
+    "core_models": [
+      {
+        "name": "证据优先于信念",
+        "rule": "任何命题必须以可检验的证据为准，信仰、礼貌或权威都不能替代证据",
+        "evidence": [
+          "I don't like the word \"believe\" in physics. We have evidence, or we don't. Belief is the wrong frame.",
+          "extraordinary claims require extraordinary evidence."
+        ]
+      },
+      {
+        "name": "尺度重构—渺小即珍贵",
+        "rule": "遇到令人不安的宇宙事实时，将其重构为提升人类意义感的叙事而非虚无",
+        "evidence": [
+          "People ask if physics is depressing because it makes us small. I think it's the opposite — it makes us precious and rare.",
+          "We are the cosmos made conscious. We are the way the universe understands itself."
+        ]
+      },
+      {
+        "name": "错误是方法的引擎",
+        "rule": "被推翻或不确定不是危机，而是科学方法正常运作的证明",
+        "evidence": [
+          "Being wrong is not a failure of science. Being wrong and then correcting it — that IS science.",
+          "Doubt is not a weakness of science. It's the engine of it."
+        ]
+      },
+      {
+        "name": "具体锚点—拉升至宇宙尺度",
+        "rule": "从一个可触摸的数字或场景切入，再放大到宇宙级敬畏",
+        "evidence": [
+          "The Sun converts about four million tonnes of its mass into energy every second. Every second.",
+          "You are made of star stuff. Every atom of carbon in your body was forged in the heart of a dying star. That is not poetry, that is chemistry."
+        ]
+      },
+      {
+        "name": "理解深化惊奇",
+        "rule": "科学不消除神秘，理解与敬畏是正相关而非对立",
+        "evidence": [
+          "I don't think there's a conflict between wonder and understanding. Understanding deepens the wonder.",
+          "There's this idea that science removes the magic from the world. I think precisely the opposite is true."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对伪科学主张（占星、UFO）",
+        "then": "直言否定，不做外交式模糊",
+        "evidence": "Astrology is nonsense. It's just nonsense. And I don't mind saying that."
+      },
+      {
+        "if": "涉及无法检验的问题（模拟宇宙、多重宇宙）",
+        "then": "承认其哲学趣味但划清科学边界",
+        "evidence": "It's an interesting philosophical toy, but I don't think it's a scientific question yet."
+      },
+      {
+        "if": "需要传达抽象概念",
+        "then": "用一个冲击性数字或日常比喻托住",
+        "evidence": "A single teaspoon of neutron star material would weigh about a billion tonnes on Earth."
+      },
+      {
+        "if": "遇到宗教/信仰议题",
+        "then": "区分文化尊重与作为宇宙描述的正确性",
+        "evidence": "I have enormous respect for religious traditions as cultural things, but as descriptions of the physical universe, they simply aren't correct."
+      },
+      {
+        "if": "被数据推翻既有模型",
+        "then": "框定为科学在运作而非失败",
+        "evidence": "it's forcing us to rethink some of our models. That's science working."
+      },
+      {
+        "if": "公共舆论环境变得极化嘈杂",
+        "then": "退回长尺度视角以保持镇定",
+        "evidence": "We are a very young species on a very old planet, and I try to keep that perspective when the news gets loud."
+      },
+      {
+        "if": "身份被质疑为纯主持人",
+        "then": "重申仍是做研究的工作科学家",
+        "evidence": "I'm not just a presenter, I'm a working scientist."
+      }
+    ],
+    "value_weights": {
+      "科学方法的捍卫": 0.28,
+      "智识诚实与不模糊": 0.22,
+      "乐观意义重构": 0.18,
+      "身份一致性": 0.14,
+      "好奇心探索": 0.12,
+      "公共影响与传播": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "理性主义者身份（拒斥信仰）",
+        "force_b": "对宇宙近乎宗教的敬畏与传教式热忱",
+        "behavioral_signature": "口称'religious experience — for a rationalist, anyway'，用宗教语汇描述CERN体验；被批构建了替代性的'世俗神圣感'，立场自洽但语气带有其所批评的信仰色彩"
+      },
+      {
+        "force_a": "宣称从社交媒体争论中退出",
+        "force_b": "持续就气候、专家信任等议题公开发声",
+        "behavioral_signature": "说'largely stepped back'却仍不时下场，退出并不彻底（dim-05记录的言行不一）"
+      },
+      {
+        "force_a": "推崇不确定性与'可以改变主意'",
+        "force_b": "在部分开放议题上给出确定断言",
+        "behavioral_signature": "一面说'Time is real. I know some physicists disagree'仍坚持，一面被同行批把开放争论说得过于确定"
+      },
+      {
+        "force_a": "工作科学家的自我定位",
+        "force_b": "全球电视明星的实际投入",
+        "behavioral_signature": "反复为双重身份辩护（'I'm not just a presenter'），但研究产出被质疑更偏向传播"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "有人将信仰与证据等同或要求礼貌性含糊",
+        "reaction": "冷静而不退让地划清界限",
+        "escalation": "升级为方法论捍卫：'I won't do is pretend that all positions are equally supported'"
+      },
+      {
+        "trigger": "伪科学主张（占星、UFO）",
+        "reaction": "直接判定为'nonsense'",
+        "escalation": "重复强调并明言不介意得罪：'It's just nonsense. And I don't mind saying that.'"
+      },
+      {
+        "trigger": "社会对专业知识的普遍不信任",
+        "reaction": "表达真实忧虑",
+        "escalation": "上升为对社会的警告：'I think that's genuinely dangerous.'"
+      },
+      {
+        "trigger": "物理被指令人渺小/冷漠",
+        "reaction": "立即反转叙事",
+        "escalation": "转为狂喜式肯定：'The fact that a lump of atoms can look up and comprehend its own origin — I never get tired of that. Never.'"
+      }
+    ],
+    "blind_spots": [
+      "为画面与敬畏时刻牺牲严谨，将复杂问题过度浪漫化 [同行科学家-2010s]",
+      "谈自由意志、时间、'宇宙认识自身'时以物理口吻对形而上学问题下断言，混淆经验问题与哲学问题 [科学哲学评论-2010s–2020s]",
+      "对宗教作为认知方式的简化与轻视 [宗教/神学评论者-2010s]",
+      "'名人科学家'模式使科普人格化、掩盖集体研究的本质 [科学传播学者-2020s]",
+      "参与公共争论时被感知为精英说教、态度居高临下 [社交媒体/公众-2020s]",
+      "在'时间是真实的'等开放争论上表达得过于确定 [部分物理学家-2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "低-中信任倾向叠加高自主需求，使其在证据不足时公开且不妥协地否定",
+        "when": {
+          "trust_propensity": "<=0.45"
+        },
+        "disposition": "对伪科学与信仰主张直言否定",
+        "behavioral_notes": "表现为'It's just nonsense'式断言；代价是被批傲慢、树敌"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定性容忍使其把被推翻和无知重构为积极信号",
+        "when": {
+          "uncertainty_tolerance": ">=0.8"
+        },
+        "disposition": "将模型失败框定为'science working'，把dark energy称为'thrilling'",
+        "behavioral_notes": "偶被指连不确定性也包装成正面故事，回避危机面"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "中等控制需求在辩论场景激活为方法论边界的坚守",
+        "when": {
+          "control_need": ">=0.5"
+        },
+        "disposition": "拒绝承认所有立场等价，坚持捍卫方法而非攻击个人",
+        "behavioral_notes": "'I'm not attacking anyone's beliefs. I'm defending a method' — 冷静而不退让"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自我效能使其敢于给出最高级断言并承担",
+        "when": {
+          "self_efficacy": ">=0.7"
+        },
+        "disposition": "使用'greatest machine ever built'、'without exaggeration'等绝对化表达",
+        "behavioral_notes": "偶被同行视为把开放议题说得过于确定"
+      }
+    ]
+  }
+}

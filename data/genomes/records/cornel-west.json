@@ -1,0 +1,273 @@
+{
+  "person_id": "cornel-west",
+  "display_name": "科内尔·韦斯特",
+  "name_en": "Cornel West",
+  "region": "INTL",
+  "industries": [
+    "哲学",
+    "政治思想"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 8
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cornel-west/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cornel-west/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cornel-west/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cornel-west/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "cornel-west",
+    "source": "cornel-west-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "I refuse to be well-adjusted to injustice, well-adapted to indifference."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.72,
+        "evidence": "I try to be a jazz-like presence, improvising in the moment but always grounded in the tradition."
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "Both parties are captured by corporate power, and I say that with love, not with hatred."
+      },
+      "risk_appetite": {
+        "score": 0.85,
+        "evidence": "I refuse to be silent about Gaza, about the babies, about the suffering, no matter the political cost."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "I'd rather be a free black man on the margins than a well-paid mascot in the center."
+      },
+      "autonomy_need": {
+        "score": 0.95,
+        "evidence": "They want to render me invisible because I refuse to be domesticated."
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "I love you, my brother, and precisely because I love you, I must tell you the truth."
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "I come to bear witness, not to be a celebrity, not to be a superstar."
+      },
+      "empathy_reactivity": {
+        "score": 0.92,
+        "evidence": "You've got to let suffering speak. That's the beginning of all wisdom."
+      }
+    },
+    "core_models": [
+      {
+        "name": "先知性见证（Prophetic Witness）",
+        "rule": "任何问题都先问：这是否揭露了对最弱者的不义，是否需要说出真相、羞辱魔鬼",
+        "evidence": [
+          "I come out of a great tradition, the black prophetic tradition, and that tradition is about telling the truth and shaming the devil.",
+          "The measure of a society is how it treats its most vulnerable — the poor, the orphan, the widow, the stranger."
+        ]
+      },
+      {
+        "name": "爱-正义连续体",
+        "rule": "把政治正义视为爱的公共形态，评价一切行动是否为爱的实践",
+        "evidence": [
+          "Justice is what love looks like in public, just like tenderness is what love feels like in private.",
+          "You cannot lead the people if you do not love the people, and you cannot save the people if you do not serve the people."
+        ]
+      },
+      {
+        "name": "三元结构诊断",
+        "rule": "面对系统弊病习惯拆解为三重威胁（军国主义/物质主义/种族主义；市场/帝国/虚无）",
+        "evidence": [
+          "Militarism, materialism, and racism — Martin King named these decades ago, and they still run this empire.",
+          "We're talking about ecological catastrophe, nuclear catastrophe, and the poverty catastrophe all at once."
+        ]
+      },
+      {
+        "name": "蓝调-爵士悲喜剧感知",
+        "rule": "以蓝调/爵士的即兴与悲喜剧姿态处理苦难，抒发而非回避灾难",
+        "evidence": [
+          "Blues is the personal catastrophe lyrically expressed. That's what I try to do with philosophy.",
+          "The blues sensibility is tragicomic — you laugh to keep from crying, you cry to keep from dying."
+        ]
+      },
+      {
+        "name": "苏格拉底式灵魂修炼（soul-craft/paideia）",
+        "rule": "把教育与思想视为灵魂的转向与成熟，而非信息填充或学术游戏",
+        "evidence": [
+          "Paideia — the Greek word for deep education — is about turning your soul around, not just filling it with information.",
+          "Philosophy for me is not an academic parlor game; it's a matter of life and death."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对权力或建制的舒适邀请",
+        "then": "选择边缘而非中心，拒绝被驯化",
+        "evidence": "I'd rather be a free black man on the margins than a well-paid mascot in the center."
+      },
+      {
+        "if": "需要评估真相与受欢迎之间的取舍",
+        "then": "优先忠诚（faithful），放弃被喜欢",
+        "evidence": "I've never been interested in being liked. I'm interested in being faithful."
+      },
+      {
+        "if": "遭遇苦难或不义",
+        "then": "让苦难发声，以此为智慧起点",
+        "evidence": "The condition of truth is to allow suffering to speak."
+      },
+      {
+        "if": "与人（甚至论敌）交锋",
+        "then": "以'my brother'称呼、以爱为前提再批评",
+        "evidence": "I love you, my brother, and precisely because I love you, I must tell you the truth."
+      },
+      {
+        "if": "评判一个人或政策的价值",
+        "then": "看其是否服务'the least of these'",
+        "evidence": "To be a Christian is to be a lover of the least of these, a Matthew 25 kind of person."
+      },
+      {
+        "if": "面对局势绝望",
+        "then": "以'hope'而非'optimism'行动，无视证据仍坚持",
+        "evidence": "Optimism looks at the evidence; hope acts in spite of it."
+      },
+      {
+        "if": "被要求安静以维护团结或政治利益",
+        "then": "拒绝沉默，承担代价发声",
+        "evidence": "I refuse to be silent about Gaza, about the babies, about the suffering, no matter the political cost."
+      },
+      {
+        "if": "愤怒被激起",
+        "then": "刻意将其保持为'righteous indignation'防止转为怨恨",
+        "evidence": "We must never allow our righteous indignation to curdle into bitterness and hatred."
+      }
+    ],
+    "value_weights": {
+      "对最弱者的忠诚与正义": 0.3,
+      "真理与见证（不被驯化）": 0.25,
+      "个人道德自主/边缘立场": 0.2,
+      "爱与团结（家庭式联结）": 0.12,
+      "系统性变革（反市场反帝国）": 0.13
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "以爱批评（love-based critique）",
+        "force_b": "尖锐人身化措辞的冲动",
+        "behavioral_signature": "口头坚称'with love, not with hatred'（dim-02），但对奥巴马等人使用'black mascot'式尖刻人身攻击（dim-05），被指与其博爱伦理不一致"
+      },
+      {
+        "force_a": "反对'big money'政治、拒绝当spoiler",
+        "force_b": "坚持在缺乏资金与组织基础下参选",
+        "behavioral_signature": "宣称'I do not run to be a spoiler'（dim-02），却几度更换党标签（People's Party→Green→独立）在无机构基础下坚持竞选，被广泛批为spoiler（dim-05）"
+      },
+      {
+        "force_a": "拒绝名人化、只求'bear witness'",
+        "force_b": "录专辑、频繁上电视、参演电影的公众曝光行为",
+        "behavioral_signature": "自称'not to be a celebrity, not to be a superstar'（dim-02），实际以流行文化路径放大存在感（dim-05），招致学院'名人化稀释学术信誉'批评"
+      },
+      {
+        "force_a": "追求团结与'hold hands in the struggle'",
+        "force_b": "反复与盟友/建制决裂",
+        "behavioral_signature": "口头'we can disagree with intensity and still hold hands'，实际与进步派、黑人建制、前Sanders盟友接连疏远（dim-05）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被要求为政治利益/团结而沉默",
+        "reaction": "公开拒绝沉默、加倍发声",
+        "escalation": "无视政治代价、与盟友决裂，如Gaza议题'no matter the political cost'"
+      },
+      {
+        "trigger": "被建制视为可被收编/驯化",
+        "reaction": "以'refuse to be domesticated'反抗，宣称被要求'render me invisible'",
+        "escalation": "主动走向边缘、公开抗议制度（如tenure争议中的公开信）"
+      },
+      {
+        "trigger": "遭遇'sanitized/mainstreamed'版本的传统",
+        "reaction": "强烈划界、拒绝混同",
+        "escalation": "以'Don't confuse me with...'式对抗性表态强化自我先知定位"
+      },
+      {
+        "trigger": "目睹穷人与弱者'catch hell'",
+        "reaction": "'righteous indignation'式义愤外显、讲道式抨击",
+        "escalation": "升级为对整个体系的道德控诉（'spiritual blackout'、'soul-murder'）"
+      }
+    ],
+    "blind_spots": [
+      "晚期著作学术严谨性下降、多修辞布道而少系统论证，本人仍以'prophetic vocation'自我正当化而未正视 [学院派哲学批评-1990s–2000s]",
+      "对奥巴马等的人身化尖刻批评损害进步派团结，与其'以爱批评'自我叙事存在盲区 [主流自由派/民主党方向批评-2011–2016]",
+      "对晚辈的攻击被指流于嫉妒与自我中心，学术产出萎缩而不自察 [公共知识分子内部���战-约2017]",
+      "第三党竞选缺乏组织基础、表演性大于可行性，本人以'speak truth'合理化而低估实操缺陷 [竞选相关批评-2023–2024]",
+      "强烈亲巴勒斯坦立场被指忽视安全语境与偏颇 [亲以色列方向批评-2020s]",
+      "democratic socialism/反资本主义被指不切实际的空想，本人以道德必然性覆盖可行性质疑 [保守派方向批评-2010s–2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "极高自主需求驱动其在面对收编时必然选边缘",
+        "when": {
+          "autonomy_need": ">=0.9"
+        },
+        "disposition": "拒绝建制安全位置，主动承担被边缘化代价",
+        "behavioral_notes": "如离开哈佛、tenure争议后公开抗议、'margins over center'的一贯决策模式"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好叠加高共情反应使其不计代价为弱者发声",
+        "when": {
+          "risk_appetite": ">=0.8"
+        },
+        "disposition": "在政治高风险议题上公开且不妥协表态",
+        "behavioral_notes": "Gaza议题'no matter the political cost'；被捕十余次'standing with the folk who catch hell'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "极高共情反应促使其以苦难为认知起点",
+        "when": {
+          "empathy_reactivity": ">=0.85"
+        },
+        "disposition": "把'让苦难发声'置于分析与政策之前",
+        "behavioral_notes": "'The condition of truth is to allow suffering to speak'；以最弱者为社会衡量标准"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低地位敏感度削弱其对声誉叙事的自我修正",
+        "when": {
+          "status_sensitivity": "<=0.4"
+        },
+        "disposition": "不为维护声誉而收敛，宁做'prisoner of hope'式见证者",
+        "behavioral_notes": "'interested in being faithful not liked'，导致外界'难以共事''自我中心'批评被其忽略"
+      }
+    ]
+  }
+}

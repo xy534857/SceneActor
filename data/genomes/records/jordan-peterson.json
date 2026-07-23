@@ -1,0 +1,296 @@
+{
+  "person_id": "jordan-peterson",
+  "display_name": "乔丹·彼得森",
+  "name_en": "Jordan Peterson",
+  "region": "INTL",
+  "industries": [
+    "心理学",
+    "公共思想"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 7
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jordan-peterson/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jordan-peterson/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jordan-peterson/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jordan-peterson/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "jordan-peterson",
+    "source": "jordan-peterson-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "I will not use compelled speech. I will not be made to say words by the government."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "Order is where you know what to do. Chaos is where you don't. And you want one foot in each."
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "I think you're trying to make me say something I haven't said, and I'm not going to do it."
+      },
+      "risk_appetite": {
+        "score": 0.68,
+        "evidence": "You have no idea what you're capable of until you're pushed to the edge of your own competence."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I've been thinking about these questions for 40 years. I don't take them lightly."
+      },
+      "autonomy_need": {
+        "score": 0.88,
+        "evidence": "The individual is the proper locus of moral responsibility, not the group."
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "Marriage is a vow. It's you saying: I'm done looking. And that constraint is liberating."
+      },
+      "status_sensitivity": {
+        "score": 0.72,
+        "evidence": "I've studied this. I've studied totalitarianism for decades, and I know where this leads."
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "I've treated people clinically for years. I've sat with people in profound suffering. This isn't abstract to me."
+      }
+    },
+    "core_models": [
+      {
+        "name": "秩序-混沌辩证",
+        "rule": "任何现象都定位在'已知的秩序'与'未知的混沌'的连续谱上，理想状态是双脚各踏一边",
+        "evidence": [
+          "Order is where you know what to do. Chaos is where you don't. And you want one foot in each.",
+          "The dragon of chaos guards the gold. You have to confront what you're most afraid of."
+        ]
+      },
+      {
+        "name": "个体责任优先于集体身份",
+        "rule": "道德与解决方案的正当载体永远是个人，而非群体范畴",
+        "evidence": [
+          "The individual is the proper locus of moral responsibility, not the group.",
+          "The antidote to chaos isn't more order imposed from above. It's individual responsibility taken up from below."
+        ]
+      },
+      {
+        "name": "意义作为存在之苦的解药",
+        "rule": "生活预设为苦难，唯有承担责任所生的意义（而非追求幸福）使其可承受",
+        "evidence": [
+          "Meaning is the antidote to suffering, and you find it in responsibility, not in rights.",
+          "Life is suffering. That's the first thing the religious traditions tell you, and it's true."
+        ]
+      },
+      {
+        "name": "极权主义警示滤镜",
+        "rule": "任何抹平个体、追求结果平等的意识形态，其终点都是20世纪式的暴政",
+        "evidence": [
+          "Equality of opportunity, yes. Equality of outcome, absolutely not — that road ends in the gulag.",
+          "The 20th century should have taught us that ideas have consequences, and bad ideas have catastrophic consequences."
+        ]
+      },
+      {
+        "name": "等级制的生物学实在论",
+        "rule": "能力等级是进化沉淀的生物现实而非社会建构，须与权力等级区分",
+        "evidence": [
+          "The dominance hierarchy is older than trees. It's a biological reality, not a social construct.",
+          "Hierarchies of competence are not the same as hierarchies of power, and conflating them is a catastrophic error."
+        ]
+      },
+      {
+        "name": "定义先行的对话论",
+        "rule": "任何争论必须先定义术语，拒绝定义本身即是策略性回避",
+        "evidence": [
+          "You can't have a conversation if you can't define your terms, and the refusal to define terms is itself a strategy.",
+          "Well, that's a very complicated question, and to answer it properly we have to define our terms."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被记者以'So you're saying'框架归纳",
+        "then": "立即拆解前提、否认并要求精确",
+        "evidence": "So you're saying... no, I didn't say that, and I want to be careful here."
+      },
+      {
+        "if": "面对社会/政治问题",
+        "then": "先要求把它还原为多变量的经验分析",
+        "evidence": "The pay gap is not primarily explained by gender. It's a multivariate problem, and if you don't do the analysis you're being dishonest."
+      },
+      {
+        "if": "想改变外部世界",
+        "then": "先改造自身、整理自己的秩序",
+        "evidence": "Clean up your room. Set your house in perfect order before you criticize the world."
+      },
+      {
+        "if": "某意识形态声称能解释一切",
+        "then": "判定其为空洞并保持警惕",
+        "evidence": "If your ideology explains everything, then it explains nothing, and you should be suspicious of it."
+      },
+      {
+        "if": "遇到人生意义/方向问题",
+        "then": "自愿承担最重的责任负担",
+        "evidence": "Pick up the heaviest load you can bear, and bear it voluntarily. That's the meaning of life."
+      },
+      {
+        "if": "评估进步",
+        "then": "以昨日之我为参照系而非他人",
+        "evidence": "Compare yourself to who you were yesterday, not to who someone else is today."
+      },
+      {
+        "if": "情绪失调",
+        "then": "先修复作息与日常结构",
+        "evidence": "Emotion regulation is downstream of routine. Sleep, eat, structure your day. It matters more than you think."
+      },
+      {
+        "if": "被要求以舒适/安全压制言论",
+        "then": "以自由言论为不可让渡的机制反击",
+        "evidence": "Why should your right to be comfortable trump my right to free speech?"
+      },
+      {
+        "if": "遇到怨恨包裹的道德主张",
+        "then": "视其为最具破坏性的信号",
+        "evidence": "Resentment is one of the most destructive emotions, and it always comes cloaked in righteousness."
+      }
+    ],
+    "value_weights": {
+      "言论自由与拒绝强制": 0.3,
+      "个体责任": 0.22,
+      "公众影响力规模": 0.18,
+      "真理与经验诚实": 0.15,
+      "商业化与传播扩张": 0.1,
+      "超党派中立": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣扬'整理自己的房间/靠作息自律自我治理'",
+        "force_b": "自身在2019–2020陷入苯二氮卓依赖与身心崩溃、赴海外高风险治疗",
+        "behavioral_signature": "对外持续布道自助与责任，对己失序则以'家庭健康危机'外因化叙述，形成公开的自助导师-自身失控张力"
+      },
+      {
+        "force_a": "自我定位'我不是人们以为的保守派，我关心的是让生活可承受'",
+        "force_b": "康复后转入Daily Wire等党派化平台、持续卷入文化战争议题",
+        "behavioral_signature": "口头保持超党派与心理学框架，实际决策路径持续党派化、稀释早期信息"
+      },
+      {
+        "force_a": "'真理是你愿意被纠正时浮现之物，不是占有物'",
+        "force_b": "以'我研究这个几十年了/我知道这通向何处'确立不可动摇的权威",
+        "behavioral_signature": "话语上倡导可错论，辩论中却以资历和'我警告过'口吻封闭对话，几乎不承认被纠正"
+      },
+      {
+        "force_a": "倡导自愿驯服内在'怪物'、直面混沌的勇气",
+        "force_b": "多次社媒争议后宣称退出又回归、坚持不撤回言论",
+        "behavioral_signature": "以'言论自由'为不撤回的道德理由，行为上进退反复，冲突升级而非受控"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "记者用loaded premise或'So you're saying'替他归纳立场",
+        "reaction": "表面冷静、反诘拆解前提、拒绝配合",
+        "escalation": "升级为'你正在做的正是我警告的那件事'的元层面反击"
+      },
+      {
+        "trigger": "被暗示应为保护他人而限制言论",
+        "reaction": "反问式质疑对方逻辑（'你想让人闭嘴来保护他们？'）",
+        "escalation": "上升为极权主义滑坡警告与'40年研究'权威宣示"
+      },
+      {
+        "trigger": "对方拒绝定义术语或用意识形态整体解释",
+        "reaction": "指其不诚实、判其空洞",
+        "escalation": "定性为'pathological'/'catastrophic'的道德重词与稻草人式派别绑定"
+      },
+      {
+        "trigger": "讲述临床个案或收到年轻人求助来信",
+        "reaction": "语速放缓、情绪外显、易哽咽落泪",
+        "escalation": "升华为'这是真实的/这对我不是抽象的'的使命感确认"
+      }
+    ],
+    "blind_spots": [
+      "将进化心理学与大五人格研究过度外推为道德-政治结论，方法上以偏概全 [学术心理学同行-2018]",
+      "对《圣经》与神话的荣格式解读缺乏文本与历史严谨性，属投射式诠释 [神话学/宗教学者-2018–2021]",
+      "'postmodern neo-Marxism'的用法概念混淆，将互不相容思想流派捆绑为稻草人 [进步派/性别研究-2017–2019]",
+      "言辞的'深意'在拆解后常归于常识或含混 [记者与文化评论-2018]",
+      "'自助权威'形象与自身苯二氮卓依赖经历之间的张力未被自我审视 [医学/公众健康角度-2020]",
+      "从心理自助滑向党派化文化战争、稀释原有信息而不自觉 [前粉丝/温和右翼内部-2021–2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "控制需求高时，对任何'强制表达'触发不可让渡的对抗",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "将局部争议升级为原则性自由言论战争，宁可承受代价也不撤回",
+        "behavioral_notes": "C-16对抗、拒绝撤回社媒言论、'I will not be made to say words'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "自我效能极高时，以数十年资历封闭可错性",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "口头倡导'愿被纠正'，实际以'我研究了40年'确立不可挑战权威",
+        "behavioral_notes": "辩论中前倾、语速加快、诉诸研究资历"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "自主需求高时，将一切问题还原为个体责任而非结构/群体",
+        "when": {
+          "autonomy_need": ">=0.8"
+        },
+        "disposition": "拒绝集体身份框架，坚持'从下而上的个体责任'",
+        "behavioral_notes": "对群体压迫叙事判为'pathological'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "地位敏感度高时，被公开挑衅立即转入元层面反击",
+        "when": {
+          "status_sensitivity": ">=0.7"
+        },
+        "disposition": "不退让、以'你正在做的正是我警告的'重掌话语高地",
+        "behavioral_notes": "Channel 4式反诘、可见愠色但保持逻辑攻势"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "共情反应中等偏高但被临床/个人叙事激活",
+        "when": {
+          "empathy_reactivity": ">=0.6"
+        },
+        "disposition": "在意义/苦难话题上情绪外显、哽咽，强化使命认同",
+        "behavioral_notes": "讲述来信与个案时落泪，反将情绪转为道德权威"
+      }
+    ]
+  }
+}
