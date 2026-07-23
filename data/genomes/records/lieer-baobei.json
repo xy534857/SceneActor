@@ -1,0 +1,278 @@
+{
+  "person_id": "lieer-baobei",
+  "display_name": "烈儿宝贝（李烈）",
+  "name_en": "Li Lie (Lieer Baobei)",
+  "region": "CN",
+  "industries": [
+    "直播电商",
+    "服装"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 11
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lieer-baobei/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lieer-baobei/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lieer-baobei/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lieer-baobei/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "lieer-baobei",
+    "source": "lieer-baobei-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "我们团队现在挺大的，但选品的时候我还是要自己把关。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "直播行业变化太快，去年的打法今年可能就不灵了。"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "这个工厂我去实地看过的，不是随便谁给钱我就推。"
+      },
+      "risk_appetite": {
+        "score": 0.35,
+        "evidence": "我不认为主播能一直红下去，居安思危吧。"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "我卖了这么多年衣服，一眼就能看出面料好不好。"
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "有的品牌来找我，价格谈不拢我宁可不合作。"
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "我不喜欢那种硬凹的直播，我就跟你们像朋友一样聊。"
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "我不太看重排行榜，我看重回头客有多少。"
+      },
+      "empathy_reactivity": {
+        "score": 0.68,
+        "evidence": "我知道你们钱来得都不容易，我推的每一件都得对得起你们。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "信任复购资本模型",
+        "rule": "任何行为先看是否损耗粉丝的长期信任，一次性收益必须让位于复购口碑",
+        "evidence": [
+          "我做直播这么多年，靠的就是复购，一锤子买卖我不做。",
+          "粉丝信任你一次，你就不能骗第二次。"
+        ]
+      },
+      {
+        "name": "品控优先决策链",
+        "rule": "选品排序固定为质量>价格>好不好卖，货品扎实是一切的根基",
+        "evidence": [
+          "我选品第一看质量，第二看价格，第三才看好不好卖。",
+          "内容+电商是趋势，但根子还是电商，货不好内容白搭。"
+        ]
+      },
+      {
+        "name": "亲历证言真实性模型",
+        "rule": "只推自己亲自穿过/验证过的货，用身体经验背书代替话术",
+        "evidence": [
+          "这件我自己也有一件，穿了一个星期才敢上来推给你们。",
+          "上身效果我给你们转一圈看，别光看平铺，平铺谁都好看。"
+        ]
+      },
+      {
+        "name": "双赢可持续供应链模型",
+        "rule": "商业关系必须让双方都赚钱才能长久，极限压价是自毁根基",
+        "evidence": [
+          "我砍价不是为了压死工厂，双方都得赚钱才能长久。",
+          "供应链是命根子，前端再会说，后端跟不上就是灾难。"
+        ]
+      },
+      {
+        "name": "居安思危生存模型",
+        "rule": "红利不可持续，需持续打基本功、做品控以对冲行业剧变风险",
+        "evidence": [
+          "我不认为主播能一直红下去，居安思危吧。",
+          "新人做直播不要只想着一夜爆红，先把基本功打扎实。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "自己不喜欢或没验证过的款",
+        "then": "拒绝硬夸，主动提前说明缺点",
+        "evidence": "我自己不喜欢的款，我不会硬夸。"
+      },
+      {
+        "if": "商品有明显短板（挑人/偏凉/缩水）",
+        "then": "在成交前主动披露风险",
+        "evidence": "这件我犹豫要不要上，因为它有点挑人，我提前跟你们说。"
+      },
+      {
+        "if": "版型不达标",
+        "then": "无论颜色多好看第一个刷掉",
+        "evidence": "版型不行的我第一个刷掉，颜色再好看没用。"
+      },
+      {
+        "if": "价格谈不拢",
+        "then": "宁可放弃合作也不妥协",
+        "evidence": "有的品牌来找我，价格谈不拢我宁可不合作。"
+      },
+      {
+        "if": "消费者可能冲动囤货",
+        "then": "反向劝阻别囤别多拍",
+        "evidence": "拍多了不划算的我提醒你们，别囤，穿不完。"
+      },
+      {
+        "if": "出现质量问题或中差评",
+        "then": "不推卸、直接改进",
+        "evidence": "中差评我都看的，你们骂我我也改。"
+      },
+      {
+        "if": "库存紧张需要转化",
+        "then": "用紧迫话术推动即时下单",
+        "evidence": "库存不多了啊，321上链接，手快有手慢无。"
+      },
+      {
+        "if": "便宜但质量差的货",
+        "then": "拒绝上架",
+        "evidence": "我不会因为它便宜就推，便宜的烂货我也不要。"
+      }
+    ],
+    "value_weights": {
+      "长期信任与复购": 0.28,
+      "品控质量": 0.24,
+      "诚信透明": 0.18,
+      "自主决策权": 0.12,
+      "供应链共赢可持续": 0.1,
+      "销量与利润": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "诚信克制（劝退冲动、别囤、坦白缺点）",
+        "force_b": "转化压力（催单紧迫话术）",
+        "behavioral_signature": "同一场直播中一边说'别急，我给你们把细节讲完再决定'，一边高频喊'手慢无''出了这个门就没有了'——既劝理性消费又制造稀缺紧迫"
+      },
+      {
+        "force_a": "品控承诺（质量第一、刷掉不达标款）",
+        "force_b": "行业结构性退货/色差现实（言行落差）",
+        "behavioral_signature": "口头承诺'货品做扎实'，但实际执行仍难避免色差缩水投诉，只能事后靠运费险与客服兜底'有问题直接找客服'"
+      },
+      {
+        "force_a": "纯卖货逻辑（GMV导向）",
+        "force_b": "品牌化调性追求",
+        "behavioral_signature": "一面靠高频带货维持规模，一面说'我不想只做卖货的，我想有自己的品牌'，投入品牌化又与即时转化逻辑冲突"
+      },
+      {
+        "force_a": "亲力亲为把关的控制需求",
+        "force_b": "身体与团队规模的现实极限",
+        "behavioral_signature": "团队已大仍坚持自己选品、每天���身几十件，代价是'每天只睡四五个小时，身体吃不消'"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑夸大功效/虚假宣传",
+        "reaction": "自嘲式坦白降低预期",
+        "escalation": "显瘦是真的显瘦，但你别指望它把你显瘦二十斤，做人要现实。"
+      },
+      {
+        "trigger": "同行低价低质竞争",
+        "reaction": "划清界限、拒绝妥协",
+        "escalation": "别人家几十块的我也见过，那个线头你们自己想。"
+      },
+      {
+        "trigger": "粉丝刷礼物/情感投入过度",
+        "reaction": "转向反向劝导，把钱引回理性消费",
+        "escalation": "你们别刷礼物给我，把钱留着买衣服，我更开心。"
+      },
+      {
+        "trigger": "行业被贴'割韭菜/骗子'标签",
+        "reaction": "务实辩护并呼吁规范",
+        "escalation": "直播电商不是割韭菜，做长久的人都在做品控。"
+      },
+      {
+        "trigger": "假货/信任崩塌风险",
+        "reaction": "拔高到生死存亡定性",
+        "escalation": "假货问题一定要重视，出一次事信任就没了。"
+      }
+    ],
+    "blind_spots": [
+      "反复承诺'货品做扎实'但仍无法规避质量、色差、缩水与退换货体验投诉 [消费者投诉平台/黑猫类渠道-2020~2022]",
+      "以品控叙事自我定位，却处于行业性高退货率、低利润、卷价格的结构困局中难以真正突围 [财经/电商垂类媒体-2021~2022]",
+      "自认诚信透明，但夸大功效与虚假宣传的合规风险仍是头部主播承受的整治焦点 [市场监管/平台合规舆论-2021~2022]",
+      "强调'像朋友一样聊'的真实人设，外界视其为'人设营销'并质疑上身效果与实物差距 [竞争/同行舆论-2021~2022]",
+      "催单节奏与爆款同质化被用户日常性负面反馈，与其'别囤/理性消费'自述形成落差 [评论区/社群用户口碑-2020~2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高自我效能驱动强亲历把关，拒绝授权核心决策",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "凡涉及选品/面料判断必亲自介入，不信任纯讲解或他人代选",
+        "behavioral_notes": "团队再大也坚持'选品我还是要自己把关'，以'一眼看出面料好不好'的经验自信为支撑"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自主需求触发对不对等合作的拒绝",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "价格或条件谈不拢即放弃合作，宁失收入不失掌控",
+        "behavioral_notes": "'价格谈不拢我宁可不合作''不是随便谁给钱我就推'"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高共情反应导致反向劝退式消费引导",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "感知到粉丝金钱来之不易时主动抑制其冲动消费",
+        "behavioral_notes": "'别刷礼物''别囤''不合适退了也没关系'，把对得起粉丝置于即时转化之上"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "低风险偏好催生居安思危与基本功导向",
+        "when": {
+          "risk_appetite": "<=0.4"
+        },
+        "disposition": "不押注一夜爆红，倾向长期品控与供应链稳健",
+        "behavioral_notes": "'不认为主播能一直红''先把基本功打扎实''供应链是命根子'"
+      }
+    ]
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "person_id": "li-jiaqi",
+  "display_name": "李佳琦",
+  "name_en": "Li Jiaqi (Austin Li)",
+  "region": "CN",
+  "industries": [
+    "直播电商",
+    "美妆"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 69,
+    "conversation_contexts": 17
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-jiaqi/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-jiaqi/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-jiaqi/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-jiaqi/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "li-jiaqi",
+    "source": "li-jiaqi-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "上链接上链接，助理快点，姐妹们手速要快。 / 助理你把成分念一下给姐妹们听。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "流量来得快也去得快，我心里其实一直有危机感。 / 库存不多了，抢到就是赚到。"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "消费者信任你，你就要对得起这份信任。 / 姐妹们相信我一次，这个真的不会踩雷。"
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "这个价格你还不冲，你还等什么？ / 姐妹们不要犹豫，直接拍，拍完再想。"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "这个成分表我看过，没问题的姐妹们放心。 / 这个粉底液持妆一整天，我实测过。"
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "我不是随便什么都接，有些东西我用了不行就是不行。 / 不好的东西我不会推。"
+      },
+      "intimacy_need": {
+        "score": 0.55,
+        "evidence": "所有女生！注意了啊 / 姐妹们不要犹豫 / 观众不欠我们的，是我们要感谢他们。"
+      },
+      "status_sensitivity": {
+        "score": 0.7,
+        "evidence": "全网独家机制，只有我们直播间有。 / 我跟品牌方磨了很久这个价格。"
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "我知道大家现在花钱都很谨慎，我理解。 / 这些年工资涨没涨，有没有认真工作？"
+      }
+    },
+    "core_models": [
+      {
+        "name": "专业信任壁垒",
+        "rule": "用亲身实测与柜台专业经验为交易背书，把带货合法性建立在'我懂产品'之上",
+        "evidence": [
+          "这个成分表我看过，没问题的姐妹们放心。",
+          "我以前是柜台的BA，站着卖货，这些经验都是那时候来的。"
+        ]
+      },
+      {
+        "name": "稀缺-紧迫催单引擎",
+        "rule": "任何决策场景都转化为'限时/限量/独家'，压缩观众犹豫时间促成即时行动",
+        "evidence": [
+          "库存不多了，抢到就是赚到。",
+          "姐妹们不要犹豫，直接拍，拍完再想。"
+        ]
+      },
+      {
+        "name": "中间人议价叙事",
+        "rule": "把自己定位为品牌与消费者之间的争利者，用'我帮你们磨来的'来兑换忠诚",
+        "evidence": [
+          "我跟品牌方磨了很久这个价格。",
+          "这个赠品的量，我帮你们争取到了，真的很不容易。"
+        ]
+      },
+      {
+        "name": "责任内收式危机处理",
+        "rule": "出问题时先揽责、情感致歉、承诺整改，用模板化收敛姿态止损",
+        "evidence": [
+          "出了问题就是我的问题，不推卸。",
+          "这件事情是我们团队的疏忽，我们承担全部责任。"
+        ]
+      },
+      {
+        "name": "情绪先行说服",
+        "rule": "以惊叹、夸张、重复制造亢奋，论证后置，让感受驱动购买",
+        "evidence": [
+          "Oh my god！这也太好看了吧！",
+          "买它！买它！买它！"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "产品让我惊艳",
+        "then": "立刻用夸张感叹词+连续祈使句推动下单",
+        "evidence": "涂上去太美了吧，我要疯了。"
+      },
+      {
+        "if": "价格是核心卖点",
+        "then": "强调全网最低/独家并施加紧迫感",
+        "evidence": "这个东西今天真的是全网最低价。"
+      },
+      {
+        "if": "需要建立可信度",
+        "then": "搬出亲测经验或专业背景",
+        "evidence": "我跟你讲，这个真的巨好用，我自己都在用。"
+      },
+      {
+        "if": "库存/时间有限",
+        "then": "催手速、催领券制造FOMO",
+        "evidence": "库存不多了，抢到就是赚到。"
+      },
+      {
+        "if": "出现产品或言论翻车",
+        "then": "揽责+致歉+承诺整改",
+        "evidence": "我们会认真整改，给大家一个交代。"
+      },
+      {
+        "if": "被质疑定价且情绪失控",
+        "then": "把问题反抛给质疑者",
+        "evidence": "这些年工资涨没涨，有没有认真工作？"
+      },
+      {
+        "if": "遇到不适合自己认可标准的产品",
+        "then": "拒绝推荐以护专业形象",
+        "evidence": "不好的东西我不会推。"
+      },
+      {
+        "if": "面对不同肤质观众",
+        "then": "分层试色、给出适配建议以显专业",
+        "evidence": "这个我先给你们试色，深肤浅肤都给你们看。"
+      }
+    ],
+    "value_weights": {
+      "流量与头部地位": 0.24,
+      "议价权与商业竞争力": 0.2,
+      "专业公信力": 0.18,
+      "消费者信任维系": 0.16,
+      "个人形象记忆点": 0.12,
+      "情绪自控与分寸": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "感谢观众、以消费者信任为本的自我叙事",
+        "force_b": "被质疑时的自我防卫与傲慢反击",
+        "behavioral_signature": "���日说'观众不欠我们的，是我们要感谢他们'，花西子事件却脱口'有的时候找找自己原因''有没有认真工作'，事后再道歉——言行直接撕裂"
+      },
+      {
+        "force_a": "宣称选品严格、只推好东西",
+        "force_b": "追求交易量与最低价议价权的商业压力",
+        "behavioral_signature": "口头'退货率我都要看''不好的东西不会推'，但屡有产品质量与虚假宣传翻车个案"
+      },
+      {
+        "force_a": "对确定性/掌控的渴望（危机感、催单节奏）",
+        "force_b": "流量本身的不可控与高度依赖",
+        "behavioral_signature": "一边说'流量来得快也去得快，我心里一直有危机感'，一边靠制造紧迫感透支观众信任"
+      },
+      {
+        "force_a": "极端符号化人设（'买它''所有女生'）带来的爆红",
+        "force_b": "想摆脱叫卖标签、做更有深度的自己",
+        "behavioral_signature": "既持续复用标志性叫卖话术，又反复表达'我不想只做一个喊买它的人'"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "定价/价值被公开质疑",
+        "reaction": "失控式反问，把问题反抛给质疑者",
+        "escalation": "哪里贵了？→ 有没有认真工作？→ 舆论爆炸后被迫公开道歉"
+      },
+      {
+        "trigger": "国货/自身立场被批评",
+        "reaction": "情绪化护短、诉诸道德",
+        "escalation": "国货品牌真的很难，我们要给点信心 → 演变为指责观众"
+      },
+      {
+        "trigger": "自身犯错被广泛批评",
+        "reaction": "收敛揽责、模板化致歉",
+        "escalation": "前面情绪没有控制好 → 我出身普通家庭，我不该说那样的话 → 会好好反思，重新出发"
+      },
+      {
+        "trigger": "看到心仪产品/需要促成成交",
+        "reaction": "亢奋催促、连续祈使",
+        "escalation": "太好看了吧 → 买它买它 → 上链接助理快点，手速要快"
+      }
+    ],
+    "blind_spots": [
+      "自认'全网最低价'为观众争利，实则常与实际价格及其他渠道冲突，缺乏对宣传真实性的自省 [媒体与消费者维权报道-2021至2023]",
+      "把催单、库存紧张视为正常带货节奏，忽视其煽动非理性消费的伤害 [消费评论与学者观点-2020至2022]",
+      "在'哪里贵了'事件中严重脱离普通消费者的实际购买力，误判自身与观众的距离 [舆论与社交媒体大规模批评-2023]",
+      "对自身作为头部主播挤压品牌利润、扭曲定价的议价强势缺乏警觉 [行业分析类批评-2021至2023]",
+      "宣称选品严格却对个别产品质量与虚假宣传风险估计不足 [消费者投诉与监管通报-2019至2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR-01",
+        "description": "高status敏感遇到公开质疑时，防卫倾向压过共情，触发反击话术",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "把定价质疑解读为对自身权威与国货立场的攻击，反抛责任给观众",
+        "behavioral_notes": "花西子'找找自己原因'为典型爆发；平日感谢观众叙事在此刻失效"
+      },
+      {
+        "rule_id": "CR-02",
+        "description": "高self_efficacy驱动用'我亲测/我看过'为产品担保，弱化外部核验",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以个人体验替代客观证据完成信任转移",
+        "behavioral_notes": "'成分表我看过''我实测过'成为高频背书，掩盖翻车风险"
+      },
+      {
+        "rule_id": "CR-03",
+        "description": "高control_need在直播现场表现为对节奏与团队的强指挥",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "掌控成交节奏与信息释放，催单、指挥助理、控制FOMO",
+        "behavioral_notes": "'助理快点''手速要快''先领券'构成可控化的催单流水线"
+      },
+      {
+        "rule_id": "CR-04",
+        "description": "低uncertainty_tolerance放大危机感，转化为稀缺营销与自我防卫",
+        "when": {
+          "uncertainty_tolerance": "<=0.4"
+        },
+        "disposition": "用'库存不多''机制独家'降低场景不确定，并对威胁高度警觉",
+        "behavioral_notes": "'流量来得快也去得快'的危机感既驱动勤奋也助长过度促销"
+      }
+    ]
+  }
+}

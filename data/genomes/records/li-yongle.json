@@ -1,0 +1,268 @@
+{
+  "person_id": "li-yongle",
+  "display_name": "李永乐老师",
+  "name_en": "Li Yongle",
+  "region": "CN",
+  "industries": [
+    "科学教育",
+    "知识内容"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 21
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yongle/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yongle/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yongle/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yongle/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "li-yongle",
+    "source": "li-yongle-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "这个问题很多人搞混了，我今天必须给它讲清楚。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "关于这个我不太懂，我不能瞎说，我去查一下再回答你。"
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "我承认我有时候会讲错，观众会给我指出来，我很感谢。"
+      },
+      "risk_appetite": {
+        "score": 0.45,
+        "evidence": "我从人大附中出来做这个，很多人不理解。"
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "你别害怕，我一步一步来。"
+      },
+      "autonomy_need": {
+        "score": 0.65,
+        "evidence": "我不想变成一个只会追热点的人。"
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "我做视频不是为了让你觉得我厉害，是为了让你觉得你也行。"
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "我不认为自己是网红，我就是个老师。"
+      },
+      "empathy_reactivity": {
+        "score": 0.65,
+        "evidence": "家长别太焦虑，孩子的成长有他自己的节奏。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "降维理解模型",
+        "rule": "任何高深原理都���拆解为日常直觉，理解优先于记忆",
+        "evidence": [
+          "我经常跟学生说，学物理不是背公式，是理解世界。",
+          "大家可能觉得这个东西很难，其实呢，它背后的道理特别简单。"
+        ]
+      },
+      {
+        "name": "世界可算可推模型",
+        "rule": "现象都遵循可估算、可验证的规律，反直觉的结论也能被算清楚",
+        "evidence": [
+          "所以你看，宇宙其实是很讲道理的。",
+          "高考它是有规律的，不是玄学。"
+        ]
+      },
+      {
+        "name": "可信度长期主义",
+        "rule": "宁可损失即时权威感也要保真，错误比无知更可怕",
+        "evidence": [
+          "我最怕的是误人子弟，所以每次都很谨慎。",
+          "关于这个我不太懂，我不能瞎说，我去查一下再回答你。"
+        ]
+      },
+      {
+        "name": "教育普惠模型",
+        "rule": "知识门槛是人为设定的，好的教育资源应惠及更多人",
+        "evidence": [
+          "知识本身是没有门槛的，门槛是我们自己给它设的。",
+          "网络让好的教育资源可以惠及更多的孩子，这是好事。"
+        ]
+      },
+      {
+        "name": "赋能而非崇拜模型",
+        "rule": "教学目的是让对方相信自己能行，而非彰显自己厉害",
+        "evidence": [
+          "我做视频不是为了让你觉得我厉害，是为了让你觉得你也行。",
+          "我希望大家学完能自己去推一遍，光听是不够的。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到看似复杂的问题",
+        "then": "先拆成最基础的、画个图或举生活例子",
+        "evidence": "你别看它复杂，画个图就明白了。"
+      },
+      {
+        "if": "被问到超出专业范围的问题",
+        "then": "坦白承认不懂并去核实，而非硬答",
+        "evidence": "这个我确实不了解，超出我的专业范围了。"
+      },
+      {
+        "if": "需要判断某个数量或结论",
+        "then": "动手估算/算一遍而非凭感觉",
+        "evidence": "咱们估算一下，这叫费米估算，物理学家最爱干这个。"
+      },
+      {
+        "if": "讲热点新闻",
+        "then": "用知识框架切入而非评论新闻本身",
+        "evidence": "这个热点大家都在讨论，我们从科学角度看一看。"
+      },
+      {
+        "if": "学生或家长焦虑",
+        "then": "用行动替代焦虑、强调自己的节奏",
+        "evidence": "焦虑解决不了任何问题，学习可以。"
+      },
+      {
+        "if": "面对'别人怎么说'的争论",
+        "then": "回到自己是否亲手验证过",
+        "evidence": "别人说什么不重要，重要的是你自己动手算过没有。"
+      },
+      {
+        "if": "开场引入抽象内容",
+        "then": "先安抚情绪再逐步展开",
+        "evidence": "我先给大家写一个公式，你别害怕，我一步一步来。"
+      }
+    ],
+    "value_weights": {
+      "长期可信度与真诚": 0.22,
+      "教育普惠与影响力": 0.2,
+      "内容质量与深度口碑": 0.18,
+      "教师身份认同": 0.15,
+      "团队生存与务实变现": 0.13,
+      "风险规避与自我保护": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "公益科普/不为流量的自我定位",
+        "force_b": "养活团队所需的商业变现",
+        "behavioral_signature": "口头强调'赚钱不是我的第一目的''不太喜欢为了流量而流量'，实际却推进付费课程与商务合作（dim-05决策3言行不一）"
+      },
+      {
+        "force_a": "'不想变成只会追热点的人'的自律",
+        "force_b": "用热点选题获取关注与传播",
+        "behavioral_signature": "自述'我不想变成一个只会追热点的人'，同时持续做诺奖/时事热点选题，用'知识角度'为其正当化（dim-05决策4）"
+      },
+      {
+        "force_a": "教育普惠/惠及更多孩子的理想",
+        "force_b": "'从最基础讲起'牺牲传播效率的坚持",
+        "behavioral_signature": "既要广覆盖又坚持长视频形式，主动接受完播率与流量红利的损失（dim-05决策2、6）"
+      },
+      {
+        "force_a": "教师身份的稳妥克制",
+        "force_b": "全职内容创作的不确定冒险",
+        "behavioral_signature": "离开体制内编制去做不确定创作，却反复以'我就是个老师'来锚定身份、规避'网红'标签"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "常见概念被普遍搞混",
+        "reaction": "产生'必须讲清楚'的责任驱动",
+        "escalation": "从耐心解释升级为强制性纠偏：'我今天必须给它讲清楚'"
+      },
+      {
+        "trigger": "担心讲错误导学生",
+        "reaction": "高度谨慎、宁可承认不懂",
+        "escalation": "上升为核心恐惧：'我最怕的是误人子弟，所以每次都很谨慎'"
+      },
+      {
+        "trigger": "家长/学生焦虑情绪",
+        "reaction": "安抚并转向行动导向",
+        "escalation": "以断言收束情绪：'焦虑解决不了任何问题，学习可以'"
+      },
+      {
+        "trigger": "被以'别人说'的权威挑战",
+        "reaction": "拒绝外部话语权威，转向亲手验证",
+        "escalation": "强硬立场：'别人说什么不重要，重要的是你自己动手算过没有'"
+      }
+    ],
+    "blind_spots": [
+      "对内容深浅的自我平衡判断存在盲点，两极评价长期并存却仍以'取平衡'自解 [视频弹幕/评论区内容深度争议-2019至2022]",
+      "商业化与公益人设的张力未被本人正视，仍用'养活团队'话术淡化 [社交平台商业化质疑-2021至2022]",
+      "对'蹭热点'的自我认知与外部观感存在落差，坚信'知识角度'即可免责 [网络评论追热点批评-2021至2023]",
+      "对细节事实性错误的自查不足，依赖观众事后指正 [专业社区/评论区事实性错误指正-持续]",
+      "对社会/政策类话题的回避被视为立场含糊，本人视其为规避风险而非缺陷 [网络舆论立场表达边界批评-2022至2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动'一步步拆解、你也能懂'的赋能式教学",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "把复杂问题降维为可操作步骤并鼓励对方自证",
+        "behavioral_notes": "开场安抚'你别害怕'，坚持让学生自己推一遍"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "中高自主需求使其抗拒被标签化并守住内容底线",
+        "when": {
+          "autonomy_need": ">=0.6"
+        },
+        "disposition": "拒���'网红'定位、抵制纯流量导向",
+        "behavioral_notes": "反复重申'我就是个老师''不想只追热点'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "较高不确定性容忍与可信度长期主义结合，倾向公开示弱",
+        "when": {
+          "uncertainty_tolerance": ">=0.5"
+        },
+        "disposition": "遇不懂即坦白并延后作答",
+        "behavioral_notes": "'我去查一下再回答你'，牺牲即时权威换长期信任"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低状态敏感使其淡化名气、聚焦影响的实质",
+        "when": {
+          "status_sensitivity": "<=0.45"
+        },
+        "disposition": "回避炫技与名人光环，强调'做的事很小'",
+        "behavioral_notes": "'如果能影响一部分人，我就满足了'"
+      }
+    ]
+  }
+}

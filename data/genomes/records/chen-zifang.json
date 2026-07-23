@@ -1,0 +1,273 @@
+{
+  "person_id": "chen-zifang",
+  "display_name": "陈兹方",
+  "name_en": "Chen Zifang",
+  "region": "CN",
+  "industries": [
+    "助农直播",
+    "农业创业"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 16
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/chen-zifang/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/chen-zifang/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/chen-zifang/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/chen-zifang/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "chen-zifang",
+    "source": "chen-zifang-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "这地是我自己承包的，苗是我自己种下去的。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "我用脚开三轮车，一开始摔过好多回，摔多了就会了。"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "咱不搞那些虚的，东西好不好你们收到就知道了。"
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "命运给我发了一副烂牌，但我想把它打好。"
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "别人用手干的活，我用脚干，慢是慢点，但一样能干成。"
+      },
+      "autonomy_need": {
+        "score": 0.92,
+        "evidence": "我不想当一个被养着的人，我想当一个能养活别人的人。"
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "我妈养大我不容易，我得让她过上好日子。"
+      },
+      "status_sensitivity": {
+        "score": 0.68,
+        "evidence": "我最怕的不是没有手，是让别人觉得我是个负担。"
+      },
+      "empathy_reactivity": {
+        "score": 0.62,
+        "evidence": "直播助农让我第一次感觉，我也能帮到别人。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "自立即尊严",
+        "rule": "任何问题先问'我能不能自己干成'，靠自己完成才有价值",
+        "evidence": [
+          "我能干的我都尽量自己干。",
+          "路是走出来的，不是等出来的。"
+        ]
+      },
+      {
+        "name": "拒绝同情的价值交换",
+        "rule": "帮助必须建立在真实价值（好货）之上，而非怜悯博取",
+        "evidence": [
+          "助农不是让你们同情我，是这个东西真的好吃。",
+          "我不是靠卖惨，我是靠东西真的好。"
+        ]
+      },
+      {
+        "name": "身份升级叙事",
+        "rule": "衡量人生进步的标尺是'从被帮者变为帮人者'",
+        "evidence": [
+          "我这些年最大的变化，就是从一个被帮的人变成了帮人的人。",
+          "我不想只做我一个人的生意，我想帮更多老乡卖东西。"
+        ]
+      },
+      {
+        "name": "结果可验证主义",
+        "rule": "价值不靠宣称靠实物检验，做的事要经得起看",
+        "evidence": [
+          "咱不搞那些虚的，东西好不好你们收到就知道了。",
+          "有些质疑我也听到了，但我做的事经得起看。"
+        ]
+      },
+      {
+        "name": "苦难换奔头的时间观",
+        "rule": "当下的苦是可接受的，只要指向未来的好日子",
+        "evidence": [
+          "别人问我苦不苦，我说苦，但苦完了有奔头。",
+          "只要你愿意动，愿意干，日子总会往好的方向走。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到做不了的动作",
+        "then": "反复练习到能自己完成",
+        "evidence": "我用脚开三轮车，一开始摔过好多回，摔多了就会了。"
+      },
+      {
+        "if": "别人表达可怜或同情",
+        "then": "抵触并强调靠本事",
+        "evidence": "我不喜欢别人可怜我，我要靠自己的本事活着。"
+      },
+      {
+        "if": "被质疑真实性",
+        "then": "用现场演示/实物证明代替辩解",
+        "evidence": "你看我用脚穿针引线，其实练一练谁都能会。"
+      },
+      {
+        "if": "定价决策",
+        "then": "压低价格只赚辛苦钱，靠品质留住人",
+        "evidence": "这个价格我给你们压到最低了，我赚个辛苦钱就行。"
+      },
+      {
+        "if": "获得流量/关注",
+        "then": "转化为帮更多老乡的责任压力",
+        "evidence": "有了流量以后，我更得对得起信任我的人。"
+      },
+      {
+        "if": "情绪低落想放弃",
+        "then": "以母亲为锚点坚持",
+        "evidence": "我小时候想过很多次放弃，但一想到我妈就不敢。"
+      },
+      {
+        "if": "产品出现问题",
+        "then": "接受退货但只认真问题",
+        "evidence": "我不接受退货吗？接受，只要东西真有问题你就退。"
+      },
+      {
+        "if": "流量可能退潮",
+        "then": "抓紧当下多帮乡亲变现",
+        "evidence": "流量来得快去得也快，我得趁着还有人看，多帮乡亲卖点。"
+      }
+    ],
+    "value_weights": {
+      "自立自主": 0.28,
+      "帮扶乡亲的利他扩展": 0.2,
+      "真实与信誉": 0.18,
+      "经济生存与变现": 0.16,
+      "家庭责任": 0.12,
+      "社会认可/去污名": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "拒绝被同情、坚持靠货真价实",
+        "force_b": "直播变现需要情感动员",
+        "behavioral_signature": "口头说'助农不是让你们同情我'，但下单话术高频用'你们买的每一单都是在帮我们老乡'，用情感动员完成转化"
+      },
+      {
+        "force_a": "拒绝'励志典型'标签",
+        "force_b": "实际受益于并传播励志叙事",
+        "behavioral_signature": "访谈说'我不是什么励志典型'，演讲却密集使用'我没有翅膀，但我想自己飞'等励志金句"
+      },
+      {
+        "force_a": "'我能自己干成'的高自效能",
+        "force_b": "'怕做不好让大家失望'的成就焦虑",
+        "behavioral_signature": "既展示脚打字比手稳的自信，又坦言'火了以后我压力更大了，怕自己做不好让大家失望'"
+      },
+      {
+        "force_a": "个人IP的真实性坚守",
+        "force_b": "商业规模化扩品的履约压力",
+        "behavioral_signature": "宣称'不刷单不虚报'，同时扩品类到本地土货，承诺-履约落差引发品控投诉"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被说'你都这样了还这么努力'",
+        "reaction": "强烈抵触、情绪防御",
+        "escalation": "上升为对'被当负担/被可怜'的身份威胁，最怕让别人觉得自己是负担"
+      },
+      {
+        "trigger": "被催促（直播打字慢）",
+        "reaction": "俏皮化解但暗含急躁",
+        "escalation": "'别催啊别催，我这脚打字就这么快了'——以自嘲维护节奏控制"
+      },
+      {
+        "trigger": "天气不好果子可能烂在地里",
+        "reaction": "焦急",
+        "escalation": "'心里最着急，就怕果子烂在地里'——生计不可控引发失控感"
+      },
+      {
+        "trigger": "外界质疑（卖惨/真实性）",
+        "reaction": "以'经得起看'回应",
+        "escalation": "从辩解转向以实物和演示证明，强化结果可验证的防御"
+      }
+    ],
+    "blind_spots": [
+      "对'帮老乡'话术与'拒绝同情'之间的情感动员矛盾缺乏自觉，实为借身体标签建流量 [自媒体评论类-2020]",
+      "过度自信于'东西真好'，低估规模化后的品控/物流/售后系统性风险 [消费者投诉类-2021]",
+      "对个人真实性易被MCN包装、IP同质化的商业结构缺乏警觉 [行业观察类-2021]",
+      "以'超级残障者'式励志自我叙事掩盖结构性无障碍缺失，无意识强化了简化叙事 [学术/公益评论类-2022]",
+      "对助农流量退潮后乡亲产销可持续性缺乏应对方案，依赖个人热度 [平台生态批评类-2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "自主需求极高时，一切依赖被视为身份威胁",
+        "when": {
+          "autonomy_need": ">=0.9"
+        },
+        "disposition": "拒绝救助、坚持自己完成、抵触怜悯",
+        "behavioral_notes": "'我不想当一个被养着的人'——宁可慢也要自己干成"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自效能驱动把障碍转化为可信度证据",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "主动现场演示残障动作",
+        "behavioral_notes": "用脚穿针、系鞋带、打字作为'练一练谁都能会'的证明"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "地位敏感度较高时，去污名压力转为成就焦虑",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "怕成负担、怕让人失望",
+        "behavioral_notes": "流量越大越焦虑'做不好让大家失望'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "控制需求高使其倾向全流程自己把控",
+        "when": {
+          "control_need": ">=0.7"
+        },
+        "disposition": "从种植到打包到算账样样自己来",
+        "behavioral_notes": "'现在会开货车、会算账、会打包，样样都得自己来'，但规模化后此倾向与履约能力冲突"
+      }
+    ]
+  }
+}

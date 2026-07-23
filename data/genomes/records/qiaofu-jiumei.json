@@ -1,0 +1,262 @@
+{
+  "person_id": "qiaofu-jiumei",
+  "display_name": "巧妇9妹（甘有琴）",
+  "name_en": "Gan Youqin (Qiaofu 9 Mei)",
+  "region": "CN",
+  "industries": [
+    "三农内容",
+    "农产品电商"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 16
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/qiaofu-jiumei/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/qiaofu-jiumei/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/qiaofu-jiumei/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/qiaofu-jiumei/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "qiaofu-jiumei",
+    "source": "qiaofu-jiumei-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.62,
+        "evidence": "分拣的时候把烂的坏的都挑出来，我们不能砸自己招牌。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "一开始拍视频就是记录生活，没想到会有这么多人看。"
+      },
+      "trust_propensity": {
+        "score": 0.68,
+        "evidence": "大家做事我放心，都是乡里乡亲，不会偷懒。"
+      },
+      "risk_appetite": {
+        "score": 0.45,
+        "evidence": "名气大了责任也大了，我不敢乱来，一乱来乡亲们跟着受影响。"
+      },
+      "self_efficacy": {
+        "score": 0.72,
+        "evidence": "我小时候就在这山里长大，这些活我样样都会干。"
+      },
+      "autonomy_need": {
+        "score": 0.5,
+        "evidence": "我一个人力量小，带着一村人才能做大事。"
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "我最开心的是看到乡亲们脸上的笑，钱是次要的。"
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "我就是个农村妇女，能被大家喜欢我很感恩。"
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "农村的东西不值钱，卖不出去就烂在地里，看着心疼。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "助农共同体模型",
+        "rule": "所有行为最终回归'帮乡亲们把东西卖出去、一起致富'这一价值判断",
+        "evidence": [
+          "我做这个不是为了红，是想带着乡亲们一起脱贫。",
+          "别人红了想着自己，我红了想着的是怎么带更多人。"
+        ]
+      },
+      {
+        "name": "人格背书信任模型",
+        "rule": "用本人在场、可追责、售后承诺来替代抽象品牌信任",
+        "evidence": [
+          "不好吃你来找我，我巧妇9妹就在这里，跑不掉的。",
+          "家人们放心买，坏果我们包赔，收到有问题拍照发我。"
+        ]
+      },
+      {
+        "name": "真实感/在地稀缺模型",
+        "rule": "以'城里吃不到''山里货''现摘现挖'的原产地真实性作为价值论据",
+        "evidence": [
+          "我们这个地方山清水秀，种出来的东西你在城里吃不到这个味。",
+          "别看它长得丑，山里的东西就是这个样，越丑越好吃。"
+        ]
+      },
+      {
+        "name": "务实做事模型",
+        "rule": "拒绝大道理，把判断锚定在具体产品与具体动作上",
+        "evidence": [
+          "说实话我也不懂什么大道理，就是踏踏实实做事。",
+          "我文化不高，但我知道做人要讲良心，做生意也一样。"
+        ]
+      },
+      {
+        "name": "损失厌恶/不浪费模型",
+        "rule": "以'烂在地里''会哭'的损失叙事驱动紧迫感与行动",
+        "evidence": [
+          "农民一年到头就靠这点收成，卖不出去真的会哭。",
+          "我们干农活的人，最看不得东西浪费。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "要建立信任",
+        "then": "现场试吃加人格担保加售后包赔",
+        "evidence": "你尝一口就知道我没骗你，山里货就是不一样。"
+      },
+      {
+        "if": "产品卖相不佳",
+        "then": "把缺陷转化为真实性卖点",
+        "evidence": "别看它长得丑，山里的东西就是这个样，越丑越好吃。"
+      },
+      {
+        "if": "需要促成下单",
+        "then": "制造时间/数量稀缺感",
+        "evidence": "这个真的不多了，卖完这批要等下一季了啊。"
+      },
+      {
+        "if": "被质疑赚钱动机",
+        "then": "正面承认赚钱但强调不坑人",
+        "evidence": "有人质疑我卖东西赚钱，我做生意当然要赚钱，但我不坑人。"
+      },
+      {
+        "if": "遇到不懂的领域",
+        "then": "承认文化低但主动向年轻人学",
+        "evidence": "我读书少，但我肯学，不懂就问年轻人。"
+      },
+      {
+        "if": "涉及品控环节",
+        "then": "严格挑拣保招牌",
+        "evidence": "分拣的时候把烂的坏的都挑出来，我们不能砸自己招牌。"
+      },
+      {
+        "if": "承诺已给出",
+        "then": "认死理必须兑现",
+        "evidence": "我这个人就是认死理，答应人的事一定做到。"
+      }
+    ],
+    "value_weights": {
+      "助农共同体利益": 0.3,
+      "个人可信/人设真实性": 0.22,
+      "商业变现与规模": 0.2,
+      "售后诚信与品控": 0.16,
+      "公共扶贫叙事绑定": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "'不赚钱只帮忙/钱是次要'的助农人设",
+        "force_b": "商业变现与'全网最低'促单话术需要利润",
+        "behavioral_signature": "同一场景既说'我们不赚钱主要帮乡亲卖'，又强调'全网最低''做生意当然要赚钱'，形成价格与动机叙事的逻辑张力（dim-05 决策4/7 言行落差）"
+      },
+      {
+        "force_a": "'一个手机起家、两口子一起干'的素人农妇原始叙事",
+        "force_b": "订单剧增后接受团队/供应链/打包仓的公司化运营",
+        "behavioral_signature": "口播仍维持'就一个手机''我们两口子一起干'，实际由MCN与团队承接（dim-05 决策2 明确的言行落差点）"
+      },
+      {
+        "force_a": "个人人格担保'跑不掉的''坏果包赔'",
+        "force_b": "规模化后一天数千单，履约难以亲力亲为",
+        "behavioral_signature": "继续用第一人称承诺售后，但规模化后执行成为投诉焦点（dim-05 决策5 潜在言行落差）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "农产品滞销/浪费",
+        "reaction": "心疼、哭腔式共情",
+        "escalation": "转化为'卖不出去真的会哭'的强情感动员，推动紧迫促单"
+      },
+      {
+        "trigger": "被质疑借助农牟利",
+        "reaction": "正面回应而非回避",
+        "escalation": "承认赚钱但立即拉���道德底线'但我不坑人''做人要讲良心'"
+      },
+      {
+        "trigger": "名气带来的责任压力",
+        "reaction": "自我约束、谨慎",
+        "escalation": "'我不敢乱来，一乱来乡亲们跟着受影响'，将个人风险与集体绑定放大自律"
+      },
+      {
+        "trigger": "订单缺口/村民无活可干",
+        "reaction": "焦急",
+        "escalation": "'没订单我比谁都急'，把集体收入压力内化为个人焦虑"
+      }
+    ],
+    "blind_spots": [
+      "助农叙事与实际利润归属的错位，可能未意识到'帮农户'话术与团队/MCN变现之间的张力 [媒体/自媒体质疑-2019~2021]",
+      "'自家果园/走地鸡'镜头与实际货源边界模糊，存在贴牌代发嫌疑而本人叙事未澄清 [消费者投诉/电商评价-2020~2021]",
+      "对生鲜坏果、缺斤少两、物流延迟等品控售后系统性问题的规模化执行力估计不足 [平台投诉/退货反馈-2020~2021]",
+      "'一个手机起家'朴素叙事与专业团队运作现实的落差认知不足 [行业观察文章-2020~2022]",
+      "对'扶贫标签过度使用/内容套路化真实性存疑'的行业性风险缺乏自省 [行业分析-2021~2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "共情反应度高时，倾向用损失/苦情叙事驱动决策与促单",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "情感动员优先于数据论证",
+        "behavioral_notes": "反复使用'烂在地里''会哭''看着心疼'制造情感紧迫，易被批评为悲情营销"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "信任倾向高时，用'乡里乡亲'替代制度化管控",
+        "when": {
+          "trust_propensity": ">=0.65"
+        },
+        "disposition": "以人情关系承接协作与品控",
+        "behavioral_notes": "'大家做事我放心，不会偷懒'——依赖人际信任，规模化后品控与售后风险暴露"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "自我效能高时，倾向亲力亲为/第一人称担保而非授权系统",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "个人背书兜底一切承诺",
+        "behavioral_notes": "'样样都会干''跑不掉的''坏果包赔'——个人信用与规模化执行产生结构性矛盾"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "亲密需求高时，将集体利益内化为个人情绪与自律边界",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "决策以'乡亲受不受影响'为约束",
+        "behavioral_notes": "'一乱来乡亲们跟着受影响''没订单我比谁都急'，集体绑��强化行为自律但也放大道德风险"
+      }
+    ]
+  }
+}

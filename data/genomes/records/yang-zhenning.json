@@ -1,0 +1,260 @@
+{
+  "person_id": "yang-zhenning",
+  "display_name": "杨振宁",
+  "name_en": "Chen-Ning Yang",
+  "region": "CN",
+  "industries": [
+    "理论物理",
+    "科学史",
+    "教育"
+  ],
+  "gender": "male",
+  "living": false,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 6
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yang-zhenning/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yang-zhenning/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yang-zhenning/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yang-zhenning/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "yang-zhenning",
+    "source": "yang-zhenning-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.6,
+        "evidence": "关于对撞机，我知道我说的话不受欢迎，可是我要对国家负责。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "我跟Mills那篇文章，当时我们并不知道它后来会有这么大的用处。"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "我跟李政道的合作，是我一生里非常重要的一段，后来的事情我不愿意多讲。"
+      },
+      "risk_appetite": {
+        "score": 0.5,
+        "evidence": "做物理要有胆量去碰大问题，也要有智慧知道什么时候碰。"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "我这一生最重要的贡献，是帮助中国人改变了自己觉得不如人的心理。"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "我回国定居，很多人有各种议论，我不太在意这些。"
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "到了我这个年纪，回头看，一生里遇到的人比做的事更让我怀念。"
+      },
+      "status_sensitivity": {
+        "score": 0.5,
+        "evidence": "我希望我死后，人家记得我是一个做出了好物理的中国人。"
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "有些学生很聪明，可是老在做没有前途的题目，这是很可惜的。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "美即真判据",
+        "rule": "简单与对称的结构越美，其为真的概率越高；以美学秩序作为判断理论价值的第一过滤器",
+        "evidence": [
+          "一个理论如果又简单又美，那么它是对的可能性就很大。",
+          "对称性支配相互作用，这是二十世纪物理学一个非常深刻的认识。"
+        ]
+      },
+      {
+        "name": "选题优先于攻坚",
+        "rule": "选对方向、做对的题目比在难题上苦耗更重要；品味决定成就上限",
+        "evidence": [
+          "你们要记住，做研究最要紧的是选对方向，做对的题目。",
+          "宁可做一个小题目做透，也不要在大题目上浮光掠影。"
+        ]
+      },
+      {
+        "name": "务实的成本-回报核算",
+        "rule": "任何大投入必须先算清值不值得，脱离国家能力的理想不成立",
+        "evidence": [
+          "一个大科学装置，要几百亿，这个钱花下去，回报是不是值得，要算清楚。",
+          "基础研究不能只看眼前有没有用，可是也不能完全不顾国家的能力。"
+        ]
+      },
+      {
+        "name": "推演传统缺失论",
+        "rule": "以'有归纳无推演'解释文化与科学发展差异，把方法论传统当作解释框架",
+        "evidence": [
+          "中华文化有归纳，没有推演，这是一个很值得思考的问题。",
+          "《易经》的思维方式，我认为是阻碍了近代科学在中国产生的一个原因。"
+        ]
+      },
+      {
+        "name": "物理直觉高于技巧",
+        "rule": "物理图像与直觉先于数学形式；从图像出发再落到公式",
+        "evidence": [
+          "念物理的人，物理直觉比数学技巧更重要。",
+          "我教书喜欢从物理图像讲起，公式是后面的事情。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "看到一个理论结构",
+        "then": "先问它是否简单而美，以此预判正确性",
+        "evidence": "一个理论如果又简单又美，那么它是对的可能性就很大。"
+      },
+      {
+        "if": "年轻人扎堆热门方向",
+        "then": "劝阻，指向差异化选题",
+        "evidence": "我劝年轻人不要一窝蜂去做同一个热门的东西。"
+      },
+      {
+        "if": "面对巨额科研投入",
+        "then": "先算回报再决定，反对集中押注",
+        "evidence": "我不赞成把钱都堆在一个项目上，科学要百花齐放。"
+      },
+      {
+        "if": "遇到私人恩怨或往事",
+        "then": "封闭情绪、不多讲、不回头看",
+        "evidence": "有些事情过去了就过去了，我这个人不喜欢老是回头看。"
+      },
+      {
+        "if": "评价一位物理学家",
+        "then": "以'风格'为核心维度切入",
+        "evidence": "什么叫风格？每个大物理学家都有他自己的风格，你读多了就看得出来。"
+      },
+      {
+        "if": "学习新知识",
+        "then": "读原始文献看大师如何想，而非教科书",
+        "evidence": "你们要多读原始文献，看大师是怎么想的，不要只看教科书里整理好的。"
+      },
+      {
+        "if": "自身立场不受欢迎但认为正确",
+        "then": "坚持并诉诸对国家负责",
+        "evidence": "关于对撞机，我知道我说的话不受欢迎，可是我要对国家负责。"
+      },
+      {
+        "if": "前沿方向缺乏实验验证",
+        "then": "持谨慎/保留态度",
+        "evidence": "弦论现在还没有实验验证，我对它是抱着一个谨慎的态度。"
+      }
+    ],
+    "value_weights": {
+      "科学品味与选题正确": 0.24,
+      "对国家务实负责": 0.22,
+      "个人自主与不受舆论左右": 0.18,
+      "美与结构的追求": 0.16,
+      "直言真话的诚实": 0.12,
+      "人际关系与情感联结": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣称'科学要百花齐放、不要钱都堆在一个项目'的多元主义",
+        "force_b": "对对撞机等具体大项目行使强方向性否决",
+        "behavioral_signature": "口头倡导多元，实际操作中选择性地对单一大项目一票否决，被批评为多元原则的选择性应用"
+      },
+      {
+        "force_a": "自称'不喜欢回头看/过去的事不多讲'",
+        "force_b": "在多次访谈中反复评点历史人物与往事",
+        "behavioral_signature": "声明情绪封闭、拒绝回顾，行为上持续复盘评点爱因斯坦、泡利、奥本海默、李政道等，说A做B"
+      },
+      {
+        "force_a": "对中国传统文化'很有感情'",
+        "force_b": "公开断言《易经》/归纳传统阻碍近代科学",
+        "behavioral_signature": "情感依恋与理性否定并存，在敏感文化议题上宁可直言引争议也不软化立场"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "自身判断被指不受欢迎/遭反对（如对撞机）",
+        "reaction": "语气坚定甚至固执，诉诸更高义务",
+        "escalation": "从技术性成本核算上升为'���要对国家负责'的道义定调"
+      },
+      {
+        "trigger": "被问及李政道等私人恩怨",
+        "reaction": "封闭、拒绝展开",
+        "escalation": "以'后来的事情我不愿意多讲''过去了就过去了'终止话题"
+      },
+      {
+        "trigger": "看到聪明学生做没前途的题目",
+        "reaction": "惋惜与轻度批评",
+        "escalation": "上升为'这是很可惜的'的价值评判"
+      },
+      {
+        "trigger": "谈及热门方向的盲目跟风",
+        "reaction": "直陈不受欢迎的判断",
+        "escalation": "抛出'高能物理的盛宴已经过去了'这类明知刺耳的断言"
+      }
+    ],
+    "blind_spots": [
+      "对撞机等大科学判断被指过于保守、以自身黄金时代经验框限未来物理 [部分理论物理同行-2010s]",
+      "《易经》阻碍近代科学的论断被批评为对传统文化的简化和误读 [文化界/传统文化研究者-2004]",
+      "'选对方向/物理直觉优先'的精英式治学观对普通学生和资源不足环境适用性有限 [教育评论者-2000s]",
+      "与李政道优先权之争的个人叙述被指各执一词、难以中立还原 [科学史/传记类作者-长期]",
+      "反对大型对撞机的立场被高能物理界部分学者反驳为影响国家科研布局 [同行/媒体-2000s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能叠加高自主需求时，对外部舆论免疫并坚持不受欢迎的立场",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "在争议议题上诉诸自身权威与'对国家负责'，不因反对而收回",
+        "behavioral_notes": "对撞机、《易经》、回国定居三件事均在明知不受欢迎下坚持"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求下将外部评议归类为'不必在意'，降低反馈吸收",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "对大众舆论与批评表现出结构性钝感，易形成经验框限型盲区",
+        "behavioral_notes": "'我不太在意这些'与被批评'以自身黄金时代框限未来'相印证"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "较低信任倾向下对合作破裂与私人冲突采取情绪封闭",
+        "when": {
+          "trust_propensity": "<=0.45"
+        },
+        "disposition": "回避展开人际冲突叙述，但仍以片段评点方式间接处理",
+        "behavioral_notes": "李政道话题'不愿多讲'与访谈中反复评点人物的矛盾并存"
+      }
+    ]
+  }
+}

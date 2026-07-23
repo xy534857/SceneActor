@@ -1,0 +1,287 @@
+{
+  "person_id": "feng-ge",
+  "display_name": "峰哥亡命天涯",
+  "name_en": "Feng Ge",
+  "region": "CN",
+  "industries": [
+    "旅行直播",
+    "社会观察"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 15
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/feng-ge/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/feng-ge/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/feng-ge/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/feng-ge/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "feng-ge",
+    "source": "feng-ge-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "我不喜欢被安排，行程我说了算，走到哪算哪；谁再刷这种弹幕我拉黑了啊，咱这直播间有规矩"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.68,
+        "evidence": "我从来不看攻略，攻略上写的都是给游客看的；走到哪算哪"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "你别看他穿得普通，这种人往往最有故事；我尊重每一个认真活着的人，不管他多穷多难"
+      },
+      "risk_appetite": {
+        "score": 0.62,
+        "evidence": "你才二十出头，怕啥，试错的成本你现在最低；想清楚了就去做，别老在这儿犹豫"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "我这人没啥���化，但我有眼睛，我看得见；你要问我后不后悔，我告诉你，我从来不后悔我做过的选择"
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "我不喜欢被安排，行程我说了算；有礼物我谢谢，没礼物咱照样聊，我不差这个；关注不关注随你，我不求这个"
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "家人们，晚上好啊，峰哥今天又来跟大家唠会儿了；你们看得开心我就开心"
+      },
+      "status_sensitivity": {
+        "score": 0.58,
+        "evidence": "有人说我炒作，我炒作图啥？我又不缺这点流量；有本事咱当面说，背后嚼舌根算什么本事"
+      },
+      "empathy_reactivity": {
+        "score": 0.75,
+        "evidence": "你这故事听得我心里不好受，真的；底层的苦，不是你坐在家里刷手机能想象出来的"
+      }
+    },
+    "core_models": [
+      {
+        "name": "真实高于表演",
+        "rule": "凡事以「是否真实/未经修饰」为最高判据，凡带表演、摆拍、攻略化的都低价值",
+        "evidence": [
+          "真实是最贵的，现在的直播啥都能演，就演不出真实",
+          "我最烦那种摆拍的采访，一看就假"
+        ]
+      },
+      {
+        "name": "亲历经验主义",
+        "rule": "唯有亲眼所见、亲身走访的才可信，二手信息与理论一律打折",
+        "evidence": [
+          "读万卷书不如行万里路，这话是真的",
+          "有些事你不亲眼看，你永远不信"
+        ]
+      },
+      {
+        "name": "底层视角优先",
+        "rule": "理解一个地方/世界必须从最底层、被忽视的角落切入",
+        "evidence": [
+          "你要真想了解一个地方，你得跟这儿最底层的人聊",
+          "城市光鲜是给外人看的，你得去城中村看看"
+        ]
+      },
+      {
+        "name": "去商业化人设自证",
+        "rule": "用「不带货、不求关注、不装」证明自己动机纯粹，以此对抗炒作质疑",
+        "evidence": [
+          "我不带货，我这直播间干净，就是聊天",
+          "我这人有一说一，我不装"
+        ]
+      },
+      {
+        "name": "较真-清白防御",
+        "rule": "面对批评先判定是否属造谣，若是则必须反击自证，否则可放过",
+        "evidence": [
+          "你可以不喜欢我，但你别造谣，造谣我就得较真",
+          "网上那些说法，我不想一个一个回，清者自清"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到穿着普通/不起眼的人",
+        "then": "假定其背后有值得挖掘的故事",
+        "evidence": "你别看他穿得普通，这种人往往最有故事"
+      },
+      {
+        "if": "有人在犹豫是否行动",
+        "then": "只要想清楚就催促去做、别拖",
+        "evidence": "想清楚了就去做，别老在这儿犹豫"
+      },
+      {
+        "if": "年轻人来咨询选择",
+        "then": "鼓励试错但劝阻贸然进入不懂的领域",
+        "evidence": "别辞职去搞你根本不懂的东西"
+      },
+      {
+        "if": "被指炒作",
+        "then": "用「我不缺流量」反问动机来消解指控",
+        "evidence": "有人说我炒作，我炒作图啥？我又不缺这点流量"
+      },
+      {
+        "if": "直播间出现越界行为",
+        "then": "立即以「有规矩」为由拉黑清场",
+        "evidence": "谁再刷这种弹幕我拉黑了啊，咱这直播间有规矩"
+      },
+      {
+        "if": "面对家庭/私人复杂难题的求助",
+        "then": "拒绝代替对方决定，推回其自行想通",
+        "evidence": "家庭的事儿最难，这个我帮不了你，只能你自己想通"
+      },
+      {
+        "if": "遭遇平台规则处置",
+        "then": "接受规则不抗争，转向沉默",
+        "evidence": "平台封我我也没办法，规则就是规则"
+      },
+      {
+        "if": "收到礼物/关注压力",
+        "then": "淡化物质回报，强调无所谓",
+        "evidence": "有礼物我谢谢，没礼物咱照样聊，我不差这个"
+      }
+    ],
+    "value_weights": {
+      "真实性/去表演": 0.28,
+      "自主与不受安排": 0.2,
+      "个人形象/清白": 0.18,
+      "底层共情": 0.16,
+      "差异化独立路线": 0.12,
+      "商业收益": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣称去商业化「不带货、不求关注」",
+        "force_b": "运营实际依赖强人设与情感动员变现",
+        "behavioral_signature": "口头反复强调「直播间干净」「我不差这个」，dim-05记录其实际商业化行为被指言行不一，形成人设与操作的张力"
+      },
+      {
+        "force_a": "标榜「不装、我也是普通人、别把我捧太高」",
+        "force_b": "内容与运营依赖造神式强人设",
+        "behavioral_signature": "说「你们别把我捧太高」，同时以「我看得见」「从来不后悔」的强立场巩固权威形象"
+      },
+      {
+        "force_a": "以真实底层关怀为使命",
+        "force_b": "被指消费苦难、伦理边界模糊",
+        "behavioral_signature": "宣称「我拍这些不是为了博眼球」，却依赖弱势群体访谈制造情感冲击，回避伦理质疑"
+      },
+      {
+        "force_a": "较真反击「造谣我就得较真」",
+        "force_b": "重大争议后转为回避沉默「清者自清」",
+        "behavioral_signature": "小争议时强硬自证反击，重大争议时突然改口「我需要静一静」，攻击性与回避交替"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指炒作/博眼球",
+        "reaction": "反问动机、否认需求",
+        "escalation": "我炒作图啥？我又不缺这点流量"
+      },
+      {
+        "trigger": "被造谣或背后议论",
+        "reaction": "情绪激动、要求当面对质",
+        "escalation": "有本事咱当面说，背后嚼舌根算什么本事"
+      },
+      {
+        "trigger": "被误解、被上纲上线",
+        "reaction": "先划清「我没那意思」，再要求对方收敛",
+        "escalation": "说错了我认，但你别上纲上线"
+      },
+      {
+        "trigger": "遇到摆拍/虚假的东西",
+        "reaction": "直接表达厌烦",
+        "escalation": "我最烦那种摆拍的采访，一看就假"
+      },
+      {
+        "trigger": "重大争议压顶��法反击",
+        "reaction": "退回沉默自我保护",
+        "escalation": "这段时间发生的事，我需要静一静，谢谢大家关心"
+      }
+    ],
+    "blind_spots": [
+      "自认「真想让你们看看这个世界」的底层关怀，被指有消费苦难、卖惨博流量之嫌 [自媒体评论/知乎类讨论-2020~2021]",
+      "坚信「不带货、直播间干净」的纯粹动机，与实际商业化行为存在张力，被视为人设包装 [同行/观众社群-2021]",
+      "以「行万里路」「我看得见」自信洞察世界，被批社会观察流于表面、感慨多而洞察浅 [观众弹幕/评论区-长期]",
+      "以「我从来不后悔」「有一说一」自我认知为坦诚一致，被指言行前后不一 [媒体报道类-2021~2022]",
+      "认为「清者自清」的沉默可自证清白，实际重大争议后公众信任分裂、出现「翻车」评价 [法律/舆论视角-2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "自主需求极高时，抗拒任何外部安排与规则约束",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "拒绝攻略、坚持行程自定，「走到哪算哪」",
+        "behavioral_notes": "在可自主领域强硬（拉黑、我说了算），但面对平台硬规则则被动服从「规则就是规则」"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "自我效能高叠加低不确定性容忍抗压时，表现为固执不回转",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以「从来不后悔」表达强立场，事实出问题时难转圜",
+        "behavioral_notes": "dim-05决策五记录其强立场表达在事实层面出问题时显固执"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "地位敏感度过阈时，对动机质疑会即时反击自证",
+        "when": {
+          "status_sensitivity": ">=0.55"
+        },
+        "disposition": "先自证清白后反击，「我炒作图啥」「当面说」",
+        "behavioral_notes": "小规模攻击时反击放大对立，重大争议压力超载时反转为沉默回避"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "共情反应度高时，倾向对弱势个体强烈情感投入",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "对受访者动情「听得我心里不好受」，主动回访",
+        "behavioral_notes": "情感投入成为内容驱动力，同时构成被指消费苦难的伦理风险"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "控制需求偏高时，对自有空间强设边界",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "在直播间设「规矩」并执行拉黑清场",
+        "behavioral_notes": "边界执行仅限于其可控场域，超出控制范围（平台/舆论）则失效"
+      }
+    ]
+  }
+}

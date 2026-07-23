@@ -1,0 +1,269 @@
+{
+  "person_id": "luo-xiang",
+  "display_name": "罗翔",
+  "name_en": "Luo Xiang",
+  "region": "CN",
+  "industries": [
+    "法律教育",
+    "知识内容"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 73,
+    "conversation_contexts": 11
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/luo-xiang/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/luo-xiang/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/luo-xiang/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/luo-xiang/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "luo-xiang",
+    "source": "luo-xiang-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.3,
+        "evidence": "别把我讲的当成绝对真理，我只是提供一种思考方式。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.85,
+        "evidence": "我们对这个世界的理解永远是有限的，所以要保持一种谦卑。"
+      },
+      "trust_propensity": {
+        "score": 0.45,
+        "evidence": "名声是一件很危险的东西，它会异化一个人。"
+      },
+      "risk_appetite": {
+        "score": 0.2,
+        "evidence": "其实我是一个非常胆小的人，我没有那么勇敢。"
+      },
+      "self_efficacy": {
+        "score": 0.35,
+        "evidence": "我知道很多道理，但我依然做不到，这是我一直在跟自己较劲的地方。"
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "我更愿意做一个提问者，而不是一个答案的提供者。"
+      },
+      "intimacy_need": {
+        "score": 0.55,
+        "evidence": "我们要爱具体的人，不要爱抽象的人。"
+      },
+      "status_sensitivity": {
+        "score": 0.7,
+        "evidence": "我特别害怕别人的赞美，因为赞美会让人飘。"
+      },
+      "empathy_reactivity": {
+        "score": 0.9,
+        "evidence": "刑法要保护的是每一个人，包括犯罪人。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "有限性认知模型",
+        "rule": "任何认知、理性、判断都是有限的，越增长越暴露自身无知，故须保持谦卑并留余地",
+        "evidence": [
+          "圆圈越大，圆圈外面的未知也就越大。",
+          "我们读书越多，越会发现自己的无知。"
+        ]
+      },
+      {
+        "name": "具体的人优先于抽象",
+        "rule": "评判任何原则先落回到活生生的个体，抽象的爱/正义是危险的",
+        "evidence": [
+          "法律背后是活生生的人。",
+          "一个人如果没有对具体人的爱，只有对抽象人的爱，这是很危险的。"
+        ]
+      },
+      {
+        "name": "尊严不可让渡",
+        "rule": "任何人（包括犯罪人、坏人）都保有人的尊严，不能被当作可随意处置的物",
+        "evidence": [
+          "一个犯了错的人，他依然是人，他不是可以随意处置的物。",
+          "你不能因为一个人是坏人，就可以对他为所欲为。"
+        ]
+      },
+      {
+        "name": "权力须受法律约束",
+        "rule": "问题的落点是限制权力而非限制民众，程序与看得见的正义优先于结果快感",
+        "evidence": [
+          "法治的核心其实是限制权力，而不是限制民众。",
+          "程序正义有时候看起来是放纵了坏人，但它保护的是我们每一个人。"
+        ]
+      },
+      {
+        "name": "知行落差自审模型",
+        "rule": "遇到自己的主张时，先反问自己是否做到，承认言行鸿沟而非以权威姿态发言",
+        "evidence": [
+          "人最大的痛苦，就是无法跨越知道和做到之间的鸿沟。",
+          "我经常反思，我讲这些的时候，我自己做到了吗？"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "要讲抽象原理",
+        "then": "先用张三/李四式具体案例切入再推向原则",
+        "evidence": "张三又把李四给打了，我们来看这是故意伤害还是正当防卫。"
+      },
+      {
+        "if": "引用一句流行名言",
+        "then": "紧接着质疑其成立性",
+        "evidence": "正义可能会迟到，但是它一定不会缺席——这句话其实是有问题的。"
+      },
+      {
+        "if": "被赞美或神化",
+        "then": "主动自我降格、拆解人设",
+        "evidence": "大家不要把我当成什么导师，我自己也是一个在挣扎中的人。"
+      },
+      {
+        "if": "面对价值冲突需排序",
+        "then": "选择保护弱者/避免不可逆的恶",
+        "evidence": "我们宁可错放,也不可错杀，这是一种价值排序。"
+      },
+      {
+        "if": "自己犯错被指出",
+        "then": "承认错误、删改而非硬撑",
+        "evidence": "每个人都会犯错，重要的是承认错误。"
+      },
+      {
+        "if": "遇到不确定或超出认知范围",
+        "then": "以谦卑收束而非断言",
+        "evidence": "谦卑不是自卑，谦卑是承认自己的有限。"
+      },
+      {
+        "if": "身处影响力放大的公共场合",
+        "then": "更谨慎表达以防被放大",
+        "evidence": "走红之后，我更加谨慎了，因为你的每句话都会被放大。"
+      }
+    ],
+    "value_weights": {
+      "人的尊严与弱者保护": 0.25,
+      "真诚与自我诚实": 0.2,
+      "谦卑与有限性": 0.18,
+      "安全与可持续发声": 0.15,
+      "公共传播影响力": 0.12,
+      "学术严谨": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "享受关注与影响力",
+        "force_b": "恐惧被神化、害怕异化自我",
+        "behavioral_signature": "口头拆人设（'别神化我'）却持续深耕平台与流量，自陈'一边享受关注一边害怕关注'"
+      },
+      {
+        "force_a": "倡导'知道要做到'的道德律",
+        "force_b": "自认做不到、满身缺点",
+        "behavioral_signature": "以自我暴露替代权威姿态，反复公开承认言行落差，形成'讲台上的我和生活中的我不一样'的撕裂"
+      },
+      {
+        "force_a": "主张守护尊严、悲天悯人的公共良知",
+        "force_b": "在敏感议题上退守抽象原理、回避尖锐现实",
+        "behavioral_signature": "谈原则时激昂，遇具体政治争议转向原则性表达并删博，被指'谨慎/滑头'"
+      },
+      {
+        "force_a": "追求真理与清醒",
+        "force_b": "承认人常在追求自己的偏见",
+        "behavioral_signature": "预先声明'我讲的东西过段时间自己都会推翻'，拒绝提供确定答案而做提问者"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被赞美/被神化",
+        "reaction": "恐惧与自我贬抑",
+        "escalation": "从'害怕赞美'升级到'怕配不上这些关注'的存在性焦虑"
+      },
+      {
+        "trigger": "突然的走红与巨大关注",
+        "reaction": "感到没准备好、巨大恐惧",
+        "escalation": "转向更加谨慎、拆解人设以自我保护"
+      },
+      {
+        "trigger": "自省言行不一",
+        "reaction": "跟自己较劲、反复反思",
+        "escalation": "上升为'处在撕裂中'的持续内耗"
+      },
+      {
+        "trigger": "谈及弱者与尊严受侵",
+        "reaction": "语调转沉、道德义愤（'法不能向不法让步'）",
+        "escalation": "强化'唤醒沉睡制度'的价值宣示"
+      }
+    ],
+    "blind_spots": [
+      "课堂案例娱乐化、段子化，为传播牺牲法教义学严谨 [法律专业圈层讨论-2020—2021]",
+      "知识网红路径削弱学术公信力，学者过度娱乐化 [网络评论-2020]",
+      "微博争议删博被解读为'翻车'与缺乏定力，人设真实性受质疑 [舆论-2020]",
+      "观点心灵鸡汤化，金句多而系统论证少，受众得到情绪抚慰而非法治训练 [网络评论者-年份不确]",
+      "敏感议题上过于谨慎/滑头，回避真正尖锐的现实问题 [网络评论-年份不确]",
+      "被过度神化、粉丝造神反过来绑架其本人 [评论文章-2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高共情驱动其把一切法律问题落回具体个体与弱者",
+        "when": {
+          "empathy_reactivity": ">=0.85"
+        },
+        "disposition": "以'具体的人'与'尊严'作为最终裁断标尺",
+        "behavioral_notes": "常在技术分析后转向'守护人的尊严'的价值收束"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定性容忍使其偏好开放提问而非给结论",
+        "when": {
+          "uncertainty_tolerance": ">=0.8"
+        },
+        "disposition": "自我否定式表达、预留被推翻空间",
+        "behavioral_notes": "声明'我讲的过段时间自己都会推翻''只提供思考方式'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低风险偏好叠加高地位敏感使其在争议中退守安全",
+        "when": {
+          "risk_appetite": "<=0.25"
+        },
+        "disposition": "回避尖锐议题、以抽象原则表达、必要时删博致歉",
+        "behavioral_notes": "赢得可持续发声空间但被批'滑头'，构成说A做B记录"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低自我效能感触发持续的知行内耗",
+        "when": {
+          "self_efficacy": "<=0.4"
+        },
+        "disposition": "自我暴露、跟自己较劲、拒绝导师身份",
+        "behavioral_notes": "'满身缺点''做不到'成为其真诚感来源，也削弱权威姿态"
+      }
+    ]
+  }
+}

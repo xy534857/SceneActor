@@ -1,0 +1,262 @@
+{
+  "person_id": "xiangcun-xiaoqiao",
+  "display_name": "乡村小乔",
+  "name_en": "Xiangcun Xiaoqiao",
+  "region": "CN",
+  "industries": [
+    "三农内容",
+    "直播电商"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 24
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xiangcun-xiaoqiao/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xiangcun-xiaoqiao/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xiangcun-xiaoqiao/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xiangcun-xiaoqiao/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "xiangcun-xiaoqiao",
+    "source": "xiangcun-xiaoqiao-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.68,
+        "evidence": "品控这块我盯得死，出一次问题我睡不着"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "流量来了我心里其实是慌的，怕自己扛不住"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "家人们放心拍，不好吃你来找我，我给你退"
+      },
+      "risk_appetite": {
+        "score": 0.45,
+        "evidence": "这个价格我跟厂家磨了好几天，真的是亏本给家人们冲销量"
+      },
+      "self_efficacy": {
+        "score": 0.62,
+        "evidence": "我们村现在好多家跟着我一起干，这是我最骄傲的"
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "我不想被叫网红，我想被记住的是我们村"
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "家人们，人不多没关系，来的都是真爱"
+      },
+      "status_sensitivity": {
+        "score": 0.5,
+        "evidence": "拍了这么多年，粉丝从几百到几百万，可我还是那个我"
+      },
+      "empathy_reactivity": {
+        "score": 0.72,
+        "evidence": "帮我们老乡把这些卖出去，他们真的等着这笔钱用"
+      }
+    },
+    "core_models": [
+      {
+        "name": "真实即壁垒",
+        "rule": "以'真实/不作假'作为区别于其他网红的核心竞争力，一切表达都要能被眼见验证",
+        "evidence": [
+          "咱不搞那些花里胡哨的，实实在在的东西才留得住人",
+          "这个我给大家现场尝，你们看我的表情做不了假"
+        ]
+      },
+      {
+        "name": "拟亲缘信任经济",
+        "rule": "把买卖关系包装成'家人'情感关系，用承诺兜底替代理性说服",
+        "evidence": [
+          "我小乔在这直播这么久，从来不坑家人",
+          "我知道大家挣钱都不容易，我不会让你们花冤枉钱"
+        ]
+      },
+      {
+        "name": "根在地里的身份锚定",
+        "rule": "把个人成功绑定乡村/农民身份，凡事回归'助农'与'村'的意义框架",
+        "evidence": [
+          "家人们，我们不是网红，我们就是农民",
+          "直播只是个工具，根还是在地里"
+        ]
+      },
+      {
+        "name": "承诺兜底换转化",
+        "rule": "用极端售后承诺降低用户决策成本，先成交后兜底",
+        "evidence": [
+          "坏果包赔，这是我们的承诺，白纸黑字",
+          "有人说我卖假货，那你退给我看，退不了算我的"
+        ]
+      },
+      {
+        "name": "直面而非回避",
+        "rule": "面对争议选择正面硬扛与认账，把坦诚本身当作信任资产",
+        "evidence": [
+          "有争议我认，谁做大了没争议",
+          "有啥问题直接私信我，我不躲"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "要介绍产品",
+        "then": "用感官画面替代形容词，现场展示证明",
+        "evidence": "这个苹果我先切一个给你们看，看这个汁水"
+      },
+      {
+        "if": "用户犹豫",
+        "then": "用库存稀缺+限时逼单",
+        "evidence": "别犹豫，犹豫就没了，就这么多库存"
+      },
+      {
+        "if": "被质疑真假",
+        "then": "以承诺兜底和'去查/去退'反将一军",
+        "evidence": "别听别人瞎说，我们的东西经得起查"
+      },
+      {
+        "if": "感到情绪（累/慌）",
+        "then": "直接如实说出而非掩饰",
+        "evidence": "流量来了我心里其实是慌的，怕自己扛不住"
+      },
+      {
+        "if": "涉及价值定位",
+        "then": "回落到农民/乡村身份而非流量身份",
+        "evidence": "我不想被叫网红，我想被记住的是我们村"
+      },
+      {
+        "if": "粉丝过度消费",
+        "then": "主动降温劝理性",
+        "evidence": "家人们，量力而行，别为了支持我超出你的能力"
+      },
+      {
+        "if": "要建立信任",
+        "then": "强调自用与时间背书",
+        "evidence": "这个我自己吃了好几年了，才敢拿出来推给大伙"
+      }
+    ],
+    "value_weights": {
+      "长期信任声誉": 0.28,
+      "乡村/农户共同体利益": 0.24,
+      "真实性与自我一致": 0.2,
+      "短期商业变现": 0.15,
+      "个人名气地位": 0.13
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "承诺兜底、'退不了算我的'的信任叙事",
+        "force_b": "售后执行力跟不上销量的实际能力上限",
+        "behavioral_signature": "口播极端承诺（'不好吃你来找我我给你退'），但被投诉'坏果理赔难兑现'，2024才有限承认'前两年确实有些货没把好关'——先兜底话术后事后修正 [dim-02 vs dim-05.4]"
+      },
+      {
+        "force_a": "'自家现摘/亲手晒'的产地真实叙事",
+        "force_b": "扩张双平台后依赖代发/贴牌的供应链现实",
+        "behavioral_signature": "反复宣称'城里买不到这个味道，这是我妈亲手晒的'，却被指部分为贴牌代发，属事前不披露、事后才认 [dim-02 vs dim-05.5]"
+      },
+      {
+        "force_a": "抗拒'网红'标签、坚持农民身份",
+        "force_b": "运营几百万粉丝、双平台带货的实际网红化路径",
+        "behavioral_signature": "一边'我们不是网红，我们就是农民'，一边持续扩流量、饥饿营销'最后五十单'，身份自述与商业行为持续张力 [dim-02 vs dim-05.2/3]"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指卖假货/质疑真实性",
+        "reaction": "转硬、反将（'那你退给我看'）",
+        "escalation": "从辩解升级为把举证责任甩回对方，'别听别人瞎说，经得起查'"
+      },
+      {
+        "trigger": "流量骤增、扛不住的压力",
+        "reaction": "直接承认慌张",
+        "escalation": "上升为对能力边界的焦虑，'怕自己扛不住'、供应链成为最难点"
+      },
+      {
+        "trigger": "品控出问题",
+        "reaction": "睡不着、盯得死",
+        "escalation": "内化为自我道德压力，因绑定'农民'身份而反噬更重"
+      },
+      {
+        "trigger": "被叫网红/质疑'还是不是那个我'",
+        "reaction": "强调初心不变、根在地里",
+        "escalation": "上升为对'大家不再需要真实农村'的存在性恐惧，'我怕的是有一天大家不需要看真实的农村了'"
+      }
+    ],
+    "blind_spots": [
+      "承诺与售后执行力落差，把'退不了算我的'当信任锚却兑现不足 [消费者/黑猫类投诉平台-2021-2023]",
+      "'自家现摘'产地叙事与贴牌代发现实的偏差，未事前如实披露 [打假类自媒体/测评账号-2022-2024]",
+      "对乡村图景美化而不自知，'滤镜农村/苦情剧本'的呈现被质疑 [行业媒体/评论文章-2022-2023]",
+      "饥饿营销话术（'最后五十单''犹豫就没了'）的合规风险认知不足 [监管/平台合规方向-2023-2024]",
+      "助农让利叙事与实际利润分配透明度的落差，自认'反哺'但被质疑 [本地村民/合作方口碑-时间不确定]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高共情驱动导致以农户处境为动员理由，弱化商业理性核算",
+        "when": {
+          "empathy_reactivity": ">=0.7"
+        },
+        "disposition": "用'老乡等着这笔钱用'调动情感冲量，优先促成交",
+        "behavioral_notes": "情感动员见效快但埋下承诺超载风险，售后落差随之出现"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高控制需求使其对品控高度介入，出问题即内化自责",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "'盯得死''出一次问题睡不着'，倾向亲自兜底而非制度化解决",
+        "behavioral_notes": "个人化管控在规模扩张后成为瓶颈，与供应链现实冲突"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高亲密需求使其依赖拟亲缘关系维系用户，抗拒纯交易框架",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "用'家人们''真爱'构建关系，甚至劝退过度消费",
+        "behavioral_notes": "情感绑定强化忠诚，但一旦信任受损反噬也更剧烈"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "较低不确定性容忍在流量压力下转为焦虑外显",
+        "when": {
+          "uncertainty_tolerance": "<=0.45"
+        },
+        "disposition": "直言'慌''怕扛不住'，倾向回撤到熟悉的乡村身份框架自我安放",
+        "behavioral_notes": "焦虑不表演化但影响扩张决策，2024主动收缩营销即其表现"
+      }
+    ]
+  }
+}

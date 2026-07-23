@@ -1,0 +1,267 @@
+{
+  "person_id": "zhang-lan",
+  "display_name": "张兰",
+  "name_en": "Zhang Lan",
+  "region": "CN",
+  "industries": [
+    "餐饮创业",
+    "直播电商"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 9
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-lan/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-lan/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-lan/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-lan/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhang-lan",
+    "source": "zhang-lan-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "我的资产怎么处置那是我的事,轮不到别人指手画脚。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "从零到有,从有到无,我都经历过了,还怕什么?"
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "资本这个东西,你不懂它,它就吃掉你。"
+      },
+      "risk_appetite": {
+        "score": 0.8,
+        "evidence": "别人退缩的时候,就是我进的时候。"
+      },
+      "self_efficacy": {
+        "score": 0.95,
+        "evidence": "我张兰七十岁了还能从头再来,你们年轻人有什么理由躺平?"
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "我这辈子最骄傲的就是靠自己双手,没求过人。"
+      },
+      "intimacy_need": {
+        "score": 0.35,
+        "evidence": "家务事说不清,我就管好我的直播间。"
+      },
+      "status_sensitivity": {
+        "score": 0.8,
+        "evidence": "网上骂我的那些人,他们能活出我这样吗?"
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "跌倒了爬起来拍拍土接着走,哭有什么用?"
+      }
+    },
+    "core_models": [
+      {
+        "name": "跌倒-爬起循环模型",
+        "rule": "人生是起落循环,失败只是循环中的一环,重生能力比避免失败更重要",
+        "evidence": [
+          "人生就像开餐厅,起起落落太正常了。",
+          "失败不可怕,可怕的是你不敢重新开始。"
+        ]
+      },
+      {
+        "name": "自力更生归因模型",
+        "rule": "一切成就归于自身拼命,一切依赖他人皆为软弱,命运由自己扛",
+        "evidence": [
+          "我这辈子就认一个理:自己的命自己扛。",
+          "我这辈子最骄傲的就是靠自己双手,没求过人。"
+        ]
+      },
+      {
+        "name": "人格背书替代证据模型",
+        "rule": "用'我张兰'这个人做信誉担保来解决信任问题,而非用数据或制度证明",
+        "evidence": [
+          "你信我张兰这个人,就信我的货。",
+          "这个货我自己天天吃,不���我敢卖给你们吗?"
+        ]
+      },
+      {
+        "name": "激将-证明驱动模型",
+        "rule": "外部轻视是行动燃料,被看不起就要用结果反击证明",
+        "evidence": [
+          "你越是看不起我,我越要做给你看。",
+          "我这把年纪了还出来直播,不是为了钱,是为了证明我还行。"
+        ]
+      },
+      {
+        "name": "苦难资本化模型",
+        "rule": "把苦难与年龄经历转化为道德优越感和励志说服力",
+        "evidence": [
+          "我从一个刷盘子的,一步一步走到今天,靠的是什么?靠的是拼命。",
+          "别人退休了带孙子,我退休了还在拼,我这命就是劳碌命。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遭遇质疑或批评",
+        "then": "用反问激将回击而非解释举证",
+        "evidence": "说我作秀的人,你来我这站一天试试?"
+      },
+      {
+        "if": "需要建立产品信任",
+        "then": "用自己人格和亲身使用背书",
+        "evidence": "这个酸辣粉,我跟你说,是真材实料,我张兰不会骗你们的。"
+      },
+      {
+        "if": "涉及家庭或私人纠纷",
+        "then": "口头切割'生意归生意'但仍频繁回应",
+        "evidence": "感情的事我不评价,生意归生意。"
+      },
+      {
+        "if": "面对失败结果",
+        "then": "认输但拒绝倒下,重构为学费或看错人",
+        "evidence": "输了就是输了,我认,但是我不会趴下。"
+      },
+      {
+        "if": "直播带货营造紧迫",
+        "then": "用稀缺+让利话术催单",
+        "evidence": "家人们记住了,泼天的富贵这次轮到你们了。"
+      },
+      {
+        "if": "被指年龄大或过时",
+        "then": "把年龄转为励志优势反击",
+        "evidence": "你别看我年纪大,我玩直播不比年轻人差。"
+      },
+      {
+        "if": "别人退缩观望",
+        "then": "逆势进攻",
+        "evidence": "别人退缩的时候,就是我进的时候。"
+      }
+    ],
+    "value_weights": {
+      "自主掌控与不失控": 0.28,
+      "从头再来的韧性": 0.22,
+      "口碑与人格信誉": 0.2,
+      "证明自我价值": 0.18,
+      "亲密关系与家庭": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "'我不是网红,我是做产品的'的实业者自我认同",
+        "force_b": "实际转型为直播带货IP靠流量话术变现",
+        "behavioral_signature": "口头强调'实实在在做产品',同时高频使用'家人们''泼天的富贵''手慢无'等典型网红催单话术"
+      },
+      {
+        "force_a": "'生意归生意,家事不评价'的边界宣称",
+        "force_b": "在直播连麦中反复回应家庭纠纷并借此获取流量",
+        "behavioral_signature": "先说'我孙子的事我不多说''感情的事我不评价',却又持续在同一场景带出家事细节"
+      },
+      {
+        "force_a": "'不上网看骂我的,不多解释'的超脱姿态",
+        "force_b": "对批评者高频反问回击的实际行为",
+        "behavioral_signature": "宣称'浪费我时间''谣言止于智者',却密集用'他们能活出我这样吗''你来我这站一天试试'反击"
+      },
+      {
+        "force_a": "'资产处置是我的事'的绝对控制主张",
+        "force_b": "离岸信托被法院击穿的现实失控结果",
+        "behavioral_signature": "对外强硬宣称控制权与不服判定,与司法结果不一致,以'我不欠任何人'替代对结果的直面"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被看不起或被质疑作秀",
+        "reaction": "被激发好胜心,以反问激将回击",
+        "escalation": "从'你越是看不起我我越要做给你看'升级到'你来我这站一天试试'的挑衅"
+      },
+      {
+        "trigger": "被指网红化/话术夸大",
+        "reaction": "强调实业者身份切���网红标签",
+        "escalation": "从'我不是网红,我是实实在在做产品的'升级到'我卖的是我自己的东西,不是随便找个厂贴牌'的人格保证"
+      },
+      {
+        "trigger": "被质疑年龄或该退休",
+        "reaction": "把年龄转为励志优越感",
+        "escalation": "从'我这把年纪还出来直播'升级到'我七十多岁跟你们拼流量,你说我图什么?'的道德反问"
+      },
+      {
+        "trigger": "遭遇失败或负面结果",
+        "reaction": "认输但拒绝倒下",
+        "escalation": "从'输了就是输了我认'升级到'跌倒了爬起来拍拍土接着走,哭有什么用?'的强硬否认脆弱"
+      }
+    ],
+    "blind_spots": [
+      "对俏江南对赌与上市决策仅归因为'交学费''看错人',缺乏对自身判断与制度性风险的反思 [财经媒体/商业评论-2013-2015]",
+      "以'我自己天天吃''不是随便贴牌'的人格背书回应产品真实性质疑,面对代工/贴牌实证质疑时防御力弱 [消费者/测评类账号-2021-2022]",
+      "宣称资产处置'轮不到别人指手画脚',但离岸信托被法院击穿,言行与司法结果不一致 [法律/司法报道类-2015]",
+      "口头'生意归生意、家事不评价'却频繁在直播回应家事,坐实'消费家事引流'批评 [社会舆论/娱乐八卦向-2021-2022]",
+      "把苦难励志人设与实际经营、带货变现之间的张力视而不见 [商业伦理评论者-2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高控制需求叠加低信任倾向,在失控情境下会以强硬主权宣称否认现实结果",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "对外强调'我的事轮不到别人',回避对失控结果的实质承担",
+        "behavioral_notes": "对赌失败与信托被击穿后仍宣称'我不欠任何人''资产处置是我的事',与结果不符"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自我效能与高地位敏感耦合,遇轻视时以激将式反击代替举证",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "被批评时转为反问挑衅,把质疑者道德矮化",
+        "behavioral_notes": "'他们能活出我这样吗''你来我这站一天试试'替代对具体质疑的回应"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高风险偏好驱动逆势扩张与高频从头再来",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "在他人退缩时进攻,不断开启新赛道",
+        "behavioral_notes": "从餐饮到资本再到直播多次重生,'别人退缩的时候就是我进的时候'"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "低亲密需求与边界宣称冲突,使私域话题被工具化",
+        "when": {
+          "intimacy_need": "<=0.4"
+        },
+        "disposition": "口头切割家事但实际借家事维持流量",
+        "behavioral_notes": "'家务事说不清我管我直播间'的同时持续在直播带出家庭纠纷"
+      }
+    ]
+  }
+}

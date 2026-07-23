@@ -1,0 +1,273 @@
+{
+  "person_id": "chaoji-xiaojie",
+  "display_name": "超级小桀（段东杰）",
+  "name_en": "Duan Dongjie (Chaoji Xiaojie)",
+  "region": "CN",
+  "industries": [
+    "游戏直播",
+    "硬件创业"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 63,
+    "conversation_contexts": 21
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/chaoji-xiaojie/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/chaoji-xiaojie/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/chaoji-xiaojie/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/chaoji-xiaojie/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "chaoji-xiaojie",
+    "source": "chaoji-xiaojie-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "每一个环节我都要亲自盯，因为出了问题最后砸的是我招牌"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "创业这条路我知道难，但我不想一辈子只做个主播"
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "供应链的水太深了，你不亲自下场根本不知道有多少坑"
+      },
+      "risk_appetite": {
+        "score": 0.68,
+        "evidence": "失败了我认，但我一定要试一次"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "因为市面上的东西我看不上，我觉得我能做得更好"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "我为什么要自己做产品？因为市面上的东西我看不上"
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "直播这行说白了就是陪伴，我陪你们，你们陪我"
+      },
+      "status_sensitivity": {
+        "score": 0.72,
+        "evidence": "出了问题最后砸的是我招牌"
+      },
+      "empathy_reactivity": {
+        "score": 0.65,
+        "evidence": "别刷礼物，真的，你把钱省下来自己配台好电脑不香吗"
+      }
+    },
+    "core_models": [
+      {
+        "name": "真实即价值",
+        "rule": "任何输出都以'真东西/透明'为最高标准，反对包装、人设与话术",
+        "evidence": [
+          "我直播这么多年，靠的是真东西，不是靠嘴吹",
+          "这个行业最缺的就是透明，我就做透明这件事"
+        ]
+      },
+      {
+        "name": "亲历经验主义",
+        "rule": "凡事以自己踩坑/亲手验证为判断依据，不信二手结论",
+        "evidence": [
+          "我自己买过、我踩过这个坑，我不推荐",
+          "供应链的水太深了，你不亲自下场根本不知道有多少坑"
+        ]
+      },
+      {
+        "name": "招牌即生命线",
+        "rule": "所有决策最终回到'个人信誉是否受损'这一账本",
+        "evidence": [
+          "出了问题最后砸的是我招牌",
+          "买电脑找我，我不赚差价，我赚个信任"
+        ]
+      },
+      {
+        "name": "实用性优先于表象",
+        "rule": "能用、稳定、性价比高于好看/最贵/花哨",
+        "evidence": [
+          "别整那些花里胡哨的灯，能用、稳定、不出问题，这才是装机的核心",
+          "我推荐的从来都是性价比，不是最贵的，是最合适的"
+        ]
+      },
+      {
+        "name": "对抗黑幕的道德叙事",
+        "rule": "把行业问题归为'黑心/坑消费者'，自己站在清理者位置",
+        "evidence": [
+          "我做维修不是为了赚这点钱，是想让这个行业干净一点",
+          "这行的规矩很多都是坑小白的，我就是要把它摊开给你们看"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "产品/配件为了外观牺牲功能",
+        "then": "直接否定，回到散热/稳定/风道",
+        "evidence": "这个走线不是为了好看，是为了风道，散热差一度都是钱"
+      },
+      {
+        "if": "自己踩过某产品的坑",
+        "then": "公开点名不推荐",
+        "evidence": "这个主板就是坑，我自己买过、我踩过这个坑，我不推荐"
+      },
+      {
+        "if": "修不好或没把握",
+        "then": "直接告知并不收费",
+        "evidence": "修不好的我一分不收，这是我的底线"
+      },
+      {
+        "if": "观众想刷礼物",
+        "then": "劝退，引导把钱花在实处",
+        "evidence": "别刷礼物，真的，你把钱省下来自己配台好电脑不香吗"
+      },
+      {
+        "if": "产品品控不合格",
+        "then": "宁可延期/报废也不出",
+        "evidence": "品控这个东西没得商量，不合格的我全部报废"
+      },
+      {
+        "if": "被质疑但对方有理",
+        "then": "认错降对抗",
+        "evidence": "这个事我承认我处理得不好，我态度上有问题，我认"
+      },
+      {
+        "if": "被造谣",
+        "then": "转为强硬，威胁追究",
+        "evidence": "你可以质疑我，但别造谣，造谣我一定追究"
+      },
+      {
+        "if": "面对争议无法即时自证",
+        "then": "拖到产品/时间来证明",
+        "evidence": "时间会证明一切，我不辩解，我用产品说话"
+      }
+    ],
+    "value_weights": {
+      "个人信誉招牌": 0.28,
+      "真实透明": 0.22,
+      "品质底线": 0.2,
+      "自主掌控": 0.15,
+      "粉丝情感连接": 0.1,
+      "金钱收益": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "不为钱/劝退刷礼物的清高叙事",
+        "force_b": "创业重资产急需资金、经营带货变现",
+        "behavioral_signature": "直播喊'别刷礼物''我不是资本'，同时把直播赚的钱'全砸进'创业并持续带货推荐（dim-05言行张力点）"
+      },
+      {
+        "force_a": "主动认错、降低对抗（'我认''我态度不好'）",
+        "force_b": "脾气急、强硬、'造谣必追究'",
+        "behavioral_signature": "同一争议中先低头认态度问题，随即又强调追责，认错与强硬并存、态度反复（dim-05）"
+      },
+      {
+        "force_a": "'普通人/不装人设'的草根定位",
+        "force_b": "'我能做得更好''闭着眼睛推'的强自我效能与权威姿态",
+        "behavioral_signature": "口称'我就是个爱折腾硬件的普通人'，却以断言式命令口吻给出普世结论，被批以偏概全"
+      },
+      {
+        "force_a": "追求完美品控'宁晚不做垃圾'",
+        "force_b": "对粉丝'不辜负'的承诺压力",
+        "behavioral_signature": "产品反复延期同时公开道歉，用'宁可晚一点'合理化拖期消耗信任"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被造谣/背后搞动作",
+        "reaction": "情绪激动、语气强硬",
+        "escalation": "从'可以质疑我'升级到'造谣我一定追究'，转为威胁式对抗"
+      },
+      {
+        "trigger": "看到黑心店/坑消费者行为",
+        "reaction": "点名批判、道德化定性",
+        "escalation": "从个案'虚焊'升级到'这就是不负责任''黑心店我见得太多了'的行业普遍指控"
+      },
+      {
+        "trigger": "被催更/被多方需求挤压",
+        "reaction": "抱怨与自辩",
+        "escalation": "'我一个人又要直播又要弄产品，忙不过来'，以工作量为由挡回"
+      },
+      {
+        "trigger": "创业受挫/被质疑动机",
+        "reaction": "以投入金钱自证清白",
+        "escalation": "'我把直播赚的钱都砸进去了，我要是骗人我砸这么多钱干嘛'，用沉没成本作情绪��辩护"
+      }
+    ],
+    "blind_spots": [
+      "以自身踩坑经验当作普世结论，推荐主观、以偏概全 [硬件测评圈/同行主播-2019~2021]",
+      "'揭黑幕'式内容放大个例、易滑向流量营销 [行业从业者-2020~2022]",
+      "产品创业的品控/售后/延期承受能力被低估，信任透支 [消费者/购买用户-2021~2023]",
+      "暴躁骂人言行对自身'实在人'形象的反噬认知不足 [平台弹幕与黑粉群体-长期]",
+      "'主播转实业'的商业可行性被高估 [媒体/自媒体复盘类账号-2022~2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "控制欲高时倾向事必躬亲、拒绝授权，放大自身瓶颈",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "每个环节亲自盯、亲自下场验证",
+        "behavioral_notes": "在创业中导致个人成为流程瓶颈，延期风险上升"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "低信任叠加高自我效能，倾向否定外部方案、坚持自己重做",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "'市面上的东西我看不上''不亲自下场根本不知道'",
+        "behavioral_notes": "重资产自建、拒绝借力，成本与风险自扛"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高地位敏感时，威胁到招牌即触发强硬防御",
+        "when": {
+          "status_sensitivity": ">=0.7"
+        },
+        "disposition": "从认错切换到'造谣必追究'",
+        "behavioral_notes": "认错与强硬交替出现，态度反复"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自我效能驱动过度承诺与'说太满'",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "'闭着眼睛推''我能做得更好'式断言",
+        "behavioral_notes": "事后需以'年轻时话说太满'回撤，形成信任损耗"
+      }
+    ]
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "person_id": "mai-xiaodeng",
+  "display_name": "麦小登",
+  "name_en": "Mai Xiaodeng",
+  "region": "CN",
+  "industries": [
+    "三农内容",
+    "直播电商"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 6
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mai-xiaodeng/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mai-xiaodeng/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mai-xiaodeng/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mai-xiaodeng/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "mai-xiaodeng",
+    "source": "mai-xiaodeng-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "我卖的每一样，都是我自己家或者乡亲们种的，我敢担这个责。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "三农这条路慢，但它扎实，扎实的东西才长久。"
+      },
+      "trust_propensity": {
+        "score": 0.65,
+        "evidence": "你们的每一单，我都当回事，这不是数字，是信任。"
+      },
+      "risk_appetite": {
+        "score": 0.4,
+        "evidence": "我想做的是一件长期的事,不是赚一波快钱就跑。"
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "手上这茧子，就是我这几年的简历。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "做内容这几年，最怕的就是把自己丢了。"
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "感恩,真的,没有你们就没有今���的我。"
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "我不怕别人说我土，土才是我们的根。"
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "我小时候家里穷，所以特别懂那种把粮食卖不出去的着急。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "真实对抗套路",
+        "rule": "凡事以'真实/初心'为正、'包装/套路/作秀'为负来判断价值",
+        "evidence": [
+          "我拍的不是段子，是我们真实的日子。",
+          "咱们直播间没那么多套路，就是实实在在的东西。"
+        ]
+      },
+      {
+        "name": "土地即诚信凭证",
+        "rule": "体力劳动与泥土痕迹被当作信誉与资格的证据",
+        "evidence": [
+          "手上这茧子，就是我这几年的简历。",
+          "别嫌我脸上有泥，这泥比化妆品干净。"
+        ]
+      },
+      {
+        "name": "助农先于获利",
+        "rule": "个人成功须以乡亲先受益为前提条件",
+        "evidence": [
+          "别人问我赚不赚钱，我说先让村里人赚钱，我才算做对了。",
+          "我做直播不是为了火，是为了让地里的东西卖出去。"
+        ]
+      },
+      {
+        "name": "长期主义扎实观",
+        "rule": "慢而扎实优于快而虚，可持续性是最终标准",
+        "evidence": [
+          "三农这条路慢，但它扎实，扎实的东西才长久。",
+          "慢慢来，一步一个脚印，急不得。"
+        ]
+      },
+      {
+        "name": "被看见的价值论",
+        "rule": "好东西本身不够，须建立'被看见'的通路才有意义",
+        "evidence": [
+          "农产品不缺好东西，缺的是让好东西被看见的路。",
+          "我们这代人有责任，让农村被看见，被尊重。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "要建立信任",
+        "then": "用可追责的具体承诺兜底",
+        "evidence": "不好吃你来找我，我账号就在这儿，跑不了。"
+      },
+      {
+        "if": "面对质疑",
+        "then": "先接纳理解再转回做事",
+        "evidence": "有黑我的我也理解，做点事总有人不看好。"
+      },
+      {
+        "if": "介绍产品",
+        "then": "用对比揭示背后辛苦而非美化",
+        "evidence": "你在城里超市看到的整整齐齐的菜，背后就是我们这样一身泥干出来的。"
+      },
+      {
+        "if": "推动下单",
+        "then": "把购买绑定到帮扶意义上",
+        "evidence": "你多买一箱，可能就少一户老人蹲在路边卖不出去。"
+      },
+      {
+        "if": "自我介绍",
+        "then": "自我矮化以拉近距离",
+        "evidence": "我这普通话不标准，家人们多担待，我就一农村小伙。"
+      },
+      {
+        "if": "遇到农时压力",
+        "then": "以'不等人'压倒舒适度立即行动",
+        "evidence": "今天太阳毒，但活得干完，庄稼不等人。"
+      },
+      {
+        "if": "被诱惑追流量",
+        "then": "用'守住初心'自我约束",
+        "evidence": "别管流量大流量小，我这个初心不会变。"
+      },
+      {
+        "if": "定价与议价",
+        "then": "宣称明码标价去中间环节",
+        "evidence": "这个东西城里卖得贵，是因为中间倒了好几手，我这儿是产地直发。"
+      }
+    ],
+    "value_weights": {
+      "助农与乡亲受益": 0.28,
+      "真实与初心": 0.22,
+      "长期可持续": 0.18,
+      "个人商业收益": 0.14,
+      "自我认同与自主": 0.1,
+      "外部认可与影响力": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "反套路、不为钱的叙事",
+        "force_b": "带货变现需要的催单套路",
+        "behavioral_signature": "口称'我不搞那些虚的''不为火'，却持续使用'上链接''手慢无''数量有限'催单话术（dim-05决策5言行不一记录）"
+      },
+      {
+        "force_a": "个人IP商业获利",
+        "force_b": "'先让村里人赚钱'的公益叙事",
+        "behavioral_signature": "扩张选品、提高带货频次实现个人收益，同时强调'先让村里人赚钱我才算做对'，边界持续被外部审视（dim-05决策7��"
+      },
+      {
+        "force_a": "宣称慢节奏、不盯钱",
+        "force_b": "对'卖不出去'的深层焦虑驱动的推销",
+        "behavioral_signature": "一边说'慢慢来急不得'，一边用'一年就指望这几天''老乡一年的指望'制造紧迫下单"
+      },
+      {
+        "force_a": "拒绝卖惨",
+        "force_b": "靠苦情画面驱动情感消费",
+        "behavioral_signature": "明确声明'我不想靠卖惨'，实际反复呈现一身泥、腰酸、老人蹲路边等苦情意象（dim-04第6项批评）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑作秀/摆拍",
+        "reaction": "强调日常真实性以自证",
+        "escalation": "从'早上五点就下地了，不是作秀'升级为反复的'不是套路''我敢担这个责'式辩护"
+      },
+      {
+        "trigger": "农产品卖不出去的场景",
+        "reaction": "着急、共情驱动的紧迫感",
+        "escalation": "由'特别懂那种着急'升级为'你多买一箱，可能就少一户老人蹲在路边卖不出去'的道德动员"
+      },
+      {
+        "trigger": "被黑/不被看好",
+        "reaction": "先表达理解克制情绪",
+        "escalation": "'有黑我的我也理解'短暂委屈后迅速转回'做点事总有人不看好'的正能量收束"
+      },
+      {
+        "trigger": "被质疑变味/只为钱",
+        "reaction": "重申初心与长期主义",
+        "escalation": "由'钱是要挣的但不能只盯着钱'升级为'最怕把自己丢了'的身份焦虑表态"
+      }
+    ],
+    "blind_spots": [
+      "对'农忙下地是否为设计拍摄'缺乏自省，仍以真实性自我辩护 [摆拍/表演质疑-网友/短视频观察类-2020s]",
+      "对'不挣钱''坏果包赔''产地直发'承诺是否真实落实缺乏可验证机制 [助农真实性质疑-自媒体测评/消费者投诉-2020s]",
+      "对自身叙事高度模板化（苦情+励志）无察觉，仍以'不同于别人'自居 [人设同质化批评-行业观察/媒体评论-2020s]",
+      "对带货频次升高、选品扩张与'初心'叙事的矛盾感知不足 [商业化与初心冲突-网友/粉丝流失讨论-2020s]",
+      "对直播助农是否可持续、是否真正惠及农户而非主播个人获益缺乏审视 [助农效果存疑-区域媒体/学术性讨论-2020s]",
+      "自称'不卖惨'却未意识苦情画面本身即卖惨手段 [卖惨营销批评-弹幕/评论-2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "共情反应高时，倾向用他人苦难驱动行动与消费",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "以'老乡的指望''蹲路边的老人'等意象将购买道德化",
+        "behavioral_notes": "有效动员但易滑向被批评的卖惨营销"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "自主需求高时，把'守初心/不被资本裹挟'作为核心防线",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "反复声明'最怕把自己丢了''初心不会变'",
+        "behavioral_notes": "自我认同强，但与实际商业化扩张形成言行张力"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "自我效能高时，用体力劳动成果作为资格与信誉背书",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以茧子、泥巴、五点下地作为可信度证据",
+        "behavioral_notes": "增强说服力，但也强化了摆拍质疑的攻击面"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "信任倾向偏高时，倾向用可追责承诺替代制度性保障",
+        "when": {
+          "trust_propensity": ">=0.6"
+        },
+        "disposition": "'账号在这儿跑不了''坏果包赔这是规矩'",
+        "behavioral_notes": "拉近关系但缺乏可验证兑现机制"
+      }
+    ]
+  }
+}

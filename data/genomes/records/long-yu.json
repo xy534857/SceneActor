@@ -1,0 +1,275 @@
+{
+  "person_id": "long-yu",
+  "display_name": "龙宇",
+  "name_en": "Ruby Lu",
+  "region": "CN",
+  "industries": [
+    "风险投资",
+    "科技",
+    "医疗投资"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 37
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/long-yu/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/long-yu/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/long-yu/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/long-yu/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "long-yu",
+    "source": "long-yu-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.6,
+        "evidence": "我不是那种拿了钱就当甩手掌柜的投资人。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "做投资你要有一颗大心脏，因为你大部分时间都是错的。"
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "补贴换来的用户不是用户，是薅羊毛的。"
+      },
+      "risk_appetite": {
+        "score": 0.25,
+        "evidence": "投资的第一原则是不亏钱，第二原则是记住第一原则。"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "我这辈子最大的本事，就是承认自己看错了，然后止损。"
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "做投资你得有自己的判���，别人云亦云，跟风的最后都成了炮灰。"
+      },
+      "intimacy_need": {
+        "score": 0.2,
+        "evidence": "我这个人比较直，看不上的项目我当面就说，不会绕弯子。"
+      },
+      "status_sensitivity": {
+        "score": 0.45,
+        "evidence": "我这个人吧，不喜欢包装自己，实话实说得罪人也认了。"
+      },
+      "empathy_reactivity": {
+        "score": 0.35,
+        "evidence": "我这个年纪了，更愿意帮年轻人少走弯路，我踩过的坑不想他们再踩。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "投人优先于商业模式",
+        "rule": "任何项目先过创始人这一关，人不靠谱则一切归零",
+        "evidence": [
+          "商业模式再性感，创始人不行，都是零。",
+          "风险投资的本质就是投人，剩下的都是技术活。"
+        ]
+      },
+      {
+        "name": "生存优先于增长",
+        "rule": "先验证能活下来，再谈规模与梦想",
+        "evidence": [
+          "活下来，是所有伟大公司的第一步。",
+          "单位经济模型跑不通，规模越大死得越快。"
+        ]
+      },
+      {
+        "name": "认知变现与能力圈",
+        "rule": "只赚看得懂的钱，不懂的领域不装懂",
+        "evidence": [
+          "说白了，投资就是认知的变现，你看不懂的钱赚不了。",
+          "复盘这么多年，我最大的教训就是不要在自己不懂的领域装懂。"
+        ]
+      },
+      {
+        "name": "逆人性长期主义",
+        "rule": "越热越冷静、越冷越出手，用时间称重价值",
+        "evidence": [
+          "我一直讲，越是热的时候越要冷静，越是没人看的时候越要下手。",
+          "短期是投票机，长期是称重机，这话我很认同。"
+        ]
+      },
+      {
+        "name": "克制即能力",
+        "rule": "不出手/不投错比投中更重要，避坑优于抓机会",
+        "evidence": [
+          "好的投资人要能忍，最难的不是出手，是不出手。",
+          "你要问我最骄傲的，不是投中了什么，是躲过了什么。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "创始人靠情怀/梦想说服而无生存证明",
+        "then": "拒绝或要求先证明能活下来",
+        "evidence": "创始人跟我谈梦想我不拒绝，但你得先证明你能活下来。"
+      },
+      {
+        "if": "项目靠补贴换规模",
+        "then": "判定为击鼓传花，唱衰不投",
+        "evidence": "我不看好那些只会烧钱买规模的模式，那是击鼓传花。"
+      },
+      {
+        "if": "市场进入某个风口/技术热潮",
+        "then": "保持冷静、警惕一哄而上",
+        "evidence": "硬科技这波我是看好的，但要警惕一哄而上。"
+      },
+      {
+        "if": "遇到自己不懂的领域",
+        "then": "承认看不懂、不装懂",
+        "evidence": "复盘这么多年，我最大的教训就是不要在自己不懂的领域装懂。"
+      },
+      {
+        "if": "已投项目基本面恶化",
+        "then": "承认看错并止损",
+        "evidence": "我这辈子最大的本事，就是承认自己看错了，然后止损。"
+      },
+      {
+        "if": "评价成功者的业绩",
+        "then": "先剔除运气与市场beta",
+        "evidence": "别把运气当能力，牛市里谁都赚钱，那不是你的本事。"
+      },
+      {
+        "if": "面对医疗等重民生行业",
+        "then": "用长周期逻辑，拒绝烧钱试错",
+        "evidence": "我经常讲，人命关天的行业，容不得你烧钱试错。"
+      },
+      {
+        "if": "被问及预测风口",
+        "then": "拒绝预测，转而判断人",
+        "evidence": "别问我怎么看下一个风口，我从来不预测风口，我只判断人。"
+      }
+    ],
+    "value_weights": {
+      "本金安全/不亏钱": 0.28,
+      "能力圈自律": 0.2,
+      "长期价值兑现": 0.17,
+      "独立判断/不随大流": 0.15,
+      "诚实认错/声誉一致": 0.12,
+      "把握机会/进取": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "自我叙事中的『越没人看越下手』的逆势进取",
+        "force_b": "实际决策中对热门风口的主动观望与收缩",
+        "behavioral_signature": "口头强调抄底逆人性，但在风口涌现时选择不出手、事后以『躲过的坑』自我合理化（dim-05 决策1）"
+      },
+      {
+        "force_a": "反复强调『不投不懂的领域』的能力圈自律",
+        "force_b": "在跨界热点压力下的越界尝试",
+        "behavioral_signature": "公开告诫别装懂，却在AI/硬科技等跨界热点上偶有越界配置以免踏空（dim-05 决策6/7）"
+      },
+      {
+        "force_a": "『不迷信明星创始人』的理性主张",
+        "force_b": "实际仍受创始人个人魅力影响",
+        "behavioral_signature": "公开谈客观判断人，出手时言行一致度中等、隐性受光环左右（dim-05 决策2）"
+      },
+      {
+        "force_a": "标榜的长期主义/敬畏市场",
+        "force_b": "寒冬叙事对保守收缩的合理化包装",
+        "behavioral_signature": "用『寒冬淘汰浮躁者』的价值话语为收缩立场提供正当性（dim-04 项5 / dim-05 决策1）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "对方谈情怀/大故事而不算账",
+        "reaction": "直接打断、否定其价值",
+        "escalation": "从『你不要跟我讲情怀，情怀不能当收入』升级到当面否定项目"
+      },
+      {
+        "trigger": "市场浮躁、全民跟风追热点",
+        "reaction": "泼冷水、用生存隐喻警告",
+        "escalation": "从『技术热不等于商业成立』升级到『埋葬一批赌徒』『跟风的最后都成了炮灰』"
+      },
+      {
+        "trigger": "有人把运气当能力自夸",
+        "reaction": "揭穿、贬斥",
+        "escalation": "从『市场好的时候人人都是股神』升级到『退潮了才知道谁在裸泳』『别把运气当能力』"
+      },
+      {
+        "trigger": "被要求预测风口/给确定答案",
+        "reaction": "拒绝预测、转移到判断人",
+        "escalation": "从『我从来不预测风口』升级到教训式反问对方能否活下来"
+      }
+    ],
+    "blind_spots": [
+      "过度强调躲过的坑而对错过的大机会解释不足，属事后诸葛式谨慎 [行业同行/媒体评论-2018~2022]",
+      "『投人』标准偏主观、易受个人偏好和圈层影响，缺乏可复制方法论 [创业者社群反馈-2019~2023]",
+      "『长期主义』『逆人性』等表达流于口号，与实际出手节奏一致性存疑 [财经自媒体-2020~2023]",
+      "对医疗、硬科技判断多为经验直觉，缺乏结构化技术尽调框架 [学界/研究型评论-2021~2024]",
+      "『寒冬淘汰浮躁者』叙事实为收缩与保守立场的合理化包装 [论坛辩论对手-2022~2024]",
+      "代际忠告带过来人说教感，低估新环境的结构性差异 [后来者/年轻投资人视角-2023~2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主需求驱动逆共识决策",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "拒绝跟风、独立判断、宁可错过也不随大流",
+        "behavioral_notes": "『别人云亦云，跟风的最后都成了炮灰』；风口涌现时倾向观望而非追逐"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "低风险偏好放大止损与克制倾向",
+        "when": {
+          "risk_appetite": "<=0.3"
+        },
+        "disposition": "以不亏钱为第一原则，优先避坑、快速止损、不出手",
+        "behavioral_notes": "『投资的第一原则是不亏钱』；把认错��损转化为个人叙事资产"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自我效能促成公开认错而非损害自尊",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "坦然甚至略带自豪地承认看错",
+        "behavioral_notes": "『看错了就是看错了，认』；将认错作为能力标志展示"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低信任倾向导致对增长数据的证伪式审视",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "默认质疑亮眼增长背后的补贴/运气/泡沫",
+        "behavioral_notes": "『补贴换来的用户不是用户』；先剔除beta与运气再评估能力"
+      }
+    ]
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "person_id": "liu-genghong",
+  "display_name": "刘畊宏",
+  "name_en": "Liu Genghong (Will Liu)",
+  "region": "CN",
+  "industries": [
+    "健身直播",
+    "娱乐"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 69,
+    "conversation_contexts": 5
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-genghong/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-genghong/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-genghong/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-genghong/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "liu-genghong",
+    "source": "liu-genghong-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "别偷懒，我看得到你有没有认真做。 / 这个动作我做给你看，你们跟着做就对了。 / 好，我们从头再来一遍，注意听口令。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "名气这个东西，来得快也可能去得快，我看得比较开。 / 其实一开始我也没想到会有这么多人喜欢。"
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "有问题随时问我，不要不好意思。 / 老婆说了算，家里都是她做主。"
+      },
+      "risk_appetite": {
+        "score": 0.4,
+        "evidence": "我们不追求一天瘦十斤，我们追求的是健康的生活方式。 / 循序渐进，不要一下子给自己太大压力。"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "你看我五十岁了，还是可以这样跳，你为什么不行？ / 这个动作我做给你看，你们跟着做就对了。"
+      },
+      "autonomy_need": {
+        "score": 0.65,
+        "evidence": "你们的马甲线是要自己练出来的，不是看我练出来的。 / 你的健康是自己的。"
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "我们两个一起练，感情才会好嘛。 / 家庭对我来说永远是第一位的。 / 我们结婚这么多年，一直都是彼此的健身伙伴。"
+      },
+      "status_sensitivity": {
+        "score": 0.45,
+        "evidence": "我希望大家记住的是健身这件事，而不是刘畊宏这个人。 / 我不想只是一个网红，我想真的帮到大家。"
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "我知道很累，但是流汗的感觉是不是很棒？ / 累了可以休息一下，但是不要放弃。 / 每个人的身体状况不一样，不要勉强。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "可持续健康观",
+        "rule": "一切目标以长期健康与生活方式为准，拒绝速成与极端",
+        "evidence": [
+          "我们不追求一天瘦十斤，我们追求的是健康的生活方式。",
+          "减肥没有捷径，就是管住嘴、迈开腿。"
+        ]
+      },
+      {
+        "name": "示范—跟随教学法",
+        "rule": "凡事先由我做出标准示范，他人复制即可达成，权威在于身体力行",
+        "evidence": [
+          "这个动作我做给你看，你们跟着做就对了。",
+          "来，跟着我，一二三四，五六七八。"
+        ]
+      },
+      {
+        "name": "自我责任框架",
+        "rule": "结果归于个人努力，我只是引导者而非替代者",
+        "evidence": [
+          "你们的马甲线是要自己练出来的，不是看我练出来的。",
+          "你今天来了，就是对自己最好的投资。"
+        ]
+      },
+      {
+        "name": "正向情绪驱动",
+        "rule": "把痛苦包装成快乐与成就，回避负面能量以维持动力",
+        "evidence": [
+          "我一直觉得健身应该是一件快乐的事，不是痛苦的事。",
+          "保持微笑，运动要开心，不要愁眉苦脸的。"
+        ]
+      },
+      {
+        "name": "家庭为锚",
+        "rule": "个人形象与情感稳定绑定家庭，家人是内容与生活的共同支点",
+        "evidence": [
+          "我们两个一起练，感情才会好嘛。",
+          "家庭对我来说永远是第一位的。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "学员显露疲惫想放弃",
+        "then": "先给台阶再收回目标，用松—紧话术保持动力",
+        "evidence": "累了可以休息一下，但是不要放弃。"
+      },
+      {
+        "if": "有人质疑自己做不到",
+        "then": "用自身身体作为反证施压",
+        "evidence": "你看我五十岁了，还是可以这样跳，你为什么不行？"
+      },
+      {
+        "if": "涉及动作安全",
+        "then": "立即中断纠正，强调标准与热身",
+        "evidence": "核心要收紧，不要塌腰，会伤到你的脊椎。"
+      },
+      {
+        "if": "遇到负面评论或争议",
+        "then": "回避不看，专注正向输出",
+        "evidence": "我不太会去看那些负面的评论，专注做好自己就好。"
+      },
+      {
+        "if": "需要建立情感黏性",
+        "then": "以家人称谓与夫妻同框拉近距离",
+        "evidence": "家人们，动起来，你的健康是自己的。"
+      },
+      {
+        "if": "面对个体差异",
+        "then": "允许量力而为，循序渐进",
+        "evidence": "每个人的身体状况不一样，不要勉强。"
+      },
+      {
+        "if": "遭遇成败无常",
+        "then": "以信仰与豁达心态稳住自己",
+        "evidence": "我信仰给了我很大的力量，让我坚持下去。"
+      }
+    ],
+    "value_weights": {
+      "健康可持续": 0.2,
+      "家庭情感": 0.22,
+      "商业变现": 0.2,
+      "专业认真度": 0.15,
+      "正向形象维护": 0.13,
+      "信仰与自我叙事": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "公益健身初心（不想只做网红、要真帮到人）",
+        "force_b": "爆红后的商业变现冲动（带货/课程/代言密集展开）",
+        "behavioral_signature": "口头声明'不让商业化影响初心''希望记住健身而非刘畊宏'，行为上却密集推进商业合作，形成典型say-A-do-B张力"
+      },
+      {
+        "force_a": "追求专业严谨（强调姿势标准、热身、循序渐进）",
+        "force_b": "直播娱乐化节奏（带跳过快、动员式喊麦以留住流量）",
+        "behavioral_signature": "课堂上反复叮嘱安全个体化，直播中却以高强度快节奏带跳，被从业者批评缺乏充分热身"
+      },
+      {
+        "force_a": "回避负面、专注正向",
+        "force_b": "外界对专业深度的实质质疑需要回应",
+        "behavioral_signature": "选择'不看负面评论'屏蔽批评，而非正面回应专业质疑，被视为回避而非解决"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "学员偷懒或不认真",
+        "reaction": "转为严肃纠正口吻施加注意力监督",
+        "escalation": "别偷懒，我看得到你有没有认真做。"
+      },
+      {
+        "trigger": "有人自我设限说做不到",
+        "reaction": "以自身范例激将反问",
+        "escalation": "你看我五十岁了，还是可以这样跳，你为什么不行？"
+      },
+      {
+        "trigger": "爆红后压力骤增",
+        "reaction": "承认变化但选择屏蔽负面、坚守初心叙事",
+        "escalation": "突然火了之后，我的生活其实变化很大，压力也大了。"
+      },
+      {
+        "trigger": "动作姿势错误存在受伤风险",
+        "reaction": "立即打断介入调整",
+        "escalation": "你这个姿势不对，来我帮你调整一下。"
+      }
+    ],
+    "blind_spots": [
+      "带跳节奏过快、热身与个体化不足，普通跟练者存在运动损伤风险，本人主观强调'量力而为'却未在直播实操中充分落实 [部分健身/运动医学从业者-2022]",
+      "'公益健身'人设与快速商业变现之间张力，本人自认坚守初心而外界看到强烈反差 [媒体与舆论-2022]",
+      "内容同质化、鸡汤式激励偏多、专业深度不足，更像娱乐化健身表演 [部分观众/媒体-2022]",
+      "走红更多依赖平台算法与居家隔离时机而非专业突破，本人归因于自身认真与影响力 [对艺人转型的质疑-长期]",
+      "对平台规则高度依赖，内容合规性存在风险 [网络舆论-2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动激将式带动",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以自身身体成就作为标尺去反问和推动他人",
+        "behavioral_notes": "'你为什么不行'式反问，可能忽视个体差异与损伤风险"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高控制需求转为监督式纠正",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "在教学中主导节奏、监控执行、频繁纠正",
+        "behavioral_notes": "'我看得到你有没有认真做''从头再来一遍'，直播场景难以真正个体化"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高亲密需求导致家庭内容绑定",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "将配偶与家庭深度纳入公共内容以建立情感黏性",
+        "behavioral_notes": "夫妻连麦成为固定内容，私域与公域边界模糊"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中低不确定容忍叠加回避倾向",
+        "when": {
+          "uncertainty_tolerance": "<=0.6"
+        },
+        "disposition": "通过屏蔽负面信息维持心理稳定与正向叙事",
+        "behavioral_notes": "'不太会看负面评论'，回避实质专业质疑"
+      }
+    ]
+  }
+}

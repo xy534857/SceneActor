@@ -1,0 +1,259 @@
+{
+  "person_id": "shougong-geng",
+  "display_name": "手工耿（耿帅）",
+  "name_en": "Geng Shuai (Shougong Geng)",
+  "region": "CN",
+  "industries": [
+    "手工制造",
+    "内容创作"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 22
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/shougong-geng/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/shougong-geng/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/shougong-geng/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/shougong-geng/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "shougong-geng",
+    "source": "shougong-geng-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.35,
+        "evidence": "这个尺寸我也是估摸着来的，差不多合适就行。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.8,
+        "evidence": "这个东西我琢磨了好几天，就是不知道做出来干啥用。"
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "出了名之后来找我合作的人特别多，我大部分都推了。"
+      },
+      "risk_appetite": {
+        "score": 0.4,
+        "evidence": "咱先量一下，量完再切，切错了就废了。"
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "我这手艺就是打工那几年练出来的，不是天生的。"
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "我怕接了活以后就变味了，就不是我自己想做的了。"
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "有粉丝从外地专门���看我，我都请人家吃个饭。"
+      },
+      "status_sensitivity": {
+        "score": 0.2,
+        "evidence": "名气这东西是虚的，手里的活是实的。"
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "能给乡亲们提供点活干，我心里踏实。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "无用即价值",
+        "rule": "东西的意义不在于实用功能，而在于能否带来快乐；把「没用」当作正面卖点而非缺陷。",
+        "evidence": [
+          "那么它到底有没有用呢？没用。",
+          "但是我给大家带来快乐了，我觉得这也值。"
+        ]
+      },
+      {
+        "name": "实物高于虚名",
+        "rule": "手里能摸到的活儿是真实的，名气热度是虚的、会过去的，判断以实物为准。",
+        "evidence": [
+          "名气这东西是虚的，手里的活是实的。",
+          "我知道热度总有过去的一天，我不着急。"
+        ]
+      },
+      {
+        "name": "本色不可动摇",
+        "rule": "任何选择都以「还是不是我自己」为过滤器，宁可损失机会也不改变本色。",
+        "evidence": [
+          "火了以后我还是在村里，我哪也不去，这就是我家。",
+          "我怕接了活以后就变味了，就不是我自己想做的了。"
+        ]
+      },
+      {
+        "name": "过程主义/工序思维",
+        "rule": "问题按「量—切—焊—磨—演示」的手上工序拆解，只谈眼前这一步，不谈理论。",
+        "evidence": [
+          "咱先量一下，量完再切，切错了就废了。",
+          "这地方我得处理一下，不然容易划着手。"
+        ]
+      },
+      {
+        "name": "差不多够用即止",
+        "rule": "对精度容忍度高，只要不影响核心目的（乐子）就接受瑕疵，不追求完美。",
+        "evidence": [
+          "差不多就行了，反正也没啥用。",
+          "这个焊得有点歪，但是不影响使用，问题不大。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "接到合作邀约",
+        "then": "大部分推掉，先问会不会变味",
+        "evidence": "出了名之后来找我合作的人特别多，我大部分都推了。"
+      },
+      {
+        "if": "有人催进度",
+        "then": "拒绝赶工，慢做防错",
+        "evidence": "别催，做手工急不得，一急就出错。"
+      },
+      {
+        "if": "作品出现瑕疵",
+        "then": "只要不影响核心用途就放行",
+        "evidence": "这个焊得有点歪，但是不影响使用，问题不大。"
+      },
+      {
+        "if": "涉及切割/易伤手环节",
+        "then": "口头处理并提醒安全",
+        "evidence": "焊完以后我得打磨一下，把毛刺去掉，安全第一。"
+      },
+      {
+        "if": "面对模仿风险",
+        "then": "反复口头免责「别学我」",
+        "evidence": "别学我，我这都是瞎鼓捣，你们看个乐就行。"
+      },
+      {
+        "if": "被外界贴标签或定义",
+        "then": "淡化、不反驳、不生气",
+        "evidence": "大家管我叫「废品大师」，我觉得挺好，我不生气。"
+      },
+      {
+        "if": "选材料",
+        "then": "优先家家户户都有的普通材料",
+        "evidence": "咱这不锈钢管子，家里到处都是这个材料。"
+      },
+      {
+        "if": "评判自己作品成败",
+        "then": "看弹幕/观众是否被逗乐",
+        "evidence": "我最开心的事，就是弹幕里一片哈哈哈。"
+      }
+    ],
+    "value_weights": {
+      "创作自主与本色": 0.28,
+      "带来快乐/娱乐价值": 0.2,
+      "家庭与乡土责任": 0.2,
+      "实干动手": 0.17,
+      "经济稳定": 0.1,
+      "名气与曝光": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "怕接活变味、坚持本色",
+        "force_b": "养家与带动就业的现实需求",
+        "behavioral_signature": "口头称「怕接活变味」推掉大量商单，实际却逐步接受商单、直播带货并开厂雇人（dim05-2 与 dim05-5 与「我怕接了活以后就变味了」张力）"
+      },
+      {
+        "force_a": "反复警告观众危险「别学我」",
+        "force_b": "继续展示涉电涉切��的危险操作以维持内容",
+        "behavioral_signature": "一边说「别学我，看个乐就行」，一边继续演示危险工序，免责仅停留在口头，未改内容形式（dim05-4 言行不一）"
+      },
+      {
+        "force_a": "自称做的是无用乐子、不当真",
+        "force_b": "对手艺与作品的真实自豪感",
+        "behavioral_signature": "口头贬低「没用/瞎鼓捣」，却在稀有可用作品时强调「说实话这个真能用」，并认真打磨去毛刺"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被催促赶工",
+        "reaction": "拒绝加速，强调急不得",
+        "escalation": "「别催，做手工急不得，一急就出错。」"
+      },
+      {
+        "trigger": "被质疑浪费材料",
+        "reaction": "先承认再用「快乐」辩护，不激动",
+        "escalation": "「有人说我这是浪费材料，我承认，确实浪费。但是我给大家带来快乐了，我觉得这也值。」"
+      },
+      {
+        "trigger": "创意枯竭/想不出题材",
+        "reaction": "坦承脑子空、感到难",
+        "escalation": "「有时候一个礼拜都想不出来该做啥，脑子空空的。」"
+      },
+      {
+        "trigger": "对未来失去兴趣的设想",
+        "reaction": "表达出唯一的深层恐惧",
+        "escalation": "「我最怕的就是有一天，我自己也觉得没意思了。」"
+      }
+    ],
+    "blind_spots": [
+      "对涉电涉切割作品的模仿风险仅停留在口头免责，未系统改变危险内容形式 [安全科普向自媒体-2020至2021]",
+      "后期作品套路化、创意惊喜下降而自身适应有限 [内容评论/UP主圈层-2022至2023]",
+      "商业化后「初心是否还在」的言行张力未被自我正视 [粉丝与观众-2021至2023]",
+      "大量金属材料仅为搞笑的环保/浪费问题被以「带来快乐」轻带过 [社交媒体网友评论-2019至2022]",
+      "个人IP抗风险能力弱、爆红偶然性对可持续性的威胁认识不足 [MCN与行业观察-2020至2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主需求触发拒绝外部改造本色的机会",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "宁可放弃短期变现也要保住「做自己想做的」",
+        "behavioral_notes": "推掉大部分商单、留在村里创作、不学外语迎合海外"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定性容忍支撑「无目的探索」式创作",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "允许做出不知有何用途、无图纸凭脑估的作品",
+        "behavioral_notes": "「琢磨好几天不知道干啥用」「图纸都在脑子里」「尺寸估摸着来」"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低地位敏感使其对外部标签与批评钝感、稳定",
+        "when": {
+          "status_sensitivity": "<=0.3"
+        },
+        "disposition": "接受贬义绰号、承认批评而不反击，心态不随热度波动",
+        "behavioral_notes": "「叫我废品大师我不生气」「承认确实浪费」「热度过去我不着急」"
+      }
+    ]
+  }
+}

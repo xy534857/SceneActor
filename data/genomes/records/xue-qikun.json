@@ -1,0 +1,269 @@
+{
+  "person_id": "xue-qikun",
+  "display_name": "薛其坤",
+  "name_en": "Qikun Xue",
+  "region": "CN",
+  "industries": [
+    "凝聚态物理",
+    "量子科学",
+    "高等教育"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 60,
+    "conversation_contexts": 5
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xue-qikun/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xue-qikun/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xue-qikun/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xue-qikun/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "xue-qikun",
+    "source": "xue-qikun-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.6,
+        "evidence": "每一个样品都要反复测量，一点马虎不得"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.75,
+        "evidence": "做科研，你得耐得住寂寞，也得受得了失败"
+      },
+      "trust_propensity": {
+        "score": 0.7,
+        "evidence": "团队里每个人都很拼，不是我一个人的功劳"
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "我们要做的是别人没做过、也做不出来的东西"
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "我们中国人完全有能力做出世界最好的科学"
+      },
+      "autonomy_need": {
+        "score": 0.72,
+        "evidence": "我们不能什么都跟着别人跑，要有自己的判断"
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "我这辈子最感谢的是那些帮过我的人"
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "得奖不是终点，科学永远在路上"
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "我希望我们的学生毕业时，眼睛里是有光的"
+      }
+    },
+    "core_models": [
+      {
+        "name": "笨功夫累积模型",
+        "rule": "把难题拆成可重复的苦功，用时间和次数换取突破，而非依赖天赋或捷径",
+        "evidence": [
+          "我这个人没什么别的本事，就是能吃苦、肯下笨功夫",
+          "量子反常霍尔效应，我们做了四年，样品生长了上千次"
+        ]
+      },
+      {
+        "name": "数据实证过滤器",
+        "rule": "任何结论都必须经得起反复验证与重复性检验，先怀疑假象再下判断",
+        "evidence": [
+          "这个结果出来的时候，我们反复确认，就怕是个假象",
+          "数据要说话，我们不轻易下结论"
+        ]
+      },
+      {
+        "name": "失败即养料模型",
+        "rule": "失败本身不是问题，只要能从中提取教训，失败就是进步的前置条件",
+        "evidence": [
+          "失败不可怕，可怕的是你从失败里什么都没学到",
+          "科学的进步，往往就在一次次失败之后"
+        ]
+      },
+      {
+        "name": "从平凡见普适模型",
+        "rule": "重大规律往往藏在最普通的材料/现象中，价值来自洞察而非稀有对象",
+        "evidence": [
+          "凝聚态物理的魅力，就是从最普通的材料里看出不普通的规律",
+          "物理学最美的地方，是它的简洁和普适"
+        ]
+      },
+      {
+        "name": "理想主义驱动使命模型",
+        "rule": "做真正难的大事需要理想主义支撑，个人命运与民族/国家科学能力绑定",
+        "evidence": [
+          "人要有点理想主义，不然做不成大事",
+          "我们培养的人才，要能担当民族复兴的大任"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对一个难以确认的结果",
+        "then": "反复重复实验直到排除假象",
+        "evidence": "实验重复性是我们最看重的东西"
+      },
+      {
+        "if": "遇到失败或挫折",
+        "then": "从中提取教训而非放弃",
+        "evidence": "失败不可怕，可怕的是你从失败里什么都没学到"
+      },
+      {
+        "if": "认准一个方向",
+        "then": "长期坚持不轻易回头",
+        "evidence": "我这个人比较轴，认准的事就不太回头"
+      },
+      {
+        "if": "想取得成果",
+        "then": "比别人多付出、下笨功夫",
+        "evidence": "成功没有捷径，你必须比别人多付出"
+      },
+      {
+        "if": "要理解一个物理现象",
+        "then": "先把它画出来、算出来建立图像",
+        "evidence": "你要理解一个物理现象，先要能把它画出来、算出来"
+      },
+      {
+        "if": "选择���究课题",
+        "then": "选别人没做过也做不出来的",
+        "evidence": "我们要做的是别人没做过、也做不出来的东西"
+      },
+      {
+        "if": "取得成果",
+        "then": "归功于团队而非个人",
+        "evidence": "团队里每个人都很拼，不是我一个人的功劳"
+      },
+      {
+        "if": "面对外部潮流",
+        "then": "保持自己的判断不盲从",
+        "evidence": "我们不能什么都跟着别人跑，要有自己的判断"
+      }
+    ],
+    "value_weights": {
+      "坚持与长期主义": 0.28,
+      "科学严谨与实证": 0.22,
+      "国家/民族科学使命": 0.18,
+      "人才培养与教育理想": 0.16,
+      "团队协作": 0.1,
+      "个人声誉与地位": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "低调实干、信奉行动、不说漂亮话的自我定位",
+        "force_b": "大量出现在励志演讲与公众动员场合的校长/公众角色",
+        "behavioral_signature": "口头声称'我不太会说漂亮话，我信奉行动'，实际却频繁进行励志演讲与公开动员（dim-05言行张力记录）"
+      },
+      {
+        "force_a": "强调'不是我一个人的功劳'的团队叙事",
+        "force_b": "个人形象在传播生态中被高度聚焦、成为标志性人物",
+        "behavioral_signature": "公开谈成果时反复用'我们'，但媒体呈现与荣誉授予高度集中于个人（dim-05决策6）"
+      },
+      {
+        "force_a": "纯科研者、耐冷板凳的身份认同",
+        "force_b": "接受大学校长职务承担行政与体制改革压力",
+        "behavioral_signature": "自述'坐住冷板凳''半夜想实验细节'，却选择分散科研精力去做高教改革管理（dim-05决策5）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "长期方向不确定、久攻不下",
+        "reaction": "自我怀疑但不停手",
+        "escalation": "那段最难的时候，我也想过是不是方向错了"
+      },
+      {
+        "trigger": "关键结果初现",
+        "reaction": "警惕恐是假象，反复确认",
+        "escalation": "这个结果出来的时候，我们反复确认，就怕是个假象"
+      },
+      {
+        "trigger": "重大突破实现",
+        "reaction": "强烈激动情绪外显",
+        "escalation": "这是我一生中最激动的时刻之一"
+      },
+      {
+        "trigger": "沉浸于未解实验细节",
+        "reaction": "夜间反刍、失眠",
+        "escalation": "我常常半夜里想起实验的细节，睡不着"
+      }
+    ],
+    "blind_spots": [
+      "对'苦读/笨功夫'励志叙事可能简化科研成功的结构性因素缺乏自省，过度传播其个人奋斗模板 [社会评论方向-约2010s]",
+      "对南方科技大学'去行政化/教改实验'理想与实际体制约束之间落差的估计可能偏乐观 [教育评论方向-约2010s后期]",
+      "对顶尖科学家兼任校长/行政职务是否稀释科研专注度的风险认识不足 [高教评论方向-约2010s]",
+      "对重大成果'署名与团队贡献分配'议题的公共敏感性认识可能不充分 [学界讨论方向-年份不详]",
+      "对基础研究'重大突破'宣传口径可能放大成果媒体呈现的问题缺乏警觉 [科学传播批评方向-年份不详]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高不确定性容忍叠加低回头倾向使其在长周期高风险课题上超常坚持",
+        "when": {
+          "uncertainty_tolerance": ">=0.7"
+        },
+        "disposition": "在多年无结果的方向上持续投入而不切换",
+        "behavioral_notes": "四年上千次样品生长仍坚持，'认准的事就不太回头'"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自主需求使其抗拒盲目跟随主流路径",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "选择原创性、无人做过的课题并坚持自主判断",
+        "behavioral_notes": "'别人没做过、也做不出来的东西'与'不能什么都跟着别人跑'"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "中高控制需求驱动其对实验环节的极致把控，形成反复验证倾向",
+        "when": {
+          "control_need": ">=0.6"
+        },
+        "disposition": "对每一样品、每一数据反复测量确认",
+        "behavioral_notes": "'一点马虎不得'与'实验重复性是我们最看重的东西'"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "高信任倾向使其在公开表达中系统性地把功劳外部化",
+        "when": {
+          "trust_propensity": ">=0.65"
+        },
+        "disposition": "以团队叙事替代个人叙事",
+        "behavioral_notes": "'不是我一个人的功劳'——但与个人被聚焦的传播现实形成张力"
+      }
+    ]
+  }
+}

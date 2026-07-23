@@ -1,0 +1,268 @@
+{
+  "person_id": "pdd-liu-mou",
+  "display_name": "PDD（刘谋）",
+  "name_en": "Liu Mou (PDD)",
+  "region": "CN",
+  "industries": [
+    "游戏直播",
+    "电竞创业"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 23
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/pdd-liu-mou/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/pdd-liu-mou/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/pdd-liu-mou/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/pdd-liu-mou/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "pdd-liu-mou",
+    "source": "pdd-liu-mou-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "我带队跟带兵一样，纪律必须严；我对队员的要求就一条：别偷懒；我这人认死理，认准了就干到底"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "输了就输了，下把再来呗，急啥；落后不要慌，一波翻盘的机会还在"
+      },
+      "trust_propensity": {
+        "score": 0.45,
+        "evidence": "队员我当亲兄弟一样带，训练该骂还得骂；你别老甩锅队友，先看看自己"
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "你说这波能不能上？能上啊，兄弟们，冲！；我为啥要建战队？因为我想干点正经事；这个决策我不认可，太保守了"
+      },
+      "self_efficacy": {
+        "score": 0.78,
+        "evidence": "这英雄我玩了几千把了，我还能不懂？；这操作，我给满分，就问还有谁；我打游戏是认真的，你们别觉得我在玩"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "我这个人认死理，认准了就干到底；我这人不会做表面功夫，喜欢就是喜欢；我不缺钱，我缺的是让人服气的成绩"
+      },
+      "intimacy_need": {
+        "score": 0.68,
+        "evidence": "家人们的支持是我坚持下去的理由，这话不假；队员我当亲兄弟一样带；我从一个主播到现在，靠的就是真诚俩字"
+      },
+      "status_sensitivity": {
+        "score": 0.72,
+        "evidence": "我不缺钱，我缺的是让人服气的成绩；组建俱乐部就是想证明，主播也能做出成绩；别老盯着我打游戏水平，我现在主要是老板"
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "打职业不容易，输赢别太苛责选手；兄弟们冷静，别在弹幕吵架，都是来玩的；我劝你别学我，我这条路不好走"
+      }
+    },
+    "core_models": [
+      {
+        "name": "证明式成就模型",
+        "rule": "价值来自被承认的硬成绩而非金钱或流量，凡事以'能否让人服气'为最终校验",
+        "evidence": [
+          "我不缺钱，我缺的是让人服气的成绩",
+          "组建俱乐部就是想证明，主播也能做出成绩"
+        ]
+      },
+      {
+        "name": "带兵式权威管理模型",
+        "rule": "用军队/兄弟情+严纪律的个人权威来组织团队，先立情感再立规矩",
+        "evidence": [
+          "我带队跟带兵一样，纪律必须严",
+          "队员我当亲兄弟一样带，训练该骂还得骂"
+        ]
+      },
+      {
+        "name": "心态优先竞技模型",
+        "rule": "所有竞技/决策问题先过一遍'心态是否稳'，把心理状态当首要变量",
+        "evidence": [
+          "心态最重要，你心态崩了这局就没了",
+          "这选手心态稳，年纪轻轻了不起"
+        ]
+      },
+      {
+        "name": "责任内归因模型",
+        "rule": "结果不佳时优先把责任揽到自己身上，作为负责人身份的锚点",
+        "evidence": [
+          "兄弟们，队伍这次没打好，责任在我",
+          "成绩不好我第一个背锅，这是老板该干的"
+        ]
+      },
+      {
+        "name": "真诚直白过滤器",
+        "rule": "以'不做表面功夫、说实话'作为自我表达与信任判断的底线",
+        "evidence": [
+          "我从一个主播到现在，靠的就是真诚俩字",
+          "我这人不会做表面功夫，喜欢就是喜欢"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对高风险机会窗口",
+        "then": "倾向果断进攻而非保守",
+        "evidence": "你说这波能不能上？能上啊，兄弟们，冲！"
+      },
+      {
+        "if": "遭遇失败或状态下滑",
+        "then": "先自嘲承认再快速翻篇，不纠缠",
+        "evidence": "输了就输了，下把再来呗，急啥"
+      },
+      {
+        "if": "有人只动嘴不下场",
+        "then": "用'你行你上'回怼",
+        "evidence": "你行你上啊，键盘侠谁不会当"
+      },
+      {
+        "if": "年轻人向他请教打职业",
+        "then": "先泼冷水强调吃苦与淘汰率",
+        "evidence": "想打职业？先问问自己能不能吃这个苦"
+      },
+      {
+        "if": "队伍成绩出问题",
+        "then": "第一时间公开揽责",
+        "evidence": "成绩不好我第一个背锅，这是老板该干的"
+      },
+      {
+        "if": "有人甩锅或抱怨队友",
+        "then": "要求先向内找原因",
+        "evidence": "你别老甩锅队友，先看看自己"
+      },
+      {
+        "if": "认定一件事是对的",
+        "then": "认死理干到底不回头",
+        "evidence": "我这个人认死理，认准了就干到底"
+      }
+    ],
+    "value_weights": {
+      "被承认的成绩": 0.28,
+      "负责与担当": 0.2,
+      "长期投入与坚持": 0.18,
+      "真诚不作假": 0.14,
+      "情义与团队归属": 0.12,
+      "个人自由与休息": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "个人权威式带队（认死理、我说了算）",
+        "force_b": "追求可持续的体系化管理",
+        "behavioral_signature": "口头承认'光靠情怀不行，得有体系'，行为上仍以'带兵严纪律'个人权威决策，被圈内批评决策依赖个人权威而非体系"
+      },
+      {
+        "force_a": "劝退年轻人'别学我、好好读书'",
+        "force_b": "自身持续扩张战队、吸纳新人",
+        "behavioral_signature": "连麦口头劝退与俱乐部招募扩张同时进行，形成言行不一"
+      },
+      {
+        "force_a": "'打游戏是认真的'的选手自我认同",
+        "force_b": "承认状态下滑、转向'我现在主要是老板'",
+        "behavioral_signature": "一边强调'这英雄我玩了几千把'，一边说'别老盯着我打游戏水平'，身份定位来回拉扯"
+      },
+      {
+        "force_a": "疲惫想歇、想给新人让位",
+        "force_b": "冠军后'守住更难'的继续绑定",
+        "behavioral_signature": "反复'想歇歇'却始终不明确离场，去留态度长期模糊"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑打游戏是玩票/不认真",
+        "reaction": "强调资历与投入以自证",
+        "escalation": "从'我打游戏是认真的'升级到'这英雄我玩了几千把了，我还能不懂？'"
+      },
+      {
+        "trigger": "只评论不实操的键盘侠",
+        "reaction": "直接怼回",
+        "escalation": "'你行你上啊，键盘侠谁不会当'"
+      },
+      {
+        "trigger": "游戏/赛事更新或决策不合意",
+        "reaction": "公开点名不满",
+        "escalation": "从'这个决策我不认可，太保守了'到'这游戏更新完全不对劲，策划你出来'"
+      },
+      {
+        "trigger": "长期高压与疲惫累积",
+        "reaction": "示弱表达累了想歇",
+        "escalation": "从'我最近确实累了，想歇歇'到'电竞这行看着风光，背后全是压力'"
+      }
+    ],
+    "blind_spots": [
+      "管理过度依赖个人权威与情绪，体系化不足而不自知 [电竞圈内评论-2020-2022]",
+      "劝退年轻人打职业与自身扩张招募的言行不一未被自我察觉 [粉丝社区/贴吧论坛-2019-2022]",
+      "低估自身热度对'老板人设+人情'的依赖，而非实际竞技水平 [竞品主播/同行舆论-2020-2021]",
+      "早期口无遮拦/整活与专业性边界的争议自评不足 [直播行业媒体-2018-2020]",
+      "俱乐部长期烧钱、盈利模式模糊，情怀难持续的商业风险认知薄弱 [商业评论视角-2021-2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高控制需求驱动其采用个人权威式严纪律管理",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "在团队中以'带兵'方式集中决策，倾向亲自定规矩与揽责",
+        "behavioral_notes": "情感先行拉近距离，再用纪律压场，易被外部读作情绪化"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高地位敏感促使其用'硬成绩'而非金钱来定义自我价值",
+        "when": {
+          "status_sensitivity": ">=0.7"
+        },
+        "disposition": "反复以'让人服气的成绩''证明主播也能做出成绩'为动机",
+        "behavioral_notes": "拿冠军后立刻转向'守住更难'，持续加码而非兑现休息意愿"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高自我效能叠加高风险偏好导致进攻式即时决策",
+        "when": {
+          "risk_appetite": ">=0.7"
+        },
+        "disposition": "面对机会窗口倾向'能上就冲'，批评保守决策",
+        "behavioral_notes": "自信来源于'几千把'经验，可能忽视概率与外部体系约束"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "高自主需求使其抗拒表面功夫并坚持己见",
+        "when": {
+          "autonomy_need": ">=0.75"
+        },
+        "disposition": "认死理干到底，直言喜恶，拒绝形式化表达",
+        "behavioral_notes": "增强真诚人设但降低对体系化/外部规范的接受度"
+      }
+    ]
+  }
+}

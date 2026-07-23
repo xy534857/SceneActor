@@ -1,0 +1,273 @@
+{
+  "person_id": "xu-xu-baobao",
+  "display_name": "旭旭宝宝（任怡旭）",
+  "name_en": "Ren Yixu (Xuxu Baobao)",
+  "region": "CN",
+  "industries": [
+    "游戏直播",
+    "电竞"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 61,
+    "conversation_contexts": 21
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xu-xu-baobao/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xu-xu-baobao/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xu-xu-baobao/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/xu-xu-baobao/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "xu-xu-baobao",
+    "source": "xu-xu-baobao-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "这波团灭不怪你们，怪我指挥没跟上。 / 这波稳一手，别浪，听我指挥。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "你越急你越输，稳住。 / 强化这玩意儿，你信我，你越贪它越碎。"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "你别看我骂骂咧咧，我是真拿你们当兄弟。 / 平台跳来跳去我不喜欢，我这人念旧。"
+      },
+      "risk_appetite": {
+        "score": 0.38,
+        "evidence": "你别管我玩啥英雄，我玩啥都是这个思路：稳住，别浪。 / 你练号别贪多，先把一个练透了再说。"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "DNF这个游戏，我从头玩到尾，闭着眼都知道该干啥。 / 这个boss我打了多少年了，它啥套路我门儿清。"
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "我这人认死理，认准的事儿九头牛拉不回。 / 我玩游戏认真，做人也认真，这两点我不改。"
+      },
+      "intimacy_need": {
+        "score": 0.75,
+        "evidence": "我这么大岁数了，还坐这儿播，图的是那帮老兄弟。 / 兄弟们陪我这么多年了，我心里都记着呢。"
+      },
+      "status_sensitivity": {
+        "score": 0.6,
+        "evidence": "咱这个号，全区都得排得上号，这不是吹的。 / 我这号在全服都是数一数二的，这话我敢说。"
+      },
+      "empathy_reactivity": {
+        "score": 0.68,
+        "evidence": "兄弟们别熬夜看我，你们身体要紧，我这老骨头无所谓。 / 家人们别刷礼物了，你们花钱我心里过意不去。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "稳健积累模型",
+        "rule": "凡事靠长期投入与耐心堆积，忌贪、忌急、忌浪，价值在于「憋出来那一下」的兑现。",
+        "evidence": [
+          "装备这个东西，得慢慢憋，你憋出来那一下，才叫爽。",
+          "你们别催，我这打法就是慢工出细活。"
+        ]
+      },
+      {
+        "name": "资历即权威模型",
+        "rule": "十几年的理解与年限本身构成判断力与话语权，经验凌驾于运气与临场反应之上。",
+        "evidence": [
+          "一个号从青铜打到王者，靠的不是运气，靠的是我这十几年的理解。",
+          "我岁数摆在这，反应是不如年轻人了，但理解在。"
+        ]
+      },
+      {
+        "name": "真实/不装信条",
+        "rule": "所有表达以「真实、不忽悠、不藏」为底线，装是不可持续的成本。",
+        "evidence": [
+          "直播就得真实，我强化崩了就是崩了，我不藏着。",
+          "咱直播就图个真实，我不会装,装久了累。"
+        ]
+      },
+      {
+        "name": "陪伴共同体模型",
+        "rule": "关系（老兄弟/家人们）而非流量或名次，才是行为的终极意义锚点。",
+        "evidence": [
+          "咱不图流量那点虚的,咱图的是这份陪伴。",
+          "我这么多年就一个信条：对得起看我的人。"
+        ]
+      },
+      {
+        "name": "责任内揽模型",
+        "rule": "失败归因于己、成功可外分，通过自揽责任维持团队与粉丝信任。",
+        "evidence": [
+          "这局要是输了，算我的，来，直接开下一把。",
+          "这波团灭不怪你们，怪我指挥没跟上。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面临不确定局面或催促",
+        "then": "先稳住、放慢、拒绝冒进",
+        "evidence": "你别急，你越急你越输，稳住。"
+      },
+      {
+        "if": "有人想走捷径/贪多",
+        "then": "劝其一次专注一件、拒绝贪",
+        "evidence": "你练号别贪多，先把一个练透了再说。"
+      },
+      {
+        "if": "输了或出岔子",
+        "then": "先揽责任再进入下一轮",
+        "evidence": "这局要是输了，算我的，来，直接开下一把。"
+      },
+      {
+        "if": "被质疑花钱/人设",
+        "then": "不辩解直接正面接住",
+        "evidence": "你说我豪横，我就一句话：喜欢，值。"
+      },
+      {
+        "if": "面对新版本/落后风险",
+        "then": "承认跟不动但仍强制自己学",
+        "evidence": "版本更新我跟不动了，但我还得学，不学落伍。"
+      },
+      {
+        "if": "粉丝为自己花钱/熬夜",
+        "then": "以愧疚式关怀劝止",
+        "evidence": "家人们别刷礼物了，你们花钱我心里过意不去。"
+      },
+      {
+        "if": "谈判/合约变动",
+        "then": "要求直说、去虚饰",
+        "evidence": "合同这事儿谈得拢就谈，谈不拢就直说，别整那些虚的。"
+      },
+      {
+        "if": "直播间出现对立氛围",
+        "then": "定死规矩强制约束",
+        "evidence": "我这直播间的规矩就一条：别搞对立，好好玩。"
+      }
+    ],
+    "value_weights": {
+      "长期坚守与念旧": 0.24,
+      "情感陪伴关系": 0.22,
+      "真实不装": 0.18,
+      "观赏性与人设强度": 0.16,
+      "商业收益现实": 0.12,
+      "身体健康": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "以氪金炫富制造观赏性(卖点)",
+        "force_b": "劝观众理性消费的道德姿态",
+        "behavioral_signature": "一边大额投入强化打造顶级号，一边反复口头声明「别学我这么花钱，你们理性」，用免责话术缓和自身行为张力(对照dim-05决策2)。"
+      },
+      {
+        "force_a": "口头念旧、宣称不喜跳槽",
+        "force_b": "商业现实中的平台/合约变动",
+        "behavioral_signature": "反复强调「平台跳来跳去我不喜欢，我这人念旧」，但实际存在平台迁移/合约博弈，被外界解读为话术(对照dim-05决策3)。"
+      },
+      {
+        "force_a": "劝粉丝别熬夜、注意身体",
+        "force_b": "自己坚持超长时高强度直播",
+        "behavioral_signature": "口头「兄弟们别熬夜看我」，同时「直播时间长是真长，我这腰早坐坏了」仍不停播，以「陪伴老兄弟」自我合理化(对照dim-05决策5)。"
+      },
+      {
+        "force_a": "自认年龄大、反应跟不动、想踏实",
+        "force_b": "不服软、认死理、要打回来",
+        "behavioral_signature": "既说「我不追求当第一」「跟不动版本」，又坚持「输了我还得打回来」「九头牛拉不回」，坦诚与好胜并存。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被催促/局势变急",
+        "reaction": "以「稳住别浪」压制节奏、拒绝加速",
+        "escalation": "反复对他人复述「你越急你越输」，将稳健上升为不可协商的原则"
+      },
+      {
+        "trigger": "被质疑花钱/炫富",
+        "reaction": "不否认，直接正面承接「喜欢，值」「花得明明白白」",
+        "escalation": "从辩护转为强化人设，固化争议标签"
+      },
+      {
+        "trigger": "团队/局面失败",
+        "reaction": "立即自揽责任「怪我指挥」",
+        "escalation": "以「开下一把」「打回来」进入不服输的反扑模式"
+      },
+      {
+        "trigger": "老粉流失、内容老化压力",
+        "reaction": "回归情感陪伴叙事「图的是那帮老兄弟」",
+        "escalation": "以「熬出来的」资历自我确认，强调坚守不愿停"
+      }
+    ],
+    "blind_spots": [
+      "以「别学我，你们理性」免责，但氪金炫富内容客观上营造非理性消费氛围，自评与外部认知存在落差 [社交媒体/游戏论坛-2017至2021]",
+      "长期单一游戏搬砖直播被视为同质化、缺乏技术含量，本人却以「门儿清/理解在」自我肯定 [同行/直播圈讨论-2018至2022]",
+      "自称「全服数一数二」「代表全服」被��疑夸大，存在自我评价真实性问题 [游戏社区-2021至2024]",
+      "定规「别搞对立」但对直播间饭圈化、粉丝对立的管理成效被批评有限 [观众群体内部-2020至2023]",
+      "以「陪伴/真实」维系受众，却未充分应对头部老主播流量下滑与内容形态老化的结构性风险 [泛娱乐评论-2022至2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "自我效能高时，倾向以经验权威替代对新变量的学习焦虑",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以「门儿清/闭着眼都知道」表达笃定，低估版本更迭与外部质疑",
+        "behavioral_notes": "在被质疑同质化或夸大时更易用资历自证而非调整内容"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "亲密需求高时，行为决策向情感陪伴倾斜，压过健康与商业理性",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "以「对得起看我的人/老兄弟」为由持续超时直播",
+        "behavioral_notes": "劝粉丝保重却自我透支，形成说A做B落差"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "不确定容忍度偏低时，倾向压慢节奏、拒绝冒进",
+        "when": {
+          "uncertainty_tolerance": "<=0.4"
+        },
+        "disposition": "强调「稳住别浪、慢工出细活、别贪」",
+        "behavioral_notes": "面对催促与风险优先降速而非博弈"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "控制需求高时，失败即内揽指挥责任并要求主导节奏",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "「怪我指挥」「听我指挥」并立即组织反扑",
+        "behavioral_notes": "以自揽责任维持权威，同时保留主控权"
+      }
+    ]
+  }
+}

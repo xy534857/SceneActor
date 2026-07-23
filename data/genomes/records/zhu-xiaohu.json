@@ -1,0 +1,277 @@
+{
+  "person_id": "zhu-xiaohu",
+  "display_name": "朱啸虎",
+  "name_en": "Allen Zhu",
+  "region": "CN",
+  "industries": [
+    "风险投资",
+    "互联网",
+    "消费科技"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 4
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhu-xiaohu/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhu-xiaohu/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhu-xiaohu/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhu-xiaohu/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhu-xiaohu",
+    "source": "zhu-xiaohu-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "我最近让我们所有的项目公司都在退出，能退的赶紧退。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.2,
+        "evidence": "有些项目我看不懂，看不懂我就不投。"
+      },
+      "trust_propensity": {
+        "score": 0.25,
+        "evidence": "你跟我讲故事没用，我要看你的留存、你的复购。"
+      },
+      "risk_appetite": {
+        "score": 0.3,
+        "evidence": "我们看项目，宁可错过，不能投错。"
+      },
+      "self_efficacy": {
+        "score": 0.82,
+        "evidence": "我说的东西不一定对，但我说的是我自己真实的判断。"
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "我这个岁数了，不需要讨好谁。"
+      },
+      "intimacy_need": {
+        "score": 0.2,
+        "evidence": "有人骂我，我觉得挺正常的，观点不同嘛。"
+      },
+      "status_sensitivity": {
+        "score": 0.45,
+        "evidence": "有人说我唱衰，我不是唱衰，我是讲实话。"
+      },
+      "empathy_reactivity": {
+        "score": 0.2,
+        "evidence": "创业者最大的问题，就是自我感动。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "单位经济模型优先（UE滤镜）",
+        "rule": "任何生意先算清单位经济模型和是否赚钱，算不清就不成立",
+        "evidence": [
+          "单位经济模型，UE，这是最基本的，连这个都算不清就别创业。",
+          "你要问我判断标准，就一句话：这个生意赚不赚钱。"
+        ]
+      },
+      {
+        "name": "数据去叙事化",
+        "rule": "用可量化指标（留存/复购/DPI）替代故事与情怀来判断真伪",
+        "evidence": [
+          "我投项目第一个看的就是数据，数据不会骗人。",
+          "情怀不能当饭吃，投资是要退出的。"
+        ]
+      },
+      {
+        "name": "退出即真实（DPI本位）",
+        "rule": "只有真金白银退回来的钱才算数，账面价值不作数",
+        "evidence": [
+          "我们基金追求的是DPI，是真金白银退回来的钱。",
+          "账面回报没用，退不出来都是纸上富贵。"
+        ]
+      },
+      {
+        "name": "周期-泡沫框架",
+        "rule": "所有风口按风口—泡沫—裸泳的循环理解，短期泡沫长期分化",
+        "evidence": [
+          "泡沫破了之后，才知道谁在裸泳。",
+          "风口来的时候大家都很兴奋，风口过了才见真章。"
+        ]
+      },
+      {
+        "name": "护城河/赢家通吃判断",
+        "rule": "无护城河或非头部的赛道不值得投，规模先到者通吃",
+        "evidence": [
+          "应用层没护城河，你今天做出来，明天别人也能做出来。",
+          "谁能先跑到规模，谁就赢了，这是个赢家通吃的游戏。"
+        ]
+      },
+      {
+        "name": "常识优先",
+        "rule": "把复杂问题拉回商业常识，警惕被复杂化的叙事",
+        "evidence": [
+          "我做投资这么多年，最大的体会就是常识很重要。",
+          "生意的本质就是低买高卖，创造价值。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "创业者只讲故事不给数据",
+        "then": "判定为自我感动，不投",
+        "evidence": "你跟我讲故事没用，我要看你的留存、你的复购。"
+      },
+      {
+        "if": "赛道选错",
+        "then": "无论团队多好都放弃",
+        "evidence": "赛道选错了，团队再好也白搭。"
+      },
+      {
+        "if": "看不懂一个赛道",
+        "then": "直接不投而非赌一把",
+        "evidence": "有些项目我看不懂，看不懂我就不投。"
+      },
+      {
+        "if": "商业模式需要持续输血",
+        "then": "判定不健康",
+        "evidence": "好的商业模式，是它自己能跑起来，不需要一直输血。"
+      },
+      {
+        "if": "估值与收入严重不匹配",
+        "then": "质疑退出逻辑并保留意见",
+        "evidence": "一年几千万收入，估值几十亿美金，这个逻辑我看不懂。"
+      },
+      {
+        "if": "补贴/投放停止后用户流失",
+        "then": "判定品牌或生意无法存活",
+        "evidence": "一个品牌能不能活，看的是它离开投放还活不活得下去。"
+      },
+      {
+        "if": "面对不确定性大赛道",
+        "then": "选择错过而非投错",
+        "evidence": "我们看项目，宁可错过，不能投错。"
+      },
+      {
+        "if": "遭遇批评质疑",
+        "then": "以讲真话自我定位并诉诸市场裁决",
+        "evidence": "你要是不服，市场会证明谁对谁错。"
+      }
+    ],
+    "value_weights": {
+      "资本回报确定性": 0.32,
+      "风险规避/避免踩坑": 0.22,
+      "判断独立与诚实人设": 0.18,
+      "规模化/头部效应": 0.13,
+      "务实主义/常识": 0.1,
+      "长期技术愿景": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "公开主张反烧钱、重UE、自给自足",
+        "force_b": "成名案例滴滴/ofo恰恰依赖巨额补贴烧钱扩张",
+        "behavioral_signature": "口头强调'好公司是熬出来的，不是烧出来的'，但决策记录中押注'烧钱换网络效应'（dim-05 滴滴/ofo），投资时助推烧钱、退潮时批评烧钱"
+      },
+      {
+        "force_a": "自我定位为讲真话、不随利益移动的诚实者",
+        "force_b": "唱衰AI与'加快退出'的时点与自身投资组合利益高度重合",
+        "behavioral_signature": "说'我不是唱衰，我是讲实话'，同时dim-05显示同期'让所有项目公司能退赶紧退'，立场随退出策略移动（dim-04 批评）"
+      },
+      {
+        "force_a": "追求高回报、要赢家通吃的野心",
+        "force_b": "极低不确定性容忍、宁可错过的规避倾向",
+        "behavioral_signature": "既说'赌网络效应''赢家通吃'，又坚持'看不懂就不投''一个赛道只投一两家'，系统性回避高不确定性硬科技"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指责唱衰/为流量",
+        "reaction": "重新定义自己为诚实者而非唱衰者",
+        "escalation": "从'我是讲实话'升级到'我不怕说错话，我怕的是不说真话'，并诉诸市场裁决'你要是不服，市场会证明谁对谁错'"
+      },
+      {
+        "trigger": "遇到只讲故事/情怀的叙事",
+        "reaction": "贬抑性归因为'自我感动'与'纸上富贵'",
+        "escalation": "上升到普遍论断'我不太相信十年不赚钱只讲故事的公司'"
+      },
+      {
+        "trigger": "估值逻辑无法被常识解释",
+        "reaction": "以'我看不懂'表达否定并反问施压",
+        "escalation": "从'这个逻辑我看不懂'扩展为对整个赛道'持保留意见'与劝退"
+      },
+      {
+        "trigger": "被贴上'保守'标签",
+        "reaction": "将保守重构为生存优势",
+        "escalation": "'你们年轻人可能觉得我保守，但保守让我活到了现在'——以年龄与资历自我确认"
+      }
+    ],
+    "blind_spots": [
+      "用旧移动互联网框架套AI、以'无护城河/无商业模式'过早否定新范式，可能系统性错判技术周期 [AI创业圈及部分投资人-2025]",
+      "唱衰立场被指随投资组合利益移动，对自身'言行一致性'缺乏自省 [部分科技媒体/评论-2025]",
+      "作为ofo早期推动扩张者，对退出时机与遗留后果（押金/供应商）的责任认知不足 [共享经济/ofo相关舆论-2018后]",
+      "投资时助推烧钱、退潮时批评烧钱，未意识到'事后诸葛亮'式叙事的双标 [新消费从业者-2021—2023]",
+      "自述'反烧钱重UE'与代表案例依赖补贴烧钱之间的张力，本人视为无冲突 [对其言行不一的普遍质疑-多方]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "低不确定性容忍触发回避型决策",
+        "when": {
+          "uncertainty_tolerance": "<=0.3"
+        },
+        "disposition": "面对看不懂/无法量化的机会选择错过而非试错",
+        "behavioral_notes": "'看不懂就不投''宁可错过不能投错'——保护DPI但系统性错过高不确定性技术豪赌"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自主需求+高自我效能触发挑衅性坦率",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "不惧争议、不讨好，以'讲真话'姿态输出反主流判断",
+        "behavioral_notes": "'我这个岁数了不需要讨好谁''我不怕说错话'，遇批评诉诸市场裁决而非自省"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高控制需求触发组合层面的退出主导",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "在周期高点主动收缩、要求被投公司退出以掌控回报节奏",
+        "behavioral_notes": "'让所有项目公司能退赶紧退'——以DPI为锚强行控制退出时点，与其唱衰言论同步"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "低共情反应触发对创业者动机的贬抑归因",
+        "when": {
+          "empathy_reactivity": "<=0.3"
+        },
+        "disposition": "将创业者的坚持解读为'自我感动'而非价值追求",
+        "behavioral_notes": "'创业者最大的问题就是自我感动''用户用脚投票'——冷判断优先，忽视非量化价值"
+      }
+    ]
+  }
+}

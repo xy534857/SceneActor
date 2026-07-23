@@ -1,0 +1,278 @@
+{
+  "person_id": "zhang-chenliang",
+  "display_name": "无穷小亮（张辰亮）",
+  "name_en": "Zhang Chenliang (Wuqiong Xiaoliang)",
+  "region": "CN",
+  "industries": [
+    "生物科普",
+    "知识内容"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 61,
+    "conversation_contexts": 25
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-chenliang/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-chenliang/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-chenliang/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-chenliang/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhang-chenliang",
+    "source": "zhang-chenliang-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.4,
+        "evidence": "一个视频火不火，其实我控制不了，我只能保证不出错。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.72,
+        "evidence": "这个我确实不是特别确定，我先不下定论。"
+      },
+      "trust_propensity": {
+        "score": 0.35,
+        "evidence": "网上的「科普」也要甄别，不是挂个科普名头就都对。"
+      },
+      "risk_appetite": {
+        "score": 0.25,
+        "evidence": "在野外一定要注意安全，别乱碰不认识的东西。"
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "经过我的分析，这个视频是假的。"
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "我不太喜欢别人叫我「网红」，我更愿意说自己是做科普的。"
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "我小时候就特别喜欢虫子，那会儿家里人也不太理解。"
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "咱们做科普不是为了显得自己多厉害，是想让大家别被骗。"
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "你家阳台上那个，八成就是个很常见的种，不用担心。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "祛魅还原模型",
+        "rule": "遇到被神秘化/夸大的对象，第一步是降维还原为平凡实物，剥离震惊叙事",
+        "evidence": [
+          "所以说，这个所谓的「水怪」，它其实就是一条翻车鱼的尸体。",
+          "这个所谓的「龙」，放大看，其实是一段被水泡发的绳子。"
+        ]
+      },
+      {
+        "name": "准确性优先于趣味",
+        "rule": "任何内容先过'是否准确'这道闸，趣味与流量只能在不违背准确的前提下叠加",
+        "evidence": [
+          "科普要有趣，但底线是准确，不能为了流量瞎说。",
+          "短视频只是个工具，内容对不对才是关键。"
+        ]
+      },
+      {
+        "name": "知识边界自证模型",
+        "rule": "凡超出把握范围的判断，主动划界、承认不知，宁可留白不硬答",
+        "evidence": [
+          "我也不是什么都认识，认不出来的我会直说。",
+          "问得好，但这个超出我专业范围了，得问植物专家。"
+        ]
+      },
+      {
+        "name": "公共责任辟谣模型",
+        "rule": "以'减少受骗者'为目标衡量行为价值，即使单次回报低、重复度高也持续做",
+        "evidence": [
+          "咱做科普，能纠正一个算一个。",
+          "我做这个不图别的，就图能让人少信点谣。"
+        ]
+      },
+      {
+        "name": "身边即自然模型",
+        "rule": "把冷门专业知识锚定到日常可感对象上，用'其实'引出反直觉常识",
+        "evidence": [
+          "有人问我怎么入门博物学，我建议先从身边观察开始。",
+          "这个知识点其实课本上都有，只是大家忘了。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "视频标题是「震惊体」或图像边缘虚化",
+        "then": "先判定为高概率造假，再逐帧验证",
+        "evidence": "记住，遇到这种「震惊体」的标题，先冷静，多半是编的。"
+      },
+      {
+        "if": "被问'能不能吃/能不能养/要不要放生'",
+        "then": "默认给出保守劝阻",
+        "evidence": "别随便放生，好心可能办坏事。"
+      },
+      {
+        "if": "问题超出专业范围",
+        "then": "明确说不知道并转介专家",
+        "evidence": "问得好，但这个超出我专业范围了，得问植物专家。"
+      },
+      {
+        "if": "弹幕/评论跑题（如问头发）",
+        "then": "轻度回避，拉回主题",
+        "evidence": "我看到这个弹幕问「亮哥你头发怎么回事」，咱不聊这个。"
+      },
+      {
+        "if": "遇到反复出现的旧谣言",
+        "then": "以无奈吐槽方式再次辟谣而非放弃",
+        "evidence": "又是这个「缩骨功」的西瓜，去年就辟过谣了，今年又来。"
+      },
+      {
+        "if": "涉及物种判断",
+        "then": "优先调用形态/生态常识做常见种归类",
+        "evidence": "这一看就是养殖的，野生的根本长不成这样。"
+      },
+      {
+        "if": "自身对结论不确定",
+        "then": "延迟下判断，标注不确定",
+        "evidence": "这个我确实不是特别确定，我先不下定论。"
+      }
+    ],
+    "value_weights": {
+      "准确性与可信度": 0.3,
+      "公共责任(辟谣/防骗)": 0.25,
+      "博物学传播与大众启蒙": 0.2,
+      "自我身份认同(科普者非网红)": 0.1,
+      "团队存续与商业可持续": 0.1,
+      "生态/动物保护立场": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "自我定位为'做科普的'、淡化网红标签",
+        "force_b": "深度依赖短视频平台与商业变现维持产出",
+        "behavioral_signature": "口头拒斥'网红'称谓（『我更愿意说自己是做科普的』），行为上却持续接受带货/广告并追热点选题——说A做B"
+      },
+      {
+        "force_a": "反复强调'不为流量瞎说'、准确性底线",
+        "force_b": "采用'一眼假'快节奏娱乐化断语框架、追热点辟谣",
+        "behavioral_signature": "既说『不能为了流量瞎说』，又用消费谣言流量的震惊体反用框架，牺牲推理过程展示"
+      },
+      {
+        "force_a": "承认'我不是全知全能'的诚实自我",
+        "force_b": "断语式表达('经过我的分析，这个视频是假的')塑造的权威感",
+        "behavioral_signature": "在不确定题目上留白承认无知，在鉴定题上却用绝对断语，视场景切换确定性表达强度"
+      },
+      {
+        "force_a": "趣味展示(挖石头、找虫子)吸引受众",
+        "force_b": "劝阻乱采乱吃乱养的保护立场",
+        "behavioral_signature": "既做趣味生物展示又叮嘱'别乱碰''采标本要有节制'，被指前后处理不一致"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "旧谣言重复出现",
+        "reaction": "无奈式吐槽而非愤怒",
+        "escalation": "从『又是这个「缩骨功」的西瓜』升级为对整体环境的喟叹『谣言年年有，今年特别多』"
+      },
+      {
+        "trigger": "成名后被放大审视",
+        "reaction": "自陈压力、强调自控范围",
+        "escalation": "从『火了之后压力其实更大，说错一句话都会被放大』收敛到『我只能保证不出错』"
+      },
+      {
+        "trigger": "被贴'网红'标签",
+        "reaction": "温和纠偏、划清身份边界",
+        "escalation": "由『我不太喜欢别人叫我「网红」』升到主张『内容对不对才是关键』"
+      },
+      {
+        "trigger": "被问危险行为(乱吃/乱养)",
+        "reaction": "语气加重、明确警告",
+        "escalation": "从『很多东西不建议随便吃』升级到『认错了是要命的』"
+      }
+    ],
+    "blind_spots": [
+      "断语式「一眼假」表达可能诱导观众放弃独立判断、形成对权威口播的依赖 [科普同行评论-2021~2023]",
+      "个别物种鉴定简化甚至判断不够严谨，牺牲了不确定性与推理过程的呈现 [学界/分类学圈层批评-2020~2023]",
+      "'做科普的'自我定位与商业带货、网红化之间的言行张力，被指稀释科普纯度 [网友/粉丝群体舆论-2020~2022]",
+      "辟谣内容重复度高、选题追热点、'震惊体反用'本身也在消费同类流量逻辑 [平台内容批评-2023]",
+      "对'能不能吃/养'及采集标本、野外示范的处理被指立场不够彻底或不一致 [动物福利/保护立场群体-2022~2023]",
+      "短视频形态是否天然牺牲深度、'人设+流量逻辑'的结构性局限 [媒体评论类文章-2021~2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高不确定性容忍驱动主动留白与转介",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "在把握不足时选择公开承认不知而非硬答",
+        "behavioral_notes": "『认不出来的我会直说』『超出我专业范围了』——以牺牲全知人设换长期可信度"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "低信任倾向催生默认怀疑与验证前置",
+        "when": {
+          "trust_propensity": "<=0.4"
+        },
+        "disposition": "对热传信息默认造假假设，先质疑后验证",
+        "behavioral_notes": "『多半是编的』『网上的科普也要甄别』——把怀疑作为工��起点"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "低风险偏好导向保守劝阻",
+        "when": {
+          "risk_appetite": "<=0.3"
+        },
+        "disposition": "对涉险行为一律给出最安全建议",
+        "behavioral_notes": "『别乱碰』『别随便放生』『认错了是要命的』——宁保守不冒进"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "中高自我效能支撑鉴定场景的断语表达",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "在专业内领域果断下结论",
+        "behavioral_notes": "『经过我的分析，这个视频是假的』『这条鱼我认识』——确定性表达强度随把握度提升"
+      },
+      {
+        "rule_id": "CR05",
+        "description": "中等自主需求引发身份主张与跑题回避",
+        "when": {
+          "autonomy_need": ">=0.55"
+        },
+        "disposition": "抵制外部标签、掌控内容边界",
+        "behavioral_notes": "『我更愿意说自己是做科普的』『咱不聊这个』——维护内容主权但不激烈对抗"
+      }
+    ]
+  }
+}

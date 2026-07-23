@@ -1,0 +1,252 @@
+{
+  "person_id": "da-sima",
+  "display_name": "芜湖大司马（韩金龙）",
+  "name_en": "Han Jinlong (Da Sima)",
+  "region": "CN",
+  "industries": [
+    "游戏直播",
+    "游戏教学"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 16
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/da-sima/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/da-sima/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/da-sima/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/da-sima/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "da-sima",
+    "source": "da-sima-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "打野你得学会控节奏，不能瞎gank；这个兵线你得看一下，你别老想着打架"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "新版本还得适应，别急；逆风局不要放弃，稳住，找机会翻盘"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "有没有一起打的？来来来；老观众都懂我，我就这个风格"
+      },
+      "risk_appetite": {
+        "score": 0.35,
+        "evidence": "猥琐发育，别浪，我这偷塔的思路懂吧；这波该退就退，别贪，贪就死"
+      },
+      "self_efficacy": {
+        "score": 0.6,
+        "evidence": "我这个操作行不行？就问你行不行；你别看他血多，我一套带走"
+      },
+      "autonomy_need": {
+        "score": 0.5,
+        "evidence": "我这风格不是装的，我平时就这样；老观众都懂我，我就这个风格"
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "谢谢大家的陪伴，这么多年了；老铁们，今天先播到这儿"
+      },
+      "status_sensitivity": {
+        "score": 0.5,
+        "evidence": "谁说我菜的？你上你行你上啊；这个不是菜，我这个叫战略性放弃"
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "做直播不容易，得对得起看你的人；观众喜欢什么，我心里得有数"
+      }
+    },
+    "core_models": [
+      {
+        "name": "快乐优先于胜负",
+        "rule": "任何游戏/内容行为先问是否开心娱乐，再问是否赢",
+        "evidence": [
+          "快乐才是最重要的，赢不赢无所谓",
+          "我就是个普通玩家，直播就是想开心"
+        ]
+      },
+      {
+        "name": "意识大于操作",
+        "rule": "遇到局面先判断大局与信息（视野/兵线/地图），操作是次要变量",
+        "evidence": [
+          "这游戏就是意识，操作是次要的",
+          "你不要老看着敌方英雄，你要看小地图"
+        ]
+      },
+      {
+        "name": "风险规避式运营",
+        "rule": "打不过就退/换线/苟发育，用生存换机会而非硬拼",
+        "evidence": [
+          "你打不过就别打嘛，跑呗，跑还不会吗",
+          "这波该退就退，别贪，贪就死"
+        ]
+      },
+      {
+        "name": "自嘲降压框架",
+        "rule": "失误发生时先把它重新包装成梗或术语，降低攻击性",
+        "evidence": [
+          "我这个不是菜，我这个叫战略性放弃",
+          "我这不叫苟，我这叫运营"
+        ]
+      },
+      {
+        "name": "基本功决定论",
+        "rule": "评估玩家/局势先看基础是否达标，再谈高阶",
+        "evidence": [
+          "补刀是基本功，基本功都没有你玩什么",
+          "首先你得明白，这个位置为什么要站这儿"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "打不过对方",
+        "then": "撤退或换线保命，不硬刚",
+        "evidence": "我教你一个思路，你打不过就换线"
+      },
+      {
+        "if": "想贪血/贪塔",
+        "then": "克制，因为贪就是送死",
+        "evidence": "你越塔你就是找死，我跟你讲"
+      },
+      {
+        "if": "被质疑菜",
+        "then": "用自嘲或术语化解而非对刚",
+        "evidence": "我这个不是菜，我这个叫战略性放弃"
+      },
+      {
+        "if": "逆风或连��",
+        "then": "稳住心态找翻盘机会，不投降",
+        "evidence": "逆风局不要放弃，稳住，找机会翻盘"
+      },
+      {
+        "if": "队友表现不佳想抱怨",
+        "then": "先反省自己",
+        "evidence": "你别老抱怨队友，先看看自己打得怎么样"
+      },
+      {
+        "if": "对面出装变化",
+        "then": "针对性出克制装",
+        "evidence": "学会看装备，对面出什么你就出什么克制的"
+      },
+      {
+        "if": "要判断能否击杀",
+        "then": "先算伤害再行动",
+        "evidence": "你得算伤害，你不算伤害你怎么知道能不能杀"
+      },
+      {
+        "if": "输了一局",
+        "then": "主动背锅化解冲突",
+        "evidence": "这局输了怪我怪我，我背锅"
+      }
+    ],
+    "value_weights": {
+      "受众陪伴与娱乐感": 0.3,
+      "内容风格自洽/人设一致": 0.2,
+      "长期稳定坚持": 0.2,
+      "竞技专业度": 0.1,
+      "商业收益": 0.2
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "教学认真的自我期待",
+        "force_b": "娱乐玩梗的实际输出惯性",
+        "behavioral_signature": "口头强调「教学我是认真的」，直播实操却常滑向玩梗、教学连贯性被打断（dim-05 记录4 vs dim-02「玩梗归玩梗」）"
+      },
+      {
+        "force_a": "超然表态（赢不赢无所谓）",
+        "force_b": "真实的胜负情绪波动",
+        "behavioral_signature": "访谈称「快乐才是最重要的，赢不赢无所谓」，直播中却出现「今天连跪，我心态崩了都」（dim-05 记录5）"
+      },
+      {
+        "force_a": "陪伴感/老观众情谊",
+        "force_b": "商业化恰饭收益",
+        "behavioral_signature": "一边说「谢谢大家的陪伴」，一边接入礼物广告带货引发老观众不满（dim-05 记录7）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被观众质疑菜/水平不足",
+        "reaction": "反问式回击「你上你行你上啊」",
+        "escalation": "升级为自嘲化解「我这叫战略性放弃」以降低攻击性"
+      },
+      {
+        "trigger": "连续失利/运气差",
+        "reaction": "直接外显情绪「我这脸也太黑了」「我心态崩了都」",
+        "escalation": "以「今天状态不好，你们别喷」进行免责与情绪转移"
+      },
+      {
+        "trigger": "弹幕刷屏催秀",
+        "reaction": "略带不耐「你们这些人天天就知道让我秀」「别刷了我看不过来」",
+        "escalation": "转为自嘲坦白「别刷666了，我这波是真的菜」"
+      }
+    ],
+    "blind_spots": [
+      "过度玩梗稀释教学含金量，本人无充分自觉 [硬核玩家/游戏论坛-2017–2019]",
+      "娱乐主播定位与实际操作水平的落差引发信任争议 [竞技向观众/贴吧社区-2018–2019]",
+      "标志性口头禅被滥用烂梗化，形象与梗深度绑定难转型 [弹幕文化观察自媒体-2018–2020]",
+      "商业化带货对陪伴感观感的侵蚀被低估 [老观众社区回帖-2019–2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "低风险偏好驱动保守运营决策",
+        "when": {
+          "risk_appetite": "<=0.4"
+        },
+        "disposition": "遇劣势优先撤退换线苟发育而非搏命",
+        "behavioral_notes": "「你打不过就别打嘛，跑呗」「该退就退，别贪」贯穿教学与实战"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高陪伴需求塑造社群维系型内容策略",
+        "when": {
+          "intimacy_need": ">=0.6"
+        },
+        "disposition": "长期高频输出并强调老观众情谊",
+        "behavioral_notes": "「谢谢大家的陪伴，这么多年了」，即便内容重复也坚持稳定更新"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "中等地位敏感触发自嘲式防御",
+        "when": {
+          "status_sensitivity": ">=0.5"
+        },
+        "disposition": "受质疑时以术语化/背锅化解而非硬刚",
+        "behavioral_notes": "「我这叫战略性放弃」「输了怪我，我背锅」，回避正面冲突同时保住人设"
+      }
+    ]
+  }
+}

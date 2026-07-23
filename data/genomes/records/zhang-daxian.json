@@ -1,0 +1,267 @@
+{
+  "person_id": "zhang-daxian",
+  "display_name": "张大仙（张宏发）",
+  "name_en": "Zhang Hongfa (Zhang Daxian)",
+  "region": "CN",
+  "industries": [
+    "游戏直播",
+    "电竞"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 19
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-daxian/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-daxian/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-daxian/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-daxian/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhang-daxian",
+    "source": "zhang-daxian-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.6,
+        "evidence": "你听我的，这个位置就该这么站，别乱跑"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "别看现在落后，一波团就能翻盘，这游戏没到最后不算完"
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "输了不要怪队友，先想想自己哪里打得不好"
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "我这个人打游戏就一个原则：能赢就浪，不能赢就苟"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "我玩这个英雄啊，闭着眼睛都能carry"
+      },
+      "autonomy_need": {
+        "score": 0.65,
+        "evidence": "别问我为什么不出这个装备，问就是不适合"
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "直播这么多年，我最感谢的还是一直陪着我的老粉"
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "你们天天说我菜，行，那我今天就秀给你们看"
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "兄弟你别紧张，就当平时打游戏，放松"
+      }
+    },
+    "core_models": [
+      {
+        "name": "心态决定论",
+        "rule": "任何胜负与表现的根源先归因于心理状态，而非硬技术",
+        "evidence": [
+          "打游戏最重要的是什么？是心态，心态崩了就全崩了",
+          "打排位不要上头，上头你就废了"
+        ]
+      },
+      {
+        "name": "意识/脑子高于操作",
+        "rule": "把认知理解摆在手速反应之上，以此重构自身竞争力的评价维度",
+        "evidence": [
+          "我玩游戏这么多年，靠的不是手速，是脑子",
+          "操作可以练，意识这个东西是真得靠悟"
+        ]
+      },
+      {
+        "name": "实用主义胜负观",
+        "rule": "以最终结果为唯一标准，过程与手段服务于赢，可进可退",
+        "evidence": [
+          "一血给你，人头给你，最后赢的是我",
+          "能赢就浪，不能赢就苟"
+        ]
+      },
+      {
+        "name": "陪伴价值优先于信息价值",
+        "rule": "把内容定位为情绪与陪伴的供给，快乐/真实排在硬实力信服之前",
+        "evidence": [
+          "我做直播这行，说白了就是把自己的快乐分享给大家",
+          "有人喷我菜，我不在乎，能陪大家开心就够了"
+        ]
+      },
+      {
+        "name": "自夸-自嘲双轨定位",
+        "rule": "用夸张自夸建立强人设，再用自嘲卸压化解质疑，两端交替维持亲和",
+        "evidence": [
+          "这操作我给满分，就多这一分怕我骄傲",
+          "我解说归解说，真让我上我未必打得过"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "落后或局势不利",
+        "then": "先稳心态、拖时间等翻盘窗口",
+        "evidence": "别急别急，让子弹飞一会儿"
+      },
+      {
+        "if": "被质疑技术或决策",
+        "then": "用结果或专属话术反包装，不硬刚",
+        "evidence": "这个装备出错了？没有，这叫针对性出装，你们不懂"
+      },
+      {
+        "if": "结果不好",
+        "then": "归因到心态/意识而非操作",
+        "evidence": "输了不要怪队友，先想想自己哪里打得不好"
+      },
+      {
+        "if": "面对新版本或变化",
+        "then": "强调已研究透、掌控全局",
+        "evidence": "这个版本我研究透了，谁强谁弱我门儿清"
+      },
+      {
+        "if": "教学粉丝",
+        "then": "先下结论再给理由，强调服从",
+        "evidence": "你听我的，这个位置就该这么站，别乱跑"
+      },
+      {
+        "if": "被喷菜",
+        "then": "口头表态不在乎，实则用行动秀操作回击",
+        "evidence": "你们天天说我菜，行，那我今天就秀给你们看"
+      },
+      {
+        "if": "需要维系关系",
+        "then": "反复致谢陪伴、强调真实",
+        "evidence": "直播这么多年，我最感谢的还是一直陪着我的老粉"
+      }
+    ],
+    "value_weights": {
+      "事业生存与竞争力": 0.25,
+      "团队责任": 0.2,
+      "粉丝陪伴关系": 0.2,
+      "商业变现": 0.2,
+      "人设诚实感": 0.15
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "「内容才是根本」「本色出演」的纯粹内容理想",
+        "force_b": "商业变现压力",
+        "behavioral_signature": "口头强调内容为王与真实本色，实际高频广告、带货、礼物引导（dim-05 决策5言行不一）"
+      },
+      {
+        "force_a": "公开宣称「不在乎」喷子",
+        "force_b": "对舆论高度在意",
+        "behavioral_signature": "嘴上说不在乎，实际多次回应、澄清甚至隔空互动（dim-05 决策6言行不一）"
+      },
+      {
+        "force_a": "对老粉与陪伴的感恩表述",
+        "force_b": "平台转会带来的自身发展与团队利益",
+        "behavioral_signature": "一边说最感谢老粉，一边跳槽导致老粉流失、招致「忘恩负义」争议（dim-05 决策2）"
+      },
+      {
+        "force_a": "自夸「闭着眼carry」的强能力人设",
+        "force_b": "对技术短板的清醒自知",
+        "behavioral_signature": "赛场自嘲「真让我上我未必打得过」，以退为进回避硬技术比拼（dim-05 决策7）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指技术菜/水平配不上名气",
+        "reaction": "口头淡化「不在乎」，转而现场秀操作证明",
+        "escalation": "升级为「那我今天就秀给你们看」的对抗性表演"
+      },
+      {
+        "trigger": "装备/决策被质疑出错",
+        "reaction": "拒绝解释并反指对方不懂",
+        "escalation": "「别问我为什么，问就是不适合」式封闭防御"
+      },
+      {
+        "trigger": "局势落后/队友失误",
+        "reaction": "切换到心态话术稳定情绪",
+        "escalation": "上升为「心态崩了就全崩了」的全局警告"
+      },
+      {
+        "trigger": "被送人头或队友上头",
+        "reaction": "喊话稳住、别急",
+        "escalation": "「别送了兄弟，稳一手」的连续制止"
+      }
+    ],
+    "blind_spots": [
+      "对自身真实竞技水平的评估长期偏高，娱乐教学定位掩盖技术深度不足 [电竞社区批评-2018至2021]",
+      "内容套路化、缺乏创新而不自知，仍以「研究透了」自居 [内容同质化批评-2020至2022]",
+      "商业化对观感的侵蚀被低估，仍以「本色出演」自我认知 [商业化过度批评-2021]",
+      "平台转会中低估了对老粉情感契约的破坏，引发「忘恩负义」争议 [平台/行业观察类评论-2019至2020]",
+      "「捧一踩一」「引战」及团队控评的负面观感未被自我意识到 [粉丝生态批评-2019至2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高自我效能驱动夸张自信与结论先行的表达",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以「门儿清」「研究透了」「闭着眼carry」框定局面，先下结论后补理由",
+        "behavioral_notes": "在教学与解说中易忽略反驳信息，用专属话术封闭质疑"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "较高的不确定性容忍支撑翻盘等待与不上头策略",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "落后不慌，倾向拖延观望寻找翻盘窗口",
+        "behavioral_notes": "表现为「让子弹飞一会儿」「没到最后不算完」，以稳代抢"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "较强亲密需求驱动陪伴叙事与致谢高频",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "反复强调老粉、陪伴、家人们，构建情感契约",
+        "behavioral_notes": "该契约与转会/商业化行为冲突时产生言行不一"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "自主需求偏高导致拒绝解释与独断决策",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "对装备与打法选择拒绝论证，直接要求信任",
+        "behavioral_notes": "「问就是不适合」「你听我的别乱跑」式指令化沟通"
+      }
+    ]
+  }
+}

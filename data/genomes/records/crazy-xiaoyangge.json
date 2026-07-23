@@ -1,0 +1,273 @@
+{
+  "person_id": "crazy-xiaoyangge",
+  "display_name": "疯狂小杨哥（张庆杨）",
+  "name_en": "Zhang Qingyang (Crazy Xiaoyangge)",
+  "region": "CN",
+  "industries": [
+    "直播电商",
+    "娱乐短视频"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 14
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/crazy-xiaoyangge/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/crazy-xiaoyangge/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/crazy-xiaoyangge/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/crazy-xiaoyangge/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "crazy-xiaoyangge",
+    "source": "crazy-xiaoyangge-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "我们家的东西你们放心，出了问题我张庆杨兜着！"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "库存不多了啊，手慢无手慢无，别怪我没提醒你们！"
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "兄弟你别客气，咱们都是自己人。"
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "这个价我拍胸脯保证，全网你找不到更低的。"
+      },
+      "self_efficacy": {
+        "score": 0.78,
+        "evidence": "说实话我也累，但一想到这么多兄弟等着我，我就得扛。"
+      },
+      "autonomy_need": {
+        "score": 0.55,
+        "evidence": "别人怎么说我不管，我只对得起支持我的这帮人。"
+      },
+      "intimacy_need": {
+        "score": 0.75,
+        "evidence": "粉丝多少不重要，重要的是你们信我。"
+      },
+      "status_sensitivity": {
+        "score": 0.68,
+        "evidence": "我从一个小县城出来的，能有今天全靠你们。"
+      },
+      "empathy_reactivity": {
+        "score": 0.62,
+        "evidence": "我跟你讲这波不买真的亏，我都替你们着急！"
+      }
+    },
+    "core_models": [
+      {
+        "name": "情感即信用的信任契约",
+        "rule": "把交易关系包装为拟亲缘情感关系，用个人信誉作担保物换取即时成交与长期忠诚",
+        "evidence": [
+          "家人们，粉丝多少不重要，重要的是你们信我。",
+          "出了问题我张庆杨兜着！"
+        ]
+      },
+      {
+        "name": "草根道德叙事",
+        "rule": "用出身低、文化低但有良心/底线的对冲，把商业能力短板转化为道德资本",
+        "evidence": [
+          "我文化不高，但我做人有底线。",
+          "我从一个小县城出来的，能有今天全靠你们。"
+        ]
+      },
+      {
+        "name": "极致性价比稀缺催单",
+        "rule": "以'不挣钱/全网最低+库存有限'制造紧迫感，把犹豫时间压到最短",
+        "evidence": [
+          "这个价格我说了不挣钱就是不挣钱！",
+          "库存不多了啊，手慢无手慢无！"
+        ]
+      },
+      {
+        "name": "责任兜底式领袖形象",
+        "rule": "出事时抢先扛全责，用'负责人'姿态收拢舆论焦点并维系人设",
+        "evidence": [
+          "���作为公司负责人，负有不可推卸的责任。",
+          "对不起家人们，是我们没把好关。"
+        ]
+      },
+      {
+        "name": "长久生意观",
+        "rule": "以口碑/长期主义为叙事，反复宣示不做一锤子买卖",
+        "evidence": [
+          "我们做的是长久的生意，不是一锤子买卖。",
+          "口碑就是命根子。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "观众犹豫或需要促成交",
+        "then": "上稀缺+爆低价+替你着急",
+        "evidence": "这波不买真的亏，我都替你们着急！"
+      },
+      {
+        "if": "被质疑质量或宣传",
+        "then": "先拍胸脯担保背书",
+        "evidence": "我们家的东西你们放心，出了问题我张庆杨兜着！"
+      },
+      {
+        "if": "出现争议初期",
+        "then": "低调称'已在处理/核实退款'",
+        "evidence": "这件事我们已经在处理了，给大家添麻烦了。"
+      },
+      {
+        "if": "争议升级到不可控",
+        "then": "认全责+全额退款+停播自查",
+        "evidence": "我作为公司负责人，负有不可推卸的责任。"
+      },
+      {
+        "if": "面对早期黑评/无实证攻击",
+        "then": "宣称不解释靠时间证明",
+        "evidence": "有些黑我的，我也不解释了，时间会证明。"
+      },
+      {
+        "if": "需要建立可信度",
+        "then": "强调草根出身与良心底线",
+        "evidence": "我文化不高，但我做人有底线。"
+      },
+      {
+        "if": "维系团队/合作者关系",
+        "then": "用江湖情义'自己人'绑定",
+        "evidence": "兄弟你别客气，咱们都是自己人。"
+      },
+      {
+        "if": "被指赚快钱",
+        "then": "转移到公益与员工规模叙事",
+        "evidence": "那我给员工发的也多啊，我们公司好几千人呢。"
+      }
+    ],
+    "value_weights": {
+      "粉丝信任与人设存续": 0.28,
+      "商业规模与GMV增长": 0.22,
+      "个人责任兜底/信誉": 0.18,
+      "江湖情义与团队忠诚": 0.14,
+      "合规与品质规范": 0.1,
+      "社会/家乡形象": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "极致低价保真的拍胸脯承诺",
+        "force_b": "规模化后品控能力跟不上",
+        "behavioral_signature": "口头反复'我选品是真严格'，实际爆发质量与虚假宣传争议（dim-05决策3/6），说A做B"
+      },
+      {
+        "force_a": "宣称'不解释、时间会证明'的超然",
+        "force_b": "对信任崩塌的高度敏感",
+        "behavioral_signature": "嘴上不辩解，实际仍频繁通过直播作情感化回应与人设修补（dim-05决策7）"
+      },
+      {
+        "force_a": "真诚草根/有底线人设",
+        "force_b": "早期低俗整活博眼球的起家路径",
+        "behavioral_signature": "从'我们就是搞笑的别当真'到'做人有底线'的叙事切换，形成人设反差隐患（dim-05决策1）"
+      },
+      {
+        "force_a": "个人信誉当担保物揽责",
+        "force_b": "出事后个人成为舆论集火点的风险",
+        "behavioral_signature": "'我兜着'式担保在争议中反噬，被迫独自承担全责与声誉损失（dim-05决策4/6）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "观众对价格/真伪的怀疑",
+        "reaction": "拍胸脯式担保并抬高承诺",
+        "escalation": "从'放心'升到'我兜着''全网找不到更低'的绝对化保证"
+      },
+      {
+        "trigger": "被黑评或负面舆论",
+        "reaction": "先表态不解释交给时间",
+        "escalation": "转为情感化诉苦'我也累''这么多兄弟等着我，我就得扛'"
+      },
+      {
+        "trigger": "重大质量/虚假宣传事件曝光",
+        "reaction": "低姿态认错道歉",
+        "escalation": "升级为全额退款、停播自查、'该承担的处罚全部承担绝不讨价还价'"
+      },
+      {
+        "trigger": "被指赚快钱/公益作秀",
+        "reaction": "反问式辩护并转移焦点",
+        "escalation": "'别老盯着我赚多少，看��我做的公益行不行'"
+      }
+    ],
+    "blind_spots": [
+      "把'选品严格/全网最低'当可兑现承诺而无视规模化品控失能，导致虚假宣传投诉 [市场监管通报/消费者投诉-2024]",
+      "以粉丝信任为核心资产却持续透支信任换销量，未察觉重流量轻质量的结构风险 [主流媒体/财经媒体评论-2023至2024]",
+      "低估头部主播的连带责任与合规要求，把个人担保等同于免责机制 [行业监管/协会通报-2024]",
+      "人设与实际经营的落差被视为可用话术弥合，忽视'作秀/赚快钱'的公众信任侵蚀 [社交平台舆论/自媒体评论-长期]",
+      "早期低俗整活的内容伦理隐患未被自我评估，为后期真诚人设埋下反差 [文娱评论/平台内容治理讨论-2019至2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "控制欲高时倾向以个人信誉全盘兜底，把系统性风险个人化",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "拍胸脯担保、'我兜着'式揽责",
+        "behavioral_notes": "在担保兑现失败时个人成为舆论集火点，风险无法分散"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "亲密需求高时把交易关系情感化，用'家人/兄弟'称谓降低成交阻力",
+        "when": {
+          "intimacy_need": ">=0.7"
+        },
+        "disposition": "拟亲缘话术+情义绑定",
+        "behavioral_notes": "信任被货币化，一旦出事情感反噬强度远超普通商业关系"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "不确定性容忍低时用稀缺与倒计时压缩他人决策时间",
+        "when": {
+          "uncertainty_tolerance": "<=0.4"
+        },
+        "disposition": "手慢无/321上链接式紧迫催单",
+        "behavioral_notes": "在无法保证品质的商品上同样施压，放大误购与投诉"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "地位敏感度高时以草根逆袭叙事对冲能力质疑并转化为道德资本",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "小县城/文化不高但有良心的自我定位",
+        "behavioral_notes": "遇实证批评时倾向道德辩护而非解决品控机制问题"
+      }
+    ]
+  }
+}

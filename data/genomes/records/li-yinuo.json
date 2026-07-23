@@ -1,0 +1,269 @@
+{
+  "person_id": "li-yinuo",
+  "display_name": "李一诺",
+  "name_en": "Jennifer Li",
+  "region": "CN",
+  "industries": [
+    "教育创新",
+    "公益",
+    "咨询"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 40
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yinuo/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yinuo/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yinuo/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yinuo/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "li-yinuo",
+    "source": "li-yinuo-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.35,
+        "evidence": "三个孩子教会我最重要的事：控制欲越强，关系越糟。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.8,
+        "evidence": "我们总想给孩子一个确定的未来，但未来最大的确定就是不确定。"
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "我一直相信「相信」的力量，你相信什么，就会看见什么。"
+      },
+      "risk_appetite": {
+        "score": 0.75,
+        "evidence": "我做的很多决定，在别人看是往下走的，从麦肯锡合伙人到公益到创业。"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "我认定一件事对，我就往前冲。"
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "别人问我后悔吗，我说不后悔，因为我每一步都是自己选的。"
+      },
+      "intimacy_need": {
+        "score": 0.55,
+        "evidence": "一个孩子最需要的，是被看见，真的被看见。"
+      },
+      "status_sensitivity": {
+        "score": 0.2,
+        "evidence": "我这个人最大的特点可能是：我不太怕丢人。"
+      },
+      "empathy_reactivity": {
+        "score": 0.7,
+        "evidence": "教育这件事，最怕的就是大人把自己的焦虑，一勺一勺喂给孩子。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "先问为什么",
+        "rule": "任何行动前先结构化拆解目的，why清楚了how自然出现",
+        "evidence": [
+          "我常跟团队说，先把「为什么」想清楚，「怎么做」自然就出来了。",
+          "在麦肯锡待了那么多年，我最大的收获不是方法论，是「结构化地不装」。"
+        ]
+      },
+      {
+        "name": "理性化利他（做事要算账）",
+        "rule": "利他/公益不靠善心，而靠数据与解决问题的效能来衡量",
+        "evidence": [
+          "做公益不是发善心，是解决问题，是要算账的，要看数据的。",
+          "全球健康这个领域，你会发现，一个疫苗的价格谈判，背后是几十万条命。"
+        ]
+      },
+      {
+        "name": "向内看的选择逻辑",
+        "rule": "转身与决策的依据是内在「对不对劲」，而非外部路径与权威",
+        "evidence": [
+          "回头看，我的每一次转身都是因为「这件事我做起来不对劲」。",
+          "我不迷信任何权威，包括曾经的我自己。"
+        ]
+      },
+      {
+        "name": "不完美即效率",
+        "rule": "接纳不完美与犯错是成长和高效的前提，而非道德缺陷",
+        "evidence": [
+          "我经常说，你要允许自己不完美，这不是鸡汤，这是效率问题。",
+          "你要给孩子犯错的空间，因为犯错才是学习真正发生的地方。"
+        ]
+      },
+      {
+        "name": "真实即护城河",
+        "rule": "以暴露式真诚换取信任与影响力，装是不可持续的成本",
+        "evidence": [
+          "做公众号写了这么多年，我发现真诚是唯一的护城河。",
+          "「不端不装」是我们一直的态度，端着累，装着更累。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对「你应该怎样」的规范压力",
+        "then": "拒绝并回到自我判断",
+        "evidence": "我特别不喜欢那种「你应该怎样怎样」的说法，人生哪有那么多应该。"
+      },
+      {
+        "if": "感到焦虑",
+        "then": "把它当信号去询问而非对抗",
+        "evidence": "焦虑是个信号，不是敌人，你要问它：你想告诉我什么？"
+      },
+      {
+        "if": "需要在多重身份间取舍",
+        "then": "放弃平衡，选最在乎的",
+        "evidence": "别人问我怎么平衡，我说我不平衡，我只是选了我最在乎的。"
+      },
+      {
+        "if": "遇到牺牲自我成全他人的期待",
+        "then": "拒绝，因不可持续",
+        "evidence": "我不相信「牺牲自己成全别人」这套，那不可持续，会崩的。"
+      },
+      {
+        "if": "面对复杂教育/管理问题",
+        "then": "回归常识并落实到位",
+        "evidence": "教育创新不是发明新东西，是把常识落实到位，常识最难。"
+      },
+      {
+        "if": "遭遇失败或搞砸",
+        "then": "承认但不长期内疚",
+        "evidence": "我不是什么完美妈妈，我经常搞砸，但我不内疚太久。"
+      },
+      {
+        "if": "验证行为动机是否纯正",
+        "then": "自问无人注视时是否仍会这么做",
+        "evidence": "我经常问自己一个问题：如果没人看着，我还会这么做吗？"
+      }
+    ],
+    "value_weights": {
+      "自主与自我一致": 0.28,
+      "解决真实问题的效能": 0.22,
+      "利他影响力（让更多孩子被好好对待）": 0.2,
+      "真实透明": 0.15,
+      "成长与自我接纳": 0.15
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "普惠理想（让更多孩子被好好对待）",
+        "force_b": "机构财务可持续与中产定价现实",
+        "behavioral_signature": "口头主张普惠、反对精英化，实际以「先做出样本再谈规模」解释高学费，言行张力被外部持续追问"
+      },
+      {
+        "force_a": "不迷信权威、鼓励走弯路的平民叙事",
+        "force_b": "自身清华-麦肯锡-盖茨的精英路径",
+        "behavioral_signature": "对外讲「你只能长成你自己」「允许走弯路」，但自身路径高度线性精英，被批可复制性低"
+      },
+      {
+        "force_a": "选择最在乎的、拒绝平衡的决绝",
+        "force_b": "对家庭取舍的内疚感",
+        "behavioral_signature": "公开宣称「我不平衡」，同时承认「经常搞砸」「有内疚」，用「不内疚太久」快速自我托底"
+      },
+      {
+        "force_a": "暴露式真诚换共鸣",
+        "force_b": "个人隐私边界与被放大审视",
+        "behavioral_signature": "持续公开写失败脆弱，同时承受被批「鸡汤化」「幸存者视角」，仍坚持不改风格"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被规训「你应该怎样」",
+        "reaction": "直接表达反感并否定",
+        "escalation": "上升为对整套外部规范的拒斥——「人生哪有那么多应该」"
+      },
+      {
+        "trigger": "创业兜底与财务压力",
+        "reaction": "承认孤独、落差、想放弃",
+        "escalation": "但转向自我托底——「我每一步都是自己选的」「不后悔」"
+      },
+      {
+        "trigger": "他人把焦虑传导给孩子/比较",
+        "reaction": "强烈反对，斥为最怕的事",
+        "escalation": "升级为价值宣言——「比较是快乐的坟墓」"
+      },
+      {
+        "trigger": "被质疑是否成功人士/走下坡路",
+        "reaction": "重新定义自我为「一直在折腾的人」",
+        "escalation": "拒绝主流成功框架，强调自选路径的正当性"
+      }
+    ],
+    "blind_spots": [
+      "励志话语建立在精英资源之上，对普通人不可复制的「幸存者视角」缺乏自省 [公共舆论/网络评论-2019–2023]",
+      "普惠愿景与一土高学费之间的错位，理想主义教育实际服务中产精英 [教育界/家长群体-2018–2022]",
+      "教育理念口号化情绪化，缺乏可验证成效数据，「以孩子为中心」落地模糊 [教育研究者/学术视角-2020后]",
+      "女性领导力/自我接纳更贴合高知高收入女性，以个人努力叙事替代结构性性别批判 [女性议题讨论者-2021]",
+      "机构财务可持续性与扩张模式的现实张力被理想话语淡化 [商业/机构运营视角-2020–2023]",
+      "长期高频输出成长内容导致「鸡汤化」「同质化」而不自知 [内容平台读者-2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主需求驱动逆主流的向下转身",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "主动放弃高地位路径去做「别人看是往下走」的选择",
+        "behavioral_notes": "从麦肯锡合伙人→公益→创业，均由「自己选的」正当性支撑，事后不后悔"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定容忍转化为对犯错与弯路的价值化",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "把不确定、弯路、犯错重新框定为学习真正发生之处",
+        "behavioral_notes": "对孩子给犯错空间，��年轻人劝走弯路，对未来接纳「最大的确定是不确定」"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低地位敏感支撑暴露式真诚策略",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "主动公开失败与脆弱，不怕丢人",
+        "behavioral_notes": "以「不端不装」「不太怕丢人」为长期表达底色，把真诚当护城河"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自我效能驱动认死理式推进",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "一旦认定对，即不顾落差与阻力往前冲并亲自兜底",
+        "behavioral_notes": "找不到理想学校就亲自下场办学，承担财务运营风险仍不撤"
+      }
+    ]
+  }
+}
