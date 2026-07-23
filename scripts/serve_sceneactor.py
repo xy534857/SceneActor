@@ -29,7 +29,13 @@ from uuid import uuid4
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from sceneactor.chat import ChatSession, validate_record
-from sceneactor.forge import expand_style, forge_from_fusion, forge_from_questionnaire, next_question
+from sceneactor.forge import (
+    expand_style,
+    forge_from_fusion,
+    forge_from_obsession,
+    forge_from_questionnaire,
+    next_question,
+)
 from sceneactor.genome import GenomeError
 from sceneactor.meme_ammo import MemeAmmoError, arm_record, catalog as meme_catalog
 from sceneactor.cognition import CognitionModelError
@@ -466,8 +472,17 @@ class Handler(BaseHTTPRequestHandler):
                     style=str(body.get("style", "")),
                     complete=_model(str(body.get("model") or args.triage_model), args.chat_fallback),
                 )
+            elif mode == "obsession":
+                record = forge_from_obsession(
+                    name=str(body.get("name", "")),
+                    background=str(body.get("background", "")),
+                    obsession=str(body.get("obsession", "")),
+                    trigger_hint=str(body.get("trigger_hint", "")),
+                    style=str(body.get("style", "")),
+                    complete=_model(str(body.get("model") or args.chat_model), args.chat_fallback),
+                )
             else:
-                self._send(400, {"error": "mode must be questionnaire or fusion"})
+                self._send(400, {"error": "mode must be questionnaire, fusion, or obsession"})
                 return
             memes = body.get("memes", [])
             if not isinstance(memes, list):

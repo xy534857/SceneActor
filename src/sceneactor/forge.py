@@ -262,6 +262,145 @@ def forge_from_questionnaire(
     return record
 
 
+_ABSTRACT_PROMPT = """你是抽象喜剧角色设计师。你要设计的不是一个正常人，而是一台「认知故障机器」：
+一个把某种私人秩序看得比天大的人。这个人在自己的逻辑里完全自洽、极度认真，
+从不觉得自己好笑——好笑是旁人撞见他的系统故障时的感受，不是他表演出来的。
+
+人物设定：
+- 姓名：{name}
+- 身份外壳：{background}
+- 执念（此人的私人秩序，一切行为的总开关）：{obsession}
+- 触发词（一碰就把当前话题拽回执念的事）：{trigger_hint}
+
+设计原则（必须全部遵守）：
+1. 【范畴故障】此人的执念和他的正业在他脑内是同一类问题。别人看是答非所问，
+   他看是"你们怎么连这都分不清"。core_models 必须把这个范畴合并写成他的世界观。
+2. 【单一秩序压倒一切】value_weights 里执念相关的价值占 0.5 以上——正常人的价值是
+   多元制衡的，这个人不是。
+3. 【压力越大越故障】emotion_triggers 的 escalation 方向不是爆发，而是更深地钻进执念
+   （被质疑指挥 → 先去摆正水瓶；被追问业绩 → 先纠正称呼格式）。
+4. 【绝不解释】blind_spots 必须包含：他完全意识不到自己的执念在别人眼里是转移话题/发疯。
+5. 【自洽的歪理】heuristics 是他执念系统的运行规则，每条单看都有一本正经的道理，
+   合起来才荒谬。禁止写"为了搞笑"的规则。
+6. 【身体先于语言】至少两条 heuristics 的 action 是具体身体动作（挪东西、量距离、
+   对齐、闻、数），不是说话——静音也要能看出他坏了。
+
+九轴分数你来定（0-1）：抽象人设的轴分应该极端化——至少3根轴在 0.9 以上或 0.1 以下，
+且极端方向必须从执念推导（如秩序执念 → control_need 0.95 + uncertainty_tolerance 0.05）。
+
+所有文本中文、口语化、可表演。禁止人格报告腔，禁止解释笑点。
+
+数量要求：core_models 3-5个；heuristics 5-8条；internal_conflicts 2-3个；emotion_triggers 2-3个；blind_spots 2-4条。
+
+只输出JSON：
+{{"trait_axes":{{"control_need":0.0,"uncertainty_tolerance":0.0,"trust_propensity":0.0,"risk_appetite":0.0,"self_efficacy":0.0,"autonomy_need":0.0,"intimacy_need":0.0,"status_sensitivity":0.0,"empathy_reactivity":0.0}},
+"core_models":[{{"name":"","rule":""}}],
+"heuristics":[{{"condition":"","action":""}}],
+"value_weights":{{"执念相关的价值":0.55,"次要":0.25,"再次":0.2}},
+"internal_conflicts":[{{"force_a":"","force_b":"","behavioral_signature":""}}],
+"emotion_triggers":[{{"trigger":"","reaction":"","escalation":""}}],
+"blind_spots":[""],
+"obsession_statement":"用他自己的口吻一句话说出他的执念（他觉得天经地义的那个版本）"}}"""
+
+
+def forge_from_obsession(
+    *,
+    name: str,
+    background: str,
+    obsession: str,
+    trigger_hint: str = "",
+    style: str = "",
+    complete: Callable[[list[dict[str, str]], str], str],
+) -> dict:
+    """Forge an abstract comedy persona organized around one private order.
+
+    Unlike questionnaire mode (realistic, axes measured first), the obsession
+    IS the organizing principle: axes, models, heuristics, conflicts and blind
+    spots are all derived from it, deliberately extreme and category-broken.
+    The character never knows it is funny — that contract lives in the
+    genome's structure (blind spots + escalation direction), not in tone.
+    """
+    if not name.strip():
+        raise GenomeError("name is required")
+    if not obsession.strip():
+        raise GenomeError("obsession is required — an abstract persona without one is just a persona")
+    prompt = _ABSTRACT_PROMPT.format(
+        name=name.strip(), background=background.strip() or "普通人",
+        obsession=obsession.strip(), trigger_hint=trigger_hint.strip() or "由你从执念推导",
+    )
+
+    data = None
+    for _ in range(3):
+        output = complete([{"role": "user", "content": prompt}], "forge-abstract")
+        match = re.search(r"\{.*\}", output, re.DOTALL)
+        if not match:
+            continue
+        try:
+            candidate = json.loads(match.group(0))
+        except json.JSONDecodeError:
+            continue
+        axes = candidate.get("trait_axes", {})
+        try:
+            clean_axes = {a: max(0.0, min(1.0, float(axes[a]))) for a in TRAIT_AXES}
+        except (KeyError, TypeError, ValueError):
+            continue
+        extreme = sum(1 for s in clean_axes.values() if s >= 0.88 or s <= 0.12)
+        weights = candidate.get("value_weights", {})
+        try:
+            top_weight = max(float(w) for w in weights.values()) if weights else 0.0
+        except (TypeError, ValueError):
+            continue
+        # Reject tame outputs: abstraction is a structural property, not a vibe.
+        if extreme < 3 or top_weight < 0.5:
+            continue
+        data = candidate
+        clean = clean_axes
+        break
+    if data is None:
+        raise GenomeError("model kept returning a realistic persona; abstract forge needs extreme axes and one dominant value")
+
+    total = sum(float(w) for w in data["value_weights"].values())
+    value_weights = {str(k): round(float(w) / total, 4) for k, w in data["value_weights"].items()}
+
+    person_id = f"custom-{uuid.uuid4().hex[:8]}"
+    obsession_line = str(data.get("obsession_statement", "")).strip() or obsession.strip()
+    genome = {
+        "source": f"{person_id}-obsession",
+        "trait_axes": {
+            axis: {"score": round(score, 3), "evidence": f"执念推导：{obsession.strip()[:60]}"}
+            for axis, score in clean.items()
+        },
+        "core_models": data.get("core_models", [])[:5],
+        "heuristics": data.get("heuristics", [])[:8],
+        "value_weights": value_weights,
+        "internal_conflicts": data.get("internal_conflicts", [])[:3],
+        "emotion_triggers": data.get("emotion_triggers", [])[:3],
+        "blind_spots": data.get("blind_spots", [])[:4],
+        "causal_rules": [],
+    }
+    record = {
+        "person_id": person_id,
+        "display_name": name.strip(),
+        "name_en": "",
+        "region": "CN",
+        "industries": [background.strip()[:24] or "抽象角色"],
+        "gender": "unknown",
+        "living": True,
+        "status": "custom",
+        "library": "custom",
+        "forge": {
+            "mode": "obsession",
+            "style": style.strip(),
+            "obsession": obsession.strip(),
+            "obsession_statement": obsession_line,
+            "trigger_hint": trigger_hint.strip(),
+        },
+        "genome": genome,
+    }
+    _validate_record(record)
+    return record
+
+
 _STYLE_PACK_FORMAT = """只输出JSON，结构：
 {{"tone":"整体语气与节奏（语速/停顿/音量起伏，40字内）",
 "catchphrases":[{{"phrase":"口头禅原文","when":"什么情境下说"}}],
