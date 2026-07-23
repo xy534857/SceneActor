@@ -1,0 +1,271 @@
+{
+  "person_id": "ding-lei",
+  "display_name": "丁磊",
+  "name_en": "William Ding",
+  "region": "CN",
+  "industries": [
+    "互联网",
+    "游戏",
+    "音乐",
+    "消费"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 92,
+    "conversation_contexts": 13
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ding-lei/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ding-lei/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ding-lei/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ding-lei/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "ding-lei",
+    "source": "ding-lei-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "我们无法接受对方提出的不平等条件。 / 猪舍的温度、湿度都要控制。 / 我们要把每一个环节都做得透明。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "养猪是慢生意，需要耐心。 / 我们不会因为季度波动改变长期战略。 / 产业互联网需要长期投入。"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "双方在续约条款上存在重大分歧。 / 我们无法接受对方提出的不平等条件。 / 网易欢迎一切基于公平条款的合作。"
+      },
+      "risk_appetite": {
+        "score": 0.5,
+        "evidence": "我们不追求短期的风口。 / 我们要做难而正确的事情。 / 我们会在必要的时候进行战略投资。"
+      },
+      "self_efficacy": {
+        "score": 0.6,
+        "evidence": "目前网易的现金储备让我们有能力继续投入研发。 / 真想解决非常复杂的问题时，基本是无能为力的。 / 世界上还有很多事情是钱解决不了的。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "我们无法接受对方提出的不平等条件。 / 网易欢迎一切基于公平条款的合作。 / 我们不会为了短期收入透支游戏寿命。"
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "网易希望做一家有温度的公司。 / 我自己会去猪场看猪。 / 我们感谢玩家十四年来的支持。"
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "赚钱只是顺便的事情。 / 钱到了一定数量以后，不会对生活品质有什么改变。 / 养猪不是为了赶风口，是因为我喜欢猪。"
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "我们养猪首先要让猪过得舒服。 / 我们给猪听音乐，是希望减少猪的应激。 / 商业合作可以结束，但对玩家的责任不能结束。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "用户价值优先于变现",
+        "rule": "任何产品先问用户是否需要、体验是否更好，商业收益是价值���造后的副产物",
+        "evidence": [
+          "我们做产品，首先要问用户需不需要。",
+          "赚钱只是顺便的事情。"
+        ]
+      },
+      {
+        "name": "技术必须落到真实场景",
+        "rule": "先承认技术趋势，再加应用边界，拒绝为概念而概念",
+        "evidence": [
+          "AI是一个重要的技术方向，但不能为了AI而AI。",
+          "技术最终要落到产品和用户体验上。"
+        ]
+      },
+      {
+        "name": "长期主义换复利",
+        "rule": "以耐心和持续投入换取长期回报，不因短期波动改变战略",
+        "evidence": [
+          "养猪是慢生意，需要耐心。",
+          "我们不会因为季度波动改变长期战略。"
+        ]
+      },
+      {
+        "name": "先拆解再判断（首先其次）",
+        "rule": "把宏大判断拆成优先级明确的具体环节",
+        "evidence": [
+          "游戏首先要好玩，其次才是商业化。",
+          "我们首先要保证员工和用户的安全。"
+        ]
+      },
+      {
+        "name": "公平条款是合作底线",
+        "rule": "合作可结束，但不接受不平等条件，把冲突转化为条款和权益",
+        "evidence": [
+          "我们无法接受对方提出的不平等条件。",
+          "网易欢迎一切基于公平条款的合作。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "评估一个新产品/新技术",
+        "then": "先问用户是否需要、是否真正有价值",
+        "evidence": "我们希望把技术用在真正有价值的地方。"
+      },
+      {
+        "if": "面对热点或风口",
+        "then": "先降温、加边界，不为追风口而做",
+        "evidence": "不能为了AI而AI。"
+      },
+      {
+        "if": "短期收入与用户体验冲突",
+        "then": "选择保护体验，不透支产品寿命",
+        "evidence": "我们不会为了短期收入透支游戏寿命。"
+      },
+      {
+        "if": "进入传统或跨界行业",
+        "then": "用技术改造但尊重行业固有规律和节奏",
+        "evidence": "不能用互联网的速度要求猪长大。"
+      },
+      {
+        "if": "遭遇合作或谈判分歧",
+        "then": "把情绪转化为条款和玩家权益，坚守公平底线",
+        "evidence": "我们无法接受对方提出的不平等条件。"
+      },
+      {
+        "if": "宏观环境或周期波动",
+        "then": "锁定用户对优质内容的不变需求，保持研发强度",
+        "evidence": "宏观环境有变化，但用户对优质内容的需求没有变化。"
+      },
+      {
+        "if": "面对危机（停服、退款）",
+        "then": "先兜底用户责任，再处理商业结果",
+        "evidence": "商业合作可以结束，但对玩家的责任不能结束。"
+      }
+    ],
+    "value_weights": {
+      "长期主义与耐心": 0.25,
+      "用户与玩家体验": 0.22,
+      "经营自主权与公平": 0.18,
+      "产品品质与技术落地": 0.17,
+      "合规与社会责任": 0.1,
+      "现金流与效率": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "去功利化叙事（赚钱只是顺便）",
+        "force_b": "游戏抽卡付费与商业化现实（利润主要来自游戏）",
+        "behavioral_signature": "口头强调不为收入牺牲体验，但游戏商业化（抽卡/付费/运营活动）被玩家批评影响公平，说A做B张力显现（dim-04-6，dim-05-1）"
+      },
+      {
+        "force_a": "跨界兴趣驱动的长周期投入（养猪/音乐/教育）",
+        "force_b": "资本市场对资源分散的担忧与2024转向效率现金流",
+        "behavioral_signature": "先高调进入慢生意，后在dim-05-8放缓扩张、控制非核心成本，理想主义遇现金流约束时收缩"
+      },
+      {
+        "force_a": "珍惜合作、强调温度与长期关系",
+        "force_b": "对控制权与公平条款的强需求",
+        "behavioral_signature": "口称珍惜十四年合作，却在条款分歧时��断终止暴雪代理（dim-05-6），关系让位于自主权"
+      },
+      {
+        "force_a": "对玩家责任的承诺",
+        "force_b": "停服导致成本转嫁用户的现实",
+        "behavioral_signature": "宣称把玩家权益放第一，但停服/退款/账号迁移仍被社区批评成本转嫁用户（dim-04-3）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被要求接受不平等/不公平条款",
+        "reaction": "明确拒绝并坚持公平底线",
+        "escalation": "从'珍惜合作关系'升级到'无法接受'直至终止合作"
+      },
+      {
+        "trigger": "技术被神化或概念先行",
+        "reaction": "降温并加应用边界",
+        "escalation": "从'一定会改变很多行业'转为'不会替代所有的人''不能为了AI而AI'"
+      },
+      {
+        "trigger": "被质疑短期变现/追风口",
+        "reaction": "以反直觉短句去功利化",
+        "escalation": "从'赚钱只是顺便'到'不打算靠养猪赚快钱'强调纯粹动机"
+      },
+      {
+        "trigger": "危机（停服等）冲击用户信任",
+        "reaction": "转为责任承诺与替代方案",
+        "escalation": "从'艰难的决定'升级到'对玩家的责任不能结束'并准备替代方案"
+      }
+    ],
+    "blind_spots": [
+      "游戏商业化（抽卡/付费）与用户体验优先叙事的实际张力，自述回避 [玩家及媒体评论-2021至2024]",
+      "跨国合作中对控制权与信任的处理，续约叙事双方分歧 [暴雪合作终止争议-2022]",
+      "合作破裂后停服/退款成本转嫁用户的感受被低估 [暴雪玩家社区批评-2023]",
+      "养猪等传播点若无法由口感价格规模验证会反噬品牌 [养猪项目被质疑营销噱头-2018]",
+      "多元化投入回报周期长导致资源分散担忧 [多元化资本市场担忧-2019]",
+      "未成年人沉迷与内容规范上依赖外部监管推动而非主动 [游戏监管压力-2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "自主权需求高时，一旦合作条款触及公平底线便果断退出",
+        "when": {
+          "autonomy_need": ">=0.7"
+        },
+        "disposition": "宁可失去成熟产品收入也保留经营自主权",
+        "behavioral_notes": "对应终止暴雪合作，'无法接受不平等条件'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "控制需求高时，倾向自建全链路并要求环节透明可控",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "从饲料到餐桌可追溯、温湿度控制、自建养殖体系",
+        "behavioral_notes": "对应味央养猪自建体系与'每个环节都做透明'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "不确定性容忍高时，接受长周期慢生意并抵御短期波动诱惑",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "坚持研发投入、不因季度波动改变战略",
+        "behavioral_notes": "对应养猪慢生意与持续研发投入决策"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "地位敏感度低时，用去功利化叙事降低外界对赚钱动机的关注",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "强调兴趣与价值而非收益",
+        "behavioral_notes": "'赚钱只是顺便''因为我喜欢猪'，但可能低估资本市场对回报的关切"
+      }
+    ]
+  }
+}

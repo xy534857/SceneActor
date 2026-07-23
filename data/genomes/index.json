@@ -26,7 +26,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "年度演讲Q&A",
@@ -72,7 +72,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "纪录片长访谈",
@@ -95,7 +95,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "管理演讲Q&A",
@@ -141,7 +141,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "演讲Q&A",
@@ -164,7 +164,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "直播",
@@ -187,7 +187,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "演讲Q&A",
@@ -210,7 +210,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "财报电话会",
@@ -233,7 +233,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "直播",
@@ -256,7 +256,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "财报电话会",
@@ -279,7 +279,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "财报电话会",
@@ -303,7 +303,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "财报电话会",
@@ -326,7 +326,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "产品发布会",
@@ -349,7 +349,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "技术演讲Q&A",
@@ -671,7 +671,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "学术报告Q&A",
@@ -717,7 +717,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "学术演讲Q&A",
@@ -763,7 +763,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "记者会Q&A",
@@ -786,7 +786,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "记者会Q&A",
@@ -855,7 +855,7 @@
       ],
       "gender": "male",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "新闻发布会Q&A",
@@ -878,7 +878,7 @@
       ],
       "gender": "female",
       "living": true,
-      "status": "planned",
+      "status": "distilled",
       "corpus_availability": "high",
       "source_types": [
         "学术报告Q&A",

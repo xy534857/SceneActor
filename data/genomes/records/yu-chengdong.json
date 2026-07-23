@@ -1,0 +1,271 @@
+{
+  "person_id": "yu-chengdong",
+  "display_name": "余承东",
+  "name_en": "Richard Yu",
+  "region": "CN",
+  "industries": [
+    "通信",
+    "消费电子",
+    "新能源汽车"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 82,
+    "conversation_contexts": 8
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yu-chengdong/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yu-chengdong/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yu-chengdong/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yu-chengdong/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "yu-chengdong",
+    "source": "yu-chengdong-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "智选车模式是华为深度参与产品定义、设计和营销。/ 我们对产品的质量和用户体验负责。/ 我们把最好的华为智能汽车技术都装到了这台车上。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.28,
+        "evidence": "问界M9是千万以内最好的SUV。/ 不接受反驳。/ 对得起那四个字：遥遥领先。"
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "他讲的不是事实。/ 我们技术人员跟他沟通过，他还是没有搞懂。/ 不是我要打架，是有人在这里瞎扯。"
+      },
+      "risk_appetite": {
+        "score": 0.72,
+        "evidence": "问界新M7，我们在这辆车上投入了五个亿。/ 我们花了五个亿，全方位地重新打造。/ 今天我们可以说，我们卷土重来。"
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "我们过去十几年把很多不可能变成了可能。/ 我们做到了内外屏都抗摔。/ 史上最强大的Mate，强得飞起。"
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "我们实现了操作系统核心技术的自主可控。/ 从操作系统内核到编程语言、AI框架和大模型，我们全面自主可控。/ 原生鸿蒙是基于鸿蒙内核的全栈自研操作系统。"
+      },
+      "intimacy_need": {
+        "score": 0.35,
+        "evidence": "感谢全国人民对我们的厚爱和支持。/ 我们始终坚持以消费者为中心。/ 我们会继续努力，不辜负大家的期待。"
+      },
+      "status_sensitivity": {
+        "score": 0.8,
+        "evidence": "Mate一直被模仿，从未被超越。/ 只有Mate能超越Mate。/ 连AEB是什么，居然有车企的一把手还根本没有搞懂呢！"
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "看不见的地方才是真豪华。/ 安全是最大的豪华。/ 我们要给用户带来更好的驾乘体验。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "技术优势必须转化为用户可感知价值",
+        "rule": "任何技术领先都要落到消费者能立即感知的场景差异上，否则不算胜利",
+        "evidence": [
+          "华为P60系列，把移动影像带入了一个新的时代。",
+          "做产品最重要的是给消费者创造价值。"
+        ]
+      },
+      {
+        "name": "劣势期以超常规重投入重建信誉",
+        "rule": "处在竞争或制裁劣势时不做成本修补，而以超过行业常规的投入重造产品",
+        "evidence": [
+          "问界新M7，我们在这辆车上投入了五个亿。",
+          "新开模的零部件超过了百分之六十。"
+        ]
+      },
+      {
+        "name": "软硬芯云车一体化系统壁垒",
+        "rule": "单点技术易被复制，跨层协同与全栈自研才构成长期壁垒",
+        "evidence": [
+          "问界M9是华为智能汽车技术的集大成者。",
+          "从操作系统内核到编程语言、AI框架和大模型，我们全面自主可控。"
+        ]
+      },
+      {
+        "name": "自主可控是生存条件",
+        "rule": "供应链受限后技术自主不是宣传价值而是存续前提",
+        "evidence": [
+          "我们实现了操作系统核心技术的自主可控。",
+          "在地面上没有网络的时候，我们可以捅破天。"
+        ]
+      },
+      {
+        "name": "危机高目标动员",
+        "rule": "将受压处境重新编码为反攻节点以维持组织进攻性",
+        "evidence": [
+          "轻舟已过万重山。",
+          "这是一次浴火重生。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "要发布新产品",
+        "then": "先下最高级结论再补参数证据",
+        "evidence": "问界M9是千万以内最好的SUV。"
+      },
+      {
+        "if": "面对技术路线争议",
+        "then": "从比较测试条件升级为判断对方能力不足",
+        "evidence": "连AEB是什么，居然有车企的一把手还根本没有搞懂呢！"
+      },
+      {
+        "if": "处于劣势或制裁压力",
+        "then": "投入超行业常规资源全面重做",
+        "evidence": "我们花了五个亿，全方位地重新打造。"
+      },
+      {
+        "if": "涉及安全或质量卖点",
+        "then": "以极致和豪华话语拉高标准",
+        "evidence": "安全是最大的豪华。"
+      },
+      {
+        "if": "敏感技术不便展开",
+        "then": "转为强调生产、感恩与情绪闭环",
+        "evidence": "目前我们正在加班加点、紧急生产。"
+      },
+      {
+        "if": "身份被贴标签",
+        "then": "以工程师/产品经理身份夺回解释权",
+        "evidence": "我不是网红，我是一个产品经理。"
+      },
+      {
+        "if": "强调华为角色边界",
+        "then": "用不造车但深度参与来定位",
+        "evidence": "华为不造车，我们帮助车企造好车。"
+      }
+    ],
+    "value_weights": {
+      "品牌控制与长期毛利": 0.2,
+      "技术自主与供应链存续": 0.22,
+      "产品爆款与市场进攻": 0.2,
+      "用户价值与体验": 0.15,
+      "生存优先于直接控制": 0.13,
+      "组织进攻性动员": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "追求最高级、不接受反驳的进攻姿态",
+        "force_b": "自我定位为务实搞技术的产品经理",
+        "behavioral_signature": "口头降格身份为工程师，实际发布会语言高度依赖个人IP与最高级口号（说'我不是网红'，做的却是全民口头禅'遥遥领先'）"
+      },
+      {
+        "force_a": "对直接控制与产品定义权的强烈需求",
+        "force_b": "华为不造车的公开角色边界",
+        "behavioral_signature": "宣称'不造车'，却深度参与定义、核心部件、渠道与营销，责任归属被模糊化（dim05决策4深度参与 vs 口径不造车）"
+      },
+      {
+        "force_a": "平日高调最高级传播",
+        "force_b": "关键敏感场景的战术克制",
+        "behavioral_signature": "Mate 60采用先锋计划静默开售、发布会回避核心芯片，转向'加班生产—感谢—轻舟已过万重山'（dim05决策7与常态高调反差）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "技术能力或产品被公开质疑",
+        "reaction": "否定对方事实性并归因为对方不懂",
+        "escalation": "从'他讲的不是事实'升级到'瞎扯''根本没有搞懂'的人格化攻击"
+      },
+      {
+        "trigger": "被贴上网红/大嘴标签",
+        "reaction": "以搞技术、产品经理身份反驳",
+        "escalation": "强调'如果不是因为做终端，可能大家也不认识我'重新框定价值来源"
+      },
+      {
+        "trigger": "产品处于劣势或回归压力",
+        "reaction": "以卷土重来、浴火重生等高目标口号动员",
+        "escalation": "叠加'轻舟已过万重山''华为手机又回来了'完成集体情绪反攻"
+      }
+    ],
+    "blind_spots": [
+      "把单次演示能力表述为普遍能力，忽视测试边界与术语口径差异 [何小鹏对AEB能力口径的公开质疑-2023]",
+      "在竞争压力下容易把标准分歧理解为对方不懂，而非概念未统一 [李想对公开口水战的劝止-2023]",
+      "大量最高级结论替代可复现同条件比较，品牌动员掩盖证据口径 [遥遥领先被批评为过度营销-2023]",
+      "把智能化强项外推为整车全维度第一，缺乏可证伪边界 [千万以内最好SUV缺少可证伪边界-2024]",
+      "极致安全宣传显著抬高公众对极端场景的期待，事故回应准备不足 [问界事故后的责任边界争议-2024]",
+      "个人IP遮蔽合作车企品牌，制造与售后责任归属模糊 [合作车企品牌被华为个人IP遮蔽-2024]",
+      "以不造车描述自身角色低估实际控制力，工程分工与消费者责任认知不符 [华为不造车与深度定义产品的语义张力-2024]",
+      "线性假设可复制问界成功，忽视多品牌资源稀释 [多品牌鸿蒙智行可能稀释资源-2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高地位敏感叠加低信任倾向时，技术争议迅速人格化",
+        "when": {
+          "status_sensitivity": ">=0.75"
+        },
+        "disposition": "把对方的路线分歧解释为能力或诚信缺陷",
+        "behavioral_notes": "AEB争论中从比较刹停速度转向'没有搞懂''瞎扯'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "极高自我效能压制不确定性容忍，倾向做不可证伪的绝对结论",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "使用最高级和不接受反驳式定论",
+        "behavioral_notes": "'千万以内最好的SUV''不接受反驳''史上最强大的Mate'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自主需求在供应受限时转化为全栈自研执念",
+        "when": {
+          "autonomy_need": ">=0.8"
+        },
+        "disposition": "以自主可控为存续叙事核心",
+        "behavioral_notes": "从麒麟到原生鸿蒙全栈自研，把生态迁移成本作为可接受代价"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高控制需求叠加不造车边界，产生责任归属模糊",
+        "when": {
+          "control_need": ">=0.75"
+        },
+        "disposition": "深度定义产品同时对外弱化控制角色",
+        "behavioral_notes": "'华为不造车'与'我们对产品的质量和用户体验负责'并存"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "高风险偏好在劣势期触发超常规重投入",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "以巨额补救投入与价格让利押注翻身",
+        "behavioral_notes": "新M7五亿元重做并下探价格实现订单反转"
+      }
+    ]
+  }
+}

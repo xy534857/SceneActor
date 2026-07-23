@@ -1,0 +1,290 @@
+{
+  "person_id": "ma-yun",
+  "display_name": "马云",
+  "name_en": "Jack Ma",
+  "region": "CN",
+  "industries": [
+    "互联网",
+    "电子商务",
+    "金融科技"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 4
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ma-yun/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ma-yun/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ma-yun/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ma-yun/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "ma-yun",
+    "source": "ma-yun-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "客户第一、员工第二、股东第三，我们永远不能变。 / 我们的使命、愿景、价值观不能变。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.85,
+        "evidence": "Nobody believed that Internet could help us. I said, I don't care. I believe it. / 今天很残酷，明天更残酷，后天很美好，但是绝大多数人死在明天晚上。"
+      },
+      "trust_propensity": {
+        "score": 0.68,
+        "evidence": "永远要相信边上的人比你聪明。 / 我相信年轻人，我相信他们会比我们做得更好。"
+      },
+      "risk_appetite": {
+        "score": 0.8,
+        "evidence": "创新是一定要付出代价的，我们这代人必须有所担当。 / When everybody complained, I saw opportunity."
+      },
+      "self_efficacy": {
+        "score": 0.82,
+        "evidence": "I applied for Harvard for ten times, rejected. / 最大的失败是放弃，最大的敌人是自己，最大的对手是时间。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "今天的世界，特别是中国，需要很多政策专家，但不需要太多的处长。 / 好的创新不怕监管，但是怕用昨天的方式去监管。"
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "我又那么爱热闹，哪里舍得这么年轻就退休。 / 我希望大家继续爱阿里巴巴，我也会继续爱阿里巴巴。"
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "我是金融的外行，今天也不是以专家的身份来发言。 / 我想讲一些一个非专业人士的观点。"
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "数字金融体系不是让20%的人受益，而是让80%过去没有得到金融服务的人受益。 / We wanted to help small business."
+      }
+    },
+    "core_models": [
+      {
+        "name": "抱怨即机会",
+        "rule": "凡是被现有系统忽略、他人普遍抱怨之处，就是尚未被满足的需求与创业机会所在。",
+        "evidence": [
+          "When everybody complained, I saw opportunity.",
+          "所有的变化都是机会，所有人抱怨的地方都是机会。"
+        ]
+      },
+      {
+        "name": "使命先于利润",
+        "rule": "评价一个组织或项目的首要标准是它为社会解决了什么问题，而非规模或利润。",
+        "evidence": [
+          "一个企业最了不起的不是你做得多大，不是你赚了多少钱，而是你为社会解决了什么问题。",
+          "我们不想成为一家只会赚钱的平庸公司。"
+        ]
+      },
+      {
+        "name": "旧规则不能治理新问题",
+        "rule": "面对新事物先问它是否属于旧范式，若不属于则拒绝用旧方法机械套用。",
+        "evidence": [
+          "今天我们不能用昨天的办法来管未来。",
+          "不能用管理火车站的办法来管理机场。"
+        ]
+      },
+      {
+        "name": "客户视角看技术",
+        "rule": "不从技术参数出发，而问技术能否让普通人和小企业得到原来得不到的服务。",
+        "evidence": [
+          "I am not a tech guy. I am looking at the technology with the eyes of my customers.",
+          "Small is beautiful, small is powerful."
+        ]
+      },
+      {
+        "name": "信用替代抵押",
+        "rule": "金融的本质是信用管理，用数据与信用体系取代靠资产抵押的当铺思想。",
+        "evidence": [
+          "金融的本质是信用管理。",
+          "我们必须改掉金融的当铺思想，依靠信用体系。"
+        ]
+      },
+      {
+        "name": "长期主义与制度传承",
+        "rule": "组织寿命应超越创始人任期，使命愿景价值观稳定而领导人按制度轮换。",
+        "evidence": [
+          "今天不是马云的退休，而是一个制度传承的开始。",
+          "阿里巴巴要做102年。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到被拒绝或失败",
+        "then": "重新编码为韧性训练而非能力判决",
+        "evidence": "I think we have to get used to it. We are not that good."
+      },
+      {
+        "if": "众人都在抱怨某处",
+        "then": "视其为机会入口去寻找被忽略的人群",
+        "evidence": "所有人抱怨的地方都是机会。"
+      },
+      {
+        "if": "面对新事物的监管或规则",
+        "then": "先质疑旧范式适用性而非接受旧办法",
+        "evidence": "好的创新不怕监管，但是怕用昨天的方式去监管。"
+      },
+      {
+        "if": "要判断技术价值",
+        "then": "改用客户/小企业的视角提问",
+        "evidence": "I am looking at the technology with the eyes of my customers."
+      },
+      {
+        "if": "战略停留在理念层面",
+        "then": "要求落到结果和目标否则视为空话",
+        "evidence": "战略不能落实到结果和目标上面，都是空话。"
+      },
+      {
+        "if": "评估创业者",
+        "then": "看诚信与持久激情而非短期热情或学历",
+        "evidence": "短暂的激情是不值钱的，只有持久的激情才是赚钱的。"
+      },
+      {
+        "if": "组织面临领导人更替",
+        "then": "包装为制度胜利而非个人选择",
+        "evidence": "今天不是一个人的选择，而是一个制度的成功。"
+      },
+      {
+        "if": "自身身份可能威胁听众",
+        "then": "先自我贬低降低威胁再给出强判断",
+        "evidence": "我是金融的外行，今天也不是以专家的身份来发言。"
+      },
+      {
+        "if": "面对风险",
+        "then": "选择管理并控制在范围内而非追求消灭",
+        "evidence": "风险不是要消灭风险，而是要学会管理风险，把风险控制在一定的范围之内。"
+      }
+    ],
+    "value_weights": {
+      "使命与社会问题解决": 0.24,
+      "用户/规模优先": 0.2,
+      "创始团队控制权": 0.18,
+      "长期组织存续": 0.16,
+      "议程设置与叙事影响": 0.12,
+      "程序合规与股东公平": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "制度化退出（宣称制度传承、交出正式职位）",
+        "force_b": "非正式创始人权威（合伙人提名权、象征影响力持续集中）",
+        "behavioral_signature": "口头反复强调'不是一个人的选择而是制度的成功'，但决策层面坚持合伙人治理结构并赴美上市锁定控制权（dim-05 #8/#9）。"
+      },
+      {
+        "force_a": "使命叙事'客户第一'与普惠小企业",
+        "force_b": "平台规模转化为议价与排他权力",
+        "behavioral_signature": "宣称'让80%没得到服务的人受益'，实际推行'二选一'规则被反垄断处罚（dim-04 #3/#4，dim-05 #6）。"
+      },
+      {
+        "force_a": "公开议程设置冲动（爱热闹、要设置话题）",
+        "force_b": "交易与制度安全的稳健需要",
+        "behavioral_signature": "在监管者在场且蚂蚁IPO窗口期公开挑战监管范式，把发声置于交易安全之上（dim-05 #10）。"
+      },
+      {
+        "force_a": "推动业务快速合规创新",
+        "force_b": "保护全体股东的正当程序",
+        "behavioral_signature": "支付宝在牌照压力下转入内资主体，引发雅虎、软银股权争议（dim-05 #4）。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "旧规则/官僚以既有方式约束新事物",
+        "reaction": "用生活类比贬抑旧体制（当铺、老年人俱乐部、火车站）",
+        "escalation": "在正式场合公开点名批评监管范式，升级为议程对抗"
+      },
+      {
+        "trigger": "他人不相信愿景（'没人信互联网'）",
+        "reaction": "以'I don't care. I believe it.'强化信念立场",
+        "escalation": "把个人坚持上升为历史使命与三个世纪的宏大时间尺度"
+      },
+      {
+        "trigger": "被否定或被拒绝",
+        "reaction": "自嘲式复述失败经历（KFC唯一落选、哈佛拒十次）",
+        "escalation": "转化为'习惯被拒绝'的韧性权威，反过来训导他人"
+      },
+      {
+        "trigger": "创新被系统性风险叙事否定（如P2P）",
+        "reaction": "区分个案与整体，防守式辩护创新正当性",
+        "escalation": "把制度主要定义为创新阻力，强调'监管是为了发展'"
+      }
+    ],
+    "blind_spots": [
+      "把既有制度主要视作创新阻力，较少承认其处理杠杆、期限错配和传染风险的功能 [金融监管者外滩演讲后讨论-2020]",
+      "以技术平台自我定义，弱化实际承担的金融中介责任 [蚂蚁集团IPO暂缓与整改-2020]",
+      "把平台规模理解为普惠能力，低估规模转化为议价与排他权力 [市场监管总局阿里二选一行政处罚-2021]",
+      "'客户第一'在多边平台中不自动回答哪一类客户优先，成本转嫁小商家 [商家与竞争平台对二选一的长期批评-多方投诉]",
+      "宏大价值观与仪式化传播不能替代可申诉可追责的日常制度 [阿里内部性侵事件及员工抗议-2021]",
+      "退出正式职位不等于退出非正式影响力与创始人象征权威 [纽约时报等对个人崇拜与治理集中的批评]",
+      "把个人奋斗经验普遍化，忽略劳动者议价能力、健康代价与法定边界 [员工与劳动法学者对996是福报���批评]",
+      "'获得服务'不必然等于福利改善，忽略服务价格、风险承担者与数据权利 [学界对普惠金融的限制性评价]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "低不确定性厌恶叠加高自我效能时，倾向在他人退缩处逆势下注",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "叙事驱动的早期冒险与坚持",
+        "behavioral_notes": "网络基础设施极弱时做中国黄页、eBay领先时坚持淘宝免费（dim-05 #1/#3）。"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自主需求触发对旧规则与官僚的直接对抗",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "公开挑战监管范式并设置议程",
+        "behavioral_notes": "外滩演讲在监管者在场时批评巴塞尔协议与当铺思想（dim-05 #10）。"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高控制需求使'制度传承'话语与创始人实际控制权并存",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "形式放权+实质锁定控制",
+        "behavioral_notes": "坚持合伙人提名权赴美上市，退休后仍保有象征影响（dim-05 #8/#9）。"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "高风险偏好在遭遇强制度反馈后触发可见风险偏好下降",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "先激进后收敛",
+        "behavioral_notes": "蚂蚁IPO暂缓后减少公开露面、转向教育农业叙事（dim-06 #9/#11）。"
+      }
+    ]
+  }
+}

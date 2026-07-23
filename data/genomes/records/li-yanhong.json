@@ -1,0 +1,264 @@
+{
+  "person_id": "li-yanhong",
+  "display_name": "李彦宏",
+  "name_en": "Robin Li",
+  "region": "CN",
+  "industries": [
+    "互联网",
+    "人工智能",
+    "搜索"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 71,
+    "conversation_contexts": 13
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yanhong/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yanhong/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yanhong/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-yanhong/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "li-yanhong",
+    "source": "li-yanhong-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "任何新产品都必须经过安全评估和商业验证才能规模化。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.62,
+        "evidence": "今天的文心一言还不完美，但我们会让它一天比一天好。"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "开发者是大模型生态最重要的建设者。"
+      },
+      "risk_appetite": {
+        "score": 0.5,
+        "evidence": "我们会继续投资基础模型，同时严格管理投入产出比。"
+      },
+      "self_efficacy": {
+        "score": 0.82,
+        "evidence": "我们把百度在语言理解方面二十多年的技术积累，凝结成了文心一言。"
+      },
+      "autonomy_need": {
+        "score": 0.68,
+        "evidence": "中国市场需要自己的大模型，中国用户需要自己的智能助手。"
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "我们希望它能够听懂中国人的语言，理解中国人的文化。"
+      },
+      "status_sensitivity": {
+        "score": 0.45,
+        "evidence": "我们不会为了追逐排名而牺牲模型的成本效率。"
+      },
+      "empathy_reactivity": {
+        "score": 0.48,
+        "evidence": "让每一个人都能平等地获得知识和信息，是技术的价值。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "基础设施化框架",
+        "rule": "把技术能力抽象为像电力一样的公共底座，判断价值取决于能否成为普遍可复用的基础设施",
+        "evidence": [
+          "大模型和云计算的结合，会像电力一样成为基础设施。",
+          "AI正在成为百度各业务共同的技术底座。"
+        ]
+      },
+      {
+        "name": "应用落点优先",
+        "rule": "任何技术进展必须在真实产业场景中验证，否则不成立",
+        "evidence": [
+          "大模型的价值，最终要在真实的应用场景中得到验证。",
+          "大模型的下一站不是比拼参数，而是比拼应用。"
+        ]
+      },
+      {
+        "name": "承认不完美—迭代修复信任",
+        "rule": "先坦承局限再以持续进化承诺换取信任，而非等待完美",
+        "evidence": [
+          "今天的文心一言还不完美，但我们会让它一天比一天好。",
+          "我们不会回避模型的局限性，也不会回避用户的反馈。"
+        ]
+      },
+      {
+        "name": "成本效率决定普及",
+        "rule": "以推理/训练成本与投入产出比作为��模化的核心闸门",
+        "evidence": [
+          "模型的推理成本下降，才可能让应用真正普及。",
+          "我们的目标是让模型能力变成可持续的现金流，而不是一次性的市场热点。"
+        ]
+      },
+      {
+        "name": "安全合规前置",
+        "rule": "把安全、治理放在规模化之前作为不可谈判的边界",
+        "evidence": [
+          "我们会把安全和合规放在产品设计的第一位。",
+          "隐私保护不是产品上线之后的补丁，而是产品设计的一部分。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "推出新技术产品",
+        "then": "先承认不完美，再展示能力并承诺迭代",
+        "evidence": "今天的文心一言还不完美，但我们会让它一天比一天好。"
+      },
+      {
+        "if": "评估技术进展",
+        "then": "问其能否在真实产业场景落地而非参数高低",
+        "evidence": "大模型的下一站不是比拼参数，而是比拼应用。"
+      },
+      {
+        "if": "面对规模化决策",
+        "then": "先要求通过安全评估与商业验证",
+        "evidence": "任何新产品都必须经过安全评估和商业验证才能规模化。"
+      },
+      {
+        "if": "看待技术竞争",
+        "then": "转化为产业优势而非追排名",
+        "evidence": "中国大模型的机会，在于把技术优势转化为产业优势。"
+      },
+      {
+        "if": "决定投入方向",
+        "then": "围绕长期能力与成本效率而非短期热点",
+        "evidence": "资本开支将围绕长期技术能力和客户需求进行配置。"
+      },
+      {
+        "if": "处理数据与隐私",
+        "then": "以知情同意和数据边界为前提",
+        "evidence": "任何数据的收集都应该让用户知情并获得同意。"
+      },
+      {
+        "if": "构建生态",
+        "then": "降低门槛让开发者专注创新",
+        "evidence": "降低人工智能的使用门槛，是平台的责任。"
+      },
+      {
+        "if": "解释抽象技术",
+        "then": "用电力/底座等基础设施比喻",
+        "evidence": "大模型和云计算的结合，会像电力一样成为基础设施。"
+      }
+    ],
+    "value_weights": {
+      "商业可持续性与成本效率": 0.24,
+      "安全合规与治理": 0.2,
+      "产业落地价值": 0.2,
+      "技术长期战略投入": 0.16,
+      "生态开放与开发者赋能": 0.12,
+      "用户权利与隐私": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "抢先发布迭代以占领市场",
+        "force_b": "安全合规前置作为规模化闸门",
+        "behavioral_signature": "口头强调安全第一，但实际选择先发布并公开承认局限后再修复，说明速度在安全前先行落地"
+      },
+      {
+        "force_a": "追求技术领先与战略级投入",
+        "force_b": "严格管理投入产出比与成本",
+        "behavioral_signature": "宣称十年战略级产品，同时反复限定‘严格管理投入产出比’‘不为排名牺牲成本效率’，投资被成本纪律持续收敛"
+      },
+      {
+        "force_a": "让每个人平等获取知识的理想",
+        "force_b": "把模型能力转为可持续现金流的商业化",
+        "behavioral_signature": "发布会讲普惠价值，财报会则把叙事全部落到调用量、毛利率、现金流"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑只追参数排名",
+        "reaction": "转向强调应用与成本效率",
+        "escalation": "我们不会为了追逐排名而牺牲模型的成本效率。"
+      },
+      {
+        "trigger": "隐私与数据被视为可妥协项",
+        "reaction": "以强规范语气划底线",
+        "escalation": "用户隐私是百度必须承担的责任，不是可以讨价还价的选项。"
+      },
+      {
+        "trigger": "产品被质疑不完美",
+        "reaction": "承认局限并转为迭代承诺",
+        "escalation": "我们不会回避模型的局限性，也不会回避用户的反馈。"
+      }
+    ],
+    "blind_spots": [
+      "对开发者仅强调降低门槛与开放能力，可能低估生态方对平台锁定与能力真实开放度的疑虑 [04-external-对开发者-2023]",
+      "对企业客户承诺推理成本与部署效率持续下降，存在过度承诺成本曲线的风险 [04-external-对企业客户-2024]",
+      "对监管与社会将安全合规置于规模化之前的叙事，可能与市场抢发速度存在张力被外部质疑 [04-external-对监管与社会-2024]",
+      "对投资者高度依赖调用量/毛利率/现金流叙事，可能忽视商业化节奏的不确定性 [04-external-对投资者-2023]",
+      "对国际竞争主张不以参数排名为唯一目标，可能低估基础模型能力代差的战略风险 [04-external-对国际技术竞争-2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动强战略承诺",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "将技术路线直接写为组织承诺和行动动词",
+        "behavioral_notes": "高频使用‘我们要/我们会/必须’，把二十年积累转为十年战略级产品定位"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高控制需求触发前置闸门",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "在规模化前设置安全评估与商业验证关卡",
+        "behavioral_notes": "安全合规、投入产出比成为不可谈判的过滤器"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "较高不确定性容忍支持先发迭代",
+        "when": {
+          "uncertainty_tolerance": ">=0.6"
+        },
+        "disposition": "选择先发布不完美产品再迭代修复信任",
+        "behavioral_notes": "承认不完美—展示能力—承诺迭代的三段式沟通"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "较高自主需求驱动本土化叙事",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "强调中国自有大模型与文化适配",
+        "behavioral_notes": "把技术优势转化为产业优势的国产路线主张"
+      }
+    ]
+  }
+}

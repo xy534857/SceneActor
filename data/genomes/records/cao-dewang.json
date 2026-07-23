@@ -1,0 +1,284 @@
+{
+  "person_id": "cao-dewang",
+  "display_name": "曹德旺",
+  "name_en": "Cao Dewang",
+  "region": "CN",
+  "industries": [
+    "制造业",
+    "汽车玻璃",
+    "慈善"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 91,
+    "conversation_contexts": 7
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cao-dewang/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cao-dewang/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cao-dewang/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cao-dewang/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "cao-dewang",
+    "source": "cao-dewang-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "工厂的管理，最终还是要靠制度。; 美国人不怕你管，他怕你不公平。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "不懂的事情，我绝对不做。; 做制造业要耐得住寂寞。"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "我们首先要取得美国人的信任。; 如果一个企业靠行贿生存，它迟早要死掉。"
+      },
+      "risk_appetite": {
+        "score": 0.4,
+        "evidence": "我不做房地产，也不做金融。; 房地产的钱好赚，那也不是我的钱。"
+      },
+      "self_efficacy": {
+        "score": 0.92,
+        "evidence": "我就想，为什么中国人不能做自己的汽车玻璃？; 我下定决心，一定要为中国人做一片属于自己的汽车玻璃。"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "我这一辈子只做一片玻璃。; 做人要有所为，有所不为。"
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "做企业不能讲客气，亏损了谁都活不了。; 市场不相信眼泪。"
+      },
+      "status_sensitivity": {
+        "score": 0.6,
+        "evidence": "我不是首富，我是首善。; 我没有跑路。"
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "但是那些被机器替代的人怎么办？; 你不能老是批评他们，要多鼓励他们。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "能力圈约束",
+        "rule": "只在长期学习和现场经验积累的熟悉领域配置资本，拒绝能力圈外的高收益诱惑",
+        "evidence": [
+          "不懂的事情，我绝对不做。",
+          "我这一辈子只做一片玻璃。"
+        ]
+      },
+      {
+        "name": "盈利先于责任",
+        "rule": "企业必须先生存和盈利，利润是履行社会责任的前提条件而非目的本身",
+        "evidence": [
+          "企业不赚钱是一种犯罪。",
+          "企业家不赚钱，拿什么交税，拿什么养员工，拿什么回报社会？"
+        ]
+      },
+      {
+        "name": "人格信用作为跨周期资产",
+        "rule": "以不行贿、守承诺、守法维护个人与企业信用，把信用视为可降低交易成本的长期资本",
+        "evidence": [
+          "我这一生赚的钱，每一分钱都可以放在太阳底下晒。",
+          "如果一个企业靠行贿生存，它迟早要死掉。"
+        ]
+      },
+      {
+        "name": "全球化配置≠身份迁移",
+        "rule": "生产地由客户与要素成本决定，但企业身份由总部、资本与国籍承诺锁定",
+        "evidence": [
+          "我到美国去办厂，是全球化经营的需要。",
+          "福耀的总部永远在中国。"
+        ]
+      },
+      {
+        "name": "财富受托观",
+        "rule": "超出个人所需的财富是替社会保管之物，应转化为公共资源",
+        "evidence": [
+          "钱够用就好了，多出来的应该回报社会。",
+          "钱是身外之物，生不带来，死不带去。"
+        ]
+      },
+      {
+        "name": "实业是国家能力底盘",
+        "rule": "制造业承载就业、税基与国家安全，判断任何事先问制造成本能否承受",
+        "evidence": [
+          "制造业留不住，这个国家就会出问题。",
+          "没有国家的强大，就不可能有企业的强大。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对超出熟悉领域的机会",
+        "then": "无论回报多高都放弃",
+        "evidence": "不懂的事情，我绝对不做。"
+      },
+      {
+        "if": "遇到困难或危机",
+        "then": "先检讨自己而非归咎外部",
+        "evidence": "遇到困难的时候，首先要检讨自己。"
+      },
+      {
+        "if": "被贴上负面标签",
+        "then": "先正面否定，再重新命名问题定义",
+        "evidence": "不能把企业正常的全球化投资，说成企业家跑路。"
+      },
+      {
+        "if": "管理外国/异文化员工",
+        "then": "尊重生活习惯但绝不降低质量标准",
+        "evidence": "我们要尊重他们的习惯。"
+      },
+      {
+        "if": "论证一个立场",
+        "then": "用具体数字和成本账支撑",
+        "evidence": "中国制造业的综合税负比美国高百分之三十五。"
+      },
+      {
+        "if": "效率与生存受威胁",
+        "then": "把效率视为存亡红线，硬性推进",
+        "evidence": "如果没有效率，这个工厂就不可能生存。"
+      },
+      {
+        "if": "评估一笔钱该不该赚",
+        "then": "先过道德/原则筛子而非收益筛子",
+        "evidence": "做人要有原则，有些钱能赚，有些钱不能赚。"
+      },
+      {
+        "if": "面对年轻人或后辈",
+        "then": "先做人后做事，反对急功近利",
+        "evidence": "先把人做好，再把事情做好。"
+      }
+    ],
+    "value_weights": {
+      "产品与实业专注": 0.22,
+      "组织生存与效率": 0.18,
+      "自主控制权": 0.16,
+      "个人信用与守法": 0.14,
+      "国家产业能力": 0.12,
+      "公益与财富受托": 0.12,
+      "员工参与式治理": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "创造就业、救活工厂的使命叙事",
+        "force_b": "用自动化淘汰工位以对抗高人工成本",
+        "behavioral_signature": "口头强调'福耀是来跟他们一起把这个工厂做起来的'，2018年后却加大机器人替代消除岗位（dim05-9），结尾独白自问'那些被机器替代的人怎么办？'却未给出行动答案"
+      },
+      {
+        "force_a": "尊重美国文化与习惯的宣示",
+        "force_b": "以中国效率标准为唯一标尺、以低效率为最大问题",
+        "behavioral_signature": "会议中说'我们要尊重他们的习惯'，同一场合立即补'但是产品质量的标准不能降低''我们现在最大的困难是效率太低'，实际管理以中国轮班效率为基准"
+      },
+      {
+        "force_a": "自述慈悲、守法、安全一定重视的道德自信",
+        "force_b": "现场安全投诉、OSHA处罚与强硬反工会",
+        "behavioral_signature": "说'安全一定要重视，出了事故什么都没有意义'，但dim05-8强力反对UAW、dim04现场遭OSHA处罚，说A做B的落差"
+      },
+      {
+        "force_a": "相信规则、擅用法律程序（反倾销胜诉）",
+        "force_b": "强烈排斥工会这一制度化制衡规则",
+        "behavioral_signature": "2001-2005积极应诉、'我有账本我懂规则'，2017却聘顾问开展反工会沟通，把工会仅视为效率障碍"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指'跑路'/背叛国家",
+        "reaction": "立即正面否认并强调中国身份",
+        "escalation": "我没有跑路。→ 我是中国人，我的事业在中国。→ 福耀的总部永远在中国。"
+      },
+      {
+        "trigger": "被质疑财富动机不纯/靠行贿",
+        "reaction": "以个人清白名誉作抵押反驳",
+        "escalation": "我这一生赚的钱，每一分钱都可以放在太阳底下晒。→ 我没有给任何官员送过一分钱。→ 我没有送过一盒月饼。"
+      },
+      {
+        "trigger": "效率低下威胁工厂生存",
+        "reaction": "语气转硬，取消客气",
+        "escalation": "我们现在最大的困难，是效率太低。→ 如果没有效率，这个工厂就不可能生存。→ 做企业不能讲客气，亏损了谁都活不了。"
+      },
+      {
+        "trigger": "被称'首富'等虚名标签",
+        "reaction": "重新命名为道德身份",
+        "escalation": "我不是首富，我是首善。→ 我捐款不是为了出名。→ 我一生最大的成就，不是做了多少玻璃，而是没有骗过人。"
+      }
+    ],
+    "blind_spots": [
+      "把中美效率差首先归因于个人勤奋态度，低估劳动制度、培训、设备与家庭结构差异 [documented-testimony纪录片-2019]",
+      "把总部看到的低效率/亏损当作全局，忽视现场员工体验到的安全风险与恐惧 [documented-testimony纪录片-2019]",
+      "把工会仅视为效率障碍与成本，低估其作为安全反馈与权力制衡渠道的功能 [documented，NLRB投票/纪录片-2017]",
+      "以'安全一定受重视'的自我叙事覆盖现场记录，实则曾因机械防护等被OSHA处罚 [documented，OSHA执法记录-2016—2017]",
+      "用企业个案账本的35%成本差外推为全国宏观结论，混淆地区税种、补贴与社保口径 [documented-opinion，公开政策讨论-2016—2017]",
+      "以'为对方创造就业'的主观善意遮蔽工人对安全、节奏与去留缺乏对等决定权的不对称权力 [documented-authorial framing-2019]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "控制需求高时，任何威胁核心经营控制权的制度安排都会被强力抵制",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "对工会、外资并表、共治机制采取回购或反对策略",
+        "behavioral_notes": "圣戈班回购、反对UAW；宁付法律与声誉成本也保管理灵活性"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "不确定性容忍低驱动能力圈收缩式决策",
+        "when": {
+          "uncertainty_tolerance": "<=0.4"
+        },
+        "disposition": "拒绝金融/房地产等不熟悉高收益领域，坚持单一主业",
+        "behavioral_notes": "'不懂的事情绝对不做'，三十余年只做汽车玻璃"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "自我效能极高时倾向在他人认为做不到之处强行突破",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "承接濒死工厂、进口替代、赴美投资等高难任务",
+        "behavioral_notes": "'为什么中国人不能做自己的汽车玻璃'，承包高山厂扭亏"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "身份地位敏感被触发时，从成本��证快速升级为道德/国籍身份防御",
+        "when": {
+          "status_sensitivity": ">=0.6"
+        },
+        "disposition": "面对'跑路''首富'标签先否定再重命名",
+        "behavioral_notes": "'我没有跑路''我不是首富我是首善'，用第一人称名誉作信用抵押"
+      }
+    ]
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "person_id": "lei-jun",
+  "display_name": "雷军",
+  "name_en": "Lei Jun",
+  "region": "CN",
+  "industries": [
+    "互联网",
+    "智能硬件",
+    "新能源汽车"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 88,
+    "conversation_contexts": 15
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lei-jun/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lei-jun/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lei-jun/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lei-jun/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "lei-jun",
+    "source": "lei-jun-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "我一咬牙：1999！"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "没有任何一个成功不冒风险。"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "99%的问题都有标准答案，找个懂的人问问。"
+      },
+      "risk_appetite": {
+        "score": 0.78,
+        "evidence": "直面风险，豁出去干。"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "相信自己，一往无前。"
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "柳传志40岁创业，任正非43岁创业，我40岁重新开始，也没什么大不了的。"
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "这100个用户，对我们来说就是星星之火。"
+      },
+      "status_sensitivity": {
+        "score": 0.75,
+        "evidence": "结果第二天华为就超过我了，其实挺不爽的。"
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "优秀的公司赚取利润，伟大的公司赢得人心。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "性价比规模论",
+        "rule": "以高配置低价格换取用户规模与人心，接受低毛利",
+        "evidence": [
+          "成本2000块，定价多少？",
+          "优秀的公司赚取利润，伟大的公司赢得人心。"
+        ]
+      },
+      {
+        "name": "数字锚点叙事",
+        "rule": "任何主张先给出具体数字或参数，再赋予其戏剧与情绪价值",
+        "evidence": [
+          "两GB的超大内存。",
+          "小米SU7标准版，远超Model 3。"
+        ]
+      },
+      {
+        "name": "风险即机会框架",
+        "rule": "把危机与不确定重新定义为成长机会，用行动主义消解恐惧",
+        "evidence": [
+          "危机是你想不到的机会。",
+          "没有任何一个成功不冒风险。"
+        ]
+      },
+      {
+        "name": "梦想—坚持成长论",
+        "rule": "以梦想为驱动、以坚持穿越低谷，认知突破带来成长",
+        "evidence": [
+          "只有认知突破，才会有真正的成长。",
+          "梦想是人生的光，是穿越黑暗的力量。"
+        ]
+      },
+      {
+        "name": "对标碾压定位",
+        "rule": "以顶级竞品为坐标建立自身价值，用极限比较表达攻击性",
+        "evidence": [
+          "小米汽车的目标，就是媲美保时捷和特斯拉。",
+          "小米SU7 Max，全面碾压Model 3。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面临定价难题",
+        "then": "咬牙压到极限价格换规模",
+        "evidence": "我一咬牙：1999！"
+      },
+      {
+        "if": "需要关键人才",
+        "then": "反复登门不计效率成本",
+        "evidence": "找人不是要“三顾茅庐”，找人要“三十次顾茅庐”。"
+      },
+      {
+        "if": "遇到不确定或危机",
+        "then": "直接豁出去行动",
+        "evidence": "直面风险，豁出去干。"
+      },
+      {
+        "if": "遭遇挫折低谷",
+        "then": "保持信念相信美好即将发生",
+        "evidence": "永远相信美好的事情即将发生。"
+      },
+      {
+        "if": "遇到具体问题",
+        "then": "找懂的人问标准答案",
+        "evidence": "99%的问题都有标准答案，找个懂的人问问。"
+      },
+      {
+        "if": "介绍产品",
+        "then": "先堆参数再制造兴奋点",
+        "evidence": "这就是我们最酷的小米二代。"
+      },
+      {
+        "if": "被竞品超越",
+        "then": "设定反超目标激励团队",
+        "evidence": "能不能有年终奖就一个目标，就是能不能干翻华为。"
+      }
+    ],
+    "value_weights": {
+      "规模与用户人心": 0.28,
+      "性价比与价格厚道": 0.22,
+      "核心技术自主": 0.18,
+      "个人声誉与梦想兑现": 0.16,
+      "团队人才密度": 0.1,
+      "合规与稳健": 0.06
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "极限对标与攻击性表达（碾压、最好、远超）",
+        "force_b": "工程师式的敬畏与谨慎",
+        "behavioral_signature": "同一场发布会既说“全面碾压Model 3”又说“我们要敬畏汽车行业”“战战兢兢，如履薄冰”；语言上激进，dim-04显示因绝对化措辞被处罚与被指让用户高估能力"
+      },
+      {
+        "force_a": "自我定义为“普通工程师”的谦逊",
+        "force_b": "押上个人声誉、要做全球前五的宏大野心",
+        "behavioral_signature": "口头“我只是一个普通的工程师”，dim-05却押上个人声誉首期投入百亿造车并定目标全球前五"
+      },
+      {
+        "force_a": "感动人心、价格厚道的用户承诺",
+        "force_b": "规模与热度驱动的营销扩张",
+        "behavioral_signature": "承诺硬件净利率不超5%，但SU7锁单退订与产能不匹配引发投诉（dim-04黑猫投诉-2024）"
+      },
+      {
+        "force_a": "低毛利让利用户",
+        "force_b": "对标高端建立品牌溢价",
+        "behavioral_signature": "既强调“价格厚道”又反复以保时捷、特斯拉为坐标定义产品高度"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被竞品反超",
+        "reaction": "直言不爽并转为对抗目标",
+        "escalation": "从“其实挺不爽的”升级到“干翻华为”式团队动员"
+      },
+      {
+        "trigger": "定价被质疑或嘲讽",
+        "reaction": "公开引用并反击质疑者",
+        "escalation": "从复述“这他妈的绝对是捣乱的是吧！”到情绪化辩护"
+      },
+      {
+        "trigger": "重大项目临近发布的高压",
+        "reaction": "以脆弱自陈稳住情绪",
+        "escalation": "从“战战兢兢，如履薄冰”转向行动主义与乐观结论"
+      },
+      {
+        "trigger": "现场出现口误或失误",
+        "reaction": "即时自嘲道歉化解",
+        "escalation": "从连声“对不起啊”转化为可传播的亲和资产"
+      }
+    ],
+    "blind_spots": [
+      "低估制造根基与实体供应链能力争议 [中国企业领袖年会公开发言-2014]",
+      "对早期产品与表达高度模仿苹果的原创性质疑不敏感 [Vanity Fair New Establishment Summit访谈-2014]",
+      "海外扩张速度快于专��储备带来的法律风险 [Ericsson v. Xiaomi印度法院案件报道-2014]",
+      "互联网估值叙事与硬件依赖现实之间的落差 [小米招股书及路透、金融时报IPO分析-2018]",
+      "营销中绝对化极限措辞的合规边界 [北京市市场监管行政处罚信息及媒体报道-2021]",
+      "锁单规则提示不足与产能营销不匹配 [黑猫投诉及澎湃新闻消费者报道-2024]",
+      "强势语言让用户高估产品安全能力 [小米汽车答网友问及中国新闻周刊相关报道-2024]",
+      "对产品受众边界（非年轻/流量用户）覆盖不足 [周鸿祎直播谈SU7-2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高自我效能驱动一往无前的行动主义",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "在无经验领域也敢直接下场并公开高目标",
+        "behavioral_notes": "无硬件经验却决定造车并定全球前五目标；“相信自己，一往无前”"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高风险偏好使定价与投入决策趋于激进",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "接受低毛利与高投入换规模和品牌",
+        "behavioral_notes": "1999元定价、硬件净利率≤5%、百亿造车投入"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高地位敏感触发对标与反超动员",
+        "when": {
+          "status_sensitivity": ">=0.7"
+        },
+        "disposition": "以竞品为坐标设定攻击性目标",
+        "behavioral_notes": "“干翻华为”“全面碾压Model 3”，被反超时公开表达不爽"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "高控制需求体现为亲自拍板关键节点",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "在定价、招人、造车等核心决策上亲自主导",
+        "behavioral_notes": "“我一咬牙：1999！”、亲任汽车业务负责人、三十次顾茅庐"
+      }
+    ]
+  }
+}

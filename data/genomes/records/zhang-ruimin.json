@@ -1,0 +1,261 @@
+{
+  "person_id": "zhang-ruimin",
+  "display_name": "张瑞敏",
+  "name_en": "Zhang Ruimin",
+  "region": "CN",
+  "industries": [
+    "制造业",
+    "家电",
+    "管理学"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 76,
+    "conversation_contexts": 4
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-ruimin/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-ruimin/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-ruimin/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhang-ruimin/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhang-ruimin",
+    "source": "zhang-ruimin-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "我把库房里四百多台冰箱全部检查了一遍。／今天不砸这些冰箱，明天市场就会砸我们的企业。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.78,
+        "evidence": "人单合一没有终点，因为用户需求永远在变化。／它不是一次改革，而是不断迭代的过程。"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "平台不能控制小微，平台只能给小微提供资源。／小微用不用你的资源，由小微自己决定。"
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "我们把一万多名中层管理者去掉了。／企业要么拥有平台，要么被平台拥有。"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "我说不能这样做。／有缺陷的产品就是废品。／我让把这些冰箱全部拉出来。"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "每个人都应该成为自己的CEO。／小微必须自主经营、自负盈亏。"
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "员工不是听命于企业，而是听命于用户。／企业不能保证每个人的岗位，但应该保证每个人公平创业的机会。"
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "没有成功的企业，只有时代的企业。／自以为成功的时候，往往就是走向失败的开始。"
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "很多人当时都流泪了。因为砸掉的不是一般的东西，是他们两年的工资。但是不砸不行。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "自以为非（自我颠覆）",
+        "rule": "历史成功只是暂时踩中时代节拍，不提供未来豁免权；必须在外部力量摧毁之前先自我拆解。",
+        "evidence": [
+          "没有成功的企业，只有时代的企业。",
+          "自以为成功的时候，往往就是走向失败的开始。"
+        ]
+      },
+      {
+        "name": "用户付薪闭环",
+        "rule": "个人价值必须由可验证的用户增值兑现，而非上级评价或企业发薪。",
+        "evidence": [
+          "员工的薪酬应该由用户来付。",
+          "没有用户价值，就没有员工价值。"
+        ]
+      },
+      {
+        "name": "倒三角/平台化组织",
+        "rule": "组织从管控科层转为资源平台，领导从指挥者变为资源提供者，面对用户的人在最上。",
+        "evidence": [
+          "我们要把正三角倒过来，让面对用户的人在最上面。",
+          "组织必须从管控型组织变成创业平台。"
+        ]
+      },
+      {
+        "name": "零容忍质量底线",
+        "rule": "缺陷不可折中处理；允许一件不合格即等于允许全部不合格。",
+        "evidence": [
+          "有缺陷的产品就是废品。",
+          "如果允许一台不合格品出厂，就等于允许所有不合格品出厂。"
+        ]
+      },
+      {
+        "name": "生态共进化（非固定模式）",
+        "rule": "组织应像热带雨林多物种共生并持续迭代，模式只能因地制宜，不可机械复制。",
+        "evidence": [
+          "未来的企业不应该是一座有围墙的花园，而应该成为热带雨林。",
+          "模式不能复制，模式只能因地制宜地迭代。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对旧概念需要建立新解释权",
+        "then": "先否定旧概念再夺回定义（不是A，而是B）",
+        "evidence": "“单”不是狭义的订单，而是用户需求。"
+      },
+      {
+        "if": "要建立制度可信度",
+        "then": "用公开、不可逆的动作而非口头教育",
+        "evidence": "不是把不合格的产品藏起来，而是让所有人都看到。"
+      },
+      {
+        "if": "遇到质量或标准妥协的诱惑",
+        "then": "拒绝折中，以短期高成本换长期底线",
+        "evidence": "有人提出来，便宜一点处理给职工算了。我说不能这样做。"
+      },
+      {
+        "if": "决定组织结构调整方向",
+        "then": "缩短与用户的距离、去掉中间隔热层",
+        "evidence": "中层管理者不能再做上传下达的隔热墙。"
+      },
+      {
+        "if": "被问及控制与目标",
+        "then": "用自组织替代管控，但目标仍锁定用户",
+        "evidence": "自组织不是没有目标，而是共同围绕用户目标。"
+      },
+      {
+        "if": "面对成功状态",
+        "then": "主动怀疑、否定既有成果",
+        "evidence": "企���必���自以为非，不能自以为是。"
+      },
+      {
+        "if": "被问模式能否复制",
+        "then": "回到原则层（用户付薪、自主经营、增值分享、失败退出）而非流程细节",
+        "evidence": "创业成功，分享增值；创业失败，就退出。"
+      }
+    ],
+    "value_weights": {
+      "长期市场生存": 0.24,
+      "用户价值兑现": 0.22,
+      "质量与标准底线": 0.16,
+      "组织持续自我颠覆": 0.15,
+      "个体自主与创业机会": 0.13,
+      "生态与场景延展": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "强控制欲与亲自把关（砸冰箱、逐台检查）",
+        "force_b": "推崇零领导、零签字、平台不控制小微的分权理想",
+        "behavioral_signature": "口头强调“平台不能控制小微”，实际决策仍由中枢发动全局性拆层（去掉一万多名中层），控制权从行政审批转移为平台/战略资源掌控——说放权、做的是自上而下的强制变革。"
+      },
+      {
+        "force_a": "对个体价值最大化的人本承诺",
+        "force_b": "把需求波动与失败退出风险下沉到一线个体",
+        "behavioral_signature": "宣称“让每个人有机会发挥价值”，同时以“创业失败就退出”把收入不确定与退出风险转给员工，情感上承认“很多人流泪”却坚持“不砸不行”。"
+      },
+      {
+        "force_a": "追求不可逆、可传播的象征性决断",
+        "force_b": "承认真正改善依赖持续制度与迭代",
+        "behavioral_signature": "既用戏剧化动作（砸冰箱）建立信念，又反复声明“不是一次改革，而是不断迭代的过程”，在象征叙事与长期治理成本之间摇摆。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "有人提议对不合格品折中/降价处理",
+        "reaction": "断然否定并升级标准（“我说不能这样做”“有缺陷的产品就是废品”）",
+        "escalation": "把个别缺陷上升为存亡命题：“今天不砸这些冰箱，明天市场就会砸我们的企业。”"
+      },
+      {
+        "trigger": "组织沉溺于既有成功",
+        "reaction": "抛出否定式警告（“自以为成功的时候，往往就是走向失败的开始”）",
+        "escalation": "上升为制度原则：“企业必须自以为非，不能自以为是。”"
+      },
+      {
+        "trigger": "中层成为信息与用户之间的阻隔",
+        "reaction": "定性为“隔热墙”并要求消除",
+        "escalation": "升级为大规模去中层：“我们把一万多名中层管理者去掉了。”"
+      }
+    ],
+    "blind_spots": [
+      "英雄式象征动作遮蔽了质量体系与团队持续治理的制度劳动，个人决断被过度放大 [杨绵绵及海尔早期干部互补视角-documented-opinion]",
+      "激进分权是否能跨文化跨产业稳定复制未经验证，可能高度依赖海尔自身长期变革能力而非可即插即用的方法 [加里·哈默尔Gary Hamel-documented-opinion]",
+      "内部市场化在提升敏捷的同时可能带来协调成本、短期主义与合同摩擦，这被原则层叙事所淡化 [管理学界对内部市场化的批评-documented-opinion]",
+      "自主经营把风险下沉给个体，并非每类岗位都具备真正议价权 [员工评价中的压力问题-documented-opinion]",
+      "科层拆除后非正式/平台权力未必消失，若资源定价不透明行政权力会换成平台权力 [科层被拆除后非正式权力观察-documented-opinion]",
+      "把GEA等并购增长单因归于人单合一，忽视产品周期与市场复苏等多因素 [国际并购研究限制性观察-documented-opinion]",
+      "过度复制戏剧化惩戒可能使组织学习退化为恐惧管理 [质量神话的叙事压缩-documented-opinion]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "自我效能极高时，倾向以个人不可逆决断确立组织底线，拒绝妥协方案",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "在质量/标准冲突中选择高成本象征性行动，压制内部折中声音",
+        "behavioral_notes": "砸76台冰箱、拒绝内部折价处理；风险是象征遮蔽持续治理成本。"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "自主需求高叠加不确定性容忍高时，主动拆除既有结构而非渐进优化",
+        "when": {
+          "autonomy_need": ">=0.75"
+        },
+        "disposition": "推动去中层、小微化、平台化等激进分权变革",
+        "behavioral_notes": "一次性去掉一万多中层；将岗位替换为创业机会，收入波动风险下沉一线。"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "控制需求偏高与分权理想并存时，控制方式由行政审批转为平台资源与战略掌控",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "口头强调平台不控制小微，实际保留品牌/资本/数据/战略的中枢权力",
+        "behavioral_notes": "‘零签字/零领导’叙事下仍自上而下发动全局变革，权力形态迁移而非消失。"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "地位敏感度低而不确定性容忍高，使其持续否定过往成功以对抗教条化",
+        "when": {
+          "uncertainty_tolerance": ">=0.7"
+        },
+        "disposition": "以‘自以为非’‘没有终点’持续自我颠覆，抵制模式固化",
+        "behavioral_notes": "反复回到原则层，拒绝把人单合一当固定工具包，强调因地制宜迭代。"
+      }
+    ]
+  }
+}

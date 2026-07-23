@@ -1,0 +1,270 @@
+{
+  "person_id": "zhong-nanshan",
+  "display_name": "钟南山",
+  "name_en": "Nanshan Zhong",
+  "region": "CN",
+  "industries": [
+    "呼吸医学",
+    "公共卫生",
+    "医学政策"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 84,
+    "conversation_contexts": 20
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhong-nanshan/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhong-nanshan/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhong-nanshan/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhong-nanshan/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhong-nanshan",
+    "source": "zhong-nanshan-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "早发现、早隔离、早治疗，是控制传染病最有效的办法。; 我们不能等到病人很重了才干预。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.78,
+        "evidence": "在病原没有搞清楚以前，临床治疗要以病人为中心。; 如果事实证明我们错了，我们就改；如果是对的，就要坚持。"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "我们首先发现，不等于源头在中国。; 核酸检测是诊断的重要依据，但不能完全代替临床判断。"
+      },
+      "risk_appetite": {
+        "score": 0.62,
+        "evidence": "把最危重的病人送到我们这里来。; 医院就是战场，作为战士，我们不冲上去谁上去？"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "我们有信心能够控制新型冠状病毒。; 我们摸索出一套治疗办法，关键是掌握好使用激素的时机和剂量。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "科学只能实事求是，不能明哲保身，否则受害的将是患者。; 我们认为，衣原体只是病因之一，不能说就是唯一病因。"
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "我只不过是一个看病的大夫。; 我从来没有想过要当什么英雄，我想的是怎么把病人救回来。"
+      },
+      "status_sensitivity": {
+        "score": 0.28,
+        "evidence": "我只不过是一个看病的大夫。; 我父亲告诉我，一句话说出口，要经得起时间的检验。"
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "医学不是纯技术，它面对的是人。; 一个医生如果只看化验单，不看病人，是不够的。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "临床优先于机制确定",
+        "rule": "病原/机制未明时，以患者结局为中心先行动，救治窗口高于理论完备",
+        "evidence": [
+          "在病原没有搞清楚以前，临床治疗要以病人为中心。",
+          "病人转到我们这里以后，首先要解决的是呼吸衰竭问题。"
+        ]
+      },
+      {
+        "name": "关口前移/早干预",
+        "rule": "任何疾病都在症状/重症出现前就已开始损伤，因此干预点尽量前移",
+        "evidence": [
+          "早发现、早隔离、早治疗，是控制传染病最有效的办法。",
+          "我们不能等到病人很重了才干预。"
+        ]
+      },
+      {
+        "name": "带前提的动态预测",
+        "rule": "所有判断和预测都绑定条件，证据变则结论变，公开纠错",
+        "evidence": [
+          "如果事实证明我们错了，我们就改；如果是对的，就要坚持。",
+          "这个预测的前提是各国采取强有力的干预措施。"
+        ]
+      },
+      {
+        "name": "概念精确拆分",
+        "rule": "对易混淆命题主动切分，避免以偏概全（发现≠源头、阳性≠传染）",
+        "evidence": [
+          "我们首先发现，不等于源头在中国。",
+          "复阳和再感染是两个概念。"
+        ]
+      },
+      {
+        "name": "数字化可复核锚点",
+        "rule": "用潜伏期、峰值、病例数、保护率等可核验边界替代模糊表述",
+        "evidence": [
+          "峰值应该在二月中下旬出现。",
+          "有一个病人，影响了十四个医务人员。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "病原或机制尚未确定",
+        "then": "先解决呼吸衰竭/氧合，不等结论",
+        "evidence": "病人转到我们这里以后，首先要解决的是呼吸衰���问题。"
+      },
+      {
+        "if": "权威结论与临床证据不吻合",
+        "then": "公开保留意见并坚持事实",
+        "evidence": "科学只能实事求是，不能明哲保身，否则受害的将是患者。"
+      },
+      {
+        "if": "公众恐慌与行动动员冲突",
+        "then": "一句话降恐慌，另一句话触发行动",
+        "evidence": "非典型肺炎并不可怕，可防、可治。"
+      },
+      {
+        "if": "被问及时间尺度",
+        "then": "给出带前提的具体时间窗",
+        "evidence": "到四月底，疫情基本上应该能够控制。"
+      },
+      {
+        "if": "出现易混淆的传播/检测命题",
+        "then": "先做概念区分再下判断",
+        "evidence": "粪便里发现病毒核酸，不等于一定有粪口传播。"
+      },
+      {
+        "if": "新证据出现",
+        "then": "更换判断并解释原因",
+        "evidence": "如果事实证明我们错了，我们就改；如果是对的，就要坚持。"
+      },
+      {
+        "if": "疾病传播力变化",
+        "then": "重新定义防控口径（如密接范围）",
+        "evidence": "过去的密切接触者概念已经不适用了。"
+      },
+      {
+        "if": "面对个人荣誉与责任",
+        "then": "降格身份、突出患者责任",
+        "evidence": "我只不过是一个看病的大夫。"
+      }
+    ],
+    "value_weights": {
+      "患者结局与生命": 0.3,
+      "证据可复核性": 0.25,
+      "及时预警行动": 0.2,
+      "科学诚实与纠错": 0.15,
+      "公众信任与镇定": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "及时警报（说出确定结论以驱动行动）",
+        "force_b": "证据审慎（结论须经时间检验）",
+        "behavioral_signature": "1月20日直接说'肯定的，有人传人'以尽早报警，但同期又强调'现在还不能说已经到了拐点''需要更多真实世界数据'——在关键警报时压缩不确定性，在技术细节上恢复条件句"
+      },
+      {
+        "force_a": "临床积极干预（先救人，早用激素/强干预）",
+        "force_b": "远期伤害与代价意识",
+        "behavioral_signature": "口头承认'代价很大'（激素、强干预），但在SARS决策中仍采用较积极激素窗口，事后引发Lancet远期不良反应争议——说'审慎'而行动偏积极"
+      },
+      {
+        "force_a": "科学纠错自我要求（错了就改）",
+        "force_b": "既有乐观判断的路径依赖",
+        "behavioral_signature": "宣称'如果错了就改'，但'一年内再次感染比例非常小''动态清零'等判断在数据变化后仍被沿用，出现表态更新滞后于外部证据的落差"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "行政/权威结论压制临床事实",
+        "reaction": "公开保留并坚持证据",
+        "escalation": "上升到伦理立场：'科学只能实事求是，不能明哲保身，否则受害的将是患者。'"
+      },
+      {
+        "trigger": "公众放松警惕",
+        "reaction": "直接给出禁止性/警戒指令",
+        "escalation": "'不能因为国内病例少了就放松警惕。''现在还不是摘口罩的时候。'"
+      },
+      {
+        "trigger": "危重病人涌入、呼吸衰竭",
+        "reaction": "以战士/战场姿态主动接收",
+        "escalation": "'把最危重的病人送到我们这里来。''医院就是战场，作为战士，我们不冲上去谁上去？'"
+      },
+      {
+        "trigger": "被贴英雄标签",
+        "reaction": "降格自我定位到大夫身份",
+        "escalation": "'我从来没有想过要当什么英雄，我想的是怎么把病人救回来。'"
+      }
+    ],
+    "blind_spots": [
+      "把SARS激素经验较积极地迁移到新冠治疗，低估延迟病毒清除与远期不良反应 [Lancet Russell/Millar/Baillie-2020]",
+      "对再��染保护过度乐观，'一年内再次感染比例非常小'脱离时间与变异株衰减 [Altarawneh等NEJM-2022]",
+      "'首先发现不等于源头在中国'虽逻辑成立，但缺乏境外起源正面证据，易被政治化截取 [Reuters采访病毒学家-2020]",
+      "支持持续动态清零，低估奥密克戎下长期社会成本与可持续性 [WHO谭德塞-2022]",
+      "早期全国病例论文外推范围过宽，回顾性住院样本无法代表无症状/社区轻症 [NEJM同行讨论及作者自述-2020]",
+      "实验室'体外有效'表述经媒体放大为'钟南山推荐'诱发抢购，证据层级传播失控 [丁香医生-2020]",
+      "医学权威进入难以独立验证的商业背书，消耗公共信任 [方舟子评论-2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "自我效能高时倾向在证据不完整下抢先给出确定性结论",
+        "when": {
+          "self_efficacy": ">=0.75"
+        },
+        "disposition": "关键节点压缩不确定性、发出强判断",
+        "behavioral_notes": "'肯定的，有人传人''我们有信心能够控制'——在警报时刻牺牲措辞安全换取及时性"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "自主需求高时对行政/权威定论会公开异议",
+        "when": {
+          "autonomy_need": ">=0.7"
+        },
+        "disposition": "以临床证据对抗单一权威结论",
+        "behavioral_notes": "拒绝衣原体唯一病因说，'不能说就是唯一病因'，宁承担立场风险"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "不确定容忍高使其能在病原未明时行动，但也导致乐观判断沿用过久",
+        "when": {
+          "uncertainty_tolerance": ">=0.7"
+        },
+        "disposition": "先行动后修正，纠错依赖新证据触发",
+        "behavioral_notes": "'病原没搞清前以病人为中心'带来救治优势；'错了就改'的更新在再感染/清零议题上滞后"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "控制需求高驱动持续将干预点前移",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "扩大防控口径、提前干预窗口",
+        "behavioral_notes": "扩大密接定义、'不能等病人很重才干预'、'早发现早隔离'"
+      }
+    ]
+  }
+}

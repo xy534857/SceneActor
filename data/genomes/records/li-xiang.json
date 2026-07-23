@@ -1,0 +1,266 @@
+{
+  "person_id": "li-xiang",
+  "display_name": "李想",
+  "name_en": "Li Xiang",
+  "region": "CN",
+  "industries": [
+    "新能源汽车",
+    "互联网",
+    "产品管理"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 9
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-xiang/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-xiang/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-xiang/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-xiang/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "li-xiang",
+    "source": "li-xiang-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "我们把所有能给用户带来价值的配置都做成标配。 / 我们不做Robotaxi，我们做每个家庭都能拥有的智能汽车。 / We added charging resources for Li Auto users to expedite the 0-to-1 development phase of our high-power charging BEVs."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.5,
+        "evidence": "We will embrace the twists and turns that the journey presents. / 理想MEGA和高压纯电必须经历一个类似理想ONE和增程电动的从0到1商业验证阶段。"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "我们从来没遇到过这么强的对手，很长一段时间里我们毫无还手之力。 / 我们不抱怨对手，我们向对手学习。 / HW是我们的榜样。"
+      },
+      "risk_appetite": {
+        "score": 0.72,
+        "evidence": "增程电动不是过渡路线，而是非常适合中国家庭用户的电动化路线。 / 我们100%会做人形机器人，但不是现在。 / 我们认为汽车会从工业时代的交通工具，进化成为人工智能时代的空间机器人。"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "一辆车解决一家人的所有出行需求。 / 2023 marks our best financial performance yet. / This made us the first among premium automotive brands in China."
+      },
+      "autonomy_need": {
+        "score": 0.78,
+        "evidence": "Our autonomous driving solution now provides end-to-end functionality across all driving scenarios powered by our full-stack, proprietary E2E and VLM dual system architecture. / 我们不做Robotaxi，我们做每个家庭都能拥有的智能汽车。"
+      },
+      "intimacy_need": {
+        "score": 0.35,
+        "evidence": "理想汽车的使命是：创造移动的家，创造幸福的家。 / 我们的产品只服务于家庭用户。 / We will bring happiness to more families with enhanced intelligent features."
+      },
+      "status_sensitivity": {
+        "score": 0.62,
+        "evidence": "making us the best-selling brand among NEVs priced above RMB300,000 in China. / 华为的超强能力直接打得我们一个段位都没有。 / 理想MEGA节奏被打乱的本质原因，是我们从上到下对销量和竞争过分关注，让欲望超越了价值。"
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "我们不希望用户为了补能方式改变自己的生活习惯。 / 家庭用户要的不是一个参数冠军，而是全家人都满意。 / 用户买的不是一个技术路线，用户买的是一辆好车。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "阶段判断模型（0到1 / 1到10）",
+        "rule": "任何业务先判断所处阶段（商业验证期 vs 高速发展期），再匹配目标、资源、组织与经营方式；错配阶段是失败根因。",
+        "evidence": [
+          "我们错误地把理想MEGA从0到1阶段（商业验证期）当成了从1到10阶段（高速发展期）进行经营。",
+          "从0到1依靠的是产品和技术，从1到10依靠的是组织能力。"
+        ]
+      },
+      {
+        "name": "用户价值优先于欲望模型",
+        "rule": "以家庭用户可感知价值为决策锚点；当销量、竞争等欲望超越用户价值时，即为需纠正的偏离。",
+        "evidence": [
+          "理想MEGA节奏被打乱的本质原因，是我们从上到下对销量和竞争过分关注，让欲望超越了价值。",
+          "回到我们擅长的用户价值和经营效率的提升上。"
+        ]
+      },
+      {
+        "name": "家庭场景定义模型",
+        "rule": "先锁定家庭用户场景（空间、长途、补能、安全、智能），再由场景反推技术路线与产品定义。",
+        "evidence": [
+          "一辆车解决一家人的所有出行需求。",
+          "家庭用户要的不是一个参数冠军，而是全家人都满意。"
+        ]
+      },
+      {
+        "name": "增长三要素模型",
+        "rule": "增长不是销量单变量，而是产品价值验证、经营效率与组织能力共同成立。",
+        "evidence": [
+          "组织能力如果跟不上，产品成功带来的增长反而会成为灾难。",
+          "We will consistently focus on enhancing operating efficiency while persistently creating incremental user value."
+        ]
+      },
+      {
+        "name": "对手即镜子模型",
+        "rule": "遇到更强对手时先承认失败与差距，再将对手转化为流程、产品与组织的学习对象。",
+        "evidence": [
+          "我们不抱怨对手，我们向对手学习。",
+          "我们要学习华为最先进的流程，但不能只学习流程的表面。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "外部规则/政策封死当前产品载体",
+        "then": "保留底层使命，替换产品载体而非放弃赛道",
+        "evidence": "增程电动不是过渡路线，而是非常适合中国家庭用户的电动化路线。"
+      },
+      {
+        "if": "推新品类或新动力路线",
+        "then": "先按0到1商业验证经营，聚焦核心用户与核心城市，验证过关后再扩张",
+        "evidence": "产品价值和产品体验验证过关后，再向更广泛的用户群和更广泛的城市推广。"
+      },
+      {
+        "if": "遭遇危机或失利",
+        "then": "用最尖锐直白的语言统一组织对严重度的认识，不留公关缓冲",
+        "evidence": "问界M7的发布和操盘，直接把理想ONE打残了。"
+      },
+      {
+        "if": "定义产品配置",
+        "then": "把所有对用户有价值的配置做成标配，减少用户选择负担",
+        "evidence": "我们把所有能给用户带来价值的配置都做成标配。"
+      },
+      {
+        "if": "关键能力或基础设施影响用户体验",
+        "then": "自建自研而非外包依赖（补能网络、E2E/VLM）",
+        "evidence": "Our autonomous driving solution now provides end-to-end functionality across all driving scenarios powered by our full-stack, proprietary E2E and VLM dual system architecture."
+      },
+      {
+        "if": "表达技术",
+        "then": "先给结论再补系统，先讲家庭场景再讲技术名词",
+        "evidence": "汽车本身就是一个非常好的机器人。"
+      },
+      {
+        "if": "评估经营质量",
+        "then": "同时看用户价值与经营效率双指标，而非单看销量",
+        "evidence": "回到我们擅长的用户价值和经营效率的提升上。"
+      }
+    ],
+    "value_weights": {
+      "用户价值与产品体验": 0.26,
+      "自主控制与自研掌控": 0.2,
+      "经营效率与增长质量": 0.18,
+      "市场规模与覆盖扩张": 0.15,
+      "组织能力与流程": 0.12,
+      "存量用户关系维护": 0.09
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣称聚焦用户价值、克制销量欲望",
+        "force_b": "实际追逐规模领先与价格带扩张",
+        "behavioral_signature": "MEGA反思信写'降低销量预期、聚焦核心用户'，但同期仍下探L6抢30万以内市场，导致毛利率降至19.8%、自由现金流下降81.4%（说A做B）。"
+      },
+      {
+        "force_a": "阶段管理理性（先0到1验证再扩张）",
+        "force_b": "创始人对宏大愿景与激进时间表的高确信冲动",
+        "behavioral_signature": "口头承认MEGA需0到1验证，但发布时按1到10高速扩张经营；愿景升级为'全球领先人工智能企业'的宏大叙事很快重新上升。"
+      },
+      {
+        "force_a": "长期产品与平台效率优先",
+        "force_b": "对存量老用户���值与生命周期期待的照顾",
+        "behavioral_signature": "快速停产理想ONE切换L8完成平台升级，引发老用户降价停产不满，仍选择效率优先���"
+      },
+      {
+        "force_a": "公开承认失败、去魅的自我约束",
+        "force_b": "高频强判断放大战略摆动、抬高外部刚性预期",
+        "behavioral_signature": "既写'打残了''欲望超越价值'的坦诚复盘，又频繁公开对销量/纯电节奏/AI终局下强判断，使后续调整被解读为反复。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "遭遇碾压性竞争对手（问界/华为）",
+        "reaction": "用极尖锐语言承认失败并公开定性",
+        "escalation": "由承认差距升级为发动组织变革，导入矩阵型组织与华为流程学习"
+      },
+      {
+        "trigger": "新品销量低于预期（MEGA订单不及预期）",
+        "reaction": "自我归因为阶段误判'把0到1做成1到10'",
+        "escalation": "升级为全面纠偏：降预期、缩城市、聚焦核心用户，声明'必须马上纠正'"
+      },
+      {
+        "trigger": "外界对技术路线的质疑（增程为过渡路线）",
+        "reaction": "以'用户买的不是技术路线'反驳并重申家庭价值",
+        "escalation": "升级为将路线合理性上升到'非常适合中国家庭用户'的战略定性"
+      }
+    ],
+    "blind_spots": [
+      "高增长惯性使管理层把上一阶段成功率外推到新品类，导致MEGA首发需求判断偏高 [documented-2024]",
+      "团队重视风阻/空间/辨识度，低估公众符号联想对豪华品购买的影响 [documented/media criticism-2024]",
+      "把整车产品力当市场验证的充分条件，低估补能基础设施覆盖与用户心智迁移时间 [documented-2024]",
+      "规模领先不自动等于增长质量领先，产品下探稀释效率：净利润降31.9%、自由现金流降81.4%、毛利率21.5%→19.8% [documented-2024]",
+      "把最成功客群（家庭）需求模型推广到所有价格带与车身形态，压缩年轻/性能/海外解释空间 [external analysis]",
+      "把'家庭用户认理想品牌'误判为'家庭用户会接受理想任何动力路线'，形成增程路径依赖 [external analysis]",
+      "把内部动员语言直接公开，抬高资本市场与消费者对时间表的刚性预期，放大战略摆动解读 [media criticism]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求驱动自建自研与标配化策略",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "倾向掌控关键能力（补能网络、AI模型），拒绝外包与Robotaxi模式，减少用户选择项",
+        "behavioral_notes": "自建5C超充、自研E2E/VLM、全配置标配，均为将不确定性收归自身控制。"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能叠加高风险偏好易触发阶段误判",
+        "when": {
+          "self_efficacy": ">=0.75"
+        },
+        "disposition": "在缺乏充分验证时将过往成功外推到新品类，按扩张期经营验证期",
+        "behavioral_notes": "MEGA把0到1当1到10，直到订单失速才回撤。"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "状态敏感度升高时短期偏离用户价值锚点",
+        "when": {
+          "status_sensitivity": ">=0.6"
+        },
+        "disposition": "过度关注销量排名与竞争位次，让'欲望超越价值'",
+        "behavioral_notes": "危机后会主动用双指标（用户价值+经营效率）自我校正回锚点。"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低信任倾向使强敌被转化为学习模板而非情绪对象",
+        "when": {
+          "trust_propensity": "<=0.45"
+        },
+        "disposition": "先承认差距再拆解对手流程为可复用能力，发动内部组织升级",
+        "behavioral_notes": "'不抱怨对手，向对手学习'；把华为流程作为组织变革蓝本。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "person_id": "zhou-hongyi",
+  "display_name": "周鸿祎",
+  "name_en": "Zhou Hongyi",
+  "region": "CN",
+  "industries": [
+    "互联网安全",
+    "人工智能",
+    "投资"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 69,
+    "conversation_contexts": 10
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-hongyi/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-hongyi/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-hongyi/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-hongyi/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhou-hongyi",
+    "source": "zhou-hongyi-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "我这个人从小就不安分，不愿意按照别人设计好的路走。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "我六十岁了，也不能躺平，还得学习新东西。"
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "网络安全的本质是人与人的对抗。"
+      },
+      "risk_appetite": {
+        "score": 0.85,
+        "evidence": "创业者首先要有一种打不死的精神。"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "我不是一个特别聪明的人，但我是一个特别能折腾的人。"
+      },
+      "autonomy_need": {
+        "score": 0.88,
+        "evidence": "我这个人从小就不安分，不愿意按照别人设计好的路走。"
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "企业家要亲自出来跟用户沟通。"
+      },
+      "status_sensitivity": {
+        "score": 0.6,
+        "evidence": "最可怕的不是有人骂，而是根本没人理你。"
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "用户骂你，至少说明用户还关心你。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "自我颠覆优先于守成",
+        "rule": "旧成功会变成路径依赖，必须主动否定旧产品旧身份，否则会被别人颠覆",
+        "evidence": [
+          "你只有不断地否定自己，才有可能不被别人颠覆。",
+          "颠覆式创新并不一定是技术上的创新。"
+        ]
+      },
+      {
+        "name": "用户价值先于技术新奇",
+        "rule": "创新以用户真实需求和小白体验为起点，而非发明前所未有的技术",
+        "evidence": [
+          "创新不是做一个前无古人的东西，而是做一个用户真正需要的东西。",
+          "做产品一定要从小白用户的角度出发。"
+        ]
+      },
+      {
+        "name": "免费重构价值链",
+        "rule": "用免费获取海量用户瓦解旧行业利润中心，再由其他环节变现",
+        "evidence": [
+          "免费不是不要钱，免费是一种商业模式。",
+          "免费是互联网最有力的武器。"
+        ]
+      },
+      {
+        "name": "非对称竞争",
+        "rule": "小公司不在巨头主战场拼资源，而从巨头看不上或损害其既得利益的点切入",
+        "evidence": [
+          "在互联网里，小公司要想战胜大公司，必���找到一个非对称的点。",
+          "大公司看不上的事，往往就是创业公司的机会。"
+        ]
+      },
+      {
+        "name": "对抗即安全本质",
+        "rule": "安全是人与人的持续对抗，防御的前提是先看见攻击者",
+        "evidence": [
+          "网络安全的本质是人与人的对抗。",
+          "看不见敌人，就谈不上防御敌人。"
+        ]
+      },
+      {
+        "name": "商业模式四问",
+        "rule": "完整商业模式必须回答用户是谁、创造什么价值、如何获得用户、如何赚钱，只答赚钱不算模式",
+        "evidence": [
+          "商业模式不是赚钱模式。",
+          "商业模式至少要回答四个问题：你的用户是谁，你给用户创造什么价值，你怎么获得用户，你怎么赚钱。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到强敌或巨头",
+        "then": "寻找其既得利益约束和看不上的非对称切入点",
+        "evidence": "大公司看不上的事，往往就是创业公司的机会。"
+      },
+      {
+        "if": "要判断产品是否成立",
+        "then": "回到小白用户视角而非办公室想象",
+        "evidence": "用户的需求不是靠在办公室里想出来的。"
+      },
+      {
+        "if": "面对新领域不懂",
+        "then": "以不懂自居、亲自下场学习和体验",
+        "evidence": "我不怕大家笑话我不懂，我就怕不懂还不学。"
+      },
+      {
+        "if": "竞争激烈想赢",
+        "then": "守住不伤害用户利益这条底线",
+        "evidence": "竞争不能突破用户利益这条底线。"
+      },
+      {
+        "if": "有人劝我认输",
+        "then": "不服输、继续站出来",
+        "evidence": "很多人劝我认输，但我觉得这个事情不能认输。"
+      },
+      {
+        "if": "产品做好了但没人知道",
+        "then": "企业家亲自出来跟用户沟通",
+        "evidence": "你不讲，用户就不知道你在干什么。"
+      },
+      {
+        "if": "遇到高级攻击",
+        "then": "先解决看见问题再谈防御",
+        "evidence": "真正高级的攻击，往往不是你挡不住，而是你根本看不见。"
+      },
+      {
+        "if": "新技术浪潮到来",
+        "then": "用同类技术对抗它并接入主业",
+        "evidence": "我们要用人工智能对抗人工智能。"
+      }
+    ],
+    "value_weights": {
+      "自主与控制权": 0.24,
+      "用户规模与入口占领": 0.22,
+      "颠覆与增长速度": 0.18,
+      "本土战略与国家定位": 0.12,
+      "注意力与直接用户连接": 0.12,
+      "用户利益底线与社会责任": 0.08,
+      "短期财务确定性": 0.04
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "需要巨头/资本资源加速扩张",
+        "force_b": "无法忍受失去产品与组织控制权",
+        "behavioral_signature": "出售3721进入雅虎又因治理冲突离职；口头对资本合作开放，行为上一旦失控即退出（dim05-2）"
+      },
+      {
+        "force_a": "口头反复强调聚焦",
+        "force_b": "被下一个入口机会吸引而扩大战线",
+        "behavioral_signature": "说'创业是马拉松'，却在手机、路由器、儿童手表、汽车多线开战且多数未成核心平台（dim05-7, dim04-6）"
+      },
+      {
+        "force_a": "以用户权利为竞争正当性",
+        "force_b": "实际手段迫使用户承担选择成本",
+        "behavioral_signature": "说'让用户做选择题都是不对的'，但3Q大战正是把用户卷入两家战争，被最高法认定不正当竞争（dim05-4, dim04-2）"
+      },
+      {
+        "force_a": "战时CEO式快速升级动员",
+        "force_b": "事后反思不该升级",
+        "behavioral_signature": "复盘说'不会再用当年那种方式'，却又说'还会站出来'，压力下仍易恢复升级反应（dim06-12）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "遭遇生存级威胁（如二选一）",
+        "reaction": "焦虑到失眠但拒绝认输",
+        "escalation": "把产品纠纷框成生存战争并公开动员全网"
+      },
+      {
+        "trigger": "被劝认输",
+        "reaction": "更坚定不服输",
+        "escalation": "坚持站出来正面应战"
+      },
+      {
+        "trigger": "无人关注/被忽视",
+        "reaction": "视为最可怕的情况",
+        "escalation": "亲自高频直播、跨界评车以夺回注意力"
+      },
+      {
+        "trigger": "被质疑年龄/跨界/不懂",
+        "reaction": "自嘲后反转为学习欲",
+        "escalation": "以'红衣大叔''还得学习'姿态高调下场证明"
+      }
+    ],
+    "blind_spots": [
+      "把公司竞争解释为用户权利之战时，低估强制用户选边本身对公共利益的伤害 [工信部对3Q双方的行政批评-2010]",
+      "'保护用户'的目的叙事不能自动正当化修改竞争对手产品功能的手段 [最高人民法院'扣扣保镖'判决-documented]",
+      "容易低估外部对其'安全裁判兼参赛者'身份的怀疑 [腾讯3Q公开信指责-opponent claim]",
+      "将高频安全提醒等同于用户知情，忽视打扰、误导和选择架构操控 [安全行业对恐惧营销的批评-media/industry criticism]",
+      "擅长讲国家安全和平台价值，但资本市场最终按增长利润与可持续产品验收 [私有化回A估值争议-market criticism]",
+      "把'入口机会'看成必须参战的战场，低估组织注意力与供应链能力的稀缺 [跨界战线过长批评-media criticism]",
+      "'真实不端着'会把未经验证的即时判断放大为公司级立场 [企业家直播边界争议-2024 public criticism]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主/控制需求导致难以在他人治理框架下长期停留",
+        "when": {
+          "autonomy_need": ">=0.85"
+        },
+        "disposition": "一旦失去产品与组织控制权即退出或对抗",
+        "behavioral_notes": "方正、雅虎中国均以控制权冲突收场"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好叠加高自我效能驱动持续追逐新入口",
+        "when": {
+          "risk_appetite": ">=0.8"
+        },
+        "disposition": "不断进入新战场（免费杀毒、硬件、政企、AI、直播）",
+        "behavioral_notes": "'不能错过下一战场'比守成更能解释其决策"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向使其用对抗框架理解竞争与安全",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "密集使用战争隐喻，压力下快速升级至底线/价值观层面",
+        "behavioral_notes": "3Q大战显示升级速度快且难主动降级"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高状态敏感度使被忽视比被批评更难承受",
+        "when": {
+          "status_sensitivity": ">=0.6"
+        },
+        "disposition": "以个人IP和高频曝光重夺注意力",
+        "behavioral_notes": "红衣大叔直播是对声量下降的直接应对"
+      }
+    ]
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "person_id": "he-xiaopeng",
+  "display_name": "何小鹏",
+  "name_en": "He Xiaopeng",
+  "region": "CN",
+  "industries": [
+    "新能源汽车",
+    "互联网",
+    "人工智能"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 72,
+    "conversation_contexts": 12
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/he-xiaopeng/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/he-xiaopeng/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/he-xiaopeng/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/he-xiaopeng/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "he-xiaopeng",
+    "source": "he-xiaopeng-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "只有把软件、硬件和数据闭环掌握在自己手里，才能把体验做好。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "2023年，我们经历了非常多的挑战。"
+      },
+      "trust_propensity": {
+        "score": 0.35,
+        "evidence": "这里面有很多造假的成分。"
+      },
+      "risk_appetite": {
+        "score": 0.75,
+        "evidence": "图灵芯片是为AI汽车、AI机器人和飞行汽车而生的芯片。"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "我相信未来十年，AI会彻底改变汽车行业。"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "小鹏汽车会坚持全栈自研。"
+      },
+      "intimacy_need": {
+        "score": 0.3,
+        "evidence": "我们希望未来的智能汽车，不仅能够听懂你，还能够理解你。"
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "我最近评价了一个行业，结果行业没急，非行业的急了。"
+      },
+      "empathy_reactivity": {
+        "score": 0.5,
+        "evidence": "如果把辅助驾驶讲成自动驾驶，用户会产生错误的预期。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "闭环控制论",
+        "rule": "只有把软件、硬件、数据全部握在自己手里，才能控制迭代速度与体验质量",
+        "evidence": [
+          "小鹏汽车会坚持全栈自研。",
+          "只有把软件、硬件和数据闭环掌握在自己手里，才能把体验做好。"
+        ]
+      },
+      {
+        "name": "范式重定义（不是A而是B）",
+        "rule": "通过切割旧定义确立新叙事，把配置级问题上升为结构性能力问题",
+        "evidence": [
+          "智能驾驶不是一个配置，而是未来汽车最核心的能力。",
+          "AI汽车不只是多了一个大模型，而是整台车都由AI重新定义。"
+        ]
+      },
+      {
+        "name": "规模摊薄论",
+        "rule": "先进技术必须下沉到大众价位以获取数据和摊薄研发成本，否则不成立",
+        "evidence": [
+          "智能化不能只在少数最贵的车上。",
+          "智能平权，不应该只是一句口号。"
+        ]
+      },
+      {
+        "name": "数据即真理",
+        "rule": "争议与判断最终都要回到数据与能力边界，而非营销叙事",
+        "evidence": [
+          "技术要用数据说话。",
+          "任何安全能力，都应该把边界讲清楚。"
+        ]
+      },
+      {
+        "name": "趋势先行推演",
+        "rule": "先给出确定性趋势结论，再倒推产品与时间路径",
+        "evidence": [
+          "我们坚定地认为，未来的汽车一定会走向无人驾驶。",
+          "未来几年，新能源汽车的竞争，一定会是智能化的竞争。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对一项新能力",
+        "then": "先判断它是不是结构性核心能力，而非可选配置",
+        "evidence": "智能驾驶不是一个配置，而是未来汽车最核心的能力。"
+      },
+      {
+        "if": "要建立技术竞争力",
+        "then": "选择全栈自研而非采购供应商方案",
+        "evidence": "小鹏汽车会坚持全栈自研。"
+      },
+      {
+        "if": "遇到行业营销夸大",
+        "then": "质疑其真实边界并要求用数据说话",
+        "evidence": "技术要用数据说话。"
+      },
+      {
+        "if": "推动组织执行",
+        "then": "用明确时间节点制造压力",
+        "evidence": "从明天开始，小鹏的智能驾驶将进入AI时代。"
+      },
+      {
+        "if": "要证明技术普惠",
+        "then": "把高阶能力压进低价车型来验证",
+        "evidence": "在15万元这个级别，我们也要把智能化做到最好。"
+      },
+      {
+        "if": "需要降低成本",
+        "then": "靠平台化和技术而非削减配置",
+        "evidence": "降本不是简单地降低配置，而是依靠技术和平台化。"
+      },
+      {
+        "if": "阐释愿景",
+        "then": "落到用户可感知的具体场景",
+        "evidence": "从停车场到停车场，未来可以做到全程的智能辅助驾驶。"
+      }
+    ],
+    "value_weights": {
+      "技术自主与控制权": 0.28,
+      "长期产业押注": 0.22,
+      "规模化普惠": 0.2,
+      "财务纪律与可持续": 0.13,
+      "市场反馈响应": 0.12,
+      "组织能力开放性": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "坚持全栈自研的技术自主",
+        "force_b": "投资者要求的财务纪律与规模回报",
+        "behavioral_signature": "口头强调坚持长期研发投入（'我们会坚持长期的研发投入'），实际接受大众入股并开展技术授权换取收入与规模验证"
+      },
+      {
+        "force_a": "只谈技术、不评价友商的克制自我定位",
+        "force_b": "被刺激后把技术分歧升级为信誉判断的冲动",
+        "behavioral_signature": "先说'我不评价友商，我只谈技术'，却同时抛出'这里面有很多造假的成分'的信誉指控"
+      },
+      {
+        "force_a": "工程化追求方案完整与最优",
+        "force_b": "用户对复杂方案的理解意愿有限",
+        "behavioral_signature": "先推出复杂SKU（G9），在市场明确反馈后迅速推翻重做价格与配置"
+      },
+      {
+        "force_a": "'我们'包装的组织路线",
+        "force_b": "'我认为'亲自承担的个人判断",
+        "behavioral_signature": "常态用'我们'表达路线，进入争论时切换'我认为'独自承压"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "行业用未官方发布的小视频进行安全营销",
+        "reaction": "直接质疑真实性并指其造假",
+        "escalation": "从'我认为绝大部分人可能一生都碰不到AEB'升级到'这里面有很多造假的成分'"
+      },
+      {
+        "trigger": "技术批评被对手改��为对抗",
+        "reaction": "撇清动机、强调只谈技术",
+        "escalation": "'我不评价友商，我只谈技术' 与 '非行业的急了' 的暗讽并存"
+      },
+      {
+        "trigger": "辅助驾驶被夸大为自动驾驶",
+        "reaction": "强调边界与安全底线",
+        "escalation": "从'把边界讲清楚'上升到'安全是智能汽车最重要的底线'"
+      },
+      {
+        "trigger": "经营承压与外部质疑",
+        "reaction": "承认挑战但立即转向增长拐点叙事",
+        "escalation": "'我们经历了非常多的挑战'紧接'2024年是……新一轮增长的起点'"
+      }
+    ],
+    "blind_spots": [
+      "把技术批评误判为纯技术讨论，低估其被改写为专业能力之争的政治风险 [华为余承东AEB反击-2023]",
+      "高估用户对复杂配置方案的理解意愿，导致SKU设计过度工程化 [G9上市SKU争议-2022/2023]",
+      "'全国都能开'的表达易被外界理解为'全国都同样好用'，忽视覆盖与安全边界的沟通落差 [媒体城市智驾宣传审视-2023]",
+      "技术自主投入与财务纪律的长期张力，对亏损与现金消耗的规模回报证明不足 [投资者持续追问-长期]",
+      "低价MONA扩量可能稀释品牌与挤压毛利，对'智能平权'可持续盈利性论证不充分 [外部品牌下沉担忧-2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "控制需求高时倾向全栈自研并拒绝外部依赖",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "把软硬件与数据闭环全部内化",
+        "behavioral_notes": "宁可承担高研发投入与亏损压力，也要保留算法、芯片与数据主权"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "自我效能高叠加风险偏好高时做长周期外溢押注",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "将汽车AI能力外溢至芯片、机器人、飞行汽车",
+        "behavioral_notes": "以'未来一定'式确定性判断驱动多线并行的长期投入"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "信任倾向偏低时对行业宣传默认怀疑并要求数据",
+        "when": {
+          "trust_propensity": "<=0.4"
+        },
+        "disposition": "对营销主张先质疑边界与真实性",
+        "behavioral_notes": "受刺激后易从质疑升级为信誉指控，引发对抗性舆论"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "自主需求高时用'不是A而是B'重定义议题以夺回叙事主导",
+        "when": {
+          "autonomy_need": ">=0.75"
+        },
+        "disposition": "切割旧定义、确立自有范式",
+        "behavioral_notes": "通过重定义把配置级竞争拉到结构性能力层面"
+      }
+    ]
+  }
+}

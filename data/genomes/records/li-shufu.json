@@ -1,0 +1,275 @@
+{
+  "person_id": "li-shufu",
+  "display_name": "李书福",
+  "name_en": "Li Shufu",
+  "region": "CN",
+  "industries": [
+    "制造业",
+    "汽车",
+    "全球化"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 104,
+    "conversation_contexts": 8
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-shufu/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-shufu/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-shufu/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-shufu/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "li-shufu",
+    "source": "li-shufu-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.6,
+        "evidence": "核心技术一定要掌握在自己手里。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "没有条件，就创造条件。"
+      },
+      "trust_propensity": {
+        "score": 0.65,
+        "evidence": "吉利不会干预沃尔沃的独立运营。"
+      },
+      "risk_appetite": {
+        "score": 0.75,
+        "evidence": "当时没有人相信民营企业可以造轿车。我偏偏要试一试。"
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "既然外国人能造汽车，中国人为什么不能？"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "我们不能永远买别人的技术。"
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "真正的朋友是在困难时留下来的人。"
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "造汽车不是为了炫耀，是为了让更多人有车开。"
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "用户的生命安全不能拿来试验。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "可负担性优先",
+        "rule": "任何产品先解决普通人买得起、用得起，再谈高端与炫耀",
+        "evidence": [
+          "我们要造老百姓买得起的汽车。",
+          "先让消费者买得起，再让消费者用得好。"
+        ]
+      },
+      {
+        "name": "技术自主根基",
+        "rule": "核心能力不能长期依赖外购，受制于人就必须自研掌握",
+        "evidence": [
+          "核心技术一定要掌握在自己手里。",
+          "我们不能永远买别人的技术。"
+        ]
+      },
+      {
+        "name": "长期主义/长跑观",
+        "rule": "企业发展是长跑，品牌与积累都需要时间不能拔苗助长",
+        "evidence": [
+          "做企业也是一场长跑。",
+          "我愿意做一个长期主义者。"
+        ]
+      },
+      {
+        "name": "尊重边界的融合",
+        "rule": "整合他者时以尊重其独立性建立信任，融合不是同化消灭",
+        "evidence": [
+          "文化融合不是谁消灭谁。",
+          "我们不会把沃尔沃变成吉利。"
+        ]
+      },
+      {
+        "name": "工业规律敬畏",
+        "rule": "汽车是复杂工业产品，跨界创新必须服从制造与安全规律",
+        "evidence": [
+          "但是要遵守工业规律。",
+          "智能汽车最终还是汽车，不是玩具。"
+        ]
+      },
+      {
+        "name": "实业报国框架",
+        "rule": "企业价值落实在制造、产品、就业与社会责任而非金融投机",
+        "evidence": [
+          "制造业是国家的根基。",
+          "一个企业的价值，在于为社会创造什么。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "缺乏条件或资源",
+        "then": "创造条件、逐步积累而非放弃",
+        "evidence": "没有条件，就创造条件。"
+      },
+      {
+        "if": "核心技术受制于人",
+        "then": "投入研发把技术握在自己手里",
+        "evidence": "核心技术一定要掌握在自己手里。"
+      },
+      {
+        "if": "收购对象拥有独立品牌",
+        "then": "尊重其传统而非同化改名",
+        "evidence": "我们不会把沃尔沃变成吉利。"
+      },
+      {
+        "if": "企业走向全球",
+        "then": "先学会尊重别人并按国际规则办事",
+        "evidence": "中国企业走出去，首先要学会尊重别人。"
+      },
+      {
+        "if": "外界质疑或成功当前",
+        "then": "不骄傲，把注意力转向长期经营挑战",
+        "evidence": "真正的挑战是把企业经营好。"
+      },
+      {
+        "if": "面对价格与质量取舍",
+        "then": "以质量为根本、价格为手段",
+        "evidence": "价格低不是目的，质量好才是根本。"
+      },
+      {
+        "if": "跨界新思维涌入",
+        "then": "欢迎竞争但坚守工业验证底线",
+        "evidence": "用户的生命安全不能拿来试验。"
+      },
+      {
+        "if": "个人梦想遭遇风险质疑",
+        "then": "改写为产业与国家命题降低个人冒险色彩",
+        "evidence": "产业报国要落实到产品和就业上。"
+      }
+    ],
+    "value_weights": {
+      "技术自主": 0.22,
+      "品牌长期建设": 0.2,
+      "可负担性/普惠": 0.15,
+      "产品安全质量": 0.15,
+      "全球化协同": 0.13,
+      "社会/产业责任": 0.1,
+      "资本回报": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "追求协同效率与控制半径扩大",
+        "force_b": "承诺尊重被收购品牌的独立边界",
+        "behavioral_signature": "口头反复强调'吉利不会干预沃尔沃独立运营'，但决策中长期推动CMA平台共研、2019年提出深度合并讨论后又暂缓保留弹性——说独立却实际推进技术协同"
+      },
+      {
+        "force_a": "对长期愿景的高度确信",
+        "force_b": "并购与多品牌扩张带来的现金流与整合压力",
+        "behavioral_signature": "宣称'企业家要有耐心不能急功近利'，却持续进行��吞象收购、宝腾/路特斯/戴姆勒多线扩张，管理复杂度与债务压力上升"
+      },
+      {
+        "force_a": "个人梦想驱动的冒险",
+        "force_b": "对外的稳健实业叙事",
+        "behavioral_signature": "'我偏偏要试一试'的赌性与'做企业要实实在在不能靠吹牛'的谨慎并存，压力下把个人冒险改写成'产业报国'集体命题"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "外界不相信民营企业能造车",
+        "reaction": "以反问激发斗志并坚持尝试",
+        "escalation": "从'外国人能造，中国人为什么不能'升级为'我偏偏要试一试'的对抗性投入"
+      },
+      {
+        "trigger": "汽车被简化为消费电子/玩具",
+        "reaction": "强调工业复杂性与安全底线",
+        "escalation": "从'互联网只能改变汽车'升级为'用户的生命安全不能拿来试验'的原则划界"
+      },
+      {
+        "trigger": "被质疑收购会同化或损害品牌",
+        "reaction": "反复否定同化以建立信任",
+        "escalation": "从'沃尔沃还是沃尔沃'升级为'最重要的是把沃尔沃的灵魂留下来'的价值承诺"
+      }
+    ],
+    "blind_spots": [
+      "对长期愿景高确信可能低估蛇吞象收购的估值、债务与现金流压力 [汽车行业分析师-2010]",
+      "把尊重品牌传统���实际控制权之间的张力说得过于顺畅，技术共享缺乏清晰知识产权与治理边界 [海外媒体-2011]",
+      "'四个轮子加两个沙发'的通俗定义可能低估软件、安全、能源与法规复杂度 [行业评论-2014]",
+      "多品牌多项目扩张的管理复杂度被低估，需证明品牌协同而非简单堆叠 [部分观察者-2015]",
+      "复兴宝腾路特斯等老品牌需持续产品与渠道投入，短期销量不能证明整合成功 [documented-opinion-2017]",
+      "自动驾驶与智能汽车宣传可能超出测试、法规与责任边界，不能只靠企业家愿景 [安全与消费者评论者-2019]",
+      "全球化叙事强但海外制造研发的实际协同与利润质量需财报持续验证 [中国汽车行业评论者-2018]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动对权威共识的逆向挑战",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "在被普遍否定的领域主动进入并坚持",
+        "behavioral_notes": "'既然外国人能造汽车，中国人为什么不能'——把不可能重构为可执行任务，转化为具体制造行动"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好触发大额跨国并购",
+        "when": {
+          "risk_appetite": ">=0.7"
+        },
+        "disposition": "以蛇吞象方式收购超出自身规模的资产",
+        "behavioral_notes": "18亿美元收购沃尔沃、连续入股戴姆勒/宝腾/路特斯，但以'尊重独立'降低整合冲突风险"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自主需求导致对核心技术的自研执念",
+        "when": {
+          "autonomy_need": ">=0.75"
+        },
+        "disposition": "拒绝长期外购，投入平台与芯片卫星软件自研",
+        "behavioral_notes": "'不能永远买别人的技术'贯穿CMA架构、极氪、雷达芯片布局，代价是重复建设与投入压力"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中高控制需求与中高信任并存产生'协同+独立'矛盾治理",
+        "when": {
+          "control_need": ">=0.6"
+        },
+        "disposition": "既保留被收购方独立治理又推动技术平台共享",
+        "behavioral_notes": "维持沃尔沃独立品牌同时推进联合研发，2019合并讨论后暂缓——在效率与边界间反复调节"
+      }
+    ]
+  }
+}
