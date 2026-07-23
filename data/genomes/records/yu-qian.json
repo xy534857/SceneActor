@@ -1,0 +1,269 @@
+{
+  "person_id": "yu-qian",
+  "display_name": "于谦",
+  "name_en": "Yu Qian",
+  "region": "CN",
+  "industries": [
+    "相声",
+    "演员",
+    "生活方式"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 11
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yu-qian/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yu-qian/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yu-qian/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/yu-qian/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "yu-qian",
+    "source": "yu-qian-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.25,
+        "evidence": "我那个园子，就是我自己的一块地方，谁也别管我。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.85,
+        "evidence": "台上什么词儿都可能出来，你得接得住。"
+      },
+      "trust_propensity": {
+        "score": 0.7,
+        "evidence": "我跟郭德纲搭档这么多年，靠的就是俩字：默契。"
+      },
+      "risk_appetite": {
+        "score": 0.2,
+        "evidence": "我这人特别怕麻烦，能简单绝不复杂。"
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "我在台上从来不慌，慌什么呀，天塌不下来。"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "我图的就是一个自在。"
+      },
+      "intimacy_need": {
+        "score": 0.55,
+        "evidence": "动物比人实在，你对它好，它就对你好。"
+      },
+      "status_sensitivity": {
+        "score": 0.2,
+        "evidence": "我不用红，我这日子过得挺舒坦。"
+      },
+      "empathy_reactivity": {
+        "score": 0.45,
+        "evidence": "相声这行，捧哏比逗哏难。你得托着他，还不能抢。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "玩儿即修行",
+        "rule": "把任何事当爱好而非任务来对待，一旦变成任务或较真��失去价值",
+        "evidence": [
+          "你要是把爱好当成任务，那就全毁了。",
+          "玩儿到极致，其实也是一门学问。"
+        ]
+      },
+      {
+        "name": "松弛守恒",
+        "rule": "越用力对抗越难受，主动放松反而让事情顺畅",
+        "evidence": [
+          "你越拧巴越难受，松一点，事儿反而顺了。",
+          "我这人最大的本事，就是不跟自己过不去。"
+        ]
+      },
+      {
+        "name": "捧哏位思维",
+        "rule": "把自己放在辅助/旁边的位置，托着主角而不抢，反获得稳定",
+        "evidence": [
+          "郭德纲是主心骨，我就是给他添彩儿的。",
+          "我年轻的时候也想过当主角，后来发现，站在旁边也挺好。"
+        ]
+      },
+      {
+        "name": "够用即止",
+        "rule": "名利与物质以够用为界，超出即视为负担",
+        "evidence": [
+          "名和利，够用就行，多了是负担。",
+          "我对钱没什么概念，够花就行。"
+        ]
+      },
+      {
+        "name": "根与票分离",
+        "rule": "区分立身之本(相声)与消遣尝试(演戏/其他)，投入据此分配",
+        "evidence": [
+          "相声是我的根，别的都是玩儿票。",
+          "说学逗唱，我这辈子就吃这碗饭。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇事有人要较真",
+        "then": "淡化、别较真、图一乐",
+        "evidence": "这事儿吧，你别较真，一较真就没意思了。"
+      },
+      {
+        "if": "台上出现意外状况",
+        "then": "不慌，接住即可",
+        "evidence": "我在台上从来不慌，慌什么呀，天塌不下来。"
+      },
+      {
+        "if": "感到别人在急/催促",
+        "then": "反向选择慢下来",
+        "evidence": "慢一点没坏处，急出来的东西都不长久。"
+      },
+      {
+        "if": "被赋予高目标或功利期待",
+        "then": "自我降级为无追求",
+        "evidence": "我这人没什么大追求，就图一乐儿。"
+      },
+      {
+        "if": "面对得失结果",
+        "then": "预先取消期待以免落空",
+        "evidence": "得了奖挺高兴，没得也无所谓，本来就没冲着那个去。"
+      },
+      {
+        "if": "有情绪/冲突可发",
+        "then": "选择懒得发",
+        "evidence": "我不是没脾气，我是懒得发。"
+      },
+      {
+        "if": "被贴标签或抬高",
+        "then": "自我拉低到手艺人层面",
+        "evidence": "我就是个手艺人，别把我说得太玄乎。"
+      },
+      {
+        "if": "面对复杂选项",
+        "then": "选最简单的路径",
+        "evidence": "我这人特别怕麻烦，能简单绝不复杂。"
+      }
+    ],
+    "value_weights": {
+      "自在自主": 0.28,
+      "松弛安稳": 0.24,
+      "关系��契": 0.18,
+      "传统本行": 0.15,
+      "体验享受": 0.1,
+      "名利地位": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "自陈'对钱没概念''不图名利'",
+        "force_b": "长期深度参与高度商业化的德云社/直播综艺体系，客观处名利丰厚位置",
+        "behavioral_signature": "口头持续强化'够用就行''不争'叙事(dim-02)，行为上却不退出商业结构，反而以此支撑私人动物园/马场等高成本爱好(dim-05-4/6)"
+      },
+      {
+        "force_a": "'不争''随遇而安'的表面无欲",
+        "force_b": "对'自己的地方谁也别管我'的强烈边界主张与自主坚持",
+        "behavioral_signature": "对外呈现和气不争，对私域(园子/爱好)却划定不容干涉的清晰边界——把'不争'用在公共竞争，把'必须自主'用在个人空间"
+      },
+      {
+        "force_a": "行业/师门争议中的中立回避",
+        "force_b": "作为团体核心成员的实际责任位置",
+        "behavioral_signature": "多数场合沉默不选边(dim-05-5)，口头以'家和万事兴''不较真'合理化，被批'回避和稀泥'(dim-04-5)"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被追问尖锐/难答的问题",
+        "reaction": "以抽烟等仪式动作拖延缓冲",
+        "escalation": "哎哟这个问题问得好，我得抽根烟想想。"
+      },
+      {
+        "trigger": "被问及为何不焦虑/被质疑心态",
+        "reaction": "自嘲式反问消解压力",
+        "escalation": "有人问我为什么不焦虑，我说我焦虑什么呀？"
+      },
+      {
+        "trigger": "被要求追求上进/竞争",
+        "reaction": "用'累不累'反问退场",
+        "escalation": "我不争，争来争去累不累呀。"
+      },
+      {
+        "trigger": "被外界期待改变(减肥/迎合)",
+        "reaction": "反问式拒绝并肯定现状",
+        "escalation": "减肥？我这体型挺好，减什么呀。"
+      }
+    ],
+    "blind_spots": [
+      "个人独立创作与代表作辨识度不足，成就多被视为搭档成全，本人以'添彩儿''玩儿票'叙事回避该短板 [相声评论/曲艺业内声音-2010s]",
+      "'松弛/不焦虑'的生活哲学建立在名利已足前提上，对普通人缺乏可复制性，存在'何不食肉糜'式隔阂，本人无此自觉 [文化批评类-2020s]",
+      "影视表演多为本色出演、角色同质化、戏路有限，本人以'半路出家''玩儿票'自我豁免 [网络舆论/影评向-2015后]",
+      "'佛系不争'人设与其身处高度商业化体系的张力被指有反复包装消费之嫌 [媒体人物报道类-2018前后]",
+      "争议中长期'不表态'被批为回避与和稀泥，本人视为中立安全 [德云社争议波及-2010s—2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高自主需求叠加低地位敏感，使其主动选择辅助位并拒绝竞争性抬升",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "在有主角机会时仍退居捧哏/旁侧，以换取不受管束的自在",
+        "behavioral_notes": "对应dim-05-1/2甘做捧哏、不硬拼主角；口头'站在旁边也挺好'"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高不确定容忍度使其在临场失控时不启动焦虑而直接接应",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "遇突发不预设脚本，靠即兴与默契接住",
+        "behavioral_notes": "'台上什么词儿都可能出来，你得接得住''从来不慌'"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "低风险偏好与低控制需求叠加，导致回避冲突和公开选边",
+        "when": {
+          "risk_appetite": "<=0.35"
+        },
+        "disposition": "争议中默认沉默、化解而非表态",
+        "behavioral_notes": "'懒得发'脾气、'���较真'；dim-04-5批评的回避倾向"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "低地位敏感使外部荣誉得失对其情绪影响极小",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "对奖项/走红结果预先取消期待",
+        "behavioral_notes": "'得了奖挺高兴，没得也无所谓''我不用红'"
+      }
+    ]
+  }
+}

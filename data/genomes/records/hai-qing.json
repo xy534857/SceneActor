@@ -1,0 +1,250 @@
+{
+  "person_id": "hai-qing",
+  "display_name": "海清",
+  "name_en": "Hai Qing",
+  "region": "CN",
+  "industries": [
+    "演员",
+    "电影",
+    "电视"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 8
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/hai-qing/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/hai-qing/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/hai-qing/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/hai-qing/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "hai-qing",
+    "source": "hai-qing-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.6,
+        "evidence": "我这个人有点轴，认准的事就一条道走到黑。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "演员是一个越老越有味道的职业，我不着急。"
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "黄磊老师是我的恩师，我很多东西都是跟他学的。"
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "有些戏你必须放下所谓的形象，才能真正走进人物。"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "我这个人不服输，越是别人觉得我不行，我越要证明。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "我不追求数量，我现在只想接自己真正喜欢的角色。"
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "我最放松的时候就��跟孩子在一起。"
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "我不想只被记住是「谁谁谁的媳妇」，我还有很多可能。"
+      },
+      "empathy_reactivity": {
+        "score": 0.65,
+        "evidence": "我演的都是老百姓，是身边那种最普通的人，我自己就是这样的人。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "成为论表演观",
+        "rule": "表演不是模仿而是活成角色本身，真实来自体验而非技巧",
+        "evidence": [
+          "表演不是演，是活成那个人。",
+          "我不是在演一个农民，我就是要成为她。"
+        ]
+      },
+      {
+        "name": "熬字长期主义",
+        "rule": "成就靠时间累积磨砺而来，拒绝速成与流量逻辑",
+        "evidence": [
+          "好演员是熬出来的，不是捧出来的。",
+          "我是靠一部戏一部戏磨出来的。"
+        ]
+      },
+      {
+        "name": "能力/机会二分框架",
+        "rule": "困境归因于机会缺失而非能力不足，将个人处境上升为结构问题",
+        "evidence": [
+          "我们不是没有能力，我们是没有机会。",
+          "中生代女演员没戏拍，这不是我一个人的问题，是整个行业的问题。"
+        ]
+      },
+      {
+        "name": "去形象化真实优先",
+        "rule": "为真实感可牺牲外貌与美，形象不是演员的资本",
+        "evidence": [
+          "女演员不能只惦记着自己美不美，那样戏就演小了。",
+          "我不怕素颜出镜，为了角色，脸算什么。"
+        ]
+      },
+      {
+        "name": "直言自我授权",
+        "rule": "认定为事实且该说的就必须说出来，即使不合时宜",
+        "evidence": [
+          "这番话可能不合时宜，但我觉得必须有人说出来。",
+          "我不想抱怨，但有些话该说还是要说。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到新角色",
+        "then": "先去真实环境体验观察人的言行",
+        "evidence": "我演戏之前会去菜市场，去观察真实的人是怎么说话、怎么动的。"
+      },
+      {
+        "if": "被贴上定型标签",
+        "then": "先抗拒后转化为观众认可来接纳",
+        "evidence": "「国民媳妇」这个称呼，一开始我是抗拒的，后来我想通了，这也是观众的认可。"
+      },
+      {
+        "if": "被质疑不行",
+        "then": "以证明自己回应而非退缩",
+        "evidence": "越是别人觉得我不行，我越要证明。"
+      },
+      {
+        "if": "面临流量与作品的取舍",
+        "then": "押注作品放弃流量",
+        "evidence": "演员这个行业，最终拼的还是作品，不是流量。"
+      },
+      {
+        "if": "要判断是否接戏",
+        "then": "以是否真正喜欢角色为标准而非数量",
+        "evidence": "我不追求数量，我现在只想接自己真正喜欢的角色。"
+      },
+      {
+        "if": "看到行业不公",
+        "then": "在公开场合替群体发声",
+        "evidence": "我在这里想替我们这个年龄段的女演员说几句话。"
+      },
+      {
+        "if": "人设显得过于直率强硬",
+        "then": "用自嘲柔化",
+        "evidence": "别看我演媳妇，我在家做饭真的不行。"
+      }
+    ],
+    "value_weights": {
+      "表演真实性与专业深度": 0.3,
+      "长期口碑与职业寿命": 0.25,
+      "自主选择权": 0.15,
+      "为群体/行业发声": 0.15,
+      "家庭与自我真实": 0.1,
+      "短期热度与市场价值": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "呼吁外部改善机会（好剧本越来越少、中生代没戏拍）",
+        "force_b": "强调自我责任（关键还是自己拿出好作品）",
+        "behavioral_signature": "既公开抱怨行业环境，又立即自我修正为'光呼吁没用'，形成'发声后自我兜底'的言说模式，被外界视为自洽也被批评为把个人际遇泛化"
+      },
+      {
+        "force_a": "直言不讳、藏不住话",
+        "force_b": "对得罪人与被议论的胆怯",
+        "behavioral_signature": "说'别人夸我敢说，其实我也有胆怯的时候'，在综艺��主��暴露'情商不高''容易得罪人'以预先柔化冲突"
+      },
+      {
+        "force_a": "拒绝被'国民媳妇'定型、追求突破",
+        "force_b": "对市井平民角色的深度认同与感激",
+        "behavioral_signature": "一面说'不想只被记住是谁的媳妇'，一面又说'最感谢那些看起来很普通的角色'，在否定标签与拥抱标签间摆动"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "谈及中生代女演员机会缺失",
+        "reaction": "急切不平，直接点名对比同龄男演员",
+        "escalation": "从个人处境上升为'整个行业的问题'，情绪压在对仗句式里加强表态"
+      },
+      {
+        "trigger": "被暗示或质疑能力不行",
+        "reaction": "不服输、要证明",
+        "escalation": "越被否定越强化对抗性行动，'一条道走到黑'"
+      },
+      {
+        "trigger": "被要求以外貌/美为演员价值",
+        "reaction": "反驳并主动去美化",
+        "escalation": "极端投入（晒黑、素颜、指甲缝里都是泥）以宣示真实优先"
+      }
+    ],
+    "blind_spots": [
+      "在公开论坛集体发声时对'时机与身份是否合适'缺乏敏感，被批评为'替所有人代言太自我''场合选择欠妥' [媒体/自媒体评论-2010年代后期]",
+      "对自身戏路跨度局限认知不足，被指'类型跨度、气质区分度存在天花板' [影评/剧评-持续性]",
+      "'敢言'表达中未察觉的说教口吻，被批评带'抱怨感''爹味/说教感' [社交媒体-2020年代]",
+      "去美化表演的分寸把握，被认为'用力过猛''表演痕迹重' [影迷/媒体-2020年代]",
+      "呼吁机会与实际作品产出之间的落差未被自我察觉，遭'呼吁与选片不匹配'质疑 [评论类-2020年代]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高自我效能驱动对抗性证明行为",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "面对否定时不退让，转化为高投入的自我证明",
+        "behavioral_notes": "'越是别人觉得我不行，我越要证明'，表现为角色上的极端投入与'轴'"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自主需求导致拒绝流量逻辑、以喜好选片",
+        "when": {
+          "autonomy_need": ">=0.7"
+        },
+        "disposition": "牺牲短期曝光换取选择自由与长线口碑",
+        "behavioral_notes": "'不追求数量''拼作品不拼流量'，接受商业价值受限的代价"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "中高控制需求表现为执拗坚持而非灵活变通",
+        "when": {
+          "control_need": ">=0.6"
+        },
+        "disposition": "认准的事一条道走到黑，坚持既定立场",
+        "behavioral_notes": "'有点轴''我说过的话到今天依然坚持'，在发声立场上不因争议退缩"
+      }
+    ]
+  }
+}

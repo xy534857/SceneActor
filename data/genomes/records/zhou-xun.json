@@ -1,0 +1,280 @@
+{
+  "person_id": "zhou-xun",
+  "display_name": "周迅",
+  "name_en": "Zhou Xun",
+  "region": "CN",
+  "industries": [
+    "演员",
+    "音乐",
+    "公益"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 7
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-xun/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-xun/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-xun/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-xun/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhou-xun",
+    "source": "zhou-xun-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.25,
+        "evidence": "我不太会规划人生，走一步看一步，可能这样也挺好。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "有一段时间我是慌的，就是不知道自己下一步该往哪儿走。"
+      },
+      "trust_propensity": {
+        "score": 0.8,
+        "evidence": "导演信任你的时候，你会特别想给他更多的东西。"
+      },
+      "risk_appetite": {
+        "score": 0.45,
+        "evidence": "我不想重复自己，重复了我自己就没兴趣了。"
+      },
+      "self_efficacy": {
+        "score": 0.35,
+        "evidence": "我不是一个特别聪明的人，我是靠一股傻劲儿走过来的。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "我特别不喜欢被安排，我需要那种自由的感觉。"
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "那种被人保护的感觉，其实我一直是需要的。"
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "我不太在意别人怎么评价我，可是有时候又特别在意，很矛盾。"
+      },
+      "empathy_reactivity": {
+        "score": 0.85,
+        "evidence": "我这个人特别容易哭，一点小事就能把我弄哭。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "直觉优先于分析",
+        "rule": "遇到创作或判断问题，先信任感觉与本能，将理性拆解视为干扰",
+        "evidence": [
+          "我不太会去分析角色，我是靠感觉走的，我信任我的直觉。",
+          "我拍戏的时候会做很多准备，但到现场我就全忘掉，凭感觉来。"
+        ]
+      },
+      {
+        "name": "交付式信任模型",
+        "rule": "在信任的关系或环境里把自我完全交出去，以换取安全感与创造力释放",
+        "evidence": [
+          "我觉得表演这个事情吧，就是你得把自己交出去，交给那个人物。",
+          "导演信任你的时候，你会特别想给他更多的东西。"
+        ]
+      },
+      {
+        "name": "真实性即价值",
+        "rule": "凡事以是否真实、是否装为最高检验标准，拒绝精明与人设",
+        "evidence": [
+          "我是那种没办法假装的人，装不出来，一装就露馅。",
+          "我不想变成一个精明的人，我宁可傻一点。"
+        ]
+      },
+      {
+        "name": "人本身即工具",
+        "rule": "把作品质量归结于人的丰富度而非技术，成长即修炼自身",
+        "evidence": [
+          "表演到最后拼的不是技术，是你这个人本身有多丰富。",
+          "每个角色演完，都会在我身上留下一点东西。"
+        ]
+      },
+      {
+        "name": "慢与笨的过程观",
+        "rule": "认为有价值的东西必须慢慢来、笨拙地做，急不得",
+        "evidence": [
+          "我喜欢那种笨的、慢的方式，急不来的。",
+          "改变是慢的，你得有耐心。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "需要判断一个角色或选择",
+        "then": "看它是否让自己心动/有感觉，而非分析利弊",
+        "evidence": "我年轻的时候特别拼，现在我更想选那些让我心动的东西。"
+      },
+      {
+        "if": "面对将来的不确定",
+        "then": "放弃规划，走一步看一步",
+        "evidence": "我不太会为将来担心，因为担心也没用。"
+      },
+      {
+        "if": "被要求评价或定义自己",
+        "then": "拒绝被定义，把定义权推给别人",
+        "evidence": "我不想被定义，别人说我是什么，那是别人的事。"
+      },
+      {
+        "if": "做公益或善事",
+        "then": "选择长期低调、不宣扬的方式",
+        "evidence": "我不喜欢那种一次性的、做秀的公益，我想做长久的。"
+      },
+      {
+        "if": "感到内心慌乱",
+        "then": "回到工作/片场寻找踏实感",
+        "evidence": "拍戏的时候我是最踏实的，反而是不拍的时候我会乱。"
+      },
+      {
+        "if": "取得成就",
+        "then": "归因于运气和他人帮助而非自己",
+        "evidence": "我这一路特别幸运，遇到的都是好人，帮我的人特别多。"
+      },
+      {
+        "if": "演不好或未达标",
+        "then": "转向自责、跟自己较劲",
+        "evidence": "演不好的时候我会特别自责，会跟自己较劲。"
+      },
+      {
+        "if": "需要情绪出口",
+        "then": "转向音乐或独处空间",
+        "evidence": "独处对我来说特别重要，我需要那个空间。"
+      }
+    ],
+    "value_weights": {
+      "真实与不假装": 0.22,
+      "创作自由与不被安排": 0.18,
+      "信任关系与被保护": 0.17,
+      "艺术心动而非重复": 0.15,
+      "低调利他与长期主义": 0.13,
+      "松弛平静": 0.1,
+      "个人主动掌控": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣称不在意外界评价",
+        "force_b": "实际高度敏感于他人看法",
+        "behavioral_signature": "同一访谈中自述'我不太在意别人怎么评价我，可是有时候又特别在意'，dim-05记录其言行不一（在意评价），本人公开承认矛盾但不消解"
+      },
+      {
+        "force_a": "宣称不怕变老、想松弛",
+        "force_b": "反复强调少女感、怕'心里那个东西没了'",
+        "behavioral_signature": "口头'年龄这个事……现在慢慢地就没那么怕了'，却高频回到年龄焦虑主题（dim-05年龄态度言行不一），情绪层泄露真实恐惧"
+      },
+      {
+        "force_a": "'心动才选'的艺术自我定位",
+        "force_b": "实际片单含商业与艺术落差项目",
+        "behavioral_signature": "口述'我更想选那些让我心动的东西'与dim-05选片记录不符，构成说A做B"
+      },
+      {
+        "force_a": "渴望自由、不被安排、独处",
+        "force_b": "深度依赖被保护、被信任的关系环境",
+        "behavioral_signature": "既说'特别不喜欢被安排'，又说'被人保护的感觉我一直需要'；缺乏保护时'会乱'（dim-05合作依赖记录）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "失去方向/不知下一步",
+        "reaction": "慌乱、不安全感放大",
+        "escalation": "从'慌'升级到需要回到片场才能踏实，脱离工作则失序"
+      },
+      {
+        "trigger": "表演未达自我标准",
+        "reaction": "强烈自责",
+        "escalation": "从自责升级为'跟自己较劲'的持续内耗"
+      },
+      {
+        "trigger": "深度浸入高情绪角色",
+        "reaction": "情绪边界模糊",
+        "escalation": "'出来花了好久'，戏内外情绪难以剥离"
+      },
+      {
+        "trigger": "被要求装/表演不真实的自己",
+        "reaction": "无法执行、露馅",
+        "escalation": "'一装就露馅'，暴露式失败而非掩饰"
+      },
+      {
+        "trigger": "触及'心里那个东西没了'的恐惧",
+        "reaction": "对衰退的深层焦虑",
+        "escalation": "从怕变老转移为对内在丰富性丧失的更深恐惧"
+      }
+    ],
+    "blind_spots": [
+      "过度依赖'凭感觉'的方法导致角色处理趋同、'演自己'，缺乏跨类型可塑性证明 [影评媒体-2010s]",
+      "对'少女感/年龄'的强调可能迎合或强化女演员年龄焦虑而不自知 [文化评论性别视角自媒体-2010s后期]",
+      "'心动才选'的自我叙事与实际商业片单存在落差，未察觉言行落差 [行业媒体奖项评论-2010s]",
+      "'脆弱坦诚'的自我暴露本身可能成为被消费/被塑造的公共形象而不自觉 [访谈评论文化评论-2010s]",
+      "感性迂回的表达方式导致逻辑跳跃、'说不清楚'，沟通清晰度盲区 [观众弹幕反馈-2010s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高共情反应叠加低自我效能，导致创作后强烈自责与情绪滞留",
+        "when": {
+          "empathy_reactivity": ">=0.8"
+        },
+        "disposition": "浸入式表演后情绪难以抽离，失误后转入自我较劲",
+        "behavioral_notes": "'演不好会特别自责''太平公主出来花了好久'——共情越强出戏成本越高"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高信任倾向使其在信任环境中释放全部创造力，但环境缺失即失序",
+        "when": {
+          "trust_propensity": ">=0.75"
+        },
+        "disposition": "将自我交付给信任对象换取安全，失去保护时'会乱'",
+        "behavioral_notes": "'导演信任你会想给更多''不拍戏时会乱'——安全感高度外部依存"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自主需求与低控制需求并存，表现为拒绝规划与拒绝被定义",
+        "when": {
+          "autonomy_need": ">=0.7"
+        },
+        "disposition": "回避外部安排与身份标签，选择即兴、走一步看一步",
+        "behavioral_notes": "'特别不喜欢被安排''不想被定义''走一步看一步'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低控制需求下面对不确定采用被动等待策略而非主动规划",
+        "when": {
+          "control_need": "<=0.3"
+        },
+        "disposition": "以'演员是被动的，你得等'的姿态应对生涯不确定",
+        "behavioral_notes": "'担心也没用''走一步看一步'——低掌控转化为顺其自然而非焦虑管理"
+      }
+    ]
+  }
+}

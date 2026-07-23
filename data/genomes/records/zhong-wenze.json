@@ -1,0 +1,262 @@
+{
+  "person_id": "zhong-wenze",
+  "display_name": "钟文泽",
+  "name_en": "Zhong Wenze",
+  "region": "CN",
+  "industries": [
+    "科技测评",
+    "消费电子"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 19
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhong-wenze/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhong-wenze/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhong-wenze/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhong-wenze/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhong-wenze",
+    "source": "zhong-wenze-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "续航我按我的正常使用来跑，不搞什么极限省电模式。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "有人问值不值得买——看你预算，看你需求，没有标准答案。"
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "别听发布会怎么吹，回头我们实测跑一遍。"
+      },
+      "risk_appetite": {
+        "score": 0.3,
+        "evidence": "我们先不急着下结论，等东西到手上再说。"
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "屏幕素质这块我是有仪器数据支撑的，不是凭感觉。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "咱们一起看，边看边聊，我不喜欢照着稿子念。"
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "这个问题问得好，很多人都有这个疑惑。"
+      },
+      "status_sensitivity": {
+        "score": 0.45,
+        "evidence": "有人说我恰饭，有人说我黑，众口难调，我尽量做到问心无愧。"
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "别问我A和B哪个好，先告诉我你主要用来干嘛。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "实测优先于宣称",
+        "rule": "任何厂商话术/参数在获得亲手实测数据前都不作结论",
+        "evidence": [
+          "别听发布会怎么吹，回头我们实测跑一遍。",
+          "你说的这个我没测过，没测过的我不乱下结论。"
+        ]
+      },
+      {
+        "name": "参数≠体验二分法",
+        "rule": "把纸面规格与真实使用体验强制分离，最终以体验/调校为准",
+        "evidence": [
+          "参数好看不代表体验好，这是两码事。",
+          "影像这块，参数堆上去了，最后还是要看调校。"
+        ]
+      },
+      {
+        "name": "需求-预算匹配模型",
+        "rule": "不存在绝对最优，只有针对个人需求与预算的相对合适",
+        "evidence": [
+          "别问我A和B哪个好，先告��我你主要用来干嘛。",
+          "我用什么跟你适合什么是两回事。"
+        ]
+      },
+      {
+        "name": "取舍价值论",
+        "rule": "评价产品高低看的是取舍功力而非堆料多少",
+        "evidence": [
+          "我一直说，堆料是最简单的，取舍才是本事。",
+          "细节决定体验，很多厂商就是差在细节。"
+        ]
+      },
+      {
+        "name": "无完美产品前提",
+        "rule": "先默认任何产品必有缺陷，评测任务是暴露与权衡缺陷",
+        "evidence": [
+          "我不会跟你说它完美，没有完美的产品。",
+          "充电速度确实快，但发热我得说一下。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "厂商宣传语听着夸张",
+        "then": "悬置判断，等真机数据",
+        "evidence": "这个宣传语我听着就有点玄乎，等真机数据。"
+      },
+      {
+        "if": "有人问值不值得买",
+        "then": "先反问需求与预算，不给标准答案",
+        "evidence": "有人问值不值得买——看你预算，看你需求，没有标准答案。"
+      },
+      {
+        "if": "手里设备还能用",
+        "then": "劝退换机，反对为参数升级",
+        "evidence": "手里的还能用，我一般不建议为了参数换机。"
+      },
+      {
+        "if": "涉及主观维度（外观/审美）",
+        "then": "标注为个人偏好并声明主观性",
+        "evidence": "这个设计，我个人是比较喜欢的，但审美这东西很主观。"
+      },
+      {
+        "if": "某功能听起来很酷",
+        "then": "追问日常实用性，警惕噱头",
+        "evidence": "这个功能听起来很酷，日常你到底用不用得上？"
+      },
+      {
+        "if": "未亲自实测过",
+        "then": "拒绝下结论",
+        "evidence": "你说的这个我没测过，没测过的我不乱下结论。"
+      },
+      {
+        "if": "预算有限",
+        "then": "建议别硬上顶配，够用即可",
+        "evidence": "预算就这么多的话，我给你的建议是别硬上顶配。"
+      },
+      {
+        "if": "价格公布",
+        "then": "以价格锚点判定诚意与性价比",
+        "evidence": "屏幕这块给的挺足，这个价位算是诚意了。"
+      }
+    ],
+    "value_weights": {
+      "独立公信力": 0.28,
+      "理性消费/为用户省钱": 0.24,
+      "客观真实": 0.2,
+      "内容差异化与个人表达": 0.16,
+      "商业变现": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "保持独立、拒绝恰饭底线",
+        "force_b": "商业变现需要接广告与送测机",
+        "behavioral_signature": "口头强调「广告我会接，但产品不行我就是不行」「送测但照实说」，但仍持续被质疑结论偏向厂商，需反复声明独立性（dim-05决策1/5言行不一）"
+      },
+      {
+        "force_a": "追求犀利真实、暴露缺点",
+        "force_b": "不愿得罪厂商、维护商务关系",
+        "behavioral_signature": "口称「好就是好，不行就是不行」，实际采取优缺点都说+价格锚点的平衡式结论，被批「和稀泥」「不痛不痒」（dim-05决策2）"
+      },
+      {
+        "force_a": "维持垂类深度与个人亲历感",
+        "force_b": "产能瓶颈下团队化规模化扩张与内容边界外扩",
+        "behavioral_signature": "自陈「团队大了以后怎么保持内容质量是我一直在想的问题」，同时组建团队并向影像/生活方式延伸，导致老观众感到风格变淡（dim-05决策3/4）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑恰饭/立场不公",
+        "reaction": "自辩并诉诸问心无愧，语气偏无奈",
+        "escalation": "「有人说我恰饭，有人说我黑，众口难调，我尽量做到问心无愧」——从辩解升级为对整体舆论环境��无力感表达"
+      },
+      {
+        "trigger": "行业内卷、内容同质化压力",
+        "reaction": "反思用户真实需求被忽视",
+        "escalation": "「现在的测评太卷了，卷到有时候忘了用户到底想看什么」「做内容，我最怕的就是变得跟别人一样」——从行业批评升级为身份焦虑"
+      },
+      {
+        "trigger": "被追问未测产品",
+        "reaction": "坚守不乱下结论原则、拒绝回答",
+        "escalation": "「没测过的我不乱下结论」——以原则性拒绝对抗即时回应压力"
+      }
+    ],
+    "blind_spots": [
+      "自称「产品不行就是不行」，但结论被指偏向送测厂商，广告与评价界限模糊，独立性难以向观众验证 [社交平台评论区/贴吧类-2019至今]",
+      "平衡式表达在自我认知中是「客观」，外部却读作「和稀泥」「不敢得罪厂商、结论不够犀利」 [数码社区/知乎类-2020-2023]",
+      "自信于「仪器数据支撑」的体验向测评，被硬核发烧友指参数与工程分析深度不足 [硬核发烧友/极客类论坛-2021]",
+      "团队化被其视为解决产能与保质量的手段，老观众却感到商业化后风格变淡、更新变水 [老观众/弹幕类-2022-2023]",
+      "「我个人喜欢」式表达自认为已声明主观，部分观众仍视为个人偏好过度影响结论 [视频评论区-2020-2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "低信任倾向驱动实测验证行为",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "对厂商宣称一律悬置，坚持用仪器/实测数据取代话术",
+        "behavioral_notes": "「别听发布会怎么吹，回头我们实测跑一遍」「等真机数据」成为固定动作"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求导致拒绝脚本化与标准化输出",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "抗拒照稿念、抗拒同质化，坚持个人化表达",
+        "behavioral_notes": "「我不喜欢照着稿子念」「最怕变得跟别人一样」，与团队化规模化目标形成张力"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高不确定性容忍使其拒绝给出绝对结论",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "以「看需求看预算」「没有标准答案」代替明确推荐",
+        "behavioral_notes": "在给建议时反问用户场景，既是价值观也放大了外部「不够犀利」批评"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低风险偏好表现为延迟判断与劝退换机",
+        "when": {
+          "risk_appetite": "<=0.35"
+        },
+        "disposition": "先观望、等降价、劝退追新，规避冲动决策",
+        "behavioral_notes": "「别急着买，先看看后续会不会降价」「手里能用别换」，时效性因此弱于抢热点同行"
+      }
+    ]
+  }
+}

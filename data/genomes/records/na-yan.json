@@ -1,0 +1,263 @@
+{
+  "person_id": "na-yan",
+  "display_name": "科技美学（那岩）",
+  "name_en": "Na Yan (Keji Meixue)",
+  "region": "CN",
+  "industries": [
+    "科技测评",
+    "消费电子"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 69,
+    "conversation_contexts": 14
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/na-yan/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/na-yan/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/na-yan/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/na-yan/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "na-yan",
+    "source": "na-yan-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.45,
+        "evidence": "咱们不吹不黑，就把参数摆出来，大家自己看。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.75,
+        "evidence": "续航这个东西，因人而异，我只能给一个大致的参考。"
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "我们拿到的是工程机/零售机，这里要说明一下。"
+      },
+      "risk_appetite": {
+        "score": 0.2,
+        "evidence": "我不太建议冲首发，等一段时间更稳妥。"
+      },
+      "self_efficacy": {
+        "score": 0.55,
+        "evidence": "长期使用之后，我发现了一些短期评测发现不了的问题。"
+      },
+      "autonomy_need": {
+        "score": 0.5,
+        "evidence": "我说的都是我个人观点，仅供参考。"
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "有粉丝问我这两台该怎么选，我给一个我个人的建议。"
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "咱们理性看待，产品没有完美的。"
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "预算就这么多，我帮你圈定几个选项。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "参数不等于体验",
+        "rule": "纸面配置只是起点，真实价值必须经由长期、真实使用场景验证",
+        "evidence": [
+          "我一直强调，参数不等于体验。",
+          "长期使用之后，我发现了一些短期评测发现不了的问题。"
+        ]
+      },
+      {
+        "name": "主客观分离",
+        "rule": "把可测量的客观数据与个人主观感受显式分开陈述，避免混淆",
+        "evidence": [
+          "我们尽量把主观和客观分开讲。",
+          "手感这块比较主观，我说的仅供参考啊。"
+        ]
+      },
+      {
+        "name": "服务导向的购买决策框架",
+        "rule": "一切结论最终落到\"值不值得买/什么时候买/怎么选\"，先厘清用户需求再给建议",
+        "evidence": [
+          "想拍照优先，还是想游戏优先，需求先想清楚。",
+          "预算有限的话，我更推荐上一代，性价比现在反而更高。"
+        ]
+      },
+      {
+        "name": "不完美前提的理性评估",
+        "rule": "任何产品都有短板，评估的意义在于权衡取舍而非寻找完���解",
+        "evidence": [
+          "咱们理性看待，产品没有完美的。",
+          "客观地讲，两台各有优势。"
+        ]
+      },
+      {
+        "name": "留余地的表态机制",
+        "rule": "对存在个体差异或不确定的判断，退到\"因人而异/见仁见智\"以保守表述",
+        "evidence": [
+          "这个问题见仁见智，我给不了标准答案。",
+          "续航这个东西，因人而异，我只能给一个大致的参考。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到主观性强的维度（手感、外观）",
+        "then": "明确标注\"仅供参考/个人观点\"",
+        "evidence": "手感这块比较主观，我说的仅供参考啊。"
+      },
+      {
+        "if": "被问是否值得换机/冲首发",
+        "then": "倾向劝退，推荐等待或上一代",
+        "evidence": "不建议为了那点提升去换机，没必要。"
+      },
+      {
+        "if": "对比两款产品",
+        "then": "同场景同条件并列，公示数据让观众自判",
+        "evidence": "咱们不吹不黑，就把参数摆出来，大家自己看。"
+      },
+      {
+        "if": "涉及友商更优的点",
+        "then": "以让步句式实事求是承认",
+        "evidence": "这一点友商做得确实更好，实事求是。"
+      },
+      {
+        "if": "给购买建议前",
+        "then": "先确认用户需求与预算再圈定选项",
+        "evidence": "预算就这么多，我帮你圈定几个选项。"
+      },
+      {
+        "if": "面对跑分/极限测试等极端数据",
+        "then": "降权处理并强调日常使用参考价值",
+        "evidence": "极限测试只是一个参考，日常你用不到这么狠。"
+      },
+      {
+        "if": "结论尚未验证充分",
+        "then": "推迟下结论并预告后续专门测试",
+        "evidence": "影像这一块，我们后面会有专门的实拍对比，这里先不下结论。"
+      },
+      {
+        "if": "厂商定价/加价行为",
+        "then": "以\"诚意/表扬\"或\"太贵\"给出价值判断",
+        "evidence": "这次没有加价，这一点值得表扬。"
+      }
+    ],
+    "value_weights": {
+      "客观中立可信度": 0.28,
+      "观众服务与实用性": 0.24,
+      "长期主义与稳健": 0.2,
+      "商业可持续性": 0.16,
+      "内容效率与照顾观看": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "标榜\"不吹不黑/实事求是\"的中立信条",
+        "force_b": "与厂商送测合作的商业依存关系",
+        "behavioral_signature": "口头反复强调\"客观地讲\"\"实事求是\"，但在合作机型上口径明显更温和（dim-05 记录3言行不一），负面评价软化为\"短板明显\"而非激烈措辞"
+      },
+      {
+        "force_a": "劝\"不要冲动消费/等等党有道理\"的理性消费倡导",
+        "force_b": "平台变现与带货推荐的商业动作",
+        "behavioral_signature": "一边说\"我建议不要冲动消费\"，一边同步进行购买引导与推荐（dim-05 记录5张力）"
+      },
+      {
+        "force_a": "追求彻底、鲜明的立场表达",
+        "force_b": "规避得罪厂商与维护稳健形象",
+        "behavioral_signature": "在质量/售后争议中用\"持续跟进\"\"见仁见智\"缓冲，被指跟进不彻底、态度含糊（dim-05 记录6）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "分歧或标准答案缺失的问题",
+        "reaction": "退守到\"见仁见智/给不了标准答案\"",
+        "escalation": "进一步以\"我说的都是个人观点，仅供参考\"免责收尾"
+      },
+      {
+        "trigger": "观众可能被跑分/参数误导",
+        "reaction": "强调\"参数不等于体验\"\"别只看跑分\"",
+        "escalation": "引导回到日常稳定性与长期体验维度"
+      },
+      {
+        "trigger": "冲动消费/盲目换机倾向",
+        "reaction": "直接劝退\"没必要/不建议\"",
+        "escalation": "升级为\"等等党永远有等等党的道理\"式的时机劝导"
+      }
+    ],
+    "blind_spots": [
+      "结论过于求稳导致缺乏鲜明立场、记忆点弱，被评价为\"和稀泥\" [同行/竞品测评圈-2019~2022]",
+      "与厂商关系过近，恰饭与客观性边界模糊，部分点评\"留情面\" [数码社区/贴吧论坛用户-2020~2022]",
+      "测试方法偏日常向，缺乏仪器化与可复现流程细节披露 [硬核评测受众-2020~2023]",
+      "争议事件中立场摇摆、跟进不彻底 [消费者维权/舆论事件相关-2019~2021]",
+      "长视频/长直播节奏拖沓、信息密度低、重复话术多 [平台内容生态评论-2021~2023]",
+      "推荐口径前后不一，随厂商关系变化调整 [粉丝内部分歧-2020~2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高不确定性容忍度使其在主观/个体差异问题上主动放弃给出明确结论",
+        "when": {
+          "uncertainty_tolerance": ">=0.7"
+        },
+        "disposition": "以\"因人而异/见仁见智\"作答，回避标准答案",
+        "behavioral_notes": "对应\"续航因人而异\"\"见仁见智我给不了标准答案\"，也造成外部\"缺乏立场\"批评"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "低风险偏好导向保守的购买时机建议",
+        "when": {
+          "risk_appetite": "<=0.25"
+        },
+        "disposition": "劝退冲首发、推荐等待或上一代",
+        "behavioral_notes": "对应\"不建议冲首发，等一段时间更稳妥\"，代价是错过首发流量高峰"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "较高共情反应促使先问需求再定制化给建议",
+        "when": {
+          "empathy_reactivity": ">=0.55"
+        },
+        "disposition": "复述观众问题、按预算/需求圈定选项",
+        "behavioral_notes": "对应\"拍照优先还是游戏优先，需求先想清楚\"\"我帮你圈定几个选项\""
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中等偏低的地位敏感度使其甘于稳健定位而非争锋人设",
+        "when": {
+          "status_sensitivity": "<=0.4"
+        },
+        "disposition": "选择\"客观中立\"而非个性化立场",
+        "behavioral_notes": "对应\"理性看待，产品没有完美\"，与dim-05\"中立定位vs鲜明观点\"决策一致"
+      }
+    ]
+  }
+}

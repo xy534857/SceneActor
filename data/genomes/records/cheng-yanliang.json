@@ -1,0 +1,257 @@
+{
+  "person_id": "cheng-yanliang",
+  "display_name": "程衍樑",
+  "name_en": "Cheng Yanliang",
+  "region": "CN",
+  "industries": [
+    "播客",
+    "文化传媒"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 20
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cheng-yanliang/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cheng-yanliang/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cheng-yanliang/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cheng-yanliang/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "cheng-yanliang",
+    "source": "cheng-yanliang-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.62,
+        "evidence": "我们不追求日更，也不追求那种碎片化的传播，这是一个有意识的选择。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.78,
+        "evidence": "我不太愿意去预测未来，因为过去这些年被证伪的预测实在太多了。"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "我请你来聊这个，主要是因为你在这个领域是真正做过一手研究的。"
+      },
+      "risk_appetite": {
+        "score": 0.3,
+        "evidence": "商业化这件事，我们是走得比较谨慎的，宁可慢一点。"
+      },
+      "self_efficacy": {
+        "score": 0.6,
+        "evidence": "有听众说我们太精英了，这个批评我是接受的，但我不打算为此改。"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "我们不做的事，其实比我们做的事更能定义我们是谁。"
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "我不认为我们做的是教育，我们更像是在提供一种陪伴式的思考。"
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "我一开始就没打算把自己塑造成一个IP，我更想让节目本身立得住。"
+      },
+      "empathy_reactivity": {
+        "score": 0.58,
+        "evidence": "我觉得访谈的核心不是提问，而是倾听，是接得住对方抛过来的东西。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "长时段历史框架",
+        "rule": "任何当下现象都要放回更长的历史脉络中去参照，才能判断其真实位置与意义",
+        "evidence": [
+          "这个事情如果我们把它放到更长的历史时段里去看，会发现它并不是孤立的。",
+          "我觉得历史给我们最大的教训，就是不要过度相信线性的进步叙事。"
+        ]
+      },
+      {
+        "name": "结构性归因",
+        "rule": "把表面上的个人选择还原为结构性问题，拒绝简单化解释",
+        "evidence": [
+          "你说的这个现象，我觉得它其实是一个结构性的问题，不是某个个人的��择。",
+          "我个人是比较警惕那种把复杂问题简单化的表达方式的。"
+        ]
+      },
+      {
+        "name": "判断力稀缺论",
+        "rule": "在信息过剩的时代，真正稀缺且值得投入的是判断力而非信息量",
+        "evidence": [
+          "做播客到今天，我最大的一个感受是，稀缺的从来不是信息，而是判断力。",
+          "我一直觉得，做内容这件事，你不能低估听众的智识水平。"
+        ]
+      },
+      {
+        "name": "可证伪性检验",
+        "rule": "对任何判断都追问其能否被证伪、是否有相反例证，抵抗武断",
+        "evidence": [
+          "我想追问一句，你觉得这个判断有没有可能被证伪？",
+          "你这个说法我可能要稍微保留一下，因为我看到过一些相反的例证。"
+        ]
+      },
+      {
+        "name": "长期复利模型",
+        "rule": "以长期复利而非短期收益衡量决策，容忍短期不划算换取时间价值",
+        "evidence": [
+          "我们做的很多选题在短期看是不划算的，但我相信长期的复利。",
+          "我一直觉得，一期好的节目应该是能经得起两年后重听的。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到把复杂问题简单化或投机式的表达",
+        "then": "警惕并拒绝采用该框架",
+        "evidence": "我个人是比较警惕那种把复杂问题简单化的表达方式的。"
+      },
+      {
+        "if": "选择嘉宾",
+        "then": "只看这个人有没有真东西/一手研究，不追热点",
+        "evidence": "你问我怎么选嘉宾，我的标准其实很简单，就是这个人有没有真东西。"
+      },
+      {
+        "if": "节目火了产生迎合听众的冲动",
+        "then": "主动提醒自己不要迎合，守住初始标准",
+        "evidence": "我经常提醒自己，不要因为节目火了就开始迎合听众的口味。"
+      },
+      {
+        "if": "被要求预测未来",
+        "then": "回避预测，因为历史上被证伪的预测太多",
+        "evidence": "我不太愿意去预测未来，因为过去这些年被证伪的预测实在太多了。"
+      },
+      {
+        "if": "面对功利性/流量算计的商业框架",
+        "then": "反感并寻求不损害内容的替代路径",
+        "evidence": "我很反感那种把用户当成流量数字来算计的思路。"
+      },
+      {
+        "if": "对方抛出一个值得展开的点",
+        "then": "打断并追问、深挖而非推进流程",
+        "evidence": "这里我想稍微打断一下，因为你刚才提到的那个点，我觉得值得展开。"
+      },
+      {
+        "if": "内容准备不充分",
+        "then": "视为核心失误来源，事后复盘归因于准备",
+        "evidence": "有几期我们踩过雷，事后复盘，问题往往出在准备不够充分。"
+      }
+    ],
+    "value_weights": {
+      "内容标准与判断力": 0.3,
+      "长期主义与可持续": 0.22,
+      "自主与拒绝迎合": 0.2,
+      "深度与复杂性保全": 0.16,
+      "商业变现": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "拒绝IP化、要让节目本身立得住",
+        "force_b": "客观上成为行业名片与个人品牌",
+        "behavioral_signature": "口头强调「没打算把自己塑造成IP」，但持续以第一人称主持并成为节目辨识核心，形成说A做B的落差"
+      },
+      {
+        "force_a": "强调不迎合听众、守住纯粹性",
+        "force_b": "推进广告+订阅商业化以求生存",
+        "behavioral_signature": "宣称「不迎合口味」，同时对「越来越商业」的批评承认「不能说完全没道理」，理念与运营间持续校准"
+      },
+      {
+        "force_a": "高标准要求录长剪短、重前期准备",
+        "force_b": "实际执行中准备不足导致踩雷",
+        "behavioral_signature": "复盘中反复承认踩雷源于准备不够，暴露理想标准与实际产出的缝隙"
+      },
+      {
+        "force_a": "接受精英化批评的开放姿态",
+        "force_b": "拒绝据此调整定位",
+        "behavioral_signature": "「这个批评我是接受的，但我不打算为此改」——认知上纳入批评、行为上不做让步"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被贴上「知识网红」「知识付费」标签",
+        "reaction": "轻度反感，主动拒斥该框架",
+        "escalation": "上升为对整个「内容行业」提法的警惕与话语切割"
+      },
+      {
+        "trigger": "流量算计/把用户当数字的思路",
+        "reaction": "明确表达反感",
+        "escalation": "延伸为对「表演性姿态做内容」的行业批评"
+      },
+      {
+        "trigger": "资本大规模关注播客",
+        "reaction": "持保留态度、审慎",
+        "escalation": "强调长期复利与内容标准以对冲扩张冲动"
+      },
+      {
+        "trigger": "遇到新话题",
+        "reaction": "兴奋、好奇被激活",
+        "escalation": "视保持好奇心为节目存续的关键，警惕对节目失去好奇"
+      }
+    ],
+    "blind_spots": [
+      "选题与嘉宾结构偏男性视角/西方中心，多样性不足，本人语料中未见自觉 [学术界或读者社群-2021—2023]",
+      "对谈信息密度过高、引经据典掉书袋，普通听众门槛偏高 [一般听众-2019—2021]",
+      "反日更、反碎片化的慢路线在规模化商业可持续性上存疑 [投资/行业分析视角-2020—2022]",
+      "主播个人品牌与内容之间关系的网红化/IP化质疑，自我认知与外部观感存在落差 [媒体评论/行业观察-2020—2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主需求驱动其以「不做什么」定义身份，主动放弃部分受众与商业红利",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "在定位受质疑时选择坚守而非调整",
+        "behavioral_notes": "「我们不做的事，其实比我们做的事更能定义我们是谁」；接受精英化批评却不改变定位"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定性容忍使其回避确定性预测、偏好承认复杂性与保留判断",
+        "when": {
+          "uncertainty_tolerance": ">=0.7"
+        },
+        "disposition": "以限定语和「持保留态度」��迟结论",
+        "behavioral_notes": "「我不太愿意去预测未来」「我持保留态度」「别急着找结论」"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低风险偏好导致商业化决策系统性偏慢、宁慢勿滥",
+        "when": {
+          "risk_appetite": "<=0.35"
+        },
+        "disposition": "选择订阅制等慢而健康的路径，承受变现周期长",
+        "behavioral_notes": "「商业化这件事，我们是走得比较谨慎的，宁可慢一点」「订阅制是一个更健康的模式，虽然它慢」"
+      }
+    ]
+  }
+}

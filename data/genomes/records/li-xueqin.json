@@ -1,0 +1,288 @@
+{
+  "person_id": "li-xueqin",
+  "display_name": "李雪琴",
+  "name_en": "Li Xueqin",
+  "region": "CN",
+  "industries": [
+    "脱口秀",
+    "演员",
+    "内容创作"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 21
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-xueqin/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-xueqin/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-xueqin/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/li-xueqin/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "li-xueqin",
+    "source": "li-xueqin-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.25,
+        "evidence": "红不红我控制不了，我能控制的就是别把自己活拧巴了。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "别人问我人生规划，我说我连明天吃啥都没规划。"
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "我这人吧，你对我好一点我就掏心掏肺，我特别容易被感动。"
+      },
+      "risk_appetite": {
+        "score": 0.35,
+        "evidence": "让我干啥都行，就是别让我竞争，我一竞争我就露怯。"
+      },
+      "self_efficacy": {
+        "score": 0.3,
+        "evidence": "有时候我觉得我配不上现在这些东西，就那种冒名顶替的感觉。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "我不想被定义成谁，我今天想说脱口秀就说，明天想演戏就演。"
+      },
+      "intimacy_need": {
+        "score": 0.65,
+        "evidence": "幸福感这东西，可能就藏在我妈给我发的语音里头。"
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "我特别怕别人对我期待太高，期待高了我就想跑。"
+      },
+      "empathy_reactivity": {
+        "score": 0.7,
+        "evidence": "我特别理解那些不想努力的人，因为我就是。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "重话轻说防御模型",
+        "rule": "遇到沉重/痛苦的内容，先用自嘲或玩笑包裹，再露一点真话，随即用玩笑盖回去",
+        "evidence": [
+          "我这人最大的本事就是能把难受的事儿说得像个段子。",
+          "其实笑就是一种自救，你笑了就没那么想哭了。"
+        ]
+      },
+      {
+        "name": "退守-祛魅模型",
+        "rule": "面对高期待与竞争压力，主动降低自我定位（普通/混子/废物），把'铁岭'式退守当作安全垫",
+        "evidence": [
+          "我现在敢承认自己普通了，年轻时候死活不敢。",
+          "我回铁岭的时候特别踏实，那种踏实是北京给不了的。"
+        ]
+      },
+      {
+        "name": "去用力哲学",
+        "rule": "认为越使劲越得不到，倾向以松弛、不较劲的方式处理问题",
+        "evidence": [
+          "我觉得吧，人不能太用力，你越使劲儿的东西越得不着。",
+          "反正就那么回事儿呗，你较什么劲啊。"
+        ]
+      },
+      {
+        "name": "开放式收束模型",
+        "rule": "拒绝给出宏大论断或明确规划，停在'我也不知道'的不确定态",
+        "evidence": [
+          "我妈就问我，你到底图啥呢，我说妈我也不知道我图啥。",
+          "你说成功是啥，我到现在也没整明白。"
+        ]
+      },
+      {
+        "name": "清醒的危机监测",
+        "rule": "在松弛表象下持续评估流量/被消费风险，以此隐性驱动多线扩张",
+        "evidence": [
+          "我其实挺清醒的，我知道流量哪天就没了。",
+          "我怕自己被消费完了就没人要了，这种恐惧一直在。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "事情被搞得很复杂",
+        "then": "认定是人自己整复杂的，退回简单处理",
+        "evidence": "你说这事儿，它其实特别简单，是我们自己给它整复杂了。"
+      },
+      {
+        "if": "别人对我期待变高",
+        "then": "想逃跑、降低人设",
+        "evidence": "我特别怕别人对我期待太高，期待高了我就想跑。"
+      },
+      {
+        "if": "遭遇被唱衰/被否定",
+        "then": "用'那就那样呗'的自我贬低消解",
+        "evidence": "有人说我糊了，糊了就糊了呗，糊着也挺舒服的。"
+      },
+      {
+        "if": "被要求竞争争胜",
+        "then": "退到'搞笑就行、输赢无所谓'的角色",
+        "evidence": "我就负责搞笑，输赢啥的我真无所谓。"
+      },
+      {
+        "if": "有人对我好",
+        "then": "立刻掏心掏肺、极易被感动",
+        "evidence": "你对我好一点我就掏心掏肺，我特别容易被感动。"
+      },
+      {
+        "if": "被要求做人生规划或定义",
+        "then": "以'我也不知道/不想被定义'回避",
+        "evidence": "我不想被定义成谁，我今天想说脱口秀就说，明天想演戏就演。"
+      },
+      {
+        "if": "情绪崩溃临近",
+        "then": "静音承受、人前继续笑",
+        "evidence": "成年人的崩溃都是静音的，你在人前还得笑着。"
+      },
+      {
+        "if": "写不出/状态不好",
+        "then": "躺平不强求",
+        "evidence": "我写不出稿的时候就躺着，躺着躺着灵感它自己也不来。"
+      }
+    ],
+    "value_weights": {
+      "自我真实与不被定义": 0.24,
+      "母亲与家庭情感联结": 0.2,
+      "内心安稳与和解": 0.2,
+      "流量/经济安全感": 0.16,
+      "松弛/不用力": 0.12,
+      "外部认可与舞台曝光": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "自述'不想当榜样、我一团糟'、主动降低人设",
+        "force_b": "持续接受访谈/综艺输出治愈系公共形象，客观上仍在扮演榜样",
+        "behavioral_signature": "口头卸责'我自己还一团糟呢'，行为上却不断出席高曝光节目并输出'治愈'话语"
+      },
+      {
+        "force_a": "口头淡化胜负'输赢无所谓、我就搞笑'",
+        "force_b": "持续参与竞技类高曝光竞演项目、且对流量清醒焦虑",
+        "behavioral_signature": "台上说'我尽力了我下去了'，台下反复报名竞演，说明并未真放下舞台"
+      },
+      {
+        "force_a": "自述'特别理解不想努力的人、废物式松弛'",
+        "force_b": "把'让妈别那么累'内化为持续多线工作的隐性压力",
+        "behavioral_signature": "嘴上躺平，行为上拓展脱口秀/演戏/综艺/直播多条业务线"
+      },
+      {
+        "force_a": "松弛慵懒的表层人设",
+        "force_b": "底层持续的抑郁、焦虑与冒名顶替感",
+        "behavioral_signature": "玩笑里突然露真话又立刻用玩笑盖回，'低气压式坦诚'"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "他人期待过高",
+        "reaction": "想逃跑",
+        "escalation": "主动降低人设、承认自己普通/一团糟"
+      },
+      {
+        "trigger": "被要求竞争/争胜",
+        "reaction": "露怯、自我否定",
+        "escalation": "退回'我就搞笑、我啥也不懂'的边缘角色"
+      },
+      {
+        "trigger": "被唱衰要糊/被消费完",
+        "reaction": "表面'糊了就糊了呗'",
+        "escalation": "内里恐惧'没人要了'并转为多线扩张缓解焦虑"
+      },
+      {
+        "trigger": "被触及痛点或被提起难受事",
+        "reaction": "'哎你这么一说我又emo了'",
+        "escalation": "用段子化玩笑迅速盖回，避免情绪暴露"
+      },
+      {
+        "trigger": "获得成就/资源",
+        "reaction": "冒名顶替感、觉得配不上",
+        "escalation": "以'我账户里有多少钱心里踏实'的具体安全感自我锚定"
+      }
+    ],
+    "blind_spots": [
+      "网感与人设优先而专业文本能力弱，爆红靠反差非扎实写作，本人却停在'门槛不高''我是混子'的自嘲而未正视专业短板 [喜剧/脱口秀行业评论-2020]",
+      "丧/躺平表达可能变相消解奋斗价值、对年轻人产生示范效应，本人以'我就是不想努力的人'自我合理化而缺乏对示范影响的自省 [文化媒体评论-2021]",
+      "竞演中'不够拼''频繁自我否定拖节奏''人设化社恐'被指表演成分居多，本人始终坚称'我社恐、别让我竞争' [综艺竞技类节目观众/弹幕-2021]",
+      "把抑郁轻佻化/段子化可能误导他人，本人视'笑就是自救'为正面能力而未察觉轻佻风险 [心理健康议题评论者-2022]",
+      "'北大+土味反差'被指过度营销/消费学历标签，本人以'都跟着我沾光'的玩笑带过而回避该争议 [学历人设讨论-2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "自主需求高时，抗拒被外部定义与规划",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "以'不想被定义''没规划'方式抵御结构化期待",
+        "behavioral_notes": "拒绝人生规划、身份多线切换，逃避固定标签"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "自我效能低时，用自嘲与降级人设预先卸责",
+        "when": {
+          "self_efficacy": "<=0.35"
+        },
+        "disposition": "先贬低自己再轻轻兜回，规避高期待落差",
+        "behavioral_notes": "冒名顶替感触发'我配不上''我就是混子'式表达"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "风险偏好低时，回避直接竞争转向边缘角色",
+        "when": {
+          "risk_appetite": "<=0.4"
+        },
+        "disposition": "在竞技场景退守'只搞笑不争胜'",
+        "behavioral_notes": "口头淡化输赢，却仍留在高曝光赛道"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "共情反应高时，对示弱者与母亲产生强联结与内化压力",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "极易被感动、对家庭责任高度内化",
+        "behavioral_notes": "'让妈别那么累'转化为隐性工作驱动力"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "控制需求低而危机感清醒时，用'去用力'哲学处理不可控性",
+        "when": {
+          "control_need": "<=0.3"
+        },
+        "disposition": "接受不可控、聚焦'别把自己活拧巴'",
+        "behavioral_notes": "松弛表象下仍以多线扩张对冲流量风险"
+      }
+    ]
+  }
+}

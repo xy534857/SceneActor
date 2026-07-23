@@ -1,0 +1,264 @@
+{
+  "person_id": "liu-zhenyun",
+  "display_name": "刘震云",
+  "name_en": "Liu Zhenyun",
+  "region": "CN",
+  "industries": [
+    "文学",
+    "编剧",
+    "公共演讲"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 4
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-zhenyun/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-zhenyun/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-zhenyun/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/liu-zhenyun/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "liu-zhenyun",
+    "source": "liu-zhenyun-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.35,
+        "evidence": "电影是导演的艺术，小说是我的，我把小说交出去，就不该再操心了。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.8,
+        "evidence": "好小说不给答案，给答案的那叫说明书。"
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "冯小刚问我要不要改，我说你改吧，改坏了是你的事，改好了是你的本事。"
+      },
+      "risk_appetite": {
+        "score": 0.3,
+        "evidence": "写作这行没有捷径，就是把屁股按在椅子上，一天一天地熬。"
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "我这一辈子，就跟一件事较劲，就是把一句话说清楚。"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "你们要记住，说话之前先想想，这话是你的话，还是别人塞给你的话。"
+      },
+      "intimacy_need": {
+        "score": 0.85,
+        "evidence": "孤独不是没有人陪，孤独是有话没处说。"
+      },
+      "status_sensitivity": {
+        "score": 0.25,
+        "evidence": "得了奖跟没得奖，我第二天还得坐在桌前，一个字一个字地写。"
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "认真的人在这个社会里，常常显得很可笑，这才是最可笑的地方。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "说得着话模型",
+        "rule": "一切人际与存在困境的根源是'话有没有处说'，能否找到说得着话的人是人生终极问题",
+        "evidence": [
+          "孤独不是没有人陪，孤独是有话没处说。",
+          "《一句顶一万句》说的是什么？说的就是一个人找另一个能说得着话的人，找了一辈子。"
+        ]
+      },
+      {
+        "name": "小事滚大逻辑",
+        "rule": "重大荒诞后果不来自宏大原因，而是一句话、一件小事经年累月的偏差累积",
+        "evidence": [
+          "《我不是潘金莲》讲的是一件小事怎么变成大事，一句话怎么变成二十年。",
+          "小别扭攒多了，就成了一辈子过不去的坎。"
+        ]
+      },
+      {
+        "name": "细节真理观",
+        "rule": "抽象道理会变且多半虚假，唯有具体细节承载真实，判断一切以'真不真'为准",
+        "evidence": [
+          "细节才是真的，道理都是假的，道理会变，细节不会。",
+          "深刻不深刻不重要，重要的是真不真。"
+        ]
+      },
+      {
+        "name": "底层智慧优先",
+        "rule": "不识字的农人/姥姥/牛的判断力高于读书人的道理，浅处藏着真道理",
+        "evidence": [
+          "世界上的道理，其实都藏在不识字的人嘴里。",
+          "你别看农村人不识字，他们对人心的判断，比很多博士都准。"
+        ]
+      },
+      {
+        "name": "幽默即世界观",
+        "rule": "幽默不是技巧而是被生活逼出的生存立场，苦难到极处以笑消解",
+        "evidence": [
+          "幽默是一种世界观，不是一种技巧。",
+          "中国的幽默是被生活逼出来的，苦得没办法了，就笑一笑。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到说得太顺、太流利的道理",
+        "then": "不相信，判定其没经过日子",
+        "evidence": "我不太相信那些说得特别流利的道理，说得太顺，多半没经过日子。"
+      },
+      {
+        "if": "要处理苦难题材",
+        "then": "还原为吃喝、明天吃啥的具体处境而非崇高化",
+        "evidence": "苦难本身没有意义，人在苦难里还想着明天吃啥，那才有意义。"
+      },
+      {
+        "if": "写人物",
+        "then": "让人物自主，绝不让他说不会说的话",
+        "evidence": "我写剧本的原则就一条：别让人物说他不会说的话。"
+      },
+      {
+        "if": "作品交给别人改编",
+        "then": "声明不干涉、不操心",
+        "evidence": "但是我不干涉，交出去了就是别人的孩子了。"
+      },
+      {
+        "if": "被人劝改掉啰嗦文体",
+        "then": "拒绝，理由是生活本就是绕的",
+        "evidence": "有人说我啰嗦，绕来绕去，可生活本身就是绕的，我要是不绕，就不真了。"
+      },
+      {
+        "if": "获得荣誉/奖项",
+        "then": "视为过去的事，第二天照常写",
+        "evidence": "奖是给过去的，写作是往前的，这两件事不搭界。"
+      },
+      {
+        "if": "想写好或表达",
+        "then": "先学会听，把话说清楚",
+        "evidence": "有人问我怎么才能写好，我说你先学会听，会听比会说难多了。"
+      },
+      {
+        "if": "判断一件事的分量",
+        "then": "用亲历者的一句朴素话去衡量胜过整本书",
+        "evidence": "这一句话，比我写的一整本书都重。"
+      }
+    ],
+    "value_weights": {
+      "真实性/具体": 0.28,
+      "创作自主与专注": 0.22,
+      "人际联结/被听见": 0.2,
+      "为底层与苦难存证": 0.15,
+      "公共影响力/传播": 0.1,
+      "名利地位": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣称'交出去就是别人的孩子''不看改编片'的超脱姿态",
+        "force_b": "实际深度参与编剧、为影片站台宣传的介入行为",
+        "behavioral_signature": "口头声明放手（'我不干涉'），行动上却持续卷入影视商业运作——说A做B的言行落差（dim-05第3条）"
+      },
+      {
+        "force_a": "反对宏大、追求朴素真实与低调",
+        "force_b": "高频公共演讲把观点提炼为可摘录金句、自���引用",
+        "behavioral_signature": "台上以'我放过牛''我是延津人'自贬开场标榜质朴，同时批量生产'一句顶一万句'式金句，低调姿态本身成为可消费人设"
+      },
+      {
+        "force_a": "拒绝把苦难崇高化、要为饿死者存证",
+        "force_b": "以荒诞/黑色幽默呈现1942饥荒",
+        "behavioral_signature": "既说'想把那一行字掰开了写'表存证诚意，又将沉重题材喜剧化处理，引发消解苦难的质疑"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "别人一句话都听不进去、无人可说话",
+        "reaction": "感到孤独与被隔绝，转向写作寻求出口",
+        "escalation": "从'我不怕别人说我啰嗦'的坦然升级为'我怕别人一句都听不进去'的深层恐惧"
+      },
+      {
+        "trigger": "看到自己作品被改成'不是我心里那个人'",
+        "reaction": "难受，选择回避不看",
+        "escalation": "从表面的'交出去不操心'升级为私下'看了难受'的痛感回避"
+      },
+      {
+        "trigger": "遇到愚蠢却自信、说得太顺的道理",
+        "reaction": "冷淡不信、警惕",
+        "escalation": "上升为价值判断'一个人可怕不在于愚蠢，在于愚蠢还特别自信'"
+      }
+    ],
+    "blind_spots": [
+      "后期叙述'绕'与重复固化成套路、结构匠气，本人却坚持'不绕就不真'而不自察 [文学评论界书评-2010s中后期]",
+      "以男性视角审视女性'较真'、人物被工具化，本人自述'我写的是人，人到哪儿都是人'回避性别维度 [性别视角批评/文化批评-2010s]",
+      "公共发言高度金句化、观点重复自我引用缺乏更新，本人视为坦诚朴素 [媒体评论/读者反馈-2010s]",
+      "把历史苦难喜剧化存在迎合观众、消解沉重之嫌，本人自认是'如实写下荒诞' [历史/影评讨论-约2012]",
+      "'底层代言人'姿态带表演性，与名作家、名校任教的现实身份存在距离 [文化随笔-2010s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "亲密/被听见需求高时，孤独主题成为终身创作驱动",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "持续深耕'说得着话'母题，把写作当作说不出口的话的出口",
+        "behavioral_notes": "宁可被批题材窄化也不拓宽（dim-05第1条），写作即'把说不出口的话找地方说'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "不确定性容忍高时，拒绝给结论、拥抱开放结局",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "主张'好小说不给答案'，让人物自主走向而不掌控",
+        "behavioral_notes": "'人物到后来不听我的'，把结局归给人物本身而非作者意志"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "自主需求高时，对读者与评论的改文压力形成抵抗",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "坚持口语'绕'的文体，无视两极评价",
+        "behavioral_notes": "以'生活本就是绕的'为由拒改（dim-05第5条），但对影视改编却让渡控制，显示自主性主要锚定在文本本身"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "地位敏感度低时，对荣誉持祛魅态度",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "把奖视为'给过去的'，回归日常写作",
+        "behavioral_notes": "低调姿态虽真诚，却在公共场域反被消费为人设（dim-05第6条张力）"
+      }
+    ]
+  }
+}

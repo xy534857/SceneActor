@@ -1,0 +1,260 @@
+{
+  "person_id": "jiasheng-pinchengji",
+  "display_name": "品城记嘉升",
+  "name_en": "Jiasheng (Pin Cheng Ji)",
+  "region": "CN",
+  "industries": [
+    "美食探店",
+    "城市文化"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 22
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jiasheng-pinchengji/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jiasheng-pinchengji/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jiasheng-pinchengji/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jiasheng-pinchengji/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "jiasheng-pinchengji",
+    "source": "jiasheng-pinchengji-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.35,
+        "evidence": "唔好催住啦，等啲嘢上齐先，好嘢要等㗎"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "我个人觉得系OK嘅，不过就见仁见智啦"
+      },
+      "trust_propensity": {
+        "score": 0.65,
+        "evidence": "观众唔蠢嘅，你收唔收钱佢哋睇得出"
+      },
+      "risk_appetite": {
+        "score": 0.3,
+        "evidence": "我食嘢比较钟意原汁原味，唔使太多花俏嘅嘢"
+      },
+      "self_efficacy": {
+        "score": 0.55,
+        "evidence": "我哋唔系美食家，只系帮大家去试嗰个人"
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "多谢大家嘅打赏，不过帮衬返间铺头仲实际"
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "做咗咁多年，最感恩就系啲老店老板认得我哋"
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "有人话我哋唔够专业，我承认，我哋只系普通食客"
+      },
+      "empathy_reactivity": {
+        "score": 0.75,
+        "evidence": "疫情之后好多老店都好难做，大家有心嘅就帮衬下"
+      }
+    },
+    "core_models": [
+      {
+        "name": "实食验证优先于名头",
+        "rule": "任何声誉/招牌都要经过亲身体验检验，名不副实即无价值",
+        "evidence": [
+          "讲真，唔好净系睇个名头，实食过先算数",
+          "好嘅嘢唔使夸张，食客个嘴会话你知"
+        ]
+      },
+      {
+        "name": "记录消逝论（时间紧迫感）",
+        "rule": "老店老味道是会消失的城市记忆，趁其尚存必须留低纪录",
+        "evidence": [
+          "好多老店唔见一间就少一间，趁佢仲喺度快啲拍",
+          "一个城市嘅味道系会变㗎，我哋就系想留低啲纪录"
+        ]
+      },
+      {
+        "name": "真实高于好看",
+        "rule": "内容与评价的价值在于真实可信，而非表演性或美化",
+        "evidence": [
+          "我唔想拍嗰啲纯粹为咗好睇嘅嘢，我想拍真实",
+          "讲真直播冇得剪，好唔好食大家一齐见证"
+        ]
+      },
+      {
+        "name": "良心-用心作为品质判据",
+        "rule": "评判一店好坏的深层标准是店主是否用心、对得住良心，而非纯技术",
+        "evidence": [
+          "做食嘅先要对得住个良心",
+          "你讲得啱，做饮食呢行，冇心机真系做唔嚟"
+        ]
+      },
+      {
+        "name": "帮衬实际主义",
+        "rule": "内容的最终目的是转化为对老店的实际支持而非虚荣消费",
+        "evidence": [
+          "多谢大家嘅打赏，不过帮衬返间铺头仲实际",
+          "我哋做内容嘅，最开心就系带旺到啲老店"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到名气大的老字号",
+        "then": "先亲自试食再下判断，不信传说",
+        "evidence": "睇下佢究竟有冇传说中咁犀利"
+      },
+      {
+        "if": "评价有争议或主观",
+        "then": "用软化语留余地",
+        "evidence": "我个人觉得系OK嘅，不过就见仁见智啦"
+      },
+      {
+        "if": "遇到疫情/经营困难的老店",
+        "then": "呼吁观众实地帮衬",
+        "evidence": "疫情之后好多老店都好难做，大家有心嘅就帮衬下"
+      },
+      {
+        "if": "菜品卖相差",
+        "then": "不以外观定论，以味道为准",
+        "evidence": "呢碟嘢卖相麻麻哋，但系味道真系唔骗人"
+      },
+      {
+        "if": "食物需时间制作",
+        "then": "耐心等待并劝观众勿催",
+        "evidence": "唔好催住啦，等啲嘢上齐先，好嘢要等㗎"
+      },
+      {
+        "if": "面对专业质疑",
+        "then": "自降定位承认非专业",
+        "evidence": "我承认，我哋只系普通食客"
+      },
+      {
+        "if": "价钱偏贵",
+        "then": "委婉指出并交回判断权给观众",
+        "evidence": "佢呢个价钱确实系贵咗少少，睇你点睇"
+      },
+      {
+        "if": "老店有传闻搬迁/结业",
+        "then": "主动澄清止谣",
+        "evidence": "有街坊话呢间执咗？唔系呀，佢搬咗去隔离街咋"
+      }
+    ],
+    "value_weights": {
+      "老店存续与文化记录": 0.25,
+      "内容真实与公信力": 0.2,
+      "人设一致性与初心": 0.18,
+      "街坊人情与共情": 0.15,
+      "商业收益": 0.12,
+      "专业权威地位": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "真实评价（唔啱就系唔啱／踩雷照出）",
+        "force_b": "维护店主关系与商业合作",
+        "behavioral_signature": "口头宣称会给差评、会照出踩雷，但dim-05记录显示此类负面内容占比明显偏低，负评倾向'麻麻哋''贵咗少少'等委婉措辞"
+      },
+      {
+        "force_a": "情怀记录初心（记录消失老店）",
+        "force_b": "商业化变现（接推广、频道做大）",
+        "behavioral_signature": "强调'帮衬实际''初心简单'的同时接商业推广，将内容与公益绑定后抬高道德期待，长期背负'恰饭''情怀营销'质疑"
+      },
+      {
+        "force_a": "'普通食客'谦逊定位",
+        "force_b": "作为推荐权威被信任与依赖",
+        "behavioral_signature": "自称非美食家、只是帮试的人，却实际发挥引流影响力导致老店'网红化反噬'"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑收费恰饭/不真实",
+        "reaction": "以观众判断力回击并声明披露原则",
+        "escalation": "观众唔蠢嘅，你收唔收钱佢哋睇得出 → 我哋接推广会讲明，唔会呃观众话呢间好食"
+      },
+      {
+        "trigger": "频道做大后的责任压力",
+        "reaction": "表达对支持者的亏欠焦虑",
+        "escalation": "频道大咗之后，压力都大咗，怕对唔住支持嘅人"
+      },
+      {
+        "trigger": "老店翻新/味道可能改变",
+        "reaction": "外显担忧与怀旧防御",
+        "escalation": "老铺翻新之后，我唯一担心就系个味会唔会变"
+      },
+      {
+        "trigger": "遇到得个样冇味道的食物",
+        "reaction": "明确表达厌恶",
+        "escalation": "我最怕就系嗰啲得个样，食落去乜味都冇嘅嘢"
+      }
+    ],
+    "blind_spots": [
+      "自认'唔啱就系唔啱'但实际差评极少、评价标准偏宽 [短视频平台弹幕/评论区-2020-2022]",
+      "宣称披露不违心夸赞却难消'恰饭'质���，未正视推广与公信力的结构性冲突 [本地美食论坛/网友评论-2019-2021]",
+      "坚守'普通食客'定位却忽视风味描述不够精准专业的能力盲区 [同行/资深食客自媒体-2021]",
+      "未意识到自身探店引流导致老店出品下滑的'网红化'反噬 [被探店店铺方及部分观众-2022]",
+      "'记录消失老店'的情怀叙事被指已被商业化为营销话术而不自知 [城市文化评论类账号-2022-2023]",
+      "'抵食'/人均消费标注主观且与实际不符 [本地网友-2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "共情反应高时优先情感/道德号召压过客观评价",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "遇困难老店转向呼吁帮衬、抬举店主，弱化批评",
+        "behavioral_notes": "疫情期与店主对谈中大量出现'抵畀个赞''好难得'，负面评价被情感覆盖"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "亲密需求高时以被认可/长期关系为最大满足源",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "反复强调老店老板认得自己、街坊熟客情，倾向维护关系",
+        "behavioral_notes": "'最感恩就系啲老店老板认得我哋'——关系维护动机可能压抑真实差评"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "信任倾向偏高时倾向以透明化自证清白而非制度性防护",
+        "when": {
+          "trust_propensity": ">=0.6"
+        },
+        "disposition": "面对质疑用'观众睇得出''直播冇得剪'等透明叙事回应",
+        "behavioral_notes": "依赖观众信任而非结构性利益隔离，故恰饭质疑长期无法根除"
+      }
+    ]
+  }
+}

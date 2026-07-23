@@ -1,0 +1,268 @@
+{
+  "person_id": "fang-qi",
+  "display_name": "房琪",
+  "name_en": "Fang Qi",
+  "region": "CN",
+  "industries": [
+    "旅行内容",
+    "小红书"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 9
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/fang-qi/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/fang-qi/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/fang-qi/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/fang-qi/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "fang-qi",
+    "source": "fang-qi-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.6,
+        "evidence": "我知道自己红得有点快，所以我更要稳住，别飘。 [style-recon-2022]"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "从0到1那段路，是最黑的，没有人看好你的时候，你只能自己看好自己。 [style-recon-2021]"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "这个世界那么大，为什么我们要活在别人的评价里。 [style-recon-2021]"
+      },
+      "risk_appetite": {
+        "score": 0.65,
+        "evidence": "我从央视出来的时候，其实什么都没有，就一个不甘心。 [style-recon-2022]"
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "成功没有捷径，我唯一的捷径就是比别人更能熬。 [style-recon-2022]"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "这世上最贵的东西，是自由，是你能选择自己想过的生活。 [style-recon-2021]"
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "我想对每一个还在深夜里努力的女孩说，你不是一个人。 [style-recon-2021]"
+      },
+      "status_sensitivity": {
+        "score": 0.6,
+        "evidence": "从小主持人梦想开始，我就没放弃过站在光里的执念。 [style-recon-2021]"
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "我做旅行博主，不是为了炫耀我去过哪儿，是想替不能出门的你去看看。 [style-recon-2022]"
+      }
+    },
+    "core_models": [
+      {
+        "name": "逆袭叙事框架",
+        "rule": "任何经历都被重构为'低起点—死磕—翻盘'的改命故事，苦难被翻译为叙事结构上的必要铺垫",
+        "evidence": [
+          "命运给你一个低的起点，是想让你演绎一个绝地反击的故事。 [style-recon-2022]",
+          "出身可以决定你的起点，但决定不了你的终点。 [style-recon-2021]"
+        ]
+      },
+      {
+        "name": "情绪坐标转译",
+        "rule": "把外部世界（地理、事件）转化为内在情绪符号，凡事都要'给意义'",
+        "evidence": [
+          "旅行治愈的从来不是风景，是那个愿意重新出发的你。 [style-recon-2021]",
+          "去看海吧，海会把你的委屈都收走。 [style-recon-2020]"
+        ]
+      },
+      {
+        "name": "真实即正当性",
+        "rule": "用'这就是真实的我'来为风格与争议辩护，把技术性质疑转化为真诚性问题",
+        "evidence": [
+          "文案对我来说不是技巧，是我这个人真实的表达。 [style-recon-2021]",
+          "有人说我的文案太满、太用力，我知道，但那就是当时最真实的我。 [style-recon-2022]"
+        ]
+      },
+      {
+        "name": "群体共鸣绑定",
+        "rule": "把个人经历上升为'我们女孩/姐妹'的集体宣言，用陪伴换取认同",
+        "evidence": [
+          "我想对每一个还在深夜里努力的女孩说，你不是一个人。 [style-recon-2021]",
+          "每个平凡的你，都值得被认真讲述。 [style-recon-2020]"
+        ]
+      },
+      {
+        "name": "长期主义耐受",
+        "rule": "以'熬'和'走得远'对抗短期焦虑与失败，慢但不停",
+        "evidence": [
+          "你可以慢，但你不要停。 [style-recon-2022]",
+          "人生不是短跑，是一场很长很长的旅行。 [style-recon-2022]"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遇到无人认可或至暗时刻",
+        "then": "转向自我肯定，'自己看好自己'",
+        "evidence": "没有人看好你的时候，你只能自己看好自己。 [style-recon-2021]"
+      },
+      {
+        "if": "被外界评价定义或质疑",
+        "then": "拒绝外部标尺，回到自我定义",
+        "evidence": "别人怎么定义你不重要，你怎么定义自己才重要。 [style-recon-2022]"
+      },
+      {
+        "if": "风格或话术被批评",
+        "then": "以'真实/共鸣'重新框定，认下但不改",
+        "evidence": "有人说我贩卖鸡汤，可如果这碗汤真的暖到了谁，那我认。 [style-recon-2022]"
+      },
+      {
+        "if": "面对成功或走红",
+        "then": "自我警觉，压抑膨胀以求稳",
+        "evidence": "我知道自己红得有点快，所以我更要稳住，别飘。 [style-recon-2022]"
+      },
+      {
+        "if": "面对观众的焦虑或困境",
+        "then": "先安抚情绪，提供陪伴与力量而非解决方案",
+        "evidence": "姐妹，别焦虑，人生不是短跑，是一场很长很长的旅行。 [style-recon-2022]"
+      },
+      {
+        "if": "商业场景（带货）",
+        "then": "淡化交易属性，强调精神价值输出",
+        "evidence": "家人们，买东西是其次，我更希望你们从我这儿带走一点力量。 [style-recon-2022]"
+      },
+      {
+        "if": "被指完美/虚假人设",
+        "then": "主动暴露脆弱以换取可信度",
+        "evidence": "我不想做完美的人设，我想做一个真实的、会哭会累的房琪。 [style-recon-2021]"
+      }
+    ],
+    "value_weights": {
+      "自我实现与改命": 0.25,
+      "真实性/表达一致": 0.2,
+      "与受众的情感联结": 0.2,
+      "自主与自我定义": 0.15,
+      "长期声誉与稳健": 0.12,
+      "商业变现": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "坚持精神价值输出（'给力量'）",
+        "force_b": "流量变现与带货转化的商业现实",
+        "behavioral_signature": "口播强调'买东西是其次，更想给你力量'，但持续进入带货场景，被批'精神导师去卖货'——说A做B的价值观张力"
+      },
+      {
+        "force_a": "'真实表达'的自我定位",
+        "force_b": "被质疑辞藻堆砌/金句缝合的技术性争议",
+        "behavioral_signature": "面对撞句/原创质疑时用'真实表达'框架淡化，未正面充分回应，把技术问题转移为真诚问题"
+      },
+      {
+        "force_a": "暴露脆弱以显真实",
+        "force_b": "脆弱本身也成为可被复制的表演/人设",
+        "behavioral_signature": "反复自我暴露'会哭会累'，同时又坚持'用力过猛不后悔'，脆弱被固化为风格标签"
+      },
+      {
+        "force_a": "拒绝活在他人评价里的宣言",
+        "force_b": "对'辜负喜欢我的人'的高度在意",
+        "behavioral_signature": "口头说'别人怎么定义你不重要'，却坦言'特别怕辜负喜欢我的人'，对受众反馈高度敏感"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑鸡汤/情绪价值套路化",
+        "reaction": "以'认下'姿态防御，重申共鸣真实性",
+        "escalation": "上升为价值声明'我给的是共鸣，不是话术'，拒绝被概括"
+      },
+      {
+        "trigger": "被劝收敛用力过猛的风格",
+        "reaction": "公开为风格辩护",
+        "escalation": "固化立场'年轻的时候不使劲，什么时候使劲'，情绪化正当化"
+      },
+      {
+        "trigger": "回望无人问津的沉没期",
+        "reaction": "强调死磕与自我感激",
+        "escalation": "自我英雄化'我最感谢的是我自己，那个没在最难的时候放弃的我'"
+      },
+      {
+        "trigger": "成功来得过快的失控感",
+        "reaction": "自我克制、提醒别飘",
+        "escalation": "转为控制��自律'我更要稳住'"
+      }
+    ],
+    "blind_spots": [
+      "抒情浓度掩盖信息量不足、辞藻堆砌用力过猛，本人却以'真实表达'合理化而无自省 [媒体/自媒体测评类-2021-2022]",
+      "正能量话术模板化、情绪价值套路化，本人坚持'不是话术'而回避了模板化质疑 [网友/短视频评论区-2021-2022]",
+      "金句原创性/撞句争议未被正面回应，'真实表达'框架掩盖技术性争议 [文案原创性争议类讨论-2021-2022]",
+      "从精神鼓励到带货变现的价值落差认知不足，仍以'给力量'自我叙述 [直播带货转型批评-2022]",
+      "女性向励志停留在情绪抚慰、缺乏结构性视角，本人未意识到系统性局限 [性别话语批评-2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高自我效能驱动'死磕—熬赢'的长期主义应对模式",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "面对失败与无人问津时不撤退，转为加倍投入与自我肯定",
+        "behavioral_notes": "'唯一的捷径就是比别人更能熬'——把耐受本身当作核心能力"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高共情反应度使其将个人经历自动扩展为群体宣言",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "任何自我叙述都指向'替你去看/你不是一个人'的陪伴框架",
+        "behavioral_notes": "情感联结优先于信息与结构性分析，易被批情绪抚慰"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高自主需求触发对外部评价的对抗性重构",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "被定义或被劝改时以'自我定义/真实表达'回击而非采纳批评",
+        "behavioral_notes": "'别人怎么定义你不重要'——但与高在意受众反馈并存，形成张力"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "中高控制需求在走红后转为自我约束型收敛",
+        "when": {
+          "control_need": ">=0.6"
+        },
+        "disposition": "对失控（红得快）的反应是加强自律'稳住别飘'而非放松",
+        "behavioral_notes": "控制指向自身状态管理，而非对外部环境的支配"
+      }
+    ]
+  }
+}

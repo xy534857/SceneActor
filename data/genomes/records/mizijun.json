@@ -1,0 +1,246 @@
+{
+  "person_id": "mizijun",
+  "display_name": "密子君",
+  "name_en": "Mi Zijun",
+  "region": "CN",
+  "industries": [
+    "美食直播",
+    "内容创作"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 24
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mizijun/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mizijun/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mizijun/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mizijun/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "mizijun",
+    "source": "mizijun-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.5,
+        "evidence": "我探店从来不接受店家提前准备，就点普通客人会点的。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.5,
+        "evidence": "短视频节奏太快，我也在适应新的平台玩法。"
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "谢谢一直支持我的粉丝，你们真的很暖。"
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "今天挑战超大份，我们看看极限在哪里。"
+      },
+      "self_efficacy": {
+        "score": 0.6,
+        "evidence": "这个辣度我扛得住，但是怕辣的朋友要慎重。"
+      },
+      "autonomy_need": {
+        "score": 0.55,
+        "evidence": "我一直提醒自己，别被人设绑架了。"
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "今天没什么特别安排，就陪你们随便聊聊天、吃点东西。"
+      },
+      "status_sensitivity": {
+        "score": 0.45,
+        "evidence": "这几年最大的变化是心态，不再那么在意数据了。"
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "我知道有质疑，我能理解，毕竟这个量确实不常见。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "本味优先评价体系",
+        "rule": "食物价值由真实味道决定，反对过度修饰与形式化，好吃就是好吃",
+        "evidence": [
+          "好的食材真的不需要太多调味，本味就很好。",
+          "我不喜欢那种网红店只有拍照价值，吃起来一般。"
+        ]
+      },
+      {
+        "name": "真实性自证框架",
+        "rule": "一切表现须归因于真实天性而非表演，遇质疑以坦诚低姿态澄清而非反驳",
+        "evidence": [
+          "我从小就是这个饭量，真的不是装出来的。",
+          "有人说我是催吐，我在这里明确说，我没有，也不建议任何人这样。"
+        ]
+      },
+      {
+        "name": "可持续性优先于爆发力",
+        "rule": "内容与身体都要能长期维持，短期极限不可取，沉淀重于流量",
+        "evidence": [
+          "我不想只靠量取胜，那样很快就会被淘汰。",
+          "我希望做的东西是能沉淀下来的，不只是流量。"
+        ]
+      },
+      {
+        "name": "娱乐性与责任并置",
+        "rule": "承认内容娱乐价值同时主动划出健康边界，向观众免责提示",
+        "evidence": [
+          "挑战归挑战，健康还是要注意的，你们别学我。",
+          "我承认这种大胃王挑战有它的娱乐性，但不能天天做。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对不寻常表现引发的质疑",
+        "then": "以'我说清楚''我能理解'低姿态澄清并给出免责声明",
+        "evidence": "有人说我是催吐，我在这里明确说，我没有，也不建议任何人这样。"
+      },
+      {
+        "if": "评价食物",
+        "then": "以本味和性价比为标准直接表态，不好吃也直说",
+        "evidence": "好吃就是好吃，不好吃我也会直接说的。"
+      },
+      {
+        "if": "探店选点",
+        "then": "拒绝店家安排，点普通客人的东西，看复购价值",
+        "evidence": "我探店从来不接受店家提前准备，就点普通客人会点的。"
+      },
+      {
+        "if": "身体或状态不佳",
+        "then": "真实说出来而非掩饰",
+        "evidence": "我状态不好的时候也会真实地说出来，不想装。"
+      },
+      {
+        "if": "粉丝过度打赏或刷屏",
+        "then": "温和劝阻，强调心意到即可",
+        "evidence": "谢谢礼物，但真的不用刷这么多，心意到了就好。"
+      },
+      {
+        "if": "外部舆论压力升高（如反浪费）",
+        "then": "口头调整策略（小份多品种）但保留内容形式",
+        "evidence": "现在提倡节约粮食，我们量会控制，但会讲得更细。"
+      },
+      {
+        "if": "行业节奏变化",
+        "then": "承认需要适应而非抗拒，慢慢转型",
+        "evidence": "短视频节奏太快，我也在适应新的平台玩法。"
+      }
+    ],
+    "value_weights": {
+      "长期可持续性": 0.25,
+      "真实与不装人设": 0.2,
+      "健康自我保全": 0.2,
+      "观众关系维护": 0.15,
+      "内容差异化": 0.1,
+      "商业规模": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "以大分量/极限挑战获取关注的成名路径",
+        "force_b": "倡导健康、节约与'不比量'的价值主张",
+        "behavioral_signature": "口头称'吃播核心不是比量''量会控制'��但早期大量高热量挑战内容持续传播并依赖'大胃王'标签获客（dim-05言行不一记录）"
+      },
+      {
+        "force_a": "'我不想装''真实'的自我叙述",
+        "force_b": "团队化、商业化运营的现实需要",
+        "behavioral_signature": "说'很多事情不能只凭自己喜好来做'的同时坚称不装，被老粉批评'变味'（dim-05决策5）"
+      },
+      {
+        "force_a": "对成名内容的商业价值依赖",
+        "force_b": "承认早期'太拼、不健康'的自我否定",
+        "behavioral_signature": "公开反思'那时候太拼'却仍保留并转化早期标志内容，在初心与商业间反复摇摆（dim-05决策6）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指催吐/造假",
+        "reaction": "低姿态明确否认并给免责提示",
+        "escalation": "不激烈反驳，转为'我能理解'式共情澄清"
+      },
+      {
+        "trigger": "走红后需持续保持状态的压力",
+        "reaction": "承认压力存在",
+        "escalation": "转向危机意识表达'红得快也可能凉得快'"
+      },
+      {
+        "trigger": "粉丝过度追捧或刷礼物",
+        "reaction": "温和劝阻，降低索取姿态",
+        "escalation": "以'心意到了就好'收束，避免情绪化"
+      },
+      {
+        "trigger": "身体过量后的不适",
+        "reaction": "如实承认'有点撑'但不轻易放弃",
+        "escalation": "以'饿一整天平衡'合理化，附加健康提醒"
+      }
+    ],
+    "blind_spots": [
+      "对早期大胃王内容的健康与催吐争议长期无法彻底自证，仅靠口头否认难以消解质疑 [网友/评论区-2016~2018]",
+      "反浪费倡导与早期高热量挑战内容并存，被指言行不一 [媒体评论/舆论-2018~2020]",
+      "一镜到底/分量真实性被怀疑，透明化举措仍不足以打消剪辑吐出等疑虑 [网友-2017~2019]",
+      "转型探店后差异化不足，未能有效摆脱赛道内卷 [行业观察/自媒体-2019~2021]",
+      "团队化与广告增多导致老粉感知'变味'，与真实人设产生落差 [粉丝/评论-2019~2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "亲密需求高时倾向以陪伴式互动维系观众关系",
+        "when": {
+          "intimacy_need": ">=0.6"
+        },
+        "disposition": "主动降低索取、强调陪伴与情感连接",
+        "behavioral_notes": "如'陪你们随便聊聊天''不用刷这么多，心意到了就好'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "共情反应中等偏上时，面对质疑选择理解式低姿态澄清而非对抗",
+        "when": {
+          "empathy_reactivity": ">=0.55"
+        },
+        "disposition": "以'我能理解''我说清楚'回应，避免激烈反驳",
+        "behavioral_notes": "见催吐质疑回应，情绪不外溢"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "自我效能偏高时敢于承担极限挑战但同步自设边界",
+        "when": {
+          "self_efficacy": ">=0.6"
+        },
+        "disposition": "接受挑战同时主动免责提示",
+        "behavioral_notes": "'这个辣度我扛得住''挑战归挑战…你们别学我'"
+      }
+    ]
+  }
+}

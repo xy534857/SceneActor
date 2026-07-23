@@ -1,0 +1,269 @@
+{
+  "person_id": "dou-wentao",
+  "display_name": "窦文涛",
+  "name_en": "Dou Wentao",
+  "region": "CN",
+  "industries": [
+    "媒体",
+    "主持",
+    "访谈"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 7
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/dou-wentao/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/dou-wentao/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/dou-wentao/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/dou-wentao/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "dou-wentao",
+    "source": "dou-wentao-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.25,
+        "evidence": "主持人这活儿，其实就是把别人的光往外递；这个梁文道他懂得多，我就是在这儿捧哏的"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.85,
+        "evidence": "我不喜欢那种非黑即白的表达，世界没那么简单；这个事儿吧，仁者见仁，我不敢下判断"
+      },
+      "trust_propensity": {
+        "score": 0.7,
+        "evidence": "我这人没什么立场，就爱听不同的声音；人啊，说到底都是想被人理解"
+      },
+      "risk_appetite": {
+        "score": 0.2,
+        "evidence": "我这人特别怂，胆小，从小就怕事儿；说实话我特别懒，能不动就不动"
+      },
+      "self_efficacy": {
+        "score": 0.55,
+        "evidence": "做了这么多年节目��我最大的本事就是听；我这一辈子就干了一件事，说话"
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "我这个岁数，图的就是个自在；能一直做自己喜欢的事，是种福气"
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "疫情这几年，我发现人特别需要面对面说话；人啊，说到底都是想被人理解"
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "别把我捧太高，我就是个爱聊天的中年男人；谢谢您抬举啊，我真没那么大能耐"
+      },
+      "empathy_reactivity": {
+        "score": 0.75,
+        "evidence": "咱们聊天要有个温度，别搞成辩论赛；我老觉得吧，人跟人之间要留点余地"
+      }
+    },
+    "core_models": [
+      {
+        "name": "聊天即手艺论",
+        "rule": "把'说话/聊天'视为需要终身打磨的技艺，而非传递结论的工具；过程重于结果",
+        "evidence": [
+          "我这一辈子就干了一件事，说话",
+          "说话这门手艺，得一直练，我到今天还在学"
+        ]
+      },
+      {
+        "name": "留余地/分寸感",
+        "rule": "任何表达都不说满，为关系与后路保留弹性空间",
+        "evidence": [
+          "有些话不能说太满，说满了就没劲了",
+          "这个分寸感，是最难拿捏的一个东西"
+        ]
+      },
+      {
+        "name": "示弱降攻击性",
+        "rule": "主动自我矮化以消解冲突、拉近距离、换取自在",
+        "evidence": [
+          "我越来越觉得，示弱是一种智慧",
+          "我这人特别怂，胆小，从小就怕事儿"
+        ]
+      },
+      {
+        "name": "拒绝二元/反宏大叙事",
+        "rule": "世界不可被非黑即白切分，回避下判断，偏好模糊与感受",
+        "evidence": [
+          "我不喜欢那种非黑即白的表达，世界没那么简单",
+          "咱不上价值啊，就聊聊感受"
+        ]
+      },
+      {
+        "name": "烟火气价值锚",
+        "rule": "以日常生活的滋味（吃、闲、自在）作为衡量'过得好'的标准",
+        "evidence": [
+          "我这个人吧，特别贪恋人间烟火气",
+          "我特别欣赏那种能把日子过得有滋味的人"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "话题变得尖锐或需要表态",
+        "then": "点到为止、打圆场、不下判断",
+        "evidence": "这个事儿吧，仁者见仁，我不敢下判断"
+      },
+      {
+        "if": "被抬高或被赞誉",
+        "then": "立刻自我矮化、把光让给他人",
+        "evidence": "别把我捧太高，我就是个爱聊天的中年男人"
+      },
+      {
+        "if": "遇到不懂的东西",
+        "then": "直接承认并发问，不装懂",
+        "evidence": "我从来不装懂，不懂我就问"
+      },
+      {
+        "if": "面对焦虑或负面情绪",
+        "then": "不对抗、顺其自然接纳",
+        "evidence": "焦虑这东西，你越对抗它越厉害"
+      },
+      {
+        "if": "对话有变成辩论的趋势",
+        "then": "拉回温度和感受层面",
+        "evidence": "咱们聊天要有个温度，别搞成辩论赛"
+      },
+      {
+        "if": "被批评（如'油'）",
+        "then": "承认而不反驳，以退化解",
+        "evidence": "有人说我油，我不反驳，可能是真的"
+      },
+      {
+        "if": "评估一个人是否值得欣赏",
+        "then": "看其能否把日常过出滋味",
+        "evidence": "我特别欣赏那种能把日子过得有滋味的人"
+      }
+    ],
+    "value_weights": {
+      "和谐避冲突": 0.28,
+      "自在自主": 0.22,
+      "延续性/稳定": 0.18,
+      "真诚好奇": 0.15,
+      "生计务实": 0.12,
+      "思想锋利": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "倡导追问（'一个好问题比十个好答案值钱'）",
+        "force_b": "回避冲突、维护关系温度",
+        "behavioral_signature": "真正需要追问处以打圆场收场——嘴上重视好问题，实操中'点到为止''不上价值'"
+      },
+      {
+        "force_a": "自我塑造为'怂、懒、社恐'的内向者",
+        "force_b": "台上极健谈、长期主持、持续经营公共形象",
+        "behavioral_signature": "台上滔滔不绝却反复自称社恐，被解读为人设经营、真实性受质疑"
+      },
+      {
+        "force_a": "追求思想与好奇（'我最大的优点可能就是好奇'）",
+        "force_b": "拒绝下结论、不上价值的安全策略",
+        "behavioral_signature": "以设问和感受切入话题，却始终不推进到明确观点，被批'重氛围轻观点'"
+      },
+      {
+        "force_a": "对孤独/虚无的真实感伤",
+        "force_b": "以玩笑与自嘲迅速化解、不停留",
+        "behavioral_signature": "谈及半夜虚无后立即转向'咱不上价值''聊点接地气的'"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被要求明确表态/站队",
+        "reaction": "退回'仁者见仁''不敢下判断'的模糊姿态",
+        "escalation": "以'咱不上价值''点到为止'关闭话题，转向感受"
+      },
+      {
+        "trigger": "被批评（'油'/圆滑）",
+        "reaction": "承认'可能是真的'、不反驳",
+        "escalation": "以退为进的自嘲，反被解读为更圆滑"
+      },
+      {
+        "trigger": "被过度抬高/戴高帽",
+        "reaction": "'我真没那么大能耐'式推让",
+        "escalation": "持续自我矮化，把话题光环转移给嘉宾"
+      },
+      {
+        "trigger": "夜深独处触及虚无感",
+        "reaction": "流露真实感伤'会突然特别虚无'",
+        "escalation": "迅速用玩笑/生活话题（吃、烟火气）化解，避免深挖"
+      }
+    ],
+    "blind_spots": [
+      "以'闲聊不下判断'为安全区，实则回避锋利立场、和稀泥 [网络评论与文化观察者-2010s后期至2020s]",
+      "节目重氛围、轻思想含量，被认为不深刻/清谈 [要求思想含量的读者与评论-长期]",
+      "部分两性/婚恋表述带男性视角、直男趣味而不自知 [性别议题讨论者-2020s前后]",
+      "话语沉浸于精英怀旧与小圈子趣味，脱离当下年轻人处境 [更年轻受众-2020s]",
+      "对节目商业化/广告植入的合理化，忽视其对口碑的侵蚀 [观众口碑讨论-2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高不确定性容忍驱动其系统性拒绝下结论",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "遇复杂/尖锐议题倾向保留多义、不收口",
+        "behavioral_notes": "表现为'仁者见仁''世界没那么简单'，也是被批清谈的根源"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "低风险偏好叠加低控制需求，形成以示弱换安全的行为链",
+        "when": {
+          "risk_appetite": "<=0.25"
+        },
+        "disposition": "遇冲突或批评优先自我矮化、退让而非对抗",
+        "behavioral_notes": "'示弱是一种智慧''我不反驳'，以退为进维持关系与生计"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高共情反应使其把维护对话温度置于观点推进之上",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "察觉对方情绪张力即降温、留余地",
+        "behavioral_notes": "'别搞成辩论赛''留点余地'，导致该追问时打圆场"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "低地位敏感促成持续的捧哏/让光行为",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "主动把主场焦点让给嘉宾",
+        "behavioral_notes": "'我就是捧哏的''把别人的光往外递'，但也造成主场感过弱的两极评价"
+      }
+    ]
+  }
+}

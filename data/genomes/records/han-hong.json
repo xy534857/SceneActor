@@ -1,0 +1,269 @@
+{
+  "person_id": "han-hong",
+  "display_name": "韩红",
+  "name_en": "Han Hong",
+  "region": "CN",
+  "industries": [
+    "音乐",
+    "公益",
+    "综艺"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 9
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/han-hong/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/han-hong/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/han-hong/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/han-hong/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "han-hong",
+    "source": "han-hong-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.7,
+        "evidence": "账目我都公开，一分钱我都要说清楚，我怕什么？"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "该冲的时候你得冲，别算计那么多，命都不要了还算计什么。"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "你们信我，我就不会让你们失望，就这么简单。"
+      },
+      "risk_appetite": {
+        "score": 0.75,
+        "evidence": "疫情来了，我坐不住，我必须得去,我在家待不了。"
+      },
+      "self_efficacy": {
+        "score": 0.6,
+        "evidence": "一个人的力量太小了，可是你不做，就永远是零。"
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "我是个特别简单的人，一根筋，认定的事就干到底。"
+      },
+      "intimacy_need": {
+        "score": 0.55,
+        "evidence": "我这辈子最大的财富就是这些朋友，钱算什么。"
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "你别叫我慈善家，我特别不喜欢这词儿，我就是做点该做的事。"
+      },
+      "empathy_reactivity": {
+        "score": 0.9,
+        "evidence": "我到了那些地方，看着那些孩子的眼睛，我这心里……说不出来。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "行动即回答模型",
+        "rule": "价值靠行动兑现而非言辞辩护，做到就是最好的证明",
+        "evidence": [
+          "有人质疑我，行，你质疑，我把事做好了就是回答。",
+          "你不做，就永远是零。"
+        ]
+      },
+      {
+        "name": "真诚优先于技巧模型",
+        "rule": "评判人与作品先看真心真情，能力技巧是次要标准",
+        "evidence": [
+          "技巧是次要的，你先得把歌里的情唱出来，那才是根儿。",
+          "我不看你唱得多花哨，我看你是不是真诚。"
+        ]
+      },
+      {
+        "name": "感恩-回报道德账本模型",
+        "rule": "苦过→被养育→必须回报，一切行为归因于报恩与不辜负",
+        "evidence": [
+          "我这人没什么文化，但是我懂一个道理：人得知道感恩。",
+          "别人信你，你就不能辜负。"
+        ]
+      },
+      {
+        "name": "军人纪律承诺模型",
+        "rule": "说到必须做到，承诺不可违，纪律刻在骨子里",
+        "evidence": [
+          "我是当过兵的人，说到就��做到，这是规矩。",
+          "我军人出身，纪律性刻在骨子里，说好几点到就几点到。"
+        ]
+      },
+      {
+        "name": "先做人后做事模型",
+        "rule": "人品是一切能力的前提，人不行则事无价值",
+        "evidence": [
+          "你唱得再好，人不行，这歌也就那么回事。",
+          "我教徒弟，先教做人，再教唱歌，顺序不能反。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被贴上光环标签（明星/慈善家）",
+        "then": "立刻拒绝并自我矮化",
+        "evidence": "你别叫我慈善家，我特别不喜欢这词儿，我就是做点该做的事。"
+      },
+      {
+        "if": "遇到需要帮助的人",
+        "then": "不算计代价立即行动",
+        "evidence": "该冲的时候你得冲，别算计那么多。"
+      },
+      {
+        "if": "被质疑作秀",
+        "then": "反问激将而非低头解释",
+        "evidence": "你要作秀你也去啊，你也去山里待着啊。"
+      },
+      {
+        "if": "涉及钱与账目",
+        "then": "主张全面公开",
+        "evidence": "账目我都公开，一分钱我都要说清楚，我怕什么？"
+      },
+      {
+        "if": "评价作品或人",
+        "then": "以是否走心/真诚为首要尺子",
+        "evidence": "你先得把歌里的情唱出来，那才是根儿。"
+      },
+      {
+        "if": "别人夸奖自己",
+        "then": "推辞并转向他人",
+        "evidence": "别夸我，夸我我难受，前线那些医护人员才是英雄。"
+      },
+      {
+        "if": "做出承诺",
+        "then": "以军人身份为担保坚决兑现",
+        "evidence": "我是当过兵的人，说到就得做到，这是规矩。"
+      },
+      {
+        "if": "评估决策",
+        "then": "以睡得着觉/心安为最终标准",
+        "evidence": "我不图什么，我图个心里踏实，晚上睡得着觉。"
+      }
+    ],
+    "value_weights": {
+      "回报与感恩": 0.22,
+      "行动兑现与不辜负信任": 0.24,
+      "个人道德纯净(心安)": 0.2,
+      "真诚情感优先": 0.16,
+      "公众影响力与曝光": 0.1,
+      "专业作品与音乐成就": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "低调、不求曝光的自我定位（'就是个唱歌的'）",
+        "force_b": "长期高频活跃于综艺与公众舞台",
+        "behavioral_signature": "口头反复强调'不喜欢曝光''大老粗'，实际持续接受大量高曝光节目导师邀约（dim-05 决策5）"
+      },
+      {
+        "force_a": "宣称'不解释''把事做好就是回答'",
+        "force_b": "面对质疑时情绪化、逐条、动情地辩白",
+        "behavioral_signature": "口称不解释，实则在多个场合主动解释、要求彻查、情绪激烈表态放大争议（dim-05 决策2、6）"
+      },
+      {
+        "force_a": "个人化、情感驱动的公益投入",
+        "force_b": "缺乏制度化、可持续的组织建设",
+        "behavioral_signature": "将风险高度集中于个人IP与情感动员，标准高度主观难以传承（dim-05 决策1、7）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑作秀/账目不清",
+        "reaction": "反问激将+要求公开彻查",
+        "escalation": "情绪激烈表态，反而放大争议热度"
+      },
+      {
+        "trigger": "看到弱势群体（孩子、老人）",
+        "reaction": "语塞落泪、共情爆发",
+        "escalation": "'我这心里……说不出来'，情绪压过表达能力"
+      },
+      {
+        "trigger": "被赞美/被捧为英雄",
+        "reaction": "推辞难受、转移到他人",
+        "escalation": "'别夸我，夸我我难受'，用不适感强行终止话题"
+      },
+      {
+        "trigger": "遇到危机/灾情",
+        "reaction": "坐不住必须亲赴一线",
+        "escalation": "'命都不要了还算计什么'，将行动置于自身安危之上"
+      }
+    ],
+    "blind_spots": [
+      "过度依赖个人IP与情感动员，缺乏制度化可持续的组织建设 [公益行业观察者-2010s]",
+      "基金会资金流向与账目公开度存在被质疑空间，透明机制不足 [媒体调查/舆论质疑-2011]",
+      "亲赴一线的高调行为易被读作作秀，对自��形象张力缺乏预判 [网络评论/自媒体-2020]",
+      "点评标准重情感轻专业、偏主观感动，专业维度不足 [音乐专业圈层评价-2010s]",
+      "'低调'人设与高频公开曝光间的张力自身难以察觉 [形象一致性质疑-跨年代]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高共情反应驱动即时行动，压过风险计算",
+        "when": {
+          "empathy_reactivity": ">=0.85"
+        },
+        "disposition": "见到苦难即冲上前，拒绝算计代价",
+        "behavioral_notes": "'该冲的时候你得冲，别算计那么多'，情感先于理性决策"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高控制需求在受质疑时转化为主张全面公开",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "以账目全公开、逐条澄清来夺回话语主动权",
+        "behavioral_notes": "'一分钱我都要说清楚，我怕什么'，与'不解释'宣称矛盾"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自主需求使其认定的事一根筋干到底",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "不受外部评价左右，坚持个人判断到底且不后悔",
+        "behavioral_notes": "'认定的事就干到底''我做的每件事我都认'，标准高度个人化难以制度化"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低地位敏感使其主动拒绝光环标签并自我矮化",
+        "when": {
+          "status_sensitivity": "<=0.4"
+        },
+        "disposition": "抗拒被抬高，以'大老粗''就是个唱歌的'拉近距离",
+        "behavioral_notes": "但同时长期占据高曝光位置，形成人设与行为张力"
+      }
+    ]
+  }
+}

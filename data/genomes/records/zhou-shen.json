@@ -1,0 +1,274 @@
+{
+  "person_id": "zhou-shen",
+  "display_name": "周深",
+  "name_en": "Zhou Shen",
+  "region": "CN",
+  "industries": [
+    "音乐",
+    "综艺",
+    "直播"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 16
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-shen/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-shen/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-shen/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/zhou-shen/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "zhou-shen",
+    "source": "zhou-shen-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.35,
+        "evidence": "合作的时候我特别愿意退一步，因为退一步大家都舒服。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "我不是天赋型选手，我是那种要反复练很多遍才安心的人。"
+      },
+      "trust_propensity": {
+        "score": 0.7,
+        "evidence": "有人问我孤不孤单，说实话，有观众在，我就不孤单。"
+      },
+      "risk_appetite": {
+        "score": 0.3,
+        "evidence": "舞台是留给准备好的人的，所以我从来不敢偷懒。"
+      },
+      "self_efficacy": {
+        "score": 0.45,
+        "evidence": "我不是一开始就自信的，我是慢慢地、一点点被大家接纳的。"
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "我不想被定义，定义完了人就不自由了。"
+      },
+      "intimacy_need": {
+        "score": 0.8,
+        "evidence": "谢谢你们陪我走了这么远，我们还要一起走更远。"
+      },
+      "status_sensitivity": {
+        "score": 0.7,
+        "evidence": "有时候我会觉得，我是不是太在意别人怎么看我了。"
+      },
+      "empathy_reactivity": {
+        "score": 0.85,
+        "evidence": "别人说我情商高，其实我只是不想让任何人难堪。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "被接纳换取存在感",
+        "rule": "把'被看见/被接纳'作为衡量自我价值的核心尺度，先低姿态铺垫再等待外部接纳。",
+        "evidence": [
+          "我不是一开始就自信的，我是慢慢地、一点点被大家接纳的。",
+          "音乐对我来说，就是一个可以躲起来、又能被看见的地方。"
+        ]
+      },
+      {
+        "name": "声音即身份",
+        "rule": "将独特音色与个人身份认同绑定，一切判断回到'这是不是我自己的声音'。",
+        "evidence": [
+          "我不太喜欢给自己贴标签，说什么\"男声女声\"，我就是我自己的声音。",
+          "我一直觉得，声音是可以治愈人的，我想做那种声音。"
+        ]
+      },
+      {
+        "name": "感恩—不敢懈怠联锁",
+        "rule": "任何成就都必须绑定谦卑与努力，用'不敢懈怠'消解被夸后的不安。",
+        "evidence": [
+          "我很感恩，但我不敢懈怠，感恩和努力得一起来。",
+          "我很珍惜每一次被选中的机会，因为我知道机会不是理所当然的。"
+        ]
+      },
+      {
+        "name": "以退让维护关系和谐",
+        "rule": "遇到冲突或竞争默认退一步，用照顾他人情绪来规避对抗。",
+        "evidence": [
+          "合作的时候我特别愿意退一步，因为退一步大家都舒服。",
+          "我不喜欢竞争这个词，我更喜欢说，大家一起把这件事做好。"
+        ]
+      },
+      {
+        "name": "脆弱前置的自我保护",
+        "rule": "主动暴露紧张/社恐/脸红，用坦诚脆弱换取宽容，降低他人预期落差。",
+        "evidence": [
+          "其实我这个人吧，特别容易紧张，你们看我台上挺淡定的，其实心里在打鼓。",
+          "舞台上我可以很勇敢，下了台我其实挺社恐的。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被过度夸奖",
+        "then": "立刻自我贬抑降温，避免'飘'",
+        "evidence": "你们别老夸我了，再夸我要飘了，飘走了就唱不了歌了。"
+      },
+      {
+        "if": "面对身份/风格标签",
+        "then": "拒绝被定义，回到'我自己的声音'",
+        "evidence": "我不想被定义，定义完了人就不自由了。"
+      },
+      {
+        "if": "遇到合作或竞争情境",
+        "then": "退一步、以和为贵",
+        "evidence": "合作的时候我特别愿意退一步，因为退一步大家都舒服。"
+      },
+      {
+        "if": "上台前紧张",
+        "then": "自我暗示'稳住，你可以的'并靠反复练习兜底",
+        "evidence": "每次上台前我都会跟自己说，稳住，你可以的。"
+      },
+      {
+        "if": "观众给予大额付出",
+        "then": "主动劝阻、把对方福祉置于自身收益之上",
+        "evidence": "谢谢这个礼物哈，但你们钱要省着花，别乱刷。"
+      },
+      {
+        "if": "被要求做决定或拒绝他人",
+        "then": "回避拒绝、承接安排",
+        "evidence": "我不太会拒绝人，这算是我的缺点吧，我一直在学怎么拒绝。"
+      },
+      {
+        "if": "唱歌处理",
+        "then": "先想歌里的人经历什么，而非炫技",
+        "evidence": "我唱歌的时候不会想技巧，我想的是这首歌里面那��人，他在经历什么。"
+      }
+    ],
+    "value_weights": {
+      "被接纳与情感联结": 0.28,
+      "自我真实性(不失去自己)": 0.22,
+      "他人福祉与不使人难堪": 0.2,
+      "音乐本身的价值": 0.18,
+      "商业收益与流量": 0.05,
+      "自主选择权": 0.07
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "希望被记住的是歌而非话题",
+        "force_b": "为知名度大量接OST/综艺常驻/晚会",
+        "behavioral_signature": "口头强调'希望大家喜欢我的歌而不是故事/话题'，实际决策却持续走综艺-OST-晚会路径依赖，形成说A做B的路径消耗。"
+      },
+      {
+        "force_a": "叮嘱观众'照顾好自己、比听我唱歌重要'",
+        "force_b": "自己不会拒绝、长期高强度工作透支健康",
+        "behavioral_signature": "对外输出自我关怀话语，对内却以健康为代价接受安排，关怀单向外溢而不施于己。"
+      },
+      {
+        "force_a": "拒绝被定义、强调声音自由",
+        "force_b": "极度在意外界评价与是否被接纳",
+        "behavioral_signature": "一边宣称'不想被定义'，一边反复自省'是不是太在意别人怎么看我'，自由话语与他评敏感并存。"
+      },
+      {
+        "force_a": "台上勇敢、把每次当最后一次",
+        "force_b": "台下社恐、需主动暴露脆弱寻求宽容",
+        "behavioral_signature": "舞台高投入与私下低姿态自嘲交替出现，用脆弱披露换取安全感。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被过度称赞",
+        "reaction": "脸红、自我调侃降温",
+        "escalation": "以'要飘了就唱不了歌'把夸奖转化为对懈怠的警觉"
+      },
+      {
+        "trigger": "担心辜负期待",
+        "reaction": "反复练习、力求每次做到最好",
+        "escalation": "'哪怕累'——以身体透支承接期待压力"
+      },
+      {
+        "trigger": "被贴标签/被定义",
+        "reaction": "温和拒绝，回到'我自己的声音'",
+        "escalation": "上升到'定义完人就不自由了'的自由丧失焦虑"
+      },
+      {
+        "trigger": "被误解、被议论",
+        "reaction": "咬牙独自扛",
+        "escalation": "多年后以'反而成就了今天的我'的和解叙事收束，压抑转为自我合理化"
+      },
+      {
+        "trigger": "红了之后的自我变化",
+        "reaction": "警惕、自省",
+        "escalation": "'最怕自己变得不像自己'——身份认同焦虑"
+      }
+    ],
+    "blind_spots": [
+      "曲风与选歌趋同、抒情过度OST化、缺乏突破，本人以'感恩—不敢懈怠'叙事难以察觉路径固化 [乐评类文章-2019~2021]",
+      "过度谦逊人设被指有表演化嫌疑，而本人自认'只是不想让人难堪'无法自证真伪 [综艺讨论/自媒体-2020~2022]",
+      "话题度与商业曝光挤占音乐讨论，与其'希望被记住的是歌'的自述背离却持续接综艺常驻 [社交平台评论类-2021~2023]",
+      "高音辨识度强但风格路径较窄，本人视高音为情绪必然而非技术局限 [声乐/音乐专业博主-2020]",
+      "'综艺常驻—OST—晚会'路径依赖对音乐性的消耗，本人以'珍惜每次机会'合理化而未反思结构性损耗 [行业评论类-2022~2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "共情反应高时倾向牺牲自我边界以维护他人舒适",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "不拒绝、退让、承接高强度安排",
+        "behavioral_notes": "'我只是不想让任何人难堪''退一步大家都舒服'——以自身健康与表达空间为代价换和谐。"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "亲密需求高时把观众联结当作自我存在证明",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "持续拉近距离、用'我们''约定'绑定观众",
+        "behavioral_notes": "'有观众在我就不孤单''明年这个时候还在这里见'——联结缺失易引发孤独焦虑。"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "地位敏感高时被夸奖会触发自我贬抑式防御",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "即时降温、绑定'不敢懈怠'",
+        "behavioral_notes": "'再夸我要飘了''最怕变得不像自己'——外评波动直接牵动身份稳定感。"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "风险偏好低促使以过度准备对冲不确定",
+        "when": {
+          "risk_appetite": "<=0.35"
+        },
+        "disposition": "反复练习、每次当最后一次准备",
+        "behavioral_notes": "'我是那种要反复练很多遍才安心的人''从来不敢偷懒'——不安全感靠勤奋兜底而非突破求新。"
+      }
+    ]
+  }
+}

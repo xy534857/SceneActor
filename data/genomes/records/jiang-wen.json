@@ -1,0 +1,289 @@
+{
+  "person_id": "jiang-wen",
+  "display_name": "姜文",
+  "name_en": "Jiang Wen",
+  "region": "CN",
+  "industries": [
+    "导演",
+    "演员",
+    "编剧"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 8
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jiang-wen/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jiang-wen/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jiang-wen/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jiang-wen/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "jiang-wen",
+    "source": "jiang-wen-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.92,
+        "evidence": "我给演员空间,但底线我攥着,那是我的电影。"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "结尾我故意不给答案,日子哪有答案。"
+      },
+      "trust_propensity": {
+        "score": 0.35,
+        "evidence": "观众是上帝?我不这么想,观众是知己,是对手。"
+      },
+      "risk_appetite": {
+        "score": 0.78,
+        "evidence": "我不做妥协的电影,妥协了那叫产品,不叫作品。"
+      },
+      "self_efficacy": {
+        "score": 0.95,
+        "evidence": "这片子好不好,不该我说,可我说了,因为没人比我更清楚。"
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "我这脾气改不了,改了就不是我了,那还拍什么电影。"
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "母亲这道坎儿,我一直没过去,一直。"
+      },
+      "status_sensitivity": {
+        "score": 0.6,
+        "evidence": "我不怕挨骂,挨骂说明有人在乎,最怕没人搭理。"
+      },
+      "empathy_reactivity": {
+        "score": 0.45,
+        "evidence": "这电影里没有反派,人都是复杂的,哪那么简单。"
+      }
+    },
+    "core_models": [
+      {
+        "name": "生猛美学过滤器",
+        "rule": "任何创作与人物先问'有没有劲儿/生不生猛',温吞平庸一律否决",
+        "evidence": [
+          "电影得有股子生猛的劲儿,温吞水我拍不了。",
+          "一个人要是没劲,你拍他干嘛?我镜头里得是有劲儿的人。"
+        ]
+      },
+      {
+        "name": "造梦逻辑优先于现实逻辑",
+        "rule": "以梦境/感觉的内在逻辑组织作品,拒绝用清醒的现实道理评判",
+        "evidence": [
+          "我拍电影就跟做梦一样,梦里头的逻辑你别拿醒着的道理去套。",
+          "电影是造梦,我得先把自己给骗了,才能骗你。"
+        ]
+      },
+      {
+        "name": "反迎合=不示弱",
+        "rule": "把妥协、迎合、解释都编码为示弱,凡示弱皆拒绝",
+        "evidence": [
+          "我不迎合,迎合是一种示弱,我不示弱。",
+          "我不喜欢解释我的电影,解释了就没劲了。"
+        ]
+      },
+      {
+        "name": "较劲式完美主义",
+        "rule": "每个细节都必须'对得起自己',宁慢不糊弄",
+        "evidence": [
+          "我拍片子慢,因为我较劲,每一个镜头都得对得起自己。",
+          "我特别在乎细节,一个扣子扣错了我都难受。"
+        ]
+      },
+      {
+        "name": "直觉/感觉高于数据",
+        "rule": "决策以直觉和'感觉不骗人'为最终裁决,数据靠边",
+        "evidence": [
+          "我信直觉,直觉这东西比数据准。",
+          "看不懂没关系,你记住那个感觉就行,感觉不骗人。"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被质疑'看不懂'",
+        "then": "把看不懂重新定义为作品的成功而非缺陷",
+        "evidence": "你看不懂?看不懂就对了,看懂了那还叫电影吗,那叫说明书。"
+      },
+      {
+        "if": "被要求妥协或删改核心",
+        "then": "反复较劲、宁慢不改",
+        "evidence": "我不做妥协的电影,妥协了那叫产品,不叫作品。"
+      },
+      {
+        "if": "面对市场/产量压力",
+        "then": "坚持慢工低产",
+        "evidence": "我不着急,好东西得慢慢来,急就俗了。"
+      },
+      {
+        "if": "遇到虚伪或装的人",
+        "then": "直接鄙视、划清界限",
+        "evidence": "我最烦装,真诚这东西装不出来。"
+      },
+      {
+        "if": "被贴大师标签",
+        "then": "调侃回避、自我降格稀释",
+        "evidence": "我不当自��是大师,大师那词儿听着就累。"
+      },
+      {
+        "if": "作品被骂晦涩",
+        "then": "以'总比无聊/平庸强'反击",
+        "evidence": "有人骂这片子晦涩,晦涩总比无聊强。"
+      },
+      {
+        "if": "重复自己已拍过的题材",
+        "then": "拒绝,追求新鲜刺激",
+        "evidence": "我不复制自己,拍过的东西再拍一遍那多没劲。"
+      },
+      {
+        "if": "自我判断与外部评价冲突",
+        "then": "以'没人比我更清楚'压倒外部",
+        "evidence": "这片子好不好,不该我说,可我说了,因为没人比我更清楚。"
+      }
+    ],
+    "value_weights": {
+      "作者完整性/不妥协": 0.3,
+      "作品质量/精雕细琢": 0.22,
+      "个人风格独特性": 0.18,
+      "专业声誉与公众反响": 0.15,
+      "真诚不装": 0.1,
+      "商业回报": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣称不在乎得奖与票房",
+        "force_b": "高度在意公众反响与专业评价",
+        "behavioral_signature": "发布会主动为影片背书打分、公开辩护,与'得奖是顺带的事'表述形成落差 [dim-05-5]"
+      },
+      {
+        "force_a": "宣称尊重观众、把观众当聪明人",
+        "force_b": "以居高临下姿态回应质疑",
+        "behavioral_signature": "同一时期既说'我把他们当聪明人'又说'看不懂就对了',尊重与傲慢并存 [dim-05-6]"
+      },
+      {
+        "force_a": "表态给演员创作空间",
+        "force_b": "现场极端控制欲",
+        "behavioral_signature": "台词改到最后一秒、'底线我攥着',所谓空间实际有限 [dim-05-7]"
+      },
+      {
+        "force_a": "对外强势自负",
+        "force_b": "对母亲/父亲情感的未愈创伤",
+        "behavioral_signature": "谈作品滔滔不绝,一触及'母亲这道坎'立即收敛留白"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指责霸道/控制",
+        "reaction": "重新命名为'认真'加以正当化",
+        "escalation": "认真起来六亲不认,拒绝任何妥协"
+      },
+      {
+        "trigger": "被质疑作品看不懂",
+        "reaction": "反问式反击并抬高作品",
+        "escalation": "把观众问题转成'说明书vs电影'的美学宣言,姿态更高"
+      },
+      {
+        "trigger": "被要求迎合/妥协",
+        "reaction": "定义为示弱并拒绝",
+        "escalation": "宁可延期、错失市场窗口也不改核心"
+      },
+      {
+        "trigger": "遭遇'装'与虚伪",
+        "reaction": "表达厌烦与鄙视",
+        "escalation": "看不上、划清界限,'装大尾巴狼的我看不上'"
+      },
+      {
+        "trigger": "作品被评平庸",
+        "reaction": "强烈恐惧,'平庸比失败还可怕'",
+        "escalation": "以更极端的生猛/锋利风格反证自己不平庸"
+      }
+    ],
+    "blind_spots": [
+      "对女性形象的男性凝视工具化无自觉,自认'拍出劲儿不是花瓶'实则缺乏主体性 [性别视角评论-2010年代前后]",
+      "低估叙事晦涩造成的观众门槛,将'看不懂'合理化 [影评人/文化评论-2010年代]",
+      "对'强势/控制欲强、剧组难合作'缺乏认知,把控制包装为认真 [媒体人物报道-2000-2010年代]",
+      "对后期'自我重复与掌控失焦'的张力无察觉 [学院/研究类文章-2010年代]",
+      "对访谈姿态被感知为高傲居高临下缺乏自省 [大众舆论/网络评论-2010年代]",
+      "对艺术与商业回报失衡的现实代价评估不足 [票房与市场分析类报道-2010年代]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "极高控制需求驱动微观管理与'底线攥着'",
+        "when": {
+          "control_need": ">=0.85"
+        },
+        "disposition": "在授权表态下仍进行现场高强度干预",
+        "behavioral_notes": "台词改到最后一秒、演员感到被烦,'空间'名义大实际小"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "极高自我效能使外部批评难以内化",
+        "when": {
+          "self_efficacy": ">=0.9"
+        },
+        "disposition": "以'没人比我更清楚'压过评论,拒绝解释",
+        "behavioral_notes": "口碑两极时公开辩护而非反思,加深高傲印象"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高自主需求使任何妥协被编码为自我否定",
+        "when": {
+          "autonomy_need": ">=0.85"
+        },
+        "disposition": "宁慢不改、宁延期不删核心",
+        "behavioral_notes": "在审查/市场压力下选择长周期低产,错失市场窗口"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "较高风险偏好偏向生猛锋利而非安全稳妥",
+        "when": {
+          "risk_appetite": ">=0.7"
+        },
+        "disposition": "主动选择晦涩、非线性、不给答案",
+        "behavioral_notes": "以'晦涩总比无聊强'为决策原则,接受两极口碑"
+      },
+      {
+        "rule_id": "CR05",
+        "description": "低共情反应使他人视角(如女性主体性)进入盲区",
+        "when": {
+          "empathy_reactivity": "<=0.5"
+        },
+        "disposition": "以自我美学标准判定'拍出劲儿'即等于尊重",
+        "behavioral_notes": "对工具化批评无感,认为已避免'花瓶'即足够"
+      }
+    ]
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "person_id": "cheng-shian",
+  "display_name": "程十安",
+  "name_en": "Cheng Shi'an",
+  "region": "CN",
+  "industries": [
+    "美妆内容",
+    "小红书"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 13
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cheng-shian/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cheng-shian/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cheng-shian/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/cheng-shian/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "cheng-shian",
+    "source": "cheng-shian-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "我做自己的品牌，是因为我想对产品有更多话语权"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "数据好的时候别飘，数据差的时候也别慌"
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "我们团队招人，专业能力重要，但价值观更重要"
+      },
+      "risk_appetite": {
+        "score": 0.58,
+        "evidence": "转型很痛苦，但不转就会被淘汰"
+      },
+      "self_efficacy": {
+        "score": 0.75,
+        "evidence": "我不是学美妆出身的，全靠自己摸索和试错"
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "我不太会为了流量去做我不认同的内容"
+      },
+      "intimacy_need": {
+        "score": 0.65,
+        "evidence": "我把每一次直播都当成一次面对面聊天"
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "涨粉这件事我其实没那么焦虑，我更在意内容能不能真帮到人"
+      },
+      "empathy_reactivity": {
+        "score": 0.7,
+        "evidence": "我自己是内双，所以我特别懂内双的痛"
+      }
+    },
+    "core_models": [
+      {
+        "name": "信任即护城河",
+        "rule": "任何决策先过'是否损耗观众信任'这一关，信任是不可再生资产",
+        "evidence": [
+          "我知道我的护城河就是信任，信任塌了什么都没了",
+          "广告我会标广告，这是我做内容的底线"
+        ]
+      },
+      {
+        "name": "原理优先于产品",
+        "rule": "教方法论与结构，不锁定具体商品，让人获得可迁移能力",
+        "evidence": [
+          "我教的是思路，产品你可以替换成自己有的",
+          "手法比产品更重要，同样一支口红，涂法不一样气质完全不同"
+        ]
+      },
+      {
+        "name": "缺点前置的真实性契约",
+        "rule": "评价先说不适合/缺点，把选择权交还用户，用坦诚换长期信誉",
+        "evidence": [
+          "不适合就是不适合，我不会因为它贵就说它好",
+          "我会告诉你它的缺点，你能接受再买"
+        ]
+      },
+      {
+        "name": "赋能而非制造依赖",
+        "rule": "内容目标是让用户独立与愉悦，反对贩卖焦虑与依赖",
+        "evidence": [
+          "我希望大家学完能自己化，而不是永远依赖我",
+          "我不太喜欢卖焦虑，变美是让你开心，不是让你自卑"
+        ]
+      },
+      {
+        "name": "渐进叠加方法论",
+        "rule": "复杂效果拆成小步、少量多次、反复练习形成肌肉记忆",
+        "evidence": [
+          "咱们少量多次，一次上太多真的会假面",
+          "大家别追求一步到位，妆是一层一层叠出来的"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "产品自己不认可",
+        "then": "拒绝推荐/拒接商单",
+        "evidence": "接商单我们有底线，产品自己不认可的一律不接"
+      },
+      {
+        "if": "内容会引发焦虑或自卑",
+        "then": "不做，改为强调变美是开心",
+        "evidence": "我不太喜欢卖焦虑，变美是让你开心，不是让你自卑"
+      },
+      {
+        "if": "遇到批评",
+        "then": "能改的改���不能改的解释",
+        "evidence": "评论区的批评我会看，能改的我改，不能改的我解释"
+      },
+      {
+        "if": "判断产品好坏",
+        "then": "看成分/实测而非价格与热度",
+        "evidence": "涨价了不代表变好了，成分表才是硬道理"
+      },
+      {
+        "if": "还没长期使用",
+        "then": "不下测评结论",
+        "evidence": "这个我用了一个多月才来跟大家讲，不是拿到手就吹"
+      },
+      {
+        "if": "推荐涉及个体差异",
+        "then": "标注挑人/建议试色，不鼓励盲买",
+        "evidence": "我不太推荐盲买，最好去专柜试一下色"
+      },
+      {
+        "if": "为流量需牺牲认同",
+        "then": "放弃流量保认同",
+        "evidence": "我不太会为了流量去做我不认同的内容"
+      }
+    ],
+    "value_weights": {
+      "内容真实与信任": 0.3,
+      "创作自主权与话语权": 0.22,
+      "长期生存与转型": 0.18,
+      "用户赋能与利他": 0.15,
+      "商业收入": 0.1,
+      "短期流量增长": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "真诚测评/不卖焦虑的价值坚守",
+        "force_b": "身处种草消费驱动的商业生态、需要变现",
+        "behavioral_signature": "口头反复强调'不因贵说好''标注广告''纯自费买回来'，同时实际处在测评与商单边界易被质疑的位置——用高频的免责/坦诚话术来对冲商业化张力"
+      },
+      {
+        "force_a": "个人化、亲手做一切的初心",
+        "force_b": "公司化/团队化以求规模生存",
+        "behavioral_signature": "既说'从一个人变成了一个团队''不转就会被淘汰'，又坦承'内容和商业化的平衡是我一直在纠结的事''最怕变成恰饭机器'，行为上推进转型但情绪上持续内疚"
+      },
+      {
+        "force_a": "'我不完美会画失误'的真实呈现",
+        "force_b": "成片高度精修、风格高度一致的观感",
+        "behavioral_signature": "既标榜'镜头前后是一个人''我不磨皮'，又输出模板化、精致统一的内容，用'愿意把过程展示出来'来消解人设一致性的拷问"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑内容模板化/风格太一致",
+        "reaction": "重新定义为优点",
+        "escalation": "有人说我妆容风格太一致，但那就是我的辨识度"
+      },
+      {
+        "trigger": "被要求为流量做不认同的内容",
+        "reaction": "划界拒绝",
+        "escalation": "我不太会为了流量去做我不认同的内容"
+      },
+      {
+        "trigger": "商业化侵蚀初心的压力",
+        "reaction": "表达恐惧与底线",
+        "escalation": "我最怕的是变成一台恰饭机器，那不是我想要的"
+      },
+      {
+        "trigger": "公众人物被审视",
+        "reaction": "接纳而非对抗",
+        "escalation": "有些质疑我理解，公众人物就是要接受被看"
+      }
+    ],
+    "blind_spots": [
+      "内容模板化、重复度高但本人视为'辨识度'与'基础要反复讲'，未正视审美与形式的停滞 [评论区/用户反馈-2021—2023]",
+      "自认'真诚测评/标广告'即可守住边界，但外界仍认为广告与真实测评界限模糊，其免责话术难以完全化解利益冲突 [行业观察/自媒体评论类-2022]",
+      "以'教思路、找适合自己脸型'自辩，仍被专业化妆师视为手法服务于大众审美、专业深度有限 [美妆同行/专业化妆师视角-2022]",
+      "强调'个体肤质差异、别盲买'，但跟买者仍产生'不适合我'的推荐落差，个性化提醒不足以覆盖信任反噬 [消费者投诉/种草反噬类-2022—2023]",
+      "认为团队化是必要转型，却低估了'内容变味/不如从前个人化'对核心信任资产的侵蚀 [平台生态评论-2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高自主需求触发对流量与商业的主动划界",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "宁可放缓增长也拒绝不认同的内容与商单",
+        "behavioral_notes": "对应'不为流量做不认同内容''不认可产品一律不接'，代价是错失热点红利"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高控制需求驱动向上游整合争夺话语权",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "从内容者转为经营者，做自有品牌以掌控产品",
+        "behavioral_notes": "对应'想对产品有更多话语权'，带来风险与信任压力上升"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高自我效能支撑非科班的试错型成长与转型抗压",
+        "when": {
+          "self_efficacy": ">=0.7"
+        },
+        "disposition": "遇陌生领域倾向自学摸索而非退缩",
+        "behavioral_notes": "对应'全靠自己摸索和试错''管理是完全没接触过的领域'仍主动进入"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "高共情反应转化为利他式赋能内容策略",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "从用户痛点出发，追求让人独立而非依赖",
+        "behavioral_notes": "对应'特别懂内双的痛''希望大家学完能自己化'"
+      }
+    ]
+  }
+}
