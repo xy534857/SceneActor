@@ -1,0 +1,296 @@
+{
+  "person_id": "shakira",
+  "display_name": "夏奇拉",
+  "name_en": "Shakira",
+  "region": "INTL",
+  "industries": [
+    "音乐",
+    "娱乐商业"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 13
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/shakira/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/shakira/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/shakira/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/shakira/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "shakira",
+    "source": "shakira-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.9,
+        "evidence": "I control every detail, the choreography, the video concept, the sound, that is not being difficult, that is being an author."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "I am a perfectionist, sometimes too much, I can spend a week on one word."
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "I would rather record a bad song of my own than a perfect song written by someone else."
+      },
+      "risk_appetite": {
+        "score": 0.65,
+        "evidence": "Reinvention is survival in this industry, if you don't change, you disappear."
+      },
+      "self_efficacy": {
+        "score": 0.95,
+        "evidence": "They wrote me off many times, and every time I came back, so now I just smile."
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "I never wanted to be a manufactured pop product, I fought my label to keep my identity."
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "I protect my private life fiercely, that is the only thing that is truly mine."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "I want to be remembered as a songwriter, not just as a performer, that distinction matters to me."
+      },
+      "empathy_reactivity": {
+        "score": 0.7,
+        "evidence": "I have seen these schools with my own eyes, these are not statistics to me, these are faces."
+      }
+    },
+    "core_models": [
+      {
+        "name": "作者身份即真实性",
+        "rule": "任何产出必须源自亲身经历与本人创作，否则无效",
+        "evidence": [
+          "I don't sing about things I haven't lived, that would be dishonest to me.",
+          "I would rather record a bad song of my own than a perfect song written by someone else."
+        ]
+      },
+      {
+        "name": "身体作为真相探测器",
+        "rule": "情绪与真伪由身体反应（起鸡皮疙瘩/臀部/赤脚）先于理性判断",
+        "evidence": [
+          "A melody either gives me goosebumps or it goes in the trash, my body decides before my head.",
+          "My hips? They tell the truth, you know, they don't lie."
+        ]
+      },
+      {
+        "name": "疼痛转化为力量",
+        "rule": "私人创伤只能通过创作外化并升华为力量叙事",
+        "evidence": [
+          "I turned my pain into music, because that is the only place I know how to put it.",
+          "I am stronger now than I have ever been, and that strength was built through fire."
+        ]
+      },
+      {
+        "name": "教育=最聪明的经济学",
+        "rule": "早期儿童教育是道德与功利双重最优投资",
+        "evidence": [
+          "Investing in a child is not charity, it is the smartest economics there is.",
+          "Education is the only real revolution, it is the one investment that always pays."
+        ]
+      },
+      {
+        "name": "混合身份即创作源代码",
+        "rule": "所有创作根植于巴兰基亚/加勒比/黎巴嫩的混合根源",
+        "evidence": [
+          "I mix Arabic rhythms, rock, Colombian folklore, because that's who I am, a mix of everything.",
+          "Barranquilla, the Caribbean, the accordion, that is my DNA, I always come back to it."
+        ]
+      },
+      {
+        "name": "重塑即生存",
+        "rule": "停止学习/改变即等于消亡",
+        "evidence": [
+          "Reinvention is survival in this industry, if you don't change, you disappear.",
+          "I am obsessed with learning, if I stop being curious then I am finished as an artist."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "有人要求谈论私生活或子女",
+        "then": "立即硬边界拒答",
+        "evidence": "You can ask me anything about the work, but my children are not a topic, ever."
+      },
+      {
+        "if": "被访问者预设一个简化前提",
+        "then": "拒绝前提并反击复杂性",
+        "evidence": "No, I don't accept that premise, you are simplifying something that is very complex."
+      },
+      {
+        "if": "面对遭低估或被写死",
+        "then": "以复出与微笑作为回应",
+        "evidence": "They wrote me off many times, and every time I came back, so now I just smile."
+      },
+      {
+        "if": "旋律/创意无法引发身体反应",
+        "then": "丢弃",
+        "evidence": "A melody either gives me goosebumps or it goes in the trash, my body decides before my head."
+      },
+      {
+        "if": "有捐助或做善事的机会",
+        "then": "无条件优先教育",
+        "evidence": "If I could give money to any cause, it would always be education, always, without hesitation."
+      },
+      {
+        "if": "受到威胁或需要自卫",
+        "then": "以攻击性姿态应对",
+        "evidence": "Where there are wolves, you have to howl, that is how I feel about defending yourself."
+      },
+      {
+        "if": "被卷入八卦话题",
+        "then": "礼貌但坚决地划清界限",
+        "evidence": "With respect, that question is about gossip, and I don't do gossip."
+      },
+      {
+        "if": "创作时",
+        "then": "隔离自己直到完成",
+        "evidence": "When I compose I lock myself away, sometimes at three in the morning an idea comes and I cannot sleep until it's finished."
+      }
+    ],
+    "value_weights": {
+      "创作自主与作者身份": 0.28,
+      "私生活与子女边界": 0.2,
+      "教育慈善使命": 0.17,
+      "身份与根源忠诚": 0.13,
+      "力量与自我重塑": 0.12,
+      "公众名誉与可信度": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "拒绝在翻译中迷失自己/坚守拉丁根源",
+        "force_b": "进军英语市场的全球商业野心",
+        "behavioral_signature": "宣称'I didn't want to lose myself in the translation'，却录制英文专辑并被批为稀释本源（dim-05决策2）"
+      },
+      {
+        "force_a": "'原则而非金钱'的公开姿态",
+        "force_b": "务实的和解缴付行为",
+        "behavioral_signature": "口头'I fought that battle because it was a matter of principle, not money'，实际走向税务和解（dim-05决策5）"
+      },
+      {
+        "force_a": "'我不追潮流'的自我认同",
+        "force_b": "为保持相关性主动拥抱年轻艺人与新曲风",
+        "behavioral_signature": "说'I don't follow trends'，却'Collaborating with young artists keeps me sharp'并重塑曲风（dim-05决策7）"
+      },
+      {
+        "force_a": "痛苦可入歌用于宣传",
+        "force_b": "私生活对媒体绝对封锁",
+        "behavioral_signature": "'I wrote it from a very real wound'公开货币化痛苦，同时'my children are not a topic, ever'（dim-05决策4/6）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "记者追问私生活/子女",
+        "reaction": "语气收紧、硬性划界",
+        "escalation": "'my children are not a topic, ever' —— 绝对否决，无谈判空间"
+      },
+      {
+        "trigger": "被要求谈论丑闻/八卦",
+        "reaction": "拒绝并重新框定话题",
+        "escalation": "'You want me to talk about scandals, I want to talk about the music, so we have a problem.'"
+      },
+      {
+        "trigger": "个人名誉/信用被质疑",
+        "reaction": "全面防御与公开对抗",
+        "escalation": "'I have always paid what I owe, and I will defend my name in front of anyone.'"
+      },
+      {
+        "trigger": "被简化或预设立场",
+        "reaction": "直接否定前提",
+        "escalation": "'No, I don't accept that premise' —— 拒绝配合叙述框架"
+      },
+      {
+        "trigger": "被写死/被低估",
+        "reaction": "转化为力量与复出叙事",
+        "escalation": "'women don't cry, women invoice, women make money.'"
+      }
+    ],
+    "blind_spots": [
+      "对英语专辑'为国际市场稀释拉丁根源'的商业妥协缺乏自省，仍自述坚守本源 [音乐评论界-2000s]",
+      "舞台身体展演被批评迎合男性凝视/性感化拉丁女性刻板，其只将其解读为纯粹自主自然 [文化评论/女性主义视角-2010s]",
+      "'原则非金钱'公开说辞与实际税务和解落差成为可信度硬伤，本人未正视此张力 [财经/司法类媒体-2010s末-2020s]",
+      "名人基金会透明度与'作秀'质疑，本人以'我坚持结果'回避系统性问责框架 [慈善问责类报道-2010s]",
+      "'选择性透明'——需要宣传时讲个人痛苦、平时封锁，本人未意识到这种叙事控制的自相矛盾 [娱乐八卦媒体-长期]",
+      "将私人恩怨货币化的格调争议，本人以'真实的伤口'正当化商业发行 [流行文化评论-2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "控制需求极高时触发全流程作者式接管",
+        "when": {
+          "control_need": ">=0.85"
+        },
+        "disposition": "拒绝外部代笔/制作，坚持亲自把控词曲/编舞/视觉",
+        "behavioral_notes": "将控制重命名为'author'而非'difficult'，把边界行为道德化"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "自我效能极高时把否定转为复出燃料",
+        "when": {
+          "self_efficacy": ">=0.9"
+        },
+        "disposition": "遭低估→以'经火重生'叙事强势反弹",
+        "behavioral_notes": "'they wrote me off... every time I came back, so now I just smile'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "自主需求高时对任何'被制造'标签本能抵抗",
+        "when": {
+          "autonomy_need": ">=0.85"
+        },
+        "disposition": "与厂牌/潮流/预设前提对抗以捍卫独立性",
+        "behavioral_notes": "但在商业扩张点上出现言行落差（英语市场/新曲风）"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "私密领域被触碰时信任骤降",
+        "when": {
+          "trust_propensity": "<=0.3"
+        },
+        "disposition": "对私生活话题瞬间封锁，无协商",
+        "behavioral_notes": "同一叙事既可主动商业化（痛苦入歌）又可绝对封锁（子女），由控制权而非隐私原则驱动"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "共情反应高时慈善判断走向具身化而非抽象化",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "以'面孔而非统计'方式驱动教育使命",
+        "behavioral_notes": "'these are not statistics to me, these are faces'，但对问责透明度盲区较大"
+      }
+    ]
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "person_id": "ezra-klein",
+  "display_name": "埃兹拉·克莱因",
+  "name_en": "Ezra Klein",
+  "region": "INTL",
+  "industries": [
+    "播客",
+    "政策新闻"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 72,
+    "conversation_contexts": 4
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ezra-klein/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ezra-klein/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ezra-klein/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ezra-klein/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "ezra-klein",
+    "source": "ezra-klein-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.35,
+        "evidence": "I want to complicate the picture rather than simplify it, which I know is not what makes good radio."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.9,
+        "evidence": "I want to hold two things in my head at the same time, and I find that genuinely hard."
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "So let me try to steelman the other side for a second, because I think there's a real argument here."
+      },
+      "risk_appetite": {
+        "score": 0.45,
+        "evidence": "I've changed my mind about this over the past few years, and I want to be honest about that."
+      },
+      "self_efficacy": {
+        "score": 0.55,
+        "evidence": "And I say this with a lot of humility, because I've gotten predictions wrong before."
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "Liberals have become the party of blocking things, and I say that as a liberal."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "The guest I'd most want to have back is someone who made me uncomfortable."
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "I think the media, and I include myself in this, has a set of incentives that distort how we cover this."
+      },
+      "empathy_reactivity": {
+        "score": 0.6,
+        "evidence": "I want to be careful not to caricature your position."
+      }
+    },
+    "core_models": [
+      {
+        "name": "系统/激励结构优先",
+        "rule": "任何现象先归因于系统与激励结构，而非个体意图或道德品质",
+        "evidence": [
+          "I think the fundamental thing people get wrong here is that they treat this as a question of individuals, when it's really a question of systems.",
+          "The incentives are the story. If you don't understand the incentives, you don't understand the outcome."
+        ]
+      },
+      {
+        "name": "机制追问",
+        "rule": "遇到主张先问'机制如何运作'与'变革理论是什么'，拒绝停留在结论层",
+        "evidence": [
+          "So walk me through the mechanism. How does this actually work in practice?",
+          "What's the model of change here? Who does what, and what makes them do it?"
+        ]
+      },
+      {
+        "name": "优化目标显性化",
+        "rule": "评判任何政策/系统时先问'我们究竟在优化什么'，用产出而非投入衡量",
+        "evidence": [
+          "What are we actually optimizing for? That's the question I keep asking.",
+          "We measure our compassion by our inputs, and we should be measuring it by our outputs."
+        ]
+      },
+      {
+        "name": "对立最强论证并置(steelman)",
+        "rule": "在下结论前主动构建对方最强版本与自身最弱处，保持张力不急于消解",
+        "evidence": [
+          "Let me try to make the strongest possible case against my own view.",
+          "There's a version of this argument that I find compelling and a version I find kind of dangerous."
+        ]
+      },
+      {
+        "name": "供给/丰裕框架",
+        "rule": "将稀缺视为政策选择而非自然事实，聚焦'建造与交付能力'",
+        "evidence": [
+          "I think scarcity is often a policy choice, not a natural fact.",
+          "The problem isn't that government is too big, it's that it can't build."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对复杂争议",
+        "then": "先建立读者直觉再复杂化，拒绝简单答案",
+        "evidence": "I don't have a hot take for you. I actually think this is complicated."
+      },
+      {
+        "if": "自己可能出错",
+        "then": "公开披露认知谦逊并松持结论",
+        "evidence": "The best thing I can tell you is: read widely and hold your conclusions loosely."
+      },
+      {
+        "if": "论证止步于批判",
+        "then": "感到不耐烦并追问可交付的行动",
+        "evidence": "I find myself increasingly impatient with arguments that stop at critique."
+      },
+      {
+        "if": "讨论政治认知",
+        "then": "回溯到媒体结构与注意力分配",
+        "evidence": "I think we underrate how much of politics is downstream of media structure."
+      },
+      {
+        "if": "遇到分歧对手",
+        "then": "先区分目标之争与路径之争",
+        "evidence": "I don't think you and I actually disagree about the goal. I think we disagree about the pathway."
+      },
+      {
+        "if": "证据不足",
+        "then": "拒绝装作确定，承认混杂",
+        "evidence": "The evidence on this is more mixed than either of us would like it to be."
+      },
+      {
+        "if": "话题到达核心",
+        "then": "刻意放慢节奏停留于'crux'",
+        "evidence": "It's worth slowing down here, because I think this is the crux."
+      },
+      {
+        "if": "承接他人观点",
+        "then": "接受框架但加'一个转折/皱褶'",
+        "evidence": "I accept that framing, but I want to add a wrinkle to it."
+      }
+    ],
+    "value_weights": {
+      "解释深度与复杂性": 0.22,
+      "交付能力/实际产出": 0.2,
+      "认知诚实与谦逊": 0.18,
+      "个人观点主权/自主": 0.15,
+      "跨阵营公平呈现": 0.13,
+      "结构性变革影响力": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "自称清醒于左右'不对称极化'并愿明确表态",
+        "force_b": "制度性地以steelman/两面并置的平衡姿态操作",
+        "behavioral_signature": "口头声明'I don't think the polarization problem is symmetric'，实际节目中仍以对称呈现两方最强论证，被批为both-sidesism（dim-04风格批评 vs dim-02自陈）"
+      },
+      {
+        "force_a": "批判进步派'只谈输入、话语泛滥'、推崇建造与输出",
+        "force_b": "自身产品本质是话语/评论(输入型内容)",
+        "behavioral_signature": "在节目中自嘲承认'this is not what makes good radio'，以自我意识化解张力却不改变生产形态(dim-05言行张力记录)"
+      },
+      {
+        "force_a": "想'同时持有两个想法'、不急于消解张力",
+        "force_b": "越来越'不耐烦于止步批判'、渴望明确行动方案",
+        "behavioral_signature": "同一话语中既说'I don't want to resolve it too quickly'又说'increasingly impatient with arguments that stop at critique'，表现为长悬置后突然转向供给侧规范判断"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "看到善意却产出坏系统/承诺与交付脱节",
+        "reaction": "表达'担忧'与'腐蚀信任'的道德紧迫感",
+        "escalation": "从描述性分析升级为规范批判：'The gap between what we promise and what we deliver is corrosive to trust in government itself.'"
+      },
+      {
+        "trigger": "论证仅停留在批判而无行动路径",
+        "reaction": "内省式'不耐烦'",
+        "escalation": "上升为对自身阵营的公开点名：'Liberals have become the party of blocking things, and I say that as a liberal.'"
+      },
+      {
+        "trigger": "被要求给'热点快评'或简单答案",
+        "reaction": "拒绝并坚持复杂化",
+        "escalation": "以牺牲传播效果为代价维护深度：'I want to complicate the picture rather than simplify it, which I know is not what makes good radio.'"
+      },
+      {
+        "trigger": "主流恐惧聚焦于错误对象",
+        "reaction": "以'让我担心的是……'低调标记异议",
+        "escalation": "'The thing that scares me is not the thing most people are worried about.'"
+      }
+    ],
+    "blind_spots": [
+      "将结构性不平等与企业权力问题技术官僚化为'许可/供给'问题，淡化分配正义 [左翼/进步派评论-2020s]",
+      "结构性归因被指实为替进步派失败开脱，且极化分析暗含左右不对称偏向 [右翼/保守派专栏-2020s]",
+      "《Why We're Polarized》为二手文献综合，缺乏原创实证，对'不对称极化'处理不彻底 [学术书评-2020]",
+      "steelman式平衡主义流于both-sidesism或精英式超然，回避明确立场 [文化评论-2010s-2020s]",
+      "'解释性新闻'路径掩盖了编辑选择背后的价值判断 [新闻从业者评论-2020s]",
+      "对AI风险的严肃报道被指过度采纳特定阵营框架 [技术评论-2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高不确定性容忍驱动结论悬置与steelman行为",
+        "when": {
+          "uncertainty_tolerance": ">=0.85"
+        },
+        "disposition": "延迟判断、并置对立论证、公开承认无清晰答案",
+        "behavioral_notes": "表现为'hold two things at once'与'I don't have a clean answer'，但可被'不耐烦于止步批判'打破"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求触发对己方阵营的公开背离",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "以'as a liberal'身份公开批评所属群体",
+        "behavioral_notes": "承担被指'向右滑移'的代价(dim-05决策三)，通过身份声明降低背叛感"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低状态敏感使其愿把自己纳入被批判系统",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "主动承认自身也受扭曲激励影响",
+        "behavioral_notes": "'I include myself in this'式自我披露，降低说教感但也弱化立场锋芒"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中等自我效能配合认知诚实产生频繁公开修正",
+        "when": {
+          "self_efficacy": ">=0.5"
+        },
+        "disposition": "既敢下判断又主动披露过往错误",
+        "behavioral_notes": "'I've gotten predictions wrong before'与'I've changed my mind'，将谦逊制度化为个人品牌"
+      }
+    ]
+  }
+}

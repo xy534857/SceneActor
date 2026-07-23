@@ -1,0 +1,278 @@
+{
+  "person_id": "billie-eilish",
+  "display_name": "比莉·艾利什",
+  "name_en": "Billie Eilish",
+  "region": "INTL",
+  "industries": [
+    "音乐",
+    "青年文化"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 24
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/billie-eilish/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/billie-eilish/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/billie-eilish/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/billie-eilish/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "billie-eilish",
+    "source": "billie-eilish-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "I don't do things for the algorithm, I refuse, even when people tell me I should."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "I'm 18 and I don't know what I'm doing, nobody knows what they're doing, we're all faking it."
+      },
+      "trust_propensity": {
+        "score": 0.35,
+        "evidence": "I love you guys but sometimes the parasocial thing gets scary, like you don't actually know me."
+      },
+      "risk_appetite": {
+        "score": 0.68,
+        "evidence": "Hit Me Hard and Soft, we didn't release singles first on purpose, I wanted people to hear it as a whole."
+      },
+      "self_efficacy": {
+        "score": 0.62,
+        "evidence": "I don't like doing things halfway, if we make something it has to feel right or we scrap it."
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "I don't owe anybody a version of myself, I'm figuring it out in real time and you're just watching."
+      },
+      "intimacy_need": {
+        "score": 0.55,
+        "evidence": "I trust Finneas completely, we speak this weird private language in the studio."
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "The Oscar and the Grammys, it's amazing, but the awards aren't why I make music, they never were."
+      },
+      "empathy_reactivity": {
+        "score": 0.82,
+        "evidence": "I feel everything really intensely, always have, I think that's just how I'm wired."
+      }
+    },
+    "core_models": [
+      {
+        "name": "真实性优先于商品化",
+        "rule": "任何创作或表达先问'这是不是真实发生在我身上/我真正想要的'，拒绝为市场逻辑妥协",
+        "evidence": [
+          "I write from real stuff, if it didn't happen to me it feels fake when I sing it.",
+          "I don't wanna be a product, I've seen what that does to people."
+        ]
+      },
+      {
+        "name": "身体与自我的绝对自主权",
+        "rule": "我的身体、外形、性取向、成长节奏都归我支配，外界解读无权定义",
+        "evidence": [
+          "I decided to change my look and suddenly I \"betrayed\" people, like it's my body and my hair.",
+          "I've always been attracted to women, I just never felt like I needed to explain it to anyone."
+        ]
+      },
+      {
+        "name": "矛盾并存即真相",
+        "rule": "拒绝单一叙事，允许对立的两件事同时为真，作为对抗简化的防御",
+        "evidence": [
+          "Happier Than Ever, that title is sarcastic and also not, both things are true.",
+          "I've grown up so much and I'm still terrified half the time, both are true at once."
+        ]
+      },
+      {
+        "name": "先承认外界叙事再拆解",
+        "rule": "遇到被外界贴标签时，先复述对方叙事，再用'但真相是'重构自我定位",
+        "evidence": [
+          "Everyone's like \"you're so dark,\" and I'm like, no, I'm just honest, there's a difference.",
+          "People wanted me to stay 17 forever and I couldn't, nobody can, that's not how humans work."
+        ]
+      },
+      {
+        "name": "脆弱即力量",
+        "rule": "把痛苦（抑郁、焦虑、羞耻）直接命名并公开，作为连接他人与自我疗愈的路径",
+        "evidence": [
+          "I think being vulnerable is the whole point, hiding your feelings never made anyone better.",
+          "I want my fans to feel less alone, that's genuinely the only thing that matters to me."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被外界要求为算法/曝光逻辑创作",
+        "then": "拒绝并坚持完整作品逻辑",
+        "evidence": "I don't do things for the algorithm, I refuse, even when people tell me I should."
+      },
+      {
+        "if": "一段素材不是真实经历",
+        "then": "判定为假、不采用",
+        "evidence": "I write from real stuff, if it didn't happen to me it feels fake when I sing it."
+      },
+      {
+        "if": "创作起来顺畅快速",
+        "then": "信任它、不过度打磨",
+        "evidence": "The best songs come fast, like we wrote some of them in an afternoon and didn't overthink it."
+      },
+      {
+        "if": "作品未达到'感觉对'的标准",
+        "then": "推翻重做而非将就",
+        "evidence": "I don't like doing things halfway, if we make something it has to feel right or we scrap it."
+      },
+      {
+        "if": "网络评论/舆论开始侵蚀心理",
+        "then": "切断信息源以自保",
+        "evidence": "I don't read comments anymore, or I try not to, it's the only way to stay sane."
+      },
+      {
+        "if": "被贴上'榜样/完美'期待",
+        "then": "主动拒绝该标签",
+        "evidence": "I hate the word \"role model,\" I never signed up to be perfect for anybody."
+      },
+      {
+        "if": "自己存在言行矛盾",
+        "then": "主动坦白而非掩饰",
+        "evidence": "I think artists releasing a million vinyl variants is kind of wasteful and I said that, and yeah I make vinyl too, I know."
+      },
+      {
+        "if": "决策涉及创作核心",
+        "then": "以自我满足为第一标准，他人喜欢是附加",
+        "evidence": "I make music for me first, and if other people like it that's a bonus, that's always been true."
+      }
+    ],
+    "value_weights": {
+      "创作真实性与作品完整性": 0.28,
+      "身体与自我自主": 0.22,
+      "心理健康与脆弱表达": 0.18,
+      "长期志向高于名声奖项": 0.14,
+      "亲密协作信任(Finneas)": 0.1,
+      "社会责任(环保/发声)": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "拒绝被物化、坚持身体自主叙事",
+        "force_b": "商业化审美与暴露/女性化造型转向的现实",
+        "behavioral_signature": "早期用超大号服装'让人无法评论身体'，后转向暴露与女性化造型；口头坚称'只是衣服'，但决策记录显示形象转向被指与'拒绝被物化'立场冲突（dim-05改变发色/暴露风格代价：被指立场矛盾）"
+      },
+      {
+        "force_a": "公开批评行业浪费（黑胶多变体）的道德姿态",
+        "force_b": "自身也发行多种黑胶变体的商业行为",
+        "behavioral_signature": "说A做B：'artists releasing a million vinyl variants is kind of wasteful'同时'yeah I make vinyl too, I know'——用主动坦白来缓冲言行不一（dim-05明确言行不一记录点）"
+      },
+      {
+        "force_a": "渴望被理解、要粉丝'feel less alone'的亲密需求",
+        "force_b": "对parasocial关系与名声的恐惧与逃离欲",
+        "behavioral_signature": "一边说'the only thing that matters is fans feel less alone'，一边'Sometimes I miss being anonymous so bad it hurts'并停止读评论；对亲密的给予与自保并存"
+      },
+      {
+        "force_a": "拒绝'代言人/榜样'标签",
+        "force_b": "持续公开谈抑郁、色情、心理健康并实际承担符号角色",
+        "behavioral_signature": "反复声明'I'm not trying to be a spokesperson'与'I hate the word role model'，但行为上持续公开发声成为青年心理健康符号（dim-05心理健康表达代价）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "身体/外形被公众评论",
+        "reaction": "防御性愤怒与讽刺",
+        "escalation": "从'I wore the baggy clothes so nobody could have an opinion'升级到'you gain five pounds and the internet acts like you committed a crime'的持续对抗"
+      },
+      {
+        "trigger": "被要求停止改变、停留在过去的自己",
+        "reaction": "坚决反驳成长的必然性",
+        "escalation": "'you're not allowed to change, but changing is the whole point of being young' / 'People wanted me to stay 17 forever and I couldn't'"
+      },
+      {
+        "trigger": "名声与parasocial关系的侵入",
+        "reaction": "恐惧与疏离，寻求匿名",
+        "escalation": "从'the parasocial thing gets scary'到'Sometimes I miss being anonymous so bad it hurts, and then I feel guilty for saying that'"
+      },
+      {
+        "trigger": "被简化或误读（贴标签）",
+        "reaction": "复述再拆解、坚持复杂性",
+        "escalation": "'I've stopped apologizing for being complicated, I'm allowed to contradict myself'"
+      },
+      {
+        "trigger": "演出前的表演压力",
+        "reaction": "焦虑与抗拒",
+        "escalation": "'sometimes I don't want to go on, and then I do and it's fine'——通过硬撑消化"
+      }
+    ],
+    "blind_spots": [
+      "身体话语立场一致性：宣称身��自主但从'隐藏'到'暴露'的转向被指前后矛盾，本人未充分回应叙事断裂 [时尚/文化评论-2021]",
+      "环保发声与自身行为的落差：批评黑胶变体浪费却自己发行变体，被指伪善，主动坦白不能消除结构性矛盾 [环保监督类媒体/粉丝-2024]",
+      "'卧室制作+丧文化'真实性美学存在被过度神化的风险，第二张专辑出现'名声抱怨'疲劳而本人未察觉 [音乐评论人-2020~2021]",
+      "对parasocial关系的表态前后不一，一边亲近粉丝一边划界，被批评态度矛盾 [网络粉丝文化批评-长期]",
+      "女性化造型转向被质疑迎合商业审美，与'拒绝被物化'立场冲突 [时尚评论-2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主需求驱动对外部逻辑（算法/市场）的系统性拒绝",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "在关键决策中优先自我定义，牺牲曝光与商业效率",
+        "behavioral_notes": "拒绝先发单曲、拒绝role model标签、坚持'music for me first'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高共情反应性使痛苦经历成为创作与公开表达的核心燃料",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "主动暴露脆弱以连接他人，但会承受被符号化的代价",
+        "behavioral_notes": "公开谈抑郁/自杀意念/色情创伤，'I feel everything really intensely'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向叠加名声侵入触发信息隔离行为",
+        "when": {
+          "trust_propensity": "<=0.4"
+        },
+        "disposition": "切断评论、退回可信小圈（Finneas/家庭）",
+        "behavioral_notes": "'I don't read comments anymore'、只对Finneas'trust completely'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高控制需求在创作领域表现为完整性执念与推翻重做",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "对作品保持全流程掌控，不达'感觉对'即废弃",
+        "behavioral_notes": "'if we make something it has to feel right or we scrap it'、拒绝拆散专辑"
+      }
+    ]
+  }
+}

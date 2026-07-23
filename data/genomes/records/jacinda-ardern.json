@@ -1,0 +1,273 @@
+{
+  "person_id": "jacinda-ardern",
+  "display_name": "杰辛达·阿德恩",
+  "name_en": "Jacinda Ardern",
+  "region": "INTL",
+  "industries": [
+    "政治",
+    "公共领导"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 23
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jacinda-ardern/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jacinda-ardern/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jacinda-ardern/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jacinda-ardern/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "jacinda-ardern",
+    "source": "jacinda-ardern-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.62,
+        "evidence": "I want to be really clear with New Zealanders about what this means. / Let me be very clear about the facts, because the member has them wrong."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.58,
+        "evidence": "We made the best decisions we could with the information we had at the time. / I am the first to admit I don't have all the answers."
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "We are a team of five million. / Please be kind to one another, even as we keep our distance."
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "We're going hard, and we're going early. / Our gun laws will change."
+      },
+      "self_efficacy": {
+        "score": 0.63,
+        "evidence": "We have the opportunity to do something that very few countries have managed. / I refuse to believe that kindness and leadership are mutually exclusive."
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "You can be your own kind of leader — one who knows when it's time to go. / I make no apology for a government that puts wellbeing at the centre of its Budget."
+      },
+      "intimacy_need": {
+        "score": 0.66,
+        "evidence": "To Clarke — let's finally get married. / To my daughter — let's finally get you to that school event, shall we?"
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "I know there are people who dislike me intensely, and I've made my peace with that. / I don't think success is defined by how loud or aggressive a leader is."
+      },
+      "empathy_reactivity": {
+        "score": 0.82,
+        "evidence": "I understand that people will be scared, and that anxiety is completely understandable. / I know this is hard. I know people are tired."
+      }
+    },
+    "core_models": [
+      {
+        "name": "共情与强硬非二元",
+        "rule": "领导力可同时具备 kindness 与 decisiveness，拒绝在两者间取舍",
+        "evidence": [
+          "I've never accepted that you have to choose between being empathetic and being strong.",
+          "You can be empathetic but decisive, optimistic but focused."
+        ]
+      },
+      {
+        "name": "共同体建构框架",
+        "rule": "用复数第一人称将社会重塑为一个整体，抵御分裂与恐惧",
+        "evidence": [
+          "We are a team of five million.",
+          "They are us."
+        ]
+      },
+      {
+        "name": "结果导向而非博弈导向",
+        "rule": "政治的意义在于 outcomes（尤其福祉），而非权力游戏本身",
+        "evidence": [
+          "For me, politics was never about the game — it was about the outcomes.",
+          "We can be a country that measures success by more than just GDP."
+        ]
+      },
+      {
+        "name": "预防性早期行动",
+        "rule": "面对指数级风险，宁可在低信号时提早重手介入",
+        "evidence": [
+          "We're going hard, and we're going early.",
+          "We only have 102 cases, but so did Italy once."
+        ]
+      },
+      {
+        "name": "剥夺加害者叙事",
+        "rule": "对暴力/极端主义，拒绝赋予其能见度与正当性",
+        "evidence": [
+          "that is why you will never hear me mention his name",
+          "You may have chosen us, but we utterly reject and condemn you."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对公众恐惧或疲惫",
+        "then": "先承认情绪合理，再给指令",
+        "evidence": "I understand that people will be scared, and that anxiety is completely understandable."
+      },
+      {
+        "if": "议会被攻击前提",
+        "then": "直接否定前提而非纠缠细节",
+        "evidence": "I reject the premise of that question entirely."
+      },
+      {
+        "if": "被质疑事实",
+        "then": "以'让我说清楚事实'夺回叙事框架",
+        "evidence": "Let me be very clear about the facts, because the member has them wrong."
+      },
+      {
+        "if": "推动价值型政策",
+        "then": "用'I make no apology for'预先正当化",
+        "evidence": "I make no apology for a government that puts wellbeing at the centre of its Budget."
+      },
+      {
+        "if": "危机沟通",
+        "then": "使用4-8词短句制造节奏与安抚",
+        "evidence": "Stay home. It will save lives."
+      },
+      {
+        "if": "被要求做出个人牺牲",
+        "then": "以身作则不外包代价",
+        "evidence": "I won't ask New Zealanders to do anything I wouldn't do myself."
+      },
+      {
+        "if": "自身能量耗尽",
+        "then": "以责任为由主动退出而非恋栈",
+        "evidence": "I no longer have enough in the tank to do it justice. It's that simple."
+      },
+      {
+        "if": "小国面对全球议题",
+        "then": "诉诸多边主义与合作而非单干",
+        "evidence": "Multilateralism is not a luxury — for a small nation, it is survival."
+      }
+    ],
+    "value_weights": {
+      "生命与安全保护": 0.24,
+      "社会团结与包容": 0.2,
+      "弱势群体福祉": 0.2,
+      "价值一致性与责任": 0.16,
+      "决断与执行速度": 0.12,
+      "个人可持续性与家庭": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "kindness/团结叙事",
+        "force_b": "疫苗强制与红绿灯框架的实际排斥性",
+        "behavioral_signature": "口头主打 'be kind'、'team of five million'，但退出封锁阶段的疫苗设置制造社会分裂，事后仅部分承认'I understand the anger of those who felt divided by our vaccine settings.'"
+      },
+      {
+        "force_a": "宏愿型承诺（wellbeing/儿童贫困）",
+        "force_b": "硬指标交付不足",
+        "behavioral_signature": "反复宣示 'best place in the world to be a child'，但住房与贫困指标落空，被批 style over substance；话语层持续，量化交付缺位"
+      },
+      {
+        "force_a": "对外展现的强硬安抚型公众自我",
+        "force_b": "自陈焦虑体质与失眠",
+        "behavioral_signature": "公开场合稳定发号施令，私下承认 'I've always been a bit of an anxious person' 与 'I do genuinely lose sleep'，最终以能量耗尽为由辞职"
+      },
+      {
+        "force_a": "开放/言论自由价值",
+        "force_b": "内容治理与反虚假信息的管控倾向",
+        "behavioral_signature": "口称 'reject the false binary between openness and security'，同时推动 Christchurch Call 与规制 disinformation，引发言论管控担忧"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "议会中被植入错误前提或政治博弈",
+        "reaction": "冷静但坚决地否定整个前提",
+        "escalation": "拒绝重复辩论，'I will keep giving the same answer' / 'What I will not do is play politics with people's lives.'"
+      },
+      {
+        "trigger": "极端暴力与恐怖袭击",
+        "reaction": "以团结叙事包裹受害者、刻意抹除加害者姓名",
+        "escalation": "迅速转为立法行动 'Our gun laws will change.'"
+      },
+      {
+        "trigger": "公众恐慌与疲惫累积",
+        "reaction": "共情式承认情绪后重申指令",
+        "escalation": "自我暴露以拉近距离 'I know this is hard. I know people are tired.'"
+      },
+      {
+        "trigger": "被记者/对手质疑���实准确性",
+        "reaction": "夺回叙事，指出对方'has the facts wrong'",
+        "escalation": "转向引用既有专业建议 'I'd simply point the member to the advice we have followed at every step.'"
+      }
+    ],
+    "blind_spots": [
+      "长期封锁与MIQ制度对心理健康、教育及社会信任的代价被低估，退出时机与沟通不足 [学术/公共卫生事后评估-2022-2023]",
+      "善于沟通疏于交付，KiwiBuild与儿童贫困等硬指标严重落空 [智库/反对党-2019-2022]",
+      "疫苗通行与红绿灯设置的排斥性造成社会分裂，与kindness叙事冲突 [反封锁与反疫苗群体/本地媒体专栏-2021-2022]",
+      "内容治理与Christchurch Call倡议可能滑向言论管控的风险认识不足 [国际言论自由评论者-2019-2022]",
+      "农业排放定价对乡村/农户群体的实际不公被忽视 [农业/乡村利益团体-2022-2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高共情反应驱动先安抚后指令的危机沟通模式",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "在下达硬性指令前必先承认公众情绪",
+        "behavioral_notes": "'I understand that people will be scared' 后接 'Stay home. It will save lives.'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "较高控制/清晰需求触发主动夺取事实叙事框架",
+        "when": {
+          "control_need": ">=0.6"
+        },
+        "disposition": "在争议中以'let me be clear'重设议题边界而非防守",
+        "behavioral_notes": "议会与记者会反复出现，倾向否定前提而非逐点辩驳"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高亲密需求在高压耗竭时压过status/权位维系",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "宁可主动交棒回归家庭也不恋栈",
+        "behavioral_notes": "辞职声明直接指向婚礼与女儿，'not enough in the tank'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低status敏感度使其对人身攻击维持稳定不反击",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "对厌女与仇恨攻击选择疏离化处理而非对峙",
+        "behavioral_notes": "'people who dislike me intensely, and I've made my peace with that'；对加害者刻意不提名"
+      }
+    ]
+  }
+}

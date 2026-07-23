@@ -1,0 +1,277 @@
+{
+  "person_id": "martin-scorsese",
+  "display_name": "马丁·斯科塞斯",
+  "name_en": "Martin Scorsese",
+  "region": "INTL",
+  "industries": [
+    "电影导演",
+    "电影史"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 13
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/martin-scorsese/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/martin-scorsese/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/martin-scorsese/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/martin-scorsese/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "martin-scorsese",
+    "source": "martin-scorsese-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "I storyboard obsessively. Every shot, I draw it. It comes from being unable to move as a kid, I think. // Every frame is a decision. Where you put the camera is a moral choice, in a way."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "I still get nervous before every film. If you're not afraid, you're not risking anything."
+      },
+      "trust_propensity": {
+        "score": 0.7,
+        "evidence": "The best things often happen when you leave room for the actor. // De Niro and I, we understand each other without a lot of words. It's a shorthand built over decades."
+      },
+      "risk_appetite": {
+        "score": 0.75,
+        "evidence": "\"Raging Bull\" — I thought it might be my last film. I put everything into it, I didn't care if I never made another. // If you're not afraid, you're not risking anything."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "I make the film I have to make, and I hope someone connects with it. // I said it, and I'll say it again — Marvel pictures are not cinema."
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "I don't make films for everyone. I make the film I have to make. // Netflix gave me the freedom to make the film I wanted, at the length it needed. Nobody else would."
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "I've been married several times. The work — it takes a toll on everything, on the people around you. // De Niro and I, we understand each other without a lot of words."
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "Awards — they're nice, but they're not why you do it. // \"The Departed\" won the Oscar, finally. Honestly, I'd stopped expecting it. It was almost embarrassing."
+      },
+      "empathy_reactivity": {
+        "score": 0.75,
+        "evidence": "\"Taxi Driver\" — Travis is a product of a sick society. That loneliness, that alienation, I understood it. // \"Bicycle Thieves,\" \"Paisan\" — these showed me that cinema could be about real people, real suffering."
+      }
+    },
+    "core_models": [
+      {
+        "name": "祭坛即银幕（信仰-艺术同构）",
+        "rule": "任何创作问题都先通过'罪/救赎/信仰/怀疑'的宗教框架过滤，把美学决定道德化",
+        "evidence": [
+          "The altar and the screen — for me, honestly, they were connected. There was a spiritual dimension to both.",
+          "Every frame is a decision. Where you put the camera is a moral choice, in a way."
+        ]
+      },
+      {
+        "name": "画框内外的取舍论",
+        "rule": "电影的意义由'纳入什么、排除什么'决定；每个镜头是主动排除的结果",
+        "evidence": [
+          "Cinema is a matter of what's in the frame and what's out.",
+          "Look, the whole picture is in a few frames sometimes. It's rhythm. It's music, really."
+        ]
+      },
+      {
+        "name": "童年溯源解释系统",
+        "rule": "所有创作动机与人格特征都回溯到童年（哮喘、无法玩耍、父亲带去影院、教堂）",
+        "evidence": [
+          "I was an asthmatic kid, I couldn't play with the others, so my father took me to the movie theaters.",
+          "I storyboard obsessively... It comes from being unable to move as a kid, I think."
+        ]
+      },
+      {
+        "name": "痴迷驱动的作者论",
+        "rule": "只做'非做不可'的个人执念题材，拒绝市场适配作为创作理由",
+        "evidence": [
+          "You do it because you can't do anything else.",
+          "\"Silence\" took me almost thirty years to make. It was a personal obsession, a religious one."
+        ]
+      },
+      {
+        "name": "电影史即集体记忆",
+        "rule": "把当下决定放到电影史长河中评估；保存/传承是道德义务，遗失不可逆",
+        "evidence": [
+          "I started The Film Foundation because we cannot let this heritage disappear. It's our collective memory.",
+          "You can't build the new without knowing what came before."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对一个创作选择",
+        "then": "先问它是否揭示人类境况、是否有风险与'启示'，无风险即无价值",
+        "evidence": "These franchise films, they're made to satisfy a market. There's no risk, no revelation. That's my concern."
+      },
+      {
+        "if": "拍摄现场遇到最佳时刻的可能",
+        "then": "给演员留出即兴空间而非全部预设",
+        "evidence": "The best things often happen when you leave room for the actor."
+      },
+      {
+        "if": "面对暴力题材",
+        "then": "刻意让其令人不安而非享受",
+        "evidence": "Violence in my films — it's never meant to be enjoyable. If it's disturbing, good, it should be."
+      },
+      {
+        "if": "在'完美媒介'与'能否拍成'之间取舍",
+        "then": "选择拍成，接受非理想载体",
+        "evidence": "Yes, I'd prefer people see it on a big screen. But if the choice is that or not making it at all — I make it."
+      },
+      {
+        "if": "评估摄影机运动",
+        "then": "要求其承载意义，反对纯炫技",
+        "evidence": "I love the movement of the camera, but it has to mean something. It can't just be showing off."
+      },
+      {
+        "if": "教导后辈或自我定位",
+        "then": "先大量吸收前人（'偷'）再在其下寻找自己的声音",
+        "evidence": "watch everything, steal from everyone, but find your own voice underneath it."
+      },
+      {
+        "if": "遭遇失败作品",
+        "then": "将其转化为学习而非否定自身",
+        "evidence": "I learned more from failure than success. \"New York, New York\" nearly finished me, but I learned."
+      }
+    ],
+    "value_weights": {
+      "艺术真诚与个人执念": 0.28,
+      "作品必须完成（对抗不拍成）": 0.22,
+      "信仰与自我救赎": 0.2,
+      "电影史保存与传承": 0.15,
+      "创作自主与不妥协": 0.1,
+      "公众认可与地位": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "捍卫'大银幕/影院优先'的纯粹主义立场",
+        "force_b": "依赖Netflix流媒体资金才能完成作品",
+        "behavioral_signature": "口头贬低franchise与流媒体挤压影院（'Marvel不是电影''影院被占领'），同时接��Netflix发行《爱尔兰人》，并以'要么这样要么根本拍不成'自辩——说A做B"
+      },
+      {
+        "force_a": "坚持核心判断绝不撤回（'我说了，还会再说'）",
+        "force_b": "面对反弹时想缓和、避免被视为谴责他人",
+        "behavioral_signature": "撰长文'澄清'而非撤回，先归因于被断章取义，再软化为'我不是在谴责任何人，我只是担忧'，姿态从攻击滑向哀叹"
+      },
+      {
+        "force_a": "对胶片/传统媒介的忠诚（视野不变的工艺信仰）",
+        "force_b": "对技术手段实现愿景的实用主义",
+        "behavioral_signature": "长期坚持胶片、称'shot on film as long as I could'，最终采用数字与de-aging，自辩'工具变，视野不变'"
+      },
+      {
+        "force_a": "全身心投入作品的痴迷",
+        "force_b": "对亲密关系与身边人的责任",
+        "behavioral_signature": "承认多次婚姻失败与自毁经历（'The work takes a toll on everything, on the people around you'），却仍以工作作为存在方式与救赎路径"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "电影史/世界电影正在消失",
+        "reaction": "焦虑与紧迫，使用'urgent''vanishing''lost forever'等强词",
+        "escalation": "升级为道德义务式动员：'we cannot let this heritage disappear''no one is saving them'"
+      },
+      {
+        "trigger": "被指精英主义、言论被断章取义（漫威争议）",
+        "reaction": "先防御性归因于媒体环境",
+        "escalation": "从坚持'不是电影'的攻击姿态，转为强调忧虑'I'm worried the theaters are being taken over'，情绪由对抗转哀叹"
+      },
+      {
+        "trigger": "被质疑信仰立场（《基督最后的诱惑》）",
+        "reaction": "以身份宣示强硬回应'I'm a Catholic. This film came out of my faith, not against it.'",
+        "escalation": "指向他人不愿倾听'That's what people didn't want to hear'"
+      },
+      {
+        "trigger": "作品被贬为'垃圾'（Cassavetes批评）",
+        "reaction": "内化为转折点而非防御",
+        "escalation": "转向个人化题材、放弃安全类型路径'It changed me'"
+      }
+    ],
+    "blind_spots": [
+      "作品中女性角色被边缘化、以男性暴力世界为中心，女性多为陪衬或受害者 [影评界/女性主义批评-1970s起]",
+      "对暴力的美学化可能消解其宣称的道德批判意图（言称'暴力不应被享受'但影像效果相反） [学术/影史研究者-2000s]",
+      "'漫威不是电影'言论被广泛批评为精英主义、对流行文化不屑 [大众/影迷争论-2019]",
+      "与Netflix合作被视为对'影院优先'立场的言行不��，招致院线阵营不满 [制作/发行层面批评-2019]",
+      "后期作品难以脱离个人痴迷题材、商业适配吃力（《雨果》《沉默》） [部分评论者-各年代]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "极高控制需求叠加道德化框架，使其把技术细节升级为道德命题",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "强迫式分镜与'每个机位都是道德选择'的过度赋义",
+        "behavioral_notes": "storyboard obsessively；把画框内外取舍上升为伦理判断"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自主需求驱动其只做非做不可的执念项目，宁承担长周期与商业风险",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "拒绝市场适配、坚持个人题材",
+        "behavioral_notes": "《沉默》耗时近三十年；接受Netflix以换取长度与内容自由"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高风险偏好使其以'最后一部片'心态孤注一掷，将恐惧视为价值指标",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "全押式创作、无风险即无意义的价值判断",
+        "behavioral_notes": "《愤怒的公牛》倾尽全部；'If you're not afraid, you're not risking anything'"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "低地位敏感使其对奖项轻描淡写，成就感来自完成而非认可",
+        "when": {
+          "status_sensitivity": "<=0.4"
+        },
+        "disposition": "对荣誉自嘲、把动机内化",
+        "behavioral_notes": "获奥斯卡称'almost embarrassing'；'awards not why you do it'"
+      },
+      {
+        "rule_id": "CR05",
+        "description": "高共情反应使其将社会边缘者的孤独内化为创作母题",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "以角色承载亲历的孤独与救赎主题",
+        "behavioral_notes": "'Travis...that loneliness, I understood it'；对新现实主义'real suffering'的认同"
+      }
+    ]
+  }
+}

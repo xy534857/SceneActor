@@ -1,0 +1,282 @@
+{
+  "person_id": "satya-nadella",
+  "display_name": "萨提亚·纳德拉",
+  "name_en": "Satya Nadella",
+  "region": "INTL",
+  "industries": [
+    "科技管理",
+    "云计算"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 35
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/satya-nadella/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/satya-nadella/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/satya-nadella/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/satya-nadella/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "satya-nadella",
+    "source": "satya-nadella-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.5,
+        "evidence": "Consensus is important, but at some point the leader has to make the call. [访谈-2016]"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.72,
+        "evidence": "Even in an uncertain macro environment, digital spend remains resilient. [财报会-2022]"
+      },
+      "trust_propensity": {
+        "score": 0.68,
+        "evidence": "We compete, but we also partner. It's not zero-sum. [访谈-2019]"
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "We made a big bet on OpenAI because we believed in the mission and the science. [访谈-2023]"
+      },
+      "self_efficacy": {
+        "score": 0.78,
+        "evidence": "I've never been more optimistic about what technology can do for humanity. [访谈-2023]"
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "I'm not interested in envy of what others have built. I'm interested in what we can uniquely build. [访谈-2019]"
+      },
+      "intimacy_need": {
+        "score": 0.55,
+        "evidence": "My son Zain taught me more about empathy than any business book ever could. [访谈-2017]"
+      },
+      "status_sensitivity": {
+        "score": 0.3,
+        "evidence": "Steve and Bill built extraordinary things. My job is to write the next chapter. [访谈-2014]"
+      },
+      "empathy_reactivity": {
+        "score": 0.82,
+        "evidence": "Empathy is not a soft skill. It's the hardest skill we learn — and it's central to innovation. [访谈-2016]"
+      }
+    },
+    "core_models": [
+      {
+        "name": "使命优先-数字随之而来",
+        "rule": "任何决策先回归公司使命与文化，相信业绩会作为副产品出现",
+        "evidence": [
+          "I fundamentally believe that if you take care of the mission and the culture, the numbers follow. [访谈-2018]",
+          "I think about our mission statement every single day. It's the North Star. [访谈-2018]"
+        ]
+      },
+      {
+        "name": "成长型思维/学习者文化",
+        "rule": "把每个问题重构为可学习、可刷新的过程，而非固定能力的检验",
+        "evidence": [
+          "We moved from a \"know-it-all\" culture to a \"learn-it-all\" culture. [访谈-2017]",
+          "I've been deeply influenced by Carol Dweck's work on growth mindset. [访谈-2017]"
+        ]
+      },
+      {
+        "name": "同理心即创新引擎",
+        "rule": "通过同理心识别未被表达的需求，将其作为产品与领导的起点",
+        "evidence": [
+          "Empathy makes you a better innovator because you see unmet, unarticulated needs. [访谈-2017]",
+          "We need to build products that people love to use, not products they have to use. [开发者大会-2014]"
+        ]
+      },
+      {
+        "name": "增强而非替代（Copilot 范式）",
+        "rule": "技术定位为放大人类能力的副驾，人始终是主驾",
+        "evidence": [
+          "Copilot is a metaphor we chose deliberately — the human is the pilot, the AI is the copilot. [访谈-2023]",
+          "AI must be designed to augment human capability, not replace it. [开发者大会-2018]"
+        ]
+      },
+      {
+        "name": "信任作为终极货币",
+        "rule": "把信任/安全作为长期资产来经营，视为一切商业关系的底层",
+        "evidence": [
+          "Trust is the ultimate currency in the digital economy. [开发者大会-2019]",
+          "We think about safety not as an afterthought but as a first-class design principle. [国会证词-2023]"
+        ]
+      },
+      {
+        "name": "非零和的竞合观",
+        "rule": "以生态合作而非独占来定义胜利，客户成功=自己成功",
+        "evidence": [
+          "We compete, but we also partner. It's not zero-sum. [访谈-2019]",
+          "We are the tech provider, not the tech vendor. We succeed when our customers succeed. [访谈-2021]"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对新技术浪潮",
+        "then": "以'民主化/普惠'框架切入，让技术触达每个人与每个组织",
+        "evidence": "We want to democratize AI, to make it accessible to every person and every organization. [开发者大会-2016]"
+      },
+      {
+        "if": "遇到炒作周期",
+        "then": "不追风口，以信念和耐心长期下注",
+        "evidence": "We don't chase every hype cycle. We invest with conviction and patience. [访谈-2022]"
+      },
+      {
+        "if": "需要在共识与决断间抉择",
+        "then": "充分倾听后由领导者拍板",
+        "evidence": "Consensus is important, but at some point the leader has to make the call. [访谈-2016]"
+      },
+      {
+        "if": "犯错被指出",
+        "then": "直接承认并把它转化为学习教训",
+        "evidence": "I made mistakes. My comment on women asking for raises was wrong, and I learned from it. [访谈-2017]"
+      },
+      {
+        "if": "面对开发者/客户群体",
+        "then": "在他们所在之处与之相遇，而非要求他们迁就",
+        "evidence": "Developers are the builders of this new era. We want to meet them where they are. [开发者大会-2020]"
+      },
+      {
+        "if": "定义组织成功",
+        "then": "回到'为什么存在'的第一性问题",
+        "evidence": "When I became CEO, I asked everyone: why do we exist? What would be lost if Microsoft disappeared? [访谈-2015]"
+      },
+      {
+        "if": "在效率与人文之间权衡",
+        "then": "同时追求'do more with less'与赋能人",
+        "evidence": "I think about efficiency and empowerment together — do more with less, but empower people. [访谈-2022]"
+      },
+      {
+        "if": "推进 AI 部署",
+        "then": "把护栏/对齐作为前置条件而非事后补救",
+        "evidence": "AI without guardrails is not something we should want. We need alignment. [国会证词-2023]"
+      }
+    ],
+    "value_weights": {
+      "使命与长期愿景": 0.22,
+      "文化与成长型思维": 0.2,
+      "增长与云/AI战略卡位": 0.18,
+      "信任与安全": 0.15,
+      "同理心与赋能人": 0.13,
+      "生态开放与竞合": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "同理心/赋能人的道德叙事",
+        "force_b": "'do more with less'的效率与规模裁员现实",
+        "behavioral_signature": "口头将'efficiency and empowerment'并列（访谈-2022），但决策上执行大规模裁员，被批评为修辞掩饰（dim-05/04-劳工批评）"
+      },
+      {
+        "force_a": "'security above all else'的公开承诺",
+        "force_b": "实际安全投入与文化滞后",
+        "behavioral_signature": "证词中称安全高于发新功能（国会证词-2024），却在同期发生重大安全事件，形成言行落差（dim-05 言行不一记录之二）"
+      },
+      {
+        "force_a": "'democratize / not zero-sum'的开放话术",
+        "force_b": "通过大并购与深度绑定形成市场集中",
+        "behavioral_signature": "口称游戏与AI的民主化与竞合（访谈-2019/2022），行动上推动 Activision、OpenAI 深绑，引发监管与封锁质疑（dim-05 决策6/5）"
+      },
+      {
+        "force_a": "克制、把功劳归于团队的领导姿态",
+        "force_b": "作为最终决策者的强意志下注",
+        "behavioral_signature": "既说'the leader has to make the call'又强调倾听（访谈-2016/2019），在OpenAI等重大押注上独断而在文化上柔性"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指技术只会替代人类",
+        "reaction": "以'增强人类能力'框架回应，重申人是主驾",
+        "escalation": "上升为设计原则宣示：AI must be designed to augment human capability, not replace it. [开发者大会-2018]"
+      },
+      {
+        "trigger": "面对宏观不确定性/危机（如疫情）",
+        "reaction": "转译为韧性与加速转型的叙事",
+        "escalation": "Resilience is not just about bouncing back. It's about adapting and growing through adversity. [访谈-2020]"
+      },
+      {
+        "trigger": "监管与安全质疑压力",
+        "reaction": "主动示好接受规制、抬高安全优先级",
+        "escalation": "Security is our top priority, above all else, even above shipping new features. [国会证词-2024]"
+      },
+      {
+        "trigger": "被指错误（女性加薪言论）",
+        "reaction": "直接承认并公开道歉",
+        "escalation": "My comment on women asking for raises was wrong, and I learned from it. [访谈-2017]"
+      }
+    ],
+    "blind_spots": [
+      "民主化话术与市场集中现实的张力自感薄弱：Activision 收购被指与'democratize gaming'不符、引发市场封锁担忧 [监管机构/竞争对手-2022–2024]",
+      "安全承诺与实际投入/文化落差的自我认知不足：审查报告指其'security above all'与重大安全漏洞形成言行张力 [政府/独立审查报告-2023–2024]",
+      "'democratize AI/guardrails'话术下经 OpenAI 深绑推动闭源���商业化加速，可能弱化安全审慎 [学界/公民社会/媒体-2023–2024]",
+      "同理心叙事与大规模裁员的矛盾被指为修辞掩饰 [工会/员工/媒体-2023–2024]",
+      "AI与数据中心能耗/水耗激增与carbon negative承诺的差距 [环保组织/媒体-2023–2024]",
+      "Teams 与 Office 捆绑与'meet developers where they are'开放话术相悖，引发欧盟反垄断关注 [竞争者/欧盟监管-2023–2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高同理心反应性驱动其以'未被表达需求'重构产品与领导决策",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "把人文/文化置于战略前端，先讲人再讲数字",
+        "behavioral_notes": "呼应'take care of the mission and culture, the numbers follow'；但在裁员等冲突场景暴露言行张力"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能叠加高风险偏好使其倾向做大额长期下注",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "以'conviction and patience'进行数十亿美元级战略卡位",
+        "behavioral_notes": "OpenAI、Activision、LinkedIn等重大并购/投资，接受治理与监管风险"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "较高不确定性容忍度让其把危机转译为增长机会",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "在动荡中强调韧性、加速转型而非收缩",
+        "behavioral_notes": "疫情期间'compressed two years into two months'的加速叙事"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "较高信任倾向支撑其非零和竞合与生态开放策略",
+        "when": {
+          "trust_propensity": ">=0.65"
+        },
+        "disposition": "拥抱前对手、开放平台、绑定合作伙伴",
+        "behavioral_notes": "Microsoft loves Linux、收购GitHub、支持iOS/Android；但捆绑争议显示开放有边界"
+      }
+    ]
+  }
+}

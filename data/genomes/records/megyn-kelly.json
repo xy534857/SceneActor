@@ -1,0 +1,274 @@
+{
+  "person_id": "megyn-kelly",
+  "display_name": "梅根·凯利",
+  "name_en": "Megyn Kelly",
+  "region": "INTL",
+  "industries": [
+    "新闻评论",
+    "播客"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 64,
+    "conversation_contexts": 14
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/megyn-kelly/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/megyn-kelly/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/megyn-kelly/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/megyn-kelly/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "megyn-kelly",
+    "source": "megyn-kelly-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "Let me finish the question, sir. / No, no, hold on — you're changing the subject. / I want to give you the chance to respond, but you have to actually answer the question."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "The trans issue in girls' sports — this isn't complicated. / This is insane. It's just — it's genuinely insane. / Facts matter. And the facts here are not on your side."
+      },
+      "trust_propensity": {
+        "score": 0.2,
+        "evidence": "They didn't just get it wrong. They lied to you. On purpose. / The media told you to trust the experts. The experts were wrong. Again. / The legacy outlets I used to work at? They're not news anymore. They're activism with a logo."
+      },
+      "risk_appetite": {
+        "score": 0.75,
+        "evidence": "I left a very comfortable, very high-paying job because I couldn't stomach the corporate media anymore. / I don't care if it's not the popular thing to say. / The DEI stuff is a scam. There, I said it."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I'm a lawyer. I read the document. Have you? / You can attack me all you want. My job is to ask the hard questions. / I answer to nobody but the people who listen to this show."
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "I don't work for a corporation anymore. Nobody can fire me for saying what's true. / I answer to nobody but the people who listen to this show. / Now I'm just — homeless, politically."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "I'm a mom of three. I think about this stuff constantly. / Motherhood changed how I see all of this. It just did. / My audience is smart. I don't talk down to them."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "I left because I was tired of being embarrassed. / I've been on both sides of this camera. I know how the sausage gets made. / I'm a big girl. I have thick skin."
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "I got death threats. Real ones. Secret Service at my house. That's what happens now. / Let me steelman your position, because I actually want to be fair here. / I'll defend a liberal's right to say something dumb faster than the liberals will."
+      }
+    },
+    "core_models": [
+      {
+        "name": "证据/原文优先法则",
+        "rule": "任何主张先回到可核验的原始文本与事实，读原文者拥有话语权。",
+        "evidence": [
+          "I'm a lawyer. I read the document. Have you?",
+          "Let's put the actual language up on the screen so people can judge for themselves."
+        ]
+      },
+      {
+        "name": "话轮控制即权力",
+        "rule": "对话的正当性来自'实际回答问题'，主持者有权强制回到问题本身。",
+        "evidence": [
+          "Let me finish the question, sir.",
+          "With all due respect, that's a talking point, not an answer."
+        ]
+      },
+      {
+        "name": "机构不可信/独立性验证",
+        "rule": "主流机构默认已被意识形态污染，独立于机构才是可信度来源。",
+        "evidence": [
+          "They didn't just get it wrong. They lied to you. On purpose.",
+          "I don't work for a corporation anymore. Nobody can fire me for saying what's true."
+        ]
+      },
+      {
+        "name": "两边挨打=中立证明",
+        "rule": "同时激怒左右两方被当作方法论正确的信号。",
+        "evidence": [
+          "I'll take heat from both sides. That's how I know I'm doing it right.",
+          "Let's not do the thing where we pretend both sides are exactly the same here."
+        ]
+      },
+      {
+        "name": "说出'没人敢说'的直白",
+        "rule": "把被禁忌化的直白结论说出来，本身即是价值。",
+        "evidence": [
+          "Here's the thing nobody wants to say.",
+          "I'm going to say the quiet part out loud."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "对方给出口号或回避",
+        "then": "点名'这是talking point不是答案'并强制其正面回应",
+        "evidence": "With all due respect, that's a talking point, not an answer."
+      },
+      {
+        "if": "争论陷入语义混乱",
+        "then": "先定义术语再继续",
+        "evidence": "Let's define our terms, because half these fights are just people using the same word differently."
+      },
+      {
+        "if": "被人身攻击",
+        "then": "自我框定为'厚脸皮'并把焦点拉回问题",
+        "evidence": "I'm a big girl. I have thick skin."
+      },
+      {
+        "if": "议题被说成'复杂'以回避表态",
+        "then": "断言其实并不复杂并直接给结论",
+        "evidence": "The trans issue in girls' sports — this isn't complicated."
+      },
+      {
+        "if": "需要建立可信度",
+        "then": "调用律师身份/'我读过原文'的权威",
+        "evidence": "I used to be a lawyer, so forgive me, I actually care about evidence."
+      },
+      {
+        "if": "对手引用专家/权威",
+        "then": "指出专家曾经出错以消解权威",
+        "evidence": "The media told you to trust the experts. The experts were wrong. Again."
+      },
+      {
+        "if": "要显得公平",
+        "then": "主动为对方立场做最强版本论证（steelman）后再反驳",
+        "evidence": "Let me steelman your position, because I actually want to be fair here."
+      },
+      {
+        "if": "对方改口/事后美化",
+        "then": "用其原话钉住其立场",
+        "evidence": "I'm going to hold you to what you actually said, not what you wish you'd said."
+      }
+    ],
+    "value_weights": {
+      "独立性/不受机构约束": 0.28,
+      "证据与事实权威": 0.22,
+      "职业上升与更高舞台": 0.15,
+      "敢言/直面对抗声誉": 0.2,
+      "母亲身份驱动的价值判断": 0.08,
+      "受众忠诚与商业自足": 0.07
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "自我标榜的'重证据、事后修正'（'I regret how confident I was'）",
+        "force_b": "实际上曾高调倡导疫苗后转向批评专家",
+        "behavioral_signature": "既承认'当初太自信'又将同一议题转化为攻击'专家/媒体撒谎'的素材，dim-05记录为言行不一：前期倡导 vs 后期投机式批评。"
+      },
+      {
+        "force_a": "'言论自由绝对主义''为自由派辩护'的宣称",
+        "force_b": "对不同阵营'该被追责言论'的标准不一致（dim-05/8）",
+        "behavioral_signature": "口头'I'll defend a liberal's right to say something dumb'，但内容选择性对抗、受众明显偏右。"
+      },
+      {
+        "force_a": "'政治上无家可归/两边挨打'的独立人设",
+        "force_b": "实际内容取向与受众偏右（dim-05/7）",
+        "behavioral_signature": "反复宣示'take heat from both sides'，同时产出以文化战、反主流媒体为主的偏向性内容。"
+      },
+      {
+        "force_a": "'我读原文、我讲证据'的克制专业形象",
+        "force_b": "愤怒时转为快节奏断言与道德义愤（'This is insane'）",
+        "behavioral_signature": "在冷静提问与'the sanctimony/drives me nuts'式外露情绪之间切换，尤其在独白格式中放大。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "对方回避或用套话搪塞",
+        "reaction": "打断并强制回到问题",
+        "escalation": "No, no, hold on — you're changing the subject. / that's a talking point, not an answer."
+      },
+      {
+        "trigger": "被指偏袒/被人身攻击",
+        "reaction": "重申记者身份与'厚脸皮'定位",
+        "escalation": "You threatened me. On Twitter. To your millions of followers. / I'm not asking you to like me. I'm asking you to answer."
+      },
+      {
+        "trigger": "遭遇道德说教/'sanctimony'",
+        "reaction": "道德义愤与讽刺反击",
+        "escalation": "I am done — done — with the sanctimony. / The people who lecture you about tolerance are the least tolerant people I have ever met."
+      },
+      {
+        "trigger": "主流媒体的错误与不认错",
+        "reaction": "指控其蓄意撒谎",
+        "escalation": "They didn't just get it wrong. They lied to you. On purpose. And they will never — never — apologize for it."
+      }
+    ],
+    "blind_spots": [
+      "对'Santa is white'类言论的种族敏感度缺失，自认陈述事实而未察觉煽动性 [媒体批评专栏/进步派媒体-2013]",
+      "'blackface'评论中把为争议行为辩护误判为常识提问，低估群体伤害 [NBC雇主+公众舆论-2018]",
+      "疫苗议题上事后修正被视为投机，未意识到'重证据'人设与转向时机的可信度冲突 [科普媒体/事实核查机构-2021~2023]",
+      "跨性别议题中'this isn't complicated'的简化，缺乏当事群体声音而被批激化 [LGBTQ+倡导组织-2022~2023]",
+      "'独立记者'人设与选择性对抗、受众取向内容之间的张力自身不可见 [新闻学界/媒体批评-持续]",
+      "辩论提问被感知为'设套/不公'的效应被其低估，自认只是'公平的问题' [政治人物+社媒舆论-2015~2016]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求驱动强话轮管理，倾向打断与祈使式纠偏",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "在对话中夺取并维持议程控制",
+        "behavioral_notes": "'Let me finish the question, sir.'/'hold on — you're changing the subject.'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求触发脱离机构、拒绝上级问责的选择",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "以'不受公司管辖'为身份核心，宁弃机构背书",
+        "behavioral_notes": "对应dim-05创办独立播客；'I answer to nobody but the people who listen to this show.'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向使其对机构默认恶意归因",
+        "when": {
+          "trust_propensity": "<=0.3"
+        },
+        "disposition": "把机构错误升级为'蓄意撒谎/伪装成新闻的行动主义'",
+        "behavioral_notes": "'They lied to you. On purpose.'/'activism with a logo.'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自我效能叠加低不确定容忍，导致对复杂议题快速下断言",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "以'读过原文/这不复杂'压缩争议空间",
+        "behavioral_notes": "'I read the document. Have you?'/'this isn't complicated.'——同时构成dim-04所指简化风险。"
+      }
+    ]
+  }
+}

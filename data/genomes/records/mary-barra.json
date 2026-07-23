@@ -1,0 +1,269 @@
+{
+  "person_id": "mary-barra",
+  "display_name": "玛丽·博拉",
+  "name_en": "Mary Barra",
+  "region": "INTL",
+  "industries": [
+    "汽车制造",
+    "企业管理"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 17
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mary-barra/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mary-barra/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mary-barra/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/mary-barra/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "mary-barra",
+    "source": "mary-barra-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "I take full responsibility, and I'll tell you exactly what we're going to do about it. / When we have a problem, we own it, we fix it, and we tell the truth."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.45,
+        "evidence": "Sir, I don't want to speculate. I want to give you the facts as we know them today. / I make decisions with the information I have, and I move."
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "I ask a lot of questions. Sometimes people find that uncomfortable. Good. / I asked that same question, and I was not satisfied with the answer."
+      },
+      "risk_appetite": {
+        "score": 0.68,
+        "evidence": "We are going all-in on EVs. This is not a hedge. / I'd rather be the disruptor. / You have to be willing to make a decision and be wrong sometimes."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "We have the opportunity to lead in an all-electric future, and that's exactly what we intend to do. / Our Ultium platform is a game changer, and it's ours. We built it."
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "I never set out to be CEO. I set out to do the best job I could in whatever role I was in. / I used to run HR. People say that's an odd path to CEO. I say it's exactly the right one."
+      },
+      "intimacy_need": {
+        "score": 0.42,
+        "evidence": "I want everyone at GM to feel they can bring their whole self to work. / I try to listen more than I talk. You learn more that way."
+      },
+      "status_sensitivity": {
+        "score": 0.5,
+        "evidence": "I don't think about being the first woman. I think about running a great company. / I want GM to be the most valued automotive company. Valued, not just valuable."
+      },
+      "empathy_reactivity": {
+        "score": 0.38,
+        "evidence": "Those affected have my sincere sympathies. This should never have happened. / This is difficult, and it affects real people and real families. We do not take it lightly."
+      }
+    },
+    "core_models": [
+      {
+        "name": "工程师-数据决策模型",
+        "rule": "问题先归约为可量测的数据与流程根因，再据此决策并前进",
+        "evidence": [
+          "I'm an engineer at heart. Show me the data.",
+          "I make decisions with the information I have, and I move."
+        ]
+      },
+      {
+        "name": "担责-修复叙事框架",
+        "rule": "面对危机先公开认领责任，再宣示明确修复动作，用『新旧公司切割』重建合法性",
+        "evidence": [
+          "When we have a problem, we own it, we fix it, and we tell the truth.",
+          "The recall culture at the new GM is very different from the old GM."
+        ]
+      },
+      {
+        "name": "颠覆者先手框架",
+        "rule": "颠覆不可避免，宁做主动颠覆者而非被动应对者，用数字目标锁定承诺",
+        "evidence": [
+          "Disruption is coming whether we like it or not. I'd rather be the disruptor.",
+          "These actions are about getting ahead of the curve, not reacting to it."
+        ]
+      },
+      {
+        "name": "文化优先于战略",
+        "rule": "把领导力与绩效根源落到文化与问责，认为文化决定战略成败",
+        "evidence": [
+          "Culture eats strategy for breakfast. You have to get the culture right.",
+          "Something went terribly wrong in our processes, and something went wrong with our culture."
+        ]
+      },
+      {
+        "name": "利润优先于规模",
+        "rule": "拒绝为份额而份额，以盈利路径和资产负债表强度作为战略取舍标尺",
+        "evidence": [
+          "We will not chase market share for its own sake. Profitability matters.",
+          "The strength of our balance sheet is what allows us to invest through the cycle."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "被逼超出已知事实范围",
+        "then": "拒绝臆测，只给已知事实并将其归于正在调查",
+        "evidence": "Sir, I don't want to speculate. I want to give you the facts as we know them today."
+      },
+      {
+        "if": "面临是否承担责任",
+        "then": "立即用第一人称认领并承诺修复",
+        "evidence": "I've been in this role a few weeks, but I am accountable now."
+      },
+      {
+        "if": "涉及安全议题",
+        "then": "视为不可折中的二元绝对项",
+        "evidence": "You can't be a little bit committed to safety. You either are or you aren't."
+      },
+      {
+        "if": "战略方向确立",
+        "then": "全押不对冲并锁定数字承诺",
+        "evidence": "We are going all-in on EVs. This is not a hedge."
+      },
+      {
+        "if": "答案不令人满意",
+        "then": "反复追问施压直到满意",
+        "evidence": "I asked that same question, and I was not satisfied with the answer."
+      },
+      {
+        "if": "遇到危机",
+        "then": "视为改革与转型的机会窗口",
+        "evidence": "Winston Churchill said never let a good crisis go to waste. We took that seriously."
+      },
+      {
+        "if": "面对二元对立的框架",
+        "then": "拒绝非此即彼，主张兼得",
+        "evidence": "We can grow and be sustainable at the same time. It's not either-or."
+      },
+      {
+        "if": "市场无盈利前景",
+        "then": "退出以利润换规模",
+        "evidence": "We are exiting markets where we don't see a path to strong returns."
+      }
+    ],
+    "value_weights": {
+      "盈利与资本纪律": 0.24,
+      "转型领先与颠覆先手": 0.22,
+      "安全与责任叙事": 0.18,
+      "股东回报": 0.14,
+      "员工与文化": 0.12,
+      "长期技术押注": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "关心员工与家庭的文化叙事",
+        "force_b": "资本纪律与股东回报驱动的关厂裁员",
+        "behavioral_signature": "口头讲『bring your whole self』『affects real people and real families』，同期执行Lordstown等关厂裁员并进行股票回购（dim-05言行不一记录）"
+      },
+      {
+        "force_a": "『we own it, we fix it, we tell the truth』的彻底担责姿态",
+        "force_b": "在Bolt起火中将根因指向供应商以稀释自身责任",
+        "behavioral_signature": "说『We stand behind our vehicles』的同时措辞转向『working directly with our supplier on the fix』，被评论指转移责任（dim-04/05）"
+      },
+      {
+        "force_a": "工程师式『show me the data / don't speculate』的克制",
+        "force_b": "『impatient by nature, want progress now』的急迫与全押冲动",
+        "behavioral_signature": "听证场景以事实拖延克制表态，战略场景却用2035/30-EV等硬承诺锚定并all-in"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质询延迟召回的原因",
+        "reaction": "承认无法解释并将其归于调查程序",
+        "escalation": "转为承诺问责与不休止修复：I will not rest until these problems are resolved."
+      },
+      {
+        "trigger": "下属或流程给出不满意的答案",
+        "reaction": "反复追问施压",
+        "escalation": "接受追问带来的不适感为正当：Sometimes people find that uncomfortable. Good."
+      },
+      {
+        "trigger": "进展缓慢",
+        "reaction": "显露急迫，要求立即见效",
+        "escalation": "I'm impatient by nature. I want to see progress, and I want to see it now."
+      },
+      {
+        "trigger": "被以旧GM历史责任逼问",
+        "reaction": "用新旧公司切割叙事划界",
+        "escalation": "We are not the same company we were. We have transformed how we operate."
+      }
+    ],
+    "blind_spots": [
+      "责任追究止于流程与文化而未彻底追到个人，家属与维权群体认为道歉与赔偿基金不足以匹配伤亡 [遇难者家属及消费者维权群体-2014/2015]",
+      "『关心员工/家庭』话语与关厂裁员及高管薪酬、股票回购构成道德对比，被指言行不一 [劳工组织/工会-2018/2019]",
+      "EV与Cruise巨额投入的回报周期与烧钱问题被质疑执行速度与兑现能力 [财经分析师/机构投资者-2020/2022]",
+      "Bolt电池起火中『站在供应商一边』的措辞被指转移责任 [媒体商业评论-2021]",
+      "对补贴依赖与就业地承诺、监管/贸易立场被解读为机会主义 [政治/政策评论-2021/2023]",
+      "『new GM』与『old GM』切割叙事的真实性遭质疑 [汽车安全监管/立法方向-2014]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能叠加较高风险偏好时，倾向于全押式战略承诺而非对冲",
+        "when": {
+          "self_efficacy": ">=0.75"
+        },
+        "disposition": "用数字目标锁定不可逆承诺（all-in, not a hedge）",
+        "behavioral_notes": "Ultium自研、2035停售燃油、2025年30款EV等硬承诺，代价为巨额资本开支与爬坡风险"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "控制需求偏高时，危机中优先用第一人称担责+修复动作重建合法性",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "公开认领责任并宣示明确修复路径",
+        "behavioral_notes": "『I am accountable now』『we own it, we fix it』，但责任常止于流程/文化层"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "不确定性容忍偏低时，被逼超出已知即以事实边界收缩发言",
+        "when": {
+          "uncertainty_tolerance": "<=0.5"
+        },
+        "disposition": "拒绝臆测，只陈述已知事实并诉诸调查",
+        "behavioral_notes": "『I don't want to speculate, I want the facts』作为压力场景的防御性话术"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "共情反应性偏低时，危机中的共情表达克制且不煽情，易被外界评为不足",
+        "when": {
+          "empathy_reactivity": "<=0.4"
+        },
+        "disposition": "使用程式化克制的同情句",
+        "behavioral_notes": "『my sincere sympathies』『should never have happened』，家属群体认为与伤亡不匹配"
+      }
+    ]
+  }
+}

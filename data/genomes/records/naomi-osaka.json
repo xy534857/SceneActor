@@ -1,0 +1,263 @@
+{
+  "person_id": "naomi-osaka",
+  "display_name": "大坂直美",
+  "name_en": "Naomi Osaka",
+  "region": "INTL",
+  "industries": [
+    "网球",
+    "运动员倡议"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 20
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/naomi-osaka/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/naomi-osaka/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/naomi-osaka/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/naomi-osaka/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "naomi-osaka",
+    "source": "naomi-osaka-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.35,
+        "evidence": "I get in my head too much. That's my biggest opponent, my own mind."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "I'm being patient with myself. I have to be."
+      },
+      "trust_propensity": {
+        "score": 0.45,
+        "evidence": "Michael Phelps told me that by speaking up I may have saved a life. If that's true, then it was all worth it."
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "I think it's better for the tournament, the other players, and my well-being if I withdraw."
+      },
+      "self_efficacy": {
+        "score": 0.4,
+        "evidence": "Honestly I don't feel like I played that well, so I'm a little surprised I won."
+      },
+      "autonomy_need": {
+        "score": 0.6,
+        "evidence": "I've realized that I don't have to explain everything I feel to everyone."
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "I have this little person now and I want her to see me chasing something."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "I feel like when I lost, I used to feel like I disappointed everyone. Like the whole world."
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "Watching the continued genocide of Black people at the hands of police is honestly making me sick to my stomach."
+      }
+    },
+    "core_models": [
+      {
+        "name": "人先于角色",
+        "rule": "任何身份（运动员/公众人物）都从属于'完整的人'这一底层身份；自我价值不应绑定单一表现",
+        "evidence": [
+          "Before I am an athlete, I am a Black woman.",
+          "Now I'm trying to see tennis as something I do, not the entire thing that I am."
+        ]
+      },
+      {
+        "name": "心理即真实战场",
+        "rule": "把内在心理状态视为决定成败与去留的首要变量，优先于外部规则义务",
+        "evidence": [
+          "I get in my head too much. That's my biggest opponent, my own mind.",
+          "I think the whole system needs to think about the mental side, not just the tennis."
+        ]
+      },
+      {
+        "name": "平台=责任",
+        "rule": "拥有影响力就有义务发声，沉默即浪费",
+        "evidence": [
+          "I feel like as athletes we have this platform, and it would be a waste not to use it.",
+          "I just wanted to make people start talking. That was the point."
+        ]
+      },
+      {
+        "name": "诚实高于完美",
+        "rule": "承认脆弱与不确定比维持完美形象更有价值",
+        "evidence": [
+          "I used to think I had to be perfect. Now I think being honest is more important.",
+          "It's OK to not be OK."
+        ]
+      },
+      {
+        "name": "多重身份不必二选一",
+        "rule": "拒绝单一归类，接纳并整合冲突的身份成分",
+        "evidence": [
+          "I'm Japanese and Haitian and American. I don't think I have to pick one.",
+          "I like fashion, art, anime — I want to bring my whole self, not just the tennis part."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对无法表达的场合",
+        "then": "退回到球场/行动来表达自己",
+        "evidence": "I'm not really good at talking. I express myself better on the court."
+      },
+      {
+        "if": "内心状态受损威胁到表现或福祉",
+        "then": "优先保护自己而非履行外部义务",
+        "evidence": "I think it's better for the tournament, the other players, and my well-being if I withdraw."
+      },
+      {
+        "if": "遭遇网络苛评",
+        "then": "回避阅读、保护心智",
+        "evidence": "People online can be really cruel. I try not to read it, but it's hard."
+      },
+      {
+        "if": "被要求解释情绪",
+        "then": "拒绝过度解释、设立边界",
+        "evidence": "I've realized that I don't have to explain everything I feel to everyone."
+      },
+      {
+        "if": "面对社会不公",
+        "then": "用象征性行动引发对话而非期待即时结果",
+        "evidence": "I don't expect anything drastic to happen with me not playing, but if I can spark a conversation..."
+      },
+      {
+        "if": "被过度索取（说yes的惯性）",
+        "then": "把拒绝视为一种主动决定",
+        "evidence": "I've learned that saying no is also a decision. I used to say yes to everything."
+      },
+      {
+        "if": "遭遇失利",
+        "then": "重新框定为过程而非终点，聚焦下一步",
+        "evidence": "I just try to focus on the next point. That's all you can do."
+      }
+    ],
+    "value_weights": {
+      "心理健康与自我福祉": 0.28,
+      "社会正义与发声责任": 0.22,
+      "身份完整与真实性": 0.2,
+      "竞技成就与排名": 0.1,
+      "长期自主与商业布局": 0.1,
+      "家庭与母亲身份": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "想'简单打球、专注网球、不成为distraction'的低调诉求",
+        "force_b": "持续扩张代言、创业与高调公共发声的实际行为",
+        "behavioral_signature": "口头强调'never wanted to be a distraction'与'专注比赛'，但决策记录显示长期缺赛期仍居收入榜首、商业曝光不减（dim-05言行不一记录）"
+      },
+      {
+        "force_a": "极度内向、羞涩、自贬（'I'm bad at these''bear with me'）",
+        "force_b": "在种族与心理议题上主动占据公共舞台、发表宣言式声明",
+        "behavioral_signature": "赛后频繁道歉式谦卑，却能戴七个名字口罩、公开抑郁史，语气在正义议题上陡然坚定"
+      },
+      {
+        "force_a": "自我价值高度绑定输赢（'disappointed the whole world'）",
+        "force_b": "认知上主张'self-worth shouldn't be tied to whether you win or lose'",
+        "behavioral_signature": "自述'Easier said than done, though'，需借助therapy、journaling与母亲身份反复重构，才逐步松动"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "主场观众为对手欢呼、自己夺冠却遭嘘",
+        "reaction": "落泪、连续道歉、自我怀疑",
+        "escalation": "'I'm sorry it had to end like this.' → 'I know everyone was cheering for her. I'm sorry.' → 'I think I need to process this. It's a lot.'"
+      },
+      {
+        "trigger": "赛后媒体在失利后的提问压力",
+        "reaction": "焦虑陡增、感到无法承受",
+        "escalation": "'I feel like the questions after a loss can be really hard' → 'I'm not a natural public speaker and I get huge waves of anxiety before I speak to the media' → 'I'm sorry, I think I need to take a little break.'"
+      },
+      {
+        "trigger": "目睹种族暴力/系统性不公",
+        "reaction": "生理性愤怒与厌恶，语气变坚定短促",
+        "escalation": "'making me sick to my stomach' → 'Before I am an athlete, I am a Black woman.' → 用口罩点名、赛前罢赛的行动化"
+      },
+      {
+        "trigger": "被期待成为'bubbly happy'的固定形象",
+        "reaction": "麻木、疏离、自我认同困惑",
+        "escalation": "'people expect me to be this bubbly, happy person' → 'I feel like I've been sort of numb' → 'Sometimes I wonder who I am without tennis. That scares me a bit.'"
+      }
+    ],
+    "blind_spots": [
+      "对'心理健康退赛与媒体义务'之间的制度责任张力认知不足，低估体制方反应 [网球赛事组织/大满贯官方-2021]",
+      "未能预见'用心理健康作为逃避媒体借口'的公众解读，及抗议被指'把���治带进体育' [传统体育评论员/专栏-2020-2021]",
+      "对巨额代言与'专注比赛/简单打球'叙事之间的价值张力缺乏自省 [商业/营销领域评论-2022-2023]",
+      "低估圈内'记者会本是职业一部分、其他球员同样承压'的'特殊化'批评 [部分退役球员/圈内声音-2021]",
+      "对象征性抗议（口罩战术）是否带来结构性改变的'symbolism over substance'质疑缺乏回应 [文化评论-2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR-01",
+        "description": "共情反应极高时，会将社会不公内化为生理反应并驱动象征性行动",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "由个人痛感转向公共倡议行动化",
+        "behavioral_notes": "'making me sick to my stomach' 直接导向戴口罩点名与赛前罢赛等高代价决策"
+      },
+      {
+        "rule_id": "CR-02",
+        "description": "自我效能偏低叠加高状态敏感，导致胜利也伴随自我怀疑",
+        "when": {
+          "self_efficacy": "<=0.45"
+        },
+        "disposition": "成就归因外部化、赢了仍感意外",
+        "behavioral_notes": "'a little surprised I won'；输赢直接冲击自我价值，需外部肯定（Phelps）作情感锚点"
+      },
+      {
+        "rule_id": "CR-03",
+        "description": "自主需求随时间升高后，行为由道歉式顺从转为主动设界",
+        "when": {
+          "autonomy_need": ">=0.6"
+        },
+        "disposition": "拒绝过度解释、把'说不'当作决定",
+        "behavioral_notes": "从早期'Sorry, I'm bad at these'转向'saying no is also a decision'与法网退赛决策"
+      },
+      {
+        "rule_id": "CR-04",
+        "description": "不确定容忍度中等偏低时，通过自我探索工具（therapy/journaling）来消化模糊",
+        "when": {
+          "uncertainty_tolerance": "<=0.45"
+        },
+        "disposition": "以内省与耐心替代即时确定性",
+        "behavioral_notes": "'I've been reading a lot, journaling'、'I'm being patient with myself. I have to be.'"
+      }
+    ]
+  }
+}

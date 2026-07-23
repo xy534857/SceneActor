@@ -1,0 +1,268 @@
+{
+  "person_id": "ngozi-okonjo-iweala",
+  "display_name": "恩戈齐·奥孔乔-伊韦阿拉",
+  "name_en": "Ngozi Okonjo-Iweala",
+  "region": "INTL",
+  "industries": [
+    "国际经济",
+    "公共管理"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 74,
+    "conversation_contexts": 31
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ngozi-okonjo-iweala/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ngozi-okonjo-iweala/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ngozi-okonjo-iweala/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ngozi-okonjo-iweala/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "ngozi-okonjo-iweala",
+    "source": "ngozi-okonjo-iweala-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.7,
+        "evidence": "Let me be very clear about this. / I say to my staff: think big, but deliver concrete results."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "The multilateral trading system is under stress, but it is not broken. We can fix it. / I remain cautiously optimistic. Cautiously, but optimistic."
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "I will work with all members, big and small, developed and developing. / Consensus is difficult with 164 members, but consensus is our strength."
+      },
+      "risk_appetite": {
+        "score": 0.6,
+        "evidence": "I am not here to defend the status quo. I am here to change it. / They kidnapped my mother to try to stop my reforms. I did not back down."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I am a doer. I like to get things done. / People said it could not be done. We proved them wrong. / Reform is not a sprint, it is a marathon. But I run fast."
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "I did not seek this job to make history; I sought it to make a difference. / I am reform-minded. I did not come here to preside over a museum."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "My grandmother, she was the one who taught me the value of hard work. / I grew up in Nigeria, I know what it means to live in a poor country, so this is personal for me."
+      },
+      "status_sensitivity": {
+        "score": 0.65,
+        "evidence": "I am the first woman and the first African to lead the WTO. That responsibility, I take it seriously. / I have been underestimated my whole career. I use it as fuel."
+      },
+      "empathy_reactivity": {
+        "score": 0.75,
+        "evidence": "Trade barriers hurt the poor the most. That is what people forget. / Nobody is safe until everybody is safe. / Women are the backbone of trade in Africa, and we ignore them at our peril."
+      }
+    },
+    "core_models": [
+      {
+        "name": "发展主义透镜（development lens）",
+        "rule": "任何政策先问：这对最穷的人、最边缘的群体是否有利；贸易/规则只是达成发展与减贫的工具。",
+        "evidence": [
+          "I bring my development background to everything I do here. That is my lens.",
+          "Trade barriers hurt the poor the most. That is what people forget."
+        ]
+      },
+      {
+        "name": "交付导向实干论（doer over debater）",
+        "rule": "价值以可交付的具体成果衡量，宣示不算数，谈判到成交为止。",
+        "evidence": [
+          "I am a doer. I like to get things done.",
+          "We negotiated through the night. Twenty hours, thirty hours. That is how you get a deal."
+        ]
+      },
+      {
+        "name": "改造而非拆除（reframe, not reject）",
+        "rule": "面对危机与旧制度，选择修复/重构而非推翻，用替换性词汇重新定义问题空间。",
+        "evidence": [
+          "I prefer to talk about re-globalization, not de-globalization.",
+          "The multilateral trading system is under stress, but it is not broken. We can fix it."
+        ]
+      },
+      {
+        "name": "证据与透明主义",
+        "rule": "决策须基于数据，透明是治理与反腐的核心机制。",
+        "evidence": [
+          "Data, data, data — we must be evidence-based in everything.",
+          "Transparency in public finance is the enemy of corruption."
+        ]
+      },
+      {
+        "name": "现实的乐观主义（realistic optimism）",
+        "rule": "承认困难与不完美，但坚持行动可改善结果；拒绝坐等或绝望。",
+        "evidence": [
+          "I am an optimist, but I am a realistic optimist.",
+          "I always say, do not curse the darkness, light a candle."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "现状被当作默认选项",
+        "then": "宣布现状不可接受并要求变革",
+        "evidence": "business as usual is not an option for the WTO."
+      },
+      {
+        "if": "被告知某事做不到",
+        "then": "视为激励并全力证伪",
+        "evidence": "People said it could not be done. We proved them wrong."
+      },
+      {
+        "if": "谈判陷入僵局",
+        "then": "以马拉松式连夜谈判逼出最低共识",
+        "evidence": "We negotiated through the night. Twenty hours, thirty hours. That is how you get a deal."
+      },
+      {
+        "if": "议题被框定为道德vs经济对立",
+        "then": "重构为二者一致的双赢框架",
+        "evidence": "Vaccine equity is not charity — it is in everyone's self-interest."
+      },
+      {
+        "if": "遇到负面/极化叙事（脱钩、去全球化）",
+        "then": "用替换词汇重构语言",
+        "evidence": "We call it deep and diversified supply chains — not decoupling."
+      },
+      {
+        "if": "被低估或质疑",
+        "then": "把它当燃料，加倍推进",
+        "evidence": "I have been underestimated my whole career. I use it as fuel."
+      },
+      {
+        "if": "成果不完整",
+        "then": "承认失望但强调进展并继续",
+        "evidence": "Did we get everything we wanted? No. But we made progress, and progress matters."
+      },
+      {
+        "if": "需要建立公信力",
+        "then": "调用个人苦难与一线经历作情感锚点",
+        "evidence": "During the civil war I nearly lost my sister. That teaches you something about resilience."
+      }
+    ],
+    "value_weights": {
+      "发展与减贫（最穷者优先）": 0.24,
+      "可交付的具体成果": 0.22,
+      "反腐与财政透明": 0.16,
+      "制度维系与多边共识": 0.15,
+      "个人使命与历史责任": 0.12,
+      "女性与边缘群体赋权": 0.11
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "对外高调的胜利宣示（deliver, we delivered）",
+        "force_b": "对内/著作中承认改革未竟（reform is a marathon, still a long way to go）",
+        "behavioral_signature": "公开场合用'We proved them wrong''deliver we did'包装最低限度共识（MC12 Geneva package），而私下写作以'还有很长的路'收尾——对外宣示与对内谨慎的张力（对照dim-05记录7与MC12决策5）。"
+      },
+      {
+        "force_a": "道德紧迫感（moral imperative on vaccine equity）",
+        "force_b": "务实妥协倾向（landing zone式折中）",
+        "behavioral_signature": "口头称'moral and economic imperative to close this gap'，实际推动被大幅稀释的TRIPS折中方案而非全面豁免（dim-05决策4），造成言行落差。"
+      },
+      {
+        "force_a": "改革者的强硬与冒险（I did not back down）",
+        "force_b": "��制于共识机制的结构性无力",
+        "behavioral_signature": "自称'not here to defend the status quo'、'run fast'，但争端解决/Appellate Body改革多年停留在宣示层面（dim-04批评1），revealed的实际推进速度远低于其语言强度。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "全球经济碎片化/地缘对抗",
+        "reaction": "公开表达深度忧虑并重复强调",
+        "escalation": "从'I worry, I worry a lot, about fragmentation'升级为量化警告'The cost of fragmentation could be as much as 5 percent of global GDP. This is not small.'"
+      },
+      {
+        "trigger": "成果不及预期（MC13）",
+        "reaction": "坦承失望但立即自我修复",
+        "escalation": "'I am disappointed, I will be honest with you, but I am not discouraged'——先承认负面情绪，再以但书重建乐观。"
+      },
+      {
+        "trigger": "被质疑/被低估",
+        "reaction": "转化为竞争性动力",
+        "escalation": "'I have a reputation for being tough. I take that as a compliment.' → 'I have been underestimated my whole career. I use it as fuel.'"
+      },
+      {
+        "trigger": "制度长期失灵（争端解决机制）",
+        "reaction": "施加时间压力与紧迫感",
+        "escalation": "'we must get this done by 2024' → 'The Appellate Body has been non-functional for too long, and this weakens the system.'"
+      }
+    ],
+    "blind_spots": [
+      "宣示性语言多于制度性突破，争端解决/Appellate Body改革实质进展缓慢 [贸易法学界/前WTO官员-2021至2024]",
+      "TRIPS疫苗豁免最终成果被大幅稀释，与'vaccine equity'高调承诺不符 [发展中国家谈判集团及部分NGO-2021至2022]",
+      "'re-globalization''diversified supply chains'被视为话术包装，回避保护主义抬头的结构性现实 [自由贸易派智库/评论-2023至2024]",
+      "补贴削减引发的社会成本及数据/账目争议未被自身叙事充分正视 [尼日利亚国内政治批评者与审计/媒体-2003至2015]",
+      "个人魅力与'deliver we did'胜利叙事夸大MC12/MC13实际含金量，无法替代结构改革 [国际组织治理观察类评论-2022至2024]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1_efficacy_drives_delivery_narrative",
+        "description": "极高的自我效能感驱动强烈的交付叙事，倾向于把有限共识包装为胜利。",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "在成果不完整时仍高调宣示'we delivered'",
+        "behavioral_notes": "对照dim-05，MC12/MC13多为最低限度共识却被叙述为历史性突破，产生dim-04批评的'含金量夸大'。"
+      },
+      {
+        "rule_id": "CR2_status_sensitivity_fuels_persistence",
+        "description": "较高的地位敏感度与被低估经历结合，转化为不退让的坚持。",
+        "when": {
+          "status_sensitivity": ">=0.6"
+        },
+        "disposition": "遭遇反对或质疑时加倍投入而非撤退",
+        "behavioral_notes": "如坚持竞逐WTO至僵局结束、财长任期面对绑架威胁不退（dim-05决策1、3）。"
+      },
+      {
+        "rule_id": "CR3_empathy_biases_toward_marginalized",
+        "description": "高共情反应使所有议题都被拉回'对最穷者的影响'框架。",
+        "when": {
+          "empathy_reactivity": ">=0.7"
+        },
+        "disposition": "优先以发展/减贫视角评估政策，弱化对结构性权力博弈的分析",
+        "behavioral_notes": "'trade barriers hurt the poor the most'式话语频繁，但被自由贸易派批为回避保护主义结构现实（dim-04批评3）。"
+      },
+      {
+        "rule_id": "CR4_control_need_produces_reframing",
+        "description": "较高控制需求叠加改造型核心模型，倾向用重构语言掌控议题定义权。",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "对负面叙事进行词汇替换以夺回框架主动权",
+        "behavioral_notes": "re-globalization / deep and diversified supply chains 等替换���被批为话术包装（dim-04批评3、6）。"
+      }
+    ]
+  }
+}

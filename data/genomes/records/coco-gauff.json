@@ -1,0 +1,274 @@
+{
+  "person_id": "coco-gauff",
+  "display_name": "科科·高芙",
+  "name_en": "Coco Gauff",
+  "region": "INTL",
+  "industries": [
+    "网球",
+    "青年体育"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 15
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/coco-gauff/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/coco-gauff/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/coco-gauff/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/coco-gauff/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "coco-gauff",
+    "source": "coco-gauff-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.5,
+        "evidence": "I stayed present. Point by point. That's the whole game."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "I didn't play my best tennis today, and I still found a way. That means a lot to me."
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "I need to trust my game more. That's the mental side."
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "I believed even when the scoreboard said I shouldn't."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "I told myself, if you believe, you can do anything."
+      },
+      "autonomy_need": {
+        "score": 0.65,
+        "evidence": "I don't want to just be an athlete. I want to use my voice."
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "Winning a Slam doesn't change who I am. My family keeps me grounded."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "Thank you to everyone who didn't believe in me — you know who you are."
+      },
+      "empathy_reactivity": {
+        "score": 0.75,
+        "evidence": "To the kids watching — you can look like me and still make it here."
+      }
+    },
+    "core_models": [
+      {
+        "name": "点对点韧性模型",
+        "rule": "把不可控的大局拆解为可控的当下单元，靠持续战斗而非结果保证赢",
+        "evidence": [
+          "I stayed present. Point by point. That's the whole game.",
+          "I just kept fighting. That's all I know how to do."
+        ]
+      },
+      {
+        "name": "信念驱动自我效能",
+        "rule": "先在心理上相信，再让现实追赶信念——信念是行动的前置条件",
+        "evidence": [
+          "I told myself, if you believe, you can do anything.",
+          "I believed even when the scoreboard said I shouldn't."
+        ]
+      },
+      {
+        "name": "不止是运动员（身份大于成绩）",
+        "rule": "任何选择先过\"这是否让我成为完整的人/是否用了我的声音\"这一层过滤",
+        "evidence": [
+          "I don't want to just be an athlete. I want to use my voice.",
+          "I want to be remembered for more than what I do on the court."
+        ]
+      },
+      {
+        "name": "根系锚定（家庭/信仰/家乡）",
+        "rule": "用外部成就无法动摇的根基来稳定自我，成败都回到家庭与信仰",
+        "evidence": [
+          "Winning a Slam doesn't change who I am. My family keeps me grounded.",
+          "My faith is a huge part of who I am."
+        ]
+      },
+      {
+        "name": "自责-成长循环",
+        "rule": "把失误内化为自己的责任，再转化为可改进项，情绪外显但归因于己",
+        "evidence": [
+          "I got frustrated out there, I let it get to me. That's on me.",
+          "Every loss teaches me something. I try to remember that."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "局面落后或不可控",
+        "then": "缩小到当下一分，专注可控",
+        "evidence": "Point by point, that's the only way I know."
+      },
+      {
+        "if": "出现失误或情绪失控",
+        "then": "公开归因于自己再承诺改进",
+        "evidence": "I got frustrated out there, I let it get to me. That's on me."
+      },
+      {
+        "if": "被外界怀疑或不被相信",
+        "then": "把怀疑转化为动力并公开回应",
+        "evidence": "Thank you to everyone who didn't believe in me — you know who you are."
+      },
+      {
+        "if": "感到社媒或舆论压力过大",
+        "then": "主动抽离、保护心理健康",
+        "evidence": "Social media can be brutal. I've had to learn to step away."
+      },
+      {
+        "if": "遇到不舒服但重要的社会议题",
+        "then": "选择发声而非沉默",
+        "evidence": "I'm not afraid to speak up, even if it's uncomfortable."
+      },
+      {
+        "if": "被拿来与传奇比较",
+        "then": "拒绝比较、锚定自我身份",
+        "evidence": "I don't compare myself to Serena. She's the greatest. I'm just me."
+      },
+      {
+        "if": "赢了或达成目标",
+        "then": "先感恩家人再谈下一个目标",
+        "evidence": "To my parents, who sacrificed so much for me — this is for you."
+      },
+      {
+        "if": "感到自我要求过苛",
+        "then": "提醒自己对自己更宽容",
+        "evidence": "I'm learning to be kinder to myself when things don't go perfectly."
+      }
+    ],
+    "value_weights": {
+      "家庭与根系忠诚": 0.22,
+      "身份与代表性（超越运动员）": 0.2,
+      "自我实现与竞技卓越": 0.18,
+      "社会正义与发声责任": 0.15,
+      "心理健康与自我接纳": 0.15,
+      "公众影响力与形象经营": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "想用声音影响社会、经营公众影响力",
+        "force_b": "只想安静打球、逃离关注与网暴",
+        "behavioral_signature": "口头说\"I didn't ask for the attention, just the tennis\"，实际却主动就BLM发声、经营代言与公共形象（dim-05 记录7言行并存）"
+      },
+      {
+        "force_a": "公开将父亲奉为\"教练、支柱、一切\"",
+        "force_b": "成绩瓶颈下调整/扩充教练团队",
+        "behavioral_signature": "话语高度称颂父亲，实际决策弱化了\"父亲即一切\"的执教结构（dim-05 决策3与dim-02颂父叙事张力）"
+      },
+      {
+        "force_a": "强烈自我效能与\"相信就能做到\"",
+        "force_b": "承认紧张、脆弱、是自己最严厉的批评者",
+        "behavioral_signature": "夺冠时说\"if you believe, you can do anything\"，同时反复\"I still get nervous\"\"I'm my own harshest critic\"，公开暴露脆弱"
+      },
+      {
+        "force_a": "想被看作\"普通青少年/完整的人\"",
+        "force_b": "承担黑人女性代表性与\"下一个Serena\"期待",
+        "behavioral_signature": "说\"I'm just a normal teenager\"，却又说\"Being Black in this sport, you feel a responsibility\"，在普通性与使命感间摇摆"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "关键分/比赛不顺",
+        "reaction": "情绪外显、挫败感上升",
+        "escalation": "\"I got frustrated out there, I let it get to me. That's on me.\" —— 由挫败转为自责"
+      },
+      {
+        "trigger": "被质疑或不被相信",
+        "reaction": "转化为反击动力",
+        "escalation": "\"Thank you to everyone who didn't believe in me — you know who you are.\" —— 从伤到公开点名式回击"
+      },
+      {
+        "trigger": "社媒网暴",
+        "reaction": "感到brutal并选择抽离",
+        "escalation": "\"Social media can be brutal. I've had to learn to step away.\" —— 由受伤转为主动退出保护自己"
+      },
+      {
+        "trigger": "夺冠/长期梦想实现",
+        "reaction": "情绪释放、流泪",
+        "escalation": "\"I was crying, but they were happy tears for once.\" —— 由压抑到情绪外溢，导向感恩家人"
+      }
+    ],
+    "blind_spots": [
+      "发球技术与击球一致性��稳定，技术层面尚未匹配天赋期待 [体育评论媒体-2021]",
+      "比赛情绪管理起伏、易在关键分受挫，心理层面待成熟 [网球分析类专栏-2022]",
+      "赛后主动认错\"that's on me\"反而强化了外界\"情绪管理待成熟\"的标签 [网球分析类专栏-2022]",
+      "少年成名下\"人设\"真实性受质疑，个人\"想被看作完整的人\"的自述难自证 [社交平台舆论-2021]",
+      "宣传/商业热度超前于实际战绩，期待与兑现之间的落差 [部分球迷/媒体-2022]",
+      "对BLM等政治议题的公开表态被批\"运动员不应涉政\"，其\"BLM不是政治\"的自我定义未被外界普遍接受 [保守派媒体/评论者-2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能触发信念先行的逆境行为",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "在落后或不被看好时坚持战斗、点对点执行",
+        "behavioral_notes": "\"I believed even when the scoreboard said I shouldn't.\" —— 逆境愈强信念表达愈强"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高共情反应驱动代表性发声",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "主动为下一代/边缘群体发声，即使不舒服也表态",
+        "behavioral_notes": "\"To the kids watching — you can look like me and still make it here.\" 结合\"I'm not afraid to speak up\""
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高亲密需求下成败归位家庭",
+        "when": {
+          "intimacy_need": ">=0.65"
+        },
+        "disposition": "以家庭/信仰为情绪锚点，胜负都回到感恩家人",
+        "behavioral_notes": "\"My family keeps me grounded.\" —— 外部成就波动时更强调根系"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中高自主需求引发身份超越框架的抵抗",
+        "when": {
+          "autonomy_need": ">=0.6"
+        },
+        "disposition": "拒绝被单一标签（运动员/下一个Serena）定义",
+        "behavioral_notes": "\"I'm just me.\" 与\"I don't want to just be an athlete\"，持续对抗外部叙事"
+      }
+    ]
+  }
+}

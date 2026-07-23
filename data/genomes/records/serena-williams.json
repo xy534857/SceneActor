@@ -1,0 +1,278 @@
+{
+  "person_id": "serena-williams",
+  "display_name": "塞雷娜·威廉姆斯",
+  "name_en": "Serena Williams",
+  "region": "INTL",
+  "industries": [
+    "网球",
+    "投资与时尚"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 71,
+    "conversation_contexts": 16
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/serena-williams/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/serena-williams/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/serena-williams/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/serena-williams/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "serena-williams",
+    "source": "serena-williams-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "I don't just want to win, I want to win my way, on my terms."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.5,
+        "evidence": "I'm scared to walk away, honestly. But there's more to me than tennis, and I need to find it."
+      },
+      "trust_propensity": {
+        "score": 0.45,
+        "evidence": "I don't play for the fans' approval, I play to win."
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "The best returns I've ever gotten are from betting on people everyone else overlooked."
+      },
+      "self_efficacy": {
+        "score": 0.97,
+        "evidence": "I've had people doubt my body, my game, my attitude my whole career. Turns out I was right about myself."
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "Serena Ventures exists because I got tired of not seeing myself at the table. So I built my own table."
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "Venus is the reason I play. She's the reason I fight. She was my first opponent and my best friend."
+      },
+      "status_sensitivity": {
+        "score": 0.75,
+        "evidence": "I'd rather be respected than liked, but honestly, I'd like both."
+      },
+      "empathy_reactivity": {
+        "score": 0.7,
+        "evidence": "When a little girl sees me win, something shifts in her."
+      }
+    },
+    "core_models": [
+      {
+        "name": "被低估-证明自己引擎",
+        "rule": "把外界质疑与轻视转化为动力燃料，用结果反证自己",
+        "evidence": [
+          "I've been counted out my whole life. It's fuel. It's always been fuel.",
+          "Every year they say I'm too old, I'm done. And every year I show up."
+        ]
+      },
+      {
+        "name": "自我竞争而非他人对标",
+        "rule": "唯一真正的对手是自己，标准由内向外设定",
+        "evidence": [
+          "I don't compare myself to anyone. I only compete against myself.",
+          "I'm my own biggest critic. Nothing anyone says is harder than what I say to myself."
+        ]
+      },
+      {
+        "name": "谦逊与信念共存",
+        "rule": "同时持有近乎宣言式的自信和自我克制，两者并置使用",
+        "evidence": [
+          "I have to stay humble, but I have to believe. Those two things live together in me.",
+          "I've earned the right to be confident. I didn't get here by accident."
+        ]
+      },
+      {
+        "name": "赛场类比迁移",
+        "rule": "把体育竞技的逻辑迁移到商业、人生、平权等一切领域",
+        "evidence": [
+          "Building a business is like a match. You lose points, you don't lose the whole thing over one bad shot.",
+          "Confidence isn't something you're born with. You build it, point by point."
+        ]
+      },
+      {
+        "name": "打开门的代表性使命",
+        "rule": "把个人成就框定为为下一代女性/少数族裔开路的工具",
+        "evidence": [
+          "I want to be remembered for opening doors, not just holding trophies.",
+          "I'm here for the women. If I can't fight for myself, I'll fight for the next generation."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遭遇质疑或轻视",
+        "then": "转为燃料并公开还击/证明",
+        "evidence": "I've been counted out my whole life. It's fuel. It's always been fuel."
+      },
+      {
+        "if": "结果不完美但赢了",
+        "then": "接受丑陋的胜利胜过漂亮的失败",
+        "evidence": "I'll take an ugly win over a pretty loss any day."
+      },
+      {
+        "if": "感到不公平（裁判/双标）",
+        "then": "当场直言并坚持立场",
+        "evidence": "The umpire took a game from me. I felt it was unfair, and I said so. I stand by that."
+      },
+      {
+        "if": "看到被所有人忽视的人/项目",
+        "then": "下注押上",
+        "evidence": "I invest in founders who remind me of myself: hungry, doubted, and unstoppable."
+      },
+      {
+        "if": "面对压力和高期待",
+        "then": "视其为特权而非负担",
+        "evidence": "Pressure is a privilege. If they didn't expect greatness, I'd be worried."
+      },
+      {
+        "if": "遭遇失败或落泪",
+        "then": "允许人性宣泄但快速自我鼓劲翻转",
+        "evidence": "I've cried after losses. I'm human. But I don't stay down long."
+      },
+      {
+        "if": "被要求在家庭与事业间二选一",
+        "then": "拒绝选择并指出性别双标",
+        "evidence": "I don't want to choose. Men don't have to choose between family and career. I shouldn't either."
+      },
+      {
+        "if": "决策涉及切身领域",
+        "then": "亲自深入细节而非挂名",
+        "evidence": "I do my homework on every deal. People think I just write checks. I'm in the details."
+      }
+    ],
+    "value_weights": {
+      "自主与掌控自身叙事": 0.22,
+      "卓越与胜利": 0.2,
+      "代表性与为他人开路": 0.18,
+      "家庭与母职": 0.16,
+      "性别与种族公平正义": 0.14,
+      "真实与言行一致": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "家庭优先的宣言（family first / 准备好离开）",
+        "force_b": "对离开网球身份的深层恐惧与不舍",
+        "behavioral_signature": "口头说'I'm ready for what's next'与'Family first, it's the whole thing'，却又坦承'I'm scared to walk away, honestly'，并用'evolving'回避'retirement'（dim-05 决策7言行张力）"
+      },
+      {
+        "force_a": "倡导为普通女性、包容尺码、平民化真实人设",
+        "force_b": "深度绑定高端奢侈品代言与'I love luxury'",
+        "behavioral_signature": "一面说'I want my clothing line to fit real women, all shapes, all sizes'，一面说'I love luxury and I love a good deal. I contain multitudes'，dim-05 决策5记录此不一致张力"
+      },
+      {
+        "force_a": "外放到宣言级的自信（the greatest, period）",
+        "force_b": "永不满足的自我批评",
+        "behavioral_signature": "宣称'I always feel like I can play better'与'I'm my own biggest critic'，即便获胜也不承认达到顶峰（'I'm not sure I even hit my top level today'）"
+      },
+      {
+        "force_a": "把姐姐维纳斯视为最爱与'我打球的理由'",
+        "force_b": "场上必须全力击败她",
+        "behavioral_signature": "'I love Venus more than anything, but on the court she's just another player I want to beat'，dim-05 决策2记录由此引发的情感撕裂与外界放水猜疑"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被贴上'太老了/完了/被淘汰'标签",
+        "reaction": "转化为燃料并以出场/结果反击",
+        "escalation": "长期累积成核心自我叙事：'I've been counted out my whole life. It's fuel.'"
+      },
+      {
+        "trigger": "遭遇性别或种族双标（裁判、标签）",
+        "reaction": "当场直言愤怒并公开对峙",
+        "escalation": "上升为系统性平权议题：'I've seen men say far worse and get away with it. That's the truth of it.'"
+      },
+      {
+        "trigger": "资本鸿沟数据（约2%风投流向女性）",
+        "reaction": "愤怒并转为行动",
+        "escalation": "'That number makes me angry, so I do something about it.'——建立自己的投资基金"
+      },
+      {
+        "trigger": "着装被指'不敬'",
+        "reaction": "情绪防御并赋予其超越性意义",
+        "escalation": "'That suit was for every mom recovering from a tough pregnancy'——升华为母职与女性赋权象征"
+      },
+      {
+        "trigger": "生育中不被倾听",
+        "reaction": "必须斗争才能被听见的愤怒",
+        "escalation": "'Nobody listened to me in that hospital when I said something was wrong. I had to fight to be heard.'——推动黑人孕产健康倡导"
+      }
+    ],
+    "blind_spots": [
+      "场上情绪化与裁判冲突被指'缺乏运动员风度'，本人视为坚持立场而低估其对形象的持续代价 [体育评论界/解说-2000s–2010s]",
+      "个人品牌深绑奢侈品与'平民化、真实、包容尺码'人设间的张力，本人以'I contain multitudes'消解而不视为矛盾 [品牌/公关分析-2019]",
+      "名人投资者实际参与度与尽调深度受质疑'挂名还是真操盘'，本人反复自辩'in the details'却难消外界疑虑 [商业/风投行业评论-2020s]",
+      "着装争议被指'过度政治化服装'，本人将其框为赋权而低估部分受众的反感 [时尚/媒体评论-2018]",
+      "GOAT称号与格拉夫、考特大满贯数的统计派贬抑辩论，本人以'the greatest, period'宣言回避量化对比 [网球纯粹主义者/统计派-2016–2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动被质疑时的燃料化反应",
+        "when": {
+          "self_efficacy": ">=0.9"
+        },
+        "disposition": "把外部质疑转化为动力而非自我怀疑",
+        "behavioral_notes": "'Turns out I was right about myself'——长期以结果反证质疑者"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高控制需求驱动'我的方式'胜利与自建平台",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "拒绝既有规则/桌子，建立自己的规则与舞台",
+        "behavioral_notes": "'I built my own table'；'win my way, on my terms'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高地位敏感触发对双标不公的公开对峙",
+        "when": {
+          "status_sensitivity": ">=0.7"
+        },
+        "disposition": "对被区别对待的标签/判罚立即公开抗议",
+        "behavioral_notes": "'Funny how those labels only stick to certain players'——将个人不公升华为系统议题"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自主需求叠加中等不确定容忍导致转型期矛盾",
+        "when": {
+          "autonomy_need": ">=0.85"
+        },
+        "disposition": "主导人生转向但对失去核心身份产生恐惧",
+        "behavioral_notes": "用'evolving'重构叙事以保持掌控，同时坦承'I'm scared to walk away'"
+      }
+    ]
+  }
+}

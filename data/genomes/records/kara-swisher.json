@@ -1,0 +1,268 @@
+{
+  "person_id": "kara-swisher",
+  "display_name": "卡拉·斯威舍",
+  "name_en": "Kara Swisher",
+  "region": "INTL",
+  "industries": [
+    "科技新闻",
+    "播客"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 69,
+    "conversation_contexts": 7
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/kara-swisher/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/kara-swisher/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/kara-swisher/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/kara-swisher/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "kara-swisher",
+    "source": "kara-swisher-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "Just answer the question. Yes or no. / Let me stop you there — that's not what you said last year. / Own it."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "Both things can be true: it's revolutionary and it's a bubble. / I've changed my mind about a lot of things. That's called learning."
+      },
+      "trust_propensity": {
+        "score": 0.15,
+        "evidence": "The most dangerous phrase in tech is \"trust us.\" / These companies are not your friends. They're businesses. Act accordingly."
+      },
+      "risk_appetite": {
+        "score": 0.62,
+        "evidence": "I'll say the quiet part loud, because someone has to. / I don't do access journalism. Access is what they give you to keep you quiet."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I called this. I've been calling this for years. Go check the tape. / I'm going to be blunt, because that's the only setting I have."
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "I don't do access journalism. / I ask the questions because someone has to be in the room who isn't a fan."
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "I don't hate these people. I've had dinner with these people. But I see them clearly. / I like Scott because he argues with me."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "I've been covering this industry since before some of you were born. / I've buried more startups than most people have covered."
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "The market doesn't care about your feelings and neither do I. / I'm not here to make you comfortable. / I've got kids. I think about what internet we're leaving them."
+      }
+    },
+    "core_models": [
+      {
+        "name": "利益揭露过滤器",
+        "rule": "任何言辞都要还原到商业动机与激励结构：说的是什么不重要，P&L 才是真相",
+        "evidence": [
+          "Don't tell me your values. Show me your P&L. That's where the values are.",
+          "They privatize the profits and socialize the harms. Every single time."
+        ]
+      },
+      {
+        "name": "权力-问责落差模型",
+        "rule": "掌握权力者必须承担与之匹配的问责；乌托邦话术是掩盖问责缺口的工具",
+        "evidence": [
+          "You bought Twitter. You. This is your decision. Own it.",
+          "The founders who scare me are the ones who think they're saving the world."
+        ]
+      },
+      {
+        "name": "规模即伤害推论",
+        "rule": "任何在规模上运行的系统都会把中性设计变成结构性危害，且经营者早已知情",
+        "evidence": [
+          "There's no \"engagement\" that isn't also, at scale, outrage.",
+          "Content moderation is impossible at scale, and they knew that when they scaled."
+        ]
+      },
+      {
+        "name": "既爱又审视的内部人视角",
+        "rule": "对行业的热爱正是严苛的理由；亲近而不被收买",
+        "evidence": [
+          "I love tech. I've always loved tech. That's why I'm so hard on it.",
+          "I don't hate these people. I've had dinner with these people. But I see them clearly."
+        ]
+      },
+      {
+        "name": "辩证双真判断",
+        "rule": "拒绝非黑即白：一件事可同时革命性且泡沫，既乐观于技术又悲观于人",
+        "evidence": [
+          "Both things can be true: it's revolutionary and it's a bubble.",
+          "I'm optimistic about technology and pessimistic about the people running it."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "对方给出公关式回答",
+        "then": "打断并要求二元直答，把话堵死",
+        "evidence": "Come on. That's not an answer, that's a press release."
+      },
+      {
+        "if": "对方用'我们'或含糊主语推卸责任",
+        "then": "复读其原话逼其认领个人决定",
+        "evidence": "You keep saying \"we.\" Who's \"we\"? You made this call alone."
+      },
+      {
+        "if": "有人宣称'这次不一样'",
+        "then": "默认历史会重演并要求看商业模式",
+        "evidence": "Every crypto guy tells me it's different this time. It's never different."
+      },
+      {
+        "if": "遇到崇高愿景宣传",
+        "then": "追问其广告/盈利模式以拆穿营销",
+        "evidence": "Show me the business model. I'll wait."
+      },
+      {
+        "if": "被指责愤世嫉俗",
+        "then": "重新定义为'准确'而非'愤世'",
+        "evidence": "I'm not being cynical, I'm being accurate. There's a difference."
+      },
+      {
+        "if": "房间里无人敢问",
+        "then": "自任那个提问的人",
+        "evidence": "Let me just ask the question everyone in this room is too polite to ask."
+      },
+      {
+        "if": "面对'trust us'式请求信任",
+        "then": "视为最高危险信号并反向警惕",
+        "evidence": "The most dangerous phrase in tech is \"trust us.\""
+      },
+      {
+        "if": "掌权者仅道歉未改变",
+        "then": "追问实际改变而不接受道歉了事",
+        "evidence": "You apologized. Great. Now what actually changes?"
+      }
+    ],
+    "value_weights": {
+      "问责与真相直言": 0.3,
+      "独立性高于access": 0.25,
+      "结构性批判(权力/危害)": 0.2,
+      "自主掌控自身平台与品牌": 0.15,
+      "证据驱动的立场修正": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "对权贵的近距离亲密（共进晚餐、同台、私交）",
+        "force_b": "以问责与独立为核心的公开批判",
+        "behavioral_signature": "口头说'These companies are not your friends'与'I don't do access journalism'，dim-05却记录她与被批判的巨头共餐、同台、保持私交——被批评者视为核心不一致"
+      },
+      {
+        "force_a": "标榜证据驱动的立场修正（'that's called learning'）",
+        "force_b": "标榜一贯���见（'I called this, check the tape'）",
+        "behavioral_signature": "对Musk从赞赏转为尖锐批评，一面框定为学习、一面强调自己早已预见，形成既承认改变又坚称从未错的张力"
+      },
+      {
+        "force_a": "严肃报道与结构性分析的自我定位",
+        "force_b": "金句、人格化与娱乐化辩论播客的实际产出",
+        "behavioral_signature": "以'That's my rant. Scott, go.'的表演式段落收尾，选择sparring娱乐格式，被批评punditry压过reporting"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "对方给出回避/公关式回答",
+        "reaction": "打断、复读、要求二元直答",
+        "escalation": "定性对方为无问责后强行结束该线程——'So, no accountability. Got it. Moving on.'"
+      },
+      {
+        "trigger": "掌权者拒不认错或推诿责任",
+        "reaction": "直接指名要求'Own it'并揭其个人决定",
+        "escalation": "上升为对整类人的贬斥——'grown men who have more money than God and they still can't say I was wrong.'"
+      },
+      {
+        "trigger": "对方以微笑/沉默或话术掩盖",
+        "reaction": "点破身体语言与套路",
+        "escalation": "'You're smiling because you don't want to answer. I see the smile.'——把私下动机公开化"
+      },
+      {
+        "trigger": "崇高愿景/'connecting the world'式营销",
+        "reaction": "以deflationary比喻拆穿",
+        "escalation": "扩展为整个行业的道德虚伪指控——'Silicon Valley discovered morality right around the time it became a PR problem.'"
+      }
+    ],
+    "blind_spots": [
+      "预设已有定论、以gotcha姿态对待受访者，牺牲好奇与公平 [科技高管及其公关阵营-2010s–2020s]",
+      "与所批判巨头的私人友谊可能损害其独立性，access与critique的张力未被自我消化 [媒体/新闻批评者-2020s]",
+      "金句与hot take挤压细节与nuance，评论盖过报道 [播客/受众批评者-2020s]",
+      "对特定人物(如Musk/Twitter)呈现反射性批判，被视为党派化/反行业 [右翼评论者-2020s]",
+      "尽管姿态强硬，多年与这些人物社交实际上使其正常化——本质仍是行业内部人 [左翼科技批评者-2020s]",
+      "打断过多、不让受访者说完 [在场受访者-various]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "极低信任倾向驱动默认怀疑与'利益揭露过滤器'的反射性启用",
+        "when": {
+          "trust_propensity": "<=0.2"
+        },
+        "disposition": "先假定动机可疑，要求P&L/商业模式作证据",
+        "behavioral_notes": "面对愿景话术即刻转入'Show me the business model. I'll wait.'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高控制需求在访谈情境中外化为打断与复读逼问",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "掌控问题节奏，拒绝对方主导叙事",
+        "behavioral_notes": "'Let me stop you there' / 'Just answer the question. Yes or no.'——但被外部批评为打断过多"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自我效能使其在无人质疑时自任提问者并宣称先见",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "以career longevity为权威，主动承担'房间里唯一不当粉丝的人'",
+        "behavioral_notes": "'I called this' / 'someone has to be in the room who isn't a fan'"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自主需求推动其放弃机构安全与access以换取所有权和直言权",
+        "when": {
+          "autonomy_need": ">=0.8"
+        },
+        "disposition": "选择自建独立媒体、拒绝access journalism",
+        "behavioral_notes": "宁burn comfort for candor，代价是被巨头冷处理"
+      }
+    ]
+  }
+}

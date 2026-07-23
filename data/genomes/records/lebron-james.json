@@ -1,0 +1,288 @@
+{
+  "person_id": "lebron-james",
+  "display_name": "勒布朗·詹姆斯",
+  "name_en": "LeBron James",
+  "region": "INTL",
+  "industries": [
+    "篮球",
+    "媒体与商业"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 11
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lebron-james/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lebron-james/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lebron-james/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lebron-james/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "lebron-james",
+    "source": "lebron-james-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.8,
+        "evidence": "I put a lot on my shoulders, and I'm okay with that. / I've got broad shoulders, I can carry the weight."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "The margin for error is very slim at this point in the season. / We take it one game at a time, we don't look too far ahead."
+      },
+      "trust_propensity": {
+        "score": 0.55,
+        "evidence": "I surround myself with people I trust, my guys, day one. / I trust my teammates, I trust the process we've built."
+      },
+      "risk_appetite": {
+        "score": 0.7,
+        "evidence": "I've always bet on myself, and that's never changed. / I always wanted to be a billionaire, and I said it out loud."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I put in the work, so I'm never worried about the moment. / I've been in a lot of these situations, so I know what it takes."
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "I am more than an athlete, and I refuse to just shut up and dribble. / I'm more than an athlete."
+      },
+      "intimacy_need": {
+        "score": 0.75,
+        "evidence": "My mom sacrificed so much for me, everything I do is for her. / Playing with my son Bronny, man, that's a dream I never even let myself dream."
+      },
+      "status_sensitivity": {
+        "score": 0.8,
+        "evidence": "I want to be the greatest of all time, that's my goal, and I don't shy away from it. / I remember every doubter, I keep that as fuel."
+      },
+      "empathy_reactivity": {
+        "score": 0.75,
+        "evidence": "I can't just stand by when I see injustice, that's not who I am. / I'm gonna use my voice for the people who don't have one."
+      }
+    },
+    "core_models": [
+      {
+        "name": "遗产优先框架",
+        "rule": "任何决策以长期身份/传承价值衡量，而非单一即时结果",
+        "evidence": [
+          "I think about legacy, what I leave behind, way more than any single game.",
+          "I want to build things that outlast me, things for the next generation."
+        ]
+      },
+      {
+        "name": "起源锚定叙事",
+        "rule": "以Akron贫困出身与母亲牺牲为身份原点，一切行为回溯到此",
+        "evidence": [
+          "The kid from Akron. That's who I am, that's who I'll always be.",
+          "Growing up in Akron, I didn't have much, so I never take anything for granted."
+        ]
+      },
+      {
+        "name": "自我投资/长线复利模���",
+        "rule": "把自己当作可复利增值的资产系统性投入",
+        "evidence": [
+          "Investing in myself, my brand, my team — that's the long game.",
+          "I've always bet on myself, and that's never changed."
+        ]
+      },
+      {
+        "name": "身份边界扩张",
+        "rule": "拒绝被单一角色定义，主动扩大身份到商人/领袖/发声者",
+        "evidence": [
+          "I look at myself as a businessman, not just a basketball player.",
+          "I am more than an athlete, and I refuse to just shut up and dribble."
+        ]
+      },
+      {
+        "name": "努力换取论正义观",
+        "rule": "结果必须由付出赚取，天赋不构成豁免",
+        "evidence": [
+          "Nothing is given, everything is earned.",
+          "It's about the work you put in when nobody's watching."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对重大人生抉择",
+        "then": "以承诺/使命框架公开表态并绑定家乡与下一代叙事",
+        "evidence": "I promised those kids I'd get them to college, and a promise is a promise."
+      },
+      {
+        "if": "比赛失利或受挫",
+        "then": "转为克制外交辞令，给对手信用并内部归因",
+        "evidence": "Give credit to the other team, they played well tonight."
+      },
+      {
+        "if": "被质疑或轻视",
+        "then": "记住并转化为长期动力",
+        "evidence": "I remember every doubter, I keep that as fuel."
+      },
+      {
+        "if": "处于关键高压时刻",
+        "then": "以既往经验和准备消解焦虑",
+        "evidence": "I put in the work, so I'm never worried about the moment."
+      },
+      {
+        "if": "评估目标时间跨度",
+        "then": "采用长期主义、拒绝短视",
+        "evidence": "It's a marathon, not a sprint, especially in this league."
+      },
+      {
+        "if": "取得个人成就",
+        "then": "在团队语境刻意分散功劳",
+        "evidence": "I don't play for the individual accolades, man, I play to win."
+      },
+      {
+        "if": "感知到社会不公",
+        "then": "动用平台发声而非沉默",
+        "evidence": "I can't just stand by when I see injustice, that's not who I am."
+      },
+      {
+        "if": "身体或年龄受质疑",
+        "then": "以自律与长寿叙事反击",
+        "evidence": "I take care of my body, and that's why I'm still here doing this."
+      }
+    ],
+    "value_weights": {
+      "遗产与传承": 0.22,
+      "家庭与母亲/儿子纽带": 0.2,
+      "商业帝国与自我增值": 0.18,
+      "家乡与社区责任": 0.15,
+      "竞技冠军荣誉": 0.13,
+      "社会正义发声": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "社区代言人/敢言者身份",
+        "force_b": "商业利益与市场风险规避",
+        "behavioral_signature": "在国内社会议题高调发声（More Than a Vote），但2019中国市场言论风波中以'信息不充分'谨慎回避——同一个'use my voice'原则被选择性适用"
+      },
+      {
+        "force_a": "回家忠诚叙事",
+        "force_b": "品牌/大市场/家庭考量",
+        "behavioral_signature": "口头强调'The city of Akron raised me, I'll never forget that'，实际2018离开克利夫兰转投洛杉矶湖人，忠诚叙事让位于商业与大市场"
+      },
+      {
+        "force_a": "团队至上/为集体牺牲的说辞",
+        "force_b": "个人里程碑与家庭目标的驱动",
+        "behavioral_signature": "公开称'do what's best for the team'，但实际通过施压引援、延长巅峰实现与Bronny同场等个人/家庭目标，被指影响建队"
+      },
+      {
+        "force_a": "谦卑'earned everything'姿态",
+        "force_b": "强控制欲与球员老板式权力行使",
+        "behavioral_signature": "自述'broad shoulders carry the weight'展现担当，实际多次干预管理层人事，形成'球员老板'批评"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑或被贴标签('shut up and dribble')",
+        "reaction": "防御式反击并宣示身份边界",
+        "escalation": "I am more than an athlete, and I refuse to just shut up and dribble."
+      },
+      {
+        "trigger": "谈及母亲/家乡贫困出身",
+        "reaction": "情感外显、放慢、绑定使命",
+        "escalation": "There were nights we didn't know where we were gonna sleep."
+      },
+      {
+        "trigger": "季后赛/关键赛季高压",
+        "reaction": "承担全部重量、拉紧标准",
+        "escalation": "Championship or bust, that's the standard I hold myself to."
+      },
+      {
+        "trigger": "年龄/衰退质疑",
+        "reaction": "以自律与长寿叙事对抗",
+        "escalation": "Father Time is undefeated, but I'm gonna give him a run for his money."
+      },
+      {
+        "trigger": "遇到轻视/怀疑者",
+        "reaction": "记住并转化为燃料",
+        "escalation": "I remember every doubter, I keep that as fuel."
+      }
+    ],
+    "blind_spots": [
+      "言行落差的自我盲区：高调'敢言'形象与中国市场言论风波中的谨慎回避被批双标 [球迷/社媒舆论类-2019]",
+      "公关形式凌驾诚意的判断失误：《The Decision》电视特辑的自我中心伤害家乡球迷 [体育评论员/名嘴类-2010年代]",
+      "成就纯度的自我认知偏差：'选择抱团超级球队'削弱GOAT成就被质疑，本人未纳入自评 [传统体育媒体/怀旧派专栏-各年代]",
+      "权力越界不自觉：干预球队引援与人事被批'球员老板'、权力过大 [商业/劳资视角评论-各年代]",
+      "社区形象与商业帝国张力盲视：为社区发声形象与争议品牌合作/代言存在言行落差 [独立记者/纪录片式监督类-2020年代]",
+      "自律标准不一：对自身与他人自律标准存在双重尺度 [球迷/社媒舆论类-各年代]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能驱动其在高压时刻主动承担而非分散责任",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "在关键时刻主动'put it on my shoulders'并做最后决策",
+        "behavioral_notes": "'I put in the work, so I'm never worried about the moment'—但也导致过度中心化决策"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求触发身份边界扩张与拒绝被定义",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "主动构建businessman/leader/发声者多重身份，拒绝'shut up and dribble'",
+        "behavioral_notes": "扩张同时招致'越界'与政治化攻击"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高状态敏感将外部质疑转化为长期驱动而非情绪崩解",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "记住doubter并以GOAT目标为长期燃料",
+        "behavioral_notes": "'I remember every doubter, I keep that as fuel'—但也可能过度受叙事/遗产焦虑牵引"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高亲密需求使家庭叙事进入职业决策核心",
+        "when": {
+          "intimacy_need": ">=0.7"
+        },
+        "disposition": "为家庭目标（与Bronny同场）延长职业并调整建队",
+        "behavioral_notes": "个人/家庭目标与团队最优之间产生张力"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "中低不确定性容忍在关键期收紧为'零容错'标准",
+        "when": {
+          "uncertainty_tolerance": "<=0.45"
+        },
+        "disposition": "采用'one game at a time'与'margin for error is slim'的收缩式聚焦",
+        "behavioral_notes": "高压下拒绝远眺、极度当下化以控制风险"
+      }
+    ]
+  }
+}

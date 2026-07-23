@@ -1,0 +1,254 @@
+{
+  "person_id": "sheryl-sandberg",
+  "display_name": "雪莉·桑德伯格",
+  "name_en": "Sheryl Sandberg",
+  "region": "INTL",
+  "industries": [
+    "科技管理",
+    "女性领导倡议"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 23
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sheryl-sandberg/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sheryl-sandberg/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sheryl-sandberg/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/sheryl-sandberg/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "sheryl-sandberg",
+    "source": "sheryl-sandberg-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.68,
+        "evidence": "Keep your foot on the gas pedal until the very day you need to leave. / I look for people who can take ownership of a problem, not just describe it."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "Done is better than perfect. / These are hard issues, and I don't think there are easy answers, but we own our part in them."
+      },
+      "trust_propensity": {
+        "score": 0.5,
+        "evidence": "I look for people who can take ownership of a problem, not just describe it. / I always ask candidates about a time they failed. If they can't answer honestly, that tells me something."
+      },
+      "risk_appetite": {
+        "score": 0.72,
+        "evidence": "Do the jobs and take the risks. And run, don't walk, to the party. / Fortune does favor the bold, and you'll never know what you're capable of if you don't try. / Get on a rocket ship."
+      },
+      "self_efficacy": {
+        "score": 0.82,
+        "evidence": "Believe in yourself. / Feeling confident, or pretending that you feel confident, is necessary to reach for opportunities. / I have been called ambitious my whole life, and I've decided to take it as a compliment."
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "I want to be defined by what I build, not by the fact that I'm a woman who built it. / I had to learn to own that."
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "The most important career choice you'll make is who you marry. / I've become far more open about my own vulnerability than I ever was before Dave died."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "The best advice I ever got was to look for growth, not titles. / I want every little girl who's told she's bossy to be told instead she has leadership skills."
+      },
+      "empathy_reactivity": {
+        "score": 0.62,
+        "evidence": "Empathy at work isn't soft — it's a leadership skill we've undervalued. / Resilience is not a fixed trait — you can build it, and you can help others build it."
+      }
+    },
+    "core_models": [
+      {
+        "name": "数据即权威",
+        "rule": "任何主张必须锚定在可量化的研究或统计上，否则不成立",
+        "evidence": [
+          "The data is very clear: success and likeability are positively correlated for men, and negatively correlated for women.",
+          "We measure what we care about, and for a long time we didn't measure the gender gap."
+        ]
+      },
+      {
+        "name": "能动性优先框架",
+        "rule": "面对结构性问题，先问个人能做什么、如何'倾身向前'",
+        "evidence": [
+          "What would you do if you weren't afraid?",
+          "Sit at the table. Reach for opportunities. Believe in yourself."
+        ]
+      },
+      {
+        "name": "命名式框架化",
+        "rule": "把复杂问题压缩成可记忆的二元/三元命名，便于传播与操作",
+        "evidence": [
+          "Careers are a jungle gym, not a ladder.",
+          "The three P's get in the way of recovery: personalization, pervasiveness, and permanence."
+        ]
+      },
+      {
+        "name": "韧性可训练",
+        "rule": "负面能力（如从挫败恢复）被视为可练习的肌肉而非固定特质",
+        "evidence": [
+          "Resilience is not a fixed trait — you can build it, and you can help others build it.",
+          "You are not born with a fixed amount of resilience. It is a muscle."
+        ]
+      },
+      {
+        "name": "增长即机会",
+        "rule": "评估选择时优先看增长空间与规模，而非职衔或稳定性",
+        "evidence": [
+          "Get on a rocket ship. When companies are growing quickly, there are more things to do than there are people to do them.",
+          "The best advice I ever got was to look for growth, not titles."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对恐惧或犹豫",
+        "then": "反问'如果不害怕会怎么做'并向前迈进",
+        "evidence": "What would you do if you weren't afraid?"
+      },
+      {
+        "if": "追求完美拖延行动",
+        "then": "选择完成而非完美",
+        "evidence": "Done is better than perfect."
+      },
+      {
+        "if": "被贴负面标签（aggressive/bossy）",
+        "then": "重构为领导力并主动拥有",
+        "evidence": "I was told repeatedly that I was too aggressive, and I had to learn to own that."
+      },
+      {
+        "if": "评估职业机会",
+        "then": "看增长与学习而非职衔或资格",
+        "evidence": "Don't ask if you're qualified. Ask what you can learn."
+      },
+      {
+        "if": "招人时判断能力",
+        "then": "问其如何面对失败与是否承担问题所有权",
+        "evidence": "I look for people who can take ownership of a problem, not just describe it."
+      },
+      {
+        "if": "遭遇重大损失",
+        "then": "接受Option A失效并全力经营Option B",
+        "evidence": "Option A is not available. So let's just kick the shit out of Option B."
+      },
+      {
+        "if": "组织出错受质询",
+        "then": "程式化承认'太慢/应做更多'并声明承担责任",
+        "evidence": "We were too slow to identify the abuse of our platform, and we're taking steps to fix that."
+      },
+      {
+        "if": "论证一个价值",
+        "then": "引数据把它从'软'升级为'必需'",
+        "evidence": "Diversity isn't a nice-to-have. It's a must-have, and the data proves it."
+      }
+    ],
+    "value_weights": {
+      "商业增长与规模": 0.24,
+      "个人能动性倡议": 0.22,
+      "公众影响力与品牌": 0.16,
+      "韧性与意义重建": 0.14,
+      "女性互助与平权": 0.13,
+      "问责与透明（防御性）": 0.11
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "倡导透明、责任与'助人为善'的公共道德语言",
+        "force_b": "作为增长/营收架构负责人保护商业模式与职位",
+        "behavioral_signature": "国会证词说'We take responsibility very seriously'，同期公司被报道雇公关公司做反批评信息战并保留广告核心模式（dim-05 记录5/6）"
+      },
+      {
+        "force_a": "承认结构性性别歧视是外部障碍",
+        "force_b": "把解方主要落到个人行为（谈判、自信、lean in）",
+        "behavioral_signature": "口头说'The negotiation advice for women is different, and that itself is the problem'，实际持续以个人行为方案为主要杠杆而非制度改革（dim-05 记录7）"
+      },
+      {
+        "force_a": "早期克制、企业化、数据化的自我形象",
+        "force_b": "丧夫后主动的情感开放与脆弱展示",
+        "behavioral_signature": "2013前'I've cried at work'式表达少见，2015后主动谈哭泣、感恩、脆弱，并将私人悲剧转化为可传播产品《Option B》"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被指组织未尽责/平台被滥用",
+        "reaction": "切换为短促防御性道歉语域，承认'太慢''应做更多'",
+        "escalation": "叠加'投入大量人力技术''雇了数千人审核'来展示补救行动以稳住立场"
+      },
+      {
+        "trigger": "女性不互助或压制彼此",
+        "reaction": "情绪加码的道德判断",
+        "escalation": "There's a special place in hell for women who don't help other women — I didn't say it, but I believe it."
+      },
+      {
+        "trigger": "女性低估自身/归因于运气",
+        "reaction": "规范性纠正与劝诫",
+        "escalation": "Own your success. Women too often attribute it to luck or help — men to themselves."
+      }
+    ],
+    "blind_spots": [
+      "把系统性歧视重新包装为'女性自己不够自信'，弱化制度改革诉求 [学术/社会学-2013–2015]",
+      "以自身巨额财富、私人飞机、育儿支持网络的处境，建议普通女性靠'选对配偶'与leaning in解决问题（言行不一） [商业媒体-2013前后]",
+      "'Lean In 女性主义'是精英白领方案，忽视贫困、有色、单亲女性的结构处境 [女性主义评论者/公共知识分子-2013]",
+      "运营决策优先增长与广告收入，低估平台治理风险（Cambridge Analytica/俄罗斯干预/仇恨言论） [国会议员/监管机构/调查记者-2017–2019]",
+      "作为营收架构负责人构建'监控资本主义'广告模式而对其伦理代价缺乏自省 [数字权利组织/学者-2018–2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能感驱动'先行动再自证能力'的倾向",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "鼓励假装自信、抢先坐上桌子、看学习而非资格",
+        "behavioral_notes": "'Feeling confident, or pretending that you feel confident, is necessary'；'Don't ask if you're qualified'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好使其在增长期主动加码而非规避",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "选择高增长赛道、承担放大责任，容忍不完美",
+        "behavioral_notes": "'Get on a rocket ship'；'Fortune does favor the bold'；'Done is better than perfect'"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高控制需求下遭遇失控事件转为程式化责任话术以夺回叙事主动权",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "用'take responsibility'模板承认错误但保留结构与职位",
+        "behavioral_notes": "证词中'we take that responsibility very seriously'与保留商业模式核心并存（dim-05 记录6）"
+      }
+    ]
+  }
+}

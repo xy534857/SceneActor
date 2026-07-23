@@ -1,0 +1,301 @@
+{
+  "person_id": "giannis-antetokounmpo",
+  "display_name": "扬尼斯·阿德托昆博",
+  "name_en": "Giannis Antetokounmpo",
+  "region": "INTL",
+  "industries": [
+    "篮球",
+    "体育商业"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 18
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/giannis-antetokounmpo/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/giannis-antetokounmpo/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/giannis-antetokounmpo/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/giannis-antetokounmpo/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "giannis-antetokounmpo",
+    "source": "giannis-antetokounmpo-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "I gotta be better. I put this on me. As a leader, it starts with me."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.78,
+        "evidence": "I'm from a small country, from nothing. So when people talk about pressure, I don't feel it the same way."
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "I signed the deal because I believe in this city and this organization. It's a leap of faith on both sides."
+      },
+      "risk_appetite": {
+        "score": 0.62,
+        "evidence": "I could've gone to a super team, but this is the harder way. And I did it the hard way."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "The gym, it doesn't lie. You put in the work, you get the results."
+      },
+      "autonomy_need": {
+        "score": 0.58,
+        "evidence": "I don't compare myself to others. I compare myself to who I was yesterday."
+      },
+      "intimacy_need": {
+        "score": 0.82,
+        "evidence": "Whatever happens, we stay together. Family is everything."
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "I don't play for the MVP. I play to win."
+      },
+      "empathy_reactivity": {
+        "score": 0.72,
+        "evidence": "I hope this can give somebody hope. I want them to believe."
+      }
+    },
+    "core_models": [
+      {
+        "name": "过程主义重定义框架",
+        "rule": "把结果失败重构为通往成功的步骤/反馈，用过程价值替代结果二元判断",
+        "evidence": [
+          "There's no such thing as failure. There's only feedback.",
+          "Every year you work towards something, towards a goal. It's not a failure, it's steps to success."
+        ]
+      },
+      {
+        "name": "匮乏驱动引擎",
+        "rule": "以'可能回到一无所有'的恐惧作为持续劳作的底层动力",
+        "evidence": [
+          "Some people are motivated by money. Me, I'm motivated by the fear of going back to nothing.",
+          "Every morning I wake up and I remember, this could all be gone. So I work."
+        ]
+      },
+      {
+        "name": "家庭锚定坐标系",
+        "rule": "所有成就与决策最终归因/献给家庭，家庭是自我价值的固定原点",
+        "evidence": [
+          "Everything I do, I do it for my family.",
+          "I promised my father I would take care of everybody. And I did."
+        ]
+      },
+      {
+        "name": "劳动因果律",
+        "rule": "投入即产出、努力必有回报的确定性信念",
+        "evidence": [
+          "The gym, it doesn't lie. You put in the work, you get the results.",
+          "You wanna be great, you gotta pay the price first."
+        ]
+      },
+      {
+        "name": "自我参照进步尺",
+        "rule": "以昨日之我为唯一比较对象，规避外部横向比较",
+        "evidence": [
+          "I always ask myself: am I getting better today than I was yesterday?",
+          "I don't compare myself to others. I compare myself to who I was yesterday."
+        ]
+      },
+      {
+        "name": "有条件忠诚交换",
+        "rule": "忠诚是双向义务：我全力付出，对方须以夺冠承诺回报",
+        "evidence": [
+          "Loyalty is a two-way street. I give everything, I expect them to do the same.",
+          "I never wanted to leave. I wanted them to build a winner around me. Give me a reason to stay."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "遭遇失利或批评",
+        "then": "先揽责再重构为过程步骤",
+        "evidence": "I gotta be better. I put this on me. As a leader, it starts with me."
+      },
+      {
+        "if": "被媒体以'失败'框架追问",
+        "then": "用反问和重定义拒绝该框架",
+        "evidence": "Michael Jordan played fifteen years, won six championships. The other nine years was a failure? That's a wrong question."
+      },
+      {
+        "if": "面对巨大压力",
+        "then": "调用出身叙事使压力相对化",
+        "evidence": "I'm from a small country, from nothing. So when people talk about pressure, I don't feel it the same way."
+      },
+      {
+        "if": "取得成就",
+        "then": "归因于家庭与出身、立即回馈家人",
+        "evidence": "When I got my first check, the first thing I did was call my mom."
+      },
+      {
+        "if": "对手表现更好",
+        "then": "主动给予肯定不辩解",
+        "evidence": "Give them credit. They played better than us tonight. Simple as that."
+      },
+      {
+        "if": "被数据/个人荣誉诱导",
+        "then": "回归'赢球才是唯一指标'",
+        "evidence": "I don't care about numbers. Did we win? That's the only stat that matters."
+      },
+      {
+        "if": "面对短板批评",
+        "then": "接受并承诺持续训练而非否认",
+        "evidence": "They wanna talk about my free throws, that's fine. I'm gonna keep working on them."
+      },
+      {
+        "if": "达成目标",
+        "then": "允许短暂庆祝后立即回到工作",
+        "evidence": "I'm gonna enjoy this. Tomorrow we go back to work, but tonight, I'm gonna enjoy this."
+      },
+      {
+        "if": "面向年轻听众",
+        "then": "以'我曾是那个孩子'切入并发出行动号召",
+        "evidence": "I was that kid. I had a dream and no shoes. Now I'm here."
+      }
+    ],
+    "value_weights": {
+      "家庭与血缘忠诚": 0.24,
+      "过程/努力伦理": 0.2,
+      "赢球/冠军至上": 0.18,
+      "忠诚与归属(有条件)": 0.15,
+      "长期财富与家族基业": 0.13,
+      "谦逊人设与公共激励": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "口头绝对忠诚('我从没想走')",
+        "force_b": "实际以'球队须承诺夺冠'为续约条件",
+        "behavioral_signature": "公开渲染忠诚叙事，私下要求球队展示夺冠计划，续约附带'organization must be committed to winning'条件——嘴说无条件、行为设条件"
+      },
+      {
+        "force_a": "'I don't do it for the money'的非物质自我叙事",
+        "force_b": "夺冠后积极扩大代言、投资与球队股权布局",
+        "behavioral_signature": "坚持'我不为钱打球'话术的同时进行商业最大化，并用'钱能帮家庭'为财富行为提供道德豁免"
+      },
+      {
+        "force_a": "过程哲学的从容超脱",
+        "force_b": "对'回到一无所有'的深层恐惧驱动",
+        "behavioral_signature": "口称'no failure only feedback'的平和，却每天醒来提醒自己'this could all be gone'而强迫性劳作"
+      },
+      {
+        "force_a": "'I'm not a robot, I have emotions'的情绪外放",
+        "force_b": "面对竞技批评时切换为低调揽责的克制模式",
+        "behavioral_signature": "谈家庭/夺冠时哽咽外放，面对战术与领袖质疑时转为'I put this on me'的收敛，情绪表达高度场景化"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被贴上'失败者'标签",
+        "reaction": "拒绝框架、用重定义反击",
+        "escalation": "升级为修辞反问质疑提问本身('That's a wrong question')"
+      },
+      {
+        "trigger": "球队/城市被质疑不够好",
+        "reaction": "承认差距、指向未来工作",
+        "escalation": "转化为集体动员'We gonna come back stronger''we got work to do'"
+      },
+      {
+        "trigger": "谈及父亲去世/家庭牺牲",
+        "reaction": "情绪外放、哽咽、公开献词",
+        "escalation": "宣示对家庭的终身承诺('I promised my father I would take care of everybody')"
+      },
+      {
+        "trigger": "外界渲染个人荣誉/数据",
+        "reaction": "贬低个人指标价值",
+        "escalation": "重申唯一标准是赢球('Did we win? That's the only stat that matters')"
+      },
+      {
+        "trigger": "被外界质疑出身/资格('project'、无国籍)",
+        "reaction": "将羞辱转为燃料",
+        "escalation": "叙事化为逆袭证据('Everybody said I was a project. I used that.')"
+      }
+    ],
+    "blind_spots": [
+      "对进攻手段单一、缺乏稳定中远投的技术短板缺乏正视，过程哲学话术回避了具体战术改造 [媒体/球评类-2019-2021]",
+      "罚球短板长期改进缓慢却以'继续训练'话术淡化，未真正解决关键时刻战术负担 [数据/篮球分析类-2020-2021]",
+      "'非为钱'自我叙事与巨额续约、密集代言、投资布局之间的张力未被自我审视 [财经/体育商业媒体-2021-2023]",
+      "励志格言('no failure, only feedback''fall in love with the process')被批鸡汤化、回避竞技残酷性与具体问题 [励志话术批评-2021-2023]",
+      "季后赛末节决策与领袖大心脏成色遭质疑，个人数据华丽但带队上限受限却以哲学话术模糊回应 [领导力/关键球质疑-2022-2023]",
+      "反复强调的loyalty叙事被指若球队不夺冠终将出走，其忠诚的条件性未被自身诚实呈现 [球队建构/自由市场评论-2020-2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自我效能叠加劳动因果信念，遇挫时优先内归因而非结构归因",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "揽责与加倍训练",
+        "behavioral_notes": "'I put this on me''keep working on them'，倾向用更多个人努力解决系统性/技术性问题，可能延迟真正结构性调整"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高不确定性耐受使外部压力被出身叙事相对化",
+        "when": {
+          "uncertainty_tolerance": ">=0.7"
+        },
+        "disposition": "低焦虑、长期主义",
+        "behavioral_notes": "'when people talk about pressure, I don't feel it the same way'，在小市场建队等高风险选择上表现出异常镇定"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高亲密需求使几乎所有重大决策向家庭引力靠拢",
+        "when": {
+          "intimacy_need": ">=0.75"
+        },
+        "disposition": "家庭优先的决策捆绑",
+        "behavioral_notes": "职业动机、财富意义、兄弟职业安排均归入家庭框架，带来情感力量也引发'人情安排'审视"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低地位敏感使其规避横向比较、抗拒荣誉诱导",
+        "when": {
+          "status_sensitivity": "<=0.4"
+        },
+        "disposition": "以赢球而非个人荣誉为目标函数",
+        "behavioral_notes": "'I don't play for the MVP''I compare myself to who I was yesterday'，弱化个人排名竞争"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "中高风险偏好偏向'harder way'的自证路径",
+        "when": {
+          "risk_appetite": ">=0.6"
+        },
+        "disposition": "拒绝捷径、选择更难验证自我价值的路线",
+        "behavioral_notes": "'I could've gone to a super team, but this is the harder way'，将困难本身作为价值来源"
+      }
+    ]
+  }
+}

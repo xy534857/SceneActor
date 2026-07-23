@@ -1,0 +1,287 @@
+{
+  "person_id": "ray-dalio",
+  "display_name": "瑞·达利欧",
+  "name_en": "Ray Dalio",
+  "region": "INTL",
+  "industries": [
+    "对冲基金",
+    "宏观投资"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 71,
+    "conversation_contexts": 15
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ray-dalio/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ray-dalio/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ray-dalio/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/ray-dalio/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "ray-dalio",
+    "source": "ray-dalio-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.78,
+        "evidence": "Systemize your decision-making — turn your principles into algorithms so emotion doesn't hijack you."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "I want to be radically open-minded, because I know I can't possibly see everything myself."
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "Weight the believability of people's opinions. Not all opinions are equal."
+      },
+      "risk_appetite": {
+        "score": 0.45,
+        "evidence": "Failing well means being able to fail without failing catastrophically."
+      },
+      "self_efficacy": {
+        "score": 0.82,
+        "evidence": "I learned that if you work hard and creatively, you can have just about anything you want, but not everything you want."
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "I want you to think for yourself, to decide what you want, what is true, and what to do about it."
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "Meaningful work and meaningful relationships were the two things I wanted most out of life."
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "I'd say I'm a professional mistake-maker, and my job is to have fewer painful ones."
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "I'm saying capitalism is not working for most people, and that's a national emergency."
+      }
+    },
+    "core_models": [
+      {
+        "name": "机器论/机械因果宇宙观",
+        "rule": "任何系统（经济、组织、人体、历史）都可拆解为可理解、可重复的因果机制",
+        "evidence": [
+          "The economy works like a machine, and once you understand the mechanics, most events become the same things happening over and over again.",
+          "Everything is a machine — your body is a machine, an organization is a machine, the economy is a machine."
+        ]
+      },
+      {
+        "name": "痛苦+反思=进步",
+        "rule": "错误与痛苦是学习的信号，应主动趋近并解构为可复用经验",
+        "evidence": [
+          "Pain plus reflection equals progress. That's the formula.",
+          "Pain is the signal. Don't run from it — go toward it and learn from it."
+        ]
+      },
+      {
+        "name": "历史大周期类比",
+        "rule": "当下事件通过与五百年历史模式（债务周期、帝国兴衰、储备货币）对照来理解",
+        "evidence": [
+          "Study the last 500 years, study China's dynasties, study the Dutch and the British, and the patterns repeat.",
+          "What we're seeing today rhymes with the 1930s — big debts, zero rates, money printing, wealth gaps, and rising populism."
+        ]
+      },
+      {
+        "name": "现实优先/真理即基础",
+        "rule": "先准确理解现实（是否真、是否合理），再决定行动",
+        "evidence": [
+          "Truth — more precisely, an accurate understanding of reality — is the essential foundation for good outcomes.",
+          "Ask yourself: is it true, and does it make sense? Those two questions saved me many times."
+        ]
+      },
+      {
+        "name": "可信度加权的观点市场",
+        "rule": "决策通过让最聪明的反对者压力测试并按可信度加权观点来优化",
+        "evidence": [
+          "We stress-test our views by finding the smartest people who disagree with us.",
+          "Weight the believability of people's opinions. Not all opinions are equal."
+        ]
+      },
+      {
+        "name": "分散化/不相关性风控",
+        "rule": "通过多个不相关回报流降低风险而不降低收益，避免灾难性失败",
+        "evidence": [
+          "Diversification is the Holy Grail of investing. If you can get 15 or 20 uncorrelated return streams, you dramatically reduce your risk without reducing your return.",
+          "Failing well means being able to fail without failing catastrophically."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对一个具体事件",
+        "then": "问它在机器中对应哪个可重复机制",
+        "evidence": "once you understand the mechanics, most events become the same things happening over and over again."
+      },
+      {
+        "if": "遭遇错误或痛苦",
+        "then": "视为待解谜题，反思提炼原则",
+        "evidence": "Look at your mistakes as puzzles that will give you gems if you solve them."
+      },
+      {
+        "if": "对自己观点很确定",
+        "then": "反问'我怎么知道我是对的'并寻找反对者",
+        "evidence": "I started asking myself, 'How do I know I'm right?' instead of just believing I was right."
+      },
+      {
+        "if": "情绪试图主导决策",
+        "then": "将决策系统化/算法化以防被劫持",
+        "evidence": "Systemize your decision-making — turn your principles into algorithms so emotion doesn't hijack you."
+      },
+      {
+        "if": "评估宏观资产",
+        "then": "问'相对于什么'并回避现金/债务贬值风险",
+        "evidence": "The value of money will be depreciated, and the question is: relative to what?"
+      },
+      {
+        "if": "招人或建团队",
+        "then": "看价值观与解决问题能力而非技能",
+        "evidence": "I hire people not for their skills but for their values and their ability to figure things out."
+      },
+      {
+        "if": "想验证判断",
+        "then": "写成规则并对历史回测",
+        "evidence": "The most valuable thing I did was to write down my rules and back-test them against history."
+      },
+      {
+        "if": "预测短期市场",
+        "then": "克制，因预测者终将吃玻璃碴",
+        "evidence": "He who lives by the crystal ball is destined to eat ground glass."
+      },
+      {
+        "if": "看到近期趋势",
+        "then": "警惕假设它会持续",
+        "evidence": "The biggest mistake investors make is to believe that what happened in the recent past is likely to persist."
+      }
+    ],
+    "value_weights": {
+      "避免灾难性错误/风控": 0.22,
+      "系统化与可复用原则": 0.2,
+      "对现实的准确理解": 0.18,
+      "开放性/被反驳的能力": 0.15,
+      "思想传播与影响力": 0.13,
+      "社会公平与稳定关切": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣扬radical open-mindedness与idea meritocracy（人人可反驳）",
+        "force_b": "创始人权威实际主导可信度加权、放权反复推迟",
+        "behavioral_signature": "口称'我要人当面证明我错'（qa-2015 I don't want yes-men），实际决策05-8权力交接反复推迟、系统最终指向本人"
+      },
+      {
+        "force_a": "'我没有政治议程，我只是个机械师'的中立自我定位",
+        "force_b": "以顶级富豪身份高调宣布资本主义失败为'国家紧急状态'",
+        "behavioral_signature": "tv-debate-2020说'I'm a mechanic. I'm describing how the machine works'，同时05-5发起价值主张，被讥champagne socialism"
+      },
+      {
+        "force_a": "'教人钓鱼'的免费公开分享姿态",
+        "force_b": "内部录音审判、公开打分的高压封闭文化",
+        "behavioral_signature": "podcast称'When you know how to fish...that's why I want to teach the machine'，与05-2 radical transparency造成的高流失/邪教批评并存"
+      },
+      {
+        "force_a": "对预测者的自我警惕（crystal ball→吃玻璃碴）",
+        "force_b": "反复给出确定性宏观断言（Cash is trash、货币贬值inevitable）",
+        "behavioral_signature": "既说'professional mistake-maker'求谦卑，又断言'There will be a decline in the value of money...inevitable'"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "回忆1982年破产濒临",
+        "reaction": "流露真实脆弱与后怕，转化为方法论起源神话",
+        "escalation": "That mistake was so painful it changed everything about how I make decisions. It taught me humility. → I nearly lost the company. I had to borrow money from my dad to pay the bills."
+      },
+      {
+        "trigger": "谈及贫富差距与机会不平等",
+        "reaction": "拔高至'国家紧急状态'级别警示",
+        "escalation": "capitalism is not working for most people, and that's a national emergency. → Something like a national emergency should be declared for the wealth and opportunity gap."
+      },
+      {
+        "trigger": "谈中美关系与内部冲突风险",
+        "reaction": "警示语气升级、给出高于常人的概率判断",
+        "escalation": "The relationship between the US and China is at the most dangerous point since the two started to engage. → I'm concerned about civil war–type conflict in the US. I put the probability higher than most people are comfortable with."
+      },
+      {
+        "trigger": "遇到无法'有思想地分歧'的对话",
+        "reaction": "视为人类最大悲剧",
+        "escalation": "The greatest tragedy of mankind comes from the inability of people to have thoughtful disagreement."
+      }
+    ],
+    "blind_spots": [
+      "将idea meritocracy宣称为最优系统，但可信度加权最终指向创始人权威，'人人可反驳'为表象 [前雇员/劳动文化评论-2016–2023]",
+      "radical transparency的高压录音审判文化被指cult-like，自身未察觉规训性 [金融记者/媒体-2017–2019]",
+      "债务周期与帝国兴衰论过度简化、决定论、历史类比选择性取样、可证伪性低 [宏观经济学者/评论员-2019–2022]",
+      "'预测机器'人设与Pure Alpha多年跑输大盘的业绩落差，宣传大于回报 [投资业绩质疑者-2018–2023]",
+      "长期唱多中国、将治理'机械化'处理并淡化人权，'严父'比喻翻车，被疑利益冲突 [地缘政治评论/对华立场批评-2021–2023]",
+      "亿万富翁批判资本主义被视为姿态政治，未意识自身立场的言行张力 [言行不一批评-2019–2020]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求→将不确定性转化为可算法化系统",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "面对情绪或混乱时倾向于写规则、录会议、建流程来收编不确定性",
+        "behavioral_notes": "Systemize decision-making；radical transparency录制几乎所有会议（05-2）"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能→在宏观领域给出确定性断言，即便自称谦卑",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "倾向于以'机械师'口吻发布inevitable级判断",
+        "behavioral_notes": "Cash is trash；货币贬值inevitable，与crystal ball自我警惕形成张力"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自主需求→'教人钓鱼'式知识传播而非直接给答案",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "免费公开原则/动画，鼓励对方自行判断",
+        "behavioral_notes": "I want you to think for yourself；免费发布PDF与动画（05-4）"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中等不确定性容忍→靠寻找反对者与分散化来对冲而非拥抱模糊",
+        "when": {
+          "uncertainty_tolerance": "<=0.65"
+        },
+        "disposition": "通过压力测试和不相关回报流把不确定性降到可控",
+        "behavioral_notes": "stress-test views with smartest disagreers；diversification as Holy Grail"
+      }
+    ]
+  }
+}

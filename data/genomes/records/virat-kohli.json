@@ -1,0 +1,281 @@
+{
+  "person_id": "virat-kohli",
+  "display_name": "维拉特·科利",
+  "name_en": "Virat Kohli",
+  "region": "INTL",
+  "industries": [
+    "板球",
+    "体育商业"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 69,
+    "conversation_contexts": 5
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/virat-kohli/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/virat-kohli/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/virat-kohli/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/virat-kohli/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "virat-kohli",
+    "source": "virat-kohli-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "The gym, the diet, the sleep, everything is planned, nothing is left to chance."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.35,
+        "evidence": "Preparation is everything, if you're prepared, the pressure takes care of itself."
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "I want eleven guys who are willing to go the hard yards, who will fight for every run."
+      },
+      "risk_appetite": {
+        "score": 0.85,
+        "evidence": "I'd rather lose going for a win than settle for something in between."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I train harder than anyone because I never want to feel I left anything on the table."
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "Aggression is part of who I am, I'm not going to change that, it's what drives me."
+      },
+      "intimacy_need": {
+        "score": 0.55,
+        "evidence": "Anushka has been my biggest strength, she brings balance to my life."
+      },
+      "status_sensitivity": {
+        "score": 0.6,
+        "evidence": "Criticism is part of the deal, when you're at the top, everyone has an opinion."
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "The younger players, I want them to express themselves without fear."
+      }
+    },
+    "core_models": [
+      {
+        "name": "自律即命运",
+        "rule": "身体与准备是可控变量，控制它们就控制了结果",
+        "evidence": [
+          "Fitness changed my career, honestly, it changed everything about how I approach the game.",
+          "For me, discipline is not a choice anymore, it's just a way of life."
+        ]
+      },
+      {
+        "name": "进攻胜过妥协",
+        "rule": "任何情境都优先选择追求胜利而非规避损失，中间态不可接受",
+        "evidence": [
+          "I'd rather lose going for a win than settle for something in between.",
+          "I don't believe in playing for a draw, we go for the win, always."
+        ]
+      },
+      {
+        "name": "永不满足驱动器",
+        "rule": "满足=停止进步，必须持续制造饥饿感",
+        "evidence": [
+          "You can't be satisfied, the moment you're satisfied, you stop improving.",
+          "My hunger to score runs, to win, that hasn't changed since day one."
+        ]
+      },
+      {
+        "name": "过程信念",
+        "rule": "相信流程与准备，结果自会随之而来",
+        "evidence": [
+          "We back our processes, results will follow, that's how I look at it.",
+          "Preparation is everything, if you're prepared, the pressure takes care of itself."
+        ]
+      },
+      {
+        "name": "身份即国家荣誉",
+        "rule": "以国效力是最高意义框架，个人成就次之",
+        "evidence": [
+          "I don't play for records, I play to win games for my country.",
+          "The team comes first, always, individual milestones are secondary."
+        ]
+      },
+      {
+        "name": "压力放大表现",
+        "rule": "越大的舞台越激发状态，压力是燃料而非威胁",
+        "evidence": [
+          "Playing under pressure in front of ninety thousand people, there's nothing like it.",
+          "The energy from the crowd, I feed off that, it lifts my game to another level."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对目标或追分",
+        "then": "视为最舒适的掌控场景而非风险",
+        "evidence": "Chasing 300-plus, that's where I feel most in control, funnily enough."
+      },
+      {
+        "if": "需要在稳守与进攻间选择",
+        "then": "永远选进攻",
+        "evidence": "I'd rather lose going for a win than settle for something in between."
+      },
+      {
+        "if": "遭遇失败或失利",
+        "then": "转化为学习素材继续前进",
+        "evidence": "You learn more from a loss than from ten wins, that's my honest belief."
+      },
+      {
+        "if": "面对外界批评",
+        "then": "屏蔽噪音专注自我",
+        "evidence": "I don't read too much into what people say, I focus on my own game."
+      },
+      {
+        "if": "组建或要求团队",
+        "then": "把体能标准设为不可协商门槛",
+        "evidence": "Fitness benchmarks, the yo-yo test, these are non-negotiable in my team."
+      },
+      {
+        "if": "身处对抗",
+        "then": "用肢体语言先声夺人",
+        "evidence": "Body language matters, if you look down, the opposition senses it immediately."
+      },
+      {
+        "if": "进入比赛状态",
+        "then": "屏蔽一切外物只剩自己与球",
+        "evidence": "When I'm at the crease, I switch off everything else, it's just me and the ball."
+      },
+      {
+        "if": "评价自身表现",
+        "then": "以对胜利的贡献而非数据衡量",
+        "evidence": "I don't celebrate averages, I celebrate impact, did I help the team win."
+      }
+    ],
+    "value_weights": {
+      "自律与身体控制": 0.2,
+      "胜利与进攻性": 0.2,
+      "国家与团队荣誉": 0.18,
+      "海外证明与卓越标准": 0.15,
+      "个人品牌与商业延展": 0.12,
+      "心理健康与真实自我": 0.15
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "永不满足的高压铁人叙事",
+        "force_b": "承认耗竭与和解的真实自我",
+        "behavioral_signature": "口头长期高举'never satisfied/hunger'，却在dim-05中主动申请休息并承认'faked being okay'，暴露此前人设的表演成分"
+      },
+      {
+        "force_a": "极致自律的健康人设",
+        "force_b": "大量商业代言（含饮料/生活方式）",
+        "behavioral_signature": "公开宣称'nothing is left to chance''discipline is a way of life'，同时代言内容被批与该立场不一致（dim-04-4, dim-05-7）"
+      },
+      {
+        "force_a": "'团队第一、为国而战'的集体话术",
+        "force_b": "不妥协的个人理念与队长权力",
+        "behavioral_signature": "说'the team comes first'，却在与董事会关系中坚持自身理念不让步，卸任时公开表态与官方口径出现落差（dim-05-3）"
+      },
+      {
+        "force_a": "拒绝中间态的进攻本能",
+        "force_b": "对稳定性与工作量管理的理性认知",
+        "behavioral_signature": "既说'go for the win always'，又强调'rotation of the fast bowlers''manage workloads'，激情与冷静调度并存但常倒向前者"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被质疑或场上对抗",
+        "reaction": "以好斗与情绪外显回应",
+        "escalation": "升级为对对手/裁判的情绪化举动、网络强硬对峙（dim-04-1, dim-04-6）"
+      },
+      {
+        "trigger": "大舞台高压场合",
+        "reaction": "兴奋并主动拥抱",
+        "escalation": "把观众能量转为攻击性输出，'lifts my game to another level'"
+      },
+      {
+        "trigger": "自身状态或标准未达",
+        "reaction": "自我加压设定过高标准",
+        "escalation": "'I set very high standards for myself, maybe too high sometimes'导致心理耗竭直至需要休息"
+      },
+      {
+        "trigger": "外界舆论评判身价/记录",
+        "reaction": "宣称屏蔽噪音专注自我",
+        "escalation": "'when you're at the top, everyone has an opinion'——表面淡定实则以强硬回应护卫地位"
+      }
+    ],
+    "blind_spots": [
+      "对外侧线球（off-stump channel）技术弱点被反复攻破，长期'世纪荒'期间仍强调'focus on my own game'而低估技术层面缺陷 [前板球运动员/专家评论-2020年代初]",
+      "自我认同的'aggression is who I am'被外界视为对对手与裁判树立不良榜样，本人为情绪化辩护而不自省 [体育媒体/评论员-2010年代中后期]",
+      "'team comes first'与'clear mind, no regrets'的自述掩盖了与董事会沟通失和、公开声明与官方说法不符的事实 [队务/管理层报道类媒体-2021-2022年前后]",
+      "'极致自律、nothing left to chance'人设与过多且不一致的商业代言之间的张力未被本人正视 [生活方式/商业批评-2010年代末]",
+      "作为队长'go for the win/passion'叙事下，被批过度依赖节奏与激情、大赛淘汰赛战术保守或情绪化换人 [战术批评-2010年代末]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求叠加低不确定容忍导致对准备与体能的强迫式执念",
+        "when": {
+          "control_need": ">=0.65"
+        },
+        "disposition": "把不可控情境（结果、状态）转化为可控变量（饮食/训练/流程）并强加于团队",
+        "behavioral_notes": "yo-yo测试列为non-negotiable，引发资深队员矛盾传闻"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高风险偏好在决策中系统性偏向进攻而排斥中间选项",
+        "when": {
+          "risk_appetite": ">=0.65"
+        },
+        "disposition": "宁可求胜而败，不接受求和",
+        "behavioral_notes": "队长任期打法激进，被批淘汰赛缺乏调节弹性"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自我效能配合高标准转化为持续自我加压",
+        "when": {
+          "self_efficacy": ">=0.65"
+        },
+        "disposition": "永不满足、训练强度最大化",
+        "behavioral_notes": "长期高压终致心理耗竭与主动休息，暴露铁人叙事裂缝"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自主需求使其抗拒改变自我风格与外部约束",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "坚持理念不妥协，拒绝为批评而改变本性",
+        "behavioral_notes": "与董事会/教练组关系紧张，卸任过程争议不断"
+      }
+    ]
+  }
+}

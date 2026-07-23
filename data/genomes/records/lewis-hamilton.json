@@ -1,0 +1,268 @@
+{
+  "person_id": "lewis-hamilton",
+  "display_name": "刘易斯·汉密尔顿",
+  "name_en": "Lewis Hamilton",
+  "region": "INTL",
+  "industries": [
+    "赛车",
+    "运动员倡议"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 30
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lewis-hamilton/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lewis-hamilton/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lewis-hamilton/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/lewis-hamilton/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "lewis-hamilton",
+    "source": "lewis-hamilton-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "I want to be a driver AND an activist, I refuse to be told to just stick to racing."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.7,
+        "evidence": "Moving to Mercedes was a huge decision, but I believe in this project long term."
+      },
+      "trust_propensity": {
+        "score": 0.75,
+        "evidence": "We're building something and I have faith in the people around me."
+      },
+      "risk_appetite": {
+        "score": 0.65,
+        "evidence": "Every year you have to reinvent yourself, you can't stand still in this sport."
+      },
+      "self_efficacy": {
+        "score": 0.8,
+        "evidence": "I gave it absolutely everything, we did everything we could this season."
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "I've never been afraid to be myself."
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "My mum, my dad, my brother, they're everything to me, the reason I do this."
+      },
+      "status_sensitivity": {
+        "score": 0.5,
+        "evidence": "Equalling Michael's record is beyond anything I imagined for myself."
+      },
+      "empathy_reactivity": {
+        "score": 0.85,
+        "evidence": "I want to inspire kids that look like me, kids from backgrounds like mine."
+      }
+    },
+    "core_models": [
+      {
+        "name": "童年溯源使命框架",
+        "rule": "任何重大选择或身份陈述都回溯到童年起点与出身，以'从哪来'定义'为何做'",
+        "evidence": [
+          "I've been chasing this since I was eight years old in a go-kart.",
+          "I'm the same kid from Stevenage, that's never going to change."
+        ]
+      },
+      {
+        "name": "集体归因/团队一体",
+        "rule": "成就与失败都归于团队整体而非个人，胜负共担",
+        "evidence": [
+          "We win and we lose together as a team, that's how it's always been.",
+          "I owe everything to this team, the guys back at the factory are working so hard."
+        ]
+      },
+      {
+        "name": "平台即责任",
+        "rule": "地位与影响力必须转化为社会行动，沉默即共谋",
+        "evidence": [
+          "Silence is not an option, staying neutral is being part of the problem.",
+          "For me it's about more than just the racing now, it's about using this platform."
+        ]
+      },
+      {
+        "name": "痛苦转化为驱动力",
+        "rule": "将种族歧视、孤独、失败等负面经验转译为竞技与使命的燃料",
+        "evidence": [
+          "I channel all that pain, all that anger, into the driving.",
+          "I use my voice because for so long I didn't feel like I had one."
+        ]
+      },
+      {
+        "name": "持续重塑/渐进主义",
+        "rule": "不接受停滞，靠一点点累积和自我更新推进目标",
+        "evidence": [
+          "Every year you have to reinvent yourself, you can't stand still in this sport.",
+          "Bit by bit we chipped away at it and the result speaks for itself."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "失利",
+        "then": "直接承认痛苦但不推诿、承认对手更强",
+        "evidence": "Sometimes you've just got to hold your hands up and say the other guy was better today."
+      },
+      {
+        "if": "获胜",
+        "then": "把功劳归给团队与父亲",
+        "evidence": "I owe everything to this team, the guys back at the factory are working so hard."
+      },
+      {
+        "if": "面对社会不公",
+        "then": "公开表态而非保持中立",
+        "evidence": "We took the knee because it's the right thing to do, full stop."
+      },
+      {
+        "if": "被要求'只管开车'",
+        "then": "拒绝并坚持双重身份",
+        "evidence": "I refuse to be told to just stick to racing."
+      },
+      {
+        "if": "被批评为不完美",
+        "then": "以'我是人、在学习'来缓冲",
+        "evidence": "I've made mistakes, I'm human, I'm learning and growing like anyone else."
+      },
+      {
+        "if": "面临重大不确定决定",
+        "then": "用长期信念和童年梦想框定它",
+        "evidence": "Moving to Mercedes was a huge decision, but I believe in this project long term."
+      },
+      {
+        "if": "身份或表达受规则限制",
+        "then": "以'这就是我'为由抵触",
+        "evidence": "the jewellery thing, I mean, some of this stuff is part of who I am."
+      },
+      {
+        "if": "取得历史成就",
+        "then": "强调不视为理所当然、保持谦卑",
+        "evidence": "I don't take any of this for granted, not a single moment."
+      }
+    ],
+    "value_weights": {
+      "社会使命与代表性": 0.28,
+      "长期愿景与自我重塑": 0.2,
+      "团队忠诚与归属": 0.15,
+      "个人身份自主表达": 0.17,
+      "体育风度与形象维护": 0.12,
+      "环保/价值一致性": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "价值倡导（环保、可持续）",
+        "force_b": "高碳生活方式与竞技现实",
+        "behavioral_signature": "公开推可持续与素食（driver-launch-2022 'we've got to leave this planet better than we found it'），但仍参与���碳运动并被曝私人飞机，改用'I'm human, I'm learning'缓冲而非改变行为（dim-05 记录3）"
+      },
+      {
+        "force_a": "对抗规则/张扬自我表达",
+        "force_b": "体育风度与形象维护",
+        "behavioral_signature": "对FIA珠宝禁令公开抵触（dim-05 记录4），但2021争议失冠时却选择克制不激烈指控（dim-05 记录5），显示对'对抗'的选择性——涉身份时强硬，涉裁判时克制"
+      },
+      {
+        "force_a": "公众强者形象/胜利叙事",
+        "force_b": "隐藏的脆弱与孤独",
+        "behavioral_signature": "公开高频输出信念宣言与胜利喜悦，同时多年隐藏心理健康挣扎（'There were years I was really struggling with my mental health and I hid it'），从'I hid it'到后期公开倡导的姿态迟滞转变（dim-05 记录7）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "冠军级失利",
+        "reaction": "直接坦承痛苦而不掩饰",
+        "escalation": "从'It hurts, I'm not going to lie'升级为需长期消化（'Losing the way I did in 2021, it took a long time to process that'）"
+      },
+      {
+        "trigger": "种族/归属被质疑",
+        "reaction": "回溯童年创伤并将其转为使命",
+        "escalation": "从'I felt that difference every day'升级为'I channel all that pain, all that anger, into the driving'"
+      },
+      {
+        "trigger": "被要求'别碰政治/只管开车'",
+        "reaction": "坚决拒绝并声明双重身份",
+        "escalation": "从'Silence is not an option'升级为'I refuse to be told to just stick to racing'"
+      },
+      {
+        "trigger": "赛车缺乏竞争力",
+        "reaction": "保持工作导向、拒绝放弃",
+        "escalation": "从'The car just wasn't there today, we've got to keep pushing'升级为'we never gave up, we kept our heads down and worked'"
+      }
+    ],
+    "blind_spots": [
+      "低估自身胜利对强势赛车的依赖，主观强调团队努力叙事 [车迷社群/赛事分析评论-2016/2021]",
+      "对环保倡导与自身高碳生活方式的矛盾缺乏实质回应，仅以'在学习'缓冲 [环境评论/调查报道-2019–2022]",
+      "将社会倡议视为纯粹真诚行动，未察觉外界对其'作秀/品牌营销'的持续质疑 [意见专栏/社交平台批评-2020–2021]",
+      "将对抗监管框定为身份/健康正当性，忽视外界视其为'个人表达凌驾规则' [赛事监管方声明/赛车专业媒体-2022]",
+      "认为多元身份拓展是自我完整的表达，低估传统纯粹派'分心'批评的舆论影响 [英国小报体育版/退役车手评论-2018–2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高共情反应度驱动其将个人痛苦转为群体使命",
+        "when": {
+          "empathy_reactivity": ">=0.8"
+        },
+        "disposition": "把竞技平台工具化为社会代表性行动",
+        "behavioral_notes": "'you can't be what you can't see' / 创立Mission 44、Hamilton Commission"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "高自主需求遇到规则/身份限制时触发对抗",
+        "when": {
+          "autonomy_need": ">=0.7"
+        },
+        "disposition": "以'这就是我'为由拒绝合规",
+        "behavioral_notes": "FIA珠宝争议、拒绝'stick to racing'；但对裁判争议反而克制，显示对抗有选择性"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "高不确定性容忍支撑其在生涯关键期做高风险迁移",
+        "when": {
+          "uncertainty_tolerance": ">=0.65"
+        },
+        "disposition": "以长期信念/童年梦想框定跳槽决策",
+        "behavioral_notes": "2013加盟当时非顶尖梅赛德斯、2024转法拉利，均以'believe in the project'/'childhood dream'叙事化解风险"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "高信任倾向使其成就归因外部���队",
+        "when": {
+          "trust_propensity": ">=0.7"
+        },
+        "disposition": "胜负共担、功劳归团队与父亲",
+        "behavioral_notes": "'we win and we lose together'；副作用是低估赛车优势对结果的贡献"
+      }
+    ]
+  }
+}

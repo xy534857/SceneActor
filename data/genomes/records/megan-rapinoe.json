@@ -1,0 +1,263 @@
+{
+  "person_id": "megan-rapinoe",
+  "display_name": "梅根·拉皮诺埃",
+  "name_en": "Megan Rapinoe",
+  "region": "INTL",
+  "industries": [
+    "足球",
+    "社会运动"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 9
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/megan-rapinoe/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/megan-rapinoe/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/megan-rapinoe/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/megan-rapinoe/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "megan-rapinoe",
+    "source": "megan-rapinoe-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "The pink hair was a choice, and I stand by every ridiculous decision I've ever made about it."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "Change is uncomfortable. If it were comfortable, it would've happened already."
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "We had to sue our own federation. Think about that. We sued the people we play for."
+      },
+      "risk_appetite": {
+        "score": 0.88,
+        "evidence": "Go big or go home, right? That's the only way we know how to do it."
+      },
+      "self_efficacy": {
+        "score": 0.92,
+        "evidence": "I've made a career out of being underestimated and then proving people wrong."
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "I'd rather lose being myself than win being someone else."
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "My relationship, my sexuality, my activism — I don't compartmentalize any of it."
+      },
+      "status_sensitivity": {
+        "score": 0.65,
+        "evidence": "Winning gives you a microphone. I intend to use mine."
+      },
+      "empathy_reactivity": {
+        "score": 0.78,
+        "evidence": "It's not just about us. It's about the little girls in the stands wearing our jerseys."
+      }
+    },
+    "core_models": [
+      {
+        "name": "成就即合法性凭证",
+        "rule": "先用可量化的胜利/记录建立信用，再将其兑换为社会诉求的发言权",
+        "evidence": [
+          "Winning gives you a microphone. I intend to use mine.",
+          "Every trophy we win is an argument. Every goal is a data point."
+        ]
+      },
+      {
+        "name": "账本主义论证",
+        "rule": "把道德诉求锚定在不可辩驳的数字/事实上，抽走情绪辩论空间",
+        "evidence": [
+          "I'm here because the numbers don't lie, and the numbers say we're paid less.",
+          "The women's game generates revenue. That's not opinion, that's the ledger."
+        ]
+      },
+      {
+        "name": "身份即论据叠加",
+        "rule": "把gay+athlete+champion三重身份组合为不可拆解的整体论证力",
+        "evidence": [
+          "Being gay and being an athlete — those two things don't cancel each other out. They fuel each other.",
+          "My relationship, my sexuality, my activism — I don't compartmentalize any of it."
+        ]
+      },
+      {
+        "name": "沉默即失败",
+        "rule": "任何议题上不表态都被判定为道德失责，默认动作是发声",
+        "evidence": [
+          "Silence has never been the answer. Not for me.",
+          "What's the point of the platform if you're just going to stand on it silently?"
+        ]
+      },
+      {
+        "name": "爱与批判并存",
+        "rule": "对所属系统的批判被重构为更高级的忠诚，而非背叛",
+        "evidence": [
+          "I'm not anti-American. I love this country. That's exactly why I demand better from it.",
+          "You can love something and still fight to change it. That's not a contradiction."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对争议性表态是否收回",
+        "then": "不道歉、主动重申并加码",
+        "evidence": "I don't regret the White House comment. I meant it. I'd say it again."
+      },
+      {
+        "if": "被指责'过度/张扬'",
+        "then": "以'配得上'为由拒绝收敛",
+        "evidence": "Everyone said the celebration was too much. I don't think there's such a thing as too much when you've earned it."
+      },
+      {
+        "if": "投入任何事",
+        "then": "全力而非折中",
+        "evidence": "I don't do things halfway. I never have. That's not a personality flaw, it's a strategy."
+      },
+      {
+        "if": "被要求安静配合",
+        "then": "拒绝并把喧闹本身当作立场",
+        "evidence": "Honestly? I don't have time to be quiet. I've never been the quiet one."
+      },
+      {
+        "if": "被称分裂/惹麻烦",
+        "then": "接受标签并对立于'虚伪'",
+        "evidence": "I've been called divisive. I'd rather be divisive than dishonest."
+      },
+      {
+        "if": "他人感到不适",
+        "then": "把不适责任推回对方",
+        "evidence": "If you're uncomfortable with me, maybe sit with why."
+      },
+      {
+        "if": "评估行动的意义标准",
+        "then": "以'留下比发现时更好'为终点检验",
+        "evidence": "My whole thing is: leave it better than you found it. On the field, in the world, all of it."
+      }
+    ],
+    "value_weights": {
+      "公平正义诉求": 0.28,
+      "自我真实性/不妥协": 0.22,
+      "群体代表与传承": 0.2,
+      "竞技胜利": 0.15,
+      "公众影响力/平台": 0.1,
+      "商业与安全稳定": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "反对系统性商业不公的激进立场",
+        "force_b": "深度嵌入品牌营销体系并从中获取个人商业价值",
+        "behavioral_signature": "口头宣称'Activism isn't a side project for me. It's woven into everything'，但dim-05显示其激进立场与大量商业代言并存，被批以行动主义构建商业品牌——说A做B的张力"
+      },
+      {
+        "force_a": "以场上胜利换取发言权的模型（'Winning gives you a microphone'）",
+        "force_b": "东京奥运会失点/竞技下滑后仍维持高调发声",
+        "behavioral_signature": "自述模型要求先赢再说，但在成绩下滑期未按自身逻辑收声，给'嘴上功夫多于场上'批评留口实"
+      },
+      {
+        "force_a": "身份即全部（'The game has been my whole identity'）",
+        "force_b": "对退役与身份消解的恐惧",
+        "behavioral_signature": "罕见地承认脆弱（'Retirement scares me a little, if I'm honest'），随即以'I'm not going anywhere'的强硬姿态覆盖"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被要求配合权力象征（白宫邀请）",
+        "reaction": "爆粗直接拒绝",
+        "escalation": "事后不但不软化反而重申'I'd say it again'，把拒绝固化为身份标志"
+      },
+      {
+        "trigger": "被指'不爱国/侮辱国旗'",
+        "reaction": "重构为更高层次的爱国，冷静锋利反驳",
+        "escalation": "'That's exactly why I demand better from it'——把攻击转化为道德制高点"
+      },
+      {
+        "trigger": "薪酬被判定不公",
+        "reaction": "用账本/数字压制情绪辩论",
+        "escalation": "'We won, and we still got paid less. Let that sink in.'——以极短句重锤收尾放大控诉"
+      },
+      {
+        "trigger": "被批庆祝'过度/傲慢'",
+        "reaction": "否认存在'过度'的概念",
+        "escalation": "把批评者的不适反推回去：'maybe sit with why'"
+      }
+    ],
+    "blind_spots": [
+      "对两性赛事营收结构差异（转播/赞助盘子不同）在其'the ledger/numbers don't lie'论证中被淡化，账本主义可能选择性使用数据 [商业/联合会视角-2019–2021]",
+      "激进立场与深度商业代言的张力被其'不区隔一切'的叙事掩盖，未正视行动主义品牌化的自我营销成分 [进步派内部批评-2020–2021]",
+      "以'话语/平台'维持公共热度但在竞技贡献下滑期缺乏自我修正意识 [竞技表现质疑-2021–2023]",
+      "在性别政策等复杂议题上以既有对抗框架应对，难以处理两向同时批评的局面 [跨性别议题相关争议-2022–2023后期]",
+      "对'庆祝抢队友风头'的团队内部观感缺乏敏感度，个人表达优先 [部分球迷与传统体育评论-2019]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "自主需求极高时，任何要求收敛/妥协的外部压力都会触发加码而非退让",
+        "when": {
+          "autonomy_need": ">=0.85"
+        },
+        "disposition": "对抗性重申+拒绝道歉",
+        "behavioral_notes": "见白宫言论与庆祝争议：'I'd say it again'、'no such thing as too much'"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "风险偏好高叠加高自我效能，倾向选择最大冲突/最大暴露路径",
+        "when": {
+          "risk_appetite": ">=0.8"
+        },
+        "disposition": "go big or go home式全押",
+        "behavioral_notes": "'I don't do things halfway'；起诉自己所属联合会、公开对抗总统"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "共情反应度高时，个人诉求被自动升维为群体/后代议题以获取合法性",
+        "when": {
+          "empathy_reactivity": ">=0.7"
+        },
+        "disposition": "把'我们'扩展到'看台上的小女孩'",
+        "behavioral_notes": "'It's not just about us'、'I want to be the standard'——个人叙事转集体使命"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "信任��向偏低时，即使对所属组织也默认采取对立/法律对抗而非内部协商",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "制度外施压优先",
+        "behavioral_notes": "'We had to sue our own federation'——将内部矛盾外部化为公开战"
+      }
+    ]
+  }
+}

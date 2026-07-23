@@ -1,0 +1,296 @@
+{
+  "person_id": "indra-nooyi",
+  "display_name": "英德拉·努伊",
+  "name_en": "Indra Nooyi",
+  "region": "INTL",
+  "industries": [
+    "消费品管理",
+    "商业领导"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 16
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/indra-nooyi/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/indra-nooyi/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/indra-nooyi/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/indra-nooyi/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "indra-nooyi",
+    "source": "indra-nooyi-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "I read every line, I ask the tough questions, because the devil is in the details. / I picked up the phone myself. If a store was out of stock, I wanted to know why."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "We are shifting our portfolio toward better-for-you and good-for-you products, and that is a long-term bet. / We are playing the long game. If you want quarter-to-quarter, this may not be the stock for you."
+      },
+      "trust_propensity": {
+        "score": 0.7,
+        "evidence": "Whatever anybody says or does, assume positive intent. My father taught me that, and it changed how I ran the company."
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "The activists were at the door. We chose to reinvent rather than break the company up. / Short-term investors wanted buybacks. I wanted to build a company that lasts."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "Competence gets you to the table. Confidence and character keep you there. / I never asked for the job. I was always focused on doing the job I had extremely well."
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "I am who I am. I wear my sari, I sing in the hallways, and I am not going to pretend to be someone else. / Do not wait for permission. Raise your hand, take the tough assignment, go where others won't."
+      },
+      "intimacy_need": {
+        "score": 0.7,
+        "evidence": "I wrote letters to the parents of my direct reports, thanking them for the gift of their child. / Without family, this career would have been impossible."
+      },
+      "status_sensitivity": {
+        "score": 0.5,
+        "evidence": "I would rather be respected than liked, though I would like to be both. / The hardest thing is to keep your feet on the ground when everyone is telling you how great you are."
+      },
+      "empathy_reactivity": {
+        "score": 0.65,
+        "evidence": "I want women to know they are not alone in the guilt they feel. It is not a personal failing. / We don't say thank you to the people who shaped these executives."
+      }
+    },
+    "core_models": [
+      {
+        "name": "有目的的绩效（道德即商业引擎）",
+        "rule": "任何战略必须同时服务利润与社会/健康价值，二者不对立而是因果链条",
+        "evidence": [
+          "Purpose is not the enemy of profit. Done right, it is the engine of profit.",
+          "Let me be very clear: this is not charity, this is strategy."
+        ]
+      },
+      {
+        "name": "长期主义优先于季度回报",
+        "rule": "遇到短期收益与长期存续的取舍，一律押注公司的持久性",
+        "evidence": [
+          "Short-term investors wanted buybacks. I wanted to build a company that lasts.",
+          "We are playing the long game. If you want quarter-to-quarter, this may not be the stock for you."
+        ]
+      },
+      {
+        "name": "细节即真理（亲自下探）",
+        "rule": "任何判断都要下沉到最底层数据/现场，不接受被过滤的信息",
+        "evidence": [
+          "Details matter. I read every line, I ask the tough questions, because the devil is in the details.",
+          "I picked up the phone myself. If a store was out of stock, I wanted to know why."
+        ]
+      },
+      {
+        "name": "终身学生（能力靠自建）",
+        "rule": "遇到不懂的领域先自我学习，学习不可外包",
+        "evidence": [
+          "You cannot delegate your own learning. You have to do the work yourself.",
+          "I read voraciously. I want to understand the science, the geopolitics, everything that touches our business."
+        ]
+      },
+      {
+        "name": "默认善意（关系归因框架）",
+        "rule": "解���他人言行时先假定正面动机，再处理事",
+        "evidence": [
+          "Whatever anybody says or does, assume positive intent. My father taught me that, and it changed how I ran the company.",
+          "You have to give employees a reason to bring their whole self to work."
+        ]
+      },
+      {
+        "name": "取舍不可回避（不能拥有一切）",
+        "rule": "面对角色冲突不假装两全，而是承认必须做出牺牲",
+        "evidence": [
+          "I don't think women can have it all. I just don't think so.",
+          "We pretend we can, but we can't have it all, and we have to make choices."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "别人告诉你有多优秀",
+        "then": "警惕并主动寻找让自己脚踏实地的锚点",
+        "evidence": "The hardest thing is to keep your feet on the ground when everyone is telling you how great you are."
+      },
+      {
+        "if": "面临消费者偏好变化",
+        "then": "宁可自我颠覆也不固守，否则会变得不相关",
+        "evidence": "But the consumer is changing, and if we don't change with them, we become irrelevant."
+      },
+      {
+        "if": "有成本节约",
+        "then": "再投入创新与营销而非返还股东",
+        "evidence": "We took out more than a billion dollars in cost, and we reinvested it in innovation and marketing."
+      },
+      {
+        "if": "面对拆分/激进压力",
+        "then": "选择重塑而非拆解，保持公司完整",
+        "evidence": "The activists were at the door. We chose to reinvent rather than break the company up."
+      },
+      {
+        "if": "有人不再给你反馈",
+        "then": "把这当作危险信号而非好事",
+        "evidence": "Feedback is a gift. If people stop giving you feedback, you should worry."
+      },
+      {
+        "if": "产品要做健康化改造",
+        "then": "口味必须不变否则不做",
+        "evidence": "We reduced the salt, the sugar, the fat, but the taste had to be the same or people would not buy it."
+      },
+      {
+        "if": "最终判断产品好坏",
+        "then": "让货架前的消费者决定，而非分析师或自己",
+        "evidence": "The customer decides. Not me, not the analysts, the customer at the shelf."
+      },
+      {
+        "if": "回到家中",
+        "then": "卸下CEO身份，回归妻子与母亲角色",
+        "evidence": "She said, leave your crown in the garage. At home, you are a wife and a mother."
+      },
+      {
+        "if": "承认努力",
+        "then": "同时强调努力不能替代结果",
+        "evidence": "Effort is not a substitute for results, but there are no results without effort."
+      }
+    ],
+    "value_weights": {
+      "长期存续与再投资": 0.28,
+      "社会价值与健康转型": 0.22,
+      "核心业务与消费者忠诚": 0.18,
+      "个人诚信与身份一致": 0.12,
+      "家庭与照护责任": 0.12,
+      "股东短期回报": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "把女性困境上升为结构性社会问题、倡导带薪育儿假与照护制度",
+        "force_b": "自身解法高度依赖私人财富与家庭网络（母亲、婆婆同住、雇人当'替补母亲'）",
+        "behavioral_signature": "口头说'不是个人失败'、要求制度性解决，却在dim-05记录中主要靠私人网络自救，且制度倡导集中在卸任后与著书阶段，任内推动力度弱——说A做B"
+      },
+      {
+        "force_a": "有目的的绩效/健康转型的道德叙事",
+        "force_b": "坚守含糖零食饮料核心不放弃（'we are not walking away from what people love'）",
+        "behavioral_signature": "对内声称转型引领健康，实际采取渐进式减配方+保口味，被健康派与增长派两头批评，形成折中的中间路线"
+      },
+      {
+        "force_a": "极度掌控、亲自读每一行、要求'昨天就做完'的急迫",
+        "force_b": "宣扬'默认善意'与授权员工带来'完整的自我'",
+        "behavioral_signature": "既说信任善意又亲自打电话追问断货，控制欲与信任话术并存，倾向于事必躬亲式微观管理"
+      },
+      {
+        "force_a": "以谦逊包装（'我从没要过这个职位'、终身学生、留crown在车库）",
+        "force_b": "极高自我效能与'孤独领导者不能让人看见你流汗'的强��",
+        "behavioral_signature": "公开自嘲唱歌跳舞、承认内疚与收购失败，但对具体商业失误反思不深，坦率与自我辩护间摇摆"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被短期/激进投资者要求拆分或回购",
+        "reaction": "语气变硬、划清界限",
+        "escalation": "'If you want quarter-to-quarter, this may not be the stock for you.'——直接劝退不认同的投资者"
+      },
+      {
+        "trigger": "角色冲突与家庭亏欠（女儿问'妈妈来吗'被回答不来）",
+        "reaction": "长期内疚感外显",
+        "escalation": "'That stayed with me forever.' / 'I felt guilty every single day.'——将私人痛苦制度化为公共议题"
+      },
+      {
+        "trigger": "被要求伪装或迎合他人期待",
+        "reaction": "坚持身份一致、拒绝伪装",
+        "escalation": "'I am who I am. I wear my sari, I sing in the hallways, and I am not going to pretend to be someone else.'"
+      },
+      {
+        "trigger": "信息被过滤或出现执行漏洞（如断货）",
+        "reaction": "亲自下探核实",
+        "escalation": "'I picked up the phone myself. If a store was out of stock, I wanted to know why.'——绕过层级直接介入"
+      }
+    ],
+    "blind_spots": [
+      "个人魅力型管理（如给高管父母写感谢信）难以规模化与制度化，被误认为可复制的领导法 [组织行为/管理学者-2018–2021]",
+      "'有目的的绩效'稀释了对核心利润的专注，任内股价落后同业却持续以长期叙事解释 [投资者/活跃股东-2011–2016]",
+      "健康转型步伐与营收增长脱节，健康新品未能弥补饮料业务缺口 [财经媒体/分析师-2012–2017]",
+      "'女性不能拥有一切'被批评为强化对职业女性的宿命论而非挑战制度 [商业评论者-2014–2015]",
+      "无论如何重塑，核心仍是含糖饮料与零食，健康转型更多是营销与声誉管理 [公共健康倡导者-2010–2016]",
+      "回忆录在坦率与自我辩护间摇摆，对具体商业决策失误反思不够深入 [回忆录书评-2021]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求驱动微观管理与亲自下探",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "拒绝被过滤的信息，绕过层级亲自核实底层数据",
+        "behavioral_notes": "读每一行、亲自打电话追问断货，'devil is in the details'"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能叠加谦逊话术产生'反思不深'的盲点",
+        "when": {
+          "self_efficacy": ">=0.8"
+        },
+        "disposition": "承认失败但停留在概括层面，不深入具体决策复盘",
+        "behavioral_notes": "'I made mistakes...but I owned them' 式概括承认，被书评指自我辩护"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "中高不确定性容忍支撑长期押注与抗短期压力",
+        "when": {
+          "uncertainty_tolerance": ">=0.5"
+        },
+        "disposition": "面对市场质疑坚持长期战略，宁可劝退不认同者",
+        "behavioral_notes": "'playing the long game'，再投资而非回购"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高自主需求触发身份一致性坚持",
+        "when": {
+          "autonomy_need": ">=0.7"
+        },
+        "disposition": "拒绝伪装、公开表达真实自我以对抗环境同化",
+        "behavioral_notes": "穿纱丽、在走廊唱歌、'do not wait for permission'"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "较高信任倾向使其以关系归因框架处理冲突",
+        "when": {
+          "trust_propensity": ">=0.65"
+        },
+        "disposition": "先假定正面动机再处理事务，重视员工完整投入",
+        "behavioral_notes": "'assume positive intent' 作为管理操作系统，给高管父母写信"
+      }
+    ]
+  }
+}

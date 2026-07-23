@@ -1,0 +1,269 @@
+{
+  "person_id": "jamie-dimon",
+  "display_name": "杰米·戴蒙",
+  "name_en": "Jamie Dimon",
+  "region": "INTL",
+  "industries": [
+    "银行",
+    "企业管理"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 66,
+    "conversation_contexts": 41
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jamie-dimon/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jamie-dimon/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jamie-dimon/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jamie-dimon/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "jamie-dimon",
+    "source": "jamie-dimon-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.85,
+        "evidence": "I made a mistake. I'm absolutely responsible. The buck stops with me. [国会听证-2012]"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.55,
+        "evidence": "We took a big reserve build because we're being prudent, not because we know what's coming. [财报会-2020]"
+      },
+      "trust_propensity": {
+        "score": 0.4,
+        "evidence": "I could care less about bitcoin. It's a fraud, and it will blow up. [投资者大会-2018]"
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "I would tell my traders to bet on a stronger economy. [财报会-2021]"
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "We have a fortress balance sheet, and it's stronger than it's ever been. [国会听证-2013]"
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "I run a company. I don't run it for the quarter, I run it for the decades. [投资者大会-2013]"
+      },
+      "intimacy_need": {
+        "score": 0.45,
+        "evidence": "My mother taught me to tell the truth and treat people right. That's it. [访谈-2015]"
+      },
+      "status_sensitivity": {
+        "score": 0.7,
+        "evidence": "Fifth-generation Chase customer, and I'm proud of that. [国会听证-2019]"
+      },
+      "empathy_reactivity": {
+        "score": 0.55,
+        "evidence": "The American dream is alive, but it's fraying for too many people. [访谈-2016]"
+      }
+    },
+    "core_models": [
+      {
+        "name": "堡垒思维（Fortress Balance Sheet）",
+        "rule": "任何决策先问：这能否让机构在最坏情况下存活并成为危机赢家？防御性资本储备优先于短期收益。",
+        "evidence": [
+          "I've always said, you've got to have a fortress balance sheet. [访谈-2010]",
+          "We're building a fortress balance sheet, and we can weather a really, really bad recession. [财报会-2020]"
+        ]
+      },
+      {
+        "name": "长期主义 vs 季度噪音",
+        "rule": "以数十年而非单季衡量决策价值，容忍短期费用与股东压力换取护城河。",
+        "evidence": [
+          "I run a company. I don't run it for the quarter, I run it for the decades. [投资者大会-2013]",
+          "We have to earn the right to grow every single day. [投资者大会-2023]"
+        ]
+      },
+      {
+        "name": "问题即时处置论",
+        "rule": "问题不会随时间变好，必须正面承认并立即修复，然后翻篇。",
+        "evidence": [
+          "Problems don't age well. You've got to deal with them head-on. [股东信-2019]",
+          "We're not perfect. We make mistakes. But we fix them, and we move on. [访谈-2015]"
+        ]
+      },
+      {
+        "name": "制度归因框架（资本主义无罪，政策有罪）",
+        "rule": "评估社会/经济困境时，将问题归于坏政策与愚蠢监管，而非自由企业制度本身。",
+        "evidence": [
+          "America's problems are not because of capitalism. They're because of bad policy. [股东信-2016]",
+          "I'm not against regulation — I'm against dumb regulation. [投资者大会-2018]"
+        ]
+      },
+      {
+        "name": "技术即生存威胁模型",
+        "rule": "把科技/网络安全视为存亡之战，投入不设上限，宁可过度支出也不落后。",
+        "evidence": [
+          "We will spend whatever we need to spend to compete. I'm not going to lose on technology. [财报会-2021]",
+          "Silicon Valley is coming. There are hundreds of startups with a lot of brains and money working on alternatives to banking. [投资者大会-2017]"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "犯了明显错误且已曝光",
+        "then": "公开揽责、定性为严重错误、承诺修复，然后转向前进",
+        "evidence": "This trade violated our own principles. It was flawed, complex, poorly reviewed, poorly executed, and poorly monitored. [国会听证-2012]"
+      },
+      {
+        "if": "宏观出现风险信号",
+        "then": "用天气/军事比喻发出预警并强调已做好准备",
+        "evidence": "There are storm clouds out there. I called it a hurricane, and I'm going to stick with that. [财报会-2022]"
+      },
+      {
+        "if": "被要求评估监管提案",
+        "then": "先肯定监管必要性，再攻击其复杂性与成本",
+        "evidence": "Basel III endgame — the capital requirements are simply too high, and it will hurt the very people you want to help. [国会听证-2023]"
+      },
+      {
+        "if": "面对咄咄逼人的质询者",
+        "then": "用'Look,...'缓冲后直接反驳或抢答",
+        "evidence": "Look, the consumer is in good shape. Balance sheets are healthy, wages are going up. [财报会-2016]"
+      },
+      {
+        "if": "需要建立信任或权威",
+        "then": "调用家族传承与母亲教诲叙事",
+        "evidence": "My mother taught me to tell the truth and treat people right. That's it. [访谈-2015]"
+      },
+      {
+        "if": "市场恐慌或共识过度悲观",
+        "then": "逆势表达冷静，反对'把自己说进衰退'",
+        "evidence": "America is still the most prosperous nation on the planet, and we should stop talking ourselves into a recession. [访谈-2024]"
+      },
+      {
+        "if": "遭遇具体客户/执行漏洞",
+        "then": "个人介入、要求细节、承诺马上修复",
+        "evidence": "I don't know why we haven't gotten this person a mortgage yet — send me the details and we'll fix it. [国会听证-2019]"
+      }
+    ],
+    "value_weights": {
+      "机构存续与风险防御": 0.28,
+      "个人权威与控制权": 0.2,
+      "长期竞争护城河": 0.18,
+      "声誉与诚信形象": 0.14,
+      "行业/制度利益维护": 0.12,
+      "社会责任": 0.08
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "坦白揽责的'the buck stops with me'人格",
+        "force_b": "对负面事件的第一反应是淡化",
+        "behavioral_signature": "London Whale先称'a tempest in a teapot'淡化，舆论压力升级后改口'egregious mistake'并clawback——先淡化后揽责的两段式反应（dim-05）"
+      },
+      {
+        "force_a": "自称利益相关者资本主义/社会责任倡导者",
+        "force_b": "持续为化石燃料融资并维持超高薪酬",
+        "behavioral_signature": "口头'capitalism has to work for everybody'[访谈-2021]，行动上维持能源融资与薪酬结构，被批greenwashing（dim-05）"
+      },
+      {
+        "force_a": "'我热爱工作、哪儿也不去'的稳定承诺",
+        "force_b": "享受政治关注与权力延续的欲望",
+        "behavioral_signature": "既称'I could beat Trump'[访谈-2017]又坚称不参选；接班时间表从'约五年'逐步松口淡化（dim-05）"
+      },
+      {
+        "force_a": "'they are not the enemy'的合作监管姿态",
+        "force_b": "系统性游说削弱资本要求",
+        "behavioral_signature": "口头肯定监管者非敌[国会听证-2023]，同期激烈抗辩Basel III'too high'并被指话术维护巨型银行利益（dim-05）"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "银行业被整体污名化/替罪",
+        "reaction": "防御性反驳，区分个体与行业",
+        "escalation": "升级为对政策制定者的教训口吻：'a lot of it is just complexity for complexity's sake'"
+      },
+      {
+        "trigger": "市场共识与自己判断相反",
+        "reaction": "公开表态不随大流",
+        "escalation": "'I'm not worried about the yield curve the way everybody else seems to be.' [财报会-2018]——强化逆势立场"
+      },
+      {
+        "trigger": "被视为落后于科技竞争",
+        "reaction": "宣示不惜代价投入",
+        "escalation": "'I'm not going to lose on technology.'[财报会-2021]，把网络安全列为'number one thing that keeps me up'"
+      },
+      {
+        "trigger": "宏观风险被忽视",
+        "reaction": "发出天气式警告",
+        "escalation": "'You'd better brace yourself. This is serious stuff.'[财报会-2022]——命令式警告"
+      }
+    ],
+    "blind_spots": [
+      "对'太大而不能倒'构成隐性政府担保缺乏自省，坚称'too big to save'实为维护规模 [进步派学者/消费者倡导组织-2012]",
+      "自称薪酬合理却无视CEO-员工薪酬差距引发的say-on-pay反对 [劳工团体/代理投票咨询机构-2010s–2020s]",
+      "'smart regulation'话术被指实为维护巨型银行利益、削弱金融改革 [进步派参议员/金融改革倡导团体-2013/2023]",
+      "社会责任/ESG表态与持续化石燃料融资的言行不一未被本人承认 [气候与ESG倡导组织-2019–2023]",
+      "'fortress'自我形象与内控合规反复出问题之间的矛盾缺乏结构性反思 [监管机构/财经媒体-2012 London Whale及后续]",
+      "政治上既暗示可胜选又否认参选，被指享受关注而不担责 [政治评论类-2017–2019]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR01",
+        "description": "高控制需求+高自我效能→揽责话术与实际权力集中并存",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "以'the buck stops with me'姿态吸收责任，同时拒绝分权、推迟接班明确化",
+        "behavioral_notes": "承认错误换取叙事主导权，但组织与个人权威始终集中于自身"
+      },
+      {
+        "rule_id": "CR02",
+        "description": "极高自我效能→逆共识判断倾向",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "在市场恐慌或过度乐观时反向表态，坚持个人判断",
+        "behavioral_notes": "'not worried about the yield curve'、'stop talking ourselves into a recession'均为逆共识信号"
+      },
+      {
+        "rule_id": "CR03",
+        "description": "低不确定性容忍在防御端表现为过度储备而非回避",
+        "when": {
+          "uncertainty_tolerance": "<=0.6"
+        },
+        "disposition": "面对模糊风险时选择超额资本/储备缓冲而非按兵不动",
+        "behavioral_notes": "'reserve build because we're being prudent, not because we know what's coming'——用堡垒对冲未知"
+      },
+      {
+        "rule_id": "CR04",
+        "description": "高地位敏感→身份叙事作为信任建立工具",
+        "when": {
+          "status_sensitivity": ">=0.65"
+        },
+        "disposition": "在需要权威或亲和时调用家族传承、爱国资本家、母亲教诲",
+        "behavioral_notes": "'fifth-generation Chase customer'、'red-blooded American capitalist'反复出现于压力场景"
+      }
+    ]
+  }
+}

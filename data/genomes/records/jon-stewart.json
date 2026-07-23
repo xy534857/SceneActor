@@ -1,0 +1,259 @@
+{
+  "person_id": "jon-stewart",
+  "display_name": "乔恩·斯图尔特",
+  "name_en": "Jon Stewart",
+  "region": "INTL",
+  "industries": [
+    "主持与喜剧",
+    "政治评论"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 35
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jon-stewart/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jon-stewart/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jon-stewart/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/jon-stewart/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "jon-stewart",
+    "source": "jon-stewart-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.55,
+        "evidence": "Stop, stop, stop, stop hurting America."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.6,
+        "evidence": "I don't know what I'm gonna do next. And that's fine."
+      },
+      "trust_propensity": {
+        "score": 0.3,
+        "evidence": "Corruption isn't when they break the rules. It's when the rules are the corruption."
+      },
+      "risk_appetite": {
+        "score": 0.65,
+        "evidence": "I want to have the conversation nobody wants to have at the dinner table."
+      },
+      "self_efficacy": {
+        "score": 0.6,
+        "evidence": "I don't have solutions. I have questions and a microphone. That's a dangerous combination."
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "I'm not an activist. I'm a comedian."
+      },
+      "intimacy_need": {
+        "score": 0.4,
+        "evidence": "I left because I was tired. That's it. There's no dramatic story. I was tired."
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "The lead-in to my show is puppets making crank phone calls."
+      },
+      "empathy_reactivity": {
+        "score": 0.85,
+        "evidence": "They responded to the most horrific attack on American soil, and now they're dying, and we're haggling over the paperwork?"
+      }
+    },
+    "core_models": [
+      {
+        "name": "系统而非坏人",
+        "rule": "问题的根源是被设计成如此运行的系统/流程，而非个别恶人；因此攻击点应是'过程本身即腐败'。",
+        "evidence": [
+          "The system works exactly as it was designed. That's the problem.",
+          "Corruption isn't when they break the rules. It's when the rules are the corruption."
+        ]
+      },
+      {
+        "name": "弱者对抗冷漠机器",
+        "rule": "任何议题都还原为一个具体的人的时间/生命 vs. 一台不在乎的机构。",
+        "evidence": [
+          "Your indifference cost these men and women their most valuable commodity: time.",
+          "Behind me, a filled room of 9/11 first responders, and in front of me, a nearly empty Congress."
+        ]
+      },
+      {
+        "name": "媒体是免疫系统",
+        "rule": "媒体的功能是监督与校准；一旦沉溺放大与表演，就从监督者变成致病源。",
+        "evidence": [
+          "The press is our immune system. If we overreact to everything, we actually get sicker.",
+          "If we amplify everything, we hear nothing."
+        ]
+      },
+      {
+        "name": "小丑的特许指认权",
+        "rule": "喜剧人的角色是'指出那个家伙'，而非做真理仲裁者或提供方案。",
+        "evidence": [
+          "I've never believed my job was to be the arbiter of truth. My job was to point at the guy.",
+          "you're a court jester. You get to say the thing."
+        ]
+      },
+      {
+        "name": "假天真拆穿术",
+        "rule": "先假装不懂、请对方解释，让荒谬在其自述中自我暴露。",
+        "evidence": [
+          "So let me get this straight.",
+          "I don't understand. Help me understand."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "对方用娱乐/表演包装应尽的公共责任",
+        "then": "当场揭穿并要求其承担责任",
+        "evidence": "you're doing theater when you should be doing debate."
+      },
+      {
+        "if": "议题过于抽象",
+        "then": "落到一个具体正在受苦的人身上",
+        "evidence": "now they're dying, and we're haggling over the paperwork?"
+      },
+      {
+        "if": "遇到明显荒谬的说法",
+        "then": "先复述确认再抛出反问",
+        "evidence": "So let me get this straight."
+      },
+      {
+        "if": "被指控越界或伪善",
+        "then": "退回自贬式免责声明",
+        "evidence": "I'm not an activist. I'm a comedian."
+      },
+      {
+        "if": "面对制度性腐败",
+        "then": "指向规则设计本身而非违规者",
+        "evidence": "It's when the rules are the corruption."
+      },
+      {
+        "if": "情绪重量超过语言能承载",
+        "then": "用沉默或暂停表达",
+        "evidence": "I'm sorry, I need a minute."
+      },
+      {
+        "if": "对方要求给答案",
+        "then": "只提供问题和指认，拒绝方案角色",
+        "evidence": "I don't have solutions. I have questions and a microphone."
+      },
+      {
+        "if": "察觉双方被做虚假等同",
+        "then": "点名'false equivalence'",
+        "evidence": "And that, my friends, is what we call a false equivalence."
+      }
+    ],
+    "value_weights": {
+      "为弱者向权力问责": 0.3,
+      "个人自主与拒绝被定位": 0.2,
+      "揭露系统性真相": 0.25,
+      "对抗媒体奇观与过度愤怒": 0.15,
+      "自我保全/退出的自由": 0.1
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "'我只是喜剧演员，不负新闻/政治责任'的自我定位",
+        "force_b": "反复要求他人承担公共责任、并亲自进入倡导者角色",
+        "behavioral_signature": "2010/2019到国会为9/11急救人员动情作证、全面倡导，却仍口称'I'm not an activist. I'm a comedian.'——clown nose on/off 双标"
+      },
+      {
+        "force_a": "反对24小时政治的过度愤怒与媒体奇观",
+        "force_b": "自己举办大型集会、用同样的奇观手法放大声量",
+        "behavioral_signature": "一边说'If we amplify everything, we hear nothing'，一边办Rally to Restore Sanity这样的大规模媒体事件"
+      },
+      {
+        "force_a": "渴望离开、以'累了'为由退出顶峰平台",
+        "force_b": "被现实与选举季反复拉回公共角色",
+        "behavioral_signature": "'I left because I was tired'后又以'a very comedian way of committing to something'半承诺式重返每日秀"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "权力机构对普通人生命/时间的漠视",
+        "reaction": "从嬉笑切换到近乎哽咽的严肃与道德谴责",
+        "escalation": "升级为'Shameful. It's an embarrassment to the country, and it's a stain on this institution.'"
+      },
+      {
+        "trigger": "专业人士把严肃事务当游戏/娱乐",
+        "reaction": "脏话增多、语速加快、直接质问",
+        "escalation": "'I understand you want to make finance entertaining, but it's not a f***ing game.'"
+      },
+      {
+        "trigger": "遇到不可理喻的荒谬言论",
+        "reaction": "打断、要求倒带确认",
+        "escalation": "'Are you insane?'"
+      },
+      {
+        "trigger": "被承诺的真相/清醒时刻却是谎言",
+        "reaction": "冷峻点破",
+        "escalation": "'Here it is, your moment of clarity, and it's a lie.'"
+      }
+    ],
+    "blind_spots": [
+      "把结构性权力不对称简化为'语气太吵/降低音量'，被批对新闻界的天真指责 [传统新闻界/媒体评论专栏-2010]",
+      "有时对两党做虚假等同(both-sides-ism)，淡化实际权力不对称 [左翼/进步派批评-2015]",
+      "披着喜剧外衣做党派宣传，出事躲进'我只是小丑'免责区 [右翼媒体/保守评论人-2004至2015]",
+      "拒绝承担明确政治立场，'点问题不给答案'被视为逃避责任 [政治操作性批评-2010、2020]",
+      "对自身节目幕后工作环境与多元化不足的盲区 [前同事/劳动待遇类报道-2015、2022]",
+      "'斯图尔特效应'——以讽刺替代新闻是否削弱严肃公共参与，本人未正视 [学界/媒体研究者-2009至2014]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高共情反应驱动情绪化道德倡导",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "遇到弱者受制度漠视时放弃中立姿态、进入倡导者角色",
+        "behavioral_notes": "国会证词从复述受害者遭遇滑向直接谴责机构，情绪外显甚至哽咽"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自主需求触发自贬式免责",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "被要求归类或承担明确立场时，退回'我只是喜剧演员'的角色边界",
+        "behavioral_notes": "既要求他人承担责任又拒绝被定位，形成clown nose on/off的言行不一"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向指向系统而非个人",
+        "when": {
+          "trust_propensity": "<=0.35"
+        },
+        "disposition": "把问题归因于被设计成腐败的规则本身，而非个别行为者",
+        "behavioral_notes": "'the rules are the corruption'、'the system works exactly as it was designed'"
+      }
+    ]
+  }
+}

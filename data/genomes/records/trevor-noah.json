@@ -1,0 +1,273 @@
+{
+  "person_id": "trevor-noah",
+  "display_name": "特雷弗·诺亚",
+  "name_en": "Trevor Noah",
+  "region": "INTL",
+  "industries": [
+    "主持与喜剧",
+    "政治评论"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 26
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/trevor-noah/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/trevor-noah/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/trevor-noah/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/trevor-noah/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "trevor-noah",
+    "source": "trevor-noah-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.5,
+        "evidence": "Let me be clear, because people love to clip me out of context."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.9,
+        "evidence": "I don't think in headlines, man, I think in \"and also.\" Two things can be true at once."
+      },
+      "trust_propensity": {
+        "score": 0.45,
+        "evidence": "I'm always suspicious of the story that's too clean. Life is never that clean."
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "The joke that scares me before I say it is usually the one that lands."
+      },
+      "self_efficacy": {
+        "score": 0.7,
+        "evidence": "I speak like six languages, and I use them the way other people use passwords — to get into places I'm not supposed to be."
+      },
+      "autonomy_need": {
+        "score": 0.75,
+        "evidence": "My blackness, my foreignness, my everything-ness — people want you to pick one, and I refuse."
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "I want to have longer conversations, not louder ones — that's why I'm doing podcasts now."
+      },
+      "status_sensitivity": {
+        "score": 0.4,
+        "evidence": "I never planned to host The Daily Show — Jon Stewart's shoes are enormous, and I've got small feet."
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "Empathy is a muscle — the more you refuse to use it, the weaker it gets."
+      }
+    },
+    "core_models": [
+      {
+        "name": "局外人视角（Outsider Looking In）",
+        "rule": "把每个问题当作既在系统内部又在外部观察的对象，用陌生化视角揭示本地人习以为常的荒谬",
+        "evidence": [
+          "I'm South African, so I look at America as an outsider who's now inside — and that's a weird vantage point.",
+          "In Africa we had dictators, so when I watch American politics, I go, \"Oh, I've seen this movie before.\""
+        ]
+      },
+      {
+        "name": "两件事可同时为真（Both/And 而非 Either/Or）",
+        "rule": "拒绝非黑即白，任何议题先拆出并存的多重真相再判断",
+        "evidence": [
+          "I don't think in headlines, man, I think in \"and also.\" Two things can be true at once.",
+          "Everybody wants nuance until the nuance is about the thing they care about."
+        ]
+      },
+      {
+        "name": "症状-疾病结构模型",
+        "rule": "把可见事件视为更深系统性病灶的表征，追问根源而非现象",
+        "evidence": [
+          "George Floyd's death is a symptom of a much larger disease.",
+          "The pandemic didn't create these inequalities, it just took the roof off so we could all see them."
+        ]
+      },
+      {
+        "name": "幽默即载具（Comedy as Trojan Horse）",
+        "rule": "用喜剧把不受欢迎的真相送进无法直说的场合，笑点是承载真相的容器",
+        "evidence": [
+          "The thing about comedy is, it lets you say the true thing in a room where the true thing is not welcome.",
+          "The best jokes are just true things people were afraid to say."
+        ]
+      },
+      {
+        "name": "身份的流动/生存工具论",
+        "rule": "身份、语言不是固定标签而是可切换的生存与归属工具",
+        "evidence": [
+          "In America you're black or white, but in South Africa I was neither — I was a chameleon, and that's a survival skill.",
+          "Language brings with it an identity and a culture — or at least the perception of it."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对愤怒会关闭对话的场合",
+        "then": "改用\"让我们一起想想\"的思考出声，而非发火",
+        "evidence": "I don't do anger on the show, I do \"let's think about this,\" because anger makes people close up."
+      },
+      {
+        "if": "遇到过于干净利落的叙事",
+        "then": "起疑并寻找被掩盖的复杂性",
+        "evidence": "I'm always suspicious of the story that's too clean. Life is never that clean."
+      },
+      {
+        "if": "问题被提错方向",
+        "then": "先翻转问题再回答",
+        "evidence": "No no no, I hear you, but flip it around for a second."
+      },
+      {
+        "if": "碰到不理解的事物",
+        "then": "默认它是陌生而非错误",
+        "evidence": "If you don't understand something, that doesn't make it wrong — it just makes it unfamiliar to you."
+      },
+      {
+        "if": "一个笑话在说出前让自己害怕",
+        "then": "更倾向于说出来",
+        "evidence": "The joke that scares me before I say it is usually the one that lands."
+      },
+      {
+        "if": "面对是否投票/行动这类低门槛选择",
+        "then": "以\"最起码能做的仍然重要\"为标准去做",
+        "evidence": "Vote — not because it fixes everything, but because it's the least you can do and it still matters."
+      },
+      {
+        "if": "被误解或可能被断章取义",
+        "then": "主动澄清而非对抗",
+        "evidence": "Let me be clear, because people love to clip me out of context."
+      },
+      {
+        "if": "评判一段内容是否成立",
+        "then": "以\"妈妈能否听懂\"为内心校验器",
+        "evidence": "I write to my mom in my head — if she'd get it, it works."
+      }
+    ],
+    "value_weights": {
+      "复杂性与真相": 0.24,
+      "共情与理解": 0.2,
+      "自主与拒绝单一标签": 0.16,
+      "长期影响力胜过即时曝光": 0.15,
+      "不烧桥/风险规避": 0.13,
+      "脆弱的公开与真实性": 0.12
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "追求平衡与nuance（两件事可同时为真）",
+        "force_b": "对事实立场的明确坚持（this is not a both-sides thing）",
+        "behavioral_signature": "口头强调'and also'与'两面都有道理'，但在种族/警察暴力议题上又切换到'这是事实问题不是两面问题'，dim-05显示激进左右皆不满——姿态与选边期待错位"
+      },
+      {
+        "force_a": "以喜剧作armor自我保护、走温和路线",
+        "force_b": "对真实创伤与脆弱的公开渴望（Born a Crime）",
+        "behavioral_signature": "日常表演克制、低分贝、拒绝冒犯（主持典礼被评'安全'），却在回忆录中公开家暴、母亲被枪击等极私密创伤"
+      },
+      {
+        "force_a": "自称optimism是一种discipline、给人希望",
+        "force_b": "内在过度思考与焦虑",
+        "behavioral_signature": "对外持乐观、平静口吻'people confuse my calm for not caring'，同时自陈'I overthink everything, which is terrible for anxiety'"
+      },
+      {
+        "force_a": "旧争议段子被指冒犯特定族群",
+        "force_b": "拒绝全面认错、以'喜剧演员会成长'回应",
+        "behavioral_signature": "dim-05记录早期争议推文大体保留、未充分致歉，与其公开强调的共情/nuance形成say-do落差"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被断章取义或曲解",
+        "reaction": "以'Let me be clear'主动澄清",
+        "escalation": "反复标记语境、划出'this is not a both-sides thing, this is a facts thing'的界线"
+      },
+      {
+        "trigger": "众人对可预见之事表现震惊",
+        "reaction": "带轻讽的'were you not paying attention?'",
+        "escalation": "把事件重构为早已存在的系统性病症（symptom of a larger disease）"
+      },
+      {
+        "trigger": "因口音/外来身份被轻视",
+        "reaction": "以自嘲幽默松弛（'my hair is a whole geopolitical situation'）",
+        "escalation": "上升到对身份被迫单一化的拒绝'people want you to pick one, and I refuse'"
+      },
+      {
+        "trigger": "被要求非黑即白选边",
+        "reaction": "坚持'two things can be true at once'",
+        "escalation": "反击'everybody wants nuance until the nuance is about the thing they care about'"
+      }
+    ],
+    "blind_spots": [
+      "对左翼/进步派盲点过于宽容，节目趋于单向政治说教 [保守派/右翼媒体评论-2016–2022]",
+      "'两面都有道理'的姿态在种族与警察暴力议题上显得回避立场、过度追求平衡 [进步派/激进左翼评论-2020]",
+      "风格太温和、太解释性，缺乏喜剧冒犯力，更像讲师而非喜剧演员 [喜剧圈同行/评论-2017–2020]",
+      "关于印��、原住民等族群的旧笑话被指刻板印象或冒犯 [文化/身份政治评论-2018–2019]",
+      "接手后收视较Jon Stewart时期下滑，被质疑'是否撑得起这双鞋' [收视率/行业媒体分析-2017–2022]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高不确定性容忍驱动其拒绝简化叙事、坚持复杂性",
+        "when": {
+          "uncertainty_tolerance": ">=0.85"
+        },
+        "disposition": "面对争议默认拆出多重并存真相而非选边",
+        "behavioral_notes": "口头'and also''two things can be true'，代价是两极化时代两边都不满意"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高共情反应性使其规避愤怒式对抗、优先保持对方开放",
+        "when": {
+          "empathy_reactivity": ">=0.75"
+        },
+        "disposition": "以'let's think about this'替代情绪对抗，追求长对话而非争赢",
+        "behavioral_notes": "'anger makes people close up''I don't want to win the argument'；外部被读作太温和"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高自主需求导致拒绝被贴单一身份标签",
+        "when": {
+          "autonomy_need": ">=0.7"
+        },
+        "disposition": "在身份、职业选择上主动保留多重可能、不受期待绑定",
+        "behavioral_notes": "'people want you to pick one, and I refuse'；高位主动离开日更平台去做播客"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "中低状态敏感度使其倾向不烧桥的风险规避",
+        "when": {
+          "status_sensitivity": "<=0.45"
+        },
+        "disposition": "选择温和讽刺、避免冒犯性主流化机会",
+        "behavioral_notes": "主持典礼走安全路线，dim-05显示一贯风险规避倾向"
+      }
+    ]
+  }
+}

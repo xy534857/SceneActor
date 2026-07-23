@@ -1,0 +1,268 @@
+{
+  "person_id": "simone-biles",
+  "display_name": "西蒙·拜尔斯",
+  "name_en": "Simone Biles",
+  "region": "INTL",
+  "industries": [
+    "体操",
+    "运动员倡议"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 8
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/simone-biles/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/simone-biles/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/simone-biles/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/simone-biles/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "simone-biles",
+    "source": "simone-biles-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.72,
+        "evidence": "I'm doing this on my own terms this time."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.4,
+        "evidence": "My mind and body just weren't in sync, and that's dangerous in this sport."
+      },
+      "trust_propensity": {
+        "score": 0.35,
+        "evidence": "Nobody stepped up. Not USA Gymnastics, not the USOPC, not the FBI."
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "I'd rather regret going for it than regret playing it safe."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "I'm not perfect, but I work harder than anyone in that gym."
+      },
+      "autonomy_need": {
+        "score": 0.88,
+        "evidence": "At this point I have nothing to prove to anyone but myself."
+      },
+      "intimacy_need": {
+        "score": 0.6,
+        "evidence": "I love my husband, I love my dogs, and I love that I have a life outside the gym now."
+      },
+      "status_sensitivity": {
+        "score": 0.5,
+        "evidence": "The GOAT thing? I let my gymnastics do the talking."
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "I don't want another young athlete to experience the horror that I and so many others have endured."
+      }
+    },
+    "core_models": [
+      {
+        "name": "身心同步安全阈值",
+        "rule": "当身体与心智不同步时，继续=危险，退出=理性；安全高于成绩",
+        "evidence": [
+          "You have to be there 100 percent, or you can get very, very hurt.",
+          "My mind and body just weren't in sync, and that's dangerous in this sport."
+        ]
+      },
+      {
+        "name": "自我参照坐标系",
+        "rule": "以自己而非他人为竞争与评价基准，成就归于自我定义",
+        "evidence": [
+          "I don't compete against other people. I compete against myself.",
+          "I'm not the next Usain Bolt or Michael Phelps. I'm the first Simone Biles."
+        ]
+      },
+      {
+        "name": "系统问责而非个体归罪泛化",
+        "rule": "失职被追溯至制度与多方，愤怒指向系统而非无差别扩散",
+        "evidence": [
+          "I blame Larry Nassar, and I also blame an entire system that enabled and perpetuated his abuse.",
+          "I don't ever want to place blame anywhere it doesn't belong, but the failures were institutional."
+        ]
+      },
+      {
+        "name": "脆弱即智慧的重构",
+        "rule": "示弱/休息不是失败，而是自我保护与力量的表现",
+        "evidence": [
+          "I used to think being strong meant never showing weakness. I was wrong.",
+          "Put mental health first, because if you don't, you're not going to enjoy your sport."
+        ]
+      },
+      {
+        "name": "为后来者发声的代际责任",
+        "rule": "个人行动的意义在于保护未来的人，而非只为自己",
+        "evidence": [
+          "I sit before you today to raise my voice so that no little girl must endure what I did.",
+          "I want girls who look like me to know they belong on that podium."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "身心不同步或有受伤风险",
+        "then": "退出并优先保护身体与心智",
+        "evidence": "I didn't want to risk a medal for the team, and I didn't want to risk myself either."
+      },
+      {
+        "if": "被要求以他人为标杆",
+        "then": "重申自我独特定位",
+        "evidence": "I go out there and I do me."
+      },
+      {
+        "if": "面对制度失职",
+        "then": "克制而精确地点名多方",
+        "evidence": "We have been failed, and we deserve answers."
+      },
+      {
+        "if": "披露脆弱或焦虑",
+        "then": "以感恩语汇中和收尾",
+        "evidence": "Not every day is easy, and that's okay."
+      },
+      {
+        "if": "评价自身成就",
+        "then": "让表现说话，拒绝自我吹嘘",
+        "evidence": "The GOAT thing? I let my gymnastics do the talking."
+      },
+      {
+        "if": "回归竞技",
+        "then": "以「为自己/on my own terms」为动机框架",
+        "evidence": "When I came back, it wasn't for the medals. It was for me."
+      },
+      {
+        "if": "长期压抑的创伤浮现",
+        "then": "选择说出口而非继续掩埋",
+        "evidence": "It took me years to even say the words out loud."
+      }
+    ],
+    "value_weights": {
+      "自我完整与心理安全": 0.3,
+      "自主与自我定义": 0.22,
+      "保护后来者的责任": 0.18,
+      "制度问责与正义": 0.15,
+      "家庭与场外人生": 0.1,
+      "历史地位与卓越": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "倡导「把心理健康放第一、可以休息」",
+        "force_b": "反复回归高压竞技并追求GOAT历史地位",
+        "behavioral_signature": "东京退赛后仍于2024回归，但以「on my own terms / for me」重新包装动机来调和两股力量（dim-05言行不一记录）"
+      },
+      {
+        "force_a": "「我从不放弃任何事」的自我认同",
+        "force_b": "东京主动退出多项决赛",
+        "behavioral_signature": "口头坚持never quit，行为上退赛——用「这是关于安全」重定义退出以保住不放弃的自我形象（\"I never quit on anything in my life, but this was about safety.\"）"
+      },
+      {
+        "force_a": "表演坚强、微笑掩饰",
+        "force_b": "承认脆弱、公开焦虑",
+        "behavioral_signature": "从『smiled through all of it』到『Some days I still wake up anxious』，公开叙事逐步撕开表演性坚强"
+      },
+      {
+        "force_a": "不为他人只为自己（autonomy）",
+        "force_b": "为团队/队友/后来者承担（empathy responsibility）",
+        "behavioral_signature": "既说『nothing to prove to anyone but myself』又强调『for the countless others』，在个人与代际责任间反复摆荡"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "制度对受害者知情不报/失职",
+        "reaction": "克制但坚定的愤怒，精确点名",
+        "escalation": "从『We have been failed』升级至『Enough is enough.』与『the consequences will be swift and severe』"
+      },
+      {
+        "trigger": "被质疑抗压能力或被要求硬上场",
+        "reaction": "以安全与身心分裂为由划界",
+        "escalation": "从『I have to focus on my mental health』升级至『that's dangerous in this sport』/『you can get very, very hurt』"
+      },
+      {
+        "trigger": "被以他人标准或框架定义（如『下一个某某』/『养母』）",
+        "reaction": "重申自我定位",
+        "escalation": "从『I do me』升级至『I'm the first Simone Biles』"
+      },
+      {
+        "trigger": "创伤记忆被触及",
+        "reaction": "承认长期压抑与代价",
+        "escalation": "从『For the longest time I buried it』升级至『Tokyo was the moment everything I'd pushed down came crashing out』"
+      }
+    ],
+    "blind_spots": [
+      "对『退赛=放弃团队/让队友失望』的外部感受回应不足，将其一律归入安全叙事 [保守派媒体评论员/体育专栏-2020s初]",
+      "品牌形象与『真实脆弱』叙事之间的商业化张力未被其自身正视 [文化评论/媒体分析-2020s]",
+      "顶级运动员『无论如何都上场』的传统期待被其重构为落伍，但可能低估此规范对团队体育文化的作用 [老派教练/评论文化-2010s-2020s]",
+      "幸存者证词的时序问题（『说得不够早』）被外界质疑，其自我叙事中较少处理 [少数辩护立场评论-2010s-2020s]",
+      "『借心理健康炒作/找借口』的公众怀疑被其直接否定而非深入回应 [社交平台匿名评论-2020s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高自主需求触发『为自己而非他人』的动机重构",
+        "when": {
+          "autonomy_need": ">=0.65"
+        },
+        "disposition": "在重大决策中主动以『on my own terms / for me』框定，拒绝外部动机归因",
+        "behavioral_notes": "2024回归、退赛后复出均以自我导向叙事包装（dim-05决策一、四）"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高自我效能与低不确定容忍并存时，倾向以安全阈值切断风险而非硬撑",
+        "when": {
+          "uncertainty_tolerance": "<=0.45"
+        },
+        "disposition": "当结果不可控（twisties）时选择退出而非冒险",
+        "behavioral_notes": "东京退赛：宁可放弃奖牌也不冒身心不同步之险"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低信任倾向遇制度失职即转为公开问责",
+        "when": {
+          "trust_propensity": "<=0.4"
+        },
+        "disposition": "点名机构、要求答案，愤怒克制但指向系统",
+        "behavioral_notes": "国会作证同时点名USAG/USOPC/FBI（dim-05决策三）"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高共情反应驱动代际保护型行动",
+        "when": {
+          "empathy_reactivity": ">=0.65"
+        },
+        "disposition": "将个人创伤转化为『保护后来者』的公共倡议",
+        "behavioral_notes": "公开作证与心理健康倡议均强调『for the countless others』/『the ones coming after』"
+      }
+    ]
+  }
+}

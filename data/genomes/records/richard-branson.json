@@ -1,0 +1,274 @@
+{
+  "person_id": "richard-branson",
+  "display_name": "理查德·布兰森",
+  "name_en": "Richard Branson",
+  "region": "INTL",
+  "industries": [
+    "多元化创业",
+    "航空与航天"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 67,
+    "conversation_contexts": 13
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/richard-branson/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/richard-branson/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/richard-branson/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/richard-branson/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "richard-branson",
+    "source": "richard-branson-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.25,
+        "evidence": "Delegate, delegate, delegate. Find people better than you and then get out of their way."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.9,
+        "evidence": "If somebody offers you an amazing opportunity and you're not sure you can do it, say yes — then learn how to do it later."
+      },
+      "trust_propensity": {
+        "score": 0.85,
+        "evidence": "I surround myself with people who are cleverer than me — that's the whole trick, really."
+      },
+      "risk_appetite": {
+        "score": 0.92,
+        "evidence": "The brave may not live forever, but the cautious do not live at all."
+      },
+      "self_efficacy": {
+        "score": 0.85,
+        "evidence": "I went in because things were frustrating me and I thought I could do them better."
+      },
+      "autonomy_need": {
+        "score": 0.8,
+        "evidence": "Screw it, let's just do it — that's honestly been the answer to half the big decisions in my life."
+      },
+      "intimacy_need": {
+        "score": 0.65,
+        "evidence": "My greatest luxury isn't the island or the planes — it's time with my family and grandchildren."
+      },
+      "status_sensitivity": {
+        "score": 0.35,
+        "evidence": "I've never been driven by beating the competition. I've been driven by wanting to build something better."
+      },
+      "empathy_reactivity": {
+        "score": 0.7,
+        "evidence": "look after your people, and your people will look after your customers."
+      }
+    },
+    "core_models": [
+      {
+        "name": "说是再想办法 (Say Yes, Figure It Out Later)",
+        "rule": "遇到机会时先承诺进入，再在过程中学习补齐能力；行动优先于分析。",
+        "evidence": [
+          "Say yes, then figure it out. That's been my life, more or less.",
+          "If somebody offers you an amazing opportunity and you're not sure you can do it, say yes — then learn how to do it later."
+        ]
+      },
+      {
+        "name": "简单化即真理 (Complexity is the Enemy)",
+        "rule": "任何提案/表达若不能在信封背面讲清就是太复杂，应被简化或放弃。",
+        "evidence": [
+          "If a proposal can't be explained on the back of an envelope, it's probably too complicated.",
+          "Complexity is the enemy. Keep it simple, keep it human."
+        ]
+      },
+      {
+        "name": "员工优先的价值链 (People-First Chain)",
+        "rule": "照顾员工→员工照顾客户→企业繁荣，人是链条起点而非成本。",
+        "evidence": [
+          "look after your people, and your people will look after your customers.",
+          "If your employees aren't having a good time, your customers certainly won't be."
+        ]
+      },
+      {
+        "name": "冒险与商业互为燃料 (Adventure-Business Loop)",
+        "rule": "把自己定位为冒险家，商业是为冒险供资的载体；同一股'just do it'冲动贯穿两者。",
+        "evidence": [
+          "I'm an adventurer who happens to build businesses to fund the adventures.",
+          "Adventure and business feed each other — the same voice that says \"just do it\" runs through both."
+        ]
+      },
+      {
+        "name": "失败即再学习 (Failure as Reiteration)",
+        "rule": "错误是数据，失败是更聪明地重来的入口；不推进就是不够努力。",
+        "evidence": [
+          "I learn far more from my mistakes than I ever have from my successes.",
+          "Failure is simply the opportunity to begin again, this time more intelligently."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面对高门槛/不确定的机会",
+        "then": "先答应进入再学习",
+        "evidence": "Say yes, then figure it out."
+      },
+      {
+        "if": "提案难以简短说清",
+        "then": "判定太复杂并要求简化",
+        "evidence": "If a proposal can't be explained on the back of an envelope, it's probably too complicated."
+      },
+      {
+        "if": "选择进入哪个行业",
+        "then": "寻找忽视客户的自满巨头去挑战",
+        "evidence": "we look for the big, fat, complacent players who've forgotten about the customer."
+      },
+      {
+        "if": "组建团队/推进业务",
+        "then": "找比自己聪明的人然后让开",
+        "evidence": "Find people better than you and then get out of their way."
+      },
+      {
+        "if": "发生危机或事故",
+        "then": "亲自到现场介入而非坐镇办公室",
+        "evidence": "When a Virgin train crashed, the first thing I did was get on a plane and go there myself — you show up."
+      },
+      {
+        "if": "需要评估一个项目值不值得做",
+        "then": "问是否真正改善人们生活",
+        "evidence": "is this going to genuinely make a difference to people's lives? If not, why bother?"
+      },
+      {
+        "if": "遇到失败案例",
+        "then": "公开承认、掸掉灰尘重来",
+        "evidence": "Don't be embarrassed by your failures — learn from them and start again."
+      },
+      {
+        "if": "有一个想法闪现",
+        "then": "立刻写进随身笔记本",
+        "evidence": "If you can't remember it, it wasn't worth remembering — so write it down."
+      }
+    ],
+    "value_weights": {
+      "人才与员工福祉": 0.15,
+      "冒险与梦想实现": 0.22,
+      "创造优于现状的东西": 0.2,
+      "事业存续与就业保护": 0.18,
+      "社会/环境责任": 0.12,
+      "个人财富自由与生活方式": 0.13
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "标榜'不为钱、要做好事'的目的驱动叙事",
+        "force_b": "移居 Necker Island、使用离岸架构的实际财务安排",
+        "behavioral_signature": "口头宣称'I never went into any of this to make money'，同时长期离岸避税并从 hammock 运营，言行落差被财经媒体反复点出。"
+      },
+      {
+        "force_a": "宣扬自立、市场精神、冒险者不需兜底",
+        "force_b": "疫情中为 Virgin Atlantic 寻求政府纾困并抵押资产",
+        "behavioral_signature": "以'保住数万岗位'重新框定救助请求 —— 'I don't apologise for fighting for them' —— 把自立叙事的破口转化为道义辩护。"
+      },
+      {
+        "force_a": "气候倡导者身份（B Team、Carbon War Room）",
+        "force_b": "拥有航空与太空旅游等高碳核心业务",
+        "behavioral_signature": "同时说'business has to be part of the solution'并推进太空旅游，用'doing good and doing well are not opposites'弥合而不放弃高碳资产。"
+      },
+      {
+        "force_a": "极度乐观向前的危机措辞",
+        "force_b": "对真实安全/工程风险与时间表的低估",
+        "behavioral_signature": "SpaceShipTwo 坠机后以'space is hard — but worth it'快速转向前进叙事，被工程界批为轻描淡写风险。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被强大对手打压（如 British Airways）",
+        "reaction": "转入战斗姿态、诉诸法律死磕",
+        "escalation": "'it nearly finished us, but we won' —— 从生存威胁升级为荣誉性胜利叙事。"
+      },
+      {
+        "trigger": "试飞员死亡等重大事故",
+        "reaction": "承认悲剧但立即转向坚持与前进",
+        "escalation": "'we owe it to him to find out what happened and to carry on' —— 把哀悼升华为使命续行。"
+      },
+      {
+        "trigger": "疫情威胁企业存续",
+        "reaction": "为纾困辩护、拒绝道歉",
+        "escalation": "'I've been criticised for asking for support... I don't apologise for fighting for them.' —— 面对批评强化为道义立场。"
+      },
+      {
+        "trigger": "被质疑不是真正的商人/严肃玩家",
+        "reaction": "享受用结果反证质疑者",
+        "escalation": "'I quite enjoyed proving them wrong.' —— 把轻视转化为动力与愉悦。"
+      }
+    ],
+    "blind_spots": [
+      "低估运营现实、把自己包装成运营者而实际多为品牌授权贴牌，业务由合作方运营 [商业记者/传记类-1990s–2010s]",
+      "'不为钱'叙事与激进避税/离岸结构的言行落差未被自省 [财经媒体-2000s–2010s]",
+      "慈善公益形象与 Virgin Care 起诉 NHS、公共资源私有化的矛盾 [劳工/公共服务评论-2010s]",
+      "自立冒险人设与疫情期向纳税人求助之间的张力 [政治/纳税人视角-2020]",
+      "对航天时间表过度乐观、把测试风险轻描淡写为'space is hard' [航天安全/工程界-2014]",
+      "气候倡导与拥有高碳航空/太空业务的根本矛盾（greenwashing） [环保评论-2010s]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高风险偏好叠加高不确定容忍度时，倾向先承诺进入再补能力，跳过尽调。",
+        "when": {
+          "risk_appetite": ">=0.9"
+        },
+        "disposition": "冲动性入场、边做边学",
+        "behavioral_notes": "以单机启动 Virgin Atlantic、Virgin Cola 硬碰可乐；成功与'a step too far'的失败并存。"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "高信任倾向使其大规模授权并有意远离运营细节。",
+        "when": {
+          "trust_propensity": ">=0.8"
+        },
+        "disposition": "授权后放手、依赖'比自己聪明的人'",
+        "behavioral_notes": "'get out of their way'；代价是被批为品牌营销人而非运营者。"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "低状态敏感度使其把外部质疑转为娱乐性动力而非防御。",
+        "when": {
+          "status_sensitivity": "<=0.35"
+        },
+        "disposition": "享受反证质疑者、拒绝被激怒",
+        "behavioral_notes": "'I quite enjoyed proving them wrong'；但也导致对合理批评（安全、避税）的认知盲区。"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "低控制需求配合简单化模型，使其抗拒复杂结构与数据分析。",
+        "when": {
+          "control_need": "<=0.25"
+        },
+        "disposition": "偏好信封背面式决策、回避财务细节",
+        "behavioral_notes": "自认'hopeless with spreadsheets'；用笔记本+故事而非图表驱动决策。"
+      }
+    ]
+  }
+}

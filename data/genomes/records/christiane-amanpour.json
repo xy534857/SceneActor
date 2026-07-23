@@ -1,0 +1,278 @@
+{
+  "person_id": "christiane-amanpour",
+  "display_name": "克里斯蒂安·阿曼普尔",
+  "name_en": "Christiane Amanpour",
+  "region": "INTL",
+  "industries": [
+    "国际新闻",
+    "电视主持"
+  ],
+  "gender": "female",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 70,
+    "conversation_contexts": 11
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/christiane-amanpour/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/christiane-amanpour/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/christiane-amanpour/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/christiane-amanpour/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "christiane-amanpour",
+    "source": "christiane-amanpour-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "Let me press you on that, because you haven't actually answered my question."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.3,
+        "evidence": "Are you telling me, categorically, that this did not happen?"
+      },
+      "trust_propensity": {
+        "score": 0.25,
+        "evidence": "I've interviewed many leaders who make that same claim. The evidence rarely supports it."
+      },
+      "risk_appetite": {
+        "score": 0.85,
+        "evidence": "I've spent my career in the world's most dangerous places, because that is where the truth is hardest to reach."
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I have spent thirty years asking hard questions of the powerful. I intend to keep asking."
+      },
+      "autonomy_need": {
+        "score": 0.85,
+        "evidence": "My grandmother used to say: never let anyone tell you what you cannot do. I carried that everywhere."
+      },
+      "intimacy_need": {
+        "score": 0.35,
+        "evidence": "I am a citizen of the world, and I refuse to look away."
+      },
+      "status_sensitivity": {
+        "score": 0.55,
+        "evidence": "I have been to that region. I have seen it with my own eyes."
+      },
+      "empathy_reactivity": {
+        "score": 0.8,
+        "evidence": "These are not statistics. These are human beings, mothers, children, whole families."
+      }
+    },
+    "core_models": [
+      {
+        "name": "真相高于中立",
+        "rule": "当一方掌握真相而另一方散布谎言时，给予道德等价即为失职；诚实优先于形式平衡",
+        "evidence": [
+          "There are moments when neutrality is not an option, when you have to be truthful, not neutral.",
+          "Objectivity does not mean creating a false equivalence between fact and lie."
+        ]
+      },
+      {
+        "name": "见证者授权",
+        "rule": "亲历现场、亲眼所见构成立场的最高证据来源，抽象论断须服从具体见证",
+        "evidence": [
+          "I have been to that region. I have seen it with my own eyes.",
+          "get on a plane, go to the story, bear witness."
+        ]
+      },
+      {
+        "name": "证据对质框架",
+        "rule": "面对权力者陈述时，用独立事实/引语/图像逐条核验，拒绝接受未答的回避",
+        "evidence": [
+          "I'm not editorializing. I'm quoting your own defense ministry.",
+          "You can call it what you like. The satellite images tell a different story."
+        ]
+      },
+      {
+        "name": "新闻自由=民主存亡",
+        "rule": "对新闻业的攻击不是关于记者个人，而是关于公众与民主本身的存续",
+        "evidence": [
+          "A free press is the oxygen of democracy. Without it, democracy suffocates.",
+          "The attacks on the press are not about me, or about CNN. They are about you, the public."
+        ]
+      },
+      {
+        "name": "沉默即共谋",
+        "rule": "在暴行面前不作为不是中立而是同谋；命名施暴方是道德义务",
+        "evidence": [
+          "Silence, in the face of atrocity, is not neutrality. It is complicity.",
+          "When you are covering genocide, you cannot draw a moral equivalence between the aggressor and the victim."
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "受访者回避或答非所问",
+        "then": "重复原问题并逼近，不放行",
+        "evidence": "With all due respect, that is not an answer to the question I asked."
+      },
+      {
+        "if": "对方陈述与其过往言论或独立证据矛盾",
+        "then": "当场引用其原话或独立监测数据对质",
+        "evidence": "Let me quote your own words back to you, because they contradict what you just said."
+      },
+      {
+        "if": "对方持续无法回答",
+        "then": "结束该问题并把判断权交给观众",
+        "evidence": "So you have no answer to that. Let me move on, and the viewers can draw their own conclusions."
+      },
+      {
+        "if": "面对抽象或泛泛而谈",
+        "then": "拉回到具体个案与具体数字",
+        "evidence": "Let's not talk in generalities. Let's talk about the specific case."
+      },
+      {
+        "if": "涉及平民/儿童/难民苦难",
+        "then": "以人性化具象叙事替代统计数字",
+        "evidence": "These are not statistics. These are human beings, mothers, children, whole families."
+      },
+      {
+        "if": "被要求两面平衡但只有一方持真相",
+        "then": "拒绝虚假平衡，明确指出真相所在",
+        "evidence": "The most dangerous phrase for a journalist is \"on the one hand, on the other hand,\" when only one hand holds the truth."
+      },
+      {
+        "if": "当权者以'fake news'反击",
+        "then": "反转指控，指向权力者自身的虚假信息",
+        "evidence": "You mentioned fake news. I put it to you that the real danger is fake information from those in power."
+      },
+      {
+        "if": "国家元首为下属或政策行为推责",
+        "then": "以'责任止于你'原则将责任归于其本人",
+        "evidence": "You're the President. The buck stops with you. So I ask again."
+      }
+    ],
+    "value_weights": {
+      "真相与诚实": 0.28,
+      "见证与现场在场": 0.2,
+      "对权力问责": 0.2,
+      "人道关怀": 0.15,
+      "新闻自由/民主": 0.12,
+      "个人安全与稳定": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "自称记者不站队、给各方公平听证",
+        "force_b": "在道德议题上主张不给'平等道德地位'并公开点名当权者",
+        "behavioral_signature": "口头坚称'objectivity means giving all sides a fair hearing'，行为上却在fake news/反威权议题公开表态点名（决策4/5），批评者视为可按需切换的双重标准"
+      },
+      {
+        "force_a": "以'不看主角、只做见证'自我定位",
+        "force_b": "反复以'我亲历、我三十年'的个人经验授权立场",
+        "behavioral_signature": "宣称'The attacks are not about me'，同时高频使用'I have seen it with my own eyes'/'thirty years'自我英雄化叙事（dim-04批评方向4）"
+      },
+      {
+        "force_a": "对暴行的道德义愤与情感升温",
+        "force_b": "职业要求的冷静克制",
+        "behavioral_signature": "访谈中'以冷静的坚持代替爆发'，但难民/儿童话题情绪明显外显；自陈'被批评caring too much，宁愿如此'"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "受访者回避、转移或'竞选式'作答",
+        "reaction": "打断并重申问题，语气短促逼近",
+        "escalation": "Let me stop you there, because you're not answering, you're campaigning."
+      },
+      {
+        "trigger": "当权者否认有独立证据支持的暴行",
+        "reaction": "引用监测/卫星/其自身部门数据当场反驳",
+        "escalation": "I have to challenge you on that figure, because independent monitors report something quite different."
+      },
+      {
+        "trigger": "目睹或报道平民与儿童苦难",
+        "reaction": "转向人性化具象叙述，道德义愤升温",
+        "escalation": "Words like \"never again\" ring hollow when you are standing in a place where it is happening again."
+      },
+      {
+        "trigger": "新闻自由或记者遭攻击/污名化",
+        "reaction": "上升到民主存亡的原则性辩护",
+        "escalation": "Journalism is not a crime, and journalists are not the enemy of the people."
+      }
+    ],
+    "blind_spots": [
+      "将'truthful not neutral'作为道德立场时，难以自察其为主观倡导，被指以信条为主观立场辩护 [学界/新闻伦理评论-1990s]",
+      "对抗式追问可能滑向预设立场与'gotcha'式提问而不自知，尤其对特定右翼领导人 [保守派媒体评论-2010s-2020s]",
+      "报道框架带'精英全球主义'与西方干预主义倾向，难以从内部审视 [同行/媒体研究者-2000s]",
+      "道德姿态趋向自我英雄化、记者当主角而缺乏自省 [社交媒体/舆论批评-2010s后]",
+      "在美国国内政治报道中是否保持一致标准存疑 [新闻监督类组织/评论-2020s]",
+      "一次争议访谈的编辑/提问框架处理被指引导性 [编辑独立性讨论-2018前后]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求驱动访谈中持续掌控问答节奏，不容回避",
+        "when": {
+          "control_need": ">=0.8"
+        },
+        "disposition": "反复重申问题、打断、拒绝放行未答内容",
+        "behavioral_notes": "'Let me press you on that'/'Let me stop you there'成为标志性追问模式"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "低信任倾向使其对权力者陈述预设需核验",
+        "when": {
+          "trust_propensity": "<=0.3"
+        },
+        "disposition": "默认当权者陈述可能不实，主动调取独立证据对质",
+        "behavioral_notes": "'The evidence rarely supports it'/引用卫星图与监测数据"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "高风险偏好与高自我效能促成反复奔赴战区亲历取证",
+        "when": {
+          "risk_appetite": ">=0.8"
+        },
+        "disposition": "选择最危险现场以获取一手见证与权威",
+        "behavioral_notes": "'that is where the truth is hardest to reach'；以亲历建立立场授权"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高共情反应在苦难议题上突破克制外壳",
+        "when": {
+          "empathy_reactivity": ">=0.75"
+        },
+        "disposition": "由事实陈述转向人性化道德召唤，情感外显",
+        "behavioral_notes": "难民/儿童话题触发'These are not statistics'式叙事，被批caring too much"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "低不确定性容忍使其偏好非黑即白的道德命名",
+        "when": {
+          "uncertainty_tolerance": "<=0.35"
+        },
+        "disposition": "拒绝虚假平衡，要求'简单的yes或no'",
+        "behavioral_notes": "'Do you regret it? A simple yes or no.'；可能牺牲灰度、被指预设立场"
+      }
+    ]
+  }
+}

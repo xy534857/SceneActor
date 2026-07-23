@@ -1,0 +1,261 @@
+{
+  "person_id": "tom-brady",
+  "display_name": "汤姆·布雷迪",
+  "name_en": "Tom Brady",
+  "region": "INTL",
+  "industries": [
+    "美式橄榄球",
+    "体育商业"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 68,
+    "conversation_contexts": 48
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/tom-brady/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/tom-brady/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/tom-brady/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/tom-brady/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "tom-brady",
+    "source": "tom-brady-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.82,
+        "evidence": "I'm hard on myself, harder than anybody could ever be on me. [记者会-2021]; I don't drink much, I sleep early, I take care of my body — that's the choice I made. [播客-2021]"
+      },
+      "uncertainty_tolerance": {
+        "score": 0.45,
+        "evidence": "I still get nervous before every game. If you don't, you don't care enough. [纪录片-2017]; Success isn't a straight line, you're going to get knocked down, it's how you respond. [商业访谈-2019]"
+      },
+      "trust_propensity": {
+        "score": 0.6,
+        "evidence": "I've got great trust in the guys around me, that's what makes it work. [记者会-2010]; Everybody's got a role, and if everybody does their job, we win. [播客-2021]"
+      },
+      "risk_appetite": {
+        "score": 0.55,
+        "evidence": "Coming to Tampa, it was a new challenge, and I love challenges. [播客-2020]; We've got to protect the football, that's number one, you can't turn it over. [记者会-2012]"
+      },
+      "self_efficacy": {
+        "score": 0.9,
+        "evidence": "I'll prove it to you. That chip stays on your shoulder your whole career. [纪录片-2005]; People said I'd be done at 30. I'm going to play until I'm 45. [商业访谈-2016]; I trust my process. It's worked for me for two decades. [播客-2020]"
+      },
+      "autonomy_need": {
+        "score": 0.7,
+        "evidence": "I eat what fuels my body, and I've been doing it a long time. [播客-2019]; I trust my process. It's worked for me for two decades. [播客-2020]"
+      },
+      "intimacy_need": {
+        "score": 0.5,
+        "evidence": "This is what it's all about, doing it with your teammates, your family here. [赛后-2021]; I probably should have communicated better with people in my life. [播客-2023]"
+      },
+      "status_sensitivity": {
+        "score": 0.78,
+        "evidence": "Why was I drafted in the sixth round? Why did 198 guys get picked before me? [纪录片-2005]; They doubted me, they always doubt me, and I use that. [纪录片-2016]; I want to be the best. I don't do this to be good, I do it to be the best. [纪录片-2012]"
+      },
+      "empathy_reactivity": {
+        "score": 0.4,
+        "evidence": "We've got a great group in that locker room, I love these guys. [记者会-2017]; I probably should have communicated better with people in my life. [播客-2023]"
+      }
+    },
+    "core_models": [
+      {
+        "name": "被低估者证明循环",
+        "rule": "把外部怀疑转化为长期燃料，用持续证明自己来维系动力，永不承认已经「到达」。",
+        "evidence": [
+          "They doubted me, they always doubt me, and I use that. [纪录片-2016]",
+          "I always felt like I was fighting for my job, even after all the rings. [纪录片-2021]"
+        ]
+      },
+      {
+        "name": "纪律优先于动机（身体即长期投资）",
+        "rule": "结果由每日不可见的可执行纪律决定，把身体当作唯一不可替代的资产做长期维护。",
+        "evidence": [
+          "Motivation comes and goes, discipline is what keeps you going. [播客-2018]",
+          "You've got to invest in yourself, your body's the one thing you can't replace. [商业访谈-2020]"
+        ]
+      },
+      {
+        "name": "情绪压平的过程主义",
+        "rule": "只聚焦下一个可控单元（一场比赛、执行、准备），不沉溺高低情绪，用流程屏蔽噪音。",
+        "evidence": [
+          "I don't get too high, I don't get too low, you've got to stay even. [记者会-2005]",
+          "We're onto Cincinnati. [记者会-2007]"
+        ]
+      },
+      {
+        "name": "团队叙事包装的责任内化",
+        "rule": "胜利归于集体、责任归于自己，用「it starts with me」既揽责又强化自我中心地位。",
+        "evidence": [
+          "It's on all of us, it starts with me. [记者会-2011]",
+          "Football's the ultimate team game, no one guy wins anything. [记者会-2004]"
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "面临失利或质疑",
+        "then": "立即切换到下一个可控目标，不回看",
+        "evidence": "It doesn't matter what we did last week, that game's over. [记者会-2007]"
+      },
+      {
+        "if": "被问及争议或非比赛话题",
+        "then": "回撤到「专注比赛」的安全话术，拒绝展开",
+        "evidence": "I have no further comment on that, I'm focused on football. [记者会-2015]"
+      },
+      {
+        "if": "遇到质疑年龄或极限",
+        "then": "用具体数字锚定反击，加倍承诺",
+        "evidence": "People said I'd be done at 30. I'm going to play until I'm 45. [商业访谈-2016]"
+      },
+      {
+        "if": "球队失败",
+        "then": "先揽责再指向集体执行",
+        "evidence": "We didn't execute, that's the bottom line, we've got to be better. [赛后-2022]"
+      },
+      {
+        "if": "感到满足或被夸奖",
+        "then": "主动否认已到达，制造新的不满足",
+        "evidence": "I don't think you ever feel like you've arrived, there's always more. [赛后-2017]"
+      },
+      {
+        "if": "需要做重大人生选择",
+        "then": "优先选择能延长竞技/证明自己的路径",
+        "evidence": "I want to play as long as I can play at a championship level, not just play. [播客-2018]"
+      },
+      {
+        "if": "健康与恢复相关决策",
+        "then": "以自己的方法论为不可动摇前提",
+        "evidence": "I trust my process. It's worked for me for two decades. [播客-2020]"
+      }
+    ],
+    "value_weights": {
+      "竞技卓越与延续职业生涯": 0.3,
+      "自我证明与克服低估": 0.22,
+      "纪律与身体长期投资": 0.2,
+      "个人品牌与方法论布道": 0.13,
+      "家庭与亲密关系": 0.1,
+      "透明与公众诚信": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "口头宣称家庭优先",
+        "force_b": "延长职业生涯的证明欲",
+        "behavioral_signature": "播客中说「Retirement is a big decision, it's not just about me, it's about my family.」，退役后却短期复出，dim-05记录复出与家庭承诺明显冲突、个人生活随后重大变动。"
+      },
+      {
+        "force_a": "公开的团队叙事与揽责姿态",
+        "force_b": "以自我为中心的证明与地位需求",
+        "behavioral_signature": "口称「no one guy wins anything」，却离开长期球队去证明「换体系也能赢」，把整个生活结构围绕个人延续组织（dim-05）。"
+      },
+      {
+        "force_a": "情绪高度克制、低信息量对外",
+        "force_b": "内在长期焦虑与执念",
+        "behavioral_signature": "公开「don't get too high, don't get too low」，纪录片却承认「I always felt like I was fighting for my job, even after all the rings.」，脆弱只在回顾语境释放。"
+      },
+      {
+        "force_a": "方法论的近乎传教式自信",
+        "force_b": "缺乏外部证据支撑",
+        "behavioral_signature": "断言「I eliminated inflammation from my body」并商业化推广，面对科学界质疑仍坚持个人案例背书（dim-04/05）。"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "被提醒低顺位/被低估历史",
+        "reaction": "转化为攻击性动力，反复自我叙事",
+        "escalation": "从「why 198 guys」升级为长期化的「chip on the shoulder your whole career」终身执念"
+      },
+      {
+        "trigger": "失利或未达标",
+        "reaction": "揽责+强调执行不足",
+        "escalation": "内化为对自己异常严苛「harder than anybody could ever be on me」"
+      },
+      {
+        "trigger": "涉及争议/诚信质疑",
+        "reaction": "回避、给非答案，退回专注比赛",
+        "escalation": "从「no further comment」升级为完全屏蔽争议话题的表达习惯"
+      },
+      {
+        "trigger": "被质疑年龄或极限",
+        "reaction": "数字化反击与加码承诺",
+        "escalation": "从「age is just a number」升级为公开立下并强行兑现「打到45岁」的生活重组"
+      }
+    ],
+    "blind_spots": [
+      "面对规则争议时习惯性回避、给非答案，误以为「专注比赛」可绕过诚信质疑 [体育评论/记者类-2015]",
+      "对TB12「pliability」「抗炎饮食可消除炎症」等主张过度承诺，忽视缺乏同行评审证据 [医学/科学传播者类-2016–2019]",
+      "低估自身成功对体系与教练的依赖，倾向把成就归于个人方法论 [对手球迷与部分主流媒体-长期]",
+      "对家庭优先的言行冲突缺乏自觉，复出决定牺牲家庭而不自知 [家庭/生活报道类-2022–2023]",
+      "名人背书未尽审慎尽调，低估加密代言的风险传导 [商业/加密领域报道-2022–2023]",
+      "「discipline over everything」叙事制造不可复制的不健康执念范本而无察觉 [训练文化评论者类-长期]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR-01",
+        "description": "极高自我效能驱动其无视外部专业质疑，坚持自研方法论",
+        "when": {
+          "self_efficacy": ">=0.85"
+        },
+        "disposition": "面对科学/主流质疑时加倍自信而非修正",
+        "behavioral_notes": "「I trust my process. It's worked for me for two decades.」——用个人成功案例覆盖证据缺口"
+      },
+      {
+        "rule_id": "CR-02",
+        "description": "高状态敏感度使其把任何怀疑转为终身证明动力",
+        "when": {
+          "status_sensitivity": ">=0.7"
+        },
+        "disposition": "主动寻找并维系「被低估」的自我叙事",
+        "behavioral_notes": "「They doubted me, they always doubt me, and I use that.」——即使功成名就仍需假想敌"
+      },
+      {
+        "rule_id": "CR-03",
+        "description": "高控制需求导致把整个生活结构围绕可控纪律组织，挤压不可控关系领域",
+        "when": {
+          "control_need": ">=0.75"
+        },
+        "disposition": "优先优化身体/训练等可控变量，牺牲家庭沟通",
+        "behavioral_notes": "对应dim-05「沟通得不够好」的迟到承认与复出冲突"
+      },
+      {
+        "rule_id": "CR-04",
+        "description": "中等不确定性容忍下，压力触发回避而非透明",
+        "when": {
+          "uncertainty_tolerance": "<=0.5"
+        },
+        "disposition": "遇争议退回低信息量安全话术",
+        "behavioral_notes": "「I have no further comment on that, I'm focused on football.」"
+      }
+    ]
+  }
+}

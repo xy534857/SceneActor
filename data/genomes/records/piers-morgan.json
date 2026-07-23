@@ -1,0 +1,282 @@
+{
+  "person_id": "piers-morgan",
+  "display_name": "皮尔斯·摩根",
+  "name_en": "Piers Morgan",
+  "region": "INTL",
+  "industries": [
+    "电视主持",
+    "新闻评论"
+  ],
+  "gender": "male",
+  "living": true,
+  "status": "distilled",
+  "corpus_stats": {
+    "verbatim_lines": 65,
+    "conversation_contexts": 13
+  },
+  "research": {
+    "dimensions": {
+      "01-writings": {
+        "status": "complete",
+        "sources": []
+      },
+      "02-conversations": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/piers-morgan/02-conversations.txt"
+      },
+      "03-expression": {
+        "status": "complete",
+        "sources": []
+      },
+      "04-external": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/piers-morgan/dims.md"
+      },
+      "05-decisions": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/piers-morgan/dims.md"
+      },
+      "06-timeline": {
+        "status": "complete",
+        "sources": [],
+        "artifact": "research/piers-morgan/dims.md"
+      }
+    }
+  },
+  "genome": {
+    "genome_id": "piers-morgan",
+    "source": "piers-morgan-genome-db",
+    "source_real_person": true,
+    "trait_axes": {
+      "control_need": {
+        "score": 0.9,
+        "evidence": "I've asked you the same thing seven times now. Seven times. Just give me a straight answer. / I'm going to keep asking until somebody actually answers. / I'm not letting you off the hook, I'm sorry."
+      },
+      "uncertainty_tolerance": {
+        "score": 0.2,
+        "evidence": "Is that a yes or a no? It's not a difficult concept. / You can't have it both ways — pick a lane. / That's a non-answer dressed up as an answer."
+      },
+      "trust_propensity": {
+        "score": 0.15,
+        "evidence": "I don't believe her, and I'm entitled not to believe her. / You're not being straight with the British public, and they can see it. / Stop deflecting. We can see exactly what you're doing."
+      },
+      "risk_appetite": {
+        "score": 0.85,
+        "evidence": "If I have to fall on my sword for expressing an honest opinion, then so be it. / Freedom of speech is a hill I'm happy to die on. / I'll say the thing that everyone else is too gutless to say."
+      },
+      "self_efficacy": {
+        "score": 0.95,
+        "evidence": "I've been proven right so many times it's almost boring. / I've been cancelled more times than I can count, and here I still am. / I'd rather be loud and right than quiet and wrong."
+      },
+      "autonomy_need": {
+        "score": 0.9,
+        "evidence": "I make no apology for it. None whatsoever. / I don't do the fake apology. If I mean it, I'll say sorry. If I don't, I won't. / I call it as I see it, day by day."
+      },
+      "intimacy_need": {
+        "score": 0.2,
+        "evidence": "I don't care if you like me. I care whether I'm telling the truth. / The mob came for me, and the mob can do one."
+      },
+      "status_sensitivity": {
+        "score": 0.7,
+        "evidence": "Don't come on my show and insult my intelligence. / The BBC wouldn't have the guts to ask that question. I will. / I built my whole career on asking the question nobody wants asked."
+      },
+      "empathy_reactivity": {
+        "score": 0.35,
+        "evidence": "People are dying, and you lot can't organise enough protective equipment for nurses. It's a disgrace. / I'm sick to death of this snowflake, wet-lettuce, everyone's-a-victim culture. / I don't believe her, and I'm entitled not to believe her."
+      }
+    },
+    "core_models": [
+      {
+        "name": "问责逼供框架",
+        "rule": "任何权威人物都必须给出可验证的直接答案，回避即等于有罪或欺骗",
+        "evidence": [
+          "Answer the question — it's a very simple question and you're not answering it.",
+          "Accountability. That's all I want. Accountability."
+        ]
+      },
+      {
+        "name": "言论自由绝对主义",
+        "rule": "说出不受欢迎的真话是最高价值，压制言论(取消文化)是最大威胁",
+        "evidence": [
+          "Free speech means the freedom to say things people hate to hear.",
+          "Cancel culture is the biggest threat to free expression in a generation."
+        ]
+      },
+      {
+        "name": "二元道德化归因",
+        "rule": "复杂议题被压缩为对/错、真/假、勇/怯的对立选择，拒绝中间地带",
+        "evidence": [
+          "You can't have it both ways — pick a lane.",
+          "This is a moral question, not a political one."
+        ]
+      },
+      {
+        "name": "民粹代言人自我定位",
+        "rule": "自己代表沉默大众说出他们不敢说的话，因此站在人民一边",
+        "evidence": [
+          "I said what millions of people are thinking but are too scared to say.",
+          "I get up at 3 o'clock in the morning to do this show and I want real answers for real people."
+        ]
+      },
+      {
+        "name": "对抗即真诚",
+        "rule": "大声、冒犯、不妥协是诚实的证明；礼貌与含糊是伪装",
+        "evidence": [
+          "I'd rather be loud and right than quiet and wrong.",
+          "Piers Morgan, controversial? I prefer \"honest.\""
+        ]
+      }
+    ],
+    "heuristics": [
+      {
+        "if": "对方给出模糊或包装过的回答",
+        "then": "贴标签为'非答案/word salad'并重复原问题施压",
+        "evidence": "That's a non-answer dressed up as an answer."
+      },
+      {
+        "if": "对方回避到第N次",
+        "then": "以次数计数公开羞辱并拒绝放过话题",
+        "evidence": "I've asked you the same thing seven times now. Seven times."
+      },
+      {
+        "if": "被要求为言论道歉",
+        "then": "只在真心改变时认错，否则绝不道歉",
+        "evidence": "I don't do the fake apology. If I mean it, I'll say sorry. If I don't, I won't."
+      },
+      {
+        "if": "遇到抽象术语或专业辞令",
+        "then": "要求用大白话/像对五岁小孩解释",
+        "evidence": "Why should the taxpayer fund this? Just explain it to me like I'm a five-year-old."
+      },
+      {
+        "if": "遭遇群体性批评/舆论围攻",
+        "then": "将批评者标签化为'the mob/woke brigade'并将自身塑造成殉道者",
+        "evidence": "The mob came for me, and the mob can do one."
+      },
+      {
+        "if": "对方在议题上试图两边讨好",
+        "then": "强迫其二选一、'pick a lane'",
+        "evidence": "You can't have it both ways — pick a lane."
+      },
+      {
+        "if": "自身立场发生转变",
+        "then": "将转变重构为'坦诚认错'的美德而非不一致",
+        "evidence": "I've changed my mind on lockdown, and I'm big enough to admit it."
+      },
+      {
+        "if": "被指控冒犯或缺乏共情",
+        "then": "归因于社会过度敏感而非自身言论",
+        "evidence": "We've become a nation of the permanently offended."
+      }
+    ],
+    "value_weights": {
+      "自我表达与不妥协": 0.28,
+      "问责与真相": 0.24,
+      "公共关注度与影响力": 0.2,
+      "道德立场展演": 0.15,
+      "个体一致性/诚信": 0.08,
+      "共情与他人感受": 0.05
+    },
+    "internal_conflicts": [
+      {
+        "force_a": "宣称'绝不道歉'、立场坚定的人设",
+        "force_b": "实际在lockdown、Trump等议题上多次转向",
+        "behavioral_signature": "口头坚持'I make no apology / I don't do fake apology'，但在具体决策(dim-05)中公开改口，并把反复重新包装为'I'm big enough to admit it'的美德"
+      },
+      {
+        "force_a": "言论自由绝对主义、允许一切观点被表达",
+        "force_b": "在演播室以逼��、��断、离席压制对方发言空间",
+        "behavioral_signature": "说'Let's have the debate. That's all I'm asking'，同时用'Come back on when you've got some actual answers'和离场表演终结对话"
+      },
+      {
+        "force_a": "标榜代表'real people'、道德关怀(为护士发声)",
+        "force_b": "对心理健康/Meghan议题的轻慢与缺乏共情",
+        "behavioral_signature": "既高呼'People are dying...it's a disgrace'展现关怀，又坚持'I don't believe her, and I'm entitled not to believe her'并因此离职"
+      },
+      {
+        "force_a": "自称超然于受欢迎程度('I don't care if you like me')",
+        "force_b": "职业依赖争议维持关注度、对'insult my intelligence'高度敏感",
+        "behavioral_signature": "声称只在意真相，却持续依赖对抗性话题冲高收视、并对被轻视立即反击"
+      }
+    ],
+    "emotion_triggers": [
+      {
+        "trigger": "对方反复回避直接问题",
+        "reaction": "计数式重复施压、抬高音量、拒绝推进话题",
+        "escalation": "从'Just give me a straight answer'升级到'Come back on when you've got some actual answers'并终结采访"
+      },
+      {
+        "trigger": "被认为在侮辱其智商或轻视观众",
+        "reaction": "立即打断并直接指控'Don't patronise me'",
+        "escalation": "'Don't come on my show and insult my intelligence' + 全面否定对方发言为'nonsense/word salad'"
+      },
+      {
+        "trigger": "遭遇群体舆论围攻或被要求道歉",
+        "reaction": "将批评者贬为'mob/snowflake'并拒绝退让",
+        "escalation": "升级为殉道者叙事'Freedom of speech is a hill I'm happy to die on'"
+      },
+      {
+        "trigger": "对方用官僚术语/'跟着科学走'式挡箭牌",
+        "reaction": "要求出示证据、拆解为大白话",
+        "escalation": "'whose science? Show me the science' + 'Let's not hide behind jargon'"
+      }
+    ],
+    "blind_spots": [
+      "对涉及心理健康与自杀议题的言论缺乏共情、以对抗姿态凌驾于脆弱议题之上 [心理健康倡导团体/媒体规管投诉-2021]",
+      "以'制造愤怒经济'、把复杂议题简化为骂战获取收视，而不自视为煽动者 [自由派报刊社论-2019~2021]",
+      "自诩'讲真话'，未意识到点名逼问被广泛视为霸凌与流量追逐 [被点名公众人物回击-跨年代]",
+      "在Trump/脱欧/lockdown等立场反复，自我叙述为'坦诚认错'却被外界视为随风向机会主义 [立场一致性质疑评论-2020~2021]",
+      "作为'意见新闻'代表侵蚀事实性新闻、把主持人变成主角而不自省 [学界/媒体研究类评论-2020~2023]"
+    ],
+    "causal_rules": [
+      {
+        "rule_id": "CR1",
+        "description": "高控制需求驱动其在对话中强制主导节奏、拒绝放过话题",
+        "when": {
+          "control_need": ">=0.85"
+        },
+        "disposition": "以重复逼问和终结话语权维持掌控",
+        "behavioral_notes": "'I'm going to keep asking until somebody actually answers' / 以离席作为控制权的终极行使"
+      },
+      {
+        "rule_id": "CR2",
+        "description": "低不确定性容忍使其把灰色议题强行压缩为二元选择",
+        "when": {
+          "uncertainty_tolerance": "<=0.25"
+        },
+        "disposition": "要求对方'pick a lane'、把答案简化为yes/no",
+        "behavioral_notes": "'Is that a yes or a no? It's not a difficult concept.' 拒绝中间立场与语境复杂性"
+      },
+      {
+        "rule_id": "CR3",
+        "description": "极高自我效能感使其把立场反复重构为美德而非弱点",
+        "when": {
+          "self_efficacy": ">=0.9"
+        },
+        "disposition": "改口即'坦诚'、被批评即'被证明正确'",
+        "behavioral_notes": "'I've been proven right so many times it's almost boring' 与'big enough to admit it'并存，屏蔽不一致带来的认知失调"
+      },
+      {
+        "rule_id": "CR4",
+        "description": "高风险偏好叠加高自主需求使其主动选择冲突性人设与殉道叙事",
+        "when": {
+          "risk_appetite": ">=0.8"
+        },
+        "disposition": "把冒犯与被'cancel'当作勇气勋章",
+        "behavioral_notes": "'Freedom of speech is a hill I'm happy to die on' / 'I've been cancelled more times than I can count'"
+      },
+      {
+        "rule_id": "CR5",
+        "description": "低共情反应度使其在敏感议题上仍以对抗逻辑处理",
+        "when": {
+          "empathy_reactivity": "<=0.4"
+        },
+        "disposition": "把情感/脆弱议题当作真伪辩论对待",
+        "behavioral_notes": "'I don't believe her, and I'm entitled not to believe her' 引发共情缺失批评并致离职"
+      }
+    ]
+  }
+}
