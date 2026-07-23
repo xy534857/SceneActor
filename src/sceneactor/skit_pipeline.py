@@ -501,7 +501,7 @@ def concat_manifest(project: SkitProject, clips_dir: Path, tag_by_shot: Mapping[
     lines = []
     for shot in project.shots:
         tag = tag_by_shot.get(shot.shot_id, "v1")
-        lines.append(f"file '{clips_dir / f'{shot.shot_id}_{tag}.mp4'}'")
+        lines.append(f"file '{(clips_dir / f'{shot.shot_id}_{tag}.mp4').resolve()}'")
     return "\n".join(lines) + "\n"
 
 
@@ -571,11 +571,3 @@ def upload_keys(project: SkitProject) -> tuple[str, ...]:
     # de-dup, keep order
     return tuple(dict.fromkeys(keys))
 
-
-def concat_manifest(project: SkitProject, clips_dir: Path, tag_by_shot: Mapping[str, str]) -> str:
-    """ffmpeg concat file body honoring per-shot take tags (iteration output)."""
-    lines = []
-    for shot in project.shots:
-        tag = tag_by_shot.get(shot.shot_id, "v1")
-        lines.append(f"file '{clips_dir / f'{shot.shot_id}_{tag}.mp4'}'")
-    return "\n".join(lines) + "\n"

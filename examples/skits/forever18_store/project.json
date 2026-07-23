@@ -1,0 +1,140 @@
+{
+  "project_id": "skit.forever18-store",
+  "language": "zh",
+  "style": "hand-painted 3D chibi collectible-doll animation matching the supplied model sheet: oversized heads, three-head-tall bodies, watercolor-gouache texture, soft flat fluorescent lighting, restrained facial acting until the supernatural reveal. Deadpan realism: no comedy music, no reaction stickers, no explanatory graphics.",
+  "stage": "An ordinary small Chinese 24-hour convenience store at 4:30 AM. Checkout counter on LEFT; open floor and vertical smartphone on ring-light tripod at CENTER; low snack rack on RIGHT with a narrow visible floor patch behind it; blue pre-dawn light through the glass storefront. Real China, 2026.",
+  "scene_ref": "assets/master_stage.png",
+  "resolution": "720P",
+  "aspect_ratio": "16:9",
+  "model": "VS",
+  "version": "2.0",
+  "characters": [
+    {
+      "code": "shasha",
+      "identity_desc": "SHA-SHA, adult fashionable woman: dark skin, exact platinum-blonde braided buns, multiple metallic earrings and necklace, patterned gray jacket, pale tulle skirt, beige boots; exact model-sheet proportions",
+      "portrait": "assets/portrait_shasha.png",
+      "voice_ref": "assets/voice_shasha_ref.wav",
+      "voice_desc": "adult female Mandarin voice, lively fast micro-influencer delivery at first; after death the same timbre becomes slightly airy but she does not realize it"
+    },
+    {
+      "code": "xiaobai",
+      "identity_desc": "XIAO-BAI, 19-year-old night-shift clerk: very pale skin, exact short white bob, salmon-pink work jacket with silver name badge, black shorts, white boots; exact model-sheet proportions",
+      "portrait": "assets/portrait_xiaobai.png",
+      "voice_ref": "assets/voice_xiaobai_ref.wav",
+      "voice_desc": "young clear female Mandarin voice, natural and awake, short concerned phrases"
+    }
+  ],
+  "props": [
+    {
+      "prop_id": "phone_rig",
+      "desc": "one vertical black smartphone mounted inside one small circular ring light on one black tripod, camera facing the store floor",
+      "count": 1,
+      "location": "CENTER open floor",
+      "persistent_state": "upright and recording throughout"
+    },
+    {
+      "prop_id": "clip_mic",
+      "desc": "one tiny black wireless lavalier microphone",
+      "count": 1,
+      "holder": "shasha",
+      "persistent_state": "initially clipped to SHA-SHA's jacket; after death remains clipped to the physical body on the floor while the transparent spirit has no microphone"
+    }
+  ],
+  "continuity": {
+    "spatial_layout": [
+      "checkout counter remains on LEFT",
+      "phone_rig remains upright at CENTER facing SHA-SHA's performance area",
+      "snack rack remains on RIGHT with the reveal floor patch visible behind its lower edge"
+    ],
+    "environment": [
+      "same 4:30 AM fluorescent convenience-store interior throughout",
+      "no customers and no other staff appear",
+      "blue pre-dawn light remains visible through the glass storefront"
+    ],
+    "character_states": [
+      "XIAO-BAI remains behind or immediately beside the LEFT checkout counter",
+      "SHA-SHA begins standing in CENTER facing phone_rig",
+      "before the reveal there is exactly one visible SHA-SHA"
+    ]
+  },
+  "shots": [
+    {
+      "shot_id": "e01",
+      "duration": 5,
+      "speaker": "xiaobai",
+      "in_frame": ["xiaobai", "shasha"],
+      "camera": "Wide two-shot from slightly behind the phone_rig: SHA-SHA performs at CENTER, XIAO-BAI leans on the LEFT checkout counter; RIGHT snack rack visible",
+      "action": "XIAO-BAI suppresses a yawn and raises one hand toward the blue dawn outside; SHA-SHA keeps dancing tiny steps for her livestream without turning around",
+      "line": "姐，四点半了，你这探店还播啊？",
+      "props_in_shot": ["phone_rig", "clip_mic"],
+      "anchor_stills": "first",
+      "start_state": "SHA-SHA stands at CENTER facing the recording phone; XIAO-BAI is behind the LEFT counter looking at her; the RIGHT snack rack and empty floor patch are visible",
+      "end_state": "XIAO-BAI's hand points toward the blue dawn; SHA-SHA freezes mid-dance still facing the phone",
+      "gaze_target": "XIAO-BAI looks at SHA-SHA; SHA-SHA looks into phone_rig",
+      "pose_contract": ["SHA-SHA stands unsupported on both feet at CENTER", "XIAO-BAI's forearms rest on the checkout counter"],
+      "extra_constraints": "Deadpan natural timing. No laughter. The lavalier mic is visibly clipped to SHA-SHA's jacket."
+    },
+    {
+      "shot_id": "e02",
+      "duration": 5,
+      "speaker": "shasha",
+      "in_frame": ["shasha"],
+      "camera": "Medium close-up from phone_rig's livestream angle, straight-on",
+      "action": "SHA-SHA points at herself, flashes two fingers beside her face, then resumes a tiny stiff dance step; confident smile but one eye twitches from exhaustion",
+      "line": "后台写三十一，那是系统卡了。我本人永远十八。",
+      "props_in_shot": ["phone_rig", "clip_mic"],
+      "end_state": "SHA-SHA holds the two-finger pose, confident smile fixed, one eye twitching",
+      "gaze_target": "phone_rig lens",
+      "pose_contract": ["SHA-SHA remains standing on both feet facing phone_rig"],
+      "extra_constraints": "Keep the line smug and matter-of-fact, not a punchline. No subtitles."
+    },
+    {
+      "shot_id": "e03",
+      "duration": 5,
+      "speaker": "xiaobai",
+      "in_frame": ["xiaobai", "shasha"],
+      "camera": "Side medium two-shot: checkout counter LEFT, SHA-SHA CENTER, low snack rack RIGHT",
+      "action": "XIAO-BAI points at SHA-SHA's empty jacket collar and speaks. During the line SHA-SHA suddenly becomes semi-transparent and slightly luminous but continues checking her phone screen, completely unaware",
+      "line": "十八姐，你麦怎么没声了？",
+      "props_in_shot": ["phone_rig"],
+      "end_state": "A semi-transparent SHA-SHA spirit stands at CENTER touching her empty collar; XIAO-BAI stares at the empty collar; no body is visible yet",
+      "gaze_target": "XIAO-BAI looks at SHA-SHA's empty collar; spirit SHA-SHA looks at phone_rig screen",
+      "shot_delta": ["SHA-SHA changes from opaque physical body to one semi-transparent spirit standing at CENTER", "clip_mic is no longer on the standing spirit and moves with the unseen physical body behind the RIGHT snack rack"],
+      "extra_constraints": "This is the supernatural clue: make the standing SHA-SHA clearly translucent. She does NOT react to being a spirit. Do not reveal the fallen body yet."
+    },
+    {
+      "shot_id": "e04",
+      "duration": 5,
+      "speaker": "shasha",
+      "in_frame": ["shasha"],
+      "camera": "High three-quarter angle that can see over the RIGHT snack rack: transparent spirit SHA-SHA in foreground and the same physical SHA-SHA body lying rigid behind the rack",
+      "action": "The transparent spirit pats her empty collar, bends and peers behind the snack rack. She sees her own opaque body lying rigid on the floor with the black clip_mic still attached. Her hand stops in midair; eyes widen without screaming",
+      "line": "我麦呢……那躺着的是谁？",
+      "props_in_shot": ["clip_mic"],
+      "time_beats": ["0-2秒：透明灵魂摸空领口，低头探向货架后", "2-4秒：镜头同时清楚显示站立透明灵魂和地上不透明身体，麦克夹在身体衣领", "4-5秒：灵魂的手停在半空，眼睛缓慢睁大"],
+      "end_state": "Both copies are simultaneously visible: one semi-transparent spirit standing and one opaque physical body rigid on the floor, with the single clip_mic on the body's collar",
+      "gaze_target": "spirit SHA-SHA looks down at her own body behind the rack",
+      "pose_contract": ["opaque physical body lies fully supported by the floor behind the rack", "semi-transparent spirit stands unsupported in front of the rack"],
+      "shot_delta": ["physical SHA-SHA body becomes visible lying behind RIGHT snack rack", "spirit bends forward and discovers the body"],
+      "anchor_stills": "first_last",
+      "start_state": "Semi-transparent SHA-SHA spirit stands in front of RIGHT snack rack touching her empty collar; the low rack still hides most of the floor behind it",
+      "extra_constraints": "THE CORE REVEAL: show two SHA-SHAs in one frame, visually identical. Standing one is translucent spirit with NO mic; floor one is opaque body WITH the only mic. Not fainting, not low blood sugar, not a dream. No gore."
+    },
+    {
+      "shot_id": "e05",
+      "duration": 5,
+      "speaker": "shasha",
+      "in_frame": ["shasha", "xiaobai"],
+      "camera": "Static high three-quarter medium-wide shot preserving the reveal geometry: transparent spirit foreground, physical body behind RIGHT snack rack, XIAO-BAI at LEFT counter",
+      "action": "The transparent spirit stays beside the snack rack staring down at her own opaque body. After a long beat she slowly turns only her eyes toward phone_rig, finally understanding why she no longer feels tired. XIAO-BAI remains completely frozen behind the counter. Cut immediately after the whisper",
+      "line": "……我说怎么突然不困了。",
+      "props_in_shot": ["phone_rig", "clip_mic"],
+      "start_state": "Both copies remain visible after the reveal: semi-transparent spirit standing beside RIGHT snack rack and opaque physical body lying on the floor with clip_mic attached; XIAO-BAI frozen at LEFT counter",
+      "end_state": "Spirit SHA-SHA still faces her own body but her eyes have shifted toward phone_rig; XIAO-BAI and physical body remain unmoving; cut before any explanation",
+      "gaze_target": "spirit SHA-SHA looks at her own body, then only shifts her eyes toward phone_rig; XIAO-BAI looks at the body",
+      "pose_contract": ["opaque physical body remains fully supported by the floor", "semi-transparent spirit remains standing beside the rack"],
+      "chain_from_previous": true,
+      "extra_constraints": "Preserve TWO identical SHA-SHAs in one frame: standing transparent spirit and opaque body on floor. The spirit never says she is a spirit and does not resume dancing. No scream, no moral, no explanation, no subtitles. Cut on the quiet realization."
+    }
+  ]
+}
