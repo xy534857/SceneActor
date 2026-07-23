@@ -7,3 +7,4 @@ src/sceneactor.egg-info/
 
 # meme grammars sync from TemplateStudio (source of truth lives there)
 data/memes/
+_openai_key.txt
