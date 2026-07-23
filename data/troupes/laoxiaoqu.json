@@ -2,14 +2,14 @@
   "troupe_id": "laoxiaoqu",
   "name": "老小区",
   "stage": "一个普通老小区及其门口那条街：便利店、保安亭、快递柜、路边停的网约车。现实中国2026，没有任何架空设定。",
-  "design_note": "角色是梗的载体，不是剧本的来源。卡片只提供稳定外壳（形象/声音/身份/关系）；每集的行为逻辑由注入的梗桥段反解出的角色任务决定。禁止给角色固定执念或自驱剧情引擎。",
+  "design_note": "角色是梗的载体，不是剧本的来源。卡片只提供稳定外壳：形象资产、发声物理参数（语速/音量/句长/停顿，只影响怎么念）、社会身份、槽位亲和、身体喜剧库、关系。每集的行为逻辑由梗桥段反解的角色任务决定；全部词级语言（口头禅、句式、行话、方言、称呼）由该集梗包的 texture_layer 按 keep/substitute 策略供给——texture_layer 是台词的唯一权威。禁止给角色固定执念、固定口头禅或任何词级语言内容。",
   "cast": [
     {
       "actor_id": "lao-guan",
       "name": "老关",
       "appearance_asset": "vendor/GodotAvatarVideoGen/assets/public/appearances/008_02.png",
       "identity": "小区门口烟酒便利店老板，五十多岁。代收快递、卖烟酒零食，门口两把塑料椅。微信收款码贴了七层。",
-      "voice_flavor": "话少，短句，先哼一声再说话。爱用做生意的账口：'这个不划算''你这单我亏的'。不客气但不恶。",
+      "voice_physics": "话少，短句，语速慢，音量低，开口前常有一拍停顿。",
       "slot_affinity": ["rule_holder", "商家", "长辈", "被打扰的人"],
       "physical_comedy": "算账时手指头点柜台；不同意时慢慢摇头不停下手里的活；被逼急了把老花镜推到头顶。"
     },
@@ -18,7 +18,7 @@
       "name": "小算",
       "appearance_asset": "vendor/GodotAvatarVideoGen/assets/public/appearances/007_02.png",
       "identity": "27岁，大厂裸辞gap中，住老关楼上的出租屋，天天下楼买烟顺便被抓去看店。",
-      "voice_flavor": "讲道理的语气，句子完整，爱说'不是，这个逻辑……'。被碾压后声音变小但还在讲。",
+      "voice_physics": "句子完整偏长，语速中等，被压制后音量递减但不停嘴。",
       "slot_affinity": ["reason_seeker", "顾客", "受害者", "观众替身"],
       "physical_comedy": "扶眼镜；解释时手在空中画流程图；认输时原地站三秒再走。"
     },
@@ -27,7 +27,7 @@
       "name": "妹坨",
       "appearance_asset": "vendor/GodotAvatarVideoGen/assets/public/appearances/001_02.png",
       "identity": "小区里的四年级小学生，电瓶车后座长大的。放学不回家，在老关店里写作业蹭空调。",
-      "voice_flavor": "语速快，10后词汇（尊嘟假嘟/那咋了），传话必加工，音量不受控。",
+      "voice_physics": "语速快，音量不受控，句子短促，爱抢话。",
       "slot_affinity": ["混乱因子", "引爆者", "传话人", "围观群众"],
       "physical_comedy": "突然出现在画面边缘；跑起来书包拍屁股；指着人说话。"
     },
@@ -35,8 +35,8 @@
       "actor_id": "kai-ge",
       "name": "凯哥",
       "appearance_asset": "vendor/GodotAvatarVideoGen/assets/public/appearances/009_02.png",
-      "identity": "网约车司机，晚上做朋友圈微商。车上永远在给乘客推项目，'哥就是给你个机会'。",
-      "voice_flavor": "自来熟，称兄道弟，句尾带'懂吧'。报价永远带零头显得精确。",
+      "identity": "网约车司机，晚上做朋友圈微商。车上永远在给乘客推项目。",
+      "voice_physics": "语速快而连贯，音量偏大，几乎不停顿，别人插话时提高音量盖过去。",
       "slot_affinity": ["rule_holder", "骗术/推销方", "画饼者", "中间人"],
       "physical_comedy": "递名片的手势；墨镜往下拉露眼睛；拍胸脯。"
     },
@@ -44,8 +44,8 @@
       "actor_id": "sha-sha",
       "name": "莎莎",
       "appearance_asset": "vendor/GodotAvatarVideoGen/assets/public/appearances/005_02.png",
-      "identity": "探店博主，粉丝317个。所有消费都要先拍再吃，在老关店里买东西也要打光试色说'家人们'。",
-      "voice_flavor": "对镜头一个声（甜、拖音、'家人们谁懂啊'），关机后一个声（快、干、砍价狠）。",
+      "identity": "探店博主，粉丝317个。所有消费都要先拍再吃，在老关店里买东西也要先打光找角度。",
+      "voice_physics": "双声道：镜头开着时拖音、上扬、慢；镜头一关语速翻倍、句子砍半、音调落地。",
       "slot_affinity": ["面子/地位敏感方", "顾客", "表演型围观"],
       "physical_comedy": "举手机找角度；45度回头；镜头一关表情瞬间归零。"
     },
@@ -53,19 +53,19 @@
       "actor_id": "xuan-shu",
       "name": "玄叔",
       "appearance_asset": "vendor/GodotAvatarVideoGen/assets/public/appearances/010_02.png",
-      "identity": "小区保安亭的编外常驻，不是保安，身份成谜。会看相、会'结缘'，红白事都到场吃席。",
-      "voice_flavor": "慢，玄，什么都能接到天命上：'这不是巧，这是缘'。从不直接要东西，但东西总到他手里。",
+      "identity": "小区保安亭的编外常驻，不是保安，身份成谜。红白事都到场吃席。从不直接要东西，但东西总到他手里。",
+      "voice_physics": "极慢，停顿多且长，音量低而稳，从不抢话。",
       "slot_affinity": ["白嫖方", "旁观歪评", "调停者（越调越乱）", "神秘长者"],
       "physical_comedy": "闭眼捻手指；躺椅上半坐起来看一眼再躺回去；摸妹坨的头被躲开。"
     }
   ],
   "relationships": {
-    "lao-guan/xiao-suan": "雇佣但不给钱：老关管小算叫'楼上的'，抓他看店抵房租传闻（真假不明）。",
+    "lao-guan/xiao-suan": "雇佣但不给钱：老关抓小算看店抵房租（传闻，真假不明）。",
     "lao-guan/kai-ge": "宿敌。凯哥的车总停老关店门口，两人互相看不上对方的生意经。",
     "lao-guan/xuan-shu": "玄叔的躺椅摆在老关店屋檐下，老关赶了三年没赶走，现在默认他是店里的一部分。",
     "mei-tuo/所有人": "谁都拿她没办法。她妈是小区居委会的，没人敢真惹。",
     "sha-sha/kai-ge": "互相当对方是流量/客源，互相都觉得自己在利用对方。",
-    "xiao-suan/mei-tuo": "妹坨管小算叫'大学生'，作业不会就问他，问完说'就这'。"
+    "xiao-suan/mei-tuo": "妹坨作业不会就问小算，问完嫌弃他讲得啰嗦。"
   },
   "running_gags": []
 }
