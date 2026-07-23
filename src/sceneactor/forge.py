@@ -262,11 +262,46 @@ def forge_from_questionnaire(
     return record
 
 
+_STYLE_PROMPT = """你是台词风格设计师。一个虚构角色由以下人物按权重融合而成：
+{sources_block}
+
+角色设定：{name}，{background}。
+
+请合成这个角色的说话风格说明（给AI演员用的口播指令，120字以内）：
+1. 按权重继承各源人物的标志性语言习惯——口头禅、句式、比喻库、语气节奏；权重高的占主导。
+2. 口头禅不要原样照搬名句，而是化用：保留味道，换掉专属指纹（比如把某人的名句改成同构的新说法）。
+3. 写成可执行的指令，例如：「爱用XX打比方；追问时先抛反问；口头禅『……』出现在转折处」。
+只输出风格说明文本，不要JSON，不要解释。"""
+
+
+def _fuse_style(
+    parts: Sequence[tuple[dict, float]],
+    name: str,
+    background: str,
+    complete: Callable[[list[dict[str, str]], str], str],
+) -> str:
+    sources_block = "\n".join(
+        f"- {r['display_name']}（权重{w:.0%}）"
+        + (f"，已知风格：{r['forge']['style']}" if (r.get('forge') or {}).get('style') else "")
+        for r, w in parts
+    )
+    prompt = _STYLE_PROMPT.format(
+        sources_block=sources_block, name=name, background=background or "不详",
+    )
+    try:
+        style = complete([{"role": "user", "content": prompt}], "forge-style").strip()
+    except Exception:  # noqa: BLE001 — style is enhancement, never fatal
+        return ""
+    return style[:400]
+
+
 def forge_from_fusion(
     *,
     name: str,
     parts: Sequence[tuple[dict, float]],
     background: str = "",
+    style: str = "",
+    complete: Callable[[list[dict[str, str]], str], str] | None = None,
 ) -> dict:
     """Compose 2-3 existing records into a fictional composite record."""
     if not name.strip():
@@ -319,6 +354,9 @@ def forge_from_fusion(
         "causal_rules": [],
     }
     sources = [r["display_name"] for r, _ in parts]
+    final_style = style.strip()
+    if not final_style and complete is not None:
+        final_style = _fuse_style(parts, name.strip(), background.strip(), complete)
     record = {
         "person_id": person_id,
         "display_name": name.strip(),
@@ -331,6 +369,7 @@ def forge_from_fusion(
         "library": "custom",
         "forge": {
             "mode": "fusion",
+            "style": final_style,
             "sources": [
                 {"person_id": r["person_id"], "display_name": r["display_name"], "weight": w}
                 for r, w in parts

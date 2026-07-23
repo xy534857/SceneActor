@@ -438,6 +438,8 @@ class Handler(BaseHTTPRequestHandler):
                     name=str(body.get("name", "")),
                     parts=parts,
                     background=str(body.get("background", "")),
+                    style=str(body.get("style", "")),
+                    complete=_model(str(body.get("model") or args.triage_model), args.chat_fallback),
                 )
             else:
                 self._send(400, {"error": "mode must be questionnaire or fusion"})

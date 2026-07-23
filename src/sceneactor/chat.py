@@ -99,6 +99,7 @@ class ChatSession:
     search_enabled: bool = False
     verbosity: str = "interview"  # brief | interview | deep
     max_turns: int = 24
+    fused: bool = True  # one model call per turn (chat has no failable actions)
 
     display: str = field(init=False)
     disclosure: str = field(init=False)
@@ -149,6 +150,13 @@ class ChatSession:
                     else "Talk like a person: colloquial, concrete, self-corrections allowed; "
                     "never sound like support staff or a summary."
                 ),
+                **(
+                    {"speech_style": (
+                        f"说话风格与口头禅（创建者设定，贯穿每次发言，但按语境自然出现，"
+                        f"不要每句都用）：{record['forge']['style']}"
+                    )}
+                    if (record.get("forge") or {}).get("style") else {}
+                ),
             },
         )
         self.persona = persona
@@ -184,9 +192,21 @@ class ChatSession:
                 ActorSetup(visitor, "聊天", "初次见面", {}, "open"),
             ),
             host=self.host,
-            cognition={persona.id: JsonCognitionPort(self.model), USER_ID: _HumanSeat()},
-            performance=JsonPerformancePort(self.model),
+            cognition={persona.id: self._actor_port(), USER_ID: _HumanSeat()},
+            performance=self._performance_port(),
         )
+
+    def _actor_port(self):
+        if self.fused:
+            from .chat_fused import FusedChatPort
+            self._fused_port = FusedChatPort(self.model)
+            return self._fused_port
+        return JsonCognitionPort(self.model)
+
+    def _performance_port(self):
+        if self.fused:
+            return self._fused_port
+        return JsonPerformancePort(self.model)
 
     # -- turns -----------------------------------------------------------
 
