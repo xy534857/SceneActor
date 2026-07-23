@@ -31,6 +31,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 from sceneactor.chat import ChatSession, validate_record
 from sceneactor.forge import expand_style, forge_from_fusion, forge_from_questionnaire, next_question
 from sceneactor.genome import GenomeError
+from sceneactor.meme_ammo import MemeAmmoError, arm_record, catalog as meme_catalog
 from sceneactor.cognition import CognitionModelError
 from sceneactor.model import FallbackModel, GatewayCompletion
 from sceneactor.performance import PerformanceModelError
@@ -52,6 +53,7 @@ parser.add_argument("--chat-model", default="claude-fable-5")
 parser.add_argument("--chat-fallback", default="claude-opus-4.8")
 parser.add_argument("--triage-model", default="gemini-3.5-flash")
 parser.add_argument("--genome-dir", default="data/genomes", help="persona library root (records/*.json + index.json)")
+parser.add_argument("--meme-dir", default="data/memes", help="meme grammar library (one dir per meme with meme_grammar.json)")
 parser.add_argument("--state-dir", default=".sceneactor-service")
 args = parser.parse_args()
 
@@ -288,6 +290,9 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/v1/personas":
             self._send(200, {"personas": _library_index()})
             return
+        if path == "/v1/memes":
+            self._send(200, {"memes": meme_catalog(Path(args.meme_dir))})
+            return
         if path.startswith("/v1/personas/"):
             person_id = unquote(path.rsplit("/", 1)[-1])
             record = _load_record(person_id)
@@ -464,7 +469,13 @@ class Handler(BaseHTTPRequestHandler):
             else:
                 self._send(400, {"error": "mode must be questionnaire or fusion"})
                 return
-        except (GenomeError, ValueError) as exc:
+            memes = body.get("memes", [])
+            if not isinstance(memes, list):
+                self._send(400, {"error": "memes must be a list of meme ids"})
+                return
+            if memes:
+                arm_record(record, [str(m) for m in memes], Path(args.meme_dir))
+        except (GenomeError, MemeAmmoError, ValueError) as exc:
             self._send(422, {"error": str(exc)})
             return
         except RuntimeError as exc:

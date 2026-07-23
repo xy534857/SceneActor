@@ -159,6 +159,9 @@ class ChatSession:
                 ),
             },
         )
+        ammo = (record.get("meme_ammo") or {}).get("register_license") or []
+        if ammo:
+            persona.extensions["register_license"] = list(ammo)
         self.persona = persona
         scene_id = f"genome-chat-{record['person_id']}"
         self.host = InMemorySceneHost(
