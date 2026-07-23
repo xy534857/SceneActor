@@ -29,6 +29,8 @@ from uuid import uuid4
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from sceneactor.chat import ChatSession, validate_record
+from sceneactor.forge import forge_from_fusion, forge_from_questionnaire
+from sceneactor.genome import GenomeError
 from sceneactor.cognition import CognitionModelError
 from sceneactor.model import FallbackModel, GatewayCompletion
 from sceneactor.performance import PerformanceModelError
@@ -112,36 +114,55 @@ def _models_from(body: dict) -> dict:
     return {key: str(value) for key, value in raw.items() if str(value).strip()}
 
 
+def _card(record: dict, stem: str, library: str) -> dict:
+    genome = record.get("genome", {})
+    return {
+        "person_id": record.get("person_id", stem),
+        "display_name": record.get("display_name", stem),
+        "name_en": record.get("name_en", ""),
+        "region": record.get("region", ""),
+        "industries": record.get("industries", []),
+        "gender": record.get("gender", ""),
+        "library": library,
+        "forge": {k: v for k, v in (record.get("forge") or {}).items() if k in ("mode", "sources")},
+        "trait_axes": {k: v.get("score") for k, v in genome.get("trait_axes", {}).items()},
+        "blind_spots": [b.get("description", b) if isinstance(b, dict) else b for b in genome.get("blind_spots", [])][:2],
+    }
+
+
 def _library_index() -> list[dict]:
-    """Distilled records only — cards a chat can actually start from."""
+    """Distilled roster plus the custom/fusion partition."""
     cards = []
-    for path in sorted((GENOME_DIR / "records").glob("*.json")):
-        try:
-            record = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
+    for library, folder in (("roster", "records"), ("custom", "custom")):
+        directory = GENOME_DIR / folder
+        if not directory.is_dir():
             continue
-        genome = record.get("genome", {})
-        cards.append({
-            "person_id": record.get("person_id", path.stem),
-            "display_name": record.get("display_name", path.stem),
-            "name_en": record.get("name_en", ""),
-            "region": record.get("region", ""),
-            "industries": record.get("industries", []),
-            "gender": record.get("gender", ""),
-            "trait_axes": {k: v.get("score") for k, v in genome.get("trait_axes", {}).items()},
-            "blind_spots": [b.get("description", b) if isinstance(b, dict) else b for b in genome.get("blind_spots", [])][:2],
-        })
+        for path in sorted(directory.glob("*.json")):
+            try:
+                record = json.loads(path.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                continue
+            cards.append(_card(record, path.stem, library))
     return cards
 
 
 def _load_record(person_id: str) -> dict | None:
-    path = GENOME_DIR / "records" / f"{person_id}.json"
-    if not path.is_file():
-        return None
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        return None
+    for folder in ("records", "custom"):
+        path = GENOME_DIR / folder / f"{person_id}.json"
+        if path.is_file():
+            try:
+                return json.loads(path.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                return None
+    return None
+
+
+def _save_custom(record: dict) -> None:
+    directory = GENOME_DIR / "custom"
+    directory.mkdir(parents=True, exist_ok=True)
+    (directory / f"{record['person_id']}.json").write_text(
+        json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
 
 
 def _reap_chats(now: float) -> None:
@@ -337,7 +358,71 @@ class Handler(BaseHTTPRequestHandler):
         if path.startswith("/v1/chats/"):
             self._chat_say(unquote(path.rsplit("/", 1)[-1]), body)
             return
+        if path == "/v1/forge":
+            self._forge(body)
+            return
         self._send(404, {"error": "unknown path"})
+
+    def do_DELETE(self) -> None:  # noqa: N802 — BaseHTTPRequestHandler contract
+        if not self._authorized():
+            return
+        path = urlsplit(self.path).path
+        if path.startswith("/v1/personas/"):
+            person_id = unquote(path.rsplit("/", 1)[-1])
+            target = GENOME_DIR / "custom" / f"{person_id}.json"
+            if not person_id.startswith("custom-") or not target.is_file():
+                self._send(404, {"error": "only existing custom personas can be deleted"})
+                return
+            target.unlink()
+            self._send(200, {"deleted": person_id})
+            return
+        self._send(404, {"error": "unknown path"})
+
+    def _forge(self, body: dict) -> None:
+        """Create a custom persona from a questionnaire or by fusing library records."""
+        mode = str(body.get("mode", ""))
+        save = bool(body.get("save", True))
+        try:
+            if mode == "questionnaire":
+                model = _model(str(body.get("model") or args.chat_model), args.chat_fallback)
+                record = forge_from_questionnaire(
+                    name=str(body.get("name", "")),
+                    background=str(body.get("background", "")),
+                    style=str(body.get("style", "")),
+                    values=[str(v) for v in body.get("values", [])],
+                    fear=str(body.get("fear", "")),
+                    axes={k: v for k, v in (body.get("axes") or {}).items()},
+                    complete=model,
+                )
+            elif mode == "fusion":
+                sources = body.get("sources", [])
+                if not isinstance(sources, list):
+                    self._send(400, {"error": "sources must be a list of {person_id, weight}"})
+                    return
+                parts = []
+                for item in sources:
+                    src = _load_record(str(item.get("person_id", "")))
+                    if src is None:
+                        self._send(404, {"error": f"unknown persona {item.get('person_id')!r}"})
+                        return
+                    parts.append((src, float(item.get("weight", 1.0))))
+                record = forge_from_fusion(
+                    name=str(body.get("name", "")),
+                    parts=parts,
+                    background=str(body.get("background", "")),
+                )
+            else:
+                self._send(400, {"error": "mode must be questionnaire or fusion"})
+                return
+        except (GenomeError, ValueError) as exc:
+            self._send(422, {"error": str(exc)})
+            return
+        except RuntimeError as exc:
+            self._send(502, {"error": f"forge model failed: {str(exc)[:200]}"})
+            return
+        if save:
+            _save_custom(record)
+        self._send(201, {"record": record, "saved": save})
 
     def _chat_start(self, body: dict) -> None:
         """Create a chat session from the library (person_id) or an uploaded pack (record)."""
