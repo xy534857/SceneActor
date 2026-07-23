@@ -262,45 +262,60 @@ def forge_from_questionnaire(
     return record
 
 
-_ABSTRACT_PROMPT = """你是抽象喜剧角色设计师。你要设计的不是一个正常人，而是一台「认知故障机器」：
-一个把某种私人秩序看得比天大的人。这个人在自己的逻辑里完全自洽、极度认真，
-从不觉得自己好笑——好笑是旁人撞见他的系统故障时的感受，不是他表演出来的。
+_ABSTRACT_PROMPT = """你是网络抽象角色设计师。参照系不是情景喜剧，是直播事故、精神状态离谱的博主、
+民间怪人访谈——那种"这人是真的吗"的观感。你要造的不是"有怪癖的正常人"，是一个
+**活在自己那套完整平行系统里的人**。他在自己的系统里逻辑严密、极度认真、甚至有尊严；
+好笑是旁人撞进他的系统时产生的，他本人永远不觉得哪里好笑。
 
 人物设定：
 - 姓名：{name}
 - 身份外壳：{background}
-- 执念（此人的私人秩序，一切行为的总开关）：{obsession}
-- 触发词（一碰就把当前话题拽回执念的事）：{trigger_hint}
+- 执念原料：{obsession}
+- 触发词：{trigger_hint}
 
-设计原则（必须全部遵守）：
-1. 【范畴故障】此人的执念和他的正业在他脑内是同一类问题。别人看是答非所问，
-   他看是"你们怎么连这都分不清"。core_models 必须把这个范畴合并写成他的世界观。
-2. 【单一秩序压倒一切】value_weights 里执念相关的价值占 0.5 以上——正常人的价值是
-   多元制衡的，这个人不是。
-3. 【压力越大越故障】emotion_triggers 的 escalation 方向不是爆发，而是更深地钻进执念
-   （被质疑指挥 → 先去摆正水瓶；被追问业绩 → 先纠正称呼格式）。
-4. 【绝不解释】blind_spots 必须包含：他完全意识不到自己的执念在别人眼里是转移话题/发疯。
-5. 【自洽的歪理】heuristics 是他执念系统的运行规则，每条单看都有一本正经的道理，
-   合起来才荒谬。禁止写"为了搞笑"的规则。
-6. 【身体先于语言】至少两条 heuristics 的 action 是具体身体动作（挪东西、量距离、
-   对齐、闻、数），不是说话——静音也要能看出他坏了。
+第一步【执念升维】——用户给的执念原料通常太老实，你必须先把它推到荒诞级：
+不是"爱干净"，是"认为自己负责的区域每样东西都有编制，挪动=编制变动，需要走流程"；
+不是"怕吵"，是"用分贝给人分种姓"；不是"节俭"，是"认为花出去的每一分钱都在外面流浪，要接它们回家"。
+升维标准：这个执念必须蕴含一整套**平行制度**（有单位、有等级、有程序、有奖惩），
+而不只是一种偏好。把升维后的版本写进 obsession_statement。
 
-九轴分数你来定（0-1）：抽象人设的轴分应该极端化——至少3根轴在 0.9 以上或 0.1 以下，
-且极端方向必须从执念推导（如秩序执念 → control_need 0.95 + uncertainty_tolerance 0.05）。
+第二步【语言殖民】——执念必须占领他的说话方式，这是抽象感的主要来源：
+- **私有度量衡**：他用自己发明的单位/等级量化一切（"这个动静，四级半""你这属于编外物品"）
+- **强制翻译**：别人说的正常话，他当场翻译进自己的系统再回应——他不是没听懂，
+  是他的系统里没有你那个说法
+- **公文腔错位**：用极正式/专业/程序性的语言处理鸡毛蒜皮（立案、审批、公示、追责）
+  或者反过来用市井话处理宏大概念——错位方向选一种，贯彻到底
+- speech_dna 字段：8-12条他的原话样本，每条都必须带上述特征，禁止普通人说得出的句子
 
-所有文本中文、口语化、可表演。禁止人格报告腔，禁止解释笑点。
+第三步【三秒可读】——短视频法则，陌生观众三秒内必须察觉这人系统有问题：
+- opening_moves 字段：3-5个"开场即故障"动作（他出场第一件事干什么），每个都要怪得
+  具体且无需上下文（掏出卷尺量客人和柜台的距离并记录；对着空椅子点名）
+- 所有 heuristics 的 action 必须是**一眼可见的行为**，其中至少3条纯身体动作
 
-数量要求：core_models 3-5个；heuristics 5-8条；internal_conflicts 2-3个；emotion_triggers 2-3个；blind_spots 2-4条。
+第四步【结构公理】（沿用，必须全部满足）：
+1. 范畴故障：执念系统和他的正业在他脑内是同一件事，core_models 写成他的世界观
+2. 单一秩序：value_weights 执念项 ≥0.5
+3. 压力向内：emotion_triggers 的 escalation 是更深钻进系统（启动更高级的程序），绝不爆发
+4. 绝不自知：blind_spots 必含"意识不到系统在别人眼里是发疯"
+5. 九轴极端化：至少3轴 ≥0.9 或 ≤0.1，方向从执念推导
+
+禁令：禁止人格报告腔；禁止解释笑点；禁止"温和的怪癖"（可爱化=报废）；
+禁止让他说任何一句正常人际客套话——客套话也要过他的系统。
+
+数量：core_models 3-5；heuristics 5-8；internal_conflicts 2-3；emotion_triggers 2-3；
+blind_spots 2-4；speech_dna 8-12；opening_moves 3-5。
 
 只输出JSON：
 {{"trait_axes":{{"control_need":0.0,"uncertainty_tolerance":0.0,"trust_propensity":0.0,"risk_appetite":0.0,"self_efficacy":0.0,"autonomy_need":0.0,"intimacy_need":0.0,"status_sensitivity":0.0,"empathy_reactivity":0.0}},
 "core_models":[{{"name":"","rule":""}}],
 "heuristics":[{{"condition":"","action":""}}],
-"value_weights":{{"执念相关的价值":0.55,"次要":0.25,"再次":0.2}},
+"value_weights":{{"执念系统":0.6,"次要":0.25,"再次":0.15}},
 "internal_conflicts":[{{"force_a":"","force_b":"","behavioral_signature":""}}],
 "emotion_triggers":[{{"trigger":"","reaction":"","escalation":""}}],
 "blind_spots":[""],
-"obsession_statement":"用他自己的口吻一句话说出他的执念（他觉得天经地义的那个版本）"}}"""
+"speech_dna":["他的原话样本，带私有度量衡/强制翻译/公文腔错位"],
+"opening_moves":["开场即故障的动作"],
+"obsession_statement":"升维后的执念，用他自己的口吻说出来（他觉得天经地义的版本）"}}"""
 
 
 def forge_from_obsession(
@@ -350,8 +365,11 @@ def forge_from_obsession(
             top_weight = max(float(w) for w in weights.values()) if weights else 0.0
         except (TypeError, ValueError):
             continue
+        dna = [str(x).strip() for x in candidate.get("speech_dna", []) if str(x).strip()]
+        moves = [str(x).strip() for x in candidate.get("opening_moves", []) if str(x).strip()]
         # Reject tame outputs: abstraction is a structural property, not a vibe.
-        if extreme < 3 or top_weight < 0.5:
+        # A fault machine without colonized speech or cold-open faults is just a quirk.
+        if extreme < 3 or top_weight < 0.5 or len(dna) < 6 or len(moves) < 3:
             continue
         data = candidate
         clean = clean_axes
@@ -364,6 +382,15 @@ def forge_from_obsession(
 
     person_id = f"custom-{uuid.uuid4().hex[:8]}"
     obsession_line = str(data.get("obsession_statement", "")).strip() or obsession.strip()
+    speech_dna = dna[:12]
+    opening_moves = moves[:5]
+    # The obsession must colonize the voice: unless the user hand-wrote a style,
+    # compile speech_dna + statement into the speech_style directive ChatSession reads.
+    final_style = style.strip() or (
+        f"执念系统总纲：「{obsession_line}」。所有话都从这套系统内部说出——"
+        f"正常话题也要强制翻译成系统术语，绝不说系统外的客套话。原话样本（学它们的构词法和"
+        f"度量衡，按语境自造新句，不逐字复读）：" + "；".join(f"「{s}」" for s in speech_dna)
+    )
     genome = {
         "source": f"{person_id}-obsession",
         "trait_axes": {
@@ -390,10 +417,12 @@ def forge_from_obsession(
         "library": "custom",
         "forge": {
             "mode": "obsession",
-            "style": style.strip(),
+            "style": final_style,
             "obsession": obsession.strip(),
             "obsession_statement": obsession_line,
             "trigger_hint": trigger_hint.strip(),
+            "speech_dna": speech_dna,
+            "opening_moves": opening_moves,
         },
         "genome": genome,
     }

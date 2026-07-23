@@ -162,6 +162,13 @@ class ChatSession:
         ammo = (record.get("meme_ammo") or {}).get("register_license") or []
         if ammo:
             persona.extensions["register_license"] = list(ammo)
+        moves = (record.get("forge") or {}).get("opening_moves") or []
+        if moves:
+            persona.extensions["performance_reference"] = {
+                "opening_moves": list(moves),
+                "rule": "开场即故障：第一回合必须从这些动作中选一个（或同系统的新变体）作为出场动作，"
+                        "不解释、不铺垫——陌生人三秒内要能察觉这人系统有问题。",
+            }
         self.persona = persona
         scene_id = f"genome-chat-{record['person_id']}"
         self.host = InMemorySceneHost(
