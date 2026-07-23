@@ -372,7 +372,7 @@ class Handler(BaseHTTPRequestHandler):
     def _forge_style(self, body: dict) -> None:
         """Expand a natural-language style description into a speech spec."""
         try:
-            style = expand_style(
+            result = expand_style(
                 description=str(body.get("description", "")),
                 name=str(body.get("name", "")),
                 background=str(body.get("background", "")),
@@ -384,7 +384,7 @@ class Handler(BaseHTTPRequestHandler):
         except RuntimeError as exc:
             self._send(502, {"error": f"style model failed: {str(exc)[:200]}"})
             return
-        self._send(200, {"style": style})
+        self._send(200, {"style": result["text"], "style_pack": result["pack"]})
 
     def _forge_question(self, body: dict) -> None:
         """Generate the next adaptive questionnaire question."""

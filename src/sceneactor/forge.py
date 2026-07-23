@@ -262,16 +262,61 @@ def forge_from_questionnaire(
     return record
 
 
-_EXPAND_STYLE_PROMPT = """你是台词风格设计师。用户用自然语言描述了想要的角色说话风格，你把它展开成给AI演员用的可执行口播指令。
+_STYLE_PACK_FORMAT = """只输出JSON，结构：
+{{"tone":"整体语气与节奏（语速/停顿/音量起伏，40字内）",
+"catchphrases":[{{"phrase":"口头禅原文","when":"什么情境下说"}}],
+"sentence_patterns":["标志性句式，如：他以为…其实我…"],
+"metaphor_domains":["打比方的素材域，如：老游戏、修车、做饭"],
+"registers":{{"得意时":"怎么说话","被质疑时":"","尴尬时":"","认真讲道理时":"","跟熟人闲扯时":""}},
+"taboos":["这个人绝不会有的说话方式"]}}
+
+数量要求：catchphrases 12-20条（每条注明使用情境，这是风格的骨架，宁多勿少）；sentence_patterns 5-8条；metaphor_domains 3-5个；registers 五个场合都要写；taboos 2-4条。"""
+
+_EXPAND_STYLE_PROMPT = """你是台词风格设计师。用户用自然语言描述了想要的角色说话风格，你把它展开成完整的结构化风格包。
 
 用户的描述：{description}
 角色设定：{name}，{background}。
 
 要求：
-1. 如果描述里引用了公众人物（如"像大司马"、"郭德纲那种"），调用你对此人说话习惯的了解：口头禅、句式、语气节奏、招牌梗——但化用不照搬，保留味道、换掉专属指纹（如把标志性名词换成同构的新说法）。
-2. 严格执行用户的修正语（如"但没那么否定性"、"更温和"）——这些减法比加法更重要，被点名去掉的特质一条都不能留。
-3. 输出120字以内的可执行指令，格式如：「语速快、爱连环短句；口头禅『……』用在得意时；打比方偏游戏化；被质疑先自嘲再反击」。
-4. 只输出风格说明文本，不要解释，不要JSON。"""
+1. 如果描述里引用了公众人物（如"像大司马"、"郭德纲那种"），充分调用你对此人说话习惯的了解：把他的口头禅库尽量完整地列出来（化用不照搬——保留结构和味道，替换专属指纹词），句式、语气节奏、招牌梗、分场合的说话方式都要覆盖。
+2. 严格执行用户的修正语（如"但没那么否定性"、"更温和"）——被点名去掉的特质一条都不能留，涉及的口头禅要么删掉要么改写成符合修正后人格的版本。
+
+{format_block}"""
+
+
+def render_style_pack(pack: Mapping[str, Any]) -> str:
+    """Render a structured style pack into a voice directive for the actor."""
+    lines: list[str] = []
+    if pack.get("tone"):
+        lines.append(f"语气节奏：{pack['tone']}")
+    phrases = pack.get("catchphrases") or []
+    if phrases:
+        lines.append("口头禅库（按情境自然取用，一次发言最多1-2条，不要堆砌）：")
+        lines += [f"·「{p.get('phrase', '')}」—— {p.get('when', '')}" for p in phrases]
+    if pack.get("sentence_patterns"):
+        lines.append("标志性句式：" + "；".join(pack["sentence_patterns"]))
+    if pack.get("metaphor_domains"):
+        lines.append("打比方素材域：" + "、".join(pack["metaphor_domains"]))
+    registers = pack.get("registers") or {}
+    if registers:
+        lines.append("分场合：" + "；".join(f"{k}→{v}" for k, v in registers.items() if v))
+    if pack.get("taboos"):
+        lines.append("绝不：" + "；".join(pack["taboos"]))
+    return "\n".join(lines)
+
+
+def _parse_style_pack(output: str) -> dict | None:
+    match = re.search(r"\{.*\}", output, re.DOTALL)
+    if not match:
+        return None
+    try:
+        pack = json.loads(match.group(0))
+    except json.JSONDecodeError:
+        return None
+    if not isinstance(pack, dict) or len(pack.get("catchphrases") or []) < 8:
+        return None
+    pack["catchphrases"] = pack["catchphrases"][:20]
+    return pack
 
 
 def expand_style(
@@ -280,18 +325,20 @@ def expand_style(
     name: str,
     background: str,
     complete: Callable[[list[dict[str, str]], str], str],
-) -> str:
-    """Expand a natural-language style wish into an executable speech spec."""
+) -> dict:
+    """Expand a natural-language style wish into a structured style pack."""
     if not description.strip():
         raise GenomeError("style description is required")
     prompt = _EXPAND_STYLE_PROMPT.format(
         description=description.strip(),
         name=name.strip() or "未命名", background=background.strip() or "不详",
+        format_block=_STYLE_PACK_FORMAT,
     )
-    style = complete([{"role": "user", "content": prompt}], "forge-style-expand").strip()
-    if not style:
-        raise GenomeError("style expansion returned empty text")
-    return style[:400]
+    for _ in range(3):
+        pack = _parse_style_pack(complete([{"role": "user", "content": prompt}], "forge-style-expand"))
+        if pack:
+            return {"pack": pack, "text": render_style_pack(pack)}
+    raise GenomeError("style expansion failed after 3 attempts")
 
 
 _STYLE_PROMPT = """你是台词风格设计师。一个虚构角色由以下人物按权重融合而成：
@@ -299,11 +346,11 @@ _STYLE_PROMPT = """你是台词风格设计师。一个虚构角色由以下人�
 
 角色设定：{name}，{background}。
 
-请合成这个角色的说话风格说明（给AI演员用的口播指令，120字以内）：
-1. 按权重继承各源人物的标志性语言习惯——口头禅、句式、比喻库、语气节奏；权重高的占主导。
-2. 口头禅不要原样照搬名句，而是化用：保留味道，换掉专属指纹（比如把某人的名句改成同构的新说法）。
-3. 写成可执行的指令，例如：「爱用XX打比方；追问时先抛反问；口头禅『……』出现在转折处」。
-只输出风格说明文本，不要JSON，不要解释。"""
+按权重合成这个角色的完整风格包：
+1. 口头禅库按权重从各源继承——权重60%的源贡献约60%的条目；化用不照搬（保留结构和味道，替换专属指纹词）。
+2. 句式、比喻域、分场合说话方式同样按权重混合；两个源冲突时高权重者胜，但低权重源至少留下可辨认的痕迹。
+
+{format_block}"""
 
 
 def _fuse_style(
@@ -311,20 +358,25 @@ def _fuse_style(
     name: str,
     background: str,
     complete: Callable[[list[dict[str, str]], str], str],
-) -> str:
+) -> tuple[dict | None, str]:
     sources_block = "\n".join(
         f"- {r['display_name']}（权重{w:.0%}）"
-        + (f"，已知风格：{r['forge']['style']}" if (r.get('forge') or {}).get('style') else "")
+        + (f"，已知风格：{json.dumps((r.get('forge') or {}).get('style_pack'), ensure_ascii=False)[:800]}"
+           if (r.get('forge') or {}).get('style_pack') else "")
         for r, w in parts
     )
     prompt = _STYLE_PROMPT.format(
         sources_block=sources_block, name=name, background=background or "不详",
+        format_block=_STYLE_PACK_FORMAT,
     )
     try:
-        style = complete([{"role": "user", "content": prompt}], "forge-style").strip()
+        for _ in range(2):
+            pack = _parse_style_pack(complete([{"role": "user", "content": prompt}], "forge-style"))
+            if pack:
+                return pack, render_style_pack(pack)
     except Exception:  # noqa: BLE001 — style is enhancement, never fatal
-        return ""
-    return style[:400]
+        pass
+    return None, ""
 
 
 def forge_from_fusion(
@@ -387,8 +439,9 @@ def forge_from_fusion(
     }
     sources = [r["display_name"] for r, _ in parts]
     final_style = style.strip()
+    style_pack = None
     if not final_style and complete is not None:
-        final_style = _fuse_style(parts, name.strip(), background.strip(), complete)
+        style_pack, final_style = _fuse_style(parts, name.strip(), background.strip(), complete)
     record = {
         "person_id": person_id,
         "display_name": name.strip(),
@@ -402,6 +455,7 @@ def forge_from_fusion(
         "forge": {
             "mode": "fusion",
             "style": final_style,
+            "style_pack": style_pack,
             "sources": [
                 {"person_id": r["person_id"], "display_name": r["display_name"], "weight": w}
                 for r, w in parts
