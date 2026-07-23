@@ -155,6 +155,7 @@ class TestLongVideoConsistencyLayer:
 
     def test_chain_adds_continuity_clause_and_ref(self) -> None:
         raw = _raw()
+        raw["shots"][0]["end_state"] = "角色a的手放回桌面。"
         raw["shots"][1]["chain_from_previous"] = True
         p = SkitProject.from_mapping(raw)
         prompt = build_shot_prompt(p, p.shots[1])
@@ -165,6 +166,7 @@ class TestLongVideoConsistencyLayer:
 
     def test_chain_without_frame_adds_no_ref(self) -> None:
         raw = _raw()
+        raw["shots"][0]["end_state"] = "角色a的手放回桌面。"
         raw["shots"][1]["chain_from_previous"] = True
         p = SkitProject.from_mapping(raw)
         refs = build_shot_references(p, p.shots[1], UPLOADS)
@@ -176,6 +178,83 @@ class TestLongVideoConsistencyLayer:
         assert "TIMELINE" not in prompt
         assert "END STATE" not in prompt
         assert "CONTINUITY" not in prompt
+
+
+class TestConsistencyContracts:
+    def _raw_with_contracts(self) -> dict:
+        raw = _raw()
+        raw["props"] = [
+            {"prop_id": "umbrella", "desc": "暖黄色油纸伞", "count": 1,
+             "holder": "a.right_hand", "persistent_state": "伞面滴水、微微歪斜"},
+            {"prop_id": "platter", "desc": "银色汉堡托盘", "location": "左侧讲台台面"},
+        ]
+        raw["continuity"] = {
+            "spatial_layout": ["角色a始终在画面左侧讲台后", "角色b始终在右侧讲台后"],
+            "environment": ["背景大屏始终显示INFLATION折线图"],
+            "character_states": ["两个角色整场不离开各自讲台"],
+        }
+        raw["shots"][0]["props_in_shot"] = ["umbrella"]
+        raw["shots"][0]["pose_contract"] = ["身体重心始终压在讲台后沿，不后退"]
+        raw["shots"][0]["gaze_target"] = "对面讲台的b"
+        raw["shots"][1]["shot_delta"] = ["角色b从右侧讲台走到画面中央"]
+        return raw
+
+    def test_stable_facts_injected(self) -> None:
+        p = SkitProject.from_mapping(self._raw_with_contracts())
+        prompt = build_shot_prompt(p, p.shots[0])
+        assert "STABLE FACTS" in prompt
+        assert "角色a始终在画面左侧讲台后" in prompt
+        assert "INFLATION" in prompt
+
+    def test_prop_registry_uniqueness_and_holder(self) -> None:
+        p = SkitProject.from_mapping(self._raw_with_contracts())
+        prompt = build_shot_prompt(p, p.shots[0])
+        assert "PROPS" in prompt
+        assert "exactly 1x 暖黄色油纸伞" in prompt
+        assert "held by a.right_hand" in prompt
+        assert "never duplicated, never teleported" in prompt
+
+    def test_pose_and_gaze_contracts_injected(self) -> None:
+        p = SkitProject.from_mapping(self._raw_with_contracts())
+        prompt = build_shot_prompt(p, p.shots[0])
+        assert "POSE CONTRACT" in prompt and "身体重心始终压在讲台后沿" in prompt
+        assert "GAZE" in prompt and "对面讲台的b" in prompt
+
+    def test_shot_delta_suspends_conflicting_fact(self) -> None:
+        p = SkitProject.from_mapping(self._raw_with_contracts())
+        prompt = build_shot_prompt(p, p.shots[1])
+        assert "SHOT DELTA" in prompt
+        assert "角色b从右侧讲台走到画面中央" in prompt
+        # the stable fact about b staying at the right lectern must be
+        # suspended for this shot — one prompt must not contradict itself
+        assert "角色b始终在右侧讲台后" not in prompt
+        # unrelated facts survive
+        assert "角色a始终在画面左侧讲台后" in prompt
+
+    def test_unknown_prop_rejected(self) -> None:
+        raw = self._raw_with_contracts()
+        raw["shots"][0]["props_in_shot"] = ["ghost_prop"]
+        with pytest.raises(SkitProjectError, match="unknown prop"):
+            SkitProject.from_mapping(raw)
+
+    def test_prop_holder_must_be_character(self) -> None:
+        raw = self._raw_with_contracts()
+        raw["props"][0]["holder"] = "nobody.left_hand"
+        with pytest.raises(SkitProjectError, match="not a character"):
+            SkitProject.from_mapping(raw)
+
+    def test_chain_requires_predecessor_end_state(self) -> None:
+        raw = self._raw_with_contracts()
+        raw["shots"][1]["chain_from_previous"] = True
+        # shot[0] has no end_state -> must be rejected
+        with pytest.raises(SkitProjectError, match="end_state required"):
+            SkitProject.from_mapping(raw)
+
+    def test_first_shot_cannot_chain(self) -> None:
+        raw = self._raw_with_contracts()
+        raw["shots"][0]["chain_from_previous"] = True
+        with pytest.raises(SkitProjectError, match="first shot cannot chain"):
+            SkitProject.from_mapping(raw)
     def test_upload_keys_deduplicated(self) -> None:
         p = SkitProject.from_mapping(_raw())
         keys = upload_keys(p)

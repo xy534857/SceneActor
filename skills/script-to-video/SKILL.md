@@ -1,13 +1,11 @@
 ---
 name: script-to-video
 description: |
-  剧本+人设图 → 长视频的完整制作工作流（seedance/VS 2.0 链路）。
-  综合三个公开 skill 的精华（songguoxs/seedance-prompt-skill 的时间戳分镜与
-  多段衔接、zhaihao118/Micro-Drama-Skills 的角色圣经与分镜图参考、
-  huangserva/xyz-video-skill 的单一真相源/尾帧锚定/链式衔接/双阶段审查），
-  结合我们自己踩过的坑（体型漂移、音色失效、台词裁断、人类乱入）。
+  剧本+人设图 → 长视频（seedance/VS 2.0 链路）。声明式 project.json 驱动：
+  五维一致性合同（人物/场景/空间/物品/站位）+ 链式衔接 + 两阶段审查。
   触发词：「剧本转视频」「生成长视频」「短剧制作」「seedance 流程」。
-  执行工具：scripts/run_skit_video.py（生成+验证+拼接）+ 本文档的工作流决策。
+  执行工具：scripts/run_skit_video.py；schema 与 prompt 组装在
+  src/sceneactor/skit_pipeline.py（加载即校验，违法输入直接拒绝）。
 ---
 
 # Script-to-Video · 剧本到长视频
@@ -15,19 +13,45 @@ description: |
 > 一句话架构：**一致性是资产问题，连贯性是分镜问题，质量是审查问题。**
 > 三者分开治理，不要指望一段 prompt 同时解决三件事。
 
-## 与三个参考 skill 的关系
+## 五维一致性合同（本 skill 的核心，全部落在 `skit_pipeline.py`）
 
-| 借鉴 | 来自 | 我们的落地 |
+一致性不是"写得细"，是**每一维都有声明处、注入处、校验处**。声明了才检查，
+违反了可判定——这是把三个参考 skill 的做法收敛后再硬化的结果：
+
+| 维度 | 声明处（project.json） | 注入 prompt 段 | 硬校验 |
+|---|---|---|---|
+| 人物 | `characters[].portrait`（单 model sheet 裁切） | `IDENTITY:` 只引用附图 | 每在场角色一张 `identity_anchor`，speaker 必在画内 |
+| 场景 | `stage`（全片一段文字）+ `scene_ref` 图 | `STAGE:` 逐字相同 + `scene_style` 引用 | — |
+| 空间结构 | `continuity.spatial_layout/environment/character_states`（**逐条事实，禁散文**） | `STABLE FACTS (must hold):` 逐条列出 | 与 `shot_delta` 冲突的事实自动挂起，防一条 prompt 自相矛盾 |
+| 物品 | `props[]` 实体注册表：`count`/`holder`(精确到手)/`location`/`persistent_state` | `PROPS (unique entities): exactly 1x …, held by …, never duplicated, never teleported` | 未注册物品被镜头引用 → 加载即报错；holder 必须是角色 |
+| 站位 | 每镜 `pose_contract`（只写物理支撑关系）+ `gaze_target` + `shot_delta` | `POSE CONTRACT:` / `GAZE:` / `SHOT DELTA (the ONLY things allowed to change):` | 链式镜的前镜必须有 `end_state`（它就是下镜首帧），否则加载即报错 |
+
+**shot_delta 是站位一致性的钥匙**：默认一切继承 STABLE FACTS；本镜要动谁，
+就把变化写进 `shot_delta`——引擎自动把与 delta 同主语的稳定事实从该镜 prompt
+里挂起（"b 始终在右讲台"遇到"b 走到中央"会被移除，"a 始终在左讲台"保留）。
+没写进 delta 的变化 = 审查阶段可判定的违规。
+
+**props 注册表治两类经典翻车**：同一把伞被画成两把（`count: 1` + never
+duplicated）；托盘从左讲台瞬移到右讲台（`location` 固定 + never teleported）。
+
+**pose_contract 治姿态漂移**：只写重心/支撑点/承重关系（"上身持续斜靠墙面，
+支撑点不变"），不写情绪词。缺这层，"倚靠"会被随机画成坐/蹲/站。
+
+## 分镜字段速查（写 project.json 时逐镜决策）
+
+每镜必填四件套：`camera` / `action` / `line` / `duration`([4,15]整数)。
+以下按"什么情况必须写"给出决策规则：
+
+| 字段 | 什么情况必须写 | 写法要点 |
 |---|---|---|
-| 时间戳分镜（0-3s/4-8s 逐段控制） | seedance-prompt-skill | shot 内 `time_beats`，写进视频 prompt |
-| >15s 多段拼接 + 衔接点声明 | seedance-prompt-skill | 分镜表 + 链式尾帧衔接 |
-| 角色圣经 + 每角色参考图索引 | Micro-Drama-Skills | 单张 model sheet 裁成单人立绘（同风格保证） |
-| 6宫格分镜图作为视频参考 | Micro-Drama-Skills | 分镜图 = 构图权威；**体型不归分镜管**（我们的教训） |
-| 单一真相源（外貌只定义一处） | xyz-video-skill | prompt 只说"以附图为准"，禁止散文重述外形 |
-| 尾帧锚定（end_frame 必填防漫游） | xyz-video-skill | 每镜 `end_state`；末镜+被链镜强制 |
-| chain_from_previous（真实尾帧接首帧） | xyz-video-skill | 同场景连续动作镜从前镜视频抽尾帧作参考 |
-| 单向运动法则（一镜内禁折返） | xyz-video-skill | 分镜自检清单第 3 条 |
-| 两阶段质量审查（粗筛+母模型裁定） | xyz-video-skill | whisper/声纹粗筛 + gemini 逐帧裁定 |
+| `end_state` | 该镜是段落收口、情绪落点、或**下一镜要链它** | 写"已到达的状态"不写"可能发生的事"；被链镜缺它会拒绝加载 |
+| `chain_from_previous` | 同场景同角色连续动作 | 跨场景/换角色/景别大跳禁用；渲染时自动抽前镜真实尾帧挂为末位参考图 |
+| `time_beats` | 时长>8s 或镜内有多阶段动作 | `"0-3秒：…"` 只写谁在动、动哪里；禁导演抒情 |
+| `props_in_shot` | 画面出现注册过的道具 | 引用 `props[]` 里的 prop_id；未注册直接报错 |
+| `pose_contract` | 角色姿态整镜不许漂移（倚/蹲/扶） | 只写重心/支撑点/承重关系；禁情绪词 |
+| `gaze_target` | "看向谁"本身是戏（对视/回头/发现） | 写目标+方位："对面讲台的水獭" |
+| `shot_delta` | 本镜要改变 STABLE FACTS 里的任何事实 | 只列允许的变化；同主语稳定事实自动挂起，没列的变化=审查违规 |
+| `extra_constraints` | 上一 take 的 fail 原因 | 重生成时把审查结论翻成新约束（如"无贴纸描边"） |
 
 ## 资产阶段（一致性的根，最重要）
 
@@ -64,21 +88,31 @@ description: |
 分镜自检（写完必查）：
 ```
 □ 相邻镜 end_state → 下镜起始状态连续（位置/持物/湿干/人数）
-□ 一镜内动作无折返
+□ 一镜内动作无折返（朝向/位移/景别只许单向变化）
 □ 每镜 end_state 非空且是"已到达的状态"不是"可能发生的事"
 □ 台词字数 ≤ 时长×3.5×0.85
-□ 链式镜的前镜 end_state 精确（它会变成下镜首帧）
+□ 角色要移动的镜写了 shot_delta；没动的镜没写
+□ 道具出场都引用了 props_in_shot；没有画面外道具凭空出现
+□ pose_contract 只有物理支撑关系，没有情绪词
+□ 加载检验通过：python3 -c "from sceneactor.skit_pipeline import SkitProject; SkitProject.load('project.json')"
 ```
 
-## Prompt 组装（每镜结构固定，由 skit_pipeline.py 生成）
+## Prompt 组装（每镜结构固定，由 skit_pipeline.py 生成，顺序即权威）
 
 ```
 IDENTITY: 附图立绘定义每个角色的确切外形——只引用，不描述。
 STAGE: 场景描述（全片共享一段文字，逐字相同）
+STABLE FACTS (must hold): 逐条空间/环境/角色稳定事实（与本镜 delta 冲突的自动挂起）
+PROPS (unique entities): exactly 1x …, held by …, never duplicated, never teleported
 SHOT: 镜头
 SPEAKING CHARACTER: 说话人（+ 其他在场角色，标注 NOT speaking）
-ACTION: 动作 + 口型同步 + time_beats（如有）
-END STATE: 结束落点
+ACTION: 动作 + 口型同步
+POSE CONTRACT: 支撑关系（如有）
+GAZE: 视线目标（如有）
+SHOT DELTA (the ONLY things allowed to change): 本镜许可变化（如有）
+TIMELINE: 0-3秒：…（如有）
+END STATE: 结束落点（如有）
+CONTINUITY: 最后一张附图是前镜末帧（链式镜）
 DIALOGUE (语言, 声线描述, cloned from reference audio): 「台词」
 STRICT: NO humans; NO subtitles/captions/text overlays
 STYLE: 风格句（全片逐字相同）+ 只要人声和房间底噪，无音乐

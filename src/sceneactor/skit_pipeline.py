@@ -50,6 +50,41 @@ class SkitCharacter:
 
 
 @dataclass(frozen=True)
+class SkitProp:
+    """One UNIQUE scene entity (entity-registry pattern, from xyz-video-skill).
+
+    Declaring a prop here makes three guarantees enter every prompt that shows
+    it: uniqueness (count), who holds it and with which hand, and its
+    persistent visual state. This is what prevents "two identical umbrellas"
+    and "the platter teleports between lecterns".
+    """
+
+    prop_id: str
+    desc: str  # visual description, e.g. "银色托盘，堆成金字塔的卡通汉堡"
+    count: int = 1
+    holder: str = ""  # "" = free-standing; else "character_code" or "character_code.right_hand"
+    location: str = ""  # spatial anchor when free-standing, e.g. "左侧讲台台面"
+    persistent_state: str = ""  # state that never changes unless a shot_delta says so
+
+
+@dataclass(frozen=True)
+class SceneContinuity:
+    """Project-level stable facts: the DEFAULT baseline every shot inherits.
+
+    Split into itemized facts (not prose) so each fact can be injected into a
+    prompt and checked by the reviewer independently. A shot may only deviate
+    from these facts by declaring the change in its ``shot_delta``.
+    """
+
+    spatial_layout: tuple[str, ...] = ()  # "兔子始终在画面左侧讲台后，水獭始终在右侧讲台后"
+    environment: tuple[str, ...] = ()  # "背景大屏始终显示 INFLATION 折线图"
+    character_states: tuple[str, ...] = ()  # "三个角色整场不离开各自的位置"
+
+    def facts(self) -> tuple[str, ...]:
+        return (*self.spatial_layout, *self.environment, *self.character_states)
+
+
+@dataclass(frozen=True)
 class SkitShot:
     shot_id: str
     duration: int
@@ -64,6 +99,11 @@ class SkitShot:
     time_beats: tuple[str, ...] = ()  # e.g. "0-3秒：…" lines for multi-phase shots
     end_state: str = ""  # visual landing point; prevents random wandering
     chain_from_previous: bool = False  # start from previous shot's real last frame
+    # -- blocking & spatial contracts (xyz-video-skill patterns, hardened) --
+    props_in_shot: tuple[str, ...] = ()  # prop_ids visible in this shot
+    pose_contract: tuple[str, ...] = ()  # physical support relations that MUST hold
+    gaze_target: str = ""  # who/where the speaker looks: "对面讲台的水獭"
+    shot_delta: tuple[str, ...] = ()  # the ONLY changes this shot may make
 
     def visible(self) -> tuple[str, ...]:
         return self.in_frame or (self.speaker,)
@@ -78,6 +118,8 @@ class SkitProject:
     scene_ref: str  # upload key / path of master stage image
     characters: Mapping[str, SkitCharacter]
     shots: tuple[SkitShot, ...]
+    props: Mapping[str, SkitProp] = field(default_factory=dict)
+    continuity: SceneContinuity = field(default_factory=SceneContinuity)
     resolution: str = "720P"
     aspect_ratio: str = "16:9"
     model: str = "VS"
@@ -104,6 +146,23 @@ class SkitProject:
             characters[ch.code] = ch
         if not characters:
             raise SkitProjectError("project has no characters")
+        props: dict[str, SkitProp] = {}
+        for item in raw.get("props", []):
+            prop = SkitProp(
+                prop_id=str(item["prop_id"]),
+                desc=str(item["desc"]),
+                count=int(item.get("count", 1)),
+                holder=str(item.get("holder", "")),
+                location=str(item.get("location", "")),
+                persistent_state=str(item.get("persistent_state", "")),
+            )
+            props[prop.prop_id] = prop
+        cont_raw = raw.get("continuity", {})
+        continuity = SceneContinuity(
+            spatial_layout=tuple(str(f) for f in cont_raw.get("spatial_layout", [])),
+            environment=tuple(str(f) for f in cont_raw.get("environment", [])),
+            character_states=tuple(str(f) for f in cont_raw.get("character_states", [])),
+        )
         shots = []
         for item in raw.get("shots", []):
             shot = SkitShot(
@@ -118,6 +177,10 @@ class SkitProject:
                 time_beats=tuple(str(b) for b in item.get("time_beats", [])),
                 end_state=str(item.get("end_state", "")),
                 chain_from_previous=bool(item.get("chain_from_previous", False)),
+                props_in_shot=tuple(str(p) for p in item.get("props_in_shot", [])),
+                pose_contract=tuple(str(p) for p in item.get("pose_contract", [])),
+                gaze_target=str(item.get("gaze_target", "")),
+                shot_delta=tuple(str(d) for d in item.get("shot_delta", [])),
             )
             shots.append(shot)
         if not shots:
@@ -130,6 +193,8 @@ class SkitProject:
             scene_ref=str(raw["scene_ref"]),
             characters=characters,
             shots=tuple(shots),
+            props=props,
+            continuity=continuity,
             resolution=str(raw.get("resolution", "720P")),
             aspect_ratio=str(raw.get("aspect_ratio", "16:9")),
             model=str(raw.get("model", "VS")),
@@ -160,6 +225,27 @@ class SkitProject:
                 raise SkitProjectError(f"{shot.shot_id}: speaker must be in_frame")
             if not shot.line.strip():
                 raise SkitProjectError(f"{shot.shot_id}: empty dialogue line")
+            for pid in shot.props_in_shot:
+                if pid not in self.props:
+                    raise SkitProjectError(f"{shot.shot_id}: unknown prop {pid!r}")
+        for prop in self.props.values():
+            if prop.holder:
+                holder_code = prop.holder.split(".", 1)[0]
+                if holder_code not in self.characters:
+                    raise SkitProjectError(
+                        f"prop {prop.prop_id}: holder {holder_code!r} is not a character"
+                    )
+        # chained shots need a precise landing point on their predecessor:
+        # the previous end_state BECOMES the next first frame.
+        for index, shot in enumerate(self.shots):
+            if shot.chain_from_previous:
+                if index == 0:
+                    raise SkitProjectError(f"{shot.shot_id}: first shot cannot chain")
+                prev = self.shots[index - 1]
+                if not prev.end_state.strip():
+                    raise SkitProjectError(
+                        f"{prev.shot_id}: end_state required — {shot.shot_id} chains from it"
+                    )
 
 
 _LANG_NAME = {"zh": "Mandarin Chinese", "en": "English", "ja": "Japanese"}
@@ -200,15 +286,55 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
             "previous shot — this shot continues directly from that exact state: same "
             "positions, same lighting, same props.\n"
         )
+    # STABLE FACTS: the inherited baseline (scene continuity, xyz pattern).
+    # Items a shot_delta explicitly changes are filtered out for that shot.
+    facts = [
+        fact for fact in project.continuity.facts()
+        if not any(_mentions_same_subject(fact, delta) for delta in shot.shot_delta)
+    ]
+    facts_txt = ""
+    if facts:
+        facts_txt = "STABLE FACTS (must hold in this shot):\n" + "".join(
+            f"- {fact}\n" for fact in facts)
+    props_txt = ""
+    if shot.props_in_shot:
+        lines = []
+        for pid in shot.props_in_shot:
+            prop = project.props[pid]
+            bits = [f"exactly {prop.count}x {prop.desc}"]
+            if prop.holder:
+                bits.append(f"held by {prop.holder}")
+            if prop.location:
+                bits.append(f"fixed at {prop.location}")
+            if prop.persistent_state:
+                bits.append(f"state: {prop.persistent_state}")
+            lines.append("- " + ", ".join(bits) + "; never duplicated, never teleported\n")
+        props_txt = "PROPS (unique entities):\n" + "".join(lines)
+    pose_txt = ""
+    if shot.pose_contract:
+        pose_txt = "POSE CONTRACT (body support must hold the whole shot):\n" + "".join(
+            f"- {p}\n" for p in shot.pose_contract)
+    gaze_txt = ""
+    if shot.gaze_target:
+        gaze_txt = f"GAZE: the speaker's eyes stay on {shot.gaze_target}.\n"
+    delta_txt = ""
+    if shot.shot_delta:
+        delta_txt = (
+            "SHOT DELTA (the ONLY things allowed to change in this shot):\n"
+            + "".join(f"- {d}\n" for d in shot.shot_delta)
+            + "Everything not listed above stays exactly as established.\n"
+        )
     return (
         "IDENTITY: the attached portrait reference image(s) define each character's "
         "EXACT appearance — head shape, colors, outfit, markings, proportions. "
         "Reproduce them faithfully; do not redesign, do not invent extra characters.\n"
         f"STAGE: {project.stage}\n"
+        f"{facts_txt}{props_txt}"
         f"SHOT: {shot.camera}.\n"
         f"SPEAKING CHARACTER: {speaker.identity_desc}.{others_txt}\n"
         f"ACTION: {shot.action}. Mouth movements sync to the dialogue. "
         "Subtle idle motion otherwise; steady TV framing.\n"
+        f"{pose_txt}{gaze_txt}{delta_txt}"
         f"{beats_txt}{end_txt}{chain_txt}"
         f"DIALOGUE ({lang}, spoken aloud in {speaker.voice_desc}, cloned from the "
         f"reference audio — match its timbre exactly): {quote.format(shot.line)}\n"
@@ -216,6 +342,23 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
         f"STYLE: {project.style} "
         "Audio: only the character's voice plus faint room tone; no music."
     )
+
+
+def _mentions_same_subject(fact: str, delta: str) -> bool:
+    """A stable fact is suspended when a shot_delta names the same subject.
+
+    CJK trigrams / latin words with a 2-hit threshold: shared generic bigrams
+    (讲台/画面) alone must NOT suspend a fact about a different subject, while
+    a delta naming the same actor+landmark does. Reviewers still check footage.
+    """
+    def tokens(text: str) -> set[str]:
+        import re as _re
+        words = set(_re.findall(r"[a-zA-Z]{3,}", text.lower()))
+        cjk = _re.findall(r"[\u4e00-\u9fff0-9a-zA-Z]", text)
+        words.update("".join(t) for t in zip(cjk, cjk[1:], cjk[2:]))
+        return words
+    overlap = tokens(fact) & tokens(delta)
+    return len(overlap) >= 2
 
 
 def build_shot_references(
