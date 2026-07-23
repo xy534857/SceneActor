@@ -37,6 +37,107 @@ AXIS_LABELS = {
     "empathy_reactivity": "共情反应",
 }
 
+# Axis order for the adaptive questionnaire: outward behaviors first so early
+# answers give the question generator the most signal for later scenes.
+QUESTION_ORDER = (
+    "control_need",
+    "risk_appetite",
+    "trust_propensity",
+    "status_sensitivity",
+    "empathy_reactivity",
+    "uncertainty_tolerance",
+    "self_efficacy",
+    "autonomy_need",
+    "intimacy_need",
+)
+
+_QUESTION_PROMPT = """你是角色问卷设计师。用户正在通过情境选择题捏一个虚构人物，你负责出下一道题。
+
+人物设定：
+- 姓名：{name}
+- 身份背景：{background}
+- 说话风格：{style}
+
+已答题目（题干 → 用户的选择）：
+{history_block}
+
+现在出第 {step} 题（共9题），本题测量维度：{axis}（{axis_label}）。
+定义参考：{axis_hint}
+
+出题要求：
+1. 情境必须贴合这个人物的身份和生活场景（不要通用职场题），并尽量与已答题目形成连续叙事——可以引用前面选择造成的后果。
+2. 给4个选项，从该维度低位到高位排列，行为化描述（他会怎么做/怎么说），不要形容词自评。
+3. 每个选项附一个0-1分数，大致均匀分布（如0.15/0.4/0.7/0.9），顺序可以打乱。
+4. 选项之间要真正难选——每个都得像"这个人物可能会这么干"，不要有明显的社会期望答案。
+
+只输出JSON：
+{{"title":"题干（一句话情境+问题）","options":[{{"text":"选项描述","score":0.15}},{{"text":"","score":0.4}},{{"text":"","score":0.7}},{{"text":"","score":0.9}}]}}"""
+
+_AXIS_HINTS = {
+    "control_need": "多大程度要把事情抓在自己手里；放权还是事必躬亲",
+    "uncertainty_tolerance": "面对没有答案的处境能否继续行动；要保证还是能边走边看",
+    "trust_propensity": "默认把人当可靠还是当风险；授权习惯",
+    "risk_appetite": "赔率面前下多大注；求稳还是搏大",
+    "self_efficacy": "相信凭自己能不能成事；遇难题先信自己还是先降预期",
+    "autonomy_need": "多讨厌被安排；自己的路必须自己选的程度",
+    "intimacy_need": "需要多深的私人联结；深关系是安全感还是负担",
+    "status_sensitivity": "面子和位置被冒犯时的在意程度",
+    "empathy_reactivity": "他人情绪多大程度立刻改变自己的语言和行动",
+}
+
+
+def next_question(
+    *,
+    name: str,
+    background: str,
+    style: str,
+    history: Sequence[Mapping[str, str]],
+    complete: Callable[[list[dict[str, str]], str], str],
+) -> dict:
+    """Generate the next situational question, conditioned on prior answers.
+
+    ``history`` is a list of {"title": ..., "choice": ...} for answered steps.
+    Returns {"axis", "step", "title", "options": [{"text", "score"}, ...]}.
+    """
+    step = len(history)
+    if step >= len(QUESTION_ORDER):
+        raise GenomeError("questionnaire already complete")
+    axis = QUESTION_ORDER[step]
+    history_block = "\n".join(
+        f"{i + 1}. {h.get('title', '')} → 选了「{h.get('choice', '')}」"
+        for i, h in enumerate(history)
+    ) or "（这是第一题）"
+    prompt = _QUESTION_PROMPT.format(
+        name=name.strip() or "未命名", background=background.strip() or "普通人",
+        style=style.strip() or "自然口语", history_block=history_block,
+        step=step + 1, axis=axis, axis_label=AXIS_LABELS[axis],
+        axis_hint=_AXIS_HINTS[axis],
+    )
+    for _ in range(3):
+        output = complete([{"role": "user", "content": prompt}], "forge-question")
+        match = re.search(r"\{.*\}", output, re.DOTALL)
+        if not match:
+            continue
+        try:
+            data = json.loads(match.group(0))
+        except json.JSONDecodeError:
+            continue
+        options = data.get("options", [])
+        if not (isinstance(options, list) and len(options) == 4 and data.get("title")):
+            continue
+        try:
+            clean = [
+                {"text": str(o["text"]).strip(), "score": max(0.0, min(1.0, float(o["score"])))}
+                for o in options
+            ]
+        except (KeyError, TypeError, ValueError):
+            continue
+        if any(not o["text"] for o in clean):
+            continue
+        return {"axis": axis, "step": step, "total": len(QUESTION_ORDER),
+                "title": str(data["title"]).strip(), "options": clean}
+    raise GenomeError("question generation failed after 3 attempts")
+
 _SYNTHESIS_PROMPT = """你是角色设计师。用户通过问卷捏了一个虚构人物，你要把问卷结果补全为完整的认知基因组。
 
 人物设定：
@@ -48,6 +149,9 @@ _SYNTHESIS_PROMPT = """你是角色设计师。用户通过问卷捏了一个虚
 
 九轴分数（0-1，问卷测得，你必须严格遵守，不得改动）：
 {axes_block}
+
+问卷答题记录（情境 → 他的选择，这是此人行为方式的第一手样本，qualitative层要与之呼应）：
+{history_block}
 
 生成与这些轴分**因果一致**的其余层。硬要求：
 - core_models 3-5个：这个人理解世界的筛子，每个有 name 和 rule（一句话规则）
@@ -77,6 +181,7 @@ def forge_from_questionnaire(
     fear: str,
     axes: Mapping[str, float],
     complete: Callable[[list[dict[str, str]], str], str],
+    history: Sequence[Mapping[str, str]] = (),
 ) -> dict:
     """One model call fills the qualitative genome layers around fixed axes."""
     if not name.strip():
@@ -100,10 +205,15 @@ def forge_from_questionnaire(
     axes_block = "\n".join(
         f"- {axis} {AXIS_LABELS[axis]}: {score}" for axis, score in clean_axes.items()
     )
+    history_block = "\n".join(
+        f"{i + 1}. {h.get('title', '')} → 「{h.get('choice', '')}」"
+        for i, h in enumerate(history)
+    ) or "（未提供）"
     prompt = _SYNTHESIS_PROMPT.format(
         name=name.strip(), background=background.strip() or "不详",
         style=style.strip() or "自然口语", values="、".join(value_list),
         fear=fear.strip() or "未提供", axes_block=axes_block,
+        history_block=history_block,
     )
 
     data = None
