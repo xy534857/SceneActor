@@ -57,14 +57,14 @@
       "the two rooms NEVER appear in the same frame"
     ],
     "environment": [
-      "SHA-SHA's room stays dark with RGB and monitor glow",
-      "XIAO-BAI's room stays warm-lit",
-      "in late shots (b03 onward) pale dawn light seeps into both windows"
+      "each shot carries an ENVIRONMENT LOCK for its window light; the lock is absolute for that shot",
+      "SHA-SHA's room: warm interior light plus monitor glow in every shot",
+      "XIAO-BAI's room: warm cozy interior light in every shot"
     ],
     "character_states": [
-      "SHA-SHA is SEATED in the gaming chair facing her monitors in every shot of her room except the overhead reveal (b07) where her spirit leans from the chair — she NEVER stands up",
-      "XIAO-BAI is SEATED at her desk facing her laptop in every one of her shots — she never stands",
-      "in b02/b04 SHA-SHA is a normal OPAQUE person wearing the headset; from b06 the seated SHA-SHA is a semi-transparent spirit (per the spirit portrait reference, original colors at ~60% opacity, NO glow) with NO headset and COMPLETE braided-bun hair; her opaque body lies under the desk wearing the headset"
+      "SHA-SHA sits DEEP in the gaming chair, hips on the seat cushion, back against the backrest, facing the monitors square-on; keyboard and mouse stay ON THE DESK under her hands — she NEVER stands, never perches on the chair, never holds the mouse in her lap",
+      "XIAO-BAI sits square at her desk facing the laptop, both forearms near the desk edge; she never stands",
+      "in shots b02/b04 SHA-SHA is a normal OPAQUE person wearing the headset; in b06-b08 the seated SHA-SHA is the semi-transparent spirit (per the spirit portrait, ~60% opacity, no glow) and her opaque body lies under the desk wearing the headset"
     ]
   },
   "shots": [
@@ -75,16 +75,30 @@
       "in_frame": [
         "xiaobai"
       ],
-      "camera": "XIAO-BAI's laptop-cam: medium close-up, straight-on, she leans back in her chair mid-game",
-      "action": "0-2s: she flicks the mouse twice and releases it, flops back against the chair; 2-4s: leans toward the mic with a grin, eyebrows up, inviting",
+      "camera": "Fixed webcam-style medium close-up from atop XIAO-BAI's laptop screen, lens at her eye level, straight-on, slight wide-angle; her face and shoulders fill the center third, headset mic at frame left",
+      "action": "0-2s: her right hand flicks the mouse ON THE DESK twice then releases it, and she flops her upper back against the chair backrest with a grin; 2-4s: she rocks forward, plants both forearms on the desk edge, pushes her face closer to the lens, eyebrows up, delivering the invitation",
       "line": "姐，明天还这个点儿不？咱接着来！",
       "stage_override": "XIAO-BAI's warm cream-and-mint bedroom desk exactly as the scene reference: she SITS in the white chair facing her glowing laptop, milk tea beside it, window behind the desk showing deep night, plush shelf at left, fairy lights at right",
       "scene_ref_override": "assets/xb_room_front.png",
       "anchor_stills": "first",
-      "start_state": "XIAO-BAI sits at her white desk facing the laptop cam, one hand on the mouse, wearing her cute headset, night outside the window",
-      "end_state": "She is leaned into the mic grinning, waiting for the answer",
+      "start_state": "XIAO-BAI sits square at her white desk, hips on the chair, right hand on the mouse ON THE DESK, wearing her cute headset; laptop glow on her face; pitch-black night in the window behind her",
+      "end_state": "She is leaned into the lens, both forearms on the desk edge, grinning, waiting for the answer",
       "gaze_target": "her laptop screen (the call)",
-      "extra_constraints": "Overflowing 18-year-old energy, zero fatigue. Room is warm and bright against the night window."
+      "extra_constraints": "Overflowing 18-year-old energy, zero fatigue. Room is warm and bright against the night window.",
+      "motion_control": {
+        "subject_facing": "toward_camera",
+        "camera_relation": "front_of_subject_webcam",
+        "movement_direction": "static_seated",
+        "screen_trajectory": "none — torso rocks back then forward within the chair",
+        "target": "laptop lens (the call)",
+        "distance_to_target": "holding_position"
+      },
+      "environment_lock": "pitch-black night outside every window; streetlights and one lit house window far away; interior lit by warm lamp and monitor glow",
+      "pose_contract": [
+        "hips stay on the chair seat the whole shot",
+        "both feet stay on the floor",
+        "the mouse never leaves the desk surface"
+      ]
     },
     {
       "shot_id": "b02",
@@ -93,8 +107,8 @@
       "in_frame": [
         "shasha"
       ],
-      "camera": "SHA-SHA's desk-cam: medium shot from beside the dual monitors, she sits in the tall gaming chair, RGB glow behind her",
-      "action": "0-2s: she grabs the energy can, throws her head back and chugs; 2-4s: slams it down on the desk, wipes her mouth with the back of her hand; 4-7s: chest out, chin up, one fist thumps her own chest twice on the last words, mouth wide, shouting at the screen",
+      "camera": "Fixed webcam-style medium shot from SHA-SHA's left monitor top edge, lens slightly above her eye level looking down a touch; she sits square in the gaming chair facing the monitors, upper body and desk edge in frame; PC tower glow at frame left, energy can at frame right",
+      "action": "0-2s: facing the monitors, her right hand leaves the mouse ON THE DESK, grabs the blue can from the desk's right end, she tips her head back and chugs; 2-4s: she slams the can back down on the same desk spot, wipes her mouth with the back of her right hand; 4-7s: still seated square, chest out, chin up, her right fist thumps her own chest twice on 永远十八, mouth wide shouting at the lens",
       "line": "来来来，这算个啥！姐这身体跟年轻时候一个样——永远十八！",
       "props_in_shot": [
         "headset",
@@ -102,16 +116,27 @@
         "pc_tower"
       ],
       "anchor_stills": "first",
-      "start_state": "OPAQUE SHA-SHA SITS in the gaming chair facing the monitors, wearing the black-gold headset, one hand reaching for the blue can on the desk's right end; PC tower fan-front glows at desk-left; night outside the window",
-      "end_state": "She holds the fist-on-chest bragging pose, mouth wide mid-shout, can back on the desk",
+      "start_state": "OPAQUE SHA-SHA sits DEEP in the gaming chair facing the monitors square-on, wearing the black-gold headset, left hand near the keyboard ON THE DESK, right hand reaching toward the blue can at the desk's right end; pitch-black night outside the window behind the monitors",
+      "end_state": "Still seated square facing the lens, right fist on her chest, chin high, mouth wide mid-shout; the can stands on the desk's right end where she slammed it",
       "gaze_target": "her monitors",
       "pose_contract": [
-        "she remains seated in the gaming chair, weight fully on the chair"
+        "hips stay deep in the chair seat, back touching the backrest except the chest-out lean",
+        "both feet on the floor",
+        "keyboard and mouse never leave the desk; nothing is on her lap"
       ],
       "extra_constraints": "She is fully OPAQUE and wearing the headset. LOUD street-boss bravado, almost shouting. This is her peak.",
       "portrait_overrides": {
         "shasha": "assets/portrait_shasha_headset.png"
-      }
+      },
+      "motion_control": {
+        "subject_facing": "toward_camera",
+        "camera_relation": "front_of_subject_webcam",
+        "movement_direction": "static_seated",
+        "screen_trajectory": "none — only arms move; torso stays planted",
+        "target": "her monitors / the stream",
+        "distance_to_target": "holding_position"
+      },
+      "environment_lock": "pitch-black night outside every window; streetlights and one lit house window far away; interior lit by warm lamp and monitor glow"
     },
     {
       "shot_id": "b03",
@@ -120,19 +145,29 @@
       "in_frame": [
         "xiaobai"
       ],
-      "camera": "XIAO-BAI's laptop-cam: same fixed angle as b01, pale dawn now in her window",
-      "action": "0-2s: she stretches both arms up with a squeaky yawn, still fresh; 2-5s: props her chin on one hand, smirks, teasing into the mic with sing-song rhythm",
+      "camera": "Same fixed webcam angle as b01: medium close-up from atop XIAO-BAI's laptop, straight-on at eye level",
+      "action": "0-2s: seated, she stretches both arms straight up over her head with a squeaky yawn, torso arching slightly but hips staying on the chair; 2-5s: arms come down, she plants her left elbow on the desk, drops her chin onto her left palm, and teases into the mic with a sing-song smirk",
       "line": "天都快亮了姐——还溜实不？溜实我可就等着了！",
       "stage_override": "XIAO-BAI's warm cream-and-mint bedroom desk exactly as the scene reference: she SITS in the white chair facing her glowing laptop, milk tea beside it, window behind the desk showing pale dawn light, plush shelf at left, fairy lights at right",
       "scene_ref_override": "assets/xb_room_front.png",
-      "shot_delta": [
-        "the window behind XIAO-BAI turns pale dawn blue"
-      ],
-      "end_state": "Chin on hand, smirking, waiting",
+      "end_state": "Chin resting on her left palm, elbow on the desk, smirking at the lens",
       "gaze_target": "her laptop screen",
       "extra_constraints": "Teasing but genuinely warm. Dawn light must clearly read in the window.",
       "anchor_stills": "first",
-      "start_state": "XIAO-BAI sits in her chair facing the laptop, wearing her cute headset, hands near the keyboard"
+      "start_state": "XIAO-BAI sits square at her desk mid-yawn, both arms rising, headset on; the window behind her shows pale blue-grey dawn",
+      "motion_control": {
+        "subject_facing": "toward_camera",
+        "camera_relation": "front_of_subject_webcam",
+        "movement_direction": "static_seated",
+        "screen_trajectory": "none — arms up then down, chin lands on palm",
+        "target": "laptop lens",
+        "distance_to_target": "holding_position"
+      },
+      "environment_lock": "pale blue-grey dawn outside every window, sky just brightening, streetlights still on; interior lamps now slightly dimmer than the window",
+      "pose_contract": [
+        "hips stay on the chair seat",
+        "left elbow lands on the desk and stays planted from 2s onward"
+      ]
     },
     {
       "shot_id": "b04",
@@ -141,8 +176,8 @@
       "in_frame": [
         "shasha"
       ],
-      "camera": "SHA-SHA's desk-cam: same angle as b02, dawn edge at her window, she is slightly slumped but fighting it",
-      "action": "0-2s: she jerks herself upright from a slump, grabs the can and rattles it — empty; 2-4s: raps her knuckles twice on the can, presses the headset against her ear with one hand; 4-7s: waves the whole thing off with a big dismissive arm swing, chin up, volume back to full boast",
+      "camera": "Same fixed webcam angle as b02: medium shot from the monitor top edge, SHA-SHA square in the gaming chair",
+      "action": "0-2s: she is slumped low in the chair, then jerks her torso upright (hips never leaving the seat), grabs the blue can from the desk's right end and rattles it beside her ear — empty; 2-4s: she raps her knuckles twice on the can, sets it down, presses her right palm against the headset's right ear cup; 4-7s: her right arm sweeps one big dismissive arc ending high, chin up, shouting at the lens with full force",
       "line": "难受啥啊！我这精神着呢，比你还溜实——天亮算个屁事，干就完了！",
       "props_in_shot": [
         "headset",
@@ -152,17 +187,28 @@
       "shot_delta": [
         "pale dawn light enters SHA-SHA's window"
       ],
-      "end_state": "Arm frozen at the top of the dismissive swing, chin high, mouth open on the shout",
+      "end_state": "Seated upright, right arm frozen at the top of the dismissive sweep, chin high, mouth open on the shout; empty can standing on the desk's right end",
       "gaze_target": "her monitors",
       "pose_contract": [
-        "she remains seated in the gaming chair"
+        "hips never leave the chair seat",
+        "both feet on the floor",
+        "keyboard and mouse stay on the desk; her lap stays empty"
       ],
       "extra_constraints": "Still OPAQUE, still wearing the headset. The slump betrays her for one beat, then the bravado slams back louder than ever. Last full-power shout of the film.",
       "portrait_overrides": {
         "shasha": "assets/portrait_shasha_headset.png"
       },
       "anchor_stills": "first",
-      "start_state": "OPAQUE SHA-SHA sits slumped in the gaming chair wearing the headset, empty blue can within reach on the desk; pale dawn light entering the window"
+      "start_state": "OPAQUE SHA-SHA sits slumped low in the gaming chair, headset on, eyelids heavy, hands loose near the keyboard ON THE DESK; the window now shows pale blue-grey dawn",
+      "motion_control": {
+        "subject_facing": "toward_camera",
+        "camera_relation": "front_of_subject_webcam",
+        "movement_direction": "static_seated",
+        "screen_trajectory": "none — torso slump to upright within the chair",
+        "target": "her monitors / the stream",
+        "distance_to_target": "holding_position"
+      },
+      "environment_lock": "pale blue-grey dawn outside every window, sky just brightening, streetlights still on; interior lamps now slightly dimmer than the window"
     },
     {
       "shot_id": "b05",
@@ -171,16 +217,29 @@
       "in_frame": [
         "xiaobai"
       ],
-      "camera": "XIAO-BAI's laptop-cam: same fixed angle, morning light",
-      "action": "0-2s: she taps her own headset twice, frowns slightly; 2-5s: leans closer to the mic, cups a hand around it, voice going from teasing to puzzled",
+      "camera": "Same fixed webcam angle as b01/b03: medium close-up from atop XIAO-BAI's laptop",
+      "action": "0-2s: her smile fades; she taps the right ear cup of her headset twice with her right index finger, frowning slightly; 2-5s: she leans in, cups her right hand around the headset mic, and calls out, voice going from teasing to genuinely worried",
       "line": "姐？……姐你说话啊，咋一点声儿没有了？",
       "stage_override": "XIAO-BAI's warm cream-and-mint bedroom desk exactly as the scene reference: she SITS in the white chair facing her glowing laptop, milk tea beside it, window behind the desk showing pale dawn light, plush shelf at left, fairy lights at right",
       "scene_ref_override": "assets/xb_room_front.png",
-      "end_state": "Hand cupped at the mic, frown deepening, waiting for a reply that does not come",
+      "end_state": "Leaned toward the lens, right hand cupped at the mic, frown set, waiting for a reply that does not come",
       "gaze_target": "her laptop screen",
       "extra_constraints": "First genuine worry breaking through the play. No panic yet.",
       "anchor_stills": "first",
-      "start_state": "XIAO-BAI sits in her chair facing the laptop, wearing her cute headset, hands near the keyboard"
+      "start_state": "XIAO-BAI sits at her desk, the teasing smile just starting to fade, right hand rising toward her headset; dawn window behind",
+      "motion_control": {
+        "subject_facing": "toward_camera",
+        "camera_relation": "front_of_subject_webcam",
+        "movement_direction": "static_seated",
+        "screen_trajectory": "none — lean-in only",
+        "target": "laptop lens",
+        "distance_to_target": "slightly_closer_by_leaning"
+      },
+      "environment_lock": "pale blue-grey dawn outside every window, sky just brightening, streetlights still on; interior lamps now slightly dimmer than the window",
+      "pose_contract": [
+        "hips stay on the chair seat",
+        "left forearm stays on the desk"
+      ]
     },
     {
       "shot_id": "b06",
@@ -189,27 +248,38 @@
       "in_frame": [
         "shasha"
       ],
-      "camera": "SHA-SHA's desk-cam: same angle as b02/b04 — but the seated SHA-SHA is now SEMI-TRANSPARENT and, her head BARE, no headset anywhere in view",
-      "action": "0-2s: she talks at the screen, then reaches up to press the headset mic — her hand finds only hair, pats twice; 2-4s: pats the top of her head with both hands, looks left and right on the desk; 4-6s: bends sideways and down to peer under the desk, one hand on the armrest. Throughout, the chair and room remain FAINTLY VISIBLE THROUGH her translucent body",
+      "camera": "Same fixed webcam angle as b02/b04: medium shot from the monitor top edge; the seated SHA-SHA is now the semi-transparent spirit (per the spirit portrait), chair back faintly visible through her torso, NO headset, hair complete",
+      "action": "0-2s: seated square facing the monitors, she talks at the screen, her right hand rises to press the headset mic — fingertips land on bare hair beside her ear, pat twice; 2-4s: both hands pat the top of her head, then her eyes sweep left and right across the desk surface; 4-6s: keeping her hips ON the seat, she folds her upper body sideways-down toward the desk's right side to peer under the desk, left hand gripping the left armrest for support",
       "line": "咋没声了？麦呢……我耳机呢？",
       "shot_delta": [
         "seated SHA-SHA is now a semi-transparent faintly glowing spirit; NO headset on her head — her full platinum-blonde braided-bun hairstyle stays exactly as the portrait",
         "the headset is no longer on her or on the desk"
       ],
-      "end_state": "Semi-transparent SHA-SHA (chair visible through her torso, NO headset, braided buns complete) is bent sideways in the chair, head dipping below desk level, one hand on the armrest, peering under the desk",
+      "end_state": "Hips still on the seat, upper body folded sideways-down toward the desk's right side, head below desk level, left hand on the left armrest — mid-discovery",
       "gaze_target": "under the desk",
       "pose_contract": [
-        "she remains seated, one hand anchored on the chair armrest as she bends"
+        "hips NEVER leave the chair seat — this is a seated lean, not a crouch on the floor",
+        "left hand anchors on the left armrest from 4s onward",
+        "keyboard and mouse stay on the desk"
       ],
       "extra_constraints": "HIGHEST-PRIORITY VISUAL RULE: SHA-SHA in this shot is A GHOST — her ENTIRE figure (body, hair, clothes) is rendered at roughly 55% opacity so the chair back and desk edge BEHIND her are clearly visible THROUGH her torso and arms, exactly like the attached semi-transparent spirit portrait. If she looks solid the shot is WRONG. No glow, colors just faded. NO headset on her head, braided buns complete. She does not notice her own transparency — her confusion is only about the missing headset. Voice slightly airy but casual.",
       "portrait_overrides": {
         "shasha": "assets/portrait_shasha_spirit.png"
       },
       "anchor_stills": "first_last",
-      "start_state": "Semi-transparent SHA-SHA (complete braided-bun hair, NO headset) SITS in the gaming chair mid-conversation, hand rising toward where a headset mic would be; room identical to the scene reference, dawn light",
+      "start_state": "Semi-transparent SHA-SHA (chair visible through her torso, NO headset, braided buns complete) sits square in the gaming chair mid-sentence, right hand rising toward where a headset mic would be; dawn window behind the monitors",
       "props_in_shot": [
         "pc_tower"
-      ]
+      ],
+      "motion_control": {
+        "subject_facing": "toward_camera",
+        "camera_relation": "front_of_subject_webcam",
+        "movement_direction": "static_seated",
+        "screen_trajectory": "upper body folds down-right; hips pinned to the seat",
+        "target": "the floor under the desk",
+        "distance_to_target": "upper_body_closer_only"
+      },
+      "environment_lock": "pale blue-grey dawn outside every window, sky just brightening, streetlights still on; interior lamps now slightly dimmer than the window"
     },
     {
       "shot_id": "b07",
@@ -218,8 +288,8 @@
       "in_frame": [
         "shasha"
       ],
-      "camera": "HIGH OVERHEAD shot looking straight down past the desk edge: under the desk, on the starry rug, the OPAQUE physical SHA-SHA lies flat on her back, rigid, eyes closed, the big black headset still on her head; the semi-transparent spirit's head and shoulders lean into frame from the chair above, frozen mid-reach",
-      "action": "0-2s: the spirit's reaching hand stops dead in midair above the body, fingers spread, never closing; 2-4s: her whole upper body recoils up a hand-width, eyes going perfectly round; 4-7s: the cracked yelp bursts out, then all the air leaves her — the last word wheezes out while she stays locked staring down",
+      "camera": "HIGH OVERHEAD angle from above the desk's right side looking straight down: the starry rug under the desk fills the lower half of frame, with the OPAQUE physical SHA-SHA lying flat on her back on it, rigid, eyes closed, the big black-gold headset ON her head; the semi-transparent spirit's head and shoulders enter the upper edge of frame, leaning down from the chair, right arm extended mid-reach",
+      "action": "0-2s: the spirit's reaching right hand freezes in midair half a meter above the body's face, fingers spread and never closing, her head locked looking down; 2-4s: her whole upper body recoils upward one hand-width, shoulders spiking up, eyes going perfectly round; 4-7s: the cracked yelp bursts out, then all air leaves her — the last word wheezes while she stays frozen staring down",
       "line": "哎呀我套！——……屎了……",
       "props_in_shot": [
         "headset"
@@ -234,8 +304,8 @@
       "end_state": "Spirit recoiled upward a hand-width, hand still hanging open in midair, eyes round, locked staring at the body; the body unmoved",
       "gaze_target": "her own body under the desk",
       "pose_contract": [
-        "the opaque body lies perfectly flat and rigid on the rug, fully supported by the floor",
-        "the spirit stays anchored to the chair, only her upper body leans over"
+        "the opaque body lies perfectly flat and rigid on the rug, arms at her sides, and never moves a muscle",
+        "the spirit's hips stay anchored at the chair level above; only her upper body leans into frame"
       ],
       "shot_delta": [
         "the opaque physical body under the desk becomes visible for the first time"
@@ -243,7 +313,16 @@
       "extra_constraints": "THE PEAK — copy the original meme's overhead corpse-reveal framing. TWO SHA-SHAs: the standing spirit follows the attached SEMI-TRANSPARENT portrait exactly; the body on the rug is the OPAQUE normal-colored version of the same character (full color, solid, wearing the headset from the prop reference) with identical complete braided-bun hair: translucent spirit above (no headset, full hair), opaque body below wearing the headset, dead rigid like a plank. Voice does the hard crash: squealing falsetto crack on 哎呀我套, then deflated wheezy comic-miserable 屎了. No gore, eyes closed, deadpan rigid.",
       "portrait_overrides": {
         "shasha": "assets/portrait_shasha_spirit.png"
-      }
+      },
+      "motion_control": {
+        "subject_facing": "face_down_toward_the_body",
+        "camera_relation": "top_down_overhead",
+        "movement_direction": "static — only a small upward recoil of the upper body",
+        "screen_trajectory": "spirit occupies upper frame, body occupies lower frame, neither travels",
+        "target": "her own body on the rug",
+        "distance_to_target": "recoils_slightly_farther"
+      },
+      "environment_lock": "pale blue-grey dawn outside every window, sky just brightening, streetlights still on; interior lamps now slightly dimmer than the window; under-desk area lit dimly by the room's warm light, the rug's star pattern clearly visible"
     },
     {
       "shot_id": "b08",
@@ -252,19 +331,30 @@
       "in_frame": [
         "shasha"
       ],
-      "camera": "SHA-SHA's desk-cam: same angle as b02/b04 — the translucent spirit (no headset, full braided-bun hair identical to the portrait) sits back up in the gaming chair, deflated, monitors still glowing through her",
-      "action": "0-2s: she rises back into the chair slowly, shoulders sagging as she comes up; 2-4s: eyebrows droop, mouth corners fall, one hand drags slowly down her cheek; 4-6s: the hand flops palm-up onto her knee and her whole body sinks into the chair back, staring at nothing",
+      "camera": "Same fixed webcam angle as b02/b04/b06: medium shot from the monitor top edge; the translucent spirit (no headset, full braided-bun hair) back in the gaming chair",
+      "action": "0-2s: she rises back up into frame from her sideways lean and settles her back against the backrest, shoulders sagging as she comes up; 2-4s: her eyebrows droop, mouth corners fall, her right hand drags slowly down her right cheek; 4-6s: that hand flops palm-up onto her right knee, her whole body sinks deeper into the chair back, eyes drifting to nothing",
       "line": "哎呀……我真服了我……",
       "chain_from_previous": true,
-      "end_state": "Spirit slumped deep in the chair, palm-up hand on her knee, eyes unfocused toward the monitors; hard cut here",
+      "end_state": "Sunk deep into the chair back, right hand palm-up on her right knee, eyes unfocused; hard cut here",
       "gaze_target": "nothing — unfocused toward the monitors",
       "pose_contract": [
-        "she remains seated, weight sunk into the chair back"
+        "hips never leave the seat",
+        "back stays in contact with the backrest from 2s onward"
       ],
       "extra_constraints": "FINAL SHOT. Total wilting: the exact opposite of her b02 chest-thumping pose in the same framing. Breathy dragging tone, air leaking on the tail. She surrenders to herself — no scream, no help-seeking, no explanation. HARD CUT the instant the last syllable's air runs out.",
       "portrait_overrides": {
         "shasha": "assets/portrait_shasha_spirit.png"
-      }
+      },
+      "motion_control": {
+        "subject_facing": "toward_camera",
+        "camera_relation": "front_of_subject_webcam",
+        "movement_direction": "static_seated",
+        "screen_trajectory": "upper body unfolds back upright then sinks into the backrest",
+        "target": "nothing — unfocused toward the monitors",
+        "distance_to_target": "holding_position"
+      },
+      "environment_lock": "pale blue-grey dawn outside every window, sky just brightening, streetlights still on; interior lamps now slightly dimmer than the window",
+      "start_state": "Semi-transparent SHA-SHA is mid-rise from her sideways lean, hips on the seat, left hand leaving the armrest; dawn window behind the monitors"
     }
   ]
 }

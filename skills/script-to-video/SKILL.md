@@ -56,6 +56,28 @@ duplicated）；托盘从左讲台瞬移到右讲台（`location` 固定 + never
 | `start_state` | 写了 `anchor_stills` 就必填 | 与 `end_state` 同语法：写"画面开场已是什么状态" |
 | `transition_in` | 时空跳跃（换场景/时间流逝）需要软转场 | `cut`(默认硬切)/`dissolve`(叠化=时间流逝)/`flash`(白闪=情绪重音)；组装时 xfade/fadewhite 执行 |
 | `transition_duration` | 非 cut 转场想调节奏 | 秒，默认 0.5，组装时 clamp 到 [0.1,1.5] |
+| `motion_control` | 角色有位移/转身/大幅肢体动作，或上一 take 出现姿势诡异 | 结构化 key:value，与 prose 冲突时**以它为准**：`subject_facing`(toward_camera/away/left_profile…)/`camera_relation`/`movement_direction`(static_seated 是合法值!)/`screen_trajectory`/`target`/`distance_to_target` |
+| `environment_lock` | 窗外天色/光线随剧情推进变化 | 每镜写死该镜的绝对环境态（"pitch-black night outside every window…"）；**禁止**放进全局 STABLE FACTS 让模型自己挑时机 |
+| `portrait_overrides` | 角色在本镜处于特殊形态（戴装备/灵魂化） | code→立绘变体 key；一个形态一张立绘，绝不靠文字描述形态 |
+
+### ACTION 写法规范（人物动作是重灾区,逐条硬性）
+
+action 不是剧情摘要，是**肢体调度稿**。每镜 action 必须逐拍写出：
+
+1. **哪只手、碰哪个物体、物体在哪**——"her right hand grabs the blue can from the desk's right end"，禁止"she picks up the can"（模型会把罐子放进她大腿上）
+2. **躯干和臀部的关系**——凡坐姿镜，写"hips stay on the seat / torso folds sideways"；不写=模型随机让她站到椅子上
+3. **朝向永远显式**——facing the monitors square-on / face-down toward the body；"看着屏幕说话"这种含义靠 motion_control.subject_facing 双保险
+4. **道具位置守恒**——键盘鼠标"stay ON THE DESK"要写进 pose_contract；任何未声明搬动的道具视为焊死在原位
+5. **单向运动法则**——一镜内朝向/位移/姿态只许单向变化（slump→upright 合法；站→坐→站=拆镜）
+
+反例（v4 实拍翻车）：`action: "she grabs the can and chugs"` → 出片：她横坐椅子上、鼠标在大腿上、身体斜对屏幕。
+正例：上面第 1、2 条的写法 + `pose_contract: ["hips stay deep in the chair seat", "keyboard and mouse never leave the desk; nothing is on her lap"]` 。
+
+### 环境时间线规范（天色一会白一会黑的病根）
+
+- 全局 STABLE FACTS **只写与时间无关的事实**（布局/光源类型）
+- 天色属于**每镜的 environment_lock**，逐镜声明绝对值；剧情推进=相邻镜的 lock 值单调变化（night→night→dawn→dawn…），组装前自查这条序列是否单调
+- 千万不要写"in late shots dawn light seeps in"这种全局渐变句——模型不知道"现在是第几镜"
 
 ### 三级构图锚定（按需选择，勿全上）
 
@@ -180,6 +202,13 @@ STYLE: 风格句（全片逐字相同）+ 只要人声和房间底噪，无音�
 | 面板台词错别字 | 图像模型写不了长中文 | 面板只写镜头号，台词靠表演 |
 | 3镜页面板拉成超宽横幅 | 模型填满页面 | 面板一律16:9，空格画斜叉 |
 | 声线像但不是本人 | seedance 是参考风格化不是频谱克隆 | 接受，或后期 TTS 克隆换音轨 |
+| 人站到椅子上/横坐/离椅蹲地 | action 只写"坐在椅子上"没写臀部-椅面物理关系 | pose_contract 写"hips stay on the seat"；坐姿变化全部写成"upper body folds, hips pinned" |
+| 鼠标/键盘跑到大腿上 | 手部动作没绑定物体位置 | action 写"哪只手+哪个物体+物体在哪"；道具位置守恒进 pose_contract |
+| 玩电脑不看屏幕 | 朝向只在 prose 里 | motion_control.subject_facing 结构化声明；prose 冲突时以它为准 |
+| 窗外天色镜间乱跳 | 天色写在全局 STABLE FACTS，模型自己挑时机 | 每镜 environment_lock 写绝对天色；相邻镜 lock 序列必须单调 |
+| 半透明角色被画成实体 | 文字+褪色立绘都压不过实体先验 | first_last 双剧照锚夹住整镜（gpt-image 画透明没障碍，视频模型只负责中间） |
+| 角色凭空长出别人的装备 | 形态差异靠文字描述 | 一个形态一张立绘变体，portrait_overrides 按镜挂载 |
+| 关键道具每镜长得不一样 | 道具只存在于文字 | 道具三视图表 + SkitProp.ref，随 props_in_shot 自动挂参考 |
 
 ## 反模式
 

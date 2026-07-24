@@ -110,6 +110,14 @@ class SkitShot:
     pose_contract: tuple[str, ...] = ()  # physical support relations that MUST hold
     gaze_target: str = ""  # who/where the speaker looks: "对面讲台的水獭"
     shot_delta: tuple[str, ...] = ()  # the ONLY changes this shot may make
+    # -- structure control layer (xyz-video-skill pattern): the fields a video
+    #    model most often hallucinates, forced into unambiguous key:value form.
+    #    Prose stays readable; motion_control is the non-misreadable authority.
+    motion_control: Mapping[str, str] = field(default_factory=dict)
+    # keys: subject_facing (toward_camera|away_from_camera|left_profile|right_profile|
+    #        three_quarter_left|three_quarter_right), camera_relation, movement_direction,
+    #        screen_trajectory, target, distance_to_target — free strings, injected verbatim.
+    environment_lock: str = ""  # per-shot fixed environment facts (time of day, window light)
     # -- multi-location formats (e.g. split-screen voice-call skits) --
     stage_override: str = ""  # per-shot stage text; empty = project.stage
     scene_ref_override: str = ""  # per-shot scene sheet key; empty = project.scene_ref
@@ -208,6 +216,8 @@ class SkitProject:
                 stage_override=str(item.get("stage_override", "")),
                 scene_ref_override=str(item.get("scene_ref_override", "")),
                 portrait_overrides={str(k): str(v) for k, v in dict(item.get("portrait_overrides", {})).items()},
+                motion_control={str(k): str(v) for k, v in dict(item.get("motion_control", {})).items()},
+                environment_lock=str(item.get("environment_lock", "")),
             )
             shots.append(shot)
         if not shots:
@@ -379,6 +389,15 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
     gaze_txt = ""
     if shot.gaze_target:
         gaze_txt = f"GAZE: the speaker's eyes stay on {shot.gaze_target}.\n"
+    motion_txt = ""
+    if shot.motion_control:
+        motion_txt = (
+            "MOTION CONTROL (structural constraints — if prose conflicts, THIS wins):\n"
+            + "".join(f"- {k}: {v}\n" for k, v in shot.motion_control.items())
+        )
+    env_txt = ""
+    if shot.environment_lock:
+        env_txt = f"ENVIRONMENT LOCK (fixed for this whole shot): {shot.environment_lock}\n"
     delta_txt = ""
     if shot.shot_delta:
         delta_txt = (
@@ -396,7 +415,7 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
         f"SPEAKING CHARACTER: {speaker.identity_desc}.{others_txt}\n"
         f"ACTION: {shot.action}. Mouth movements sync to the dialogue. "
         "Subtle idle motion otherwise; steady TV framing.\n"
-        f"{pose_txt}{gaze_txt}{delta_txt}"
+        f"{motion_txt}{env_txt}{pose_txt}{gaze_txt}{delta_txt}"
         f"{still_txt}{start_txt}{beats_txt}{end_txt}{chain_txt}"
         f"DIALOGUE ({lang}, spoken aloud in {speaker.voice_desc}, cloned from the "
         f"reference audio — match its timbre exactly): {quote.format(shot.line)}\n"
