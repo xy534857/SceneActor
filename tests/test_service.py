@@ -171,6 +171,59 @@ class PerformTests(unittest.TestCase):
         # scene 2 turns were reported to the progress callback
         self.assertEqual([s for s, _, _ in seen], ["s2", "s2"])
 
+    def test_withdraw_exit_closes_scene_early_and_counts_complete(self) -> None:
+        """An actor leaving via withdraw+exit ends the scene as a natural close,
+        not a failure: remaining turns are skipped, completed stays True."""
+        from sceneactor.contracts import ActionIntent, PerformancePolicy, SpeechAtom
+
+        class WithdrawCognition(FakeCognition):
+            calls = 0
+
+            def decide(self, frame):
+                WithdrawCognition.calls += 1
+                appraisal, policy = super().decide(frame)
+                if WithdrawCognition.calls < 2:
+                    return appraisal, policy
+                leaving = PerformancePolicy(
+                    attention=policy.attention,
+                    interpretation=policy.interpretation,
+                    current_intent="离开这里",
+                    chosen_strategy="道别后离开",
+                    action_request=ActionIntent("exit", "", {}, (), ("O.current",)),
+                    disclose=(SpeechAtom("close", "走了走了。"),),
+                    withhold=(),
+                    expected_response="",
+                    response_hook="",
+                    surface_action_intent="转身出门",
+                    accepted_cost="",
+                    relationship_transition="keep",
+                    interaction_move="exit",
+                    delivery_mode="restrained",
+                    public_move="clean_close",
+                    disposition="withdraw",
+                    grounded_refs=("O.current",),
+                )
+                return appraisal, leaving
+
+        class EchoPerformance(FakePerformance):
+            def realize(self, intent, outcome, recent_history):
+                draft = super().realize(intent, outcome, recent_history)
+                from dataclasses import replace
+                speech = "".join(a.text.strip() for a in intent.speech_atoms)
+                return replace(draft, speech=speech, response_hook=intent.response_hook)
+
+        document = perform(
+            _spec((_episode("s1", max_turns=6),)),
+            generation=lambda messages, purpose: "",
+            cognition_factory=lambda model: WithdrawCognition(),
+            performance_factory=lambda model: EchoPerformance(),
+        )
+        scene = document["scenes"][0]
+        self.assertEqual(len(scene["turns"]), 2)
+        self.assertIn("withdraw", scene["closed_early"])
+        self.assertEqual(scene["protocol_failure"], "")
+        self.assertTrue(document["completed"])
+
 
 if __name__ == "__main__":
     unittest.main()

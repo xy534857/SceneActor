@@ -241,7 +241,7 @@ Policy:
 - disposition: continue|close|withdraw
 - grounded_refs: exact supplied reference IDs
 
-A continuing beat must leave a response_hook. A close/withdraw beat must not. Never claim objective success; the Host resolves every action."""
+A continuing beat must leave a response_hook. A close/withdraw beat must not (response_hook must be ""). disposition=withdraw is ONLY for physically leaving: it requires action_request.action_kind="exit". Saying goodbye while STAYING in the scene is disposition=close (or continue if you still expect a reply). If "exit" is not in allowed_actions, never pick withdraw. Never claim objective success; the Host resolves every action."""
         if feedback:
             payload["validation_feedback"] = feedback
         return [

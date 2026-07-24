@@ -259,7 +259,7 @@ def perform(
             episode.scene.scene_id,
             facts={"O.current": episode.scene.opening, **episode.host_facts},
             targets=tuple(item.persona.id for item in actors),
-            capabilities=("speak", "wait", "interact"),
+            capabilities=("speak", "wait", "interact", "exit"),
         )
         run = create_rehearsal(
             episode.scene,
@@ -274,6 +274,7 @@ def perform(
         order = list(episode.speaking_order) or [item.persona.id for item in actors]
         transcript: list[dict[str, Any]] = []
         scene_failure = ""
+        closed_early = ""
         for index in range(episode.scene.max_turns):
             actor_id = order[index % len(order)]
             try:
@@ -291,6 +292,9 @@ def perform(
             )
             if on_turn is not None:
                 on_turn(episode.scene.scene_id, index + 1, actor_id)
+            if result.policy is not None and result.policy.disposition == "withdraw":
+                closed_early = f"{actor_id} exited the scene (withdraw)"
+                break
         performed_scenes.append(
             {
                 "scene_id": episode.scene.scene_id,
@@ -298,6 +302,8 @@ def perform(
                 "opening": episode.scene.opening,
                 "turns": transcript,
                 "protocol_failure": scene_failure,
+                "closed_early": closed_early,
+                "max_turns": episode.scene.max_turns,
             }
         )
         if scene_failure:
@@ -334,7 +340,11 @@ def perform(
         ],
     }
     all_turns = [turn for item in performed_scenes for turn in item["turns"]]
-    expected = sum(episode.scene.max_turns for episode in spec.episodes)
+    scenes_ok = all(
+        not item["protocol_failure"]
+        and (item["closed_early"] or len(item["turns"]) == item["max_turns"])
+        for item in performed_scenes
+    )
     document: dict[str, Any] = {
         "schema_version": "sceneactor-performance-service/1.1",
         "performance_id": f"perf:{uuid4().hex[:12]}",
@@ -342,7 +352,7 @@ def perform(
         "scene": public_scene,
         "scenes": performed_scenes,
         "turns": all_turns,
-        "completed": not scene_failures and len(all_turns) == expected,
+        "completed": scenes_ok and len(performed_scenes) == len(spec.episodes),
         "protocol_failure": "; ".join(scene_failures),
         "scene_failures": scene_failures,
     }

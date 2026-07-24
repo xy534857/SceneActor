@@ -114,7 +114,7 @@ class RehearsalRun:
             recent_history=self._history_for(actor.persona.id),
             continuity={"goal": actor.goal, "turns": len(self.turns)},
             decision_contract=DecisionContract(
-                allowed_actions=("speak", "wait", "interact"),
+                allowed_actions=("speak", "wait", "interact", "exit"),
                 required_arguments={"interact": ("affordance_ref",)},
             ),
             identity_evidence={
