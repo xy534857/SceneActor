@@ -4,194 +4,194 @@
   "model": "claude-opus-4.8",
   "scenes": [
     {
-      "scene_id": "forever18-v2",
+      "scene_id": "forever18-v3",
       "status": "passed",
-      "core_emotion": "嘴硬到底的自信被死亡本身打脸，还要再嘴硬一次",
+      "core_emotion": "30岁硬撑通宵的嘴硬自信，被死亡本身打脸，最后只服自己",
       "dialogue_score": 5,
       "transcript": [
         {
           "actor_id": "xiaobai",
-          "action": "从收银台后探出上半身，一只手撑在台面边缘，另一只手指向她衣领的方向",
-          "speech": "姐……你麦呢？我这边咋一点声没有了。",
+          "action": "右手在鼠标上轻轻晃了两下再松开，身体往电竞椅背一靠",
+          "speech": "姐姐明天还这个点儿不？咱接着来。",
           "addressee": "shasha",
-          "attention_target": "莎莎衣领上的领夹麦",
-          "gaze": "盯着她衣领处，眼神来回扫了两下",
-          "blocking": "留在收银台后，上身越过台面前倾，双脚仍站在原位",
-          "posture_change": "从半探头变为整个上半身前倾，撑台的那只手压实台面",
+          "attention_target": "麦克风前的屏幕",
+          "gaze": "盯着屏幕，眼角上挑",
+          "blocking": "坐在电脑桌前，左手搭在键盘边缘，右手离开鼠标垂到椅面扶手",
+          "posture_change": "从前倾贴屏改为靠向椅背，下巴微抬",
           "delivery": {
-            "pace": "略快，后半句往下拖",
-            "volume": "压低了些",
-            "breath": "问到一半吸了口气",
-            "articulation": "“麦”字咬得清楚",
-            "pause": "“姐”之后停了一拍",
-            "vocal_target": "隔着环形灯朝她那边说"
+            "pace": "偏快，句尾拖长上扬",
+            "volume": "中等偏亮",
+            "breath": "",
+            "articulation": "口语化含糊，把'不'字咬得轻快",
+            "pause": "'咱'字前顿半拍",
+            "vocal_target": "对着面前的带麦耳机话筒"
           },
-          "physical_residue": "撑台的手在台面边缘留着，另一只手举在半空指向她衣领方向",
+          "physical_residue": "身体后仰靠在椅背，右手松搭在扶手上",
           "observable_outcome": [
             "xiaobai performed speak"
           ],
-          "response_hook": "她会去摸衣领找那个麦。"
+          "response_hook": "等她答应明天的约。"
         },
         {
           "actor_id": "shasha",
-          "action": "用右手食指和拇指捏住衣领上的领夹麦，轻弹两下，同时抬眼扫向环形灯中央的手机屏幕",
-          "speech": "嗐，麦又抽风了呗，我拍两下——家人们别走啊，姐这精神头儿，包宿都不带打盹的。",
+          "action": "右手把桌上的能量饮料罐拎起来仰头灌了一大口，放回桌面时罐底磕出一声闷响",
+          "speech": "来来来，这算个啥，我明天这个点儿照样在。姐这身体跟年轻时候一个样，永远十八。",
           "addressee": "xiaobai",
-          "attention_target": "衣领上的领夹麦和手机镜头",
-          "gaze": "先低头瞟向自己衣领的领夹麦，随即抬起对准镜头",
-          "blocking": "站在店中央环形灯前，身体正对手机，左手垂在身侧",
-          "posture_change": "上身微微前倾靠近镜头，下巴略抬",
+          "attention_target": "面前的双屏与麦克风",
+          "gaze": "眼睛盯着屏幕，眨得比刚才慢半拍",
+          "blocking": "背靠电竞椅，左手搭在扶手上，右手落在饮料罐旁",
+          "posture_change": "从松靠的姿势直起上半身，肩膀往上端了一下又塌回去",
           "delivery": {
-            "pace": "快",
-            "volume": "偏大",
-            "breath": "",
-            "articulation": "字咬得脆利落",
-            "pause": "破折号处停半拍再接下句",
-            "vocal_target": "冲着镜头"
+            "pace": "起句快、末尾拖长",
+            "volume": "拔高一截",
+            "breath": "灌完那口后接话前吸了一口气",
+            "articulation": "字咬得响亮但尾音发飘",
+            "pause": "“这算个啥”后停半拍",
+            "vocal_target": "对着麦克风送出去"
           },
-          "physical_residue": "右手食指和拇指仍停在衣领的领夹麦上",
+          "physical_residue": "饮料罐停在桌面右侧罐口朝外，右手指还搭在罐身上",
           "observable_outcome": [
             "shasha performed speak"
           ],
-          "response_hook": "麦到底有没有声，小白还得再确认。"
+          "response_hook": "小白应不应这个约"
         },
         {
           "actor_id": "xiaobai",
-          "action": "撑在台面边缘的那只手稍稍下压，另一只手从原本指向衣领的方向移开，转而抬起食指往右侧零食货架的方向点了两下",
-          "speech": "拍它也没用，姐，还是没声。你那麦……是不是掉那边货架后头去了？你回头瞅瞅。",
+          "action": "右手食指点了两下键盘再抬起，身体从椅背上直起来凑向麦克风",
+          "speech": "永远十八这句我可录下来了啊姐。",
           "addressee": "shasha",
-          "attention_target": "莎莎衣领处的领夹麦与右侧零食货架",
-          "gaze": "从莎莎身上移向她右后方的零食货架，眯眼往货架后头的空隙瞟",
-          "blocking": "上半身仍从收银台后探出，左手掌心撑在台面边缘，右臂抬起、食指朝右侧货架方向斜指",
-          "posture_change": "上身向右侧货架的方向微微倾过去，脖子跟着往右探",
+          "attention_target": "耳机里莎莎的声音",
+          "gaze": "斜瞟向屏幕上方，眉毛一挑",
+          "blocking": "上半身前倾靠近桌面麦克风，左手搭在桌沿",
+          "posture_change": "从后仰的松弛转为前倾支起",
           "delivery": {
-            "pace": "偏快，两句连着往下赶",
-            "volume": "比上一句略提了一点",
-            "breath": "",
-            "articulation": "尾音『瞅瞅』咬得清楚",
-            "pause": "『你那麦』后头顿了半拍",
-            "vocal_target": "隔着收银台朝店中央的莎莎"
+            "pace": "先慢后快，末尾一带",
+            "volume": "略微抬高",
+            "breath": "一声短笑压在句首",
+            "articulation": "把\"录\"和\"永远十八\"咬得格外清楚",
+            "pause": "\"我可录下来了啊\"后顿半拍",
+            "vocal_target": "对着麦克风"
           },
-          "physical_residue": "左手掌撑在收银台面边缘，右手食指停在指向右侧货架的半空，上身歪向右前方",
+          "physical_residue": "右手食指停在键盘上方，上半身保持前倾",
           "observable_outcome": [
             "xiaobai performed speak"
           ],
-          "response_hook": "她会不会往右侧货架那边扭头看。"
+          "response_hook": "把她这句吹牛顶回去，看她还嘚瑟不嘚瑟"
         },
         {
           "actor_id": "shasha",
-          "action": "松开原本捏着衣领领夹麦的右手，转身抬脚朝右侧零食货架后侧迈步",
-          "speech": "掉那儿了？我给它捡回来——你瞅姐这利索劲儿，还跟年轻那会儿一个样，永远十八。",
+          "action": "右手抓着桌上的能量饮料罐晃了晃，指节敲了两下罐身，左手把耳机往耳朵上按了按",
+          "speech": "难受啥啊，我这精神着呢，比你还溜实。天亮算个屁事，姐永远十八，干就完了。",
           "addressee": "xiaobai",
-          "attention_target": "右侧零食货架的后方缝隙",
-          "gaze": "从手机屏幕转开，投向货架右侧下沿",
-          "blocking": "离开环形灯中央，侧身向右挪半步靠近零食货架",
-          "posture_change": "上身由正对镜头转为半侧，右肩先行带出转身",
+          "attention_target": "面前的双屏和麦克风",
+          "gaze": "盯着屏幕正中",
+          "blocking": "坐在电竞椅里上身前倾贴向麦克风，右手停在桌面饮料罐上，左手在左耳耳机边",
+          "posture_change": "从松靠椅背猛地坐直，肩膀往麦克风方向送",
           "delivery": {
-            "pace": "轻快带点起势的赶",
-            "volume": "略扬",
-            "breath": "话尾带一口短促的上扬气",
-            "articulation": "字咬得脆生生的",
-            "pause": "破折号处顿半拍再迈步",
-            "vocal_target": "朝货架方向和衣领麦同时抛出"
+            "pace": "快而冲，字连字往外顶",
+            "volume": "拔高一截",
+            "breath": "句尾有一处短促漏气的换气",
+            "articulation": "尾音发飘，咬字比开头松",
+            "pause": "两句之间几乎不留缝",
+            "vocal_target": "对着麦克风"
           },
-          "physical_residue": "右手已从衣领垂下摆在身侧，身体停在货架右前侧半侧朝向缝隙",
+          "physical_residue": "右手搭在桌面饮料罐上，左手落回键盘边，上身仍前倾贴着麦克风",
           "observable_outcome": [
             "shasha performed speak"
           ],
-          "response_hook": "小白看着我朝货架后走过去"
+          "response_hook": "看小白信不信我这精神劲儿"
+        },
+        {
+          "actor_id": "xiaobai",
+          "action": "右手手指在键盘上快速敲了一小串，随即抬手搭到麦克风支架上轻晃一下",
+          "speech": "那说定了啊，明天这个点儿还溜实不？溜实我可就等着了。",
+          "addressee": "shasha",
+          "attention_target": "麦克风前方的屏幕",
+          "gaze": "盯着屏幕上的聊天窗口",
+          "blocking": "坐在电脑桌前，上身凑近麦克风，左手扶着桌沿",
+          "posture_change": "从半靠转为前倾贴近麦克风",
+          "delivery": {
+            "pace": "轻快带追问的节奏",
+            "volume": "略微抬高",
+            "breath": "",
+            "articulation": "尾音上扬拖长",
+            "pause": "在问句中间顿一下",
+            "vocal_target": "对着麦克风"
+          },
+          "physical_residue": "右手搭在麦克风支架上，左手扶桌沿，上身前倾",
+          "observable_outcome": [
+            "xiaobai performed speak"
+          ],
+          "response_hook": "等莎莎接明天的约"
         },
         {
           "actor_id": "shasha",
-          "action": "右脚刚落到货架侧后方便顿住，右手悬在半空停在够向地面的动作上，指尖没有收拢，低头盯着地上",
+          "action": "半透明的右手悬在头侧摸着空处，左手撑着电竞椅扶手，上身向桌底那具戴耳机的躯体倾下去，肩膀朝椅面猛地缩回一截",
           "speech": "哎呀我套！……屎了……",
           "addressee": "shasha",
-          "attention_target": "货架后地上躺着的那个穿同款衣服的身形和它衣领上的领夹麦",
-          "gaze": "从悬着的右手往下垂直落到地面，锁在那个身形的衣领上，不再抬起",
-          "blocking": "站在右侧零食货架侧后方的地面边缘，半透明发微光的身体一半探进货架后的阴影，脚步没有再往前迈",
-          "posture_change": "上半身前倾的探取姿势僵在原地，右臂由伸展转为悬停，重心从前脚掌往回压回后脚跟",
+          "attention_target": "桌底地毯上戴着黑耳机直挺挺躺着的自己",
+          "gaze": "从头侧空抓的位置急落到桌底那具躺着的身体上，钉住不动",
+          "blocking": "身体前倾越过椅面边缘俯向桌下，随即整个上半身朝椅背方向退缩",
+          "posture_change": "由挺直靠椅转为前俯探看，接着肩背骤然向后蜷缩",
           "delivery": {
-            "pace": "前一句猛地脱口，接着断成停顿再挤出后半句",
-            "volume": "第一声拔高，第二声压低到几乎贴着喉咙",
-            "breath": "",
-            "articulation": "尾字含糊，后半句被拖长压扁",
-            "pause": "两句之间空出一拍长的静止",
-            "vocal_target": "话音落向地面那个身形，不再朝手机屏幕"
+            "pace": "第一声炸出后陡然断裂拖长",
+            "volume": "起句拔尖失控，尾音塌成气声",
+            "breath": "无生理呼吸，发声均匀微光颤而不喘",
+            "articulation": "首句咬字崩裂，后半含糊拖沓",
+            "pause": "两句之间留出一段僵住的停顿",
+            "vocal_target": "对着桌底那具躯体而非麦克风"
           },
-          "physical_residue": "右手悬停在货架后地面上方半空，指尖张开未收，半透明发微光的身体上半探进货架阴影、脚停在原地",
+          "physical_residue": "半透明右手僵停在头侧空处微微发光颤动，上身缩靠回椅背，视线仍锁在桌底",
           "observable_outcome": [
             "shasha performed speak"
           ],
-          "response_hook": "那个半透明的姐这回真愣在货架前了"
+          "response_hook": "小白继续在麦里喊我、催我回话"
         },
         {
           "actor_id": "shasha",
-          "action": "右手仍悬在半空够向地面的位置未收回，掌心慢慢翻向上、手指松散摊开一下，左手从裤侧抬起抹了把脸颊",
+          "action": "半透明的右手从头侧空处垂到膝上，左手仍搭在电竞椅扶手上，上身缓缓从桌底方向直起来靠回椅背",
           "speech": "哎呀……我真服了我……",
           "addressee": "shasha",
-          "attention_target": "地面货架侧后方",
-          "gaze": "低头盯着地上，眼皮往下垂",
-          "blocking": "站在右侧零食货架侧后方，身体微朝货架后侧，右脚落定在原地",
-          "posture_change": "肩膀往下塌了半寸，上身微微前倾的重心往回收了一点",
+          "attention_target": "桌底那具戴耳机的躯体",
+          "gaze": "低垂着看向桌底的躯体，视线没抬起来",
+          "blocking": "坐在电竞椅上侧向前倾后回收，面朝桌下地毯方向",
+          "posture_change": "从倾身探看的缩肩姿态松塌下来，脊背贴回椅背，肩膀整个塌落一截",
           "delivery": {
-            "pace": "拖长破碎",
-            "volume": "比直播喊话时低下去一截",
-            "breath": "先泄了一口气再出声",
-            "articulation": "字尾含混黏在一起",
-            "pause": "两句之间留一个明显的气口",
-            "vocal_target": "半对着自己半漏进领夹麦"
+            "pace": "拖慢，字与字之间黏连",
+            "volume": "由最初的一声轻叹压到几近自语",
+            "breath": "",
+            "articulation": "尾音含糊化开",
+            "pause": "‘哎呀’后停顿半拍再往下垮",
+            "vocal_target": "朝下对着桌底，不再对麦克风"
           },
-          "physical_residue": "右手翻上摊开悬在地面上方，左手停在脸颊下侧，肩线塌落",
+          "physical_residue": "右手虚搭在膝上，微光的指尖轻抖，上身松塌靠在椅背",
           "observable_outcome": [
             "shasha performed speak"
           ],
-          "response_hook": "地上那具身体和小白的反应还悬着，等下一拍。"
-        },
-        {
-          "actor_id": "xiaobai",
-          "action": "把搭在收银台边缘的右手往台面里侧收了半掌，左手撑上台沿，上身探过收银台朝零食货架后侧的方向倾",
-          "speech": "姐……你地上瞅着啥呢，咋不吱声了？",
-          "addressee": "shasha",
-          "attention_target": "货架侧后方低头盯着地面的莎莎",
-          "gaze": "越过收银台往零食货架后侧那片地面和莎莎低垂的头之间来回瞟",
-          "blocking": "留在收银台后，左手撑台沿把上半身向货架方向探出，双脚未离开台后原位",
-          "posture_change": "由靠着收银台的直立转为左手支台、肩探前的前倾",
-          "delivery": {
-            "pace": "起头一顿后连成一串",
-            "volume": "压得低，像怕惊着什么",
-            "breath": "吸气卡在开口前漏出来",
-            "articulation": "尾音发虚往下掉",
-            "pause": "在问货架后那边之后顿一下",
-            "vocal_target": "朝货架后侧的莎莎那边送"
-          },
-          "physical_residue": "左手掌心压在收银台台沿上，右手半收在台面里侧，上身停在探出的前倾位",
-          "observable_outcome": [
-            "xiaobai performed speak"
-          ],
-          "response_hook": "等她说地上那个是什么，或者她愣着不动。"
+          "response_hook": ""
         },
         {
           "actor_id": "shasha",
-          "action": "右手从半空缓缓落下、指尖擦过货架侧沿后垂到大腿外侧，左手掌根仍贴着脸颊往颧骨上压了半下，脚下没动地朝收银台方向侧过半个身子",
-          "speech": "小白……你快过来……这地上……躺的咋是我……",
-          "addressee": "xiaobai",
-          "attention_target": "收银台后的小白",
-          "gaze": "从地面抬起、越过环形灯朝收银台方向斜看过去，视线中途在货架侧后方那片地面上顿了一瞬",
-          "blocking": "停在货架侧后方，侧身半转向收银台一侧，环形灯与手机仍在身前",
-          "posture_change": "从低头前倾改为上半身直起半截又塌回来，右肩明显往下沉，右臂垂直",
+          "action": "半透明的右手从膝上抬起、手指对着屏幕上方虚划一下，随即松开垂回膝面，左手仍搭在电竞椅扶手上，上身靠在椅背里向屏幕微微塌下去",
+          "speech": "哎呀……包一宿包没了……",
+          "addressee": "shasha",
+          "attention_target": "屏幕上的游戏画面",
+          "gaze": "盯着屏幕上方停顿片刻，随即涣散地垂向双屏之间的缝隙",
+          "blocking": "坐在电竞椅里正对双屏，右手落在膝面，左手扶着右侧扶手，肩膀朝椅背陷进去一截",
+          "posture_change": "从靠回椅背的直起状态整个往下松塌，肩线垮低，头微垂",
           "delivery": {
-            "pace": "字与字之间拖长、句尾往下坠",
-            "volume": "起头压低几乎含在喉咙里，末字散掉",
-            "breath": "吸气声在词前卡了一下才吐出",
-            "articulation": "字音发黏、含混",
-            "pause": "省略号处停顿明显、悬着不接",
-            "vocal_target": "朝收银台方向递出"
+            "pace": "拖沓，字与字之间散开",
+            "volume": "陡然泄气般降下去",
+            "breath": "",
+            "articulation": "含混，尾音黏在一起没收住",
+            "pause": "省略号处停顿两拍",
+            "vocal_target": "对着屏幕自言自语般吐出，不像在冲麦克风说"
           },
-          "physical_residue": "右手指尖沿货架侧沿留下一道拖痕后垂在大腿外侧，左掌根仍压在颧骨上，身子侧对着收银台停住",
+          "physical_residue": "半透明右手瘫在膝面五指微张，上身塌陷在椅背里，RGB灯光在发微光的轮廓边缘晃动",
           "observable_outcome": [
             "shasha performed speak"
           ],
-          "response_hook": "小白会不会敢过来、敢不敢答我。"
+          "response_hook": "小白喊我在不在、怎么不吱声"
         }
       ],
       "review": {
@@ -211,58 +211,58 @@
                 "items": {
                   "mismatch_nameable": {
                     "pass": 1,
-                    "evidence": "'掉那儿了？我给它捡回来' — mismatch lands on the dropped 领夹麦 behind the 货架, then her own body"
+                    "evidence": "碰撞落在具体物件：桌底'戴耳机的躯体'——嘴硬永远18的人发现自己已死。"
                   },
                   "license_discipline": {
                     "pass": 1,
-                    "evidence": "'哎呀我套！……屎了……' fires meme:shi-le-collapse at the confirmation moment, reshaped; '永远十八' is forever-18-bravado within trigger"
+                    "evidence": "'哎呀我套！……屎了……'命中meme:shi-le-collapse，触发于看见桌底身体那刻，全场唯一一次。"
                   },
                   "committed_deadpan": {
                     "pass": 1,
-                    "evidence": "这地上……躺的咋是我…… — no character winks or names the joke; both stay inside their logic"
+                    "evidence": "莎莎垮掉时仍在自己逻辑内：'哎呀……包一宿包没了……'，无人跳出戏点破。"
                   },
                   "third_beat_room": {
                     "pass": 1,
-                    "evidence": "'这地上……躺的咋是我……' ends on a concrete body sighting, no explanation of the joke"
+                    "evidence": "最高点后收在'哎呀……包一宿包没了……'配合手指虚划垂回膝面的动作，未解释笑点，落在具体动作。"
                   },
                   "escalation_shape": {
                     "pass": 1,
-                    "evidence": "'跟年轻那会儿一个样，永远十八' then collapse '躺的咋是我' — angle shifts from bravado to horror"
+                    "evidence": "'永远十八'第二次'姐永远十八，干就完了'落在licensed meme:forever-18-bravado内，第二次更大声，符合license。"
                   },
                   "plain_register_off_punchline": {
                     "pass": 1,
-                    "evidence": "'拍它也没用，姐，还是没声' — setup lines stay plain, no crafted rhetoric off-punch"
+                    "evidence": "非punch行皆口语碎句：'那说定了啊，明天这个点儿还溜实不？'无金句、无对仗。"
                   },
                   "machine_swap": {
                     "pass": 1,
-                    "evidence": "'哎呀我套！……屎了……' — no protocol machine would produce this"
+                    "evidence": "'哎呀我套！……屎了……'及'难受啥啊，我这精神着呢，比你还溜实'协议机器无法自然说出。"
                   },
                   "real_listening": {
                     "pass": 1,
-                    "evidence": "'掉那儿了？我给它捡回来' directly answers xiaobai's '是不是掉那边货架后头去了'"
+                    "evidence": "小白接'永远十八这句我可录下来了啊姐'直接回应莎莎前句'永远十八'。"
                   },
                   "persona_fidelity": {
                     "pass": 1,
-                    "evidence": "shasha at the reveal fires the instinctive '哎呀我套！……屎了……' rather than composed self-possession, per goal '按你的本能反应'"
+                    "evidence": "莎莎看见身体后未升华为清醒自持，只'哎呀……我真服了我……'（meme:zhen-fu-le-wo），符合卡片本能反应。"
                   },
                   "distinct_defense": {
                     "pass": 1,
-                    "evidence": "xiaobai notices sound loss/objects ('你麦呢？'), shasha protects age ('永远十八'); distinct concerns"
+                    "evidence": "小白直球关心'永远十八这句我可录下来了啊姐'；莎莎硬撑'比你还溜实'——注意点与自保方式不同。"
                   },
                   "scene_stays_physical": {
                     "pass": 1,
-                    "evidence": "the 麦 prop and 货架 remain concrete through to '躺的咋是我'; no moral/audience verdict closes it"
+                    "evidence": "开场鼠标/能量饮料罐等实物贯穿，结尾落在'桌底那具戴耳机的躯体'，无道德总结或观众陈词。"
                   },
                   "corpus_register": {
                     "pass": 1,
-                    "evidence": "no speech_corpus provided; lines like '姐你别吓我'-adjacent '你别……' stay plain — pass by default"
+                    "evidence": "无 speech_corpus，默认通过。"
                   }
                 },
                 "bits_passed": 12,
                 "bits_total": 12,
                 "failed": [],
                 "mode": "comedy",
-                "mode_evidence": "Shasha's card carries meme: register_license entries (forever-18-bravado, shi-le-collapse, zhen-fu-le-wo) that fire in-scene, notably the '哎呀我套！……屎了……' bit played as caricature."
+                "mode_evidence": "Shasha's card carries register_license entries with meme forms ('meme:forever-18-bravado', 'meme:shi-le-collapse', 'meme:zhen-fu-le-wo') that fire verbatim in the transcript ('永远十八' and '哎呀我套！……屎了……')"
               }
             }
           ],
@@ -279,58 +279,58 @@
             "items": {
               "mismatch_nameable": {
                 "pass": 1,
-                "evidence": "'掉那儿了？我给它捡回来' — mismatch lands on the dropped 领夹麦 behind the 货架, then her own body"
+                "evidence": "碰撞落在具体物件：桌底'戴耳机的躯体'——嘴硬永远18的人发现自己已死。"
               },
               "license_discipline": {
                 "pass": 1,
-                "evidence": "'哎呀我套！……屎了……' fires meme:shi-le-collapse at the confirmation moment, reshaped; '永远十八' is forever-18-bravado within trigger"
+                "evidence": "'哎呀我套！……屎了……'命中meme:shi-le-collapse，触发于看见桌底身体那刻，全场唯一一次。"
               },
               "committed_deadpan": {
                 "pass": 1,
-                "evidence": "这地上……躺的咋是我…… — no character winks or names the joke; both stay inside their logic"
+                "evidence": "莎莎垮掉时仍在自己逻辑内：'哎呀……包一宿包没了……'，无人跳出戏点破。"
               },
               "third_beat_room": {
                 "pass": 1,
-                "evidence": "'这地上……躺的咋是我……' ends on a concrete body sighting, no explanation of the joke"
+                "evidence": "最高点后收在'哎呀……包一宿包没了……'配合手指虚划垂回膝面的动作，未解释笑点，落在具体动作。"
               },
               "escalation_shape": {
                 "pass": 1,
-                "evidence": "'跟年轻那会儿一个样，永远十八' then collapse '躺的咋是我' — angle shifts from bravado to horror"
+                "evidence": "'永远十八'第二次'姐永远十八，干就完了'落在licensed meme:forever-18-bravado内，第二次更大声，符合license。"
               },
               "plain_register_off_punchline": {
                 "pass": 1,
-                "evidence": "'拍它也没用，姐，还是没声' — setup lines stay plain, no crafted rhetoric off-punch"
+                "evidence": "非punch行皆口语碎句：'那说定了啊，明天这个点儿还溜实不？'无金句、无对仗。"
               },
               "machine_swap": {
                 "pass": 1,
-                "evidence": "'哎呀我套！……屎了……' — no protocol machine would produce this"
+                "evidence": "'哎呀我套！……屎了……'及'难受啥啊，我这精神着呢，比你还溜实'协议机器无法自然说出。"
               },
               "real_listening": {
                 "pass": 1,
-                "evidence": "'掉那儿了？我给它捡回来' directly answers xiaobai's '是不是掉那边货架后头去了'"
+                "evidence": "小白接'永远十八这句我可录下来了啊姐'直接回应莎莎前句'永远十八'。"
               },
               "persona_fidelity": {
                 "pass": 1,
-                "evidence": "shasha at the reveal fires the instinctive '哎呀我套！……屎了……' rather than composed self-possession, per goal '按你的本能反应'"
+                "evidence": "莎莎看见身体后未升华为清醒自持，只'哎呀……我真服了我……'（meme:zhen-fu-le-wo），符合卡片本能反应。"
               },
               "distinct_defense": {
                 "pass": 1,
-                "evidence": "xiaobai notices sound loss/objects ('你麦呢？'), shasha protects age ('永远十八'); distinct concerns"
+                "evidence": "小白直球关心'永远十八这句我可录下来了啊姐'；莎莎硬撑'比你还溜实'——注意点与自保方式不同。"
               },
               "scene_stays_physical": {
                 "pass": 1,
-                "evidence": "the 麦 prop and 货架 remain concrete through to '躺的咋是我'; no moral/audience verdict closes it"
+                "evidence": "开场鼠标/能量饮料罐等实物贯穿，结尾落在'桌底那具戴耳机的躯体'，无道德总结或观众陈词。"
               },
               "corpus_register": {
                 "pass": 1,
-                "evidence": "no speech_corpus provided; lines like '姐你别吓我'-adjacent '你别……' stay plain — pass by default"
+                "evidence": "无 speech_corpus，默认通过。"
               }
             },
             "bits_passed": 12,
             "bits_total": 12,
             "failed": [],
             "mode": "comedy",
-            "mode_evidence": "Shasha's card carries meme: register_license entries (forever-18-bravado, shi-le-collapse, zhen-fu-le-wo) that fire in-scene, notably the '哎呀我套！……屎了……' bit played as caricature."
+            "mode_evidence": "Shasha's card carries register_license entries with meme forms ('meme:forever-18-bravado', 'meme:shi-le-collapse', 'meme:zhen-fu-le-wo') that fire verbatim in the transcript ('永远十八' and '哎呀我套！……屎了……')"
           }
         }
       }

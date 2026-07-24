@@ -123,8 +123,10 @@ def stage_submit_poll(uploads: dict[str, str]) -> dict[str, dict]:
         import base64
         import mimetypes
         import uuid
-        refs = [project_dir / project.characters[c].portrait for c in shot.visible()]
-        refs.append(project_dir / project.scene_ref)
+        refs = [project_dir / shot.portrait_key(project, c) for c in shot.visible()]
+        refs.append(project_dir / shot.scene_key(project))
+        refs.extend(project_dir / project.props[pid].ref
+                    for pid in shot.props_in_shot if project.props[pid].ref)
         out = workdir / "stills" / f"{shot.shot_id}_{which}.png"
         out.parent.mkdir(exist_ok=True)
         if not out.is_file():

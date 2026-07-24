@@ -65,6 +65,7 @@ class SkitProp:
     holder: str = ""  # "" = free-standing; else "character_code" or "character_code.right_hand"
     location: str = ""  # spatial anchor when free-standing, e.g. "左侧讲台台面"
     persistent_state: str = ""  # state that never changes unless a shot_delta says so
+    ref: str = ""  # optional prop model-sheet image key; attached as a visual reference when the prop is in shot
 
 
 @dataclass(frozen=True)
@@ -109,6 +110,19 @@ class SkitShot:
     pose_contract: tuple[str, ...] = ()  # physical support relations that MUST hold
     gaze_target: str = ""  # who/where the speaker looks: "对面讲台的水獭"
     shot_delta: tuple[str, ...] = ()  # the ONLY changes this shot may make
+    # -- multi-location formats (e.g. split-screen voice-call skits) --
+    stage_override: str = ""  # per-shot stage text; empty = project.stage
+    scene_ref_override: str = ""  # per-shot scene sheet key; empty = project.scene_ref
+    portrait_overrides: Mapping[str, str] = field(default_factory=dict)  # code -> portrait key (e.g. headset-on variant)
+
+    def stage_text(self, project: "SkitProject") -> str:
+        return self.stage_override or project.stage
+
+    def scene_key(self, project: "SkitProject") -> str:
+        return self.scene_ref_override or project.scene_ref
+
+    def portrait_key(self, project: "SkitProject", code: str) -> str:
+        return self.portrait_overrides.get(code) or project.characters[code].portrait
 
     def visible(self) -> tuple[str, ...]:
         return self.in_frame or (self.speaker,)
@@ -160,6 +174,7 @@ class SkitProject:
                 holder=str(item.get("holder", "")),
                 location=str(item.get("location", "")),
                 persistent_state=str(item.get("persistent_state", "")),
+                ref=str(item.get("ref", "")),
             )
             props[prop.prop_id] = prop
         cont_raw = raw.get("continuity", {})
@@ -190,6 +205,9 @@ class SkitProject:
                 pose_contract=tuple(str(p) for p in item.get("pose_contract", [])),
                 gaze_target=str(item.get("gaze_target", "")),
                 shot_delta=tuple(str(d) for d in item.get("shot_delta", [])),
+                stage_override=str(item.get("stage_override", "")),
+                scene_ref_override=str(item.get("scene_ref_override", "")),
+                portrait_overrides={str(k): str(v) for k, v in dict(item.get("portrait_overrides", {})).items()},
             )
             shots.append(shot)
         if not shots:
@@ -344,6 +362,8 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
         for pid in shot.props_in_shot:
             prop = project.props[pid]
             bits = [f"exactly {prop.count}x {prop.desc}"]
+            if prop.ref:
+                bits.append("its EXACT shape/colors are defined by an attached prop reference image — follow it, do not redesign")
             if prop.holder:
                 bits.append(f"held by {prop.holder}")
             if prop.location:
@@ -370,7 +390,7 @@ def build_shot_prompt(project: SkitProject, shot: SkitShot) -> str:
         "IDENTITY: the attached portrait reference image(s) define each character's "
         "EXACT appearance — head shape, colors, outfit, markings, proportions. "
         "Reproduce them faithfully; do not redesign, do not invent extra characters.\n"
-        f"STAGE: {project.stage}\n"
+        f"STAGE: {shot.stage_text(project)}\n"
         f"{facts_txt}{props_txt}"
         f"SHOT: {shot.camera}.\n"
         f"SPEAKING CHARACTER: {speaker.identity_desc}.{others_txt}\n"
@@ -419,7 +439,7 @@ def build_still_prompts(project: SkitProject, shot: SkitShot) -> dict[str, str]:
         "Characters must match the attached portrait references EXACTLY "
         "(head shape, colors, outfit, markings, proportions); the setting must "
         f"match the attached scene reference.\n"
-        f"STAGE: {project.stage}\n"
+        f"STAGE: {shot.stage_text(project)}\n"
         f"SHOT: {shot.camera}.\n"
         f"CHARACTERS: {cast}.\n"
         f"STYLE: {project.style} "
@@ -452,9 +472,12 @@ def build_shot_references(
     """
     refs: list[ReferenceMedia] = []
     for code in shot.visible():
-        ch = project.characters[code]
-        refs.append(ReferenceMedia(url=_resolve(uploads, ch.portrait), category="Image", role="identity_anchor"))
-    refs.append(ReferenceMedia(url=_resolve(uploads, project.scene_ref), category="Image", role="scene_style"))
+        refs.append(ReferenceMedia(url=_resolve(uploads, shot.portrait_key(project, code)), category="Image", role="identity_anchor"))
+    refs.append(ReferenceMedia(url=_resolve(uploads, shot.scene_key(project)), category="Image", role="scene_style"))
+    for pid in shot.props_in_shot:
+        prop = project.props[pid]
+        if prop.ref:
+            refs.append(ReferenceMedia(url=_resolve(uploads, prop.ref), category="Image", role="prop"))
     if still_first:
         refs.append(ReferenceMedia(url=still_first, category="Image", role="scene_style"))
     if still_last:
@@ -565,9 +588,12 @@ def assemble_command(
 def upload_keys(project: SkitProject) -> tuple[str, ...]:
     """Every asset key the driver must upload before ``plan_tasks``."""
     keys: list[str] = [project.scene_ref]
+    keys.extend(s.scene_ref_override for s in project.shots if s.scene_ref_override)
+    keys.extend(p.ref for p in project.props.values() if p.ref)
+    for s in project.shots:
+        keys.extend(s.portrait_overrides.values())
     for ch in project.characters.values():
         keys.append(ch.portrait)
         keys.append(ch.voice_ref)
-    # de-dup, keep order
     return tuple(dict.fromkeys(keys))
 
