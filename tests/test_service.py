@@ -136,6 +136,41 @@ class PerformTests(unittest.TestCase):
         self.assertEqual(document["scene"]["characters"][0]["anonymous_actor"], "a")
         self.assertNotIn("blind_review", document)
 
+    def test_scene_failure_does_not_abort_remaining_scenes(self) -> None:
+        """Regression: a protocol failure in scene 1 must not swallow scene 2.
+
+        Observed in production (job:a1dca993e019): a 13-scene spec returned a
+        single scene because the first protocol failure broke the episode loop.
+        """
+        from sceneactor.cognition import CognitionModelError
+
+        class FlakyCognition(FakeCognition):
+            calls = 0
+
+            def decide(self, frame):
+                FlakyCognition.calls += 1
+                if FlakyCognition.calls == 1:
+                    raise CognitionModelError("Protocol validation failed: bad policy")
+                return super().decide(frame)
+
+        seen: list[tuple[str, int, str]] = []
+        document = perform(
+            _spec((_episode("s1"), _episode("s2"))),
+            generation=lambda messages, purpose: "",
+            cognition_factory=lambda model: FlakyCognition(),
+            performance_factory=lambda model: FakePerformance(),
+            on_turn=lambda scene, turn, actor: seen.append((scene, turn, actor)),
+        )
+        self.assertEqual([s["scene_id"] for s in document["scenes"]], ["s1", "s2"])
+        self.assertEqual(document["scenes"][0]["turns"], [])
+        self.assertIn("bad policy", document["scenes"][0]["protocol_failure"])
+        self.assertEqual(len(document["scenes"][1]["turns"]), 2)
+        self.assertEqual(document["scenes"][1]["protocol_failure"], "")
+        self.assertFalse(document["completed"])
+        self.assertEqual(len(document["scene_failures"]), 1)
+        # scene 2 turns were reported to the progress callback
+        self.assertEqual([s for s, _, _ in seen], ["s2", "s2"])
+
 
 if __name__ == "__main__":
     unittest.main()

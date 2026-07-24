@@ -232,11 +232,16 @@ def perform(
     performance_factory: Callable[[Any], Any] = JsonPerformancePort,
     on_turn: Callable[[str, int, str], None] | None = None,
 ) -> dict[str, Any]:
-    """Run every episode in order; actors carry standing intents and case notes across scenes."""
+    """Run every episode in order; actors carry standing intents and case notes across scenes.
+
+    A protocol failure inside one scene ends THAT scene early (partial
+    transcript kept, failure recorded) — remaining scenes still run. A
+    multi-scene production must never silently collapse to its first scene.
+    """
     carried_intents: dict[str, dict[str, Any]] = {}
     previous_close = ""
     performed_scenes: list[dict[str, Any]] = []
-    protocol_failure = ""
+    scene_failures: list[str] = []
     for episode in spec.episodes:
         actors = spec.actors
         if previous_close:
@@ -268,15 +273,16 @@ def perform(
         )
         order = list(episode.speaking_order) or [item.persona.id for item in actors]
         transcript: list[dict[str, Any]] = []
+        scene_failure = ""
         for index in range(episode.scene.max_turns):
             actor_id = order[index % len(order)]
             try:
                 result = run.advance(actor_id)
             except (CognitionModelError, PerformanceModelError) as exc:
-                protocol_failure = f"{episode.scene.scene_id}: {str(exc)[:400]}"
+                scene_failure = f"{episode.scene.scene_id}: {str(exc)[:400]}"
                 break
             if result.draft is None:
-                protocol_failure = f"{episode.scene.scene_id}: turn produced no performance draft"
+                scene_failure = f"{episode.scene.scene_id}: turn produced no performance draft"
                 break
             entry = asdict(result.draft)
             transcript.append(entry)
@@ -291,19 +297,21 @@ def perform(
                 "setting": episode.scene.setting,
                 "opening": episode.scene.opening,
                 "turns": transcript,
+                "protocol_failure": scene_failure,
             }
         )
-        if protocol_failure:
-            break
+        if scene_failure:
+            scene_failures.append(scene_failure)
         carried_intents = {
             actor_id: dict(intent) for actor_id, intent in run.standing_intents.items()
         }
         spoken = [item for item in transcript if item.get("speech")]
         last = spoken[-1] if spoken else (transcript[-1] if transcript else {})
-        previous_close = (
-            f"上一场（{episode.scene.setting[:60]}）结束时："
-            f"{(last.get('speech') or last.get('action', '无人说话'))[:120]}"
-        )
+        if transcript:
+            previous_close = (
+                f"上一场（{episode.scene.setting[:60]}）结束时："
+                f"{(last.get('speech') or last.get('action', '无人说话'))[:120]}"
+            )
 
     public_scene = {
         "disclosure": spec.disclosure,
@@ -334,8 +342,9 @@ def perform(
         "scene": public_scene,
         "scenes": performed_scenes,
         "turns": all_turns,
-        "completed": not protocol_failure and len(all_turns) == expected,
-        "protocol_failure": protocol_failure,
+        "completed": not scene_failures and len(all_turns) == expected,
+        "protocol_failure": "; ".join(scene_failures),
+        "scene_failures": scene_failures,
     }
     if review is not None and all_turns:
         reviewer = BlindReviewer(JsonBlindReviewPort(review), lenses=review_lenses)
